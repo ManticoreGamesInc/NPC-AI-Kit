@@ -19,6 +19,7 @@ Objects {
   ChildIds: 12806445280718441119
   ChildIds: 15650992489209854501
   ChildIds: 2411740513538473765
+  ChildIds: 6384043998824895959
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -28,6 +29,32 @@ Objects {
     Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 6384043998824895959
+  Name: "Gabriel WIP"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Gabriel WIP"
   }
 }
 Objects {

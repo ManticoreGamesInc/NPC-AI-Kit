@@ -44,7 +44,7 @@ Assets {
     OwnerAccountId: "901b7628983c4c8db4282f24afeda57a"
     OwnerName: "Buckmonster"
     Version: "1.0.0"
-    Description: "Another snag from Core Plaza.\r\n\r\nFirst go to GAME SETTINGS and check the \"ENABLE PLAYER STORAGE\" check box\r\n\r\nDrop this into your game, and you now have a currency system.  \r\n\r\nEither use the included coin spawners or use the following to award players coins\r\n\r\nplayer:AddResource(\"Gold\", 500)\r\n\r\nTo spend the coins, on purchasing things:\r\n\r\nplayer:RemoveResource(\"Gold\", 75) - won\'t let the result go below 0\r\n\r\n\r\nTo display or check the resource:\r\n\r\nif (player:GetResource(\"Gold\") > 1000) then\r\n   print(\"You are rich!\")\r\nend"
+    Description: "Another snag from Core Plaza.\r\n\r\nFirst go to GAME SETTINGS and check the \"ENABLE PLAYER STORAGE\" check box\r\n\r\nDrop this into your game, and you now have a currency system.  \r\n\r\nEither use the included coin spawners or use the following to award players coins\r\n\r\nplayer:AddResource(\"Gold\", 500)\r\n\r\nTo spend the coins, on purchasing things:\r\n\r\nplayer:RemoveResource(\"Gold\", 75) - won\'t let the result go below 0\r\n\r\n\r\nTo display or check the resource:\r\n\r\nif (player:GetResource(\"Gold\") > 1000) then\r\n   print(\"You are rich!\")\r\nend\r\n\r\n\r\n\r\nFIXED\r\n- Removed the killfeed that was included"
   }
   SerializationVersion: 61
 }

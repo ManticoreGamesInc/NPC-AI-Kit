@@ -4,10 +4,10 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 16074447536682019592
+      RootId: 5687295513379892252
       Objects {
-        Id: 16074447536682019592
-        Name: "Heart"
+        Id: 5687295513379892252
+        Name: "ClientContext"
         Transform {
           Scale {
             X: 1
@@ -16,16 +16,58 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 15495420014246491179
         ChildIds: 13053741114535399576
         ChildIds: 17226080263403413402
+        ChildIds: 1558805332977434498
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
-        Folder {
-          IsGroup: true
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 15495420014246491179
+        Name: "BeatingHeart"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5687295513379892252
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ScaleRoot"
+            ObjectReference {
+              SubObjectId: 13053741114535399576
+            }
+          }
+          Overrides {
+            Name: "cs:BeatSound"
+            ObjectReference {
+              SubObjectId: 1558805332977434498
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 16461566476315400204
+          }
         }
       }
       Objects {
@@ -33,17 +75,20 @@ Assets {
         Name: "Heart - Polished"
         Transform {
           Location {
+            X: -3.01219177
+            Y: -4.00425148
+            Z: -2.53991771
           }
           Rotation {
-            Yaw: 90
+            Yaw: 89.9999542
           }
           Scale {
-            X: 0.3
-            Y: 0.3
-            Z: 0.3
+            X: 0.216146857
+            Y: 0.216146857
+            Z: 0.216146857
           }
         }
-        ParentId: 16074447536682019592
+        ParentId: 5687295513379892252
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -95,7 +140,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16074447536682019592
+        ParentId: 5687295513379892252
         UnregisteredParameters {
           Overrides {
             Name: "bp:Object To Outline"
@@ -127,6 +172,10 @@ Assets {
             Name: "bp:Min Distance"
             Float: 0
           }
+          Overrides {
+            Name: "bp:Thickness"
+            Float: 0
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -140,6 +189,38 @@ Assets {
           }
           TeamSettings {
           }
+        }
+      }
+      Objects {
+        Id: 1558805332977434498
+        Name: "Meta Heartbeat Single 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5687295513379892252
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 2239276936877868351
+          }
+          Volume: 4
+          Falloff: 5000
+          Radius: -1
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
         }
       }
     }
@@ -168,6 +249,15 @@ Assets {
       PrimaryAsset {
         AssetType: "BlueprintAssetRef"
         AssetId: "fxbp_local_outline"
+      }
+    }
+    Assets {
+      Id: 2239276936877868351
+      Name: "Meta Heartbeat Single 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_meta_heartbeat_single_01_Cue_ref"
       }
     }
     PrimaryAssetId {

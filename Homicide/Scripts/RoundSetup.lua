@@ -62,6 +62,8 @@ function StartRound()
             player.team = 2
             player.serverUserData.gun = false
             
+            player:SetResource("CanSeeHearts", 1)
+            
             -- spawn unarmed equipment. Currently this is in the weapon switcher script.
             -- World.SpawnAsset(propUnarmedWeapon):Equip(player)
             print('Player', i, "is murderer")
@@ -69,6 +71,8 @@ function StartRound()
         else
             player.team = 1
             player.serverUserData.gun = false
+            
+            player:SetResource("CanSeeHearts", 0)
             
             -- World.SpawnAsset(propUnarmedWeapon):Equip(player)
             print('Player', i, "is bystander")

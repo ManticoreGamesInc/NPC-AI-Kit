@@ -30,10 +30,16 @@ function StartRound()
     local abandonedGuns = World.FindObjectsByName('Bystander Gun')
     for _, gun in ipairs(abandonedGuns) do
         if gun:GetAttachedToSocketName() then
+        --if gun.owner ~= nil then
             -- do nothing
         else
-            gun:Destroy()
+            if gun.owner ~= nil then
+                Events.BroadcastToPlayer(gun.owner, 'DisarmedEvent')
+                Events.Broadcast('ArmedEvent', gun.owner)
+                gun:Unequip()
+            end
             print('Destroyed gun at', gun:GetWorldPosition())
+            gun:Destroy()
         end
     end
 
@@ -76,12 +82,15 @@ function StartRound()
             
             -- World.SpawnAsset(propUnarmedWeapon):Equip(player)
             print('Player', i, "is bystander")
-            Events.BroadcastToPlayer(player, 'DisarmedEvent')
+            --Events.BroadcastToPlayer(player, 'DisarmedEvent')
+            Events.Broadcast('DisarmedEvent', gun.owner)
+
             if i == luckyBystander then
                 player.serverUserData.gun = true
                 print('Player', i, "is lucky bystander")
                 print('Player team is', player.team)
                 Events.BroadcastToPlayer(player, 'ArmedEvent')
+                Events.Broadcast('ArmedEvent', player)
             end
         end
         -- Set clues to zero

@@ -16,19 +16,21 @@ function OnExecute(ability)
 	local targetData = ability:GetTargetData()
 	local hitResult = World.Raycast(WEAPON:GetWorldPosition(), ability:GetTargetData():GetHitPosition(), {ignorePlayers = ability.owner})
 	CoreDebug.DrawLine(WEAPON:GetWorldPosition(), ability:GetTargetData():GetHitPosition(), {duration = 5})
-	local target = hitResult.other
-	print('target is', target)
-	print('Executed')
+	if hitResult ~= nil then
+		local target = hitResult.other
+		print('target is', target)
+		print('Executed')
 
-	if target:IsA("Player") then
-		if target.team == ability.owner.team then
-			-- local newGun = World.SpawnAsset(propBystanderGun, {position = ability.owner:GetWorldPosition()})
-			Events.BroadcastToServer('DisarmedEvent', owner)
-			Events.BroadcastToPlayer(owner, 'KilledInnocent', owner)
-			print('shot own teammate!')
-		end
-		target:Die()
-    end
+		if target:IsA("Player") then
+			if target.team == ability.owner.team then
+				-- local newGun = World.SpawnAsset(propBystanderGun, {position = ability.owner:GetWorldPosition()})
+				-- Events.BroadcastToServer('DisarmedEvent', owner) CJC
+				Events.BroadcastToPlayer(owner, 'KilledInnocent', owner)
+				print('shot own teammate!')
+			end
+			target:Die()
+	    end
+	end
 end
 
 function OnTargetImpacted(weapon, impactData)

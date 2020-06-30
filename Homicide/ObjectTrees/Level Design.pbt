@@ -30742,6 +30742,7 @@ Objects {
   }
   ParentId: 16115858634382339830
   ChildIds: 17102824825327814720
+  ChildIds: 7518505794691449441
   ChildIds: 16232487594369402208
   ChildIds: 14291990099625017146
   ChildIds: 14770967149204060617
@@ -35567,7 +35568,7 @@ Objects {
     }
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -35575,6 +35576,46 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 9536141319314062468
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
+  Id: 7518505794691449441
+  Name: "Cube - Collider"
+  Transform {
+    Location {
+      X: -12.9931641
+      Y: -85.9387207
+      Z: -14.4747925
+    }
+    Rotation {
+      Pitch: 44.6835861
+    }
+    Scale {
+      X: 0.231131062
+      Y: 1.78555858
+      Z: 7.94759464
+    }
+  }
+  ParentId: 2732020882185334357
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17609149353171719671
     }
     Teams {
       IsTeamCollisionEnabled: true

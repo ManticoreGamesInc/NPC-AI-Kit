@@ -1574,15 +1574,6 @@ Assets {
   }
 }
 Assets {
-  Id: 6393358418542576732
-  Name: "Terrain - Grass Cliffs"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_terrain_cliff-grass-001_wa"
-  }
-}
-Assets {
   Id: 6391999908224949722
   Name: "Fire and Flame Burning Loop Set 01 SFX"
   PlatformAssetType: 10

@@ -967,32 +967,6 @@ Objects {
   }
 }
 Objects {
-  Id: 8429769948452207709
-  Name: "Enviornment Lighting"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2411740513538473765
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Enviornment Lighting"
-  }
-}
-Objects {
   Id: 6086862568812308756
   Name: "Clue Spawners"
   Transform {
@@ -98780,7 +98754,7 @@ Objects {
   Transform {
     Location {
       X: -319.556641
-      Y: -3408.04297
+      Y: -3410
       Z: -15.9741211
     }
     Rotation {
@@ -99403,7 +99377,7 @@ Objects {
   Transform {
     Location {
       X: -321.558716
-      Y: 189.999756
+      Y: 180
       Z: 24.4248047
     }
     Rotation {
@@ -99481,11 +99455,11 @@ Objects {
   Transform {
     Location {
       X: -319.556641
-      Y: -2606.70483
+      Y: -2610
       Z: -15.9741211
     }
     Rotation {
-      Yaw: -179.999969
+      Yaw: -179.999954
     }
     Scale {
       X: 16
@@ -99738,12 +99712,12 @@ Objects {
   Name: "Craftsman Floor 01 8m x 8m"
   Transform {
     Location {
-      X: -320.57724
-      Y: -1408.43567
+      X: -320.577271
+      Y: -1420
       Z: 24.4248047
     }
     Rotation {
-      Yaw: -179.999969
+      Yaw: -179.999954
     }
     Scale {
       X: 16
@@ -116196,6 +116170,16 @@ Objects {
       Name: "ma:Building_WallInner:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -116248,6 +116232,16 @@ Objects {
       Name: "ma:Building_WallInner:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -116292,7 +116286,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 6393358418542576732
+        Id: 9916718737619976901
       }
     }
     Overrides {
@@ -116304,6 +116298,10 @@ Objects {
       AssetReference {
         Id: 9916718737619976901
       }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
     }
   }
   Collidable_v2 {
@@ -116357,6 +116355,16 @@ Objects {
       Name: "ma:Building_WallInner:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -116406,6 +116414,16 @@ Objects {
     }
     Overrides {
       Name: "ma:Building_WallInner:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
       Bool: true
     }
   }
@@ -116460,6 +116478,16 @@ Objects {
       Name: "ma:Building_WallInner:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -116512,6 +116540,16 @@ Objects {
       Name: "ma:Building_WallInner:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
+      Bool: true
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -116561,6 +116599,16 @@ Objects {
     }
     Overrides {
       Name: "ma:Building_WallInner:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:id"
+      AssetReference {
+        Id: 9916718737619976901
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner2:smart"
       Bool: true
     }
   }

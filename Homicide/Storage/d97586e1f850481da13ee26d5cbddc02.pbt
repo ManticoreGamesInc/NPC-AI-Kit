@@ -1,23 +1,6 @@
 Entries {
   Key {
-    StringVar: "resources"
-  }
-  SimpleValue {
-    Table {
-      Entries {
-        Key {
-          StringVar: "Gold"
-        }
-        SimpleValue {
-          IntVar: 500
-        }
-      }
-    }
-  }
-}
-Entries {
-  Key {
-    StringVar: "BystanderWins"
+    StringVar: "BystandersKilled"
   }
   SimpleValue {
     IntVar: 0
@@ -33,7 +16,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "BystandersKilled"
+    StringVar: "MurdererWins"
   }
   SimpleValue {
     IntVar: 0
@@ -41,9 +24,26 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "MurdererWins"
+    StringVar: "BystanderWins"
   }
   SimpleValue {
     IntVar: 0
+  }
+}
+Entries {
+  Key {
+    StringVar: "resources"
+  }
+  SimpleValue {
+    Table {
+      Entries {
+        Key {
+          StringVar: "Gold"
+        }
+        SimpleValue {
+          IntVar: 500
+        }
+      }
+    }
   }
 }

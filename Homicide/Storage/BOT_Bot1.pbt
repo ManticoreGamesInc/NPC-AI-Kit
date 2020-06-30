@@ -1,5 +1,13 @@
 Entries {
   Key {
+    StringVar: "BystanderWins"
+  }
+  SimpleValue {
+    IntVar: 26
+  }
+}
+Entries {
+  Key {
     StringVar: "MurderersKilled"
   }
   SimpleValue {
@@ -16,32 +24,16 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "BystanderWins"
-  }
-  SimpleValue {
-    IntVar: 14
-  }
-}
-Entries {
-  Key {
-    StringVar: "MurdererWins"
-  }
-  SimpleValue {
-    IntVar: 0
-  }
-}
-Entries {
-  Key {
     StringVar: "resources"
   }
   SimpleValue {
     Table {
       Entries {
         Key {
-          StringVar: "CanSeeHearts"
+          StringVar: "Clues"
         }
         SimpleValue {
-          IntVar: 1
+          IntVar: 0
         }
       }
       Entries {
@@ -54,12 +46,20 @@ Entries {
       }
       Entries {
         Key {
-          StringVar: "Clues"
+          StringVar: "CanSeeHearts"
         }
         SimpleValue {
           IntVar: 0
         }
       }
     }
+  }
+}
+Entries {
+  Key {
+    StringVar: "MurdererWins"
+  }
+  SimpleValue {
+    IntVar: 0
   }
 }

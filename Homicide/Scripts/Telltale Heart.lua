@@ -60,6 +60,9 @@ function UpdateForPlayer(player)
 end
 
 function CleanupForPlayer(player)
+	if heartsPerPlayer[player] then
+		heartsPerPlayer[player]:Destroy()
+	end
 	heartsPerPlayer[player] = nil
 end
 

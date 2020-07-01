@@ -1,6 +1,56 @@
 Name: "Gameplay Components"
 RootId: 16453038897487447571
 Objects {
+  Id: 1615148962696368613
+  Name: "Telltale Heart"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16453038897487447571
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16243437370137692866
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Telltale Heart"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 14785739780033239415
+    }
+  }
+}
+Objects {
   Id: 9848799985889708042
   Name: "Instant Currency"
   Transform {

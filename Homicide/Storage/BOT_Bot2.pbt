@@ -3,7 +3,7 @@ Entries {
     StringVar: "BystanderWins"
   }
   SimpleValue {
-    IntVar: 25
+    IntVar: 26
   }
 }
 Entries {
@@ -14,10 +14,10 @@ Entries {
     Table {
       Entries {
         Key {
-          StringVar: "CanSeeHearts"
+          StringVar: "Gold"
         }
         SimpleValue {
-          IntVar: 0
+          IntVar: 500
         }
       }
       Entries {
@@ -30,10 +30,10 @@ Entries {
       }
       Entries {
         Key {
-          StringVar: "Gold"
+          StringVar: "CanSeeHearts"
         }
         SimpleValue {
-          IntVar: 500
+          IntVar: 0
         }
       }
     }
@@ -49,7 +49,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "BystandersKilled"
+    StringVar: "MurderersKilled"
   }
   SimpleValue {
     IntVar: 0
@@ -57,7 +57,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "MurderersKilled"
+    StringVar: "BystandersKilled"
   }
   SimpleValue {
     IntVar: 0

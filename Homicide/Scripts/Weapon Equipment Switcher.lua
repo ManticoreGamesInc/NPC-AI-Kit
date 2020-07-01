@@ -151,17 +151,18 @@ function Disarm(player)
         player:SetResource('Clues', 0)
 
         -- spawn new gun and drop it to the ground
-        local spawnedGun = World.SpawnAsset(propGun, {position = player:GetWorldPosition()})
-        local rayStart = spawnedGun:GetWorldPosition()
-        local randomVec = Vector3.New(math.random(-5000, 5000), math.random(-5000, 5000), 0)
-        local rayEnd = rayStart + randomVec + Vector3.UP * -500
-        local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
+        if player.serverUserData.gun == true then
+            local spawnedGun = World.SpawnAsset(propGun, {position = player:GetWorldPosition()})
+            local rayStart = spawnedGun:GetWorldPosition()
+            local randomVec = Vector3.New(math.random(-5000, 5000), math.random(-5000, 5000), 0)
+            local rayEnd = rayStart + randomVec + Vector3.UP * -500
+            local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
 
-        if hitResult then
-            local dropPos = hitResult:GetImpactPosition() + Vector3.UP * 40
-            spawnedGun:SetWorldPosition(dropPos)
+            if hitResult then
+                local dropPos = hitResult:GetImpactPosition() + Vector3.UP * 40
+                spawnedGun:SetWorldPosition(dropPos)
+            end
         end
-
 
 end
 

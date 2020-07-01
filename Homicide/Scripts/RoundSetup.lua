@@ -29,7 +29,9 @@ function StartRound()
     -- look for guns just laying around not attached to anyone
     local abandonedGuns = World.FindObjectsByName('Bystander Gun')
     for _, gun in ipairs(abandonedGuns) do
-        if gun:GetAttachedToSocketName() then
+        print("Found gun id " .. gun.id .. " [" .. gun.name .. "]")
+        if gun:GetAttachedToSocketName() ~= "" then
+            print("gun id " .. gun.id .. " was attached to a socket." .. gun:GetAttachedToSocketName())
             -- do nothing
         else
             print('Destroyed gun at', gun:GetWorldPosition())

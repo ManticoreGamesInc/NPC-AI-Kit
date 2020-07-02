@@ -4,6 +4,7 @@
 
 function OnClueChanged(player, resourceID, newValue)
     if player:GetResource('Clues') == 5 then
+        player:SetResource('Clues', 0)
         player.serverUserData.gun = true
         Events.BroadcastToPlayer(player, 'ArmedEvent')
     end

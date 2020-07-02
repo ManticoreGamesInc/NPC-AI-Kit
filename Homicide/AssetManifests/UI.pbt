@@ -44,11 +44,29 @@ Assets {
   }
 }
 Assets {
+  Id: 5196377603841433560
+  Name: "Background Flat 020"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_020"
+  }
+}
+Assets {
   Id: 2424217484210938355
   Name: "Icon Plaque"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Plaque"
+  }
+}
+Assets {
+  Id: 614293150353124380
+  Name: "Icon Present"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Present"
   }
 }

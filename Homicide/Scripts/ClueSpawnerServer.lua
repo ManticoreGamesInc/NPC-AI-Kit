@@ -3,6 +3,7 @@ local ENABLED_SPAWNERS = script:GetCustomProperty("EnabledSpawners"):WaitForObje
 local CLUE_TEMPLATE = script:GetCustomProperty("ClueTemplate")
 local STARTING_AMOUNT = script:GetCustomProperty("StartingAmount") or 5
 local SPAWN_PERIOD = script:GetCustomProperty("SpawnPeriod") or 30
+local CLUE_LIMIT = script:GetCustomProperty("ClueLimit") or 20
 
 -- Get all the clue spawn locations
 local spawnersAvailable = ENABLED_SPAWNERS:FindDescendantsByName('Clue Spawn')
@@ -44,6 +45,9 @@ function SpawnClue(n)
 			warn("Ran out of spawn points for clues")
 			return
 		end
+		
+		-- Don't spawn more than the limit
+		if #spawnersBusy >= CLUE_LIMIT then return end
 		
 		-- Pick one spawner at random
 		local index = math.random(#spawnersAvailable)

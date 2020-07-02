@@ -88,6 +88,10 @@ Objects {
       Name: "cs:SpawnPeriod"
       Float: 30
     }
+    Overrides {
+      Name: "cs:ClueLimit"
+      Int: 15
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

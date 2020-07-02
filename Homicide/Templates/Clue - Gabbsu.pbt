@@ -16,7 +16,6 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 6385080774108695463
         ChildIds: 4917513309887970768
         ChildIds: 12550841422849999667
         WantsNetworking: true
@@ -31,59 +30,18 @@ Assets {
         }
       }
       Objects {
-        Id: 6385080774108695463
-        Name: "Outline Object"
-        Transform {
-          Location {
-            X: -3312.03442
-            Y: 3291.80273
-            Z: -250
-          }
-          Rotation {
-            Yaw: 170
-          }
-          Scale {
-            X: 3.33333325
-            Y: 3.33333325
-            Z: 3.33333325
-          }
-        }
-        ParentId: 8969085016378595284
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Object To Outline"
-            ObjectReference {
-              SubObjectId: 8969085016378595284
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 11901313456319074115
-          }
-          TeamSettings {
-          }
-        }
-      }
-      Objects {
         Id: 4917513309887970768
         Name: "Trigger"
         Transform {
           Location {
+            Z: 32.7889938
           }
           Rotation {
           }
           Scale {
-            X: 3.33333325
-            Y: 3.33333325
-            Z: 3.33333325
+            X: 1.222399
+            Y: 1.222399
+            Z: 1.222399
           }
         }
         ParentId: 8969085016378595284
@@ -141,6 +99,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -179.999954
           }
           Scale {
             X: 1
@@ -149,6 +108,7 @@ Assets {
           }
         }
         ParentId: 8969085016378595284
+        ChildIds: 6385080774108695463
         ChildIds: 7768713465505194195
         WantsNetworking: true
         Collidable_v2 {
@@ -158,6 +118,44 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         NetworkContext {
+        }
+      }
+      Objects {
+        Id: 6385080774108695463
+        Name: "Outline Object"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: 179.999954
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12550841422849999667
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Object To Outline"
+            ObjectReference {
+              SubObjectId: 8969085016378595284
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11901313456319074115
+          }
+          TeamSettings {
+          }
         }
       }
       Objects {

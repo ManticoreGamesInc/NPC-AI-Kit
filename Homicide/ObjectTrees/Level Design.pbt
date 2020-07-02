@@ -696,7 +696,7 @@ Objects {
           Vector {
             X: -1142.9126
             Y: 3312.75439
-            Z: 823.067
+            Z: 810.047546
           }
         }
         Overrides {
@@ -717,32 +717,6 @@ Objects {
     TemplateAsset {
       Id: 14749873328754587694
     }
-  }
-}
-Objects {
-  Id: 6086862568812308756
-  Name: "Clue Spawners"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2411740513538473765
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Clue Spawners"
   }
 }
 Objects {
@@ -1089,6 +1063,7 @@ Objects {
   ChildIds: 9741077963347244440
   ChildIds: 4569573563370246217
   ChildIds: 699204596063662085
+  ChildIds: 10826277392494460355
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -1099,6 +1074,45 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 10826277392494460355
+  Name: "Cabinet Topper"
+  Transform {
+    Location {
+      X: -4260
+      Y: -1060
+      Z: 90
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.49999988
+      Y: 1.49999988
+      Z: 1.49999988
+    }
+  }
+  ParentId: 16115858634382339830
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17920927264946137833
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
   }
 }
 Objects {
@@ -12944,7 +12958,7 @@ Objects {
   UnregisteredParameters {
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -12986,7 +13000,7 @@ Objects {
   UnregisteredParameters {
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -13027,7 +13041,7 @@ Objects {
   UnregisteredParameters {
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -13068,7 +13082,7 @@ Objects {
   UnregisteredParameters {
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -14371,12 +14385,12 @@ Objects {
   Name: "Small Crate Lid"
   Transform {
     Location {
-      X: -238.597656
-      Y: -184.144531
+      X: -197.118866
+      Y: -196.119659
       Z: 58.5566406
     }
     Rotation {
-      Yaw: 15.4384975
+      Yaw: 15.438571
     }
     Scale {
       X: 1
@@ -14413,11 +14427,11 @@ Objects {
   Name: "Small Open Crate"
   Transform {
     Location {
-      X: -239.011719
-      Y: -185.359375
+      X: -197.532928
+      Y: -197.334503
     }
     Rotation {
-      Yaw: 15.004777
+      Yaw: 15.0048542
     }
     Scale {
       X: 1
@@ -45681,9 +45695,9 @@ Objects {
   Name: "Craftsman Stairs 01 Pillar"
   Transform {
     Location {
-      X: -1331.65234
-      Y: 514.03125
-      Z: -724.760742
+      X: -1331.65186
+      Y: 514.031372
+      Z: -650
     }
     Rotation {
       Yaw: -157.500198
@@ -53820,8 +53834,8 @@ Objects {
   Name: "Craftsman Floor 01 8m x 8m"
   Transform {
     Location {
-      X: 2471.38037
-      Y: -1419.99829
+      X: 2472
+      Y: -1440
       Z: 10
     }
     Rotation {
@@ -53837,7 +53851,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_Ceiling:vtile"
-      Float: 2
+      Float: 1
     }
     Overrides {
       Name: "ma:Building_Floor:vtile"
@@ -53883,8 +53897,8 @@ Objects {
   Name: "Craftsman Floor 01 8m x 8m"
   Transform {
     Location {
-      X: 2100.00098
-      Y: -1449.99854
+      X: 2073
+      Y: -1455.40479
       Z: 10
     }
     Rotation {
@@ -53906,6 +53920,10 @@ Objects {
         B: 1
         A: 1
       }
+    }
+    Overrides {
+      Name: "ma:Building_Floor:vtile"
+      Float: 2.04
     }
   }
   Collidable_v2 {
@@ -105552,7 +105570,7 @@ Objects {
   Name: "GrassGround"
   Transform {
     Location {
-      Y: 3340
+      Y: 3335
     }
     Rotation {
       Yaw: -179.999954
@@ -116505,5 +116523,31 @@ Objects {
       Physics {
       }
     }
+  }
+}
+Objects {
+  Id: 6086862568812308756
+  Name: "Clue Spawners"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2411740513538473765
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Clue Spawners"
   }
 }

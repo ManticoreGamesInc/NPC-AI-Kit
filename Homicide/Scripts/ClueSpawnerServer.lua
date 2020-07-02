@@ -1,74 +1,114 @@
-local root = script.parent.parent
-local propClueGabbsu = script:GetCustomProperty("ClueGabbsu")
-local time = 0
 
--- get all clue spawner descendants
-local spawners = root:FindDescendantsByName('Clue Spawn')
-local spawnedLocations = {}
+local ENABLED_SPAWNERS = script:GetCustomProperty("EnabledSpawners"):WaitForObject()
+local CLUE_TEMPLATE = script:GetCustomProperty("ClueTemplate")
+local STARTING_AMOUNT = script:GetCustomProperty("StartingAmount") or 5
+local SPAWN_PERIOD = script:GetCustomProperty("SpawnPeriod") or 30
+
+-- Get all the clue spawn locations
+local spawnersAvailable = ENABLED_SPAWNERS:FindDescendantsByName('Clue Spawn')
+local spawnersBusy = {}
+
+local spawnedClues = {}
+local elapsedTime = 0
+local isResetting = false
+
 
 function OnRoundStart()
-    time = 0
-    local oldClues = World.FindObjectsByName('Clue - Gabbsu')
-    for _, clue in ipairs(oldClues) do
-        clue:Destroy()
-        --print('Destroyed', clue)
+	isResetting = true
+	
+	-- Destroy all clues
+    for _, clue in ipairs(spawnedClues) do
+    	if Object.IsValid(clue) then
+	        clue:Destroy()
+        end
     end
-    spawnedLocations = {}
-    SpawnClue(5)
+    spawnedClues = {}
+    
+    -- Reset spawners
+    for _,spawner in ipairs(spawnersBusy) do
+    	table.insert(spawnersAvailable, spawner)
+    end
+    spawnersBusy = {}
+    
+    -- Other reset
+    time = 0
+    SpawnClue(STARTING_AMOUNT)
+    
+    isResetting = false
 end
-
 
 
 function SpawnClue(n)
-    
-    for i=1,n do
-        local location = math.random(#spawners) -- note: will need to add logic to prevent spawning at same place twice
-        local worldPosition = spawners[location]:GetWorldPosition()
-        for _, loc in ipairs(spawnedLocations) do
-            if loc == worldPosition then
-                return
-                print('Returned SpawnClue from matching location', loc, worldPosition)
-            end
-        end
-        local clue = World.SpawnAsset(propClueGabbsu, {position = worldPosition, })
-        table.insert(spawnedLocations, worldPosition)
-        print('Clue spawned at', location)
-    end
+	for i=1,n do
+		if #spawnersAvailable == 0 then
+			warn("Ran out of spawn points for clues")
+			return
+		end
+		
+		-- Pick one spawner at random
+		local index = math.random(#spawnersAvailable)
+		local spawner = spawnersAvailable[index]
+        
+        -- Move the spawner from Available to Busy
+		table.remove(spawnersAvailable, index)
+		table.insert(spawnersBusy, spawner)
+        
+		-- Spawn the clue at that location
+		local pos = spawner:GetWorldPosition()
+		local rot = spawner:GetWorldRotation()
+		local clue = World.SpawnAsset(CLUE_TEMPLATE, {position = pos, rotation = rot})
+		table.insert(spawnedClues, clue)
+		
+		-- Setup variables on the clue to help with cleanup
+		clue.serverUserData.spawnerReference = spawner
+		
+		-- Listen for the clue being collected (via Destroy event)
+		clue.destroyEvent:Connect(OnClueCollected)
+	end
 end
 
--- receive worldposition via broadcast
-function DespawnClue(worldPosition)
-    for i, loc in ipairs(spawnedLocations) do
-        if loc == worldPosition then
-            table.remove(spawnedLocations, i)
-            print('removing', spawnedLocations, i)
-        end
-    end
-    
+
+function OnClueCollected(clue)
+	if isResetting then return end
+		
+	-- Cleanup clue table
+	for index,c in ipairs(spawnedClues) do
+		if c == clue then
+			table.remove(spawnedClues, index)
+			break
+		end
+	end
+	
+	-- Move the spawner from Busy to Available
+	local spawner = clue.serverUserData.spawnerReference
+	for index,s in ipairs(spawnersBusy) do
+		if s == spawner then
+			table.remove(spawnersBusy, index)
+			table.insert(spawnersAvailable, spawner)
+			break
+		end
+	end
 end
 
 
--- on round start, create a clue at the first spawn point for testing
-Game.roundStartEvent:Connect(OnRoundStart)
-
--- Tick function that spawns clues at set times
-
+-- Spawn clues over time
 function Tick(deltaTime)
-    time = time + 1
-
-    if math.floor(time/300) == time/300 then
+    elapsedTime = elapsedTime + deltaTime
+    
+    if elapsedTime >= SPAWN_PERIOD then
+    	elapsedTime = 0
+    	
         SpawnClue(1)
     end
-
 end
 
 
+Game.roundStartEvent:Connect(OnRoundStart)
 
--- For debugging, spawn clues when pressing left alt
+
+--[[ For debugging, spawn clues when pressing left alt
 
 function OnBindingPressed(player, bindingPressed)    
-
-    --[[for debug
     if bindingPressed == 'ability_extra_14' then
         for i, loc in ipairs(spawnedLocations) do
             print('spawnedLocations', i, loc)
@@ -76,13 +116,11 @@ function OnBindingPressed(player, bindingPressed)
     elseif bindingPressed == 'ability_extra_10' then 
         SpawnClue(1)
     end
-    ]]
 end
 
 function OnPlayerJoined(player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
 end
 
-
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
-Events.Connect("DespawnClue", DespawnClue)
+--]]

@@ -364,9 +364,9 @@ Objects {
   }
   Settings {
     RespawnSettings {
-      RespawnDelay: 5
+      RespawnDelay: 99999
       RespawnMode_v2 {
-        Value: "mc:erespawnmode:none"
+        Value: "mc:erespawnmode:random"
       }
     }
   }

@@ -186,8 +186,8 @@ Objects {
   Control {
     Width: 100
     Height: 128
-    UIX: -50
-    UIY: 50
+    UIX: 30
+    UIY: 40
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -198,12 +198,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topright"
+          Value: "mc:euianchor:topleft"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topright"
+          Value: "mc:euianchor:topleft"
         }
       }
     }
@@ -1993,8 +1993,333 @@ Objects {
   }
 }
 Objects {
-  Id: 4104301743429700797
+  Id: 9593447034126698036
   Name: "Kill Feed"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12806445280718441119
+  ChildIds: 10901482966207672368
+  ChildIds: 14037032786890037906
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ShowJoinAndLeave"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ShowEquipmentName"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:NumLines"
+      Int: 5
+    }
+    Overrides {
+      Name: "cs:LineDuration"
+      Float: 5
+    }
+    Overrides {
+      Name: "cs:TextColor"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:SelfTextColor"
+      Color {
+        R: 0.955973685
+        G: 0.356400251
+        B: 0.010329823
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:ShowJoinAndLeave:tooltip"
+      String: "Prints a line each time a player joins or leaves the game"
+    }
+    Overrides {
+      Name: "cs:NumLines:tooltip"
+      String: "Number of lines to display"
+    }
+    Overrides {
+      Name: "cs:TextColor:tooltip"
+      String: "Text color of messages"
+    }
+    Overrides {
+      Name: "cs:SelfTextColor:tooltip"
+      String: "Color for events that involve the local player"
+    }
+    Overrides {
+      Name: "cs:LineDuration:tooltip"
+      String: "How long to display each line"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+  InstanceHistory {
+    SelfId: 9593447034126698036
+    SubobjectId: 2956060663263325828
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 14037032786890037906
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9593447034126698036
+  ChildIds: 9621598407384684759
+  ChildIds: 1505498705183576227
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+  InstanceHistory {
+    SelfId: 14037032786890037906
+    SubobjectId: 7991991925041459746
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+  }
+}
+Objects {
+  Id: 1505498705183576227
+  Name: "Canvas"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14037032786890037906
+  ChildIds: 9602436296787778322
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Canvas {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 1505498705183576227
+    SubobjectId: 13312736867720001555
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+  }
+}
+Objects {
+  Id: 9602436296787778322
+  Name: "KillFeedPanel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1505498705183576227
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Control {
+    Width: 500
+    Height: 300
+    UIX: -25
+    UIY: 75
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Panel {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 9602436296787778322
+    SubobjectId: 2983204099323802530
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+  }
+}
+Objects {
+  Id: 9621598407384684759
+  Name: "KillFeedControllerClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14037032786890037906
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ComponentRoot"
+      ObjectReference {
+        SelfId: 9593447034126698036
+      }
+    }
+    Overrides {
+      Name: "cs:KillFeedPanel"
+      ObjectReference {
+        SelfId: 9602436296787778322
+      }
+    }
+    Overrides {
+      Name: "cs:KillFeedLineTemplate"
+      AssetReference {
+        Id: 1235385159574739258
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2245679712806217136
+    }
+  }
+  InstanceHistory {
+    SelfId: 9621598407384684759
+    SubobjectId: 2999965228434042983
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+  }
+}
+Objects {
+  Id: 10901482966207672368
+  Name: "KillFeedControllerServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9593447034126698036
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ComponentRoot"
+      ObjectReference {
+        SelfId: 9593447034126698036
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14444661289632510227
+    }
+  }
+  InstanceHistory {
+    SelfId: 10901482966207672368
+    SubobjectId: 4282101098513356928
+    InstanceId: 4104301743429700797
+    TemplateId: 17890678504147371167
+  }
+}
+Objects {
+  Id: 3379048814282490793
+  Name: "Someone Died UI"
   Transform {
     Scale {
       X: 1
@@ -2011,11 +2336,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 2956060663263325828
+      key: 3283489946636234755
       value {
         Overrides {
           Name: "Name"
-          String: "Kill Feed"
+          String: "Someone Died UI"
         }
         Overrides {
           Name: "Position"
@@ -2027,43 +2352,10 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 2983204099323802530
-      value {
-        Overrides {
-          Name: "UIX"
-          Float: 25
-        }
-        Overrides {
-          Name: "UIY"
-          Float: 75
-        }
-        Overrides {
-          Name: "Anchor"
-          Enum {
-            Value: "mc:euianchor:topleft"
-          }
-        }
-        Overrides {
-          Name: "Dock"
-          Enum {
-            Value: "mc:euianchor:topleft"
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 17890678504147371167
+      Id: 14552142084235666087
     }
   }
 }

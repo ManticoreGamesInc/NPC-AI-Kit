@@ -34,17 +34,20 @@ local spawnedEquipment = {}
 function RemoveAllPlayerEquipment(lobbyReset)
     for _, equipTable in pairs(spawnedEquipment) do
         for __, equipment in pairs(equipTable) do
-            if equipment.owner then
-                equipment.owner.animationStance = "unarmed_stance"
+            if Object.IsValid(equipment) then
+                if equipment.owner then
+                    equipment.owner.animationStance = "unarmed_stance"
+                end
+                equipment:Unequip()
+                equipment:Destroy()
             end
-            equipment:Unequip()
-            equipment:Destroy()
         end
     end
     spawnedEquipment = {}
 
     if lobbyReset then
-        for _,p in pairs(Game.GetPlayers()) do
+        for _, p in pairs(Game.GetPlayers()) do
+            Events.BroadcastToPlayer(p, "DisarmedEvent")
             p.serverUserData.gun = false
             p.team = 1
         end
@@ -108,8 +111,9 @@ function OnBindingPressed(player, bindingPressed)
 end
 
 function Disarm(player)
+    Events.BroadcastToPlayer(p, "DisarmedEvent")
     OnBindingPressed(player, "ability_extra_1") -- Quick hack to set them to unarmed.
-    -- spawn new gun and drop it to the ground
+    -- spawn new gun and drop it to the ground, if they had one
     if player.serverUserData.gun == true then
         local spawnedGun = World.SpawnAsset(propGun, {position = player:GetWorldPosition()})
         local rayStart = spawnedGun:GetWorldPosition()

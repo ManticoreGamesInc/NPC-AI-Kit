@@ -404,7 +404,7 @@ Objects {
     RespawnSettings {
       RespawnDelay: 99999
       RespawnMode_v2 {
-        Value: "mc:erespawnmode:random"
+        Value: "mc:erespawnmode:farthestfromotherplayers"
       }
     }
   }

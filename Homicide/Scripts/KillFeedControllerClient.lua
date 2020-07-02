@@ -97,7 +97,7 @@ function OnKill(killerPlayer, killedPlayer, sourceObjectId)
 		if sourceObject.name == 'Murderer Knife' then
 			AddLine(string.format("Someone murdered %s!", killedPlayer.name), lineColor)
 		elseif sourceObject.name == 'Bystander Gun' and killedPlayer.team == 2 then
-			AddLine(string.format("%s shot the murderer! It was %s all along.", killerPlayer.name, killedPlayer.name.name), lineColor)
+			AddLine(string.format("%s shot the murderer! It was %s all along.", killerPlayer.name, killedPlayer.name), lineColor)
 		else
 			AddLine(string.format("%s shot %s in cold blood", killerPlayer.name, killedPlayer.name), lineColor)
 			print('SourceObject is', sourceObject)

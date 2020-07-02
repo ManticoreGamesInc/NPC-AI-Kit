@@ -20,7 +20,7 @@ local propMurdererKnife = script:GetCustomProperty("MurdererKnife")
 local propBystanderGun = script:GetCustomProperty("BystanderGun")
 
 function StartRound()
-
+    UI.PrintToScreen("Round started!")
     local allPlayers = Game.GetPlayers()
     local count = #Game.GetPlayers()
     -- In here you can put logic for having murderers based on the number of players

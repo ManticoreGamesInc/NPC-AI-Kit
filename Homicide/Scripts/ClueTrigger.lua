@@ -12,7 +12,6 @@ function OnInteracted(theTrigger, player)
     local clueResource = player:GetResource('Clues')
     player:SetResource('Clues', clueResource + 1)
     print(player, 'Clues resource is', player:GetResource('Clues'))
-    Events.BroadcastToServer('DespawnClue', clueLocation)
 end
 
 trigger.interactedEvent:Connect(OnInteracted)

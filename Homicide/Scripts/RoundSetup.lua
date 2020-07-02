@@ -105,6 +105,7 @@ function OnBindingPressed(player, bindingPressed)
 end
 
 function OnPlayerJoined(player)
+	player.team = 1
     player.bindingPressedEvent:Connect(OnBindingPressed)
 end
 

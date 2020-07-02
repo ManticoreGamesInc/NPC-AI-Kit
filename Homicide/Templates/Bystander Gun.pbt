@@ -439,7 +439,6 @@ Assets {
           }
         }
         ParentId: 14354780731625921346
-        ChildIds: 9978260933738923344
         ChildIds: 7565871258781576182
         ChildIds: 7536408538937415968
         ChildIds: 6647241522458827712
@@ -455,35 +454,6 @@ Assets {
         Folder {
           IsFilePartition: true
           FilePartitionName: "Scripts_1"
-        }
-      }
-      Objects {
-        Id: 9978260933738923344
-        Name: "WeaponAimClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.00000012
-            Y: 1.00000012
-            Z: 1
-          }
-        }
-        ParentId: 12808190487224156499
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9654009968499969690
-          }
         }
       }
       Objects {
@@ -611,9 +581,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1.00000012
-            Y: 1.00000012
-            Z: 1
+            X: 0.7
+            Y: 0.7
+            Z: 0.7
           }
         }
         ParentId: 14354780731625921346

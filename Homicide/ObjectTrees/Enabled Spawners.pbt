@@ -1,6 +1,67 @@
 Name: "Enabled Spawners"
 RootId: 951819501176238094
 Objects {
+  Id: 6539443483252202547
+  Name: "Clue Spawn"
+  Transform {
+    Location {
+      X: -292.799347
+      Y: 956.543701
+      Z: 1888.71692
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 951819501176238094
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 1611642599091628306
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Clue Spawn"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 700
+            Y: 1190
+            Z: 1888.71692
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -134.999969
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2913042170352959996
+    }
+  }
+}
+Objects {
   Id: 13488739549025612811
   Name: "ServerContext"
   Transform {

@@ -82,11 +82,11 @@ Objects {
     }
     Overrides {
       Name: "cs:StartingAmount"
-      Int: 999
+      Int: 8
     }
     Overrides {
       Name: "cs:SpawnPeriod"
-      Float: 15
+      Float: 30
     }
   }
   Collidable_v2 {

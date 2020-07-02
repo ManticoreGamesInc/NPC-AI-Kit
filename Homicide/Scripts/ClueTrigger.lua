@@ -1,17 +1,19 @@
 
 
-local trigger = script.parent
-local clue = script.parent.parent
-trigger.isInteractable = true
+local TRIGGER = script.parent
+local CLUE = script.parent.parent
+
+local RESOURCE_NAME = "Clues"
+
 
 function OnInteracted(theTrigger, player)
-    -- In this case there is no need to check the type with IsA("Player") because only
-    -- players can trigger the interaction.
-    local clueLocation = clue:GetWorldPosition()
-    clue:Destroy()
-    local clueResource = player:GetResource('Clues')
-    player:SetResource('Clues', clueResource + 1)
-    print(player, 'Clues resource is', player:GetResource('Clues'))
+    CLUE:Destroy()
+    
+    local clueResource = player:GetResource(RESOURCE_NAME)
+    clueResource = clueResource + 1
+    player:SetResource(RESOURCE_NAME, clueResource)
+    
+    print(player, 'Clues resource is', clueResource)
 end
 
-trigger.interactedEvent:Connect(OnInteracted)
+TRIGGER.interactedEvent:Connect(OnInteracted)

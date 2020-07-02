@@ -2,7 +2,7 @@ Name: "Level Design"
 RootId: 2411740513538473765
 Objects {
   Id: 17741151018316790311
-  Name: "Fire VFX"
+  Name: "Candle Flames"
   Transform {
     Location {
     }
@@ -15,17 +15,17 @@ Objects {
     }
   }
   ParentId: 2411740513538473765
-  ChildIds: 9866057161220239379
-  ChildIds: 11967844637019323352
-  ChildIds: 7749078228441437278
-  ChildIds: 15775639115858773428
-  ChildIds: 15948451740707477988
-  ChildIds: 4130873725761818843
-  ChildIds: 2825562072569658024
-  ChildIds: 17746718431426590049
-  ChildIds: 17801583370482710527
-  ChildIds: 6068719824243609991
-  ChildIds: 16164114692981665736
+  ChildIds: 13034445204614180912
+  ChildIds: 7224104830593099214
+  ChildIds: 4480943740553492240
+  ChildIds: 18256910633726862006
+  ChildIds: 9983582270397447899
+  ChildIds: 17644969277346478403
+  ChildIds: 10559864021510479675
+  ChildIds: 13463409556620063972
+  ChildIds: 12522224914573482821
+  ChildIds: 5598474951591025153
+  ChildIds: 10880900116926647851
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -36,13 +36,20 @@ Objects {
   }
 }
 Objects {
-  Id: 16164114692981665736
-  Name: "Flame VFX"
+  Id: 10880900116926647851
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3629.59082
+      Y: 855.448181
+      Z: 1685.30676
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -52,53 +59,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3629.59082
-            Y: 855.448181
-            Z: 1685.30676
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 89.4446716
-            Yaw: 104.119598
-            Roll: -0.000352580711
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 6068719824243609991
-  Name: "Flame VFX"
+  Id: 5598474951591025153
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3858.83154
+      Y: 985.33606
+      Z: 1530.39709
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -108,53 +98,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3858.83154
-            Y: 985.33606
-            Z: 1530.39709
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 86.8731155
-            Yaw: 103.910248
-            Roll: 3.13039309e-05
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 17801583370482710527
-  Name: "Flame VFX"
+  Id: 12522224914573482821
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3621.76172
+      Y: 1051.6156
+      Z: 1529.4375
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -164,53 +137,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3525.48486
-            Y: 1874.99695
-            Z: 1365.31091
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 90
-            Yaw: 153.434952
-            Roll: 63.4349
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 17746718431426590049
-  Name: "Flame VFX"
+  Id: 13463409556620063972
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3534.27637
+      Y: 900.870056
+      Z: 1528.62695
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -220,53 +176,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3534.27637
-            Y: 900.870056
-            Z: 1528.62695
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 80.915062
-            Yaw: -135.722214
-            Roll: -179.999954
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 2825562072569658024
-  Name: "Flame VFX"
+  Id: 10559864021510479675
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3555.80835
+      Y: 812.853
+      Z: 1530.099
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -276,52 +215,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3555.80835
-            Y: 812.853
-            Z: 1530.099
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 89.4446716
-            Yaw: 104.120567
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 4130873725761818843
-  Name: "Flame VFX"
+  Id: 17644969277346478403
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3858.88062
+      Y: 810.321899
+      Z: 1528.78296
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -331,53 +254,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3858.88062
-            Y: 810.321899
-            Z: 1528.78296
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 77.4413834
-            Yaw: 74.3324814
-            Roll: 1.57060786e-05
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 15948451740707477988
-  Name: "Flame VFX"
+  Id: 9983582270397447899
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3794.11523
+      Y: 746.93396
+      Z: 1529.12891
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -387,53 +293,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3794.11523
-            Y: 746.93396
-            Z: 1529.12891
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 77.4413528
-            Yaw: 104.332848
-            Roll: 2.35590087e-05
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 15775639115858773428
-  Name: "Flame VFX"
+  Id: 18256910633726862006
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3784.63135
+      Y: 852.754883
+      Z: 1682.0625
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -443,53 +332,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3784.63135
-            Y: 852.754883
-            Z: 1682.0625
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 79.1052399
-            Yaw: -106.029793
-            Roll: 179.999985
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 7749078228441437278
-  Name: "Flame VFX"
+  Id: 4480943740553492240
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3706.17871
+      Y: 809.968567
+      Z: 1685.276
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -499,52 +371,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3706.17871
-            Y: 809.968567
-            Z: 1685.276
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 77.4413071
-            Yaw: 134.332581
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 11967844637019323352
-  Name: "Flame VFX"
+  Id: 7224104830593099214
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3706.04028
+      Y: 724.493103
+      Z: 1526.75439
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -554,53 +410,36 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3706.04028
-            Y: 724.493103
-            Z: 1526.75439
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 79.1052246
-            Yaw: -46.0298119
-            Roll: 179.999985
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
     }
-    TemplateAsset {
-      Id: 4374274134137413506
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
     }
   }
 }
 Objects {
-  Id: 9866057161220239379
-  Name: "Flame VFX"
+  Id: 13034445204614180912
+  Name: "Candle Flame VFX"
   Transform {
+    Location {
+      X: -3620.10132
+      Y: 748.385742
+      Z: 1526.82019
+    }
+    Rotation {
+    }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 17741151018316790311
@@ -610,104 +449,18 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3620.10132
-            Y: 748.385742
-            Z: 1526.82019
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 86.525528
-            Yaw: 74.2864227
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
+  CoreMesh {
+    MeshAsset {
+      Id: 14887627526294409340
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
       }
-    }
-    TemplateAsset {
-      Id: 4374274134137413506
-    }
-  }
-}
-Objects {
-  Id: 10271064511412214155
-  Name: "Flame VFX"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2411740513538473765
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 11013718679332927111
-      value {
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 6
-            Y: 6
-            Z: 6
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 14770540690803944830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Flame VFX"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4374274134137413506
     }
   }
 }

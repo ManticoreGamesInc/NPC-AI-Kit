@@ -340,6 +340,44 @@ Objects {
   }
 }
 Objects {
+  Id: 12442697109356780868
+  Name: "Mounted Volume"
+  Transform {
+    Location {
+      X: -4374.99902
+      Y: -579.652283
+      Z: 396.773682
+    }
+    Rotation {
+      Yaw: 139.303635
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7624224936206633272
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+    MountedVolume {
+      Unbounded: true
+    }
+  }
+}
+Objects {
   Id: 839284702199754233
   Name: "Respawn Settings"
   Transform {

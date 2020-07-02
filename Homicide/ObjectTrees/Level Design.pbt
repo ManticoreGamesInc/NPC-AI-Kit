@@ -82856,7 +82856,7 @@ Objects {
   ChildIds: 9283945473816464935
   ChildIds: 9095610291773288884
   ChildIds: 14188944197007613999
-  ChildIds: 14667925723240648586
+  ChildIds: 15293227417924547288
   ChildIds: 14778783194281911406
   ChildIds: 10129313740146162935
   UnregisteredParameters {
@@ -82968,12 +82968,12 @@ Objects {
   }
 }
 Objects {
-  Id: 14667925723240648586
-  Name: "ClientContext"
+  Id: 15293227417924547288
+  Name: "Roof Trim"
   Transform {
     Location {
-      X: -4061.71948
-      Y: 1809.83862
+      X: -3911.79443
+      Y: 1917.52661
       Z: 1210
     }
     Rotation {
@@ -82985,21 +82985,22 @@ Objects {
     }
   }
   ParentId: 9237683485060007293
+  ChildIds: 10590442264492745446
+  ChildIds: 2517763732094076097
   ChildIds: 14477419919813872782
   ChildIds: 4420780155452863888
   ChildIds: 4846581775717815420
   ChildIds: 1881313008496632733
   ChildIds: 9802634565401333262
   ChildIds: 10224837111770009520
-  UnregisteredParameters {
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  NetworkContext {
+  Folder {
+    IsGroup: true
   }
 }
 Objects {
@@ -83007,8 +83008,8 @@ Objects {
   Name: "Craftsman Part - Inside Lower Trim 01"
   Transform {
     Location {
-      X: -1138.28113
-      Y: -209.840698
+      X: -1288.20618
+      Y: -317.528564
       Z: 25
     }
     Rotation {
@@ -83019,7 +83020,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_LowerTrimInner:id"
@@ -83058,19 +83059,19 @@ Objects {
   Name: "Trim Crenellated 6m 02"
   Transform {
     Location {
-      X: 2491.41089
-      Y: -1009.83813
+      X: 2341.48584
+      Y: -1117.52612
     }
     Rotation {
       Yaw: 90.0000076
     }
     Scale {
       X: 0.999999583
-      Y: 2.37156224
+      Y: 2.372
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -83105,8 +83106,8 @@ Objects {
   Name: "Craftsman Part - Inside Lower Trim 01"
   Transform {
     Location {
-      X: 2461.71948
-      Y: -1009.83813
+      X: 2311.79443
+      Y: -1117.52612
       Z: 25
     }
     Rotation {
@@ -83118,7 +83119,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_LowerTrimInner:id"
@@ -83157,8 +83158,8 @@ Objects {
   Name: "Craftsman Part - Inside Lower Trim 01"
   Transform {
     Location {
-      X: -1538.28101
-      Y: -584.84082
+      X: -1688.20618
+      Y: -692.528809
       Z: 25
     }
     Rotation {
@@ -83170,7 +83171,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_LowerTrimInner:id"
@@ -83209,12 +83210,12 @@ Objects {
   Name: "Craftsman Part - Inside Lower Trim 01"
   Transform {
     Location {
-      X: -1138.28223
-      Y: 1390.15942
+      X: -1288.2074
+      Y: 1282.47144
       Z: 25
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -89.9999847
     }
     Scale {
       X: 2
@@ -83222,7 +83223,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_LowerTrimInner:id"
@@ -83261,8 +83262,8 @@ Objects {
   Name: "Trim Crenellated 6m 02"
   Transform {
     Location {
-      X: -1138.28235
-      Y: 1424.20813
+      X: -1288.20764
+      Y: 1316.52026
     }
     Rotation {
       Yaw: -179.999954
@@ -83273,7 +83274,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14667925723240648586
+  ParentId: 15293227417924547288
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -83291,6 +83292,85 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 12089714488282857510
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
+  Id: 2517763732094076097
+  Name: "Cube - Collision"
+  Transform {
+    Location {
+      X: -1486.75842
+      Y: 1362.47339
+      Z: 20.972168
+    }
+    Rotation {
+      Yaw: 89.9999542
+    }
+    Scale {
+      X: 1.4492842
+      Y: 4.0056982
+      Z: 0.564106464
+    }
+  }
+  ParentId: 15293227417924547288
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
+  Id: 10590442264492745446
+  Name: "Cube - Collision"
+  Transform {
+    Location {
+      X: 2386.30566
+      Y: -716.354248
+      Z: 20.972168
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.44928157
+      Y: 7.99334431
+      Z: 0.564106464
+    }
+  }
+  ParentId: 15293227417924547288
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
     }
     Teams {
       IsTeamCollisionEnabled: true

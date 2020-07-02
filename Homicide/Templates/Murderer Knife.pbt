@@ -108,7 +108,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:BonusMovement"
-            Float: 0
+            Float: 150
           }
         }
         WantsNetworking: true

@@ -85,3 +85,6 @@ end
 EQUIPMENT.equippedEvent:Connect(OnEquipped)
 EQUIPMENT.unequippedEvent:Connect(OnUnequipped)
 TRIGGER.interactedEvent:Connect(OnInteracted)
+
+
+

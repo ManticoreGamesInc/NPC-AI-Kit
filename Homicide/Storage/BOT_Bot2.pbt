@@ -33,15 +33,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "BystanderWins"
-  }
-  SimpleValue {
-    IntVar: 33
-  }
-}
-Entries {
-  Key {
-    StringVar: "BystandersKilled"
+    StringVar: "MurderersKilled"
   }
   SimpleValue {
     IntVar: 0
@@ -57,7 +49,15 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "MurderersKilled"
+    StringVar: "BystanderWins"
+  }
+  SimpleValue {
+    IntVar: 34
+  }
+}
+Entries {
+  Key {
+    StringVar: "BystandersKilled"
   }
   SimpleValue {
     IntVar: 0

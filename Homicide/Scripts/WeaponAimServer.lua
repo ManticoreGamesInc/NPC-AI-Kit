@@ -114,6 +114,7 @@ end
 
 function OnUnequipped(weapon, player)
     if not CAN_AIM then return end
+    if player == nil then return end
 
     -- Disconnects all the handle events to avoid event trigger
     -- for previous player when the weapon is used by next player

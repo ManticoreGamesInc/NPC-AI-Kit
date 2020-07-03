@@ -127,6 +127,7 @@ function Disarm(player)
         end
     end
     player.serverUserData.gun = false
+    Events.BroadcastToPlayer(player, "DisarmedEvent")
     player:SetResource('Clues', 0)
 end
 
@@ -140,9 +141,16 @@ end
 function OnPlayerJoined(player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.diedEvent:Connect(OnPlayerDied)
+    player.Die()
 end
 
-function OnPlayerLeft()
+function OnPlayerLeft(player)
+    if spawnedEquipment[player] ~= nil then
+        for k,v in spawnedEquipment[player] do
+            v:Destroy()
+        end
+    end
+    spawnedEquipment[player] = nil
 end
 
 
@@ -162,3 +170,6 @@ end
 
 -- Initialize
 Events.Connect("GameStateChanged", OnGameStateChanged)
+
+
+

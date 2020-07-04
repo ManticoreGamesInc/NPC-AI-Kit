@@ -44,7 +44,7 @@ Assets {
           Scale {
             X: 5
             Y: 5
-            Z: 0.25
+            Z: 0.18476443
           }
         }
         ParentId: 17524114893697626056
@@ -134,14 +134,14 @@ Assets {
         Name: "Manticore Logo"
         Transform {
           Location {
-            Z: 30
+            Z: 19.1323853
           }
           Rotation {
             Yaw: 89.9999084
           }
           Scale {
-            X: 2.1
-            Y: 2.1
+            X: 2
+            Y: 2
             Z: 0.25
           }
         }

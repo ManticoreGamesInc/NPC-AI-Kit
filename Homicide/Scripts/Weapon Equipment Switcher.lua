@@ -141,13 +141,15 @@ end
 function OnPlayerJoined(player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.diedEvent:Connect(OnPlayerDied)
-    player.Die()
+    player:Die()
 end
 
 function OnPlayerLeft(player)
     if spawnedEquipment[player] ~= nil then
-        for k,v in spawnedEquipment[player] do
-            v:Destroy()
+        for k,v in pairs(spawnedEquipment[player]) do
+        	if Object.IsValid(v) then
+	            v:Destroy()
+	        end
         end
     end
     spawnedEquipment[player] = nil

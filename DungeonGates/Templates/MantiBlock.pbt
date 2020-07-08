@@ -1,12 +1,12 @@
 Assets {
-  Id: 13153627044748886421
+  Id: 10691664271722635377
   Name: "MantiBlock"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9435686649134021219
+      RootId: 1191081619376484843
       Objects {
-        Id: 9435686649134021219
+        Id: 1191081619376484843
         Name: "MantiBlock"
         Transform {
           Scale {
@@ -15,14 +15,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 8956223632100106979
-        ChildIds: 18238659774166320179
-        ChildIds: 1936687687185577635
-        ChildIds: 6398761815888566035
-        ChildIds: 17287724269523066697
-        ChildIds: 14756370873194415316
-        ChildIds: 15390607813523910628
+        ParentId: 8235604101384154091
+        ChildIds: 10998549913611452458
+        ChildIds: 1966551042456608838
+        ChildIds: 6969153560949131895
+        ChildIds: 11695814740873357844
+        ChildIds: 14981824406531623796
+        ChildIds: 2796488077308194058
+        ChildIds: 11432506689264426857
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -35,7 +35,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8956223632100106979
+        Id: 10998549913611452458
         Name: "Geometry"
         Transform {
           Location {
@@ -48,7 +48,7 @@ Assets {
             Z: 4
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushableBlock"
@@ -105,7 +105,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18238659774166320179
+        Id: 1966551042456608838
         Name: "PushableBlockScript"
         Transform {
           Location {
@@ -118,7 +118,7 @@ Assets {
             Z: 0.25
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushDistance"
@@ -143,7 +143,7 @@ Assets {
         }
       }
       Objects {
-        Id: 1936687687185577635
+        Id: 6969153560949131895
         Name: "Trigger"
         Transform {
           Location {
@@ -159,7 +159,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushDirection"
@@ -188,7 +188,7 @@ Assets {
         }
       }
       Objects {
-        Id: 6398761815888566035
+        Id: 11695814740873357844
         Name: "Trigger"
         Transform {
           Location {
@@ -203,7 +203,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushDirection"
@@ -232,7 +232,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17287724269523066697
+        Id: 14981824406531623796
         Name: "Trigger"
         Transform {
           Location {
@@ -247,7 +247,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushDirection"
@@ -276,7 +276,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14756370873194415316
+        Id: 2796488077308194058
         Name: "Trigger"
         Transform {
           Location {
@@ -291,7 +291,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         UnregisteredParameters {
           Overrides {
             Name: "cs:PushDirection"
@@ -320,7 +320,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15390607813523910628
+        Id: 11432506689264426857
         Name: "ResetablePuzzleGeometry"
         Transform {
           Location {
@@ -333,7 +333,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9435686649134021219
+        ParentId: 1191081619376484843
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

@@ -1,4 +1,4 @@
-local propRequiredButtonCount = script:GetCustomProperty("RequiredButtonCount")
+local propRequiredButtonCount = script.parent:GetCustomProperty("RequiredButtonCount")
 local propGate = script:GetCustomProperty("Gate"):WaitForObject()
 local propGateLowerSound = script:GetCustomProperty("GateLowerSound"):WaitForObject()
 

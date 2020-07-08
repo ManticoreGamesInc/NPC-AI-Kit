@@ -48,6 +48,9 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableDistanceFieldLighting: true
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           EnableCameraCollision: true
           StaticMesh {
             Physics {
@@ -80,4 +83,5 @@ Assets {
     }
   }
   SerializationVersion: 61
+  DirectlyPublished: true
 }

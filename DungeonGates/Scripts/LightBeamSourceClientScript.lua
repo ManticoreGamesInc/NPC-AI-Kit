@@ -2,18 +2,23 @@ local propRoot = script:GetCustomProperty("root"):WaitForObject()
 local propLightBeamTemplate = script:GetCustomProperty("LightBeamTemplate")
 local propSparkVFX = script:GetCustomProperty("SparkVFX"):WaitForObject()
 local propBeamSource = script:GetCustomProperty("BeamSource"):WaitForObject()
-
+local MAX_BEAMS = 50
 
 local lightBeamList = {}
 
 local currentBeamTarget = nil
 
-function DrawBeam(beamStart, beamDirection)
+function DrawBeam(beamStart, beamDirection, beamCount)
+	if beamCount > MAX_BEAMS then return end
+	local rot = Rotation.New(Vector3.UP * -1, beamDirection)
+	if (rot == Rotation.ZERO) then
+		rot = Rotation.New(Vector3.FORWARD * -1, beamDirection)
+	end
+
 	lightBeam = World.SpawnAsset(propLightBeamTemplate,
 	{
 		position = beamStart,
-		--rotation = Rotation.New(beamDirection, Vector3.UP)
-		rotation = Rotation.New(Vector3.UP * -1, beamDirection)
+		rotation = rot --Rotation.New(Vector3.UP * -1, beamDirection)
 	})
 	table.insert(lightBeamList, lightBeam)
 
@@ -45,7 +50,7 @@ function DrawBeam(beamStart, beamDirection)
 
 			local normal = raycastResult:GetImpactNormal()
 			local newBeamDirection = beamDirection + ((beamDirection .. normal) * normal * -2)
-			DrawBeam(raycastResult:GetImpactPosition(), newBeamDirection)
+			DrawBeam(raycastResult:GetImpactPosition(), newBeamDirection, beamCount + 1)
 		else
 			local propHideSparks = nil
 			-- not reflective
@@ -78,10 +83,7 @@ function Tick(deltaTime)
 	lightBeamList = {}
 
 	--Raycast out to see how far beam should extend
-	--local beamForward = propRoot:GetWorldTransform():GetForwardVector()
-	--local beamStart = propLightBeam:GetWorldPosition()
-	--local beamStart = propRoot:GetWorldPosition() + beamForward * 200 + Vector3.UP * 300
 	local beamStart = propBeamSource:GetWorldPosition()
 	local beamForward = propBeamSource:GetWorldTransform():GetForwardVector()
-	DrawBeam(beamStart, beamForward)
+	DrawBeam(beamStart, beamForward, 0)
 end

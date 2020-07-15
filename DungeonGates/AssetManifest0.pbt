@@ -1,40 +1,4 @@
 Assets {
-  Id: 18029916059653495403
-  Name: "Snow 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_snow_001_uv"
-  }
-}
-Assets {
-  Id: 17867637317920490488
-  Name: "Marble Basic 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_gen_marble_tiles_001_uv"
-  }
-}
-Assets {
-  Id: 17609149353171719671
-  Name: "Cube - bottom aligned"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_001"
-  }
-}
-Assets {
-  Id: 17485881147669499682
-  Name: "Cube - Rounded - bottom aligned"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_rounded_001"
-  }
-}
-Assets {
   Id: 17246754151924769898
   Name: "Fantasy Castle Floor 03 4m"
   PlatformAssetType: 1
@@ -44,48 +8,12 @@ Assets {
   }
 }
 Assets {
-  Id: 16910278292812118833
-  Name: "Sun Light"
-  PlatformAssetType: 6
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "CORESKY_SunLight"
-  }
-}
-Assets {
-  Id: 16798794737164614915
-  Name: "Metal Old Beaten Gold 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_gold_002"
-  }
-}
-Assets {
   Id: 15686909077460378362
   Name: "Fantasy Castle Trim - Parapet 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_parapet_001"
-  }
-}
-Assets {
-  Id: 15661141750630453394
-  Name: "Computer Monitor 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_computer-monitor_001"
-  }
-}
-Assets {
-  Id: 15261956687996641261
-  Name: "Fast Double Click 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_ui_fast_double_click_01_Cue_ref"
   }
 }
 Assets {
@@ -170,15 +98,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13369349029113569971
-  Name: "Wedge - Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_wedge_hq_001"
-  }
-}
-Assets {
   Id: 13304908840312358092
   Name: "Fantasy Castle Pillar 01 Top"
   PlatformAssetType: 1
@@ -233,12 +152,12 @@ Assets {
   }
 }
 Assets {
-  Id: 11515840070784317904
-  Name: "Skylight"
-  PlatformAssetType: 6
+  Id: 11071276210108458230
+  Name: "Bricks Layered Stone Floor 01"
+  PlatformAssetType: 2
   PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "CORESKY_Skylight"
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_brick_stone_floor_layered_001"
   }
 }
 Assets {
@@ -248,24 +167,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_gen_gear_001_spoke4x"
-  }
-}
-Assets {
-  Id: 9198508552142977510
-  Name: "Manticore Logo"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_logo_manticore_01"
-  }
-}
-Assets {
-  Id: 9188121300785567977
-  Name: "Edge Line Sharp"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxma_add_edgeline_sharpline"
   }
 }
 Assets {
@@ -287,15 +188,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8597197133424690491
-  Name: "Ceramic Tiles Square 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_ceramic_tile_square_001"
-  }
-}
-Assets {
   Id: 8574313836246238018
   Name: "Concrete Sidewalk"
   PlatformAssetType: 2
@@ -314,39 +206,12 @@ Assets {
   }
 }
 Assets {
-  Id: 8414462490503877121
-  Name: "Cone - Truncated Wide"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cone_truncated_003"
-  }
-}
-Assets {
-  Id: 7887238662729938253
-  Name: "Sky Dome"
-  PlatformAssetType: 6
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "CORESKY_Sky"
-  }
-}
-Assets {
   Id: 7822473577673662489
   Name: "Fantasy Castle Pillar 01 Mid"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_pillar_001_mid"
-  }
-}
-Assets {
-  Id: 7343781096701595173
-  Name: "Bricks Mismatched Stone 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_brick_stone_mismatch_001"
   }
 }
 Assets {
@@ -377,57 +242,12 @@ Assets {
   }
 }
 Assets {
-  Id: 6135330524988807299
-  Name: "Bricks Cobblestone Floor Arches 001"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_brick_cobblestone_floor_arch_001"
-  }
-}
-Assets {
-  Id: 5334268844295366694
-  Name: "Object Fantasy Treasure Chest Open 04 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_object_fantasy_treasure_chest_open_04_Cue_ref"
-  }
-}
-Assets {
-  Id: 4913731017685956991
-  Name: "Hill 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_hill_001"
-  }
-}
-Assets {
-  Id: 4817456984847713763
-  Name: "Gold Treasure 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_gold_treasure_002"
-  }
-}
-Assets {
   Id: 4565574025644870814
   Name: "Fantasy Castle Trim - Battlement 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_battlement_001"
-  }
-}
-Assets {
-  Id: 4542959667302136808
-  Name: "Portcullis"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_portcullis_001"
   }
 }
 Assets {
@@ -455,15 +275,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_column_bottom_002"
-  }
-}
-Assets {
-  Id: 3487314555571258192
-  Name: "Metal Chrome"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "chrome_001"
   }
 }
 Assets {
@@ -563,23 +374,5 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_false_window_001"
-  }
-}
-Assets {
-  Id: 630867974273781798
-  Name: "Computer Stand"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_computer-stand_001"
-  }
-}
-Assets {
-  Id: 46061843978868412
-  Name: "Ring"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torus_004"
   }
 }

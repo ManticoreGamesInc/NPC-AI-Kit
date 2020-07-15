@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8235604101384154091
+        ParentId: 6575804144205693784
         ChildIds: 7675622270513969519
         ChildIds: 6061628276126863939
         ChildIds: 2089891407324880667
@@ -23,6 +23,8 @@ Assets {
         ChildIds: 8650803559109530517
         ChildIds: 5187032084413470242
         ChildIds: 2850542350281938123
+        UnregisteredParameters {
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -77,16 +79,16 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: -250
-            Y: 3
-            Z: 150
+            X: -249.999985
+            Y: 3.00004244
+            Z: 190
           }
           Rotation {
           }
           Scale {
             X: 1
-            Y: 1
-            Z: 1
+            Y: 2.5
+            Z: 2.6
           }
         }
         ParentId: 14058339029848770768
@@ -123,14 +125,15 @@ Assets {
         Transform {
           Location {
             X: 250
-            Z: 150
+            Y: -4.24385071e-05
+            Z: 190
           }
           Rotation {
           }
           Scale {
             X: 1
-            Y: 1
-            Z: 1
+            Y: 2.5
+            Z: 2.6
           }
         }
         ParentId: 14058339029848770768
@@ -166,15 +169,16 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
+            X: -0.000774860382
             Y: -250
-            Z: 150
+            Z: 190
           }
           Rotation {
           }
           Scale {
-            X: 1
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 2.6
           }
         }
         ParentId: 14058339029848770768
@@ -210,15 +214,16 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
+            X: 0.000774860382
             Y: 250
-            Z: 150
+            Z: 190
           }
           Rotation {
           }
           Scale {
-            X: 1
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 2.6
           }
         }
         ParentId: 14058339029848770768
@@ -293,7 +298,7 @@ Assets {
         }
         ParentId: 14058339029848770768
         ChildIds: 14488339469594003736
-        ChildIds: 6446343860561450591
+        ChildIds: 11548081648467369887
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -312,17 +317,19 @@ Assets {
         Name: "Mirror"
         Transform {
           Location {
-            Y: 150
-            Z: 275
+            X: 19.9998512
+            Y: 140.000015
+            Z: 275.000061
           }
           Rotation {
             Pitch: -90
-            Roll: -90
+            Yaw: 26.565033
+            Roll: -116.565
           }
           Scale {
             X: 3.5
-            Y: 3
-            Z: 3
+            Y: 2.5
+            Z: 2.5
           }
         }
         ParentId: 2850542350281938123
@@ -361,17 +368,21 @@ Assets {
         }
       }
       Objects {
-        Id: 6446343860561450591
-        Name: "Geometry"
+        Id: 11548081648467369887
+        Name: "Fantasy Castle Pillar 02 - Top"
         Transform {
           Location {
+            Z: -10
           }
           Rotation {
+            Pitch: 0.000109283021
+            Yaw: 89.9998703
+            Roll: 179.999802
           }
           Scale {
-            X: 5
-            Y: 5
-            Z: 1
+            X: 3
+            Y: 3
+            Z: 2.8
           }
         }
         ParentId: 2850542350281938123
@@ -381,31 +392,13 @@ Assets {
             String: "yes"
           }
           Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 18029916059653495403
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
+            Name: "ma:Shared_Trim:color"
             Color {
-              R: 0.83
+              R: 1
               G: 1
-              B: 0.983112633
+              B: 1
               A: 1
             }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:utile"
-            Float: 0.5
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:vtile"
-            Float: 0.5
           }
         }
         WantsNetworking: true
@@ -417,7 +410,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 17485881147669499682
+            Id: 18200200076012147990
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -450,21 +443,12 @@ Assets {
       }
     }
     Assets {
-      Id: 17485881147669499682
-      Name: "Cube - Rounded - bottom aligned"
+      Id: 18200200076012147990
+      Name: "Fantasy Castle Pillar 02 - Top"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cube_rounded_001"
-      }
-    }
-    Assets {
-      Id: 18029916059653495403
-      Name: "Snow 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_snow_001_uv"
+        AssetId: "sm_ts_fan_cas_pillar_002_top"
       }
     }
     PrimaryAssetId {

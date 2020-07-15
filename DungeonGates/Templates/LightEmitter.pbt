@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 687539215940675018
+        ParentId: 6575804144205693784
         ChildIds: 12317977427341522554
         ChildIds: 16795169773985513948
         ChildIds: 536184832108172715
@@ -37,13 +37,15 @@ Assets {
         Name: "Base"
         Transform {
           Location {
+            Z: -30
           }
           Rotation {
+            Roll: 179.999908
           }
           Scale {
             X: 5
             Y: 5
-            Z: 1
+            Z: 1.99999988
           }
         }
         ParentId: 17063980268082512490
@@ -52,6 +54,15 @@ Assets {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
               Id: 6809989554076936039
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
             }
           }
         }
@@ -64,7 +75,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 17609149353171719671
+            Id: 18200200076012147990
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -408,12 +419,12 @@ Assets {
       }
     }
     Assets {
-      Id: 17609149353171719671
-      Name: "Cube - bottom aligned"
+      Id: 18200200076012147990
+      Name: "Fantasy Castle Pillar 02 - Top"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cube_001"
+        AssetId: "sm_ts_fan_cas_pillar_002_top"
       }
     }
     Assets {

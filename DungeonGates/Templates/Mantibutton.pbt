@@ -1,12 +1,12 @@
 Assets {
-  Id: 3215774351743081663
+  Id: 16827505697654195068
   Name: "Mantibutton"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 17524114893697626056
+      RootId: 8547890864614645142
       Objects {
-        Id: 17524114893697626056
+        Id: 8547890864614645142
         Name: "Mantibutton"
         Transform {
           Scale {
@@ -15,14 +15,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 9407390059549024342
-        ChildIds: 9875424689975276459
-        ChildIds: 4244530778363366914
-        ChildIds: 14238848057786947120
-        ChildIds: 10056506415478764181
-        ChildIds: 13741514579152310144
-        ChildIds: 7171673572763135012
+        ParentId: 8235604101384154091
+        ChildIds: 3913478354475318860
+        ChildIds: 6559336591898918147
+        ChildIds: 4112478185332678176
+        ChildIds: 2313998192822271532
+        ChildIds: 14354245705790979907
+        ChildIds: 14942787206528585806
+        ChildIds: 12702953320663633724
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -34,7 +34,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9407390059549024342
+        Id: 3913478354475318860
         Name: "Cylinder - Bottom-Aligned"
         Transform {
           Location {
@@ -47,7 +47,7 @@ Assets {
             Z: 0.18476443
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         UnregisteredParameters {
           Overrides {
             Name: "cs:ButtonGeometry"
@@ -82,7 +82,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9875424689975276459
+        Id: 6559336591898918147
         Name: "Ring - Thin"
         Transform {
           Location {
@@ -95,7 +95,7 @@ Assets {
             Z: 5
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         UnregisteredParameters {
           Overrides {
             Name: "cs:ButtonGeometry"
@@ -130,7 +130,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4244530778363366914
+        Id: 4112478185332678176
         Name: "Manticore Logo"
         Transform {
           Location {
@@ -145,7 +145,7 @@ Assets {
             Z: 0.25
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         UnregisteredParameters {
           Overrides {
             Name: "cs:ButtonGeometry"
@@ -174,7 +174,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14238848057786947120
+        Id: 2313998192822271532
         Name: "ButtonGlow"
         Transform {
           Location {
@@ -189,7 +189,7 @@ Assets {
             Z: 10
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -229,7 +229,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10056506415478764181
+        Id: 14354245705790979907
         Name: "Trigger"
         Transform {
           Location {
@@ -243,7 +243,7 @@ Assets {
             Z: 2
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -261,7 +261,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13741514579152310144
+        Id: 14942787206528585806
         Name: "Fast Double Click 01 SFX"
         Transform {
           Location {
@@ -274,7 +274,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -295,7 +295,7 @@ Assets {
         }
       }
       Objects {
-        Id: 7171673572763135012
+        Id: 12702953320663633724
         Name: "MantiButtonScript"
         Transform {
           Location {
@@ -308,24 +308,24 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17524114893697626056
+        ParentId: 8547890864614645142
         UnregisteredParameters {
           Overrides {
             Name: "cs:Trigger"
             ObjectReference {
-              SubObjectId: 10056506415478764181
+              SubObjectId: 14354245705790979907
             }
           }
           Overrides {
             Name: "cs:ButtonGlow"
             ObjectReference {
-              SubObjectId: 14238848057786947120
+              SubObjectId: 2313998192822271532
             }
           }
           Overrides {
             Name: "cs:ClickSfx"
             ObjectReference {
-              SubObjectId: 13741514579152310144
+              SubObjectId: 14942787206528585806
             }
           }
         }

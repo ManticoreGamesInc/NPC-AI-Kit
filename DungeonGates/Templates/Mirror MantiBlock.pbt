@@ -312,16 +312,15 @@ Assets {
         Name: "Mirror"
         Transform {
           Location {
-            X: 10
-            Y: 180
-            Z: 220
+            Y: 150
+            Z: 275
           }
           Rotation {
             Pitch: -90
             Roll: -90
           }
           Scale {
-            X: 3
+            X: 3.5
             Y: 3
             Z: 3
           }
@@ -474,4 +473,5 @@ Assets {
     }
   }
   SerializationVersion: 61
+  DirectlyPublished: true
 }

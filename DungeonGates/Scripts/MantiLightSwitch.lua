@@ -1,20 +1,45 @@
---local propButtonGlow = script:GetCustomProperty("ButtonGlow"):WaitForObject()
---local propClickSfx = script:GetCustomProperty("ClickSfx"):WaitForObject()
 local propCollisionVolume = script:GetCustomProperty("CollisionVolume"):WaitForObject()
+local propBaseState = script:GetCustomProperty("BaseState"):WaitForObject()
+local propLitState = script:GetCustomProperty("LitState"):WaitForObject()
 
-local isTriggerActive = false
 
-function OnBeamTargetChanged(newTargetId)
-	if newTargetId == propCollisionVolume.id and not isTriggerActive then
-		Events.Broadcast("TriggerDown", script.parent:GetReference())
-		isTriggerActive = true
-		print("Light activated!")
-	elseif isTriggerActive and newTargetId ~= propCollisionVolume.id then
-		Events.Broadcast("TriggerUp", script.parent:GetReference())
-		isTriggerActive = false
-		print("Light deactivated!")
+function SetGraphics(isLit)
+	propBaseState.isEnabled = not isLit
+	propLitState.isEnabled = isLit
+end
+
+local activeBeams = {}
+
+
+function IsActive()
+	for k,v in pairs(activeBeams) do
+		return true
+	end
+	return false
+end
+
+
+function OnBeamTargetChanged(newTargetId, lightSourceId)
+	local wasTriggerActive = IsActive()
+	if newTargetId == propCollisionVolume.id then
+		activeBeams[lightSourceId] = true
+		if not wasTriggerActive then
+			Events.Broadcast("TriggerDown", script.parent:GetReference())
+			print("Light activated!")
+			SetGraphics(true)
+		end
+
+	else
+		activeBeams[lightSourceId] = nil
+		local isActive = IsActive()
+		if not isActive and wasTriggerActive then
+			Events.Broadcast("TriggerUp", script.parent:GetReference())
+			print("Light deactivated!")
+			SetGraphics(false)
+		end
 	end
 end
 
 Events.Connect("BeamTargetChanged", OnBeamTargetChanged)
+SetGraphics(false)
 

@@ -21,7 +21,10 @@ local COMPONENT_ROOT = script:GetCustomProperty("ComponentRoot"):WaitForObject()
 
 -- User exposed properties
 local PERIOD = COMPONENT_ROOT:GetCustomProperty("Period")
-local RESPAWN_ON_ROUND_START = COMPONENT_ROOT:GetCustomProperty("RespawnOnRoundStart")
+local LOBBY_RESPAWN_ON_START = COMPONENT_ROOT:GetCustomProperty("LobbyRespawnOnStart")
+local LOBBY_RESPAWN_IF_DEAD = COMPONENT_ROOT:GetCustomProperty("LobbyRespawnIfDead")
+local ROUND_RESPAWN_ON_START = COMPONENT_ROOT:GetCustomProperty("RoundRespawnOnStart")
+local ROUND_RESPAWN_IF_DEAD = COMPONENT_ROOT:GetCustomProperty("RoundRespawnIfDead")
 
 -- Check user properties
 if PERIOD < 0.0 then
@@ -31,13 +34,16 @@ end
 
 -- nil RespawnPlayers()
 -- Respawns players with a slight stagger
-function RespawnPlayers()
+function RespawnPlayers(onlyIfDead)
 	local numPlayers = #Game.GetPlayers()
 	local perPlayerDelay = PERIOD / numPlayers
+	
 	for _, player in pairs(Game.GetPlayers()) do
-		player:Respawn()
-
-		Task.Wait(perPlayerDelay)
+		if player.isDead or not onlyIfDead then
+			player:Respawn()
+	
+			Task.Wait(perPlayerDelay)
+		end
 	end
 end
 
@@ -45,13 +51,14 @@ end
 -- Handles respawning players when the game state switches to or from lobby state
 function OnGameStateChanged(oldState, newState, hasDuration, endTime)
 
-	if (newState == ABGS.GAME_STATE_LOBBY and oldState ~= ABGS.GAME_STATE_LOBBY) then
-		RespawnPlayers()
+	if LOBBY_RESPAWN_ON_START and
+	newState == ABGS.GAME_STATE_LOBBY and oldState ~= ABGS.GAME_STATE_LOBBY then
+		RespawnPlayers(LOBBY_RESPAWN_IF_DEAD)
 	end
 
-	if RESPAWN_ON_ROUND_START and
+	if ROUND_RESPAWN_ON_START and
 	newState ~= ABGS.GAME_STATE_LOBBY and oldState == ABGS.GAME_STATE_LOBBY then
-		RespawnPlayers()
+		RespawnPlayers(ROUND_RESPAWN_IF_DEAD)
 	end
 end
 

@@ -18,7 +18,8 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 9716724645336724374
         ChildIds: 9350822834582119116
-        ChildIds: 17331395437111167397
+        ChildIds: 8884132754582143180
+        ChildIds: 15159729907505306211
         ChildIds: 9626646942596377580
         ChildIds: 14132534807098889596
         ChildIds: 7252784427182165426
@@ -58,9 +59,6 @@ Assets {
         Name: "EquipmentAnimationStance"
         Transform {
           Location {
-            X: -995
-            Y: 428.619019
-            Z: -90
           }
           Rotation {
           }
@@ -125,68 +123,6 @@ Assets {
         }
       }
       Objects {
-        Id: 17331395437111167397
-        Name: "Abilities"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7556301729114771641
-        ChildIds: 17521602856087604456
-        ChildIds: 8884132754582143180
-        ChildIds: 16331643054349514966
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Abilities_1"
-        }
-      }
-      Objects {
-        Id: 17521602856087604456
-        Name: "SimpleAbilityChainServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17331395437111167397
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15755502839485974843
-          }
-        }
-      }
-      Objects {
         Id: 8884132754582143180
         Name: "Slash 1"
         Transform {
@@ -197,7 +133,7 @@ Assets {
           Scale {
           }
         }
-        ParentId: 17331395437111167397
+        ParentId: 7556301729114771641
         ChildIds: 10437087240615772759
         ChildIds: 17045503118039495715
         UnregisteredParameters {
@@ -415,167 +351,8 @@ Assets {
         }
       }
       Objects {
-        Id: 16331643054349514966
-        Name: "Slash 2"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-          }
-        }
-        ParentId: 17331395437111167397
-        ChildIds: 8113862635575581447
-        ChildIds: 14213160300172012112
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Ability {
-          IsEnabled: true
-          KeyBinding: "ability_primary"
-          CastPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 0.25
-            CanMove: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.02
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-          }
-          Animation: "unarmed_punch_right"
-          CanBePrevented: true
-        }
-      }
-      Objects {
-        Id: 8113862635575581447
-        Name: "MeleeAttackServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: -1.00270126e-05
-          }
-          Scale {
-          }
-        }
-        ParentId: 16331643054349514966
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageAPI"
-            AssetReference {
-              Id: 9421649789822671448
-            }
-          }
-          Overrides {
-            Name: "cs:Equipment"
-            ObjectReference {
-              SubObjectId: 7556301729114771641
-            }
-          }
-          Overrides {
-            Name: "cs:Ability"
-            ObjectReference {
-              SubObjectId: 16331643054349514966
-            }
-          }
-          Overrides {
-            Name: "cs:HitBox"
-            ObjectReference {
-              SubObjectId: 9626646942596377580
-            }
-          }
-          Overrides {
-            Name: "cs:DamageRange"
-            Vector2 {
-              X: 100
-              Y: 100
-            }
-          }
-          Overrides {
-            Name: "cs:SwipeEffect"
-            AssetReference {
-              Id: 9185252968163416804
-            }
-          }
-          Overrides {
-            Name: "cs:SwipeSpawnDelay"
-            Float: 0
-          }
-          Overrides {
-            Name: "cs:SwipeRotation"
-            Rotator {
-              Pitch: 3.8
-              Roll: -7
-            }
-          }
-          Overrides {
-            Name: "cs:AttackPlayerImpact"
-            AssetReference {
-              Id: 3195561103083967252
-            }
-          }
-          Overrides {
-            Name: "cs:AttackImpulse"
-            Float: 0
-          }
-          Overrides {
-            Name: "cs:VerticalImpulse"
-            Float: 0
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 3342401763530910002
-          }
-        }
-      }
-      Objects {
-        Id: 14213160300172012112
-        Name: "ClientContext"
+        Id: 15159729907505306211
+        Name: "Throw"
         Transform {
           Location {
           }
@@ -587,9 +364,106 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16331643054349514966
-        ChildIds: 16350118651504765913
+        ParentId: 7556301729114771641
+        ChildIds: 7749855827791711079
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            Duration: 0.2
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            Duration: 0.1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "unarmed_throw"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:secondaryaction"
+          }
+        }
+      }
+      Objects {
+        Id: 7749855827791711079
+        Name: "MurderKnifeThrow"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15159729907505306211
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:ThrowEffect"
+            AssetReference {
+              Id: 8017612603930662244
+            }
+          }
+          Overrides {
+            Name: "cs:ProjectileBody"
+            AssetReference {
+              Id: 7123828991186122331
+            }
+          }
+          Overrides {
+            Name: "cs:PlayerImpactVFX"
+            AssetReference {
+              Id: 3195561103083967252
+            }
+          }
+          Overrides {
+            Name: "cs:SurfaceImpactVFX"
+            AssetReference {
+              Id: 3162601163682875058
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -598,44 +472,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 16350118651504765913
-        Name: "SetAbilityIconClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-          }
-        }
-        ParentId: 14213160300172012112
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API"
-            AssetReference {
-              Id: 12574195432568190185
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 15201232689808388272
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
         Script {
           ScriptAsset {
-            Id: 16782812949985475808
+            Id: 12415722672868472763
           }
         }
       }
@@ -773,7 +612,7 @@ Assets {
           Overrides {
             Name: "cs:API"
             AssetReference {
-              Id: 7944423803446506657
+              Id: 12574195432568190185
             }
           }
         }

@@ -157,7 +157,7 @@ Assets {
           AudioAsset {
             Id: 9771384740429246203
           }
-          Volume: 3
+          Volume: 2
           Falloff: -1
           Radius: -1
         }

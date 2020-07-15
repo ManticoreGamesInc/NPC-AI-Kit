@@ -14,12 +14,12 @@ Objects {
       Z: 1
     }
   }
-  ChildIds: 7624224936206633272
-  ChildIds: 16453038897487447571
-  ChildIds: 12806445280718441119
+  ChildIds: 3086475342006833789
+  ChildIds: 833249623453589372
+  ChildIds: 7742862443824078986
   ChildIds: 15650992489209854501
-  ChildIds: 8429769948452207709
-  ChildIds: 2411740513538473765
+  ChildIds: 12680867922712441399
+  ChildIds: 2510029147328731668
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -32,7 +32,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2411740513538473765
+  Id: 2510029147328731668
   Name: "Level Design"
   Transform {
     Location {
@@ -58,7 +58,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8429769948452207709
+  Id: 12680867922712441399
   Name: "Enviornment Lighting"
   Transform {
     Location {
@@ -376,7 +376,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12806445280718441119
+  Id: 7742862443824078986
   Name: "UI"
   Transform {
     Location {
@@ -402,7 +402,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16453038897487447571
+  Id: 833249623453589372
   Name: "Gameplay Components"
   Transform {
     Location {
@@ -428,7 +428,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7624224936206633272
+  Id: 3086475342006833789
   Name: "Settings"
   Transform {
     Location {

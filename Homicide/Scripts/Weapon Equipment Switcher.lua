@@ -11,163 +11,203 @@ local WEAPON_UNARMED = 1
 local WEAPON_KNIFE = 2
 local WEAPON_GUN = 3
 
-local propUnarmed = script:GetCustomProperty("Unarmed")
-local propKnife = script:GetCustomProperty("Knife")
-local propGun = script:GetCustomProperty("Gun")
+local UNARMED_TEMPLATE = script:GetCustomProperty("Unarmed")
+local KNIFE_TEMPLATE = script:GetCustomProperty("Knife")
+local GUN_TEMPLATE = script:GetCustomProperty("Gun")
 
 local unarmedSocket = script:GetCustomProperty("unarmedSocket")
 local knifeSocket = script:GetCustomProperty("knifeSocket")
 local gunSocket = script:GetCustomProperty("gunSocket")
 
-local weaponInfo = {
-    [WEAPON_UNARMED] = {socket = unarmedSocket, muid = propUnarmed},
-    [WEAPON_KNIFE] = {socket = knifeSocket, muid = propKnife},
-    [WEAPON_GUN] = {socket = gunSocket, muid = propGun},
+local socketInfo = {
+    [WEAPON_UNARMED] =  unarmedSocket,
+    [WEAPON_KNIFE] = knifeSocket,
+    [WEAPON_GUN] = gunSocket,
 }
+
+local CLUE_GOAL = script:GetCustomProperty("ClueGoal") or 5
 
 local spawnedEquipment = {}
 
 
---local isArmed = false -- determines if the player can equip a gun or not. Activated when they find enough clues. One bystander randomly starts each match with this set to true. Set it to false if they lose the gun.
+function SpawnEquipmentForPlayer(player)
+	-- Spawn the starting equipment for a player
+	local unarmed = World.SpawnAsset(UNARMED_TEMPLATE)
+	local knife = World.SpawnAsset(KNIFE_TEMPLATE)
+	local gun = World.SpawnAsset(GUN_TEMPLATE)
+	
+	spawnedEquipment[player] = {
+		unarmed,
+		knife,
+		gun
+	}
+	
+	unarmed:AttachToPlayer(player, unarmedSocket)
+	knife:AttachToPlayer(player, knifeSocket)
+	gun:AttachToPlayer(player, gunSocket)
 
-
-function RemoveAllPlayerEquipment(lobbyReset)
-    for _, equipTable in pairs(spawnedEquipment) do
-        for __, equipment in pairs(equipTable) do
-            if Object.IsValid(equipment) then
-                if equipment.owner then
-                    equipment.owner.animationStance = "unarmed_stance"
-                end
-                equipment:Unequip()
-                equipment:Destroy()
-            end
-        end
-    end
-    spawnedEquipment = {}
-
-    if lobbyReset then
-        for _, p in pairs(Game.GetPlayers()) do
-            Events.BroadcastToPlayer(p, "DisarmedEvent")
-            p.serverUserData.gun = false
-            p.team = 1
-        end
-    end
+	-- Equip the Unarmed item
+	unarmed:Equip(player)
+	knife.isEnabled = false
+	gun.isEnabled = false
 end
 
 
-function OnRoundStart()
--- Spawn weapons, attach to players, make them invisible.
-    RemoveAllPlayerEquipment(false)
-
-    for i, player in ipairs(Game.GetPlayers()) do
-        -- use team triggers to disable pickups
-        spawnedGun = World.SpawnAsset(propGun)
-        spawnedKnife = World.SpawnAsset(propKnife)
-        spawnedUnarmed = World.SpawnAsset(propUnarmed)
-        spawnedEquipment[player] = {
-            spawnedUnarmed,
-            spawnedKnife,
-            spawnedGun
-        }
-        spawnedGun:AttachToPlayer(player, gunSocket)
-        spawnedKnife:AttachToPlayer(player, knifeSocket)
-        spawnedUnarmed:AttachToPlayer(player, unarmedSocket)
-
-        spawnedUnarmed:Equip(player)
-        spawnedKnife.isEnabled = false
-        spawnedGun.isEnabled = false
-    end
+function UnequipEverythingAndBecomeUnarmed()
+	for _,player in ipairs(Game.GetPlayers()) do
+		UnequipEverythingForPlayer(player)
+		
+		player.animationStance = "unarmed_stance"
+		
+		-- Enable the unarmed equipment (wave ability)
+		local playerEquipment = spawnedEquipment[player]
+		playerEquipment[WEAPON_UNARMED].isEnabled = true
+	    playerEquipment[WEAPON_UNARMED]:Equip(player)
+	end
 end
 
 
-function OnBindingPressed(player, bindingPressed)    
-    local playerEquipment = spawnedEquipment[player]
-    if playerEquipment ~= nil then
+function UnequipEverythingForPlayer(player)
+	local playerEquipment = spawnedEquipment[player]
+	
+	playerEquipment[WEAPON_UNARMED]:Unequip()
+	playerEquipment[WEAPON_UNARMED].isEnabled = false
+	playerEquipment[WEAPON_UNARMED]:AttachToPlayer(player, unarmedSocket)
+	
+	playerEquipment[WEAPON_KNIFE]:Unequip()
+	playerEquipment[WEAPON_KNIFE].isEnabled = false
+	playerEquipment[WEAPON_KNIFE]:AttachToPlayer(player, knifeSocket)
+	
+	playerEquipment[WEAPON_GUN]:Unequip()
+	playerEquipment[WEAPON_GUN].isEnabled = false
+	playerEquipment[WEAPON_GUN]:AttachToPlayer(player, gunSocket)
+	
+	TryToReload(playerEquipment[WEAPON_KNIFE])
+	TryToReload(playerEquipment[WEAPON_GUN])
+end
 
-        if bindingPressed == 'ability_extra_1'
-                or bindingPressed == 'ability_extra_2' then
 
-            -- First unequip everything:
-            for weaponID, weapon in pairs(playerEquipment) do
-                weapon:Unequip()
-                weapon.isEnabled = false
-                weapon:AttachToPlayer(player, weaponInfo[weaponID].socket)
-            end
-        end
+function TryToReload(weapon)
+	if weapon:IsA("Weapon") then
+		weapon.currentAmmo = weapon.maxAmmo
+	end
+end
 
-        if bindingPressed == 'ability_extra_1' then
-            playerEquipment[WEAPON_UNARMED].isEnabled = true
-            playerEquipment[WEAPON_UNARMED]:Equip(player)
-        elseif bindingPressed == 'ability_extra_2' then
-            if player.team == 1 and player.serverUserData.gun == true then
-                playerEquipment[WEAPON_GUN].isEnabled = true
-                playerEquipment[WEAPON_GUN]:Equip(player)
-            elseif player.team == 2 then
-                playerEquipment[WEAPON_KNIFE].isEnabled = true
-                playerEquipment[WEAPON_KNIFE]:Equip(player)
-            end
-        end
+
+function OnBindingPressed(player, bindingPressed)
+	if ABGS.GetGameState() ~= ABGS.GAME_STATE_ROUND then return end
+
+	local playerEquipment = spawnedEquipment[player]
+	if playerEquipment ~= nil then
+
+		if bindingPressed == 'ability_extra_1' then
+		
+			UnequipEverythingForPlayer(player)
+			
+			-- Equip the Unarmed (wave)
+		    playerEquipment[WEAPON_UNARMED].isEnabled = true
+		    playerEquipment[WEAPON_UNARMED]:Equip(player)
+		    
+		elseif bindingPressed == 'ability_extra_2' then
+			if player.team == 1 and player:GetResource("Gun") == 1 then
+			
+				UnequipEverythingForPlayer(player)
+				
+				-- Equip the Gun
+				playerEquipment[WEAPON_GUN].isEnabled = true
+				playerEquipment[WEAPON_GUN]:Equip(player)
+			
+			elseif player.team == 2 and player:GetResource("Knife") == 1 then
+			
+				UnequipEverythingForPlayer(player)
+				
+				-- Equip the Knife
+				playerEquipment[WEAPON_KNIFE].isEnabled = true
+				playerEquipment[WEAPON_KNIFE]:Equip(player)
+			end
+		end
+	end
+end
+
+
+-- When a player reaches X clues, give them a weapon
+function OnClueChanged(player, resourceID, newValue)
+	if resourceID == "Clues" and newValue >= CLUE_GOAL then
+	    if player.team == 1 and player:GetResource("Gun") == 0 then
+	    	player:SetResource("Gun", 1)
+	        OnBindingPressed(player, 'ability_extra_2')
+	        
+	    elseif player.team == 2 and player:GetResource("Knife") == 0 then
+	    	-- This allows the murderer to throw the knife then earn another one
+	    	player:SetResource("Knife", 1)
+	        OnBindingPressed(player, 'ability_extra_2')
+	    end
     end
 end
 
-function Disarm(player)
-    Events.BroadcastToPlayer(p, "DisarmedEvent")
-    OnBindingPressed(player, "ability_extra_1") -- Quick hack to set them to unarmed.
-    -- spawn new gun and drop it to the ground, if they had one
-    if player.serverUserData.gun == true then
-        local spawnedGun = World.SpawnAsset(propGun, {position = player:GetWorldPosition()})
-        local rayStart = spawnedGun:GetWorldPosition()
-        local randomVec = Vector3.New(math.random(-5000, 5000), math.random(-5000, 5000), 0)
-        local rayEnd = rayStart + randomVec + Vector3.UP * -500
-        local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
-
-        if hitResult then
-            local dropPos = hitResult:GetImpactPosition() + Vector3.UP * 40
-            spawnedGun:SetWorldPosition(dropPos)
-        end
-    end
-    player.serverUserData.gun = false
-    Events.BroadcastToPlayer(player, "DisarmedEvent")
-    player:SetResource('Clues', 0)
+-- Event is fired from BystanderGunPickup script
+function OnBystanderPickedUpGun(player)
+	player:SetResource("Gun", 1)
+	OnBindingPressed(player, 'ability_extra_2')
 end
+Events.Connect("BystanderPickedUpGun", OnBystanderPickedUpGun)
+
+
+-- Event is fired from MurdererKnifeThrow script
+function OnPlayerThrewKnife(player)
+	player:SetResource("Knife", 0)
+	OnBindingPressed(player, 'ability_extra_1')
+end
+Events.Connect("PlayerThrewKnife", OnPlayerThrewKnife)
+
+
+-- Event is fired from MurderWeaponPickup script
+function OnPlayerPickedUpKnife(player)
+	player:SetResource("Knife", 1)
+	OnBindingPressed(player, 'ability_extra_2')
+end
+Events.Connect("PlayerPickedUpKnife", OnPlayerPickedUpKnife)
+
 
 function OnPlayerDied(player, damage)
-    if player.serverUserData.gun == true then
-        spawnedGun = World.SpawnAsset(propGun, {position = player:GetWorldPosition()})
-    end
+	-- If this player was carrying a gun, spawn one that can be picked up
+	if player:GetResource("Gun") == 1 then
+		looseGun = World.SpawnAsset(GUN_TEMPLATE, {position = player:GetWorldPosition()})
+	end
 end
 
 
 function OnPlayerJoined(player)
-    player.bindingPressedEvent:Connect(OnBindingPressed)
-    player.diedEvent:Connect(OnPlayerDied)
-    player:Die()
+	SpawnEquipmentForPlayer(player)
+
+	player.bindingPressedEvent:Connect(OnBindingPressed)
+	player.resourceChangedEvent:Connect(OnClueChanged)
+	player.diedEvent:Connect(OnPlayerDied)
 end
 
 function OnPlayerLeft(player)
-    if spawnedEquipment[player] ~= nil then
-        for k,v in pairs(spawnedEquipment[player]) do
-        	if Object.IsValid(v) then
-	            v:Destroy()
-	        end
-        end
-    end
-    spawnedEquipment[player] = nil
+	if spawnedEquipment[player] ~= nil then
+		for k,v in pairs(spawnedEquipment[player]) do
+			if Object.IsValid(v) then
+				v:Destroy()
+			end
+		end
+	end
+	spawnedEquipment[player] = nil
 end
-
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
-Events.Connect('DisarmedEvent', Disarm)
-Game.roundStartEvent:Connect(OnRoundStart)
+
 
 -- nil OnGameStateChanged(int, int, bool, float)
--- Handles respawning players when the game state switches to or from lobby state
 function OnGameStateChanged(oldState, newState, hasDuration, endTime)
 
-    if (newState == ABGS.GAME_STATE_LOBBY and oldState ~= ABGS.GAME_STATE_LOBBY) then
-        RemoveAllPlayerEquipment(true)
-    end
+	if (newState == ABGS.GAME_STATE_LOBBY 
+	and oldState ~= ABGS.GAME_STATE_LOBBY) then
+	
+		UnequipEverythingAndBecomeUnarmed()
+	end
 end
 
 -- Initialize

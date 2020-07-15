@@ -1,4 +1,4 @@
-GameId: "A95502254F31C3F14E5081AB5510FF59"
-DisplayName: "Homicide"
+GameId: "A10C1E8240A9B0538D039C895E95D88C"
+DisplayName: "Murder Mansion"
 GameSerializationVersion: 61
 Framework: "Empty Project"

@@ -1,7 +1,7 @@
 Name: "Clue Spawners"
-RootId: 6086862568812308756
+RootId: 1268049489981498697
 Objects {
-  Id: 3377310453782055466
+  Id: 12766698407502033766
   Name: "Disabled Spawners"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6086862568812308756
+  ParentId: 1268049489981498697
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -27,7 +27,7 @@ Objects {
   }
 }
 Objects {
-  Id: 951819501176238094
+  Id: 15269958062371094933
   Name: "Enabled Spawners"
   Transform {
     Location {
@@ -40,7 +40,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6086862568812308756
+  ParentId: 1268049489981498697
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -53,7 +53,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11680533936051104737
+  Id: 10727344784386949533
   Name: "ClueSpawnerServer"
   Transform {
     Location {
@@ -66,12 +66,12 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6086862568812308756
+  ParentId: 1268049489981498697
   UnregisteredParameters {
     Overrides {
       Name: "cs:EnabledSpawners"
       ObjectReference {
-        SelfId: 951819501176238094
+        SelfId: 15269958062371094933
       }
     }
     Overrides {
@@ -82,15 +82,43 @@ Objects {
     }
     Overrides {
       Name: "cs:StartingAmount"
-      Int: 8
+      Int: 12
+    }
+    Overrides {
+      Name: "cs:ClueLimit"
+      Int: 20
     }
     Overrides {
       Name: "cs:SpawnPeriod"
       Float: 30
     }
     Overrides {
-      Name: "cs:ClueLimit"
-      Int: 15
+      Name: "cs:SpawnTimeBonusPerPlayer"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:SpawnTimeBonusPerPlayer:tooltip"
+      String: "Spawns clues faster if there are more players in the game. Set to zero for no bonus. This value is multiplied by the number of players and subtracted from \'SpawnPeriod\' to arrive at the final spawn period."
+    }
+    Overrides {
+      Name: "cs:EnabledSpawners:tooltip"
+      String: "Folder where the clue spawners are located in the hierarchy."
+    }
+    Overrides {
+      Name: "cs:ClueTemplate:tooltip"
+      String: "Reference to the template to be spawned as the clue pickup."
+    }
+    Overrides {
+      Name: "cs:StartingAmount:tooltip"
+      String: "Number of clues to spawn at the beginning of a round. Clues from the previous round are deleted."
+    }
+    Overrides {
+      Name: "cs:ClueLimit:tooltip"
+      String: "The maximum number of clues to have on the map at any point. As new clues are spawned in, when it reaches this limit no additional clues are spawned."
+    }
+    Overrides {
+      Name: "cs:SpawnPeriod:tooltip"
+      String: "How many seconds delay between spawning of new clues in the middle of a round."
     }
   }
   Collidable_v2 {

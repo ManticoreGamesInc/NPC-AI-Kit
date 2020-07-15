@@ -324,8 +324,8 @@ Assets {
       }
     }
     PrimaryAssetId {
-      AssetType: "TemplateAssetRef"
-      AssetId: "Nameplates"
+      AssetType: "None"
+      AssetId: "None"
     }
   }
   SerializationVersion: 61

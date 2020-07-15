@@ -1,7 +1,7 @@
 Name: "LTS Game State Settings"
-RootId: 17135444540396883885
+RootId: 17443580962788695610
 Objects {
-  Id: 17790215620699604032
+  Id: 14747835789405449191
   Name: "Victory Announcer"
   Transform {
     Scale {
@@ -10,7 +10,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
+  ParentId: 17443580962788695610
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -53,7 +53,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7935272214934780333
+  Id: 6484846012732459469
   Name: "Round Survivor Victory"
   Transform {
     Scale {
@@ -62,7 +62,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
+  ParentId: 17443580962788695610
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -109,7 +109,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15274491730231871834
+  Id: 7428834649202473158
   Name: "Lobby Start Reset KD"
   Transform {
     Scale {
@@ -118,7 +118,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
+  ParentId: 17443580962788695610
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -159,57 +159,113 @@ Objects {
   }
 }
 Objects {
-  Id: 11513810779938931248
+  Id: 991269571054593011
   Name: "Lobby Start Respawn Players"
   Transform {
+    Location {
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
+  ParentId: 17443580962788695610
+  ChildIds: 15729365218407615071
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Period"
+      Float: 1.5
+    }
+    Overrides {
+      Name: "cs:LobbyRespawnOnStart"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:LobbyRespawnIfDead"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:RoundRespawnOnStart"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:RoundRespawnIfDead"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:Period:tooltip"
+      String: "Period over which players are respawned to avoid a spike of network traffic."
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13354720253605587128
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Lobby Start Respawn Players"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 714839591765825575
-    }
+  Folder {
+    IsGroup: true
+  }
+  InstanceHistory {
+    SelfId: 8360859457162931550
+    SubobjectId: 13354720253605587128
+    InstanceId: 11513810779938931248
+    TemplateId: 714839591765825575
+    WasRoot: true
   }
 }
 Objects {
-  Id: 8297028268177050426
+  Id: 15729365218407615071
+  Name: "LobbyStartRespawnPlayersServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 991269571054593011
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:API"
+      AssetReference {
+        Id: 11974742996071064388
+      }
+    }
+    Overrides {
+      Name: "cs:ComponentRoot"
+      ObjectReference {
+        SelfId: 991269571054593011
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4596364718294812401
+    }
+  }
+  InstanceHistory {
+    SelfId: 12098673261888497362
+    SubobjectId: 7689294975764800308
+    InstanceId: 11513810779938931248
+    TemplateId: 714839591765825575
+  }
+}
+Objects {
+  Id: 10972454351344669600
   Name: "Lobby Required Players"
   Transform {
     Location {
@@ -222,9 +278,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
-  ChildIds: 13557330373498569257
-  ChildIds: 3873490936948752732
+  ParentId: 17443580962788695610
+  ChildIds: 2241423809166254842
+  ChildIds: 3624768138039771380
   UnregisteredParameters {
     Overrides {
       Name: "cs:RequiredPlayers"
@@ -261,7 +317,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3873490936948752732
+  Id: 3624768138039771380
   Name: "ClientContext"
   Transform {
     Location {
@@ -274,9 +330,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8297028268177050426
-  ChildIds: 4384438927978144377
-  ChildIds: 548163412849335775
+  ParentId: 10972454351344669600
+  ChildIds: 17096630630317572428
+  ChildIds: 1248829602393019750
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -295,7 +351,7 @@ Objects {
   }
 }
 Objects {
-  Id: 548163412849335775
+  Id: 1248829602393019750
   Name: "Waiting Container"
   Transform {
     Location {
@@ -308,8 +364,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3873490936948752732
-  ChildIds: 1739264649078628557
+  ParentId: 3624768138039771380
+  ChildIds: 14727439796333600153
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -335,7 +391,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1739264649078628557
+  Id: 14727439796333600153
   Name: "Panel"
   Transform {
     Location {
@@ -348,9 +404,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 548163412849335775
-  ChildIds: 17195377265863620485
-  ChildIds: 11620806067143042524
+  ParentId: 1248829602393019750
+  ChildIds: 9602280464096870254
+  ChildIds: 12514661126896084113
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -391,7 +447,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11620806067143042524
+  Id: 12514661126896084113
   Name: "Discord Message"
   Transform {
     Location {
@@ -404,7 +460,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1739264649078628557
+  ParentId: 14727439796333600153
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -451,7 +507,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17195377265863620485
+  Id: 9602280464096870254
   Name: "Waiting Message Text"
   Transform {
     Location {
@@ -464,7 +520,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1739264649078628557
+  ParentId: 14727439796333600153
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -516,7 +572,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4384438927978144377
+  Id: 17096630630317572428
   Name: "GameStateWaitingDisplayClient"
   Transform {
     Location {
@@ -529,7 +585,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3873490936948752732
+  ParentId: 3624768138039771380
   UnregisteredParameters {
     Overrides {
       Name: "cs:API"
@@ -540,19 +596,19 @@ Objects {
     Overrides {
       Name: "cs:WaitingText"
       ObjectReference {
-        SelfId: 17195377265863620485
+        SelfId: 9602280464096870254
       }
     }
     Overrides {
       Name: "cs:ComponentRoot"
       ObjectReference {
-        SelfId: 8297028268177050426
+        SelfId: 10972454351344669600
       }
     }
     Overrides {
       Name: "cs:DiscordMessage"
       ObjectReference {
-        SelfId: 11620806067143042524
+        SelfId: 12514661126896084113
       }
     }
   }
@@ -575,7 +631,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13557330373498569257
+  Id: 2241423809166254842
   Name: "LobbyRequiredPlayersServer"
   Transform {
     Location {
@@ -588,7 +644,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8297028268177050426
+  ParentId: 10972454351344669600
   UnregisteredParameters {
     Overrides {
       Name: "cs:API"
@@ -599,7 +655,7 @@ Objects {
     Overrides {
       Name: "cs:ComponentRoot"
       ObjectReference {
-        SelfId: 8297028268177050426
+        SelfId: 10972454351344669600
       }
     }
   }
@@ -622,7 +678,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16747168562567679004
+  Id: 3696789743164212885
   Name: "Game State Message"
   Transform {
     Location {
@@ -635,8 +691,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
-  ChildIds: 14301072840842896163
+  ParentId: 17443580962788695610
+  ChildIds: 3892292897056454127
   UnregisteredParameters {
     Overrides {
       Name: "cs:ShowLobbyMessage"
@@ -647,27 +703,27 @@ Objects {
       String: "Lobby"
     }
     Overrides {
-      Name: "cs:ShowRoundMessage"
+      Name: "cs:ShowRoundStart"
       Bool: true
     }
     Overrides {
-      Name: "cs:RoundMessage"
+      Name: "cs:RoundStartBystanders"
       String: "Don\'t Die, Kill the Murderer"
     }
     Overrides {
-      Name: "cs:ShowRoundEndMessage"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:RoundEndMessage"
-      String: "Bystanders Win!"
-    }
-    Overrides {
-      Name: "cs:MurdererRoundMessage"
+      Name: "cs:RoundStartMurderer"
       String: "Murder the Bystanders"
     }
     Overrides {
-      Name: "cs:RoundEndMessageMurderer"
+      Name: "cs:ShowRoundEnd"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:RoundEndBystanders"
+      String: "Bystanders Win!"
+    }
+    Overrides {
+      Name: "cs:RoundEndMurderer"
       String: "The Murderer Wins!"
     }
     Overrides {
@@ -675,11 +731,11 @@ Objects {
       String: "Set to show the message at the start of the lobby state."
     }
     Overrides {
-      Name: "cs:ShowRoundMessage:tooltip"
+      Name: "cs:ShowRoundStart:tooltip"
       String: "Set to show the message at the start of the round state."
     }
     Overrides {
-      Name: "cs:ShowRoundEndMessage:tooltip"
+      Name: "cs:ShowRoundEnd:tooltip"
       String: "Set to show the message at the start of the round end state."
     }
   }
@@ -692,16 +748,9 @@ Objects {
   Folder {
     IsGroup: true
   }
-  InstanceHistory {
-    SelfId: 16747168562567679004
-    SubobjectId: 7154920798440654563
-    InstanceId: 464868016704882589
-    TemplateId: 3074501022160388017
-    WasRoot: true
-  }
 }
 Objects {
-  Id: 14301072840842896163
+  Id: 3892292897056454127
   Name: "GameStateMessageServer"
   Transform {
     Location {
@@ -714,7 +763,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16747168562567679004
+  ParentId: 3696789743164212885
   UnregisteredParameters {
     Overrides {
       Name: "cs:API"
@@ -725,7 +774,7 @@ Objects {
     Overrides {
       Name: "cs:ComponentRoot"
       ObjectReference {
-        SelfId: 16747168562567679004
+        SelfId: 3696789743164212885
       }
     }
   }
@@ -740,15 +789,9 @@ Objects {
       Id: 9696832769719065117
     }
   }
-  InstanceHistory {
-    SelfId: 14301072840842896163
-    SubobjectId: 5572389145757542876
-    InstanceId: 464868016704882589
-    TemplateId: 3074501022160388017
-  }
 }
 Objects {
-  Id: 14490041016836287673
+  Id: 17047939987882779411
   Name: "Basic Game State Manager"
   Transform {
     Scale {
@@ -757,7 +800,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17135444540396883885
+  ParentId: 17443580962788695610
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -802,7 +845,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundEndDuration"
-          Float: 3
+          Float: 4
         }
         Overrides {
           Name: "cs:RoundEndHasDuration"

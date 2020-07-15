@@ -91,20 +91,15 @@ function OnKill(killerPlayer, killedPlayer, sourceObjectId)
 		lineColor = SELF_TEXT_COLOR
 	end
 
-	if not killerPlayer then
-		-- AddLine(string.format("In a show of bad judgement, someone shot poor %s", killedPlayer.name), lineColor)
-	elseif sourceObject then
-		if sourceObject.name == 'Murderer Knife' then
+	if killerPlayer then
+		if killerPlayer.team == killedPlayer.team then
+			AddLine(string.format("%s killed %s in cold blood!", killerPlayer.name, killedPlayer.name), lineColor)
+			
+		elseif killerPlayer.team == 2 then
 			AddLine(string.format("Someone murdered %s!", killedPlayer.name), lineColor)
-		elseif sourceObject.name == 'Bystander Gun' and killedPlayer.team == 2 then
-			AddLine(string.format("%s shot the murderer! It was %s all along.", killerPlayer.name, killedPlayer.name), lineColor)
 		else
-			AddLine(string.format("%s shot %s in cold blood", killerPlayer.name, killedPlayer.name), lineColor)
-			print('SourceObject is', sourceObject)
+			AddLine(string.format("%s shot the murderer! It was %s all along.", killerPlayer.name, killedPlayer.name), lineColor)
 		end
-		--	AddLine(string.format("%s killed %s with %s", killerPlayer.name, killedPlayer.name, sourceObject.name), lineColor)
-	else
-		AddLine(string.format("%s killed %s", killerPlayer.name, killedPlayer.name), lineColor)
 	end
 end
 

@@ -5,6 +5,9 @@ by: standardcombo, Scav
 
 Attaches a heart object to other players. The heart can be seen and heard through walls.
 
+For a player to see the hearts give them the "CanSeeHearts" resource. E.g.:
+	player:SetResource("CanSeeHearts", 1)
+
 --]]
 local HEART_TEMPLATE = script:GetCustomProperty("HeartTemplate")
 local RESOURCE_GIVES_VISION = script:GetCustomProperty("ResourceGivesVision") or "CanSeeHearts"

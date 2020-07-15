@@ -1,12 +1,13 @@
-GameId: "4a648e585caf4b93836973338a840670"
-ClientVersion: "1.0.140-prod-s"
-Name: "Homicide WIP"
-Description: "Homicide Game test"
-MaxPlayers: 8
-IsPrivate: true
-Tags: "Multiplayer"
-Tags: "Experimental"
-Tags: "Competitive"
-Tags: "Relaxing"
-ScreenshotPaths: "C:\\Users\\Chris C\\Documents\\My Games\\CORE\\Saved\\Maps\\CREL-games\\Homicide\\Screenshots\\TitlePage.png"
-ReleaseNotes: "Bugfixes related to leaving the game"
+GameId: "b02e19f2939542249eedbeb394211c4c"
+ClientVersion: "1.0.142-prod-s"
+Name: "Murder - Cleaned Up"
+Description: "Putting the \"DUR\" in \"Murder\"."
+MaxPlayers: 16
+IsOpenForEdit: true
+Tags: "Horror"
+Tags: "Deathmatch"
+Tags: "FirstPerson"
+Tags: "Other"
+Tags: "Urban"
+ScreenshotPaths: "C:\\Users\\gbsus\\Downloads\\Core_murder_mansion_icon.png"
+ReleaseNotes: "- Added stat tracking for kills and victories."

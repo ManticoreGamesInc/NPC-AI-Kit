@@ -3,110 +3,96 @@
     Assign one at random to be the murderer.
     Assign the rest to be bystanders.
 
-    There are two teams: bystanders and murder. However, team attack is on. The team system is how the game knows which side you are on and what equipment to give you
+    There are two teams: bystanders and murderer. The team system is how the game knows which
+    side you are on and what equipment to give you.
 
-    In the weapon switcher script, detect their team and then assign weapons. The murderer gets a knife that kills in one hit. Bystanders get no weapon by default. Assign one bystander at random to start with a pistol.
-
-    The pistol gets one shot and has a five-second reload time. It kills in one hit.
+    See the WeaponEquipmentSwitcher script for weapon assignment.
 
     TEAM 1 = BYSTANDERS
     TEAM 2 = MURDERER
 ]]
 
--- Gets all players as an array
-
-local propUnarmedWeapon = script:GetCustomProperty("UnarmedWeapon")
-local propMurdererKnife = script:GetCustomProperty("MurdererKnife")
-local propBystanderGun = script:GetCustomProperty("BystanderGun")
-
-function StartRound()
-    UI.PrintToScreen("Round started!")
-    local allPlayers = Game.GetPlayers()
-    local count = #Game.GetPlayers()
-    -- In here you can put logic for having murderers based on the number of players
+local isRoundUnderway = false
 
 
-    -- look for guns just laying around not attached to anyone
-    local abandonedGuns = World.FindObjectsByName('Bystander Gun')
-    for _, gun in ipairs(abandonedGuns) do
-        print("Found gun id " .. gun.id .. " [" .. gun.name .. "]")
-        if gun:GetAttachedToSocketName() ~= "" then
-            print("gun id " .. gun.id .. " was attached to a socket." .. gun:GetAttachedToSocketName())
-            -- do nothing
-        else
-            print('Destroyed gun at', gun:GetWorldPosition())
-            gun:Destroy()
-        end
-    end
+function OnRoundStarted()
+	isRoundUnderway = true
+	
+	local allPlayers = Game.GetPlayers()
+	
+	-- Look for weapons laying around and destroy them
+	local abandonedEquipment = World.FindObjectsByType('Equipment')
+	for _, equipment in ipairs(abandonedEquipment) do
+		if equipment:GetAttachedToSocketName() ~= "" then
+		    -- do nothing
+		else
+			equipment:Destroy()
+		end
+	end
+	
+	-- Determine murderer and lucky bystander
+	local playerCount = #Game.GetPlayers()
+	local murdererIndex = math.random(playerCount)
+	local luckyBystanderIndex = math.random(playerCount)
+	
+	while luckyBystanderIndex == murdererIndex and playerCount ~= 1 do
+		luckyBystanderIndex = math.random(playerCount)
+	end
 
-    -- Determine murderer and lucky bystander
-    local murderer = math.random(#Game.GetPlayers())
-    local luckyBystander = math.random(#Game.GetPlayers())
-    while luckyBystander == murderer and #Game.GetPlayers() ~= 1 do
-        luckyBystander = math.random(#Game.GetPlayers())
-    end
-
-
-    for i, player in ipairs(allPlayers) do
-        -- get playerdata
-        local data = Storage.GetPlayerData(player)
-
-        -- update stats
-        local BystanderWins = data['BystanderWins']
-        local MurdererWins = data['MurdererWins']
-        local BystandersKilled = data['BystandersKilled']
-        local MurderersKilled = data['MurderersKilled']
-
-        -- Update scoreboard stats for player
-        Events.BroadcastToPlayer(player, 'Scoreboard', BystanderWins, MurdererWins, BystandersKilled, MurderersKilled)
-
-        if i == murderer then
-            player.team = 2
-            player.serverUserData.gun = false
-            
-            player:SetResource("CanSeeHearts", 1)
-            
-            -- spawn unarmed equipment. Currently this is in the weapon switcher script.
-            -- World.SpawnAsset(propUnarmedWeapon):Equip(player)
-            print('Player', i, "is murderer")
-            print('Player team is', player.team)
-        else
-            player.team = 1
-            player.serverUserData.gun = false
-            
-            player:SetResource("CanSeeHearts", 0)
-            
-            print('Player', i, "is bystander")
-            Events.Broadcast('DisarmedEvent', player)
-
-            if i == luckyBystander then
-                player.serverUserData.gun = true
-                print('Player', i, "is lucky bystander")
-                print('Player team is', player.team)
-                Events.BroadcastToPlayer(player, 'ArmedEvent')
-                Events.Broadcast('ArmedEvent', player)
-            end
-        end
-        -- Set clues to zero
-        player:SetResource('Clues', 0)
-    end
-
-
+	-- Setup flags for player weapons and abilities
+	for i, player in ipairs(allPlayers) do
+		if i == murdererIndex then
+		    player.team = 2
+		    
+		    player:SetResource("CanSeeHearts", 1)
+		    
+			player:SetResource("Knife", 1)
+			player:SetResource("Gun", 0)
+			
+		else
+			player.team = 1
+			
+			player:SetResource("CanSeeHearts", 0)
+			
+			player:SetResource("Knife", 0)
+			
+		    if i == luckyBystanderIndex then
+				player:SetResource("Gun", 1)
+			else
+				player:SetResource("Gun", 0)
+		    end
+		end
+		
+		-- Set all player clues to zero
+		player:SetResource('Clues', 0)
+	end
 end
 
+
+function OnRoundEnded()
+	isRoundUnderway = false
+end
 
 
 function OnBindingPressed(player, bindingPressed)    
 
-    if bindingPressed == 'ability_extra_10' then
-        -- For debugging
-        Game.StartRound()
-    end
+	if bindingPressed == 'ability_extra_10' then
+		-- For debugging
+--		Game.StartRound()
+	end
 end
 
 function OnPlayerJoined(player)
 	player.team = 1
-    player.bindingPressedEvent:Connect(OnBindingPressed)
+	player.bindingPressedEvent:Connect(OnBindingPressed)
+	
+	-- Kill players that join while a round is already underway
+	if isRoundUnderway and #Game.GetPlayers() >= 3 then
+		Task.Wait(1)
+		if Object.IsValid(player) then
+			player:Die()
+		end
+	end
 end
 
 function OnPlayerLeft()
@@ -115,7 +101,8 @@ end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
-Game.roundStartEvent:Connect(StartRound)
 
+Game.roundStartEvent:Connect(OnRoundStarted)
+Game.roundEndEvent:Connect(OnRoundEnded)
 
 

@@ -69,5 +69,9 @@ Assets {
       AssetId: "None"
     }
   }
+  Marketplace {
+    Description: "Attaches a heart object to other players. The heart can be seen and heard through walls.\r\n\r\nSee the script comments and tooltips on custom properties for more information on how it works."
+  }
   SerializationVersion: 61
+  DirectlyPublished: true
 }

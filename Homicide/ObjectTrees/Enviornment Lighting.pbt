@@ -1,7 +1,7 @@
 Name: "Enviornment Lighting"
-RootId: 8429769948452207709
+RootId: 12680867922712441399
 Objects {
-  Id: 9737594665928341713
+  Id: 16752573583718241501
   Name: "Environment Fog Default VFX"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8429769948452207709
+  ParentId: 12680867922712441399
   UnregisteredParameters {
     Overrides {
       Name: "bp:Fog Density"
@@ -93,7 +93,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9935838764636038802
+  Id: 15511568402381758471
   Name: "Fog Adjustment Volume"
   Transform {
     Location {
@@ -109,12 +109,12 @@ Objects {
       Z: 9.16666889
     }
   }
-  ParentId: 8429769948452207709
+  ParentId: 12680867922712441399
   UnregisteredParameters {
     Overrides {
       Name: "bp:Fog Object"
       ObjectReference {
-        SelfId: 9737594665928341713
+        SelfId: 16752573583718241501
       }
     }
     Overrides {
@@ -137,7 +137,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6205259311596543515
+  Id: 17651657726964285790
   Name: "Sun Light"
   Transform {
     Location {
@@ -156,7 +156,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8429769948452207709
+  ParentId: 12680867922712441399
   UnregisteredParameters {
     Overrides {
       Name: "bp:Intensity"
@@ -240,7 +240,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2792502803147786601
+  Id: 8178034734476808778
   Name: "Skylight"
   Transform {
     Location {
@@ -253,7 +253,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8429769948452207709
+  ParentId: 12680867922712441399
   UnregisteredParameters {
     Overrides {
       Name: "bp:Ambient Image"
@@ -263,7 +263,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Intensity"
-      Float: 1.1
+      Float: 1.8
     }
   }
   Collidable_v2 {

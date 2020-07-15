@@ -1,7 +1,7 @@
 Name: "Background"
-RootId: 11515381514475713472
+RootId: 6265504457348207065
 Objects {
-  Id: 10674256481094862817
+  Id: 14478671760071376537
   Name: "Frame"
   Transform {
     Location {
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11515381514475713472
+  ParentId: 6265504457348207065
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -63,7 +63,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10175741942562305533
+  Id: 15990616133217699273
   Name: "Background"
   Transform {
     Location {
@@ -76,7 +76,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11515381514475713472
+  ParentId: 6265504457348207065
   UnregisteredParameters {
   }
   Collidable_v2 {

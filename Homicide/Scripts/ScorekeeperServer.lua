@@ -1,81 +1,121 @@
+--[[
+	Scorekeeper Server
+	v1.0
+	by: standardcombo, Scav
+	
+	Keeps track of player scores for persistant storage.
+	Increases scores when the condition for each one is met.
+	
+	During a game player scores are tracked as resources.
+	
+	Requires storage to be enabled in the Game Settings.
+--]]
 
+local KEY_BYSTANDER_WINS = "BystanderWins_v2"
+local KEY_MURDERER_WINS = "MurdererWins_v2"
+local KEY_BYSTANDERS_KILLED = "BystandersKilled_v2"
+local KEY_MURDERERS_KILLED = "MurderersKilled_v2"
 
+local RESOURCE_NAMES_TO_TRACK = {
+    KEY_BYSTANDER_WINS,
+    KEY_MURDERER_WINS,
+    KEY_BYSTANDERS_KILLED,
+    KEY_MURDERERS_KILLED
+}
 
-function OnResourceChanged(player, resName, resValue)
+local BYSTANDER_TEAM = 1
+local MURDERER_TEAM = 2
 
-end
-
-function MurdererKilled(killer)
-    local data = Storage.GetPlayerData(killer)
-    data['MurdererKills'] = data['MurdererKills'] + 1
-    local resultCode,errorMessage = Storage.SetPlayerData(player, data)
-end
-
-function BystanderKilled(killer)
-    local data = Storage.GetPlayerData(killer)
-    data['BystanderKills'] = data['BystanderKills'] + 1
-    local resultCode,errorMessage = Storage.SetPlayerData(player, data)
-end
-
-function OnRoundEnd()
-    local playersAlive = Game.GetPlayers({ignoreDead = true, includeTeams = 1})
-    local playersDead = Game.GetPlayers({ignoreLiving = true, includeTeams = 2})
-
-
-    for _,player in ipairs(playersAlive) do
-        local data = Storage.GetPlayerData(player)
-
-        if player.team == 1 then
-            local data = Storage.GetPlayerData(player)
-            data['BystanderWins'] = data['BystanderWins'] + 1
-            local resultCode,errorMessage = Storage.SetPlayerData(player, data)
-        elseif player.team == 2 then
-            local data = Storage.GetPlayerData(player)
-            data['MurdererWins'] = data['MurdererWins'] + 1
-            local resultCode,errorMessage = Storage.SetPlayerData(player, data)
-        end
-    end
-
-end
-
-function OnPlayerDied(player, dmg)
-    if player.team == 2 and dmg.owner == 1 then
-        MurdererKilled(dmg.owner)
-    end
-end
 
 function OnPlayerJoined(player)
-    local data = Storage.GetPlayerData(player)
-    data['BystanderWins'] = data['BystanderWins'] or 0
-    data['MurdererWins'] = data['MurdererWins'] or 0
-    data['BystandersKilled'] = data['BystandersKilled'] or 0
-    data['MurderersKilled'] = data['MurderersKilled'] or 0
-    Storage.SetPlayerData(player, data)
-
-    if not data then		-- Migration
-		data = {}
-		Storage.SetPlayerData(player, data)
+	-- Move player scores from storage into resources
+	local data = Storage.GetPlayerData(player)
+	
+	for _,resourceName in ipairs(RESOURCE_NAMES_TO_TRACK) do
+		local resourceValue = 0
+		if data[resourceName] then
+			resourceValue = data[resourceName]
+		end
+		player:SetResource(resourceName, resourceValue)
     end
-
-    print(data)
-    print('testing storage', data['BystanderWins'])
-
-    for _, item in ipairs(data) do
-        print(item)
-    end
-    
-    local bystanderwins = data["BystanderWins"]
-    local murdererwins = data["MurdererWins"]
-    local bystanderskilled = data["BystandersKilled"]
-    local murdererskilled = data["MurderersKilled"]
-    
-
-
-    player.resourceChangedEvent:Connect(OnResourceChanged)
-    onDiedListener = player.diedEvent:Connect(OnPlayerDied)
+	
+	-- Listen for some more events
+	player.resourceChangedEvent:Connect(OnResourceChanged)
+	player.diedEvent:Connect(OnPlayerDied)
 end
 
+
+function OnResourceChanged(player, resourceName, resourceValue)
+	-- Move player score from resource into storage
+	for _,res in ipairs(RESOURCE_NAMES_TO_TRACK) do
+		if res == resourceName then
+			local data = Storage.GetPlayerData(player)
+			data[resourceName] = resourceValue
+			Storage.SetPlayerData(player, data)
+			return
+		end
+	end
+end
+
+
+function OnPlayerDied(player, dmg)
+	local killer = dmg.sourcePlayer
+	if not killer then return end
+	
+	if player.team == BYSTANDER_TEAM and killer.team == MURDERER_TEAM then
+		BystanderKilled(killer)
+        
+	elseif player.team == MURDERER_TEAM and killer.team == BYSTANDER_TEAM then
+		MurdererKilled(killer)
+	end
+end
+
+
+function BystanderWins(player)
+	player:AddResource(KEY_BYSTANDER_WINS, 1)
+end
+
+
+function MurdererWins(player)
+	player:AddResource(KEY_MURDERER_WINS, 1)
+end
+
+
+function BystanderKilled(killer)
+	killer:AddResource(KEY_BYSTANDERS_KILLED, 1)
+end
+
+
+function MurdererKilled(killer)
+    killer:AddResource(KEY_MURDERERS_KILLED, 1)
+end
+
+
+function OnRoundEnd()
+	local murderer = nil
+	
+	for _,player in ipairs(Game.GetPlayers()) do
+		if player.team == MURDERER_TEAM then
+			murderer = player
+			break
+		end
+	end
+	
+	if murderer ~= nil and not murderer.isDead then
+		-- Give point to murderer
+		MurdererWins(murderer)
+		
+	else
+		-- Give point to bystanders
+		for _,player in ipairs(Game.GetPlayers()) do
+			if player.team == BYSTANDER_TEAM then
+				BystanderWins(player)
+			end
+		end
+	end
+end
+
+
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
-Events.Connect('MurdererKilled', MurdererKilled)
-Events.Connect('KilledInnocent', BystanderKilled)
 Game.roundEndEvent:Connect(OnRoundEnd)
+

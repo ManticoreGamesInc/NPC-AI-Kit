@@ -2,8 +2,9 @@
 local ENABLED_SPAWNERS = script:GetCustomProperty("EnabledSpawners"):WaitForObject()
 local CLUE_TEMPLATE = script:GetCustomProperty("ClueTemplate")
 local STARTING_AMOUNT = script:GetCustomProperty("StartingAmount") or 5
-local SPAWN_PERIOD = script:GetCustomProperty("SpawnPeriod") or 30
 local CLUE_LIMIT = script:GetCustomProperty("ClueLimit") or 20
+local SPAWN_PERIOD = script:GetCustomProperty("SpawnPeriod") or 30
+local SPAWN_TIME_BONUS_PER_PLAYER = script:GetCustomProperty("SpawnTimeBonusPerPlayer") or 1
 
 -- Get all the clue spawn locations
 local spawnersAvailable = ENABLED_SPAWNERS:FindDescendantsByName('Clue Spawn')
@@ -99,7 +100,10 @@ end
 function Tick(deltaTime)
     elapsedTime = elapsedTime + deltaTime
     
-    if elapsedTime >= SPAWN_PERIOD then
+    local playerCount = #Game.GetPlayers()
+    local spawnPeriod = SPAWN_PERIOD - SPAWN_TIME_BONUS_PER_PLAYER * playerCount
+    
+    if elapsedTime >= spawnPeriod then
     	elapsedTime = 0
     	
         SpawnClue(1)

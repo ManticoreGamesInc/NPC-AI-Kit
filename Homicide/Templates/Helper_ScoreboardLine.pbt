@@ -128,7 +128,7 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 5196377603841433560
+              Id: 17586365689296088662
             }
             Color {
               A: 0.525000036
@@ -516,7 +516,7 @@ Assets {
       }
     }
     Assets {
-      Id: 5196377603841433560
+      Id: 17586365689296088662
       Name: "Background Flat 020"
       PlatformAssetType: 9
       PrimaryAsset {

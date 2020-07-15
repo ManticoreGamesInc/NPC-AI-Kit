@@ -1,7 +1,7 @@
 Name: "Enabled Spawners"
-RootId: 951819501176238094
+RootId: 15269958062371094933
 Objects {
-  Id: 6539443483252202547
+  Id: 12586451291324239314
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -17,7 +17,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -62,7 +62,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13488739549025612811
+  Id: 6441108509525322340
   Name: "ServerContext"
   Transform {
     Location {
@@ -79,7 +79,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -124,7 +124,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15103944352883125207
+  Id: 13458076882920885108
   Name: "ServerContext"
   Transform {
     Location {
@@ -141,7 +141,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -186,7 +186,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6938435514834157267
+  Id: 17597927597924415809
   Name: "ServerContext"
   Transform {
     Location {
@@ -203,7 +203,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -248,7 +248,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4536116289763927558
+  Id: 18030200664948745997
   Name: "ServerContext"
   Transform {
     Location {
@@ -265,7 +265,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -310,7 +310,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11106023789808935504
+  Id: 15640409720714401769
   Name: "ServerContext"
   Transform {
     Location {
@@ -327,7 +327,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -374,7 +374,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9254847792690359742
+  Id: 9682904442670277558
   Name: "ServerContext"
   Transform {
     Location {
@@ -390,7 +390,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -435,7 +435,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7440711037590330283
+  Id: 8717357494014862221
   Name: "ServerContext"
   Transform {
     Location {
@@ -452,7 +452,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -496,7 +496,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1394065450504918834
+  Id: 362339062769545538
   Name: "ServerContext"
   Transform {
     Location {
@@ -513,7 +513,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -558,7 +558,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1702643626314012271
+  Id: 4845040370973952374
   Name: "ServerContext"
   Transform {
     Location {
@@ -574,7 +574,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -619,7 +619,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6783888837894413874
+  Id: 7819598675461627463
   Name: "ServerContext"
   Transform {
     Location {
@@ -638,7 +638,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -682,7 +682,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1204522671284214667
+  Id: 11783474709345480869
   Name: "ServerContext"
   Transform {
     Location {
@@ -701,7 +701,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -748,7 +748,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2180333754029077529
+  Id: 13331769536778629490
   Name: "ServerContext"
   Transform {
     Location {
@@ -765,7 +765,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -812,7 +812,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4037820866348206127
+  Id: 4151860463586358338
   Name: "ServerContext"
   Transform {
     Location {
@@ -829,7 +829,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -874,7 +874,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17173259514355390272
+  Id: 2421864276741787655
   Name: "ServerContext"
   Transform {
     Location {
@@ -891,7 +891,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -936,7 +936,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17388376898388400957
+  Id: 16607343488078617715
   Name: "ServerContext"
   Transform {
     Location {
@@ -953,7 +953,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -998,7 +998,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4683133477969120167
+  Id: 4923487856701054643
   Name: "ServerContext"
   Transform {
     Location {
@@ -1015,7 +1015,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1060,7 +1060,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5601829047814325665
+  Id: 12567947711004318273
   Name: "ServerContext"
   Transform {
     Location {
@@ -1077,7 +1077,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1122,7 +1122,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10649156768913571083
+  Id: 805917609023897228
   Name: "ServerContext"
   Transform {
     Location {
@@ -1139,7 +1139,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1184,7 +1184,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13941325438536425283
+  Id: 1824482206763939831
   Name: "ServerContext"
   Transform {
     Location {
@@ -1201,7 +1201,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1246,7 +1246,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6737157116006202915
+  Id: 9788430686963593715
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1263,7 +1263,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1308,7 +1308,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13203406280253581543
+  Id: 2287085161941202738
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1325,7 +1325,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1370,7 +1370,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5906165721789507458
+  Id: 4305390849427882024
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1387,7 +1387,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1432,7 +1432,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4877720444962399456
+  Id: 7912061451674286723
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1451,7 +1451,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1496,7 +1496,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1957201088162677140
+  Id: 18445579269741039744
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1515,7 +1515,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1562,7 +1562,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13415833858880902172
+  Id: 14868826870718393665
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1579,7 +1579,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1626,7 +1626,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7430159149701597212
+  Id: 14393805751075663528
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1643,7 +1643,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1688,7 +1688,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3591723913092715137
+  Id: 15211149934114641279
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1705,7 +1705,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1750,7 +1750,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3760600261998896489
+  Id: 15675035092409521184
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -1767,7 +1767,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1812,7 +1812,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9017409378080943049
+  Id: 3453288080850911694
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -1821,7 +1821,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1865,7 +1865,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8899728135893548233
+  Id: 10101119065613122969
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -1874,7 +1874,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1920,7 +1920,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6041599958163750986
+  Id: 11160184522952781990
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -1929,7 +1929,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1974,7 +1974,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3761016782385035335
+  Id: 12731686970335601505
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -1983,7 +1983,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2030,7 +2030,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1290750074389372636
+  Id: 4992827659478840590
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2039,7 +2039,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2083,7 +2083,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5038475257241892546
+  Id: 13761638511353474885
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2092,7 +2092,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2137,7 +2137,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17100035509203615844
+  Id: 10939933318373398124
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2146,7 +2146,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2193,7 +2193,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1020639758924527630
+  Id: 12408162089728188008
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2202,7 +2202,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2246,7 +2246,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16589583171488662811
+  Id: 5769677282195791903
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2255,7 +2255,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2300,7 +2300,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10868433784008128555
+  Id: 2370458257918164452
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2309,7 +2309,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2354,7 +2354,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8406615514386471865
+  Id: 6315710504396917810
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2363,7 +2363,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2407,7 +2407,7 @@ Objects {
   }
 }
 Objects {
-  Id: 452141228769333721
+  Id: 9094094038185947733
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -2423,7 +2423,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2467,7 +2467,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4411224812362839509
+  Id: 13809996341883528590
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2476,7 +2476,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2523,7 +2523,7 @@ Objects {
   }
 }
 Objects {
-  Id: 650446901983539223
+  Id: 14552480334606079435
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2532,7 +2532,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2579,7 +2579,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4864980154727690463
+  Id: 6576052163437265421
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2588,7 +2588,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2632,7 +2632,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10677381755133671145
+  Id: 13539575905914041722
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2641,7 +2641,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2687,7 +2687,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9754247248967441080
+  Id: 346228597084572882
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2696,7 +2696,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2741,7 +2741,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7711068369961116061
+  Id: 11251308168275459224
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2750,7 +2750,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2795,7 +2795,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7306376589113386156
+  Id: 16222232082723887384
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2804,7 +2804,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2849,7 +2849,7 @@ Objects {
   }
 }
 Objects {
-  Id: 160321452293269701
+  Id: 3286914951752193851
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2858,7 +2858,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2902,7 +2902,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4471367926168582470
+  Id: 11942161365649653108
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2911,7 +2911,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2956,7 +2956,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8182020525291313182
+  Id: 5722025841399891759
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -2965,7 +2965,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3010,7 +3010,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8700217336124287322
+  Id: 15399617711634467986
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3019,7 +3019,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3065,7 +3065,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16781305514110807022
+  Id: 3550051533098141833
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3074,7 +3074,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3119,7 +3119,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13536758442941545816
+  Id: 1162013664614068105
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3128,7 +3128,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3173,7 +3173,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14833886233263387626
+  Id: 13417742667078672979
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3182,7 +3182,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3226,7 +3226,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1204677272488008109
+  Id: 6345626824479286913
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3235,7 +3235,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3282,7 +3282,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17914579061685382460
+  Id: 8339665541590416752
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3291,7 +3291,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3335,7 +3335,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12721971535420077484
+  Id: 1839896112518423264
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3344,7 +3344,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3389,7 +3389,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2369332830146488231
+  Id: 16154714545734432617
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3398,7 +3398,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3443,7 +3443,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12260266000013060571
+  Id: 87491663523319707
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3452,7 +3452,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3497,7 +3497,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7526510633529565100
+  Id: 7879645250601266236
   Name: "ServerContext"
   Transform {
     Scale {
@@ -3506,7 +3506,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3551,7 +3551,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6089136808920400498
+  Id: 6537915597800477729
   Name: "Clue Spawn"
   Transform {
     Scale {
@@ -3560,7 +3560,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3607,7 +3607,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11149924063854464336
+  Id: 4497455895710106563
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3624,7 +3624,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3669,7 +3669,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14928904097079306114
+  Id: 5276096151280478185
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3686,7 +3686,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3731,7 +3731,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18064772729253638120
+  Id: 9835237460282416617
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3748,7 +3748,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3793,7 +3793,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17171924730170146119
+  Id: 688137065272583821
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3810,7 +3810,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3855,7 +3855,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8861672310602718246
+  Id: 10383147356744105729
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3872,7 +3872,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3917,7 +3917,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10762658919994537723
+  Id: 11330937326939986639
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3934,7 +3934,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3979,7 +3979,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13063029733244988849
+  Id: 15864143180769936381
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -3996,7 +3996,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4041,7 +4041,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5922744328696216383
+  Id: 18393777776085694843
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -4058,7 +4058,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4103,7 +4103,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12963296717544851580
+  Id: 10037828747300689718
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -4120,7 +4120,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4165,7 +4165,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15466399302409109225
+  Id: 14217322256454849847
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -4182,7 +4182,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4227,7 +4227,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17982662727331189201
+  Id: 18233702229741518737
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -4244,7 +4244,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4289,7 +4289,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4810181250784686524
+  Id: 9453099308031428890
   Name: "Clue Spawn"
   Transform {
     Location {
@@ -4306,7 +4306,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 951819501176238094
+  ParentId: 15269958062371094933
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

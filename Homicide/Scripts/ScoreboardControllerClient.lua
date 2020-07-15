@@ -33,6 +33,12 @@ if SHOW_AT_ROUND_END and ROUND_END_DURATION <= 0.0 then
     ROUND_END_DURATION = 5.0
 end
 
+-- Resource keys for the different scores
+local KEY_BYSTANDER_WINS = "BystanderWins_v2"
+local KEY_MURDERER_WINS = "MurdererWins_v2"
+local KEY_BYSTANDERS_KILLED = "BystandersKilled_v2"
+local KEY_MURDERERS_KILLED = "MurderersKilled_v2"
+
 -- Constants
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local FRIENDLY_COLOR = Color.New(0.0, 0.25, 1.0)
@@ -46,20 +52,6 @@ local playerLines = {}
 local atRoundEnd = false
 local roundEndTime = 0.0
 local bindingDown = false
-
-
-local BystanderWins
-local MurdererWins
-local BystandersKilled
-local MurderersKilled
-
-function UpdateScores(bystanderwins, murdererwins, bystanderskilled, murdererskilled)
-    BystanderWins = bystanderwins
-    MurdererWins = murdererwins
-    BystandersKilled = bystanderskilled
-    MurderersKilled = murdererskilled
-end
-
 
 -- nil OnBindingPressed(Player, string)
 -- Keep track of the binding state to show the scoreboard 
@@ -128,21 +120,15 @@ function Tick(deltaTime)
         atRoundEnd = false
     end
 
-
-    
-
     if bindingDown or atRoundEnd then
         CANVAS.visibility = Visibility.INHERIT
 
         local players = Game.GetPlayers() 
         table.sort(players, ComparePlayers)
 
-
-
         for i, player in ipairs(players) do
             local teamColor = ALIVE_COLOR
             local statusText
-
 
             -- Check if player is dead or in lobby
             if player.isDead then
@@ -157,16 +143,20 @@ function Tick(deltaTime)
             else
                 statusText = 'Lobby'
             end
+			
+            local _bystanderWins = player:GetResource(KEY_BYSTANDER_WINS)
+            local _murdererWins = player:GetResource(KEY_MURDERER_WINS)
+            local _bystandersKilled = player:GetResource(KEY_BYSTANDERS_KILLED)
+            local _murderersKilled = player:GetResource(KEY_MURDERERS_KILLED)
 
             local line = playerLines[i]
             line:GetCustomProperty("Name"):WaitForObject().text = player.name
             line:GetCustomProperty("Name"):WaitForObject():SetColor(teamColor)
             line:GetCustomProperty("Status"):WaitForObject().text = statusText
-            line:GetCustomProperty("BystanderWins"):WaitForObject().text = 'Coming Soon'
-            line:GetCustomProperty("MurdererWins"):WaitForObject().text = ''
-            line:GetCustomProperty("BystandersKilled"):WaitForObject().text = ''
-            line:GetCustomProperty("MurderersKilled"):WaitForObject().text = ''
-
+            line:GetCustomProperty("BystanderWins"):WaitForObject().text = tostring(_bystanderWins)
+            line:GetCustomProperty("MurdererWins"):WaitForObject().text = tostring(_murdererWins)
+            line:GetCustomProperty("BystandersKilled"):WaitForObject().text = tostring(_bystandersKilled)
+            line:GetCustomProperty("MurderersKilled"):WaitForObject().text = tostring(_murderersKilled)
 
         end
     else
@@ -193,5 +183,3 @@ LOCAL_PLAYER.bindingReleasedEvent:Connect(OnBindingReleased)
 if SHOW_AT_ROUND_END then
     Game.roundEndEvent:Connect(OnRoundEnd)
 end
-
-Events.Connect('Scoreboard', UpdateScores)

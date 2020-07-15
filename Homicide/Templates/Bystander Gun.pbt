@@ -16,11 +16,11 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 16089568856067659926
+        ChildIds: 5675996857972184311
+        ChildIds: 12576315119641620631
         ChildIds: 12917861842256303717
         ChildIds: 14354780731625921346
         ChildIds: 6699082042065974032
-        ChildIds: 5675996857972184311
         ChildIds: 5177681622179490078
         ChildIds: 3713136321610013769
         UnregisteredParameters {
@@ -242,8 +242,41 @@ Assets {
         }
       }
       Objects {
-        Id: 16089568856067659926
-        Name: "WeaponPickupTriggerServer"
+        Id: 5675996857972184311
+        Name: "TeamDamage"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+          }
+        }
+        ParentId: 12491446174189521336
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Shoot"
+            ObjectReference {
+              SubObjectId: 5177681622179490078
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 15103954070519653292
+          }
+        }
+      }
+      Objects {
+        Id: 12576315119641620631
+        Name: "BystanderGunPickup"
         Transform {
           Location {
           }
@@ -273,7 +306,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 14253364123482785044
+            Id: 17450412937899441718
           }
         }
       }
@@ -294,7 +327,6 @@ Assets {
         ParentId: 12491446174189521336
         ChildIds: 2296137660861924898
         ChildIds: 18011269123093446235
-        ChildIds: 14231054938458419749
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -363,35 +395,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 6379257716595703618
-          }
-        }
-      }
-      Objects {
-        Id: 14231054938458419749
-        Name: "WeaponAimServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.00000012
-            Y: 1.00000012
-            Z: 1
-          }
-        }
-        ParentId: 12917861842256303717
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 2472577150731722024
           }
         }
       }
@@ -921,6 +924,7 @@ Assets {
           }
         }
         ParentId: 12491446174189521336
+        ChildIds: 4025509841020758436
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -944,37 +948,21 @@ Assets {
         }
       }
       Objects {
-        Id: 5675996857972184311
-        Name: "TeamDamage"
+        Id: 4025509841020758436
+        Name: "ClientContext"
         Transform {
           Location {
           }
           Rotation {
           }
           Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
           }
         }
-        ParentId: 12491446174189521336
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:ModernWeaponForegrip01"
-            ObjectReference {
-              SubObjectId: 15892179368087487578
-            }
-          }
-          Overrides {
-            Name: "cs:Shoot"
-            ObjectReference {
-              SubObjectId: 5177681622179490078
-            }
-          }
-          Overrides {
-            Name: "cs:BystanderGun"
-            AssetReference {
-              Id: 1452101759778810971
-            }
-          }
-        }
+        ParentId: 6699082042065974032
+        ChildIds: 4003211040877214459
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -982,9 +970,43 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
-        Script {
-          ScriptAsset {
-            Id: 15103954070519653292
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 4003211040877214459
+        Name: "Outline Object"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4025509841020758436
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Object To Outline"
+            ObjectReference {
+              SubObjectId: 12491446174189521336
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 11901313456319074115
+          }
+          TeamSettings {
           }
         }
       }
@@ -1155,6 +1177,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_modern_foregrip_001"
+      }
+    }
+    Assets {
+      Id: 11901313456319074115
+      Name: "Outline Object"
+      PlatformAssetType: 20
+      PrimaryAsset {
+        AssetType: "BlueprintAssetRef"
+        AssetId: "fxbp_local_outline"
       }
     }
     PrimaryAssetId {

@@ -1,35 +1,7 @@
 Name: "Settings"
-RootId: 7624224936206633272
+RootId: 3086475342006833789
 Objects {
-  Id: 17135444540396883885
-  Name: "LTS Game State Settings"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7624224936206633272
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "LTS Game State Settings"
-  }
-}
-Objects {
-  Id: 9388169663991374860
+  Id: 13514381923606112932
   Name: "First Person Camera Settings"
   Transform {
     Location {
@@ -42,9 +14,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7624224936206633272
-  ChildIds: 9187244192251010890
-  ChildIds: 16929161468293699793
+  ParentId: 3086475342006833789
+  ChildIds: 8426828293319729498
+  ChildIds: 11293696973835382927
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -58,7 +30,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16929161468293699793
+  Id: 11293696973835382927
   Name: "Client Context"
   Transform {
     Location {
@@ -71,8 +43,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9388169663991374860
-  ChildIds: 4584615862467915980
+  ParentId: 13514381923606112932
+  ChildIds: 3889947616384593983
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -85,7 +57,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4584615862467915980
+  Id: 3889947616384593983
   Name: "First Person Camera"
   Transform {
     Location {
@@ -101,9 +73,9 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 16929161468293699793
-  ChildIds: 7437490492112992055
-  ChildIds: 14245385326937348907
+  ParentId: 11293696973835382927
+  ChildIds: 8195145873320773510
+  ChildIds: 14486244190827661381
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -133,7 +105,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14245385326937348907
+  Id: 14486244190827661381
   Name: "Advanced Color Grading Post Process"
   Transform {
     Location {
@@ -146,8 +118,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4584615862467915980
-  ChildIds: 11021279571231568855
+  ParentId: 3889947616384593983
+  ChildIds: 12171735497000493191
   UnregisteredParameters {
     Overrides {
       Name: "bp:Scene Tint"
@@ -185,7 +157,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11021279571231568855
+  Id: 12171735497000493191
   Name: "Blinder"
   Transform {
     Location {
@@ -198,7 +170,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14245385326937348907
+  ParentId: 14486244190827661381
   UnregisteredParameters {
     Overrides {
       Name: "cs:BlindTime"
@@ -218,7 +190,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7437490492112992055
+  Id: 8195145873320773510
   Name: "Death Spectator Camera"
   Transform {
     Scale {
@@ -227,7 +199,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4584615862467915980
+  ParentId: 3889947616384593983
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -269,7 +241,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9187244192251010890
+  Id: 8426828293319729498
   Name: "First Person Player Settings"
   Transform {
     Location {
@@ -282,7 +254,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9388169663991374860
+  ParentId: 13514381923606112932
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -340,7 +312,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12442697109356780868
+  Id: 6690079754217735677
   Name: "Mounted Volume"
   Transform {
     Location {
@@ -357,7 +329,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7624224936206633272
+  ParentId: 3086475342006833789
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -378,7 +350,7 @@ Objects {
   }
 }
 Objects {
-  Id: 839284702199754233
+  Id: 2171206274842529656
   Name: "Respawn Settings"
   Transform {
     Location {
@@ -391,7 +363,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7624224936206633272
+  ParentId: 3086475342006833789
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -410,7 +382,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2001594187013892557
+  Id: 15795711921239448109
   Name: "Team Settings"
   Transform {
     Location {
@@ -423,7 +395,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7624224936206633272
+  ParentId: 3086475342006833789
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -441,7 +413,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9555103801469599106
+  Id: 1609608003310872934
   Name: "Game Settings"
   Transform {
     Location {
@@ -454,7 +426,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7624224936206633272
+  ParentId: 3086475342006833789
   UnregisteredParameters {
   }
   Collidable_v2 {

@@ -1,4 +1,13 @@
 Assets {
+  Id: 17586365689296088662
+  Name: "Background Flat 020"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_020"
+  }
+}
+Assets {
   Id: 16621703228659033329
   Name: "Icon Weapon Knife"
   PlatformAssetType: 9
@@ -35,21 +44,30 @@ Assets {
   }
 }
 Assets {
+  Id: 8171423002215088000
+  Name: "Sword & Blade - Unsheathe Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "sfxabp_sword_blade_unsheathe_ref"
+  }
+}
+Assets {
+  Id: 6573465539462045543
+  Name: "Weapon Pickup Reload 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_weapon_pickup_reload_01_Cue_ref"
+  }
+}
+Assets {
   Id: 6122615529272989204
   Name: "Icon Hand"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Hand"
-  }
-}
-Assets {
-  Id: 5196377603841433560
-  Name: "Background Flat 020"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundFlat_020"
   }
 }
 Assets {

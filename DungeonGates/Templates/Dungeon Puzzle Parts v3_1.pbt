@@ -64,7 +64,7 @@ Assets {
     Id: "292f5e89714b4e4291a27f50ba63fcb3"
     OwnerAccountId: "d97586e1f850481da13ee26d5cbddc02"
     OwnerName: "Chris"
-    Description: "More pieces for dungeon puzzles, as seen on stream! Will update later with a better explanation of how they work. The basic rule is that any buttons/gates will only talk to each other if they share the same parent. So if you want to have multiple puzzles, put all the buttons and the gates in a folder, for each puzzle!\r\n\r\nAlso note that the light beams are still unoptimized, and will probably not run well in an actual multiplayer game.  Fixes coming soon!"
+    Description: "More pieces for dungeon puzzles, as seen on stream! Will update later with a better explanation of how they work. The basic rule is that any buttons/gates will only talk to each other if they share the same parent. So if you want to have multiple puzzles, put all the buttons and the gates in a folder, for each puzzle!\r\n\r\nAlso note that the light beams are still unoptimized, and will probably not run well in an actual multiplayer game.  Fixes coming soon!\r\n\r\n\r\n\r\nFixed bugs with multiple light-triggers stomping on each other."
   }
   SerializationVersion: 61
 }

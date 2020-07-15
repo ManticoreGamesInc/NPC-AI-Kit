@@ -3,6 +3,7 @@ local propGate = script:GetCustomProperty("Gate"):WaitForObject()
 local propGateLowerSound = script:GetCustomProperty("GateLowerSound"):WaitForObject()
 
 local startingPos = propGate:GetWorldPosition()
+local EVENT_PUZZLE_RESET = "event puzzle reset"
 
 buttonStateList = {}
 
@@ -14,6 +15,7 @@ local gateState = GATESTATE_CLOSED
 local GateSoundTask = nil
 
 local GateLowerTime = 3
+
 
 function OpenTheGate()
 	if (gateState == GATESTATE_CLOSED) then
@@ -38,9 +40,7 @@ end
 
 
 function OnTriggerDown(TriggerRef)
-	print("Trigger parent: " .. TriggerRef:GetObject().parent.name)
 	if TriggerRef:GetObject().parent == script.parent.parent then
-		print("Trigger down.")
 
 		if buttonStateList[TriggerRef.id] == nil then
 			buttonStateList[TriggerRef.id] = 1
@@ -73,13 +73,22 @@ function CountButtonsDown()
 	return downButtonCount
 end
 
-
---[[
-function Tick(deltaTime)
-	print("Buttons pressed: " .. tostring(CountButtonsDown()))
-	Task.Wait(1)
+function ResetGeometry(ButtonRef)
+	print("------")	
+	print("my name is " .. script.parent.name)
+	print("My parent is: " .. script.parent.parent.name)
+	print("Reset request from: " .. ButtonRef:GetObject().name)
+	print("Reset request's parent: " .. ButtonRef:GetObject().parent.name)
+	if ButtonRef:GetObject().parent == propGate.parent then
+		print("---------- GATE SHOULD RESET")
+		propGate:StopMove()
+		propGate:SetWorldPosition(startingPos)
+		gateState = GATESTATE_CLOSED
+		buttonStateList = {}
+	end
 end
-]]
-print("setup")
+
+
+Events.Connect(EVENT_PUZZLE_RESET, ResetGeometry)
 Events.Connect("TriggerUp", OnTriggerUp)
 Events.Connect("TriggerDown", OnTriggerDown)

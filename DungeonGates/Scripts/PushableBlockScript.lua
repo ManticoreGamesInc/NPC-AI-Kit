@@ -16,6 +16,13 @@ function Setup()
 	end
 	Events.Connect(EVENT_GEOMETRY_CHANGED, OnGeometryChanged)
 	UpdatePushTriggers()
+
+	local pos = root:GetWorldPosition()
+	pos.x = math.floor((pos.x) / 500) * 500 + 250
+	pos.y = math.floor((pos.y) / 500) * 500 + 250
+	root:SetWorldPosition(pos)
+
+	FallIfAble()
 end
 
 
@@ -23,22 +30,12 @@ function UpdatePushTriggers()
 	for k, trigger in pairs(triggerList) do
 		local pushDirection = trigger:GetCustomProperty("PushDirection")
 
-		-- Get the block transform
-
-		-- Apply it to pushDirection
-
+		-- Get the block transform and apply it to pushDirection, so that
+		-- we can rotate the blocks and still push correctly!
 		pushDirection = root:GetWorldRotation() * pushDirection
 
 		local raycastStart = root:GetWorldPosition() + Vector3.UP * 10
 		local raycastEnd = raycastStart + pushDirection * propPushDistance
-
-		--[[
-		CoreDebug.DrawLine(raycastStart, raycastEnd, {
-			color = Color.RED,
-			duration = 5,
-			thickness = 5
-		})]]
-
 		local raycastHr = World.Raycast(raycastStart, raycastEnd, {
 			ignorePlayers = true,
 		})
@@ -67,6 +64,11 @@ function PushBlock(trigger, player)
 
 
 	-- Check if we need to fall down, and how far:	
+	FallIfAble()
+	Events.Broadcast(EVENT_GEOMETRY_CHANGED, root.id)
+end
+
+function FallIfAble()
 	local raycastStart = root:GetWorldPosition() + Vector3.UP * 10
 	local raycastEnd = raycastStart + Vector3.UP * -99999
 	local raycastHr = World.Raycast(raycastStart, raycastEnd, {
@@ -81,7 +83,6 @@ function PushBlock(trigger, player)
 		root:MoveTo(floorPos, fallTime)
 		Task.Wait(fallTime)
 	end
-	Events.Broadcast(EVENT_GEOMETRY_CHANGED, root.id)
 end
 
 

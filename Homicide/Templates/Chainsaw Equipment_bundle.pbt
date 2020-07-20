@@ -44,7 +44,7 @@ Assets {
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
     Version: "1.1.0"
-    Description: "Kitbash work by Buckmonster.\r\nFunctional chainsaw weapon with customizable damage.\r\n\r\nv1.1\r\n- Set the pickup trigger to be interactable."
+    Description: "Kitbash work by Buckmonster.\r\nFunctional chainsaw weapon with customizable damage.\r\n\r\nv1.2\r\n- Fixed a bug where in some games the animations & sound were not playing when pressing the LMB.\r\nv1.1\r\n- Set the pickup trigger to be interactable."
   }
   SerializationVersion: 61
 }

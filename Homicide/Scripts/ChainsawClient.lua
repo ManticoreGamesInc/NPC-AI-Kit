@@ -160,3 +160,7 @@ EQUIPMENT.equippedEvent:Connect(OnEquipped)
 EQUIPMENT.unequippedEvent:Connect(OnUnequipped)
 EQUIPMENT.networkedPropertyChangedEvent:Connect(OnNetworkedPropertyChanged)
 
+if Object.IsValid(EQUIPMENT.owner) then
+	OnEquipped(EQUIPMENT, EQUIPMENT.owner)
+end
+

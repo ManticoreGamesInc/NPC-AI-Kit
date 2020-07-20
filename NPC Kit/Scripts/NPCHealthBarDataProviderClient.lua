@@ -1,17 +1,18 @@
 --[[
-NPCHealthBarDataProvider - Client
-by: standardcombo
-v0.7.1
-(work in progress)
-
-Works in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.
-Other objects could use the same health bar UI by implementing their own data
-providers.
-
-Implements the interface:
-	GetHealt()
-	GetMaxHealth()
-	GetTeam()
+	NPCHealthBarDataProvider - Client
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Works in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.
+	Other objects could use the same health bar UI by implementing their own data
+	providers.
+	
+	Implements the interface:
+		GetHealt()
+		GetMaxHealth()
+		GetTeam()
 --]]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

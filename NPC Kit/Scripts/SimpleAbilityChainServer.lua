@@ -1,12 +1,12 @@
 --[[
-Simple Ability Chain - Server
-v1.1
-by: standardcombo
-
-Automatically gathers all abilities under an equipment and cycles through them as they are used.
-Primary use case is for melee weapons with a sequence of abilities.
-
+	Simple Ability Chain - Server
+	v1.1
+	by: standardcombo
+	
+	Automatically gathers all abilities under an equipment and cycles through them as they are used.
+	Primary use case is for melee weapons with a sequence of abilities.
 --]]
+
 local EQUIPMENT = script:FindAncestorByType("Equipment")
 local abilities = {}
 local abilityIndex = 1

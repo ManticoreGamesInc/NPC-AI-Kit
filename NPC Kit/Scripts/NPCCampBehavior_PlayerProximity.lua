@@ -1,14 +1,15 @@
 --[[
-NPCCampBehavior - Player Proximity
-by: standardcombo
-v0.7.1
-(work in progress)
-
-Works in conjunction with NPCSpawner and expects it as a sibling script.
-
-Requires two triggers, one for the Inside of the camp and one for the Outside.
-NPCs spawn when a player enters the Inside trigger. When all players exit the
-Outside trigger a countdown begins. When the countdown ends all NPCs despawn.
+	NPCCampBehavior - Player Proximity
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Works in conjunction with NPCSpawner and expects it as a sibling script.
+	
+	Requires two triggers, one for the Inside of the camp and one for the Outside.
+	NPCs spawn when a player enters the Inside trigger. When all players exit the
+	Outside trigger a countdown begins. When the countdown ends all NPCs despawn.
 --]]
 
 local INSIDE_TRIGGER = script:GetCustomProperty("InsideTrigger"):WaitForObject()

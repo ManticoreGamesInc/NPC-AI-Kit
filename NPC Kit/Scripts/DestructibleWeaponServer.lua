@@ -1,8 +1,9 @@
 --[[
-Destructible Weapon - Server
-by: standardcombo, Chris C.
-v0.8.0
-(work in progress)
+	Destructible Weapon - Server
+	by: standardcombo, Chris C.
+	v0.8.0
+	
+	(work in progress)
 
 --]]
 

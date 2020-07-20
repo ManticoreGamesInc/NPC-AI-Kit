@@ -1,15 +1,16 @@
 --[[
-NPCHealthBar
-by: standardcombo
-v0.7.1
-(work in progress)
-
-Works in conjunction with a data provider that is passed into SetDataProvider().
-
-Expects implementation of the interface:
-	GetHealt()
-	GetMaxHealth()
-	GetTeam()
+	NPCHealthBar
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Works in conjunction with a data provider that is passed into SetDataProvider().
+	
+	Expects implementation of the interface:
+		GetHealt()
+		GetMaxHealth()
+		GetTeam()
 --]]
 
 local FILL_BAR = script:GetCustomProperty("Fill"):WaitForObject()

@@ -1,10 +1,11 @@
 --[[
-Destructible Manager
-by: standardcombo, Chris C.
-v0.8.0
-(work in progress)
-
-Applies damage to non-player objects.
+	Destructible Manager
+	by: standardcombo, Chris C.
+	v0.8.0
+	
+	(work in progress)
+	
+	Applies damage to non-player objects.
 --]]
 
 -- Registers itself into the global table

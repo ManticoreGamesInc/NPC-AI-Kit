@@ -1,10 +1,11 @@
 --[[
-NPC Manager
-by: standardcombo
-v0.8.0
-(work in progress)
-
-Provides bookkeeping on all NPCs contained in a game.
+	NPC Manager
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Provides bookkeeping on all NPCs contained in a game.
 --]]
 
 -- Registers itself into the global table

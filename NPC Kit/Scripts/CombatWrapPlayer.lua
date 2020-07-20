@@ -1,18 +1,17 @@
 --[[
-Combat Wrap - Player
-v0.7.1
-by: standardcombo
-
-Provides an interface of combat functions that operate on a Player object.
-
-Interface:
-- GetName()
-- GetTeam()
-- GetHitPoints()
-- GetMaxHitPoints()
-- ApplyDamage()
-- IsDead()
-
+	Combat Wrap - Player
+	v0.8.0
+	by: standardcombo
+	
+	Provides an interface of combat functions that operate on a Player object.
+	
+	Interface:
+	- GetName()
+	- GetTeam()
+	- GetHitPoints()
+	- GetMaxHitPoints()
+	- ApplyDamage()
+	- IsDead()
 --]]
 
 local wrapper = {}

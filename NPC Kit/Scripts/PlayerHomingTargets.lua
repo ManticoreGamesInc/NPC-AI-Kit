@@ -1,11 +1,11 @@
 --[[
-Player Homing Targets
-v1.0
-by: standardcombo
-
-Spawns an invisible targeting object for each Player and attaches it to their neck position.
-These objects can be used for targeting homing shots that will result in successful hits,
-regardless of the Player's animation or mount.
+	Player Homing Targets
+	v1.0
+	by: standardcombo
+	
+	Spawns an invisible targeting object for each Player and attaches it to their neck position.
+	These objects can be used for targeting homing shots that will result in successful hits,
+	regardless of the Player's animation or mount.
 --]]
 
 -- Registers itself into the global table

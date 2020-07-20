@@ -1,18 +1,17 @@
 --[[
-Combat Wrap API
-v0.8.0
-by: standardcombo
-
-Identifies the type of object and wraps it with a common interface for combat-related functions.
-
-Interface:
-- GetName()
-- GetTeam()
-- GetHitPoints()
-- GetMaxHitPoints()
-- ApplyDamage()
-- IsDead()
-
+	Combat Wrap API
+	v0.8.0
+	by: standardcombo
+	
+	Identifies the type of object and wraps it with a common interface for combat-related functions.
+	
+	Interface:
+	- GetName()
+	- GetTeam()
+	- GetHitPoints()
+	- GetMaxHitPoints()
+	- ApplyDamage()
+	- IsDead()
 --]]
 
 -- Registers itself into the global table

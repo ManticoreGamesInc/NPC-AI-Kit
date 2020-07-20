@@ -1,10 +1,9 @@
 --[[
-Melee Ability - Server
-v1.2
-by: standardcombo
-
-Handles melee combat interaction of attack abilities on weapons such as swords.
-
+	Melee Ability - Server
+	v1.2
+	by: standardcombo
+	
+	Handles melee combat interaction of attack abilities on weapons such as swords.
 --]]
 
 -- Component dependencies

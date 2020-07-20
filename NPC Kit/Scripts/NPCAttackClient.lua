@@ -1,11 +1,12 @@
 --[[
-NPCAttack - Client
-by: standardcombo
-v0.7.1
-(work in progress)
-
-The client counterpart for NPCAttackServer. Listens for damage and destroy networked events
-and spawns the appropriate effects for each.
+	NPCAttack - Client
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	The client counterpart for NPCAttackServer. Listens for damage and destroy networked events
+	and spawns the appropriate effects for each.
 --]]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

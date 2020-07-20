@@ -1,14 +1,15 @@
 --[[
-NPCAI - Server
-by: standardcombo
-v0.8.0
-(work in progress)
-
-Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
-NPCs can be simply placed in a level, but is best used in conjunction with some spawn and respawn logic.
-
-Will walk over terrain and any objects to get to its objective. To mark objects as not walkable,
-add to each one a custom property called "Walkable" of type boolean and set to false.
+	NPCAI - Server
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
+	NPCs can be simply placed in a level, but is best used in conjunction with some spawn and respawn logic.
+	
+	Will walk over terrain and any objects to get to its objective. To mark objects as not walkable,
+	add to each one a custom property called "Walkable" of type boolean and set to false.
 --]]
 
 -- Component dependencies

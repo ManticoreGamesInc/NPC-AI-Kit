@@ -1,28 +1,28 @@
 --[[
-Loot Drop Factory
-v2.0
-by: standardcombo
-
-Spawns random loot drops from a customizable data set.
-
-Loot entries are grouped by their "Group ID", which is the name of their parent group.
-
-Modify the drops by modifying the groups and their child scripts. Each child script
-is one loot drop entry. Copy/delete/rename to setup the loot drops for your game.
-
-
-Usage:
-
-(in header area of your script)
-function LOOT_DROP_FACTORY()
-	if _G.standardcombo and _G.standardcombo.NPCKit then
-		return _G.standardcombo.NPCKit.LOOT_DROP_FACTORY
+	Loot Drop Factory
+	v2.0
+	by: standardcombo
+	
+	Spawns random loot drops from a customizable data set.
+	
+	Loot entries are grouped by their "Group ID", which is the name of their parent group.
+	
+	Modify the drops by modifying the groups and their child scripts. Each child script
+	is one loot drop entry. Copy/delete/rename to setup the loot drops for your game.
+	
+	
+	Usage:
+	
+	(in header area of your script)
+	function LOOT_DROP_FACTORY()
+		if _G.standardcombo and _G.standardcombo.NPCKit then
+			return _G.standardcombo.NPCKit.LOOT_DROP_FACTORY
+		end
 	end
-end
-
-(in body of your script, where the drop decision is made)
-LOOT_DROP_FACTORY().Drop("Common", position)
-
+	
+	(in body of your script, where the drop decision is made)
+	LOOT_DROP_FACTORY().Drop("Common", position)
+	
 --]]
 
 -- Registers itself into the global table

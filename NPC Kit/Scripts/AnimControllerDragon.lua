@@ -1,3 +1,11 @@
+--[[
+	Animation Controller - Dragon
+	v1.0
+	by: standardcombo
+	
+	Controls the animations for an NPC based on the Dragon Animated Mesh.
+	Changes in animation occur in response to movement and state machine changes.--]]
+
 local MESH = script:GetCustomProperty("AnimatedMesh"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local DISTANCE_FROM_GROUND = script:GetCustomProperty("DistanceFromGround")

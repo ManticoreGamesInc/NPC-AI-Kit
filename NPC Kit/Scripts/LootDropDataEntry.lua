@@ -1,9 +1,9 @@
 --[[
-Loot Drop - Data Entry
-v2.0
-by: standardcombo
-
-Represents one possible loot to drop.
+	Loot Drop - Data Entry
+	v2.0
+	by: standardcombo
+	
+	Represents one possible loot to drop.
 --]]
 
 

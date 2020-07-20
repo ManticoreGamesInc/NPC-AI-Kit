@@ -1,3 +1,10 @@
+--[[
+	Animated Mesh Costume
+	v1.0
+	by: standardcombo
+	
+	Attaches objects to an NPC to customize its visuals.
+--]]
 
 local MESH = script.parent:FindDescendantByType("AnimatedMesh")
 

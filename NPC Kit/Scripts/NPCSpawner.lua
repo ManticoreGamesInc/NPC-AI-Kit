@@ -1,10 +1,11 @@
 --[[
-NPCSpawner
-by: standardcombo
-v0.7.1
-(work in progress)
-
-Spawns and despawns NPCs. Relies on a separate behavior script to tell it when to spawn and despawn.
+	NPCSpawner
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Spawns and despawns NPCs. Relies on a separate behavior script to tell it when to spawn and despawn.
 --]]
 
 local TEAM = script:GetCustomProperty("Team")

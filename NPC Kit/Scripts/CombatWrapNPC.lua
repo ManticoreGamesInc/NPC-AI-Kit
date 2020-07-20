@@ -1,19 +1,18 @@
 --[[
-Combat Wrap - NPC
-v0.8.0
-by: standardcombo
-
-Registers itself into the global table.
-Provides an interface of combat functions that operate on a non-Player object.
-
-Interface:
-- GetName()
-- GetTeam()
-- GetHitPoints()
-- GetMaxHitPoints()
-- ApplyDamage()
-- IsDead()
-
+	Combat Wrap - NPC
+	v0.8.0
+	by: standardcombo
+	
+	Registers itself into the global table.
+	Provides an interface of combat functions that operate on a non-Player object.
+	
+	Interface:
+	- GetName()
+	- GetTeam()
+	- GetHitPoints()
+	- GetMaxHitPoints()
+	- ApplyDamage()
+	- IsDead()
 --]]
 
 -- Component dependencies

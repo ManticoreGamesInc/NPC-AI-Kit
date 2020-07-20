@@ -1,11 +1,12 @@
 --[[
-NPCAI - Client
-by: standardcombo
-v0.7.1
-(work in progress)
-
-The client counterpart for NPCAIServer. Controls the visuals of the NPC based on
-changes to its networked properties.
+	NPCAI - Client
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	The client counterpart for NPCAIServer. Controls the visuals of the NPC based on
+	changes to its networked properties.
 --]]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

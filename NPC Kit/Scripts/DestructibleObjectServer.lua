@@ -1,8 +1,9 @@
 --[[
-DestructibleObject - Server
-by: standardcombo, Chris C.
-v0.7.1
-(work in progress)
+	DestructibleObject - Server
+	by: standardcombo, Chris C.
+	v0.8.0
+	
+	(work in progress)
 
 --]]
 

@@ -1,11 +1,11 @@
 --[[
-Melee Ability - Client
-v1.0
-by: standardcombo
-
-Handles spawning of VFX for a melee ability.
-
+	Melee Ability - Client
+	v1.2
+	by: standardcombo
+	
+	Handles spawning of VFX for a melee ability.
 --]]
+
 local EQUIPMENT = script:FindAncestorByType("Equipment")
 
 local ABILITY = script:GetCustomProperty("Ability"):WaitForObject()

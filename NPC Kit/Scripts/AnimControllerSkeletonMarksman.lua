@@ -1,3 +1,11 @@
+--[[
+	Animation Controller - Skeleton Marksman
+	v1.0
+	by: standardcombo
+	
+	Controls the animations for an NPC based on the Skeleton Animated Mesh.
+	Changes in animation occur in response to movement and state machine changes.
+--]]
 
 local MESH = script:GetCustomProperty("AnimatedMesh"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

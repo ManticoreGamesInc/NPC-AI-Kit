@@ -1,10 +1,11 @@
 --[[
-NPCCampBehavior - Always Spawn
-by: standardcombo
-v0.7.1
-(work in progress)
-
-Works in conjunction with NPCSpawner and expects it as a sibling script.
+	NPCCampBehavior - Always Spawn
+	by: standardcombo
+	v0.8.0
+	
+	(work in progress)
+	
+	Works in conjunction with NPCSpawner and expects it as a sibling script.
 --]]
 
 local INITIAL_DELAY = script:GetCustomProperty("InitialDelay") or 1

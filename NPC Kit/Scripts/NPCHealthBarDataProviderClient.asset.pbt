@@ -4,14 +4,14 @@ PlatformAssetType: 3
 TextAsset {
   CustomParameters {
     Overrides {
-      Name: "cs:HealthBarTemplate"
-      AssetReference {
-        Id: 17778132542216244196
+      Name: "cs:Root"
+      ObjectReference {
       }
     }
     Overrides {
-      Name: "cs:Root"
-      ObjectReference {
+      Name: "cs:HealthBarTemplate"
+      AssetReference {
+        Id: 17778132542216244196
       }
     }
   }

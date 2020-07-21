@@ -32,8 +32,17 @@ Objects {
   ChildIds: 8960121642570163487
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
+  ChildIds: 5597573338046879678
   ChildIds: 14632867372866985088
-  ChildIds: 10814856016544842835
+  ChildIds: 8411039335001202046
+  ChildIds: 3050268294326400813
+  ChildIds: 4475252426211858605
+  ChildIds: 9450521904986627477
+  ChildIds: 15215424125471886565
+  ChildIds: 4698475038455935911
+  ChildIds: 14610374545173179283
+  ChildIds: 12532074028913180042
+  ChildIds: 12200420504424141092
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -46,43 +55,299 @@ Objects {
   }
 }
 Objects {
-  Id: 10814856016544842835
-  Name: "Cube - Bottom-Aligned"
+  Id: 12200420504424141092
+  Name: "MOBA Cannon Tower"
   Transform {
-    Location {
-      X: 21110
-      Y: -15210
-      Z: 2660
-    }
-    Rotation {
-    }
     Scale {
-      X: 2.5
+      X: 1
       Y: 1
-      Z: 2.9
+      Z: 1
     }
   }
   ParentId: 4781671109827199097
-  UnregisteredParameters {
-  }
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 198353679974341757
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    EnableCameraCollision: true
-    StaticMesh {
-      Physics {
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4286002597013953579
+      value {
+        Overrides {
+          Name: "Name"
+          String: "MOBA Cannon Tower"
+        }
       }
+    }
+    TemplateAsset {
+      Id: 4812371249315312696
+    }
+  }
+}
+Objects {
+  Id: 12532074028913180042
+  Name: "MOBA MinionB"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12967867852267520266
+      value {
+        Overrides {
+          Name: "Name"
+          String: "MOBA MinionB"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17642462915566084933
+    }
+  }
+}
+Objects {
+  Id: 14610374545173179283
+  Name: "MOBA MinionA"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "MOBA MinionA"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11039306819631688635
+    }
+  }
+}
+Objects {
+  Id: 4698475038455935911
+  Name: "RPG Skeleton - Swordsman"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16661545407737424176
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Skeleton - Swordsman"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9727190433052104706
+    }
+  }
+}
+Objects {
+  Id: 15215424125471886565
+  Name: "RPG Skeleton - Marksman"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16661545407737424176
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Skeleton - Marksman"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 18176330156260336344
+    }
+  }
+}
+Objects {
+  Id: 9450521904986627477
+  Name: "RPG Skeleton - Full Armed"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9913815135764235794
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Skeleton - Full Armed"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7194780003691091213
+    }
+  }
+}
+Objects {
+  Id: 4475252426211858605
+  Name: "RPG Raptor"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16661545407737424176
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Raptor"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16856907705825859721
+    }
+  }
+}
+Objects {
+  Id: 3050268294326400813
+  Name: "RPG Enemy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Enemy"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 995900137041739798
+    }
+  }
+}
+Objects {
+  Id: 8411039335001202046
+  Name: "RPG Dragon Enemy - Hard"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Dragon Enemy - Hard"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16596380378274474908
     }
   }
 }
@@ -130,6 +395,49 @@ Objects {
     }
     TemplateAsset {
       Id: 13871905926012633814
+    }
+  }
+}
+Objects {
+  Id: 5597573338046879678
+  Name: "RPG Dragon Enemy - Easy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Dragon Enemy - Easy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8943910556254534449
     }
   }
 }
@@ -271,6 +579,7 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  ChildIds: 10814856016544842835
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -280,6 +589,47 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 14215248432883133069
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    EnableCameraCollision: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
+  Id: 10814856016544842835
+  Name: "Cube - Bottom-Aligned"
+  Transform {
+    Location {
+      X: -15.7407465
+      Y: 30.0926037
+      Z: 0.00275788596
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.115740784
+      Y: 0.0462963134
+      Z: 0.134259313
+    }
+  }
+  ParentId: 5080541240374345495
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 198353679974341757
     }
     Teams {
       IsTeamCollisionEnabled: true

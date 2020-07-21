@@ -9,6 +9,31 @@ TextAsset {
         Id: 4760095941513075407
       }
     }
+    Overrides {
+      Name: "cs:Root"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:RotationRoot"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:Collider"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:Trigger"
+      ObjectReference {
+      }
+    }
+    Overrides {
+      Name: "cs:AttackComponent"
+      ObjectReference {
+      }
+    }
   }
 }
 SerializationVersion: 61

@@ -429,12 +429,12 @@ function CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)
 	local delta = enemyPos - myPos
 	local distSquared = delta.sizeSquared
 	
+	if (distSquared > nearestDistSquared) then
+		return false, distSquared
+	end
+	
 	local canSeeFromDistance = (distSquared <= GetVisionRadiusSquared())
-	
-	--if script.parent.name == "RPG Dragon Enemy - Medium" then
-	--	print()
-	--end
-	
+		
 	-- Is searching
 	if (not canSeeFromDistance and
 		currentState == STATE_LOOKING_AROUND and
@@ -451,8 +451,8 @@ function CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)
 	end
 	
 	-- Angle vision in front
-	if (canSeeFromDistance and distSquared < nearestDistSquared
-		and GetVisionHalfAngle() > 0 and GetVisionHalfAngle() < 360) then
+	if (canSeeFromDistance and
+		GetVisionHalfAngle() > 0 and GetVisionHalfAngle() < 360) then
 
 		local distance = math.sqrt(distSquared)
 		local directionToEnemy = delta / distance
@@ -462,17 +462,23 @@ function CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)
 		end
 	end
 	
-	-- Test if there is something obstructing the view
+	-- Test if there is something obstructing the view. If searching for the enemy ignore this constraint
 	local ENEMY_RADIUS = 150 -- TODO
-	if canSeeFromDistance and distSquared > ENEMY_RADIUS*ENEMY_RADIUS then
+	if (canSeeFromDistance and 
+		(currentState ~= STATE_LOOKING_AROUND or (searchEndPosition - enemyPos).size > 400) and
+		distSquared > ENEMY_RADIUS * ENEMY_RADIUS) then
+		
 		local rayStart = script:GetWorldPosition()
 		local rayEnd = enemyPos - delta:GetNormalized() * ENEMY_RADIUS
-		
-		CoreDebug.DrawLine(rayStart, rayEnd, {duration = 1})
-		
-		local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
+		local myTeam = GetTeam()
+				
+		local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true, ignoreTeams = myTeam})
 		if hitResult then
 			canSeeFromDistance = false
+			
+			--CoreDebug.DrawLine(rayStart, rayEnd, {duration = 1, color = Color.RED})
+		else
+			--CoreDebug.DrawLine(rayStart, rayEnd, {duration = 1, color = Color.WHITE})
 		end
 	end
 	

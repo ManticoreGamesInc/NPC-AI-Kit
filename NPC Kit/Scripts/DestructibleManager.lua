@@ -34,7 +34,7 @@ end
 function API.Register(theScript)
 	local obj = theScript:FindTemplateRoot()
 	if (obj == nil) then
-		PrintError("DestructibleObjectServer must be part of a template.  "..theScript.name.." is not a template.")
+		error("DestructibleObjectServer must be part of a template.  "..theScript.name.." is not a template. Maybe it's been deinstanced?")
 
 	elseif (objectList[obj] == nil) then
 		obj.destroyEvent:Connect(OnDestroyed)
@@ -42,7 +42,7 @@ function API.Register(theScript)
 		local id = GetIdFor(theScript)
 		return id
 	else
-		PrintError("Multiple DestructibleObject scripts under the same object.  Don't do that.")
+		error("Multiple DestructibleObject scripts under the same object.  Don't do that.")
 	end
 	return -1
 end

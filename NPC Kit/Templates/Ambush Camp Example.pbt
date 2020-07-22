@@ -7,7 +7,7 @@ Assets {
       RootId: 11087910991482916188
       Objects {
         Id: 11087910991482916188
-        Name: "Proximity Camp Example"
+        Name: "Ambush Camp Example"
         Transform {
           Scale {
             X: 1
@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 15047831320703083673
         ChildIds: 5176158731508273486
         ChildIds: 16939412754036815913
         ChildIds: 6217085562031804214
@@ -27,6 +28,33 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 15047831320703083673
+        Name: "AmbushExample_README"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11087910991482916188
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 190293469863767745
+          }
         }
       }
       Objects {

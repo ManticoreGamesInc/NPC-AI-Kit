@@ -3,8 +3,6 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
 	Works in conjunction with NPCSpawner and expects it as a sibling script.
 	
 	Requires two triggers, one for the Inside of the camp and one for the Outside.
@@ -14,8 +12,8 @@
 
 local INSIDE_TRIGGER = script:GetCustomProperty("InsideTrigger"):WaitForObject()
 local OUTSIDE_TRIGGER = script:GetCustomProperty("OutsideTrigger"):WaitForObject()
-local RESPAWN_COOLDOWN = script:GetCustomProperty("RespawnCooldown") or 15
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay") or 4
+local RESPAWN_COOLDOWN = script:GetCustomProperty("RespawnCooldown") or 15
 
 local CAMP_SPAWNER = script.parent:FindChildByName("NPCSpawner")
 

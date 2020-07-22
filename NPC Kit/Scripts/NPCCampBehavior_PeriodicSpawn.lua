@@ -3,8 +3,6 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
 	Works in conjunction with NPCSpawner and expects it as a sibling script.
 --]]
 

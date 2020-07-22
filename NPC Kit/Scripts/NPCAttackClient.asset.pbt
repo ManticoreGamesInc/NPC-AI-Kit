@@ -20,6 +20,18 @@ TextAsset {
         Id: 14594444593454931774
       }
     }
+    Overrides {
+      Name: "cs:Root:tooltip"
+      String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+    }
+    Overrides {
+      Name: "cs:DamageFX:tooltip"
+      String: "Visual effect template to spawn when this NPC takes damage."
+    }
+    Overrides {
+      Name: "cs:DestroyFX:tooltip"
+      String: "Visual effect template to spawn when this NPC dies."
+    }
   }
 }
 SerializationVersion: 61

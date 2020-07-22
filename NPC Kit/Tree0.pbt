@@ -26,8 +26,8 @@ Objects {
   ChildIds: 10042660642575499168
   ChildIds: 13597343280155166883
   ChildIds: 17215865753234099355
-  ChildIds: 10192053488494872068
   ChildIds: 12609626201918956826
+  ChildIds: 10192053488494872068
   ChildIds: 5080541240374345495
   ChildIds: 8960121642570163487
   ChildIds: 1344975834569243168
@@ -80,6 +80,16 @@ Objects {
           Name: "Name"
           String: "MOBA Cannon Tower"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
@@ -112,6 +122,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "MOBA MinionB"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
@@ -146,6 +166,16 @@ Objects {
           Name: "Name"
           String: "MOBA MinionA"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
@@ -178,6 +208,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "RPG Skeleton - Swordsman"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
@@ -212,6 +252,16 @@ Objects {
           Name: "Name"
           String: "RPG Skeleton - Marksman"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
@@ -244,6 +294,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "RPG Skeleton - Full Armed"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
@@ -278,6 +338,16 @@ Objects {
           Name: "Name"
           String: "RPG Raptor"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
@@ -311,6 +381,16 @@ Objects {
           Name: "Name"
           String: "RPG Enemy"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
@@ -343,6 +423,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "RPG Dragon Enemy - Hard"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
@@ -643,51 +733,6 @@ Objects {
   }
 }
 Objects {
-  Id: 12609626201918956826
-  Name: "Ambush Camp Example"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 11087910991482916188
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Ambush Camp Example"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 28044.4688
-            Y: -16924.3438
-            Z: 1320.50757
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 5833215658979884152
-    }
-  }
-}
-Objects {
   Id: 10192053488494872068
   Name: "MOBA Example"
   Transform {
@@ -732,6 +777,51 @@ Objects {
     }
     TemplateAsset {
       Id: 6315282414521107012
+    }
+  }
+}
+Objects {
+  Id: 12609626201918956826
+  Name: "Ambush Camp Example"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11087910991482916188
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ambush Camp Example"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 28044.4688
+            Y: -16924.3438
+            Z: 1320.50757
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5833215658979884152
     }
   }
 }

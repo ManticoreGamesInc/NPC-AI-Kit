@@ -18,11 +18,13 @@
 	"What" and "Where" to spawn. Each spawn point has references to the NPC templates which
 	they will spawn. These are setup as custom properties. A spawn point can have any number
 	of NPC templates assigned as custom properties. No specific names need to be given to
-	the custom properties. The position and rotation of a spawn point determine the
-	orientation of the NPCs that spawn from it.
+	those custom properties. The position and rotation of a spawn point determine the
+	orientation of the NPCs that spawn from it. Spawn points are usually placed touching the
+	ground and should be adjusted on uneven terrain.
 	
 	This assemblage of parts is what allows NPC camps to come in all forms, to spawn all
-	kinds of NPCs and to behave in different ways, as players approach and leave the area.
+	kinds of NPCs, in various compositions, and to behave in different ways as players
+	approach or leave the area.
 	
 	
 	Waypoints
@@ -44,6 +46,9 @@
 	the next patrol destination. If a waypoint has no destination waypoints assigned to it
 	then it behaves as an end point. NPCs that reach a waypoint with no destinations are
 	put to "sleep".
+	
+	
+	For more information check the tooltips on each of the script properties.
 	
 --]]
 

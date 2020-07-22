@@ -3,9 +3,11 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
 	Works in conjunction with NPCSpawner and expects it as a sibling script.
+	
+	Tells the NPCSpawner script to spawn all the NPCs after the game begins
+	and the 'InitialDelay' has elapsed. If all the NPCs die or are destroyed,
+	then a cooldown period begins, after which the NPCs spawn again.
 --]]
 
 local INITIAL_DELAY = script:GetCustomProperty("InitialDelay") or 1

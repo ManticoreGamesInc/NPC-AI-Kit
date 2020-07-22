@@ -3,15 +3,14 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
-	Spawns and despawns NPCs. Relies on a separate behavior script to tell it when to spawn and despawn.
+	Spawns and despawns NPCs. Relies on a separate behavior script to tell it when to
+	spawn and despawn.
 --]]
 
 local TEAM = script:GetCustomProperty("Team")
 local IS_TEMPLATE_RANDOM = script:GetCustomProperty("TemplateChoiceRandom")
--- TODO : Spawn VFX
--- TODO : De-spawn VFX
+local SPAWN_VFX = script:GetCustomProperty("SpawnVFX")
+local DESPAWN_VFX = script:GetCustomProperty("DespawnVFX")
 
 local spawnPoints = {}
 local customPropertyCountPerObject = {}
@@ -49,6 +48,10 @@ function Spawn()
 			local newMinion = World.SpawnAsset(minionTemplate, {position = pos, rotation = rot})
 			newMinion:SetNetworkedCustomProperty("Team", TEAM)
 			
+			if SPAWN_VFX then
+				SpawnVisualEffect(SPAWN_VFX, pos, rot)
+			end
+			
 			Task.Wait(0.2)
 			local minionId = newMinion:GetCustomProperty("ObjectId")
 
@@ -74,6 +77,13 @@ function Despawn()
 	for _,m in pairs(minions) do
 		if Object.IsValid(m) then
 			--print("Despawning minion " .. tostring(m))
+			
+			if DESPAWN_VFX then
+				local pos = m:GetWorldPosition()
+				local rot = m:GetWorldRotation()
+				SpawnVisualEffect(DESPAWN_VFX, pos, rot)
+			end
+			
 			m:Destroy()
 		end
 	end
@@ -148,6 +158,14 @@ function GetCustomPropertyCount(obj)
 		customPropertyCountPerObject[obj] = count
 	end
 	return count
+end
+
+
+function SpawnVisualEffect(template, pos, rot)
+	local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
+	if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
+		spawnedVfx.lifeSpan = 1.5
+	end
 end
 
 

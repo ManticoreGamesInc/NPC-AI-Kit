@@ -3,8 +3,6 @@
 	by: standardcombo, Chris C.
 	v0.8.0
 	
-	(work in progress)
-	
 	Applies damage to non-player objects.
 --]]
 
@@ -78,16 +76,4 @@ function API.DamageObject(object, dmg, source, position, rotation)
 		end
 	end
 end
---[[
-function GetObjectTeam(object)
-	if object.team ~= nil then
-		return object.team
-	end
-	local templateRoot = object:FindTemplateRoot()
-	if templateRoot then
-		return templateRoot:GetCustomProperty("Team")
-	end
-	return nil
-end
---]]
 

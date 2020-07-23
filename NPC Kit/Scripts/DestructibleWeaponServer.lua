@@ -3,8 +3,11 @@
 	by: standardcombo, Chris C.
 	v0.8.0
 	
-	(work in progress)
-
+	Place this script in Weapons to make them interactable with both
+	Players and NPCs.
+	
+	Expects the "Combat Wrap API" to be added to the hierarchy.
+	
 --]]
 
 -- Component dependencies
@@ -62,7 +65,4 @@ function OnDestroyed(obj)
 end
 
 WEAPON.destroyEvent:Connect(OnDestroyed)
-
-
-
 

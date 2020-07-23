@@ -11,6 +11,14 @@ TextAsset {
       Name: "cs:RespawnCooldown"
       Float: 15
     }
+    Overrides {
+      Name: "cs:InitialDelay:tooltip"
+      String: "The initial delay before the camp spawns the first NPCs."
+    }
+    Overrides {
+      Name: "cs:RespawnCooldown:tooltip"
+      String: "The period, in seconds, between spawns. Will keep spawning regardless of what happens to the NPCs."
+    }
   }
 }
 SerializationVersion: 61

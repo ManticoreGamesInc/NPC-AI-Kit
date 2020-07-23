@@ -9,6 +9,10 @@ TextAsset {
         Id: 2777724051004233514
       }
     }
+    Overrides {
+      Name: "cs:PlayerHomingTarget:tooltip"
+      String: "The invisible object to be attached to players for purposes of targeting homing shots."
+    }
   }
 }
 SerializationVersion: 61

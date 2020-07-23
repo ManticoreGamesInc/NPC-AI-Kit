@@ -20,13 +20,18 @@
 	3. NPCs can drop loot when they die. To enable this:
 	  a) Go to Community Content and import "Loot Drop Factory".
 	  b) Add a copy of the Loot Drop Factory template to the hierarchy.
+	  
+	4. NPCs can navigate indoor environments with a Navigational Mesh.
+	  a) Go to Community Content and import [COMING SOON].
+	  b) Follow instructions in the NavMesh component to set it up for your game.
+	  c) NPCs will automatically check for the existence of a NavMesh and use it if available.
 	
 	
 	Known Issues in This Version
 	============================
 	
-	- AI doesn't work indoors. Best for outdoors / terrain.
 	- Consumes a large amount of the networking budget.
+	- Ranged NPCs may try to attack through walls and don't adapt to obstacles when targeting.
 		
 	
 	Combat
@@ -63,13 +68,23 @@
 	1. Select an existing NPC as a starting point. Add it to the hierarchy.
 	2. Right-click and create a new template. Give it a unique name.
 	3. Customize it visually. See the RPG Skeletons for examples of this.
-	4. Customize it's properties, such as movement speed, damage and health.
-	5. You can position the NPC directly in the game to test its behaviors.
-	5. Select one of the NPC spawn points where your NPC will appear.
-	   Make sure the selected camp is "deinstanced".
-	6. From Project Content, drag your new NPC template onto the Properties view
+	4. Customize the Collider. Change the Collider's Visibility to see it in
+	   relationship to the rest of the NPC.
+	5. Customize its properties, such as movement speed, damage and health.
+	6. Right-click the NPC in the hierarchy and "Update Template From This".
+	
+	
+	Adding NPCs to a Game
+	=====================
+	
+	1. You can position your NPCs directly in the game to test their behaviors.
+	   However, they won't respawn if killed.
+	2. Add a spawn camp, such as the Ambush Camp Example.
+	3. Right-click the camp and "Deinstance" it.
+	4. Select one of the camp's spawn points where your NPC should appear.
+	5. From Project Content, drag your NPC template onto the Properties view
 	   to add it as a custom property on the spawn point.
-	7. Delete your NPC template from the hierarchy. It should be spawned with
+	6. Delete your NPC templates from the hierarchy. They should be spawned with
 	   Camps and Spawn Points instead of being directly placed.
 	
 	

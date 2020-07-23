@@ -3,8 +3,6 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
 	The client counterpart for NPCAIServer. Controls the visuals of the NPC based on
 	changes to its networked properties.
 --]]

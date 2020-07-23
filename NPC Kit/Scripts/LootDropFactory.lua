@@ -10,18 +10,32 @@
 	Modify the drops by modifying the groups and their child scripts. Each child script
 	is one loot drop entry. Copy/delete/rename to setup the loot drops for your game.
 	
+	Example loots, such as the Loot Bag, contain the 'PickupBobRotateClient' script
+	that animates them popping up and falling down. Additionally, the Loot Drop Factory
+	will find the ground under the drop position (raycast) and calls MoveTo() on the
+	loot, so it interpolates linearly to the ground in addition to the physics arc
+	animated by the 'PickupBobRotateClient' script.
 	
 	Usage:
 	
-	(in header area of your script)
-	function LOOT_DROP_FACTORY()
-		if _G.standardcombo and _G.standardcombo.NPCKit then
-			return _G.standardcombo.NPCKit.LOOT_DROP_FACTORY
-		end
-	end
+	To drop loot-
 	
-	(in body of your script, where the drop decision is made)
-	LOOT_DROP_FACTORY().Drop("Common", position)
+	Add this to the header area of your script:
+	```
+		function LOOT_DROP_FACTORY()
+			if _G.standardcombo and _G.standardcombo.NPCKit then
+				return _G.standardcombo.NPCKit.LOOT_DROP_FACTORY
+			end
+		end
+	```
+	
+	In the body of your script, where the drop decision is made:
+	```
+		LOOT_DROP_FACTORY().Drop("Common", position)
+	```
+	
+	In the above example, loot is dropped from the "Common" group. By default,
+	the Loot Drop Factory also comes with "Uncommon" and "Rare" loot groups.
 	
 --]]
 

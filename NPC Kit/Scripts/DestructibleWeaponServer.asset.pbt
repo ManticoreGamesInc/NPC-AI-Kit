@@ -4,18 +4,12 @@ PlatformAssetType: 3
 TextAsset {
   CustomParameters {
     Overrides {
-      Name: "cs:CombatWrapAPI"
-      AssetReference {
-        Id: 280759072463152142
-      }
-    }
-    Overrides {
       Name: "cs:DamageToPlayers"
-      Int: 0
+      Int: 1
     }
     Overrides {
       Name: "cs:DamageToObjects"
-      Int: 0
+      Int: 1
     }
   }
 }

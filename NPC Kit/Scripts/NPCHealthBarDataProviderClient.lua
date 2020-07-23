@@ -3,11 +3,12 @@
 	by: standardcombo
 	v0.8.0
 	
-	(work in progress)
-	
 	Works in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.
 	Other objects could use the same health bar UI by implementing their own data
 	providers.
+	
+	The health bar UI is spawned in relationship to the position of this script.
+	Commonly, the script's Z position should be adjusted on a per-NPC basis.
 	
 	Implements the interface:
 		GetHealt()

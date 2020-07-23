@@ -1,4 +1,7 @@
 --[[
+Loot Pickup
+v1.0
+by: standardcombo
 
 This is a full-featured, but simple pickup object that grants a resource to the player who collects it.
 

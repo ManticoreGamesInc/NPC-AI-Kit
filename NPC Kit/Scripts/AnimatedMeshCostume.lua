@@ -4,6 +4,17 @@
 	by: standardcombo
 	
 	Attaches objects to an NPC to customize its visuals.
+	
+	Automatically detects the animated mesh object that should be setup as
+	its sibling in the hierarchy.
+	
+	Automatically detects siblings with names that match socket names on the
+	animated mesh and attaches those groups to the mesh sockets.
+	E.g. A group named "head" will attach to the animated mesh's head.
+	
+	Expects the animated mesh to be in the "bind" stance as the template is
+	spawned. If the animated mesh is not in the "bind" stance, then
+	attachments will appear out of place.
 --]]
 
 local MESH = script.parent:FindDescendantByType("AnimatedMesh")

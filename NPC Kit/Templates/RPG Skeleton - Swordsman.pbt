@@ -765,12 +765,8 @@ Assets {
         Name: "AnimatedMeshCostume"
         Transform {
           Location {
-            X: 2809.78711
-            Y: 178.029297
-            Z: 126.212402
           }
           Rotation {
-            Yaw: 179.999954
           }
           Scale {
             X: 1

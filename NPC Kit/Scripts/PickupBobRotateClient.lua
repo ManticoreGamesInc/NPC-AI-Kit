@@ -1,3 +1,13 @@
+--[[
+	Pickup Bob & Rotate - Client
+	v1.0
+	by: standardcombo
+	
+	Causes an object to pop upwards then fall back down. It will then
+	rotate and bob up/down. Used in animating loot drops.
+	
+	Expects to be in a client-context group.
+--]]
 
 local TARGET = script:GetCustomProperty("Target"):WaitForObject()
 local SPAWN_IMPULSE = script:GetCustomProperty("SpawnImpulse") or 10000

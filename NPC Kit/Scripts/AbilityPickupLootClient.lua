@@ -1,3 +1,10 @@
+--[[
+	Ability Pickup Loot - Client
+	v1.0
+	by: standardcombo
+	
+	Plays an animation when a player picks up some loot.
+--]]
 
 local ABILITY = script:GetCustomProperty("Ability"):WaitForObject()
 local EVENT_NAME = script:GetCustomProperty("EventName")

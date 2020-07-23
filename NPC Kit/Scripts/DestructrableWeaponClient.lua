@@ -3,8 +3,8 @@
 	by: standardcombo, Chris C.
 	v0.8.0
 	
-	(work in progress)
-
+	Place this script in a Weapon's client-context to show damage feedback
+	when using the Destructible Weapon system.
 --]]
 
 local weapon = script:FindAncestorByType("Equipment")
@@ -18,3 +18,4 @@ function OnShowDamageFeedback(amount, position)
 end
 
 Events.Connect("ShowDamageFeedback", OnShowDamageFeedback)
+

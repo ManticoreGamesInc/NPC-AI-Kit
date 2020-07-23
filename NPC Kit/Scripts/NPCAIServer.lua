@@ -15,6 +15,7 @@
 -- Component dependencies
 require ( script:GetCustomProperty("NPCManager") )
 function NPC_MANAGER() return _G.standardcombo.NPCKit.NPC_MANAGER end
+function NAV_MESH() return _G.NavMesh end
 
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
@@ -77,6 +78,7 @@ local target = nil
 local moveObjective = nil
 local nextMoveObjective = nil
 local stepDestination = SPAWN_POSITION
+local navMeshPath = nil
 local searchStartPosition = nil
 local searchEndPosition = nil
 local searchTimeElapsed = -1
@@ -110,6 +112,9 @@ function SetState(newState)
 
 		local pos = ROOT:GetWorldPosition()
 		local direction = targetPosition - pos
+		if navMeshPath and stepDestination then
+			direction = stepDestination - pos
+		end
 		local r = Rotation.New(direction, Vector3.UP)
 		ROTATION_ROOT:RotateTo(r, GetRotateToTurnSpeed(), false)
 
@@ -292,6 +297,16 @@ end
 function StepTowards(targetPosition)
 	local pos = ROOT:GetWorldPosition()
 	
+	if NAV_MESH() then
+		navMeshPath = NAV_MESH():FindPath(pos, targetPosition)
+		if navMeshPath and #navMeshPath > 1 then
+			table.remove(navMeshPath, 1)
+			stepDestination = navMeshPath[1]
+			return
+		end
+	end
+	-- No NavMesh available, fallback
+	
 	-- Calculate step destination
 	local direction = targetPosition - pos
 
@@ -355,15 +370,39 @@ function UpdateMovement(deltaTime)
 	end
 	
 	-- Move forward
-	local moveV = stepDestination - pos
-	local distance = moveV.size
-	local moveAmount = MOVE_SPEED * deltaTime
-	
-	if (distance <= moveAmount) then
-		pos = stepDestination
+	if navMeshPath then
+		local moveAmount = MOVE_SPEED * deltaTime
+		while moveAmount > 0 do
+			stepDestination = navMeshPath[1]
+			local moveV = stepDestination - pos
+			local distance = moveV.size
+			
+			if (distance <= moveAmount) then
+				pos = stepDestination
+
+				table.remove(navMeshPath, 1)
+				if #navMeshPath > 0 then
+					moveAmount = moveAmount - distance
+				else
+					navMeshPath = nil
+					moveAmount = 0
+				end
+			else
+				pos = pos + moveV / distance * moveAmount
+				moveAmount = 0
+			end
+		end
 	else
-		pos = pos + moveV / distance * moveAmount
-	end	
+		local moveV = stepDestination - pos
+		local distance = moveV.size
+		local moveAmount = MOVE_SPEED * deltaTime
+		
+		if (distance <= moveAmount) then
+			pos = stepDestination
+		else
+			pos = pos + moveV / distance * moveAmount
+		end
+	end
 	ROOT:SetWorldPosition(pos)
 end
 

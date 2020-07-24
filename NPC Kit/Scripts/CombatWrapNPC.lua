@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.8.0
+	v0.8.2
 	by: standardcombo
 	
 	Registers itself into the global table.
@@ -17,8 +17,8 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
-function NPC_MANAGER() return MODULE.Get("standardcombo.NPCKit.NPCManager") end
+function DESTRUCTIBLE_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.DestructibleManager") end
+function NPC_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.NPCManager") end
 
 
 local wrapper = {}
@@ -60,6 +60,8 @@ end
 
 -- ApplyDamage()
 function wrapper.ApplyDamage(npc, dmg, source, pos, rot)
+	if not DESTRUCTIBLE_MANAGER() then return end
+	
 	local hitResult = dmg:GetHitResult()
 	if hitResult and not pos then
 		pos = hitResult:GetImpactPosition()
@@ -78,7 +80,12 @@ function wrapper.IsDead(obj)
 		return (not obj.context.IsAlive())
 	end
 	
-	local npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+	end
+	
 	if not npcScript then return false end
 	
 	if npcScript.context and npcScript.context.IsAlive then

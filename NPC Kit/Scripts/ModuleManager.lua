@@ -1,6 +1,6 @@
 --[[
 	Module Manager
-	v1.0
+	v1.0.3
 	by: standardcombo
 	
 	Promotes de-coupling of systems by providing a thin access to
@@ -23,13 +23,21 @@ local API = {}
 local modules = {}
 
 
-function API.Get(path, path2)
-	if path == API then
-		path = path2
+function API.Get_Optional(self, path)
+	return Get_Internal(self, path, true)
+end
+
+function API.Get(self, path, isOptionalModule)
+	return Get_Internal(self, path, isOptionalModule)
+end
+
+function Get_Internal(self, path, isOptionalModule)
+	if self ~= API then
+		path = self
 	end
 	
 	if path == nil then
-		error("Expected module path, received 'nil' instead.", 2)
+		error("Expected module path, received 'nil' instead.", 3)
 		return
 	end
 	
@@ -47,8 +55,10 @@ function API.Get(path, path2)
 	local theModuleTable = _G
 	for i,value in ipairs(namespaces) do
 		if not theModuleTable[value] then
-			error("Missing module '" .. path ..
-			"'. Check spelling or import it from Community Content.", 2)
+			if (not isOptionalModule) then
+				error("Missing module '" .. path ..
+				"'. Check spelling or import it from Community Content.", 3)
+			end
 			return nil
 		end
 		theModuleTable = theModuleTable[value]

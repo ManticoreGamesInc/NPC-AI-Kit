@@ -1,7 +1,7 @@
 --[[
 	NPCAttack - Server
 	by: standardcombo
-	v0.8.0
+	v0.8.2
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
 	easier to design diverse kinds of enemies.
@@ -14,7 +14,7 @@ function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.Destruct
 function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
-function LOOT_DROP_FACTORY() return MODULE.Get("standardcombo.NPCKit.LootDropFactory") end
+function LOOT_DROP_FACTORY() return MODULE.Get_Optional("standardcombo.NPCKit.LootDropFactory") end
 
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

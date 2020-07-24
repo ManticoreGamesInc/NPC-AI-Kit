@@ -4,6 +4,12 @@ PlatformAssetType: 3
 TextAsset {
   CustomParameters {
     Overrides {
+      Name: "cs:ModuleManager"
+      AssetReference {
+        Id: 14162240362023469980
+      }
+    }
+    Overrides {
       Name: "cs:DestructibleManager"
       AssetReference {
         Id: 17999829830237049640

@@ -14,15 +14,17 @@
 	- IsDead()
 --]]
 
+
 -- Registers itself into the global table
 local API = {}
-_G.standardcombo = _G.standardcombo or {}
-_G.standardcombo.COMBAT = API
+_G["standardcombo.Combat.Wrap"] = API
 
--- Component dependencies
-function CROSS_CONTEXT_CALLER() return _G.standardcombo.Utils.CROSS_CONTEXT_CALLER end
+-- Module dependencies
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
+function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
 
 
+-- The different entity wrappers
 local PLAYER_WRAPPER = require( script:GetCustomProperty("CombatWrapPlayer") )
 local NPC_WRAPPER = require( script:GetCustomProperty("CombatWrapNPC") )
 

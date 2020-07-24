@@ -10,9 +10,7 @@
 
 -- Registers itself into the global table
 local API = {}
-_G.standardcombo = _G.standardcombo or {}
-_G.standardcombo.Utils = _G.standardcombo.Utils or {}
-_G.standardcombo.Utils.PLAYER_HOMING_TARGETS = API
+_G["standardcombo.Combat.PlayerHomingTargets"] = API
 
 
 local TARGET_TEMPLATE = script:GetCustomProperty("PlayerHomingTarget")

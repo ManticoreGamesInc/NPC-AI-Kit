@@ -4,6 +4,12 @@ PlatformAssetType: 3
 TextAsset {
   CustomParameters {
     Overrides {
+      Name: "cs:ModuleManager"
+      AssetReference {
+        Id: 14162240362023469980
+      }
+    }
+    Overrides {
       Name: "cs:CombatWrapPlayer"
       AssetReference {
         Id: 2410645964140835056

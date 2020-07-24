@@ -11,7 +11,8 @@
 --]]
 
 -- Component dependencies
-function COMBAT() return _G.standardcombo.COMBAT end
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
+function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 
 
 local WEAPON = script.parent

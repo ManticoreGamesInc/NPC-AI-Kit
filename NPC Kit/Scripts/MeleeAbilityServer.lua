@@ -6,8 +6,10 @@
 	Handles melee combat interaction of attack abilities on weapons such as swords.
 --]]
 
--- Component dependencies
-function COMBAT() return _G.standardcombo.COMBAT end
+
+-- Module dependencies
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
+function COMBAT() return MODULE:Get("standardcombo.Combat.Wrap") end
 
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")

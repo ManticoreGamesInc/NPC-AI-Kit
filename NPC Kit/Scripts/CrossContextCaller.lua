@@ -14,7 +14,7 @@
 
 -- Registers itself into the global table
 local API = {}
-_G.standardcombo.Utils.CROSS_CONTEXT_CALLER = API
+_G["standardcombo.Utils.CrossContextCaller"] = API
 
 
 local functionsToRun = {}

@@ -644,6 +644,16 @@ Objects {
           Name: "Name"
           String: "Combat Dependencies"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {

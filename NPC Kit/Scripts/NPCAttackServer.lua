@@ -8,16 +8,14 @@
 --]]
 
 -- Component dependencies
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
 require ( script:GetCustomProperty("DestructibleManager") )
-function DESTRUCTIBLE_MANAGER() return _G.standardcombo.NPCKit.DESTRUCTIBLE_MANAGER end
-function COMBAT() return _G.standardcombo.COMBAT end
-function PLAYER_HOMING_TARGETS() return _G.standardcombo.Utils.PLAYER_HOMING_TARGETS end
-function CROSS_CONTEXT_CALLER() return _G.standardcombo.Utils.CROSS_CONTEXT_CALLER end
-function LOOT_DROP_FACTORY()
-	if _G.standardcombo and _G.standardcombo.NPCKit then
-		return _G.standardcombo.NPCKit.LOOT_DROP_FACTORY
-	end
-end
+function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
+function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
+function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
+function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
+function LOOT_DROP_FACTORY() return MODULE.Get("standardcombo.NPCKit.LootDropFactory") end
+
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 

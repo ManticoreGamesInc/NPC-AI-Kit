@@ -10,8 +10,9 @@
 --]]
 
 -- Component dependencies
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
 require ( script:GetCustomProperty("NPCManager") )
-function NPC_MANAGER() return _G.standardcombo.NPCKit.NPC_MANAGER end
+function NPC_MANAGER() return MODULE.Get("standardcombo.NPCKit.NPCManager") end
 function NAV_MESH() return _G.NavMesh end
 
 

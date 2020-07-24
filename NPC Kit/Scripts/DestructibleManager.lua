@@ -8,9 +8,7 @@
 
 -- Registers itself into the global table
 local API = {}
-_G.standardcombo = _G.standardcombo or {}
-_G.standardcombo.NPCKit = _G.standardcombo.NPCKit or {}
-_G.standardcombo.NPCKit.DESTRUCTIBLE_MANAGER = API
+_G["standardcombo.NPCKit.DestructibleManager"] = API
 
 
 local objectList = {}

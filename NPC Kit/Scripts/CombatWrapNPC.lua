@@ -16,8 +16,9 @@
 --]]
 
 -- Component dependencies
-function DESTRUCTIBLE_MANAGER() return _G.standardcombo.NPCKit.DESTRUCTIBLE_MANAGER end
-function NPC_MANAGER() return _G.standardcombo.NPCKit.NPC_MANAGER end
+local MODULE = require( script:GetCustomProperty("ModuleManager") )
+function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
+function NPC_MANAGER() return MODULE.Get("standardcombo.NPCKit.NPCManager") end
 
 
 local wrapper = {}

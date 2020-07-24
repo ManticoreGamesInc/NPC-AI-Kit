@@ -15,11 +15,13 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8235604101384154091
+        ParentId: 6748714353845808812
         ChildIds: 5652527459500352797
         ChildIds: 2039418955538557987
         ChildIds: 8064234013766107217
         ChildIds: 13738691585055552188
+        ChildIds: 5560368663135777148
+        ChildIds: 4762254303616577876
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -117,6 +119,18 @@ Assets {
             Name: "cs:LitState"
             ObjectReference {
               SubObjectId: 13738691585055552188
+            }
+          }
+          Overrides {
+            Name: "cs:SwitchOnSFX"
+            ObjectReference {
+              SubObjectId: 5560368663135777148
+            }
+          }
+          Overrides {
+            Name: "cs:SwitchOffSFX"
+            ObjectReference {
+              SubObjectId: 4762254303616577876
             }
           }
         }
@@ -433,6 +447,75 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 5560368663135777148
+        Name: "Magic Dark Ghostly Bell Spell Cast 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9347777719473548503
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 734460088552813789
+          }
+          Pitch: 1200
+          Volume: 1
+          Falloff: -1
+          Radius: 2500
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 4762254303616577876
+        Name: "Magic Dark Ghostly Deep Bell Spell Cast 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9347777719473548503
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 15149742692032890990
+          }
+          Volume: 1
+          Falloff: -1
+          Radius: 2500
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
     }
     Assets {
       Id: 642818640192871735
@@ -468,6 +551,24 @@ Assets {
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
         AssetId: "fxbp_sparkles_volume_vfx"
+      }
+    }
+    Assets {
+      Id: 734460088552813789
+      Name: "Magic Dark Ghostly Bell Spell Cast 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_dark_ghostly_bell_spell_cast_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 15149742692032890990
+      Name: "Magic Dark Ghostly Deep Bell Spell Cast 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_dark_ghostly_deep_bell_spell_cast_01_Cue_ref"
       }
     }
     PrimaryAssetId {

@@ -1393,7 +1393,7 @@ Assets {
         }
         Trigger {
           Interactable: true
-          InteractionLabel: "Start 1 Hour Timer"
+          InteractionLabel: "Start 2 Hour Timer"
           TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true

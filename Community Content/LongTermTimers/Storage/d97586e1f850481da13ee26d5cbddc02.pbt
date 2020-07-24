@@ -6,18 +6,35 @@ Entries {
     Table {
       Entries {
         Key {
-          StringVar: "5min"
+          StringVar: "2hour"
         }
         SimpleValue {
           Table {
             Entries {
               Key {
+                StringVar: "duration"
+              }
+              SimpleValue {
+                IntVar: 7200
+              }
+            }
+            Entries {
+              Key {
                 StringVar: "start"
               }
               SimpleValue {
-                IntVar: 1594777147
+                IntVar: 1595387942
               }
             }
+          }
+        }
+      }
+      Entries {
+        Key {
+          StringVar: "5min"
+        }
+        SimpleValue {
+          Table {
             Entries {
               Key {
                 StringVar: "duration"
@@ -26,29 +43,12 @@ Entries {
                 IntVar: 300
               }
             }
-          }
-        }
-      }
-      Entries {
-        Key {
-          StringVar: "2hour"
-        }
-        SimpleValue {
-          Table {
             Entries {
               Key {
                 StringVar: "start"
               }
               SimpleValue {
-                IntVar: 1594777143
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "duration"
-              }
-              SimpleValue {
-                IntVar: 7200
+                IntVar: 1595387941
               }
             }
           }

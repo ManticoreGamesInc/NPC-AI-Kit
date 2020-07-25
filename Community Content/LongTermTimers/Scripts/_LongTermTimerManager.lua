@@ -63,6 +63,7 @@ end
 -- duration:  duration in seconds for the event.
 -- Remaining(): function, that returns the number of seconds remaining until the timer fires.
 function GetTimerDetails(player, timerId)
+	if not WaitForDataToLoad(player) then return nil end
 	if LTTimerTable ~= nil and LTTimerTable[player.id] ~= nil and LTTimerTable[player.id][timerId] ~= nil then
 		local details = {}
 		for k,v in pairs(LTTimerTable[player.id][timerId]) do
@@ -80,6 +81,7 @@ function DetailsTimeRemaining(self)
 end
 
 function GetAllTimerDetails(player)
+	if not WaitForDataToLoad(player) then return nil end
 	local results = {}
 	for timerId,_ in pairs(LTTimerTable[player.id]) do
 		results[timerId] = GetTimerDetails(player, timerId)
@@ -216,6 +218,19 @@ end
 function CancelAllPlayerTimers(player)
 	LTTimerTable[player.id] = nil
 	ResetLTTimerTask()
+end
+
+
+function WaitForDataToLoad(player)
+	local startTime = time()
+	while LTTimerTable[player.id] == nil do
+		if startTime + 5 < time() then
+			print("feh")
+			return false
+		end
+		Task.Wait()
+	end
+	return true
 end
 
 

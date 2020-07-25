@@ -16,9 +16,12 @@ function OnPlayerLeft(player)
 end
 
 function OnRequestTimer(player, timerId)
+	print("---", player.id, "is nil?")
 	local timerDetails = LTT.GetTimerDetails(player, timerId)
 	if timerDetails ~= nil then
 		Events.BroadcastToPlayer(player, "TimerStarted", timerId, timerDetails.start + timerDetails.duration)
+	else
+		print("Timer details were nil, for", player.id, timerId)
 	end
 end
 

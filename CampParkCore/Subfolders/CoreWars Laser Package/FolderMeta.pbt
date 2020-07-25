@@ -1,0 +1,71 @@
+MetaVersion: 1
+MarketplaceDetails {
+  Id: "ad6ddb90fdb548048634f9d70ac50079"
+  OwnerAccountId: "69213e7e58cb4c269471fd16f5b1f705"
+  OwnerName: "BFM"
+  Version: "1.1.0"
+}
+AssetIdsOriginalToNew {
+  key: 307406115803496087
+  value: 11455154032478832945
+}
+AssetIdsOriginalToNew {
+  key: 1294931356911846772
+  value: 11398608567513886476
+}
+AssetIdsOriginalToNew {
+  key: 1683114021203363022
+  value: 18284033426230605376
+}
+AssetIdsOriginalToNew {
+  key: 3063568213646848790
+  value: 6658831361953544835
+}
+AssetIdsOriginalToNew {
+  key: 3809605764023784591
+  value: 10972430655115546593
+}
+AssetIdsOriginalToNew {
+  key: 5473610926495855115
+  value: 18397307042983203774
+}
+AssetIdsOriginalToNew {
+  key: 6494952554035844526
+  value: 4954585946209681532
+}
+AssetIdsOriginalToNew {
+  key: 6989847399643868291
+  value: 15074838925079406632
+}
+AssetIdsOriginalToNew {
+  key: 11408295347528574769
+  value: 13422187661744129414
+}
+AssetIdsOriginalToNew {
+  key: 12107734285812188601
+  value: 4825186766954567408
+}
+AssetIdsOriginalToNew {
+  key: 12233586378007174583
+  value: 11475336028661121189
+}
+AssetIdsOriginalToNew {
+  key: 13235592136068060647
+  value: 12871952629575833759
+}
+AssetIdsOriginalToNew {
+  key: 13523813012285840718
+  value: 1683611828092370716
+}
+AssetIdsOriginalToNew {
+  key: 13525280470731810578
+  value: 4686376437188181400
+}
+AssetIdsOriginalToNew {
+  key: 14277567543181954725
+  value: 16600282133054711484
+}
+AssetIdsOriginalToNew {
+  key: 15728676179772725900
+  value: 10036671737185412372
+}

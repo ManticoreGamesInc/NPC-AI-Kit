@@ -1,7 +1,8 @@
 local propCollisionVolume = script:GetCustomProperty("CollisionVolume"):WaitForObject()
 local propBaseState = script:GetCustomProperty("BaseState"):WaitForObject()
 local propLitState = script:GetCustomProperty("LitState"):WaitForObject()
-
+local propSwitchOnSFX = script:GetCustomProperty("SwitchOnSFX"):WaitForObject()
+local propSwitchOffSFX = script:GetCustomProperty("SwitchOffSFX"):WaitForObject()
 
 function SetGraphics(isLit)
 	propBaseState.isEnabled = not isLit
@@ -26,6 +27,7 @@ function OnBeamTargetChanged(newTargetId, lightSourceId)
 		if not wasTriggerActive then
 			Events.Broadcast("TriggerDown", script.parent:GetReference())
 			print("Light activated!")
+			propSwitchOnSFX:Play()
 			SetGraphics(true)
 		end
 
@@ -35,6 +37,7 @@ function OnBeamTargetChanged(newTargetId, lightSourceId)
 		if not isActive and wasTriggerActive then
 			Events.Broadcast("TriggerUp", script.parent:GetReference())
 			print("Light deactivated!")
+			propSwitchOffSFX:Play()
 			SetGraphics(false)
 		end
 	end

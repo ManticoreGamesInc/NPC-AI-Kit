@@ -1,21 +1,14 @@
 Assets {
-  Id: 16197724571903786063
-  Name: "FireballProjectileSmall"
+  Id: 2668684521464535076
+  Name: "DragonFireballEasy"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 4158428330768656943
       Objects {
         Id: 4158428330768656943
-        Name: "FireballProjectileSmall"
+        Name: "DragonFireballEasy"
         Transform {
-          Location {
-            X: -54.8428917
-            Y: -64.484108
-            Z: 395
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -99,7 +92,7 @@ Assets {
         }
         Blueprint {
           BlueprintAsset {
-            Id: 10118144510199222253
+            Id: 594315991841207773
           }
           AudioBP {
             AutoPlay: true
@@ -130,7 +123,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15419880338893310786
+              Id: 8255411499280225015
             }
           }
           Overrides {
@@ -150,7 +143,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 9426188198345824359
+            Id: 17624276747670666460
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -259,7 +252,7 @@ Assets {
       }
     }
     Assets {
-      Id: 10118144510199222253
+      Id: 594315991841207773
       Name: "Fire and Flame Burning Loop Set 01 SFX"
       PlatformAssetType: 10
       PrimaryAsset {
@@ -268,7 +261,7 @@ Assets {
       }
     }
     Assets {
-      Id: 9426188198345824359
+      Id: 17624276747670666460
       Name: "Ball"
       PlatformAssetType: 1
       PrimaryAsset {

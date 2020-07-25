@@ -32,17 +32,10 @@ Objects {
   ChildIds: 8960121642570163487
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
-  ChildIds: 5597573338046879678
   ChildIds: 14632867372866985088
-  ChildIds: 8411039335001202046
-  ChildIds: 3050268294326400813
-  ChildIds: 4475252426211858605
-  ChildIds: 9450521904986627477
-  ChildIds: 15215424125471886565
-  ChildIds: 4698475038455935911
-  ChildIds: 14610374545173179283
-  ChildIds: 12532074028913180042
-  ChildIds: 12200420504424141092
+  ChildIds: 13387123951467110445
+  ChildIds: 10680401402857083785
+  ChildIds: 974237103558482793
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -55,8 +48,8 @@ Objects {
   }
 }
 Objects {
-  Id: 12200420504424141092
-  Name: "MOBA Cannon Tower"
+  Id: 974237103558482793
+  Name: "Fire Staff Secondary Weapon"
   Transform {
     Scale {
       X: 1
@@ -66,40 +59,24 @@ Objects {
   }
   ParentId: 4781671109827199097
   WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 4286002597013953579
+      key: 13285317196782325249
       value {
         Overrides {
           Name: "Name"
-          String: "MOBA Cannon Tower"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
+          String: "Fire Staff Secondary Weapon"
         }
       }
     }
     TemplateAsset {
-      Id: 4812371249315312696
+      Id: 13938583530368586422
     }
   }
 }
 Objects {
-  Id: 12532074028913180042
-  Name: "MOBA MinionB"
+  Id: 10680401402857083785
+  Name: "Destructible Rifle"
   Transform {
     Scale {
       X: 1
@@ -117,11 +94,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 12967867852267520266
+      key: 16957855638915228446
       value {
         Overrides {
           Name: "Name"
-          String: "MOBA MinionB"
+          String: "Destructible Rifle"
         }
         Overrides {
           Name: "Position"
@@ -136,13 +113,13 @@ Objects {
       }
     }
     TemplateAsset {
-      Id: 17642462915566084933
+      Id: 2837579121194794601
     }
   }
 }
 Objects {
-  Id: 14610374545173179283
-  Name: "MOBA MinionA"
+  Id: 13387123951467110445
+  Name: "Leaping Staff - Common"
   Transform {
     Scale {
       X: 1
@@ -160,11 +137,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13420344242969750217
+      key: 9901109355884061414
       value {
         Overrides {
           Name: "Name"
-          String: "MOBA MinionA"
+          String: "Leaping Staff - Common"
         }
         Overrides {
           Name: "Position"
@@ -179,265 +156,7 @@ Objects {
       }
     }
     TemplateAsset {
-      Id: 11039306819631688635
-    }
-  }
-}
-Objects {
-  Id: 4698475038455935911
-  Name: "RPG Skeleton - Swordsman"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16661545407737424176
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Skeleton - Swordsman"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9727190433052104706
-    }
-  }
-}
-Objects {
-  Id: 15215424125471886565
-  Name: "RPG Skeleton - Marksman"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16661545407737424176
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Skeleton - Marksman"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 18176330156260336344
-    }
-  }
-}
-Objects {
-  Id: 9450521904986627477
-  Name: "RPG Skeleton - Full Armed"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9913815135764235794
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Skeleton - Full Armed"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7194780003691091213
-    }
-  }
-}
-Objects {
-  Id: 4475252426211858605
-  Name: "RPG Raptor"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16661545407737424176
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Raptor"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16856907705825859721
-    }
-  }
-}
-Objects {
-  Id: 3050268294326400813
-  Name: "RPG Enemy"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13420344242969750217
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Enemy"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 995900137041739798
-    }
-  }
-}
-Objects {
-  Id: 8411039335001202046
-  Name: "RPG Dragon Enemy - Hard"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13420344242969750217
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Dragon Enemy - Hard"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16596380378274474908
+      Id: 4779393545089479649
     }
   }
 }
@@ -485,49 +204,6 @@ Objects {
     }
     TemplateAsset {
       Id: 13871905926012633814
-    }
-  }
-}
-Objects {
-  Id: 5597573338046879678
-  Name: "RPG Dragon Enemy - Easy"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13420344242969750217
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Dragon Enemy - Easy"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8943910556254534449
     }
   }
 }
@@ -1032,6 +708,12 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
+          }
+        }
+        Overrides {
+          Name: "cs:EquipmentTemplate"
+          AssetReference {
+            Id: 4779393545089479649
           }
         }
       }

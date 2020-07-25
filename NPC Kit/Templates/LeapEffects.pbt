@@ -1,0 +1,129 @@
+Assets {
+  Id: 15836769211708900352
+  Name: "LeapEffects"
+  PlatformAssetType: 5
+  TemplateAsset {
+    ObjectBlock {
+      RootId: 583067391045593071
+      Objects {
+        Id: 583067391045593071
+        Name: "ClientContext"
+        Transform {
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4781671109827199097
+        ChildIds: 8080796913344623665
+        ChildIds: 17420392180101494455
+        UnregisteredParameters {
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 8080796913344623665
+        Name: "Cast Burst Ring VFX"
+        Transform {
+          Location {
+            X: -90
+            Y: 85
+            Z: 395
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 583067391045593071
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 2668490165851605550
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+      }
+      Objects {
+        Id: 17420392180101494455
+        Name: "Magic Fire Swift Attack 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 583067391045593071
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 13818456764848452861
+          }
+          AutoPlay: true
+          Volume: 1
+          Falloff: 3600
+          Radius: 400
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+    }
+    Assets {
+      Id: 2668490165851605550
+      Name: "Cast Burst Ring VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_cast_circle_generic"
+      }
+    }
+    Assets {
+      Id: 13818456764848452861
+      Name: "Magic Fire Swift Attack 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_magic_fire_swift_attack_01_Cue_ref"
+      }
+    }
+    PrimaryAssetId {
+      AssetType: "None"
+      AssetId: "None"
+    }
+  }
+  SerializationVersion: 61
+}

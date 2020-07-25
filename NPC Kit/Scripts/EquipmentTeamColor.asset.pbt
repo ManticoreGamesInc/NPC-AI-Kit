@@ -1,5 +1,5 @@
-Id: 13039838708654056087
-Name: "APIObjectIcon"
+Id: 15401835518001702557
+Name: "EquipmentTeamColor"
 PlatformAssetType: 3
 TextAsset {
 }

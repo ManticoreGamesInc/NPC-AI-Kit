@@ -1,5 +1,5 @@
-Id: 13039838708654056087
-Name: "APIObjectIcon"
+Id: 14172904023482792809
+Name: "SetAbilityIconClient"
 PlatformAssetType: 3
 TextAsset {
 }

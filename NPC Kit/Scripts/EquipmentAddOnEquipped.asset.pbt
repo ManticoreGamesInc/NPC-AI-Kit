@@ -1,5 +1,5 @@
-Id: 13039838708654056087
-Name: "APIObjectIcon"
+Id: 11728428692852934887
+Name: "EquipmentAddOnEquipped"
 PlatformAssetType: 3
 TextAsset {
 }

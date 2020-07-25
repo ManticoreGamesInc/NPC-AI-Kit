@@ -1,10 +1,10 @@
 Assets {
-  Id: 15419880338893310786
-  Name: "Fire Magic Glow Material"
+  Id: 8255411499280225015
+  Name: "Fire Magic Glow Material 2"
   PlatformAssetType: 13
   SerializationVersion: 61
   CustomMaterialAsset {
-    BaseMaterialId: 15761460511220986007
+    BaseMaterialId: 3702191406046426907
     ParameterOverrides {
       Overrides {
         Name: "emissive_boost"
@@ -12,7 +12,7 @@ Assets {
       }
     }
     Assets {
-      Id: 15761460511220986007
+      Id: 3702191406046426907
       Name: "Emissive Glow Transparent"
       PlatformAssetType: 2
       PrimaryAsset {

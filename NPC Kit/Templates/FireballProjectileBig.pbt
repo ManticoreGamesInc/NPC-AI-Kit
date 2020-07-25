@@ -1,18 +1,16 @@
 Assets {
-  Id: 16197724571903786063
-  Name: "FireballProjectileSmall"
+  Id: 7842588646174322897
+  Name: "FireballProjectileBig"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 4158428330768656943
+      RootId: 12594336507850562923
       Objects {
-        Id: 4158428330768656943
-        Name: "FireballProjectileSmall"
+        Id: 12594336507850562923
+        Name: "FireballProjectileBig"
         Transform {
           Location {
-            X: -54.8428917
-            Y: -64.484108
-            Z: 395
+            Z: 60
           }
           Rotation {
           }
@@ -22,8 +20,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12672486409129060877
-        ChildIds: 9431749848711998151
+        ParentId: 5630200607851565516
+        ChildIds: 12070597692374101214
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -38,7 +36,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9431749848711998151
+        Id: 12070597692374101214
         Name: "ClientContext"
         Transform {
           Location {
@@ -51,11 +49,11 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4158428330768656943
-        ChildIds: 17633334249015374909
-        ChildIds: 9151018050947669736
-        ChildIds: 8929408256206219458
-        ChildIds: 13745722591575214277
+        ParentId: 12594336507850562923
+        ChildIds: 9054315551552279527
+        ChildIds: 11096381835464629355
+        ChildIds: 8580323834173260980
+        ChildIds: 11028139025083427069
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -69,7 +67,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17633334249015374909
+        Id: 9054315551552279527
         Name: "Fire and Flame Burning Loop Set 01 SFX"
         Transform {
           Location {
@@ -82,12 +80,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9431749848711998151
+        ParentId: 12070597692374101214
         UnregisteredParameters {
           Overrides {
             Name: "bp:Type"
             Enum {
-              Value: "mc:esfx_fireloops_01:13"
+              Value: "mc:esfx_fireloops_01:7"
             }
           }
         }
@@ -103,8 +101,8 @@ Assets {
           }
           AudioBP {
             AutoPlay: true
-            Volume: 0.5
-            Falloff: 1800
+            Volume: 0.6
+            Falloff: 4000
             EnableOcclusion: true
             IsSpatializationEnabled: true
             IsAttenuationEnabled: true
@@ -112,7 +110,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9151018050947669736
+        Id: 11096381835464629355
         Name: "Ball"
         Transform {
           Location {
@@ -120,12 +118,12 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 0.3
-            Y: 0.3
-            Z: 0.3
+            X: 0.446439236
+            Y: 0.446439236
+            Z: 0.446439236
           }
         }
-        ParentId: 9431749848711998151
+        ParentId: 12070597692374101214
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -136,8 +134,8 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 2
-              G: 0.5
+              R: 0.74
+              G: 0.132317901
               A: 1
             }
           }
@@ -164,11 +162,10 @@ Assets {
         }
       }
       Objects {
-        Id: 8929408256206219458
+        Id: 8580323834173260980
         Name: "Point Light"
         Transform {
           Location {
-            X: -0.157108307
           }
           Rotation {
           }
@@ -178,7 +175,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9431749848711998151
+        ParentId: 12070597692374101214
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -188,7 +185,7 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         Light {
-          Intensity: 10
+          Intensity: 21
           Color {
             R: 5
             G: 0.8
@@ -200,7 +197,7 @@ Assets {
           Light {
             Temperature: 6500
             LocalLight {
-              AttenuationRadius: 1000
+              AttenuationRadius: 1500
               PointLight {
                 SourceRadius: 20
                 SoftSourceRadius: 20
@@ -214,7 +211,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13745722591575214277
+        Id: 11028139025083427069
         Name: "Magic Projectile VFX"
         Transform {
           Location {
@@ -227,7 +224,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9431749848711998151
+        ParentId: 12070597692374101214
         UnregisteredParameters {
           Overrides {
             Name: "bp:ColorB"
@@ -238,8 +235,28 @@ Assets {
             }
           }
           Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Emissive Boost B"
+            Float: 2
+          }
+          Overrides {
             Name: "bp:Life"
-            Float: 0.3
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 1.5
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 5
+              G: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {

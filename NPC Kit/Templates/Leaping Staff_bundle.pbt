@@ -1,12 +1,12 @@
 Assets {
-  Id: 11092106990095931840
-  Name: "Combat Dependencies"
+  Id: 9489451609153739417
+  Name: "Leaping Staff"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 11499983472358952399
+      RootId: 9762699891799142634
       Objects {
-        Id: 11499983472358952399
+        Id: 9762699891799142634
         Name: "TemplateBundleDummy"
         Transform {
           Location {
@@ -19,10 +19,16 @@ Assets {
             Z: 1
           }
         }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
-              Id: 2087257134469971969
+              Id: 4779393545089479649
             }
           }
         }
@@ -34,11 +40,11 @@ Assets {
     }
   }
   Marketplace {
-    Id: "90a722abd8f343cea46d8e52947698eb"
+    Id: "b566a5a76f014150a4a0486f38dc124f"
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
-    Description: "Common dependencies for Player and NPC combat, extracted into a separate template to reduce depencency and asset duplication across community content pieces."
+    Version: "1.1.0"
+    Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air."
   }
   SerializationVersion: 61
-  DirectlyPublished: true
 }

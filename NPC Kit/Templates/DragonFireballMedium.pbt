@@ -7,7 +7,7 @@ Assets {
       RootId: 4158428330768656943
       Objects {
         Id: 4158428330768656943
-        Name: "DragonFireballHard"
+        Name: "DragonFireballMedium"
         Transform {
           Scale {
             X: 1
@@ -123,7 +123,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15419880338893310786
+              Id: 8255411499280225015
             }
           }
           Overrides {

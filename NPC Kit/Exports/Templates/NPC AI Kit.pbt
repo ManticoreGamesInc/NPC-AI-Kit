@@ -2318,10 +2318,6 @@ Assets {
                 Int: 0
               }
               Overrides {
-                Name: "cs:DisplayName"
-                String: "Cannon Tower"
-              }
-              Overrides {
                 Name: "cs:Team"
                 Int: 1
               }
@@ -2332,12 +2328,6 @@ Assets {
               Overrides {
                 Name: "cs:CurrentHealth"
                 Float: 1000
-              }
-              Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
               }
               Overrides {
                 Name: "cs:MoveSpeed"
@@ -2404,12 +2394,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootDropFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "Coins"
               }
@@ -2432,6 +2416,94 @@ Assets {
               Overrides {
                 Name: "cs:CurrentHealth:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -2490,12 +2562,6 @@ Assets {
                 Name: "cs:AttackComponent"
                 ObjectReference {
                   SubObjectId: 6372385349460357292
-                }
-              }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
                 }
               }
             }
@@ -2566,30 +2632,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 10
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 50
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -2634,10 +2682,6 @@ Assets {
               Overrides {
                 Name: "cs:HomingAcceleration"
                 Float: 50000
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -6415,7 +6459,164 @@ Assets {
       Name: "NPCAttackClient"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCAttack - Client\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nThe client counterpart for NPCAttackServer. Listens for damage and destroy networked events\r\nand spawns the appropriate effects for each.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal DAMAGE_FX = script:GetCustomProperty(\"DamageFX\")\r\nlocal DESTROY_FX = script:GetCustomProperty(\"DestroyFX\")\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tlocal state = ROOT:GetCustomProperty(\"CurrentState\")\r\n\t\t\r\n\t\tif (state == STATE_DEAD_1) then\r\n\t\t\tSpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())\r\n\t\tend\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nfunction GetID()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"ObjectId\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\t-- Ignore other NPCs, make sure this event is for us\r\n\tif id == GetID() then\r\n\t\tSpawnAsset(DAMAGE_FX, impactPosition, impactRotation)\r\n\tend\r\nend\r\n\r\nfunction OnObjectDestroyed(id)\r\n\t-- Ignore other NPCs, make sure this event is for us\r\n\t--if id == GetID() then\r\n\t\t--SpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())\r\n\t--end\r\nend\r\n\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\nlocal destroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\tif Object.IsValid(damagedListener) then\r\n\t\tdamagedListener:Disconnect()\r\n\tend\r\n\t\r\n\tif Object.IsValid(destroyedListener) then\r\n\t\tdestroyedListener:Disconnect()\r\n\tend\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\nfunction SpawnAsset(template, pos, rot)\r\n\tlocal spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})\r\n\tif spawnedVfx and spawnedVfx.lifeSpan <= 0 then\r\n\t\tspawnedVfx.lifeSpan = 1.5\r\n\tend\r\nend"
+        Text: "--[[\r\n\tNPCAttack - Client\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tThe client counterpart for NPCAttackServer. Listens for damage and destroy networked events\r\n\tand spawns the appropriate effects for each.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal DAMAGE_FX = script:GetCustomProperty(\"DamageFX\")\r\nlocal DESTROY_FX = script:GetCustomProperty(\"DestroyFX\")\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tlocal state = ROOT:GetCustomProperty(\"CurrentState\")\r\n\t\t\r\n\t\tif (state == STATE_DEAD_1) then\r\n\t\t\tSpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())\r\n\t\tend\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nfunction GetID()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"ObjectId\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\t-- Ignore other NPCs, make sure this event is for us\r\n\tif id == GetID() then\r\n\t\tSpawnAsset(DAMAGE_FX, impactPosition, impactRotation)\r\n\tend\r\nend\r\n\r\nfunction OnObjectDestroyed(id)\r\n\t-- Ignore other NPCs, make sure this event is for us\r\n\t--if id == GetID() then\r\n\t\t--SpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())\r\n\t--end\r\nend\r\n\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\nlocal destroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\tif Object.IsValid(damagedListener) then\r\n\t\tdamagedListener:Disconnect()\r\n\tend\r\n\t\r\n\tif Object.IsValid(destroyedListener) then\r\n\t\tdestroyedListener:Disconnect()\r\n\tend\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\nfunction SpawnAsset(template, pos, rot)\r\n\tlocal spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})\r\n\tif spawnedVfx and spawnedVfx.lifeSpan <= 0 then\r\n\t\tspawnedVfx.lifeSpan = 1.5\r\n\tend\r\nend"
+        CustomParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:DamageFX"
+            AssetReference {
+              Id: 14594444593454931774
+            }
+          }
+          Overrides {
+            Name: "cs:DestroyFX"
+            AssetReference {
+              Id: 14594444593454931774
+            }
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:DamageFX:tooltip"
+            String: "Visual effect template to spawn when this NPC takes damage."
+          }
+          Overrides {
+            Name: "cs:DestroyFX:tooltip"
+            String: "Visual effect template to spawn when this NPC dies."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 14594444593454931774
+      Name: "MinionImpactFX"
+      PlatformAssetType: 5
+      TemplateAsset {
+        ObjectBlock {
+          RootId: 11030123202232162817
+          Objects {
+            Id: 11030123202232162817
+            Name: "ClientContext"
+            Transform {
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 4781671109827199097
+            ChildIds: 6712450895790081351
+            ChildIds: 2965360691056808830
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            NetworkContext {
+            }
+          }
+          Objects {
+            Id: 6712450895790081351
+            Name: "Gibs Explosion VFX"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 11030123202232162817
+            UnregisteredParameters {
+              Overrides {
+                Name: "bp:Enable Blobs"
+                Bool: false
+              }
+            }
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Blueprint {
+              BlueprintAsset {
+                Id: 3137516374477183732
+              }
+              TeamSettings {
+              }
+              Vfx {
+                AutoPlay: true
+              }
+            }
+          }
+          Objects {
+            Id: 2965360691056808830
+            Name: "Impact Player Body Hit 01 SFX"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 11030123202232162817
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            AudioInstance {
+              AudioAsset {
+                Id: 7248737145792905845
+              }
+              AutoPlay: true
+              Volume: 2.0570507
+              Falloff: 3600
+              Radius: 412.298889
+              EnableOcclusion: true
+              IsSpatializationEnabled: true
+              IsAttenuationEnabled: true
+            }
+          }
+        }
+        PrimaryAssetId {
+          AssetType: "None"
+          AssetId: "None"
+        }
+      }
+    }
+    Assets {
+      Id: 7248737145792905845
+      Name: "Impact Player Body Hit 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_impact_player_bodyhit_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 3137516374477183732
+      Name: "Gibs Explosion VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_bloody_explosion"
       }
     }
     Assets {
@@ -6423,8 +6624,13 @@ Assets {
       Name: "NPCHealthBarDataProviderClient"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCHealthBarDataProvider - Client\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.\r\nOther objects could use the same health bar UI by implementing their own data\r\nproviders.\r\n\r\nImplements the interface:\r\n\tGetHealt()\r\n\tGetMaxHealth()\r\n\tGetTeam()\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal HEALTH_BAR_TEMPLATE = script:GetCustomProperty(\"HealthBarTemplate\")\r\nlocal MAX_HEALTH = ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\r\n\r\nfunction GetHealth()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\tend\r\n\treturn 0\r\nend\r\n\r\nfunction GetMaxHealth()\r\n\treturn MAX_HEALTH\r\nend\r\n\r\nfunction GetTeam()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn 0\r\nend\r\n\r\n-- Creates the health bar UI and places it as a child of this script\r\nlocal hpBar = World.SpawnAsset(HEALTH_BAR_TEMPLATE, {parent = script})\r\nTask.Wait()\r\nlocal hpBarScript = hpBar:FindChildByType(\"Script\")\r\n\r\n-- Passes itself as the data provider, from which the health bar will ask for values.\r\nhpBarScript.context.SetDataProvider(script.context)\r\n\r\n"
+        Text: "--[[\r\n\tNPCHealthBarDataProvider - Client\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tWorks in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.\r\n\tOther objects could use the same health bar UI by implementing their own data\r\n\tproviders.\r\n\t\r\n\tThe health bar UI is spawned in relationship to the position of this script.\r\n\tCommonly, the script\'s Z position should be adjusted on a per-NPC basis.\r\n\t\r\n\tImplements the interface:\r\n\t\tGetHealt()\r\n\t\tGetMaxHealth()\r\n\t\tGetTeam()\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal HEALTH_BAR_TEMPLATE = script:GetCustomProperty(\"HealthBarTemplate\")\r\nlocal MAX_HEALTH = ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\r\n\r\nfunction GetHealth()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\tend\r\n\treturn 0\r\nend\r\n\r\nfunction GetMaxHealth()\r\n\treturn MAX_HEALTH\r\nend\r\n\r\nfunction GetTeam()\r\n\tif Object.IsValid(ROOT) then\r\n\t\treturn ROOT:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn 0\r\nend\r\n\r\n-- Creates the health bar UI and places it as a child of this script\r\nlocal hpBar = World.SpawnAsset(HEALTH_BAR_TEMPLATE, {parent = script})\r\nTask.Wait()\r\nlocal hpBarScript = hpBar:FindChildByType(\"Script\")\r\n\r\n-- Passes itself as the data provider, from which the health bar will ask for values.\r\nhpBarScript.context.SetDataProvider(script.context)\r\n\r\n"
         CustomParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+            }
+          }
           Overrides {
             Name: "cs:HealthBarTemplate"
             AssetReference {
@@ -6432,9 +6638,12 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-            }
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:HealthBarTemplate:tooltip"
+            String: "Asset reference to the template that will be spawned as the health bar. The position of the health bar depends on the position of this script. Commonly, the script\'s Z position should be adjusted on a per-NPC basis."
           }
         }
       }
@@ -6716,7 +6925,27 @@ Assets {
       Name: "NPCHealthBar"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCHealthBar\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with a data provider that is passed into SetDataProvider().\r\n\r\nExpects implementation of the interface:\r\n\tGetHealt()\r\n\tGetMaxHealth()\r\n\tGetTeam()\r\n--]]\r\n\r\nlocal FILL_BAR = script:GetCustomProperty(\"Fill\"):WaitForObject()\r\nlocal LABEL = script:GetCustomProperty(\"Label\"):WaitForObject()\r\n\r\nscript.parent:LookAtLocalView()\r\nscript.parent.visibility = Visibility.FORCE_OFF\r\n\r\nlocal _data = nil\r\n\r\n\r\n-- Expects a script with specific functions, allowing different scripts to be passed\r\nfunction SetDataProvider(data)\r\n\t_data = data\r\nend\r\n\r\n\r\nfunction Tick()\r\n\tif not _data then return end\r\n\t\r\n\tlocal hp = _data:GetHealth()\r\n\tlocal maxHP = _data:GetMaxHealth()\r\n\t\r\n\tif hp <= 0 or hp >= maxHP then\r\n\t\tscript.parent.visibility = Visibility.FORCE_OFF\r\n\t\treturn\r\n\t\t\r\n\telse\r\n\t\tscript.parent.visibility = Visibility.INHERIT\r\n\tend\r\n\t\r\n\tLABEL.text = CoreMath.Round(hp) .. \" / \" .. CoreMath.Round(maxHP)\r\n\t\r\n\tlocal percent = hp / maxHP\r\n\tpercent = CoreMath.Clamp(percent, 0, 1)\r\n\t\r\n\tlocal scale = FILL_BAR:GetScale()\r\n\tscale.z = percent\r\n\tFILL_BAR:SetScale(scale)\r\n\t\r\n\tFILL_BAR.team = _data:GetTeam()\r\nend\r\n\r\n"
+        Text: "--[[\r\n\tNPCHealthBar\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tWorks in conjunction with a data provider that is passed into SetDataProvider().\r\n\t\r\n\tExpects implementation of the interface:\r\n\t\tGetHealt()\r\n\t\tGetMaxHealth()\r\n\t\tGetTeam()\r\n--]]\r\n\r\nlocal FILL_BAR = script:GetCustomProperty(\"Fill\"):WaitForObject()\r\nlocal LABEL = script:GetCustomProperty(\"Label\"):WaitForObject()\r\n\r\nscript.parent:LookAtLocalView()\r\nscript.parent.visibility = Visibility.FORCE_OFF\r\n\r\nlocal _data = nil\r\n\r\n\r\n-- Expects a script with specific functions, allowing different scripts to be passed\r\nfunction SetDataProvider(data)\r\n\t_data = data\r\nend\r\n\r\n\r\nfunction Tick()\r\n\tif not _data then return end\r\n\t\r\n\tlocal hp = _data:GetHealth()\r\n\tlocal maxHP = _data:GetMaxHealth()\r\n\t\r\n\tif hp <= 0 or hp >= maxHP then\r\n\t\tscript.parent.visibility = Visibility.FORCE_OFF\r\n\t\treturn\r\n\t\t\r\n\telse\r\n\t\tscript.parent.visibility = Visibility.INHERIT\r\n\tend\r\n\t\r\n\tLABEL.text = CoreMath.Round(hp) .. \" / \" .. CoreMath.Round(maxHP)\r\n\t\r\n\tlocal percent = hp / maxHP\r\n\tpercent = CoreMath.Clamp(percent, 0, 1)\r\n\t\r\n\tlocal scale = FILL_BAR:GetScale()\r\n\tscale.z = percent\r\n\tFILL_BAR:SetScale(scale)\r\n\t\r\n\tFILL_BAR.team = _data:GetTeam()\r\nend\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:Fill"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Label"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Fill:tooltip"
+            String: "Reference to the UI Image that represents the filled bar. The script will scale the bar to show percentage of health."
+          }
+          Overrides {
+            Name: "cs:Label:tooltip"
+            String: "Reference to the UI Text object that will draw the number of hitpoints inside the bar."
+          }
+        }
       }
     }
     Assets {
@@ -7408,5825 +7637,138 @@ Assets {
       }
     }
     Assets {
-      Id: 2777724051004233514
-      Name: "PlayerHomingTargetObject"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 13791220973918033144
-          Objects {
-            Id: 13791220973918033144
-            Name: "PlayerHomingTargetObject"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:forceoff"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:forceoff"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 12095835209017042614
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 12095835209017042614
-      Name: "Cube"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cube_002"
-      }
-    }
-    Assets {
-      Id: 17219088109710420602
-      Name: "BroadcastQueue"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nBroadcast Queue\r\nby: Waffle\r\nv1.0.1\r\n\r\nReduces the loss of networked events when too many are sent at a time by throttling them into a queue.\r\n\r\nFor more info visit:\r\nhttps://forums.coregames.com/t/broadcast-queue/215\r\n\r\nUsage:\r\n\r\nlocal BROADCAST = require( script:GetCustomProperty(\"BroadcastQueue\") )\r\nBROADCAST(\"Event Name\", params...)\r\n\r\nReplaces usage of Events.BroadcastToPlayer(), Events.BroadcastToAllPlayers() and Events.BroadcastToServer()\r\nThe correct function is deduced by the context and parameters.\r\n--]]\r\n\r\nlocal isClientContext = not pcall(Game.IncreaseTeamScore, 0, 0) -- Detect context\r\nlocal broadcastThreshold = 10\r\n\r\nlocal function fastSpawn(f)\r\n\tlocal connection\r\n\tconnection = Events.Connect(\"fastSpawn\", function()\r\n\t\tconnection:Disconnect()\r\n\t\tf()\r\n\tend)\r\n\tEvents.Broadcast(\"fastSpawn\")\r\nend\r\n\r\nlocal broadcastQueue = {}\r\nlocal timeline = {}\r\nlocal queueing = false\r\n\r\nlocal function Enqueue(...)\r\n\tbroadcastQueue[#broadcastQueue+1] = {...}\r\n\tif not queueing then\r\n\t\tqueueing = true\r\n\t\tfastSpawn(function()\r\n\t\t\twhile #broadcastQueue > 0 do\r\n\t\t\t\twhile timeline[1] and os.clock() - timeline[1] >= 1 do\r\n\t\t\t\t\ttable.remove(timeline, 1)\r\n\t\t\t\tend\r\n\t\t\t\tif #timeline == broadcastThreshold then\r\n\t\t\t\t\trepeat\r\n\t\t\t\t\t\tTask.Wait()\r\n\t\t\t\t\tuntil os.clock() - timeline[1] >= 1\r\n\t\t\t\tend\r\n\t\t\t\tlocal data = table.remove(broadcastQueue, 1)\r\n\t\t\t\tlocal method = Events.BroadcastToServer\r\n\t\t\t\tif not isClientContext then\r\n\t\t\t\t\tif type(data[1]) == \"string\" then\r\n\t\t\t\t\t\tmethod = Events.BroadcastToAllPlayers\r\n\t\t\t\t\telse -- the first argument is a Player object\r\n\t\t\t\t\t\tmethod = Events.BroadcastToPlayer\r\n\t\t\t\t\tend\r\n\t\t\t\tend\r\n\t\t\t\tmethod(table.unpack(data))\r\n\t\t\t\ttimeline[#timeline+1] = os.clock()\r\n\t\t\tend\r\n\t\t\tqueueing = false\r\n\t\tend)\r\n\tend\r\nend\r\n\r\nreturn Enqueue, broadcastQueue"
-      }
-    }
-    Assets {
       Id: 13670653971905386821
       Name: "NPCAttackServer"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCAttack - Server\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with NPCAIServer. The separation of the two scripts makes it\r\neasier to design diverse kinds of enemies.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal MANAGER_SCRIPT = script:GetCustomProperty(\"DestructibleManager\")\r\nlocal MANAGER = require(MANAGER_SCRIPT)\r\n\r\nlocal BROADCAST = require( script:GetCustomProperty(\"BroadcastQueue\") )\r\n\r\nlocal DAMAGE_TO_PLAYERS = script:GetCustomProperty(\"DamageToPlayers\") or 1\r\nlocal DAMAGE_TO_NPCS = script:GetCustomProperty(\"DamageToNPCs\") or 1\r\n\r\nlocal PLAYER_HOMING_TARGET = script:GetCustomProperty(\"PlayerHomingTarget\")\r\nlocal PROJECTILE_BODY = script:GetCustomProperty(\"ProjectileBody\")\r\nlocal MUZZLE_FLASH_VFX = script:GetCustomProperty(\"MuzzleFlash\")\r\nlocal IMPACT_SURFACE_VFX = script:GetCustomProperty(\"ImpactSurface\")\r\nlocal IMPACT_CHARACTER_VFX = script:GetCustomProperty(\"ImpactCharacter\")\r\nlocal PROJECTILE_LIFESPAN = script:GetCustomProperty(\"ProjectileLifeSpan\") or 10\r\nlocal PROJECTILE_SPEED = script:GetCustomProperty(\"ProjectileSpeed\") or 4000\r\nlocal PROJECTILE_GRAVITY = script:GetCustomProperty(\"ProjectileGravity\") or 1\r\nlocal IS_PROJECTILE_HOMING = script:GetCustomProperty(\"ProjectileHoming\")\r\nlocal HOMING_DRAG = script:GetCustomProperty(\"HomingDrag\") or 7\r\nlocal HOMING_ACCELERATION = script:GetCustomProperty(\"HomingAcceleration\") or 15000\r\n\r\nlocal REWARD_RESOURCE_TYPE = ROOT:GetCustomProperty(\"RewardResourceType\")\r\nlocal REWARD_RESOURCE_AMOUNT = ROOT:GetCustomProperty(\"RewardResourceAmount\")\r\nlocal LOOT_FACTORY_REF = ROOT:GetCustomProperty(\"LootFactory\")\r\nlocal LOOT_FACTORY = nil\r\nif LOOT_FACTORY_REF then\r\n\tLOOT_FACTORY = require(LOOT_FACTORY_REF)\r\nend\r\nlocal LOOT_ID = ROOT:GetCustomProperty(\"LootId\")\r\n\r\nlocal attackCooldown = 2\r\nlocal cooldownRemaining = 0\r\n\r\n\r\nfunction GetTeam()\r\n\treturn ROOT:GetCustomProperty(\"Team\")\r\nend\r\n\r\nfunction GetObjectTeam(object)\r\n\tif object.team ~= nil then\r\n\t\treturn object.team\r\n\tend\r\n\tlocal templateRoot = object:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\nfunction Attack(target)\t\r\n\tif target:IsA(\"Player\") then\r\n\t\tlocal playerTarget = GetTargetingObjectForPlayer(target)\r\n\t\tif playerTarget then\r\n\t\t\ttarget = playerTarget\r\n\t\tend\r\n\tend\r\n\t\r\n\tlocal startPos = script:GetWorldPosition()\r\n\tlocal rotation = script:GetWorldRotation()\r\n\tlocal direction = rotation * Vector3.FORWARD\r\n\tif not IS_PROJECTILE_HOMING then\r\n\t\tlocal v = target:GetWorldPosition() - startPos\r\n\t\tdirection = v:GetNormalized() + 200 * Vector3.UP * v.size * PROJECTILE_GRAVITY / PROJECTILE_SPEED / PROJECTILE_SPEED\r\n\tend\r\n\tlocal projectile = Projectile.Spawn(PROJECTILE_BODY, startPos, direction)\r\n\tprojectile.lifeSpan = PROJECTILE_LIFESPAN\r\n\tprojectile.speed = PROJECTILE_SPEED\r\n\tprojectile.gravityScale = PROJECTILE_GRAVITY\r\n\t\r\n\tif IS_PROJECTILE_HOMING then\r\n\t\tprojectile.homingTarget = target\r\n\t\tprojectile.drag = HOMING_DRAG\r\n\t\tprojectile.homingAcceleration = HOMING_ACCELERATION\r\n\tend\r\n\t\r\n\tprojectile.piercesRemaining = 999\r\n\t\r\n\tprojectile.impactEvent:Connect(OnProjectileImpact)\r\n\t\r\n\tSpawnAsset(MUZZLE_FLASH_VFX, startPos, rotation)\r\nend\r\n\r\n\r\nfunction OnProjectileImpact(projectile, other, hitResult)\r\n\tlocal myTeam = GetTeam()\r\n\tlocal impactTeam = GetObjectTeam(other)\r\n\tif (impactTeam ~= 0 and myTeam == impactTeam) then return end\r\n\r\n\tlocal pos = hitResult:GetImpactPosition()\r\n\tlocal rot = projectile:GetWorldTransform():GetRotation()\r\n\t\r\n\tif other:IsA(\"Player\") then\r\n\t\tSpawnAsset(IMPACT_CHARACTER_VFX, pos, rot)\r\n\t\tDamagePlayer(other, DAMAGE_TO_PLAYERS, hitResult)\r\n\telse\r\n\t\tSpawnAsset(IMPACT_SURFACE_VFX, pos, hitResult:GetTransform():GetRotation())\r\n\t\tDamageNPC(other, DAMAGE_TO_NPCS, pos, rot)\r\n\tend\r\n\t\t\r\n\tprojectile:Destroy()\r\nend\r\n\r\n\r\nfunction SpawnAsset(template, pos, rot)\r\n\tif not template then return end\r\n\t\r\n\tlocal spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})\r\n\tif spawnedVfx and spawnedVfx.lifeSpan <= 0 then\r\n\t\tspawnedVfx.lifeSpan = 1.5\r\n\tend\r\nend\r\n\r\n\r\nfunction DamagePlayer(player, amount, hitResult)\r\n\tlocal dmg = Damage.New(amount)\r\n\tdmg:SetHitResult(hitResult)\r\n\tdmg.reason = DamageReason.COMBAT\r\n\tplayer:ApplyDamage(dmg)\r\n\t\r\n\tlocal sourcePosition = script:GetWorldPosition()\r\n\tEvents.BroadcastToPlayer(player, \"PlayerDamage_Internal\", sourcePosition)\r\nend\r\n\r\n\r\nfunction DamageNPC(obj, amount, position, rotation)\r\n\tlocal dmg = Damage.New(amount)\r\n\tMANAGER.DamageObject(obj, dmg, script, position, rotation)\r\nend\r\n\r\n\r\nfunction GetTargetingObjectForPlayer(player)\r\n\tif (not _G.playerTargetingObjects) then\r\n\t\t_G.playerTargetingObjects = {}\r\n\tend\r\n\t\r\n\tlocal obj = _G.playerTargetingObjects[player]\r\n\tif (not obj) then\r\n\t\tobj = World.SpawnAsset(PLAYER_HOMING_TARGET)\r\n\t\tobj:AttachToPlayer(player, \"upper_spine\")\r\n\t\t_G.playerTargetingObjects[player] = obj\r\n\tend\r\n\treturn obj\r\nend\r\n\r\n\r\n-- Damage / destructible\r\n\r\n\r\nlocal id = MANAGER.Register(script)\r\nROOT:SetNetworkedCustomProperty(\"ObjectId\", id)\r\n\r\n\r\nfunction ApplyDamage(dmg, source, position, rotation)\r\n\tlocal amount = dmg.amount\r\n\tif (amount ~= 0) then\r\n\t\tlocal prevHealth = GetHealth()\r\n\t\tlocal newHealth = prevHealth - amount\r\n\t\tSetHealth(newHealth)\r\n\r\n\t\tlocal impactPosition\r\n\t\tlocal impactRotation = Rotation.New()\r\n\t\tlocal hitResult = dmg:GetHitResult()\r\n\t\tif hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then\r\n\t\t\timpactPosition = hitResult:GetImpactPosition()\r\n\t\t\timpactRotation = hitResult:GetTransform():GetRotation()\r\n\t\t\r\n\t\telseif position and rotation then\r\n\t\t\timpactPosition = position\r\n\t\t\timpactRotation = rotation\r\n\t\telse\r\n\t\t\timpactPosition = script:GetWorldPosition()\r\n\t\tend\r\n\t\t\r\n\t\tlocal sourcePosition = nil\r\n\t\tif Object.IsValid(source) then\r\n\t\t\tsourcePosition = source:GetWorldPosition()\r\n\t\tend\r\n\t\t\r\n\t\t-- Effects\r\n\t\tlocal spawnedVfx = nil\r\n\t\t\r\n\t\tif (newHealth <= 0 and DESTROY_FX) then\r\n\t\t\tSpawnAsset(DESTROY_FX, impactPosition, impactRotation)\r\n\t\t\t\r\n\t\telseif DAMAGE_FX then\r\n\t\t\tSpawnAsset(DAMAGE_FX, impactPosition, impactRotation)\r\n\t\tend\r\n\t\t\r\n\t\t-- Events\r\n\t\t\r\n\t\tEvents.Broadcast(\"ObjectDamaged\", id, prevHealth, amount, impactPosition, impactRotation, source)\r\n\t\t--BROADCAST(\"ObjectDamaged\", id, prevHealth, amount, impactPosition, impactRotation)\r\n\t\tEvents.BroadcastToAllPlayers(\"ObjectDamaged\", id, prevHealth, amount, impactPosition, impactRotation)\r\n\r\n\t\tif (newHealth <= 0) then\r\n\t\t\tEvents.Broadcast(\"ObjectDestroyed\", id)\r\n--\t\t\tBROADCAST(\"ObjectDestroyed\", id)\r\n\t\t\tEvents.BroadcastToAllPlayers(\"ObjectDestroyed\", id)\r\n\t\t\t\r\n\t\t\tDropRewards(source)\r\n\t\tend\r\n\r\n\t\t--print(ROOT.name .. \" Health = \" .. newHealth)\r\n\tend\r\nend\r\n\r\nfunction GetHealth()\r\n\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\nend\r\n\r\nfunction SetHealth(value)\r\n\tROOT:SetNetworkedCustomProperty(\"CurrentHealth\", value)\r\nend\r\n\r\n\r\nfunction DropRewards(killer)\r\n\t-- Give resources\r\n\tif REWARD_RESOURCE_TYPE \r\n\tand Object.IsValid(killer) \r\n\tand killer:IsA(\"Player\") then\r\n\t\tkiller:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)\r\n\tend\r\n\t\r\n\t-- Drop loot\r\n\tif LOOT_FACTORY then\r\n\t\tlocal pos = script:GetWorldPosition()\r\n\t\tLOOT_FACTORY.Drop(LOOT_ID, pos)\r\n\tend\r\nend\r\n\r\n\r\n"
-      }
-    }
-    Assets {
-      Id: 4760095941513075407
-      Name: "NPCManager"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nNPCManager\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nExpects to be a required script. Provides bookkeeping on all NPCs contained in a game.\r\n--]]\r\n\r\nlocal allNPCs = {}\r\nlocal npcColliders = {}\r\n\r\n\r\nfunction Register(npc)\r\n\tif (not allNPCs[npc]) then\r\n\t\tallNPCs[npc] = true\r\n\t\t\r\n\t\tnpc.destroyEvent:Connect(OnDestroyed)\r\n\tend\r\nend\r\n\r\n\r\nfunction RegisterCollider(npc, collider)\r\n\tnpcColliders[collider] = npc\r\nend\r\n\r\n\r\nfunction FindScriptForCollider(collider)\r\n\treturn npcColliders[collider]\r\nend\r\n\r\n\r\nfunction GetEnemies(team)\r\n\tlocal enemies = {}\r\n\tfor npc,_ in pairs(allNPCs) do\r\n\t\tlocal npcTeam = npc.context.GetTeam()\r\n\t\tif (npcTeam ~= team) then\r\n\t\t\ttable.insert(enemies, npc)\r\n\t\tend\r\n\tend\r\n\treturn enemies\r\nend\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\t-- Clear collider references\r\n\tfor collider,npc in pairs(npcColliders) do\r\n\t\tif npc == obj then\r\n\t\t\tnpcColliders[collider] = nil\r\n\t\tend\r\n\tend\r\n\t-- Clear NPC reference\r\n\tif allNPCs[obj] then\r\n\t\tallNPCs[obj] = nil\r\n\tend\r\nend\r\n\r\n\r\nreturn {\r\n\tRegister = Register,\r\n\tRegisterCollider = RegisterCollider,\r\n\tFindScriptForCollider = FindScriptForCollider,\r\n\tGetEnemies = GetEnemies,\r\n}"
-      }
-    }
-    Assets {
-      Id: 877607263390645540
-      Name: "NPCAIServer"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nNPCAI - Server\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nLogical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.\r\nCan be simply placed in a level, but is best used in conjunction with some spawn and respawn logic.\r\n\r\nWill walk over terrain and any objects to get to its objective. To mark objects as not walkable,\r\nadd to each one a custom property called \"Walkable\" of type boolean and set to false.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal ROTATION_ROOT = script:GetCustomProperty(\"RotationRoot\"):WaitForObject()\r\nlocal COLLIDER = script:GetCustomProperty(\"Collider\"):WaitForObject()\r\nlocal TRIGGER = script:GetCustomProperty(\"Trigger\"):GetObject()\r\nlocal ATTACK_COMPONENT = script:GetCustomProperty(\"AttackComponent\"):WaitForObject()\r\n\r\nlocal NPC_MANAGER = require( script:GetCustomProperty(\"NPCManager\") )\r\n\r\nlocal MOVE_SPEED = ROOT:GetCustomProperty(\"MoveSpeed\") or 400\r\nlocal TURN_SPEED = ROOT:GetCustomProperty(\"TurnSpeed\") or 2\r\nlocal LOGICAL_PERIOD = ROOT:GetCustomProperty(\"LogicalPeriod\") or 0.5\r\nlocal RETURN_TO_SPAWN = ROOT:GetCustomProperty(\"ReturnToSpawn\")\r\nlocal VISION_HALF_ANGLE = ROOT:GetCustomProperty(\"VisionHalfAngle\") or 0\r\nlocal VISION_RADIUS = ROOT:GetCustomProperty(\"VisionRadius\") or 2500\r\nlocal HEARING_RADIUS = ROOT:GetCustomProperty(\"HearingRadius\") or 1000\r\nlocal SEARCH_BONUS_VISION = ROOT:GetCustomProperty(\"SearchBonusVision\") or 5000\r\nlocal SEARCH_DURATION = ROOT:GetCustomProperty(\"SearchDuration\") or 6\r\nlocal POSSIBILITY_RADIUS = ROOT:GetCustomProperty(\"PossibilityRadius\") or 600\r\nlocal CHASE_RADIUS = ROOT:GetCustomProperty(\"ChaseRadius\") or 3500\r\nlocal ATTACK_RANGE = ROOT:GetCustomProperty(\"AttackRange\") or 1500\r\nlocal ATTACK_CAST_TIME = ROOT:GetCustomProperty(\"AttackCast\") or 0.5\r\nlocal ATTACK_RECOVERY_TIME = ROOT:GetCustomProperty(\"AttackRecovery\") or 1.5\r\nlocal ATTACK_COOLDOWN = ROOT:GetCustomProperty(\"AttackCooldown\") or 0\r\nlocal OBJECTIVE_THRESHOLD_DISTANCE_SQUARED = 900\r\n\r\nMAX_HEALTH = ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\r\nlocal PATHING_STEP = MOVE_SPEED * LOGICAL_PERIOD + 10\r\nlocal PATHING_STEP_SQUARED = PATHING_STEP * PATHING_STEP\r\n\r\nlocal RAY_DISTANCE_FROM_GROUND = COLLIDER:GetPosition().z + 400\r\nlocal RAY_DISTANCE_DOWN_VECTOR = Vector3.New(0, 0, -900)\r\n\r\nlocal VISION_RADIUS_SQUARED = VISION_RADIUS * VISION_RADIUS\r\nlocal HEARING_RADIUS_SQUARED = HEARING_RADIUS * HEARING_RADIUS\r\nlocal SEARCH_RADIUS_SQUARED = (VISION_RADIUS + SEARCH_BONUS_VISION) * (VISION_RADIUS + SEARCH_BONUS_VISION)\r\nlocal CHASE_RADIUS_SQUARED = CHASE_RADIUS * CHASE_RADIUS\r\nlocal ATTACK_RANGE_SQUARED = ATTACK_RANGE * ATTACK_RANGE\r\n\r\nlocal SPAWN_POSITION = ROOT:GetWorldPosition()\r\n\r\nlocal DEAD_1_DURATION = 4\r\nlocal DEAD_2_DURATION = 6\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nlocal currentState = STATE_SLEEPING\r\nlocal stateTime = 0\r\n\r\nlocal logicStepDelay = 0\r\nlocal target = nil\r\nlocal moveObjective = nil\r\nlocal nextMoveObjective = nil\r\nlocal stepDestination = SPAWN_POSITION\r\nlocal searchStartPosition = nil\r\nlocal searchEndPosition = nil\r\nlocal searchTimeElapsed = -1\r\nlocal searchPrecision = 1\r\nlocal attackCooldown = 0\r\n\r\nlocal temporaryVisionAngle = nil\r\nlocal temporaryVisionRadius = nil\r\nlocal temporaryHearingRadius = nil\r\n\t\r\n\r\nfunction SetState(newState)\r\n\t--print(\"NewState = \" .. newState)\r\n\r\n\tif (newState == STATE_SLEEPING) then\r\n\t\tROTATION_ROOT:StopRotate()\r\n\t\t\r\n\telseif (newState == STATE_ENGAGING) then\r\n\t\t--print(\"target = \" .. tostring(target) .. \", moveSpeed = \" .. tostring(MOVE_SPEED) .. \", attackRange = \" .. ATTACK_RANGE)\r\n\r\n\t\tif (not IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED)) then\r\n\t\t\tlocal targetPosition = target:GetWorldPosition()\r\n\t\t\tStepTowards(targetPosition)\r\n\t\tend\r\n\r\n\t\tROTATION_ROOT:LookAtContinuous(target, true, TURN_SPEED)\r\n\r\n\telseif (newState == STATE_PATROLLING) then\r\n\t\tlocal targetPosition = moveObjective\r\n\t\tStepTowards(targetPosition)\r\n\r\n\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\tlocal direction = targetPosition - pos\r\n\t\tlocal r = Rotation.New(direction, Vector3.UP)\r\n\t\tROTATION_ROOT:RotateTo(r, GetRotateToTurnSpeed(), false)\r\n\r\n\telseif (newState == STATE_LOOKING_AROUND) then\r\n\t\t--\r\n\t\t\r\n\telseif (newState == STATE_DEAD_1) then\r\n\t\tROOT:StopMove()\r\n\t\tROTATION_ROOT:StopRotate()\r\n\t\tSetCollision(false)\r\n\r\n\telseif (newState == STATE_DEAD_2) then\r\n\t\tROOT:MoveTo(ROOT:GetWorldPosition() + Vector3.New(0, 0, -500), DEAD_2_DURATION)\r\n\r\n\telseif (newState == STATE_DISABLED) then\r\n\t\tROOT:Destroy()\r\n\tend\r\n\r\n\tcurrentState = newState\r\n\tstateTime = 0\r\n\t\r\n\tif Object.IsValid(ROOT) then\r\n\t\tROOT:SetNetworkedCustomProperty(\"CurrentState\", newState)\r\n\tend\r\nend\r\n\r\n\r\nfunction Tick(deltaTime)\r\n\tstateTime = stateTime + deltaTime\r\n\tlogicStepDelay = logicStepDelay - deltaTime\r\n\tattackCooldown = attackCooldown - deltaTime\r\n\t\r\n\tif (searchTimeElapsed >= 0) then\r\n\t\tsearchTimeElapsed = searchTimeElapsed + deltaTime\r\n\tend\r\n\t\r\n\tif (currentState == STATE_ATTACK_CAST or currentState == STATE_ATTACK_RECOVERY) and\r\n\t\tnot IsObjectAlive(target) then\r\n\t\ttarget = nil\r\n\t\tEngageNearest()\r\n\t\tif (not target) then\r\n\t\t\tResumePatrol()\r\n\t\tend\r\n\t\t\r\n\telseif currentState == STATE_ATTACK_CAST and stateTime >= ATTACK_CAST_TIME then\r\n\t\tExecuteAttack()\r\n\t\tattackCooldown = ATTACK_COOLDOWN\r\n\t\tSetState(STATE_ATTACK_RECOVERY)\r\n\t\r\n\telseif currentState == STATE_ATTACK_RECOVERY and stateTime >= ATTACK_RECOVERY_TIME then\r\n\t\tSetState(STATE_ENGAGING)\r\n\tend\r\n\t\r\n\tif currentState == STATE_ENGAGING then\r\n\t\tif (not IsObjectAlive(target)) then\r\n\t\t\ttarget = nil\r\n\t\t\t\r\n\t\telseif IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED) then\r\n\t\t\tif attackCooldown <= 0 then\r\n\t\t\t\tSetState(STATE_ATTACK_CAST)\r\n\t\t\tend\r\n\t\telse\r\n\t\t\tUpdateMovement(deltaTime)\r\n\t\tend\r\n\t\t\r\n\telseif currentState == STATE_PATROLLING then\r\n\t\tUpdateMovement(deltaTime)\r\n\r\n\telseif (currentState == STATE_DEAD_1 and stateTime >= DEAD_1_DURATION) then\r\n\t\tSetState(STATE_DEAD_2)\r\n\r\n\telseif (currentState == STATE_DEAD_2 and stateTime >= DEAD_2_DURATION) then\r\n\t\tSetState(STATE_DISABLED)\r\n\tend\r\n\r\n\tif logicStepDelay <= 0 then\r\n\t\tlogicStepDelay = LOGICAL_PERIOD\r\n\r\n\t\tif currentState == STATE_SLEEPING then\r\n\t\t\tEngageNearest()\r\n\r\n\t\telseif currentState == STATE_ENGAGING then\r\n\t\t\tlocal chaseRadiusSquared = CHASE_RADIUS_SQUARED\r\n\t\t\tif (searchTimeElapsed >= 0 and searchTimeElapsed < SEARCH_DURATION * 4) then\r\n\t\t\t\tchaseRadiusSquared = SEARCH_RADIUS_SQUARED\r\n\t\t\telse\r\n\t\t\t\tsearchTimeElapsed = -1\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\t--print(\"chaseRadiusSquared = \" .. chaseRadiusSquared .. \", searchTimeElapsed = \" .. searchTimeElapsed)\r\n\t\t\t\r\n\t\t\tif IsWithinRangeSquared(target, chaseRadiusSquared) then\r\n\t\t\t\tSetState(STATE_ENGAGING)\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\t--print(\"ResumePatrol 1\")\r\n\t\t\t\t\tResumePatrol()\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t\r\n\t\telseif currentState == STATE_PATROLLING then\r\n\t\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\t\tlocal delta = pos - moveObjective\r\n\t\t\tdelta.z = 0\r\n\t\t\tif (delta.sizeSquared < OBJECTIVE_THRESHOLD_DISTANCE_SQUARED) then\r\n\t\t\t\t--print(\"OBJECTIVE REACHED\")\r\n\t\t\t\tif nextMoveObjective then\r\n\t\t\t\t\tmoveObjective = nextMoveObjective\r\n\t\t\t\t\tnextMoveObjective = nil\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\t\t\r\n\t\t\t\telseif RETURN_TO_SPAWN and moveObjective ~= SPAWN_POSITION then\r\n\t\t\t\t\tmoveObjective = SPAWN_POSITION\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\telse\r\n\t\t\t\t\tSetState(STATE_SLEEPING)\r\n\t\t\t\tend\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t\r\n\t\telseif currentState == STATE_LOOKING_AROUND then\r\n\t\t\tif (searchTimeElapsed >= SEARCH_DURATION) then\r\n\t\t\t\t--print(\"ResumePatrol 2\")\r\n\t\t\t\tResumePatrol()\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\tDoLookAround()\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tUpdateTemporaryProperties(deltaTime)\r\nend\r\n\r\nfunction ResumePatrol()\r\n\t--print(\"ResumePatrol\")\r\n\r\n\ttarget = nil\r\n\t\r\n\tif moveObjective then\r\n\t\tSetState(STATE_PATROLLING)\r\n\t\t\r\n\telseif RETURN_TO_SPAWN then\r\n\t\tSetObjective(SPAWN_POSITION)\r\n\t\t\r\n\telse\r\n\t\tSetState(STATE_SLEEPING)\r\n\tend\r\nend\r\n\r\n\r\nfunction SetObjective(pos)\r\n\t--print(\"SetObjective = \" .. tostring(pos))\r\n\tif (currentState == STATE_PATROLLING) then\r\n\t\tnextMoveObjective = pos\r\n\t\t\r\n\telseif (not target) then\r\n\t\tmoveObjective = pos\r\n\t\tSetState(STATE_PATROLLING)\r\n\tend\r\nend\r\n\r\n\r\nfunction ExecuteAttack()\r\n\tif ATTACK_COMPONENT then\r\n\t\tATTACK_COMPONENT.context.Attack(target)\r\n\tend\r\nend\r\n\r\n\r\nfunction StepTowards(targetPosition)\r\n\tlocal pos = ROOT:GetWorldPosition()\r\n\t\r\n\t-- Calculate step destination\r\n\tlocal direction = targetPosition - pos\r\n\r\n\tif (direction.sizeSquared > PATHING_STEP_SQUARED) then\r\n\t\tdirection = direction:GetNormalized() * PATHING_STEP\r\n\tend\r\n\r\n\tlocal rayStart = pos + direction\r\n\trayStart.z = rayStart.z + RAY_DISTANCE_FROM_GROUND\r\n\r\n\t--print(\"pos = \" .. tostring(pos) .. \", targetPosition = \" .. tostring(targetPosition) .. \", rayStart = \" .. tostring(rayStart))\r\n\r\n\tlocal hitResult = nil\r\n\trepeat\r\n\t\tlocal rayEnd = rayStart + RAY_DISTANCE_DOWN_VECTOR\r\n\r\n\t\thitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})\r\n\t\tlocal isWalkable, hasProperty = true, false\r\n\r\n\t\tif (hitResult and hitResult.other) then\r\n\t\t\tisWalkable, hasProperty = hitResult.other:GetCustomProperty(\"Walkable\")\r\n\r\n\t\t\tif hasProperty and not isWalkable then\r\n\t\t\t\trayStart = hitResult:GetImpactPosition() + Vector3.New(0,0,-0.5)\r\n\t\t\tend\r\n\t\tend\r\n\tuntil hitResult == nil or hitResult.other == nil or isWalkable or (not hasProperty)\r\n\r\n\tif hitResult then\r\n\t\t--print(\"HitResult.other = \" .. tostring(hitResult.other))\r\n\r\n\t\tlocal groundPos = hitResult:GetImpactPosition()\r\n\t\tstepDestination = groundPos\r\n\telse\r\n\t\tstepDestination = targetPosition\r\n\tend\r\nend\r\n\r\n\r\nlocal overlappingObjects = {}\r\n\r\nfunction UpdateMovement(deltaTime)\r\n\tlocal pos = ROOT:GetWorldPosition()\r\n\t\r\n\t-- Test overlap against other objects and adjust\r\n\tif TRIGGER then\r\n\t\tlocal overlaps = overlappingObjects\r\n\t\tfor i,other in ipairs(overlaps) do\r\n\t\t\tlocal triggerPos = TRIGGER:GetWorldPosition()\r\n\t\t\tlocal otherPos = other:GetWorldPosition()\r\n\t\t\tlocal v = triggerPos - otherPos\r\n\t\t\tv.z = 0\r\n\t\t\tlocal distance = v.size\r\n\t\t\tlocal radii = 50 * (other:GetWorldScale().y + TRIGGER:GetWorldScale().y)\r\n\t\t\tlocal removeAmount = radii - distance\r\n\t\t\tif (removeAmount > 0) then\r\n\t\t\t\tv = v / distance * removeAmount * 0.5\r\n\t\t\t\tpos = pos + v\r\n\t\t\t\tROOT:SetWorldPosition(pos)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Move forward\r\n\tlocal moveV = stepDestination - pos\r\n\tlocal distance = moveV.size\r\n\tlocal moveAmount = MOVE_SPEED * deltaTime\r\n\t\r\n\tif (distance <= moveAmount) then\r\n\t\tpos = stepDestination\r\n\telse\r\n\t\tpos = pos + moveV / distance * moveAmount\r\n\tend\t\r\n\tROOT:SetWorldPosition(pos)\r\nend\r\n\r\n\r\nfunction EngageNearest()\r\n\ttarget = nil\r\n\t\r\n\tlocal enemy = FindNearestEnemy()\r\n\tif enemy then\r\n\t\ttarget = enemy\r\n\r\n\t\tSetState(STATE_ENGAGING)\r\n\tend\r\nend\r\n\r\nfunction FindNearestEnemy()\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal forwardVector = ROTATION_ROOT:GetWorldRotation() * Vector3.FORWARD\r\n\tlocal myTeam = GetTeam()\r\n\t\r\n\tlocal nearestEnemy = nil\r\n\tlocal nearestDistSquared = 9999999999\r\n\t\r\n\t-- Players\r\n\tfor _,enemy in ipairs(Game.GetPlayers()) do\r\n\t\tif (enemy.team ~= myTeam and not enemy.isDead) then\r\n\t\t\tlocal canSee,distSquared = CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\t\t\tif canSee then\r\n\t\t\t\tnearestDistSquared = distSquared\r\n\t\t\t\tnearestEnemy = enemy\r\n\t\t\t\t--print(\"Distance to enemy = \" .. tostring(math.sqrt(nearestDistSquared)))\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Other NPCs\r\n\tlocal enemyNPCs = NPC_MANAGER.GetEnemies(myTeam)\r\n\tfor _,enemy in ipairs(enemyNPCs) do\r\n\t\tif enemy.context.IsAlive() then\r\n\t\t\tlocal canSee,distSquared = CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\t\t\tif canSee then\r\n\t\t\t\tnearestDistSquared = distSquared\r\n\t\t\t\tnearestEnemy = enemy\r\n\t\t\t\t--print(\"Distance to enemy = \" .. tostring(math.sqrt(nearestDistSquared)))\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\treturn nearestEnemy\r\nend\r\n\r\nfunction CanHear(noisePos)\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal delta = noisePos - myPos\r\n\tlocal distSquared = delta.sizeSquared\r\n\tif (distSquared < GetHearingRadiusSquared()) then\r\n\t\treturn true\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\tlocal enemyPos = enemy:GetWorldPosition()\r\n\tlocal delta = enemyPos - myPos\r\n\tlocal distSquared = delta.sizeSquared\r\n\t\r\n\tlocal canSeeFromDistance = (distSquared <= GetVisionRadiusSquared())\r\n\tif (not canSeeFromDistance and\r\n\t\tcurrentState == STATE_LOOKING_AROUND and\r\n\t\tdistSquared < SEARCH_RADIUS_SQUARED and\r\n\t\tSEARCH_RADIUS_SQUARED > GetVisionRadiusSquared()) then\r\n\t\t\r\n\t\tlocal p = (distSquared - GetVisionRadiusSquared()) / (SEARCH_RADIUS_SQUARED - GetVisionRadiusSquared())\r\n\t\tp = CoreMath.Lerp(0.5 / searchPrecision, 1, p)\r\n\t\tlocal rng = math.random()\r\n\t\tif (rng >= p) then\r\n\t\t\tcanSeeFromDistance = true\r\n\t\tend\r\n\t\t--print(\"rng = \" .. rng .. \", p = \" .. p)\r\n\tend\r\n\t\r\n\tif (canSeeFromDistance and distSquared < nearestDistSquared) then\r\n\t\tif (GetVisionHalfAngle() <= 0 or GetVisionHalfAngle() >= 360) then\r\n\t\t\treturn true, distSquared\r\n\t\tend\r\n\t\tlocal distance = math.sqrt(distSquared)\r\n\t\tlocal directionToEnemy = delta / distance\r\n\t\tlocal angle = Angle(directionToEnemy, forwardVector)\r\n\t\tif (angle <= GetVisionHalfAngle()) then\r\n\t\t\treturn true, distSquared\r\n\t\tend\r\n\tend\r\n\t--print(\"dist = \" .. tostring(math.sqrt(distSquared)) .. \", \" .. tostring(distSquared) .. \", \" .. tostring(GetVisionRadiusSquared()))\r\n\treturn false\r\nend\r\n\r\nfunction Angle(normV1, normV2)\r\n\tlocal value = normV1 .. normV2\r\n\tvalue = CoreMath.Clamp(value, -1, 1)\r\n\treturn math.acos(value) * 57.29578\r\nend\r\n\r\n\r\nfunction IsWithinRangeSquared(enemy, rangeSquared)\r\n\tif Object.IsValid(enemy) then\r\n\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\tlocal enemyPos = enemy:GetWorldPosition()\r\n\t\tlocal delta = pos - enemyPos\r\n\t\treturn (delta.sizeSquared < rangeSquared)\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction GetVisionHalfAngle()\r\n\tif temporaryVisionAngle ~= nil then\r\n\t\treturn temporaryVisionAngle.value\r\n\tend\r\n\treturn VISION_HALF_ANGLE\r\nend\r\n\r\nfunction GetVisionRadiusSquared()\r\n\tif temporaryVisionRadius ~= nil then\r\n\t\treturn temporaryVisionRadius.value\r\n\tend\r\n\treturn VISION_RADIUS_SQUARED\r\nend\r\n\r\nfunction GetHearingRadiusSquared()\r\n\tif temporaryHearingRadius ~= nil then\r\n\t\treturn temporaryHearingRadius.value\r\n\tend\r\n\treturn HEARING_RADIUS_SQUARED\r\nend\r\n\r\nfunction SetTemporaryVisionHalfAngle(angle, duration)\r\n\ttemporaryVisionAngle = {value = angle, timeRemaining = duration}\r\nend\r\n\r\nfunction SetTemporaryVisionRadius(radius, duration)\r\n\ttemporaryVisionRadius = {value = radius, timeRemaining = duration}\r\nend\r\n\r\nfunction SetTemporaryHearingRadius(radius, duration)\r\n\ttemporaryHearingRadius = {value = radius, timeRemaining = duration}\r\nend\r\n\r\nfunction UpdateTemporaryProperties(deltaTime)\r\n\ttemporaryVisionAngle = UpdateTemporary(temporaryVisionAngle, deltaTime)\r\n\ttemporaryVisionRadius = UpdateTemporary(temporaryVisionRadius, deltaTime)\r\n\ttemporaryHearingRadius = UpdateTemporary(temporaryHearingRadius, deltaTime)\r\nend\r\n\r\nfunction UpdateTemporary(property, deltaTime)\r\n\tif property ~= nil then\r\n\t\tproperty.timeRemaining = property.timeRemaining - deltaTime\r\n\t\tif property.timeRemaining <= 0 then\r\n\t\t\treturn nil\r\n\t\tend\r\n\tend\r\n\treturn property\r\nend\r\n\r\nfunction SetCollision(enabled)\r\n\tif enabled then\r\n\t\tCOLLIDER.collision = Collision.INHERIT\r\n\telse\r\n\t\tCOLLIDER.collision = Collision.FORCE_OFF\r\n\tend\r\nend\r\n\r\nfunction IsObjectAlive(obj)\r\n\tif Object.IsValid(obj) then\r\n\t\tif obj:IsA(\"Player\") then\r\n\t\t\treturn (not obj.isDead)\r\n\t\tend\r\n\t\t\r\n\t\tif obj.context and obj.context.IsAlive then\r\n\t\t\treturn obj.context.IsAlive()\r\n\t\tend\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction IsAlive()\r\n\treturn currentState < STATE_DEAD_1\r\nend\r\n\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\tif (currentState == STATE_SLEEPING or currentState == STATE_PATROLLING or currentState == STATE_LOOKING_AROUND) then\r\n\t\tif Object.IsValid(sourceObject) and GetObjectTeam(sourceObject) ~= GetTeam() and \r\n\t\t\tIsObjectAlive(sourceObject) and CanHear(impactPosition) then\r\n\t\t\tSearch(impactPosition, sourceObject:GetWorldPosition())\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction Search(fromPos, toPos)\r\n\t--print(\"Search\")\r\n\tsearchStartPosition = fromPos\r\n\tsearchEndPosition = toPos\r\n\tsearchTimeElapsed = 0\r\n\t\r\n\tif (currentState == STATE_LOOKING_AROUND) then\r\n\t\tsearchPrecision = searchPrecision * 2\r\n\telse\r\n\t\tsearchPrecision = 1\r\n\tend\r\n\t\r\n\tDoLookAround()\r\n\tSetState(STATE_LOOKING_AROUND)\r\nend\r\n\r\nfunction DoLookAround()\r\n\tlocal t = 1\r\n\tif (SEARCH_DURATION > 0) then\r\n\t\tt = searchTimeElapsed / SEARCH_DURATION\r\n\tend\r\n\tlocal searchPos = Vector3.Lerp(searchStartPosition, searchEndPosition, t)\r\n\tlocal area = math.ceil(POSSIBILITY_RADIUS / searchPrecision)\r\n\tsearchPos.x = searchPos.x + math.random(-area, area)\r\n\tsearchPos.y = searchPos.y + math.random(-area, area)\r\n\t\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal forward = searchPos - myPos\r\n\tlocal rot = Rotation.New(forward, Vector3.UP)\r\n\t\r\n\tROTATION_ROOT:RotateTo(rot, GetRotateToTurnSpeed(), false)\r\nend\r\n\r\nfunction GetRotateToTurnSpeed()\r\n\tlocal turnTime = 0.25\r\n\tif (turnTime > 0) then\r\n\t\tturnTime = 1 / TURN_SPEED\r\n\tend\r\n\treturn turnTime\r\nend\r\n\r\n\r\nfunction OnObjectDestroyed(id)\r\n\tif IsAlive() then\r\n\t\tlocal myId = ROOT:GetCustomProperty(\"ObjectId\")\r\n\t\tif (myId == id) then\r\n\t\t\tSetState(STATE_DEAD_1)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\nlocal destroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\nfunction Cleanup()\r\n\t--print(\"Cleanup()\")\r\n\tif damagedListener then\r\n\t\tdamagedListener:Disconnect()\r\n\t\tdamagedListener = nil\r\n\tend\r\n\tif destroyedListener then\r\n\t\tdestroyedListener:Disconnect()\r\n\t\tdestroyedListener = nil\r\n\tend\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\t--print(\"OnDestroyed()\")\r\n\tCleanup()\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\n\r\nfunction OnBeginOverlap(whichTrigger, other)\r\n\tif other == COLLIDER then return end\r\n\tif other:IsA(\"StaticMesh\") then\r\n\t\tlocal isWalkable, hasProperty = other:GetCustomProperty(\"Walkable\")\r\n\t\tif (hasProperty and not isWalkable) then\r\n\t\t\ttable.insert(overlappingObjects, other)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction OnEndOverlap(whichTrigger, other)\r\n\tfor i,obj in ipairs(overlappingObjects) do\r\n\t\tif other == obj then\r\n\t\t\ttable.remove(overlappingObjects, i)\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\nend\r\n\r\nif TRIGGER then\r\n\tTRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)\r\n\tTRIGGER.endOverlapEvent:Connect(OnEndOverlap)\r\nend\r\n\r\n\r\nfunction GetTeam()\r\n\treturn ROOT:GetCustomProperty(\"Team\")\r\nend\r\n\r\nfunction GetObjectTeam(object)\r\n\tif object.team ~= nil then\r\n\t\treturn object.team\r\n\tend\r\n\tlocal templateRoot = object:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\tif (propertyName == \"Team\") then\r\n\t\tHandleTeamChanged()\r\n\tend\r\nend\r\n\r\nfunction HandleTeamChanged()\r\n\tCOLLIDER.team = GetTeam()\r\nend\r\nHandleTeamChanged()\r\n\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nNPC_MANAGER.Register(script)\r\nNPC_MANAGER.RegisterCollider(script, COLLIDER)\r\n\r\n\r\n"
-      }
-    }
-    Assets {
-      Id: 9945787143985893269
-      Name: "LootDropFactory"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nLoot Drop Factory\r\nv1.2\r\nby: standardcombo\r\n\r\n--]]\r\nlocal LOOT_DROP_DATA = script:GetCustomProperty(\"LootDropData\")\r\n\r\nlocal API = {}\r\n\r\n\r\nfunction API.Drop(id, position)\r\n\tif id == nil then return end\r\n\t\r\n\t-- Initialize\r\n\tif API.data == nil then\r\n\t\tlocal found = World.FindObjectByName(\"LootDropDataManager\")\r\n\t\t\r\n\t\tif found and found.context and found.context.GetLootTemplate then\r\n\t\t\tAPI.data = found.context\r\n\t\telse\r\n\t\t\tlocal dataInstance = World.SpawnAsset(LOOT_DROP_DATA)\r\n\t\t\tTask.Wait()\r\n\t\t\tTask.Wait()\r\n\t\t\tAPI.data = dataInstance.context\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Spawn loot\r\n\tlocal rewardTemplate = API.data.GetLootTemplate(id)\r\n\tif rewardTemplate then\r\n\t\tlocal lootReward = World.SpawnAsset(rewardTemplate, {position = position})\r\n\t\tif not lootReward then return end\r\n\t\t\r\n\t\t-- Drop to ground\r\n\t\tlocal rayStart = position\r\n\t\tlocal rayEnd = rayStart + Vector3.UP * -1000\r\n\t\tlocal hit = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})\r\n\t\tif hit then\r\n\t\t\tlocal moveToPos = hit:GetImpactPosition()\r\n\t\t\tlootReward:MoveTo(moveToPos, 1)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nreturn API"
+        Text: "--[[\r\n\tNPCAttack - Server\r\n\tby: standardcombo\r\n\tv0.8.2\r\n\t\r\n\tWorks in conjunction with NPCAIServer. The separation of the two scripts makes it\r\n\teasier to design diverse kinds of enemies.\r\n--]]\r\n\r\n-- Component dependencies\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nrequire ( script:GetCustomProperty(\"DestructibleManager\") )\r\nfunction DESTRUCTIBLE_MANAGER() return MODULE.Get(\"standardcombo.NPCKit.DestructibleManager\") end\r\nfunction COMBAT() return MODULE.Get(\"standardcombo.Combat.Wrap\") end\r\nfunction PLAYER_HOMING_TARGETS() return MODULE.Get(\"standardcombo.Combat.PlayerHomingTargets\") end\r\nfunction CROSS_CONTEXT_CALLER() return MODULE.Get(\"standardcombo.Utils.CrossContextCaller\") end\r\nfunction LOOT_DROP_FACTORY() return MODULE.Get_Optional(\"standardcombo.NPCKit.LootDropFactory\") end\r\n\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\n\r\nlocal DAMAGE_TO_PLAYERS = script:GetCustomProperty(\"DamageToPlayers\") or 1\r\nlocal DAMAGE_TO_NPCS = script:GetCustomProperty(\"DamageToNPCs\") or 1\r\n\r\nlocal PROJECTILE_BODY = script:GetCustomProperty(\"ProjectileBody\")\r\nlocal MUZZLE_FLASH_VFX = script:GetCustomProperty(\"MuzzleFlash\")\r\nlocal IMPACT_SURFACE_VFX = script:GetCustomProperty(\"ImpactSurface\")\r\nlocal IMPACT_CHARACTER_VFX = script:GetCustomProperty(\"ImpactCharacter\")\r\nlocal PROJECTILE_LIFESPAN = script:GetCustomProperty(\"ProjectileLifeSpan\") or 10\r\nlocal PROJECTILE_SPEED = script:GetCustomProperty(\"ProjectileSpeed\") or 4000\r\nlocal PROJECTILE_GRAVITY = script:GetCustomProperty(\"ProjectileGravity\") or 1\r\nlocal IS_PROJECTILE_HOMING = script:GetCustomProperty(\"ProjectileHoming\")\r\nlocal HOMING_DRAG = script:GetCustomProperty(\"HomingDrag\") or 7\r\nlocal HOMING_ACCELERATION = script:GetCustomProperty(\"HomingAcceleration\") or 15000\r\n\r\nlocal REWARD_RESOURCE_TYPE = ROOT:GetCustomProperty(\"RewardResourceType\")\r\nlocal REWARD_RESOURCE_AMOUNT = ROOT:GetCustomProperty(\"RewardResourceAmount\")\r\n\r\nlocal LOOT_ID = ROOT:GetCustomProperty(\"LootId\")\r\n\r\nlocal attackCooldown = 2\r\nlocal cooldownRemaining = 0\r\n\r\n\r\nfunction GetTeam()\r\n\treturn ROOT:GetCustomProperty(\"Team\")\r\nend\r\n\r\nfunction GetObjectTeam(object)\r\n\tif object.team ~= nil then\r\n\t\treturn object.team\r\n\tend\r\n\tlocal templateRoot = object:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\nfunction Attack(target)\t\r\n\tif target:IsA(\"Player\") and PLAYER_HOMING_TARGETS() then\r\n\t\ttarget = PLAYER_HOMING_TARGETS().GetTargetForPlayer(target)\r\n\tend\r\n\t\r\n\tlocal startPos = script:GetWorldPosition()\r\n\tlocal rotation = script:GetWorldRotation()\r\n\tlocal direction = rotation * Vector3.FORWARD\r\n\tif not IS_PROJECTILE_HOMING then\r\n\t\tlocal v = target:GetWorldPosition() - startPos\r\n\t\tdirection = v:GetNormalized() + 200 * Vector3.UP * v.size * PROJECTILE_GRAVITY / PROJECTILE_SPEED / PROJECTILE_SPEED\r\n\tend\r\n\t\r\n\tCROSS_CONTEXT_CALLER().Call(function()\r\n\t\tlocal projectile = Projectile.Spawn(PROJECTILE_BODY, startPos, direction)\r\n\t\tprojectile.lifeSpan = PROJECTILE_LIFESPAN\r\n\t\tprojectile.speed = PROJECTILE_SPEED\r\n\t\tprojectile.gravityScale = PROJECTILE_GRAVITY\r\n\t\t\r\n\t\tif IS_PROJECTILE_HOMING then\r\n\t\t\tprojectile.homingTarget = target\r\n\t\t\tprojectile.drag = HOMING_DRAG\r\n\t\t\tprojectile.homingAcceleration = HOMING_ACCELERATION\r\n\t\tend\r\n\t\t\r\n\t\tprojectile.piercesRemaining = 999\r\n\t\t\r\n\t\tprojectile.impactEvent:Connect(OnProjectileImpact)\r\n\tend)\r\n\t\r\n\tSpawnAsset(MUZZLE_FLASH_VFX, startPos, rotation)\r\nend\r\n\r\n\r\nfunction OnProjectileImpact(projectile, other, hitResult)\r\n\tlocal myTeam = GetTeam()\r\n\tlocal impactTeam = GetObjectTeam(other)\r\n\tif (impactTeam ~= 0 and myTeam == impactTeam) then return end\r\n\t\r\n\tlocal pos = hitResult:GetImpactPosition()\r\n\tlocal rot = projectile:GetWorldTransform():GetRotation()\r\n\t\r\n\tlocal damageAmount = 0\r\n\t\r\n\tif other:IsA(\"Player\") then\r\n\t\tdamageAmount = DAMAGE_TO_PLAYERS\r\n\t\tSpawnAsset(IMPACT_CHARACTER_VFX, pos, rot)\r\n\telse\r\n\t\tdamageAmount = DAMAGE_TO_NPCS\r\n\t\tSpawnAsset(IMPACT_SURFACE_VFX, pos, hitResult:GetTransform():GetRotation())\r\n\tend\r\n\t\r\n\tlocal dmg = Damage.New(damageAmount)\r\n\tdmg:SetHitResult(hitResult)\r\n\tdmg.reason = DamageReason.COMBAT\r\n\t\t\r\n\tCOMBAT().ApplyDamage(other, dmg, script, pos, rot)\r\n\t\t\r\n\tprojectile:Destroy()\r\nend\r\n\r\n\r\nfunction SpawnAsset(template, pos, rot)\r\n\tif not template then return end\r\n\t\r\n\tCROSS_CONTEXT_CALLER().Call(function()\r\n\t\tlocal spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})\r\n\t\tif spawnedVfx and spawnedVfx.lifeSpan <= 0 then\r\n\t\t\tspawnedVfx.lifeSpan = 1.5\r\n\t\tend\r\n\tend)\r\nend\r\n\r\n\r\n-- Damage / destructible\r\n\r\n\r\nlocal id = DESTRUCTIBLE_MANAGER().Register(script)\r\nROOT:SetNetworkedCustomProperty(\"ObjectId\", id)\r\n\r\n\r\nfunction ApplyDamage(dmg, source, position, rotation)\r\n\tlocal amount = dmg.amount\r\n\tif (amount ~= 0) then\r\n\t\tlocal prevHealth = GetHealth()\r\n\t\tlocal newHealth = prevHealth - amount\r\n\t\tSetHealth(newHealth)\r\n\r\n\t\tlocal impactPosition\r\n\t\tlocal impactRotation = Rotation.New()\r\n\t\tlocal hitResult = dmg:GetHitResult()\r\n\t\tif hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then\r\n\t\t\timpactPosition = hitResult:GetImpactPosition()\r\n\t\t\timpactRotation = hitResult:GetTransform():GetRotation()\r\n\t\t\r\n\t\telseif position and rotation then\r\n\t\t\timpactPosition = position\r\n\t\t\timpactRotation = rotation\r\n\t\telse\r\n\t\t\timpactPosition = script:GetWorldPosition()\r\n\t\tend\r\n\t\t\r\n\t\tlocal sourcePosition = nil\r\n\t\tif Object.IsValid(source) then\r\n\t\t\tsourcePosition = source:GetWorldPosition()\r\n\t\tend\r\n\t\t\r\n\t\t-- Effects\r\n\t\tlocal spawnedVfx = nil\r\n\t\t\r\n\t\tif (newHealth <= 0 and DESTROY_FX) then\r\n\t\t\tSpawnAsset(DESTROY_FX, impactPosition, impactRotation)\r\n\t\t\t\r\n\t\telseif DAMAGE_FX then\r\n\t\t\tSpawnAsset(DAMAGE_FX, impactPosition, impactRotation)\r\n\t\tend\r\n\t\t\r\n\t\t-- Events\r\n\t\t\r\n\t\tEvents.Broadcast(\"ObjectDamaged\", id, prevHealth, amount, impactPosition, impactRotation, source)\r\n\t\tEvents.BroadcastToAllPlayers(\"ObjectDamaged\", id, prevHealth, amount, impactPosition, impactRotation)\r\n\r\n\t\tif (newHealth <= 0) then\r\n\t\t\tEvents.Broadcast(\"ObjectDestroyed\", id)\r\n\t\t\tEvents.BroadcastToAllPlayers(\"ObjectDestroyed\", id)\r\n\t\t\t\r\n\t\t\tDropRewards(source)\r\n\t\tend\r\n\r\n\t\t--print(ROOT.name .. \" Health = \" .. newHealth)\r\n\tend\r\nend\r\n\r\nfunction GetHealth()\r\n\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\nend\r\n\r\nfunction SetHealth(value)\r\n\tROOT:SetNetworkedCustomProperty(\"CurrentHealth\", value)\r\nend\r\n\r\n\r\nfunction DropRewards(killer)\r\n\t-- Give resources\r\n\tif REWARD_RESOURCE_TYPE \r\n\tand Object.IsValid(killer) \r\n\tand killer:IsA(\"Player\") then\r\n\t\tkiller:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)\r\n\tend\r\n\t\r\n\t-- Drop loot\r\n\tif LOOT_DROP_FACTORY() then\r\n\t\tlocal pos = script:GetWorldPosition()\r\n\t\tLOOT_DROP_FACTORY().Drop(LOOT_ID, pos)\r\n\tend\r\nend\r\n\r\n\r\n"
         CustomParameters {
           Overrides {
-            Name: "cs:LootDropData"
+            Name: "cs:ModuleManager"
             AssetReference {
-              Id: 16066761088996544839
+              Id: 14162240362023469980
             }
           }
-        }
-      }
-    }
-    Assets {
-      Id: 16066761088996544839
-      Name: "LootDropDataManager"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 15821373674062278737
-          Objects {
-            Id: 15821373674062278737
-            Name: "LootDropDataManager"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 15083192012000852283
-            ChildIds: 13523941230994555401
-            ChildIds: 13595394515952630971
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 1863355464056663245
-              }
-            }
-          }
-          Objects {
-            Id: 15083192012000852283
-            Name: "Common"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15821373674062278737
-            ChildIds: 16611125271677778775
-            ChildIds: 11112535143872401490
-            ChildIds: 4905451867655240875
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 16611125271677778775
-            Name: "Nothing"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15083192012000852283
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 11112535143872401490
-            Name: "Single Coin"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15083192012000852283
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Incidence"
-                Int: 5
-              }
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 4887434281890312066
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 4905451867655240875
-            Name: "Coin Bag 5"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15083192012000852283
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 9150680640603290075
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 13523941230994555401
-            Name: "Uncommon"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15821373674062278737
-            ChildIds: 4079664885745742839
-            ChildIds: 5846544072541239492
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 4079664885745742839
-            Name: "Coin Bag 5"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 13523941230994555401
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 9150680640603290075
-                }
-              }
-              Overrides {
-                Name: "cs:Incidence"
-                Int: 4
-              }
-              Overrides {
-                Name: "cs:LootId"
-                String: "Uncommon"
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 5846544072541239492
-            Name: "Coin Bag 10"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 13523941230994555401
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 16827954014823431042
-                }
-              }
-              Overrides {
-                Name: "cs:LootId"
-                String: "Uncommon"
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 13595394515952630971
-            Name: "Rare"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15821373674062278737
-            ChildIds: 4662621791211762773
-            ChildIds: 6784145156045657251
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 4662621791211762773
-            Name: "Loot Bag 25"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 13595394515952630971
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 9170884794555493885
-                }
-              }
-              Overrides {
-                Name: "cs:LootId"
-                String: "Rare"
-              }
-              Overrides {
-                Name: "cs:Incidence"
-                Int: 4
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-          Objects {
-            Id: 6784145156045657251
-            Name: "Loot Bag 50"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 13595394515952630971
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Template"
-                AssetReference {
-                  Id: 2148343383959186776
-                }
-              }
-              Overrides {
-                Name: "cs:LootId"
-                String: "Rare"
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 12664807901734619296
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 2148343383959186776
-      Name: "Loot Bag 50"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 10206514578575974245
-          Objects {
-            Id: 10206514578575974245
-            Name: "Loot Bag 50"
-            Transform {
-              Scale {
-                X: 0.99999994
-                Y: 0.99999994
-                Z: 0.99999994
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 657833864428449213
-            ChildIds: 11678261793863105179
-            ChildIds: 4477665186407993012
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:ResourceName"
-                String: "Coins"
-              }
-              Overrides {
-                Name: "cs:ResourceMin"
-                Int: 50
-              }
-              Overrides {
-                Name: "cs:ResourceMax"
-                Int: 50
-              }
-              Overrides {
-                Name: "cs:Trigger"
-                ObjectReference {
-                  SubObjectId: 11678261793863105179
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLoot"
-                AssetReference {
-                  Id: 13053008494495394347
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLootHigh"
-                AssetReference {
-                  Id: 12343836295963297871
-                }
-              }
-              Overrides {
-                Name: "cs:DestroyDelay"
-                Float: 0.2
-              }
-              Overrides {
-                Name: "cs:PickupFX"
-                AssetReference {
-                  Id: 5816033782698853515
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 657833864428449213
-            Name: "LootPickup"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-                Yaw: 1.02452832e-05
-              }
-              Scale {
-                X: 1.00000012
-                Y: 1.00000012
-                Z: 1.00000012
-              }
-            }
-            ParentId: 10206514578575974245
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 4646432397669595989
-              }
-            }
-          }
-          Objects {
-            Id: 11678261793863105179
-            Name: "Trigger"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.582240462
-                Y: 0.582240462
-                Z: 0.582240462
-              }
-            }
-            ParentId: 10206514578575974245
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Trigger {
-              Interactable: true
-              InteractionLabel: "Get Awesome Treasure"
-              TeamSettings {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              TriggerShape_v2 {
-                Value: "mc:etriggershape:sphere"
-              }
-            }
-          }
-          Objects {
-            Id: 4477665186407993012
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: 90.8424
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 10206514578575974245
-            ChildIds: 2289108991670512799
-            ChildIds: 15472779519899925133
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 2289108991670512799
-            Name: "PickupBobRotateClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1.82329392
-                Y: 1.82329392
-                Z: 1.82329392
-              }
-            }
-            ParentId: 4477665186407993012
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Target"
-                ObjectReference {
-                  SubObjectId: 15472779519899925133
-                }
-              }
-              Overrides {
-                Name: "cs:RotationSpeed"
-                Float: 0
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 5631192551256795714
-              }
-            }
-          }
-          Objects {
-            Id: 15472779519899925133
-            Name: "AnimationRoot"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.610630095
-                Y: 0.610630095
-                Z: 0.610630095
-              }
-            }
-            ParentId: 4477665186407993012
-            ChildIds: 2310417942835581440
-            ChildIds: 1662624805173243890
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 2310417942835581440
-            Name: "Point Light"
-            Transform {
-              Location {
-                X: -0.13965793
-                Y: 0.541298449
-                Z: 98.9257126
-              }
-              Rotation {
-                Yaw: 8.69685745
-              }
-              Scale {
-                X: 2.39806437
-                Y: 2.39806437
-                Z: 2.39806437
-              }
-            }
-            ParentId: 15472779519899925133
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Light {
-              Intensity: 3.99872875
-              Color {
-                R: 0.940000057
-                G: 0.63496691
-                A: 1
-              }
-              VolumetricIntensity: 5
-              TeamSettings {
-              }
-              Light {
-                Temperature: 6500
-                LocalLight {
-                  AttenuationRadius: 1000
-                  PointLight {
-                    SourceRadius: 20
-                    SoftSourceRadius: 20
-                    FallOffExponent: 8
-                    UseFallOffExponent: true
-                  }
-                }
-                MaxDrawDistance: 5000
-                MaxDistanceFadeRange: 1000
-              }
-            }
-          }
-          Objects {
-            Id: 1662624805173243890
-            Name: "Chest Small Closed"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: -90.8424072
-              }
-              Scale {
-                X: 0.967358589
-                Y: 0.967358589
-                Z: 0.967358589
-              }
-            }
-            ParentId: 15472779519899925133
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_Detail1:color"
-                Color {
-                  R: 4
-                  G: 2.1048665
-                  B: 0.331999779
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.488000035
-                  G: 0.488000035
-                  B: 0.488000035
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1303766757091610947
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 1303766757091610947
-      Name: "Chest Small Closed"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_chest_001"
-      }
-    }
-    Assets {
-      Id: 5631192551256795714
-      Name: "PickupBobRotateClient"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "\r\nlocal TARGET = script:GetCustomProperty(\"Target\"):WaitForObject()\r\nlocal SPAWN_IMPULSE = script:GetCustomProperty(\"SpawnImpulse\") or 10000\r\nlocal GRAVITY = script:GetCustomProperty(\"Gravity\") or 2000\r\nlocal AMPLITUDE = script:GetCustomProperty(\"BobAmplitude\") or 15\r\nlocal FREQUENCY = script:GetCustomProperty(\"BobFrequency\") or 2\r\nlocal ROTATION_SPEED = script:GetCustomProperty(\"RotationSpeed\") or 100\r\n\r\nlocal startingPos = TARGET:GetPosition()\r\nlocal jumpVelocity = SPAWN_IMPULSE\r\n\r\nlocal isJumping = (SPAWN_IMPULSE > 0)\r\n\r\n\r\nfunction Tick(deltaTime)\r\n\r\n\t\r\n\tif isJumping then\r\n\t\tlocal pos = TARGET:GetPosition()\r\n\t\t\r\n\t\tlocal pos = pos + Vector3.UP * jumpVelocity * deltaTime\r\n\t\tjumpVelocity = jumpVelocity - GRAVITY * deltaTime\r\n\t\t\r\n\t\tif jumpVelocity < 0 and pos.z < startingPos.z + AMPLITUDE then\r\n\t\t\tpos = startingPos\r\n\t\t\tisJumping = false\r\n\t\tend\r\n\t\t\r\n\t\tTARGET:SetPosition(pos)\r\n\t\r\n\telse\r\n\t\tlocal pos = startingPos\r\n\t\t\r\n\t\tlocal bob = (math.sin(time() * FREQUENCY) + 1) * AMPLITUDE\r\n\t\tlocal pos = Vector3.New(0, 0, bob)\r\n\t\tTARGET:SetPosition(startingPos + pos)\r\n\t\t\r\n\t\tlocal rot = Rotation.New(0, 0, time() * ROTATION_SPEED)\r\n\t\tTARGET:SetRotation(rot)\r\n\tend\r\nend"
-        CustomParameters {
           Overrides {
-            Name: "cs:Target"
+            Name: "cs:DestructibleManager"
+            AssetReference {
+              Id: 17999829830237049640
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
             ObjectReference {
             }
           }
           Overrides {
-            Name: "cs:SpawnImpulse"
-            Float: 1000
+            Name: "cs:DamageToPlayers"
+            Int: 5
           }
           Overrides {
-            Name: "cs:Gravity"
-            Float: 2000
+            Name: "cs:DamageToNPCs"
+            Float: 5
           }
           Overrides {
-            Name: "cs:BobAmplitude"
-            Float: 15
-          }
-          Overrides {
-            Name: "cs:BobFrequency"
-            Float: 2
-          }
-          Overrides {
-            Name: "cs:RotationSpeed"
-            Float: 100
-          }
-        }
-      }
-    }
-    Assets {
-      Id: 4646432397669595989
-      Name: "LootPickup"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\n\r\nThis is a full-featured, but simple pickup object that grants a resource to the player who collects it.\r\n\r\nFEATURES\r\n- Player animations for picking up the object (high and low variations).\r\n- Visual and Sound effects.\r\n\r\nUSAGE\r\n1. Drop into a game. Players walk up to the object and press [F] to collect it.\r\n2. Can be spawned programatically, such as when an enemy is defeated.\r\n3. The Trigger is set to be interactable. If that option is turned off, then this will be collected\r\n   by walking over. The pickup animations still play when walking over.\r\n4. By default it grants 10x Gold, which are both custom properties on the root of the template and can\r\n   be customized. There is a \'ResourceMin\' and \'ResourceMax\' that define a random range.\r\n5. Comes with two pickup animations that are used depending on how high the object is in relationship\r\n   to the player. There is a high and a low pickup ability that get assigned to the player\r\n   automatically on the first time they interact with a pickup. While the abilities are being created\r\n   and assigned there is a small animation delay on the very first pickup.\r\n6. Customizing the artwork and VFXs spin off into other pickup object types.\r\n\r\n--]]\r\n\r\nlocal root = script.parent\r\nlocal RESOURCE_NAME = root:GetCustomProperty(\"ResourceName\")\r\nlocal RESOURCE_AMOUNT_MIN = root:GetCustomProperty(\"ResourceMin\")\r\nlocal RESOURCE_AMOUNT_MAX = root:GetCustomProperty(\"ResourceMax\")\r\nlocal TRIGGER = root:GetCustomProperty(\"Trigger\"):WaitForObject()\r\nlocal ABILITY_PICKUP_TEMPLATE = root:GetCustomProperty(\"AbilityPickupLoot\")\r\nlocal ABILITY_PICKUP_HIGH_TEMPLATE = root:GetCustomProperty(\"AbilityPickupLootHigh\")\r\nlocal DESTROY_DELAY = root:GetCustomProperty(\"DestroyDelay\")\r\nlocal PICKUP_FX_TEMPLATE = root:GetCustomProperty(\"PickupFX\")\r\nlocal ADD_ABILITY_DELAY = 0.1\r\n\r\n\r\nlocal pickupPending = false\r\n\r\n\r\nfunction HasPickupAbility(player)\r\n\treturn player:GetResource(\"HasPickupAbility\") > 0\r\nend\r\n\r\nfunction AddPickupAbility(player)\r\n\t-- Pickup objects that are low to the ground\r\n\tlocal pickupAbility = World.SpawnAsset(ABILITY_PICKUP_TEMPLATE)\r\n\tpickupAbility.owner = player\r\n\tpickupAbility:AttachToPlayer(player, \"root\")\r\n\t\r\n\t-- Pickup objects that are at waist or higher\r\n\tpickupAbility = World.SpawnAsset(ABILITY_PICKUP_HIGH_TEMPLATE)\r\n\tpickupAbility.owner = player\r\n\tpickupAbility:AttachToPlayer(player, \"root\")\r\n\t\r\n\tplayer:SetResource(\"HasPickupAbility\", 1)\r\nend\r\n\r\nfunction PlayPickupAnimation(player)\r\n\tif player then\r\n\t\tlocal deltaZ = script:GetWorldPosition().z - player:GetWorldPosition().z\r\n\t\t\r\n\t\tif (deltaZ > 0) then\r\n\t\t\tEvents.BroadcastToPlayer(player, \"PickupLootHigh\")\r\n\t\telse\r\n\t\t\tEvents.BroadcastToPlayer(player, \"PickupLoot\")\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction SpawnPickupVFX()\r\n\tif PICKUP_FX_TEMPLATE then\r\n\t\tWorld.SpawnAsset(PICKUP_FX_TEMPLATE, {position = script:GetWorldPosition()})\r\n\tend\r\nend\r\n\r\nfunction AddRewards(player)\r\n\tif not player then return end\r\n\t\r\n\tlocal amount = math.random(RESOURCE_AMOUNT_MIN, RESOURCE_AMOUNT_MAX)\r\n\tif amount > 0 then\r\n\t\tplayer:AddResource(RESOURCE_NAME, amount)\r\n\tend\r\nend\r\n\r\nfunction OnInteracted(trigger, player)\r\n\tif pickupPending then return end\r\n\t\r\n\tpickupPending = true\r\n\t\r\n\tif not HasPickupAbility(player) then\r\n\t\tAddPickupAbility(player)\r\n\t\t\r\n\t\tTask.Wait(ADD_ABILITY_DELAY)\r\n\tend\r\n\t\r\n\tPlayPickupAnimation(player)\r\n\t\r\n\tTask.Wait(DESTROY_DELAY)\r\n\t\r\n\tSpawnPickupVFX()\r\n\tAddRewards(player)\r\n\tscript.parent:Destroy()\r\nend\r\n\r\nfunction OnBeginOverlap(trigger, player)\r\n\tOnInteracted(trigger, player)\r\nend\r\n\r\nTRIGGER.interactedEvent:Connect(OnInteracted)\r\n\r\nif (not TRIGGER.isInteractable) then\r\n\tTRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)\r\nend\r\n\r\n"
-      }
-    }
-    Assets {
-      Id: 5816033782698853515
-      Name: "Loot Bag Pickup FX"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 7487361487119132668
-          Objects {
-            Id: 7487361487119132668
-            Name: "Loot Bag Pickup FX"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 16076258709708650008
-            ChildIds: 13199534522534072600
-            UnregisteredParameters {
-            }
-            Lifespan: 1.2
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 16076258709708650008
-            Name: "Meta Coins Shuffling Purchase 01 SFX"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 7487361487119132668
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            AudioInstance {
-              AudioAsset {
-                Id: 12499180771850192335
-              }
-              AutoPlay: true
-              Volume: 1
-              Falloff: 3600
-              Radius: 400
-              EnableOcclusion: true
-              IsSpatializationEnabled: true
-              IsAttenuationEnabled: true
-            }
-          }
-          Objects {
-            Id: 13199534522534072600
-            Name: "Basic Explosion VFX"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 7487361487119132668
-            UnregisteredParameters {
-              Overrides {
-                Name: "bp:Enable Fire"
-                Bool: false
-              }
-              Overrides {
-                Name: "bp:Enable Smoke"
-                Bool: false
-              }
-              Overrides {
-                Name: "bp:Enable Sparks"
-                Bool: false
-              }
-              Overrides {
-                Name: "bp:Enable Ring"
-                Bool: false
-              }
-              Overrides {
-                Name: "bp:Enable Flash"
-                Bool: false
-              }
-              Overrides {
-                Name: "bp:Enable Light"
-                Bool: true
-              }
-              Overrides {
-                Name: "bp:Light Brightness Multiplier"
-                Float: 0.181722462
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Blueprint {
-              BlueprintAsset {
-                Id: 17593637809061010819
-              }
-              TeamSettings {
-              }
-              Vfx {
-                AutoPlay: true
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 17593637809061010819
-      Name: "Basic Explosion VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_explosion"
-      }
-    }
-    Assets {
-      Id: 12499180771850192335
-      Name: "Meta Coins Shuffling Purchase 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_meta_coins_purchase_01_cue_ref"
-      }
-    }
-    Assets {
-      Id: 12343836295963297871
-      Name: "AbilityPickupLootHigh"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 5579269869814221002
-          Objects {
-            Id: 5579269869814221002
-            Name: "AbilityPickupLootHigh"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 7949948362461418979
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Ability {
-              IsEnabled: true
-              CastPhaseSettings {
-                Duration: 0.3
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:aim"
-                }
-              }
-              ExecutePhaseSettings {
-                Duration: 0.2
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:aim"
-                }
-              }
-              RecoveryPhaseSettings {
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:none"
-                }
-              }
-              CooldownPhaseSettings {
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:none"
-                }
-              }
-              Animation: "unarmed_throw"
-              KeyBinding_v2 {
-                Value: "mc:egameaction:invalid"
-              }
-            }
-          }
-          Objects {
-            Id: 7949948362461418979
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 5579269869814221002
-            ChildIds: 343928656848750881
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 343928656848750881
-            Name: "AbilityPickupLootClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 7949948362461418979
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Ability"
-                ObjectReference {
-                  SubObjectId: 5579269869814221002
-                }
-              }
-              Overrides {
-                Name: "cs:EventName"
-                String: "PickupLootHigh"
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 2301984767490390193
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 2301984767490390193
-      Name: "AbilityPickupLootClient"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "\r\nlocal ABILITY = script:GetCustomProperty(\"Ability\"):WaitForObject()\r\nlocal EVENT_NAME = script:GetCustomProperty(\"EventName\")\r\n\r\nfunction OnPickupLoot()\r\n\tif ABILITY.owner and ABILITY.owner == Game.GetLocalPlayer() then\r\n\t\tABILITY:Activate()\r\n\tend\r\nend\r\nEvents.Connect(EVENT_NAME, OnPickupLoot)"
-      }
-    }
-    Assets {
-      Id: 13053008494495394347
-      Name: "AbilityPickupLoot"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 1584973793459790013
-          Objects {
-            Id: 1584973793459790013
-            Name: "AbilityPickupLoot"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 5337686594727201534
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Ability {
-              IsEnabled: true
-              CastPhaseSettings {
-                Duration: 0.3
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:aim"
-                }
-              }
-              ExecutePhaseSettings {
-                Duration: 0.2
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:aim"
-                }
-              }
-              RecoveryPhaseSettings {
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:none"
-                }
-              }
-              CooldownPhaseSettings {
-                CanMove: true
-                CanJump: true
-                CanRotate: true
-                PreventOtherAbilities: true
-                IsTargetDataUpdated: true
-                Facing_V2 {
-                  Value: "mc:eabilitysetfacing:none"
-                }
-              }
-              Animation: "unarmed_pickup"
-              KeyBinding_v2 {
-                Value: "mc:egameaction:invalid"
-              }
-            }
-          }
-          Objects {
-            Id: 5337686594727201534
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 1584973793459790013
-            ChildIds: 5075932351039994910
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 5075932351039994910
-            Name: "AbilityPickupLootClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 5337686594727201534
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Ability"
-                ObjectReference {
-                  SubObjectId: 1584973793459790013
-                }
-              }
-              Overrides {
-                Name: "cs:EventName"
-                String: "PickupLoot"
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 2301984767490390193
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 9170884794555493885
-      Name: "Loot Bag 25"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 10206514578575974245
-          Objects {
-            Id: 10206514578575974245
-            Name: "Loot Bag 25"
-            Transform {
-              Scale {
-                X: 0.99999994
-                Y: 0.99999994
-                Z: 0.99999994
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 657833864428449213
-            ChildIds: 11678261793863105179
-            ChildIds: 4477665186407993012
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:ResourceName"
-                String: "Coins"
-              }
-              Overrides {
-                Name: "cs:ResourceMin"
-                Int: 25
-              }
-              Overrides {
-                Name: "cs:ResourceMax"
-                Int: 25
-              }
-              Overrides {
-                Name: "cs:Trigger"
-                ObjectReference {
-                  SubObjectId: 11678261793863105179
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLoot"
-                AssetReference {
-                  Id: 13053008494495394347
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLootHigh"
-                AssetReference {
-                  Id: 12343836295963297871
-                }
-              }
-              Overrides {
-                Name: "cs:DestroyDelay"
-                Float: 0.2
-              }
-              Overrides {
-                Name: "cs:PickupFX"
-                AssetReference {
-                  Id: 5816033782698853515
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 657833864428449213
-            Name: "LootPickup"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-                Yaw: 1.02452832e-05
-              }
-              Scale {
-                X: 1.00000012
-                Y: 1.00000012
-                Z: 1.00000012
-              }
-            }
-            ParentId: 10206514578575974245
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 4646432397669595989
-              }
-            }
-          }
-          Objects {
-            Id: 11678261793863105179
-            Name: "Trigger"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.582240462
-                Y: 0.582240462
-                Z: 0.582240462
-              }
-            }
-            ParentId: 10206514578575974245
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Trigger {
-              Interactable: true
-              InteractionLabel: "Get Treasure"
-              TeamSettings {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              TriggerShape_v2 {
-                Value: "mc:etriggershape:sphere"
-              }
-            }
-          }
-          Objects {
-            Id: 4477665186407993012
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: 90.8424
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 10206514578575974245
-            ChildIds: 2289108991670512799
-            ChildIds: 15472779519899925133
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 2289108991670512799
-            Name: "PickupBobRotateClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1.82329392
-                Y: 1.82329392
-                Z: 1.82329392
-              }
-            }
-            ParentId: 4477665186407993012
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Target"
-                ObjectReference {
-                  SubObjectId: 15472779519899925133
-                }
-              }
-              Overrides {
-                Name: "cs:RotationSpeed"
-                Float: 0
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 5631192551256795714
-              }
-            }
-          }
-          Objects {
-            Id: 15472779519899925133
-            Name: "AnimationRoot"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.610630095
-                Y: 0.610630095
-                Z: 0.610630095
-              }
-            }
-            ParentId: 4477665186407993012
-            ChildIds: 2310417942835581440
-            ChildIds: 1662624805173243890
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 2310417942835581440
-            Name: "Point Light"
-            Transform {
-              Location {
-                X: -0.13965793
-                Y: 0.541298449
-                Z: 98.9257126
-              }
-              Rotation {
-                Yaw: 8.69685745
-              }
-              Scale {
-                X: 2.39806437
-                Y: 2.39806437
-                Z: 2.39806437
-              }
-            }
-            ParentId: 15472779519899925133
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Light {
-              Intensity: 3.99872875
-              Color {
-                R: 0.940000057
-                G: 0.63496691
-                A: 1
-              }
-              VolumetricIntensity: 5
-              TeamSettings {
-              }
-              Light {
-                Temperature: 6500
-                LocalLight {
-                  AttenuationRadius: 1000
-                  PointLight {
-                    SourceRadius: 20
-                    SoftSourceRadius: 20
-                    FallOffExponent: 8
-                    UseFallOffExponent: true
-                  }
-                }
-                MaxDrawDistance: 5000
-                MaxDistanceFadeRange: 1000
-              }
-            }
-          }
-          Objects {
-            Id: 1662624805173243890
-            Name: "Chest Small Closed"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: -90.8424072
-              }
-              Scale {
-                X: 0.912211657
-                Y: 0.912211657
-                Z: 0.912211657
-              }
-            }
-            ParentId: 15472779519899925133
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1303766757091610947
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 16827954014823431042
-      Name: "Loot Bag 10"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 15899876106654065371
-          Objects {
-            Id: 15899876106654065371
-            Name: "Loot Bag 10"
-            Transform {
-              Scale {
-                X: 0.99999994
-                Y: 0.99999994
-                Z: 0.99999994
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 13041028942332969253
-            ChildIds: 12502386380600736671
-            ChildIds: 17269128180384276295
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:ResourceName"
-                String: "Coins"
-              }
-              Overrides {
-                Name: "cs:ResourceMin"
-                Int: 10
-              }
-              Overrides {
-                Name: "cs:ResourceMax"
-                Int: 10
-              }
-              Overrides {
-                Name: "cs:Trigger"
-                ObjectReference {
-                  SubObjectId: 12502386380600736671
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLoot"
-                AssetReference {
-                  Id: 13053008494495394347
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLootHigh"
-                AssetReference {
-                  Id: 12343836295963297871
-                }
-              }
-              Overrides {
-                Name: "cs:DestroyDelay"
-                Float: 0.2
-              }
-              Overrides {
-                Name: "cs:PickupFX"
-                AssetReference {
-                  Id: 5816033782698853515
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 13041028942332969253
-            Name: "LootPickup"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-                Yaw: 1.02452832e-05
-              }
-              Scale {
-                X: 1.00000012
-                Y: 1.00000012
-                Z: 1.00000012
-              }
-            }
-            ParentId: 15899876106654065371
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 4646432397669595989
-              }
-            }
-          }
-          Objects {
-            Id: 12502386380600736671
-            Name: "Trigger"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.582240462
-                Y: 0.582240462
-                Z: 0.582240462
-              }
-            }
-            ParentId: 15899876106654065371
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Trigger {
-              Interactable: true
-              InteractionLabel: "Get Big Loot"
-              TeamSettings {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              TriggerShape_v2 {
-                Value: "mc:etriggershape:sphere"
-              }
-            }
-          }
-          Objects {
-            Id: 17269128180384276295
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: 90.8424
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 15899876106654065371
-            ChildIds: 11148645949351068669
-            ChildIds: 16805038460146840280
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 11148645949351068669
-            Name: "PickupBobRotateClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1.82329392
-                Y: 1.82329392
-                Z: 1.82329392
-              }
-            }
-            ParentId: 17269128180384276295
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Target"
-                ObjectReference {
-                  SubObjectId: 16805038460146840280
-                }
-              }
-              Overrides {
-                Name: "cs:RotationSpeed"
-                Float: 0
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 5631192551256795714
-              }
-            }
-          }
-          Objects {
-            Id: 16805038460146840280
-            Name: "AnimationRoot"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.610630095
-                Y: 0.610630095
-                Z: 0.610630095
-              }
-            }
-            ParentId: 17269128180384276295
-            ChildIds: 4045421149144476280
-            ChildIds: 4013502212269835665
-            ChildIds: 5014328569379089931
-            ChildIds: 5275093175448099346
-            ChildIds: 5581127631803066353
-            ChildIds: 1726946609777346870
-            ChildIds: 2467607070464848952
-            ChildIds: 14491843285731747378
-            ChildIds: 5180587088587352046
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 4045421149144476280
-            Name: "Point Light"
-            Transform {
-              Location {
-                X: -0.13965793
-                Y: 0.541298449
-                Z: 98.9257126
-              }
-              Rotation {
-                Yaw: 8.69685745
-              }
-              Scale {
-                X: 2.39806437
-                Y: 2.39806437
-                Z: 2.39806437
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Light {
-              Intensity: 3.99872875
-              Color {
-                R: 0.940000057
-                G: 0.63496691
-                A: 1
-              }
-              VolumetricIntensity: 5
-              TeamSettings {
-              }
-              Light {
-                Temperature: 6500
-                LocalLight {
-                  AttenuationRadius: 1000
-                  PointLight {
-                    SourceRadius: 20
-                    SoftSourceRadius: 20
-                    FallOffExponent: 8
-                    UseFallOffExponent: true
-                  }
-                }
-                MaxDrawDistance: 5000
-                MaxDistanceFadeRange: 1000
-              }
-            }
-          }
-          Objects {
-            Id: 4013502212269835665
-            Name: "Manticore Logo"
-            Transform {
-              Location {
-                X: -1.66039526
-                Y: -28.7400284
-                Z: 66.8811569
-              }
-              Rotation {
-                Pitch: -2.0307312
-                Yaw: 174.02002
-                Roll: 51.5842819
-              }
-              Scale {
-                X: 0.0930957943
-                Y: 0.0930957943
-                Z: 0.0930957943
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 12667524768957844711
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5014328569379089931
-            Name: "Rope"
-            Transform {
-              Location {
-                Z: 90.8998795
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.284355223
-                Y: 0.284355223
-                Z: 0.284355223
-              }
-            }
-            ParentId: 16805038460146840280
-            ChildIds: 12870739310647191157
-            ChildIds: 2482135563588849166
-            ChildIds: 7030573913101508861
-            ChildIds: 13106069239793415514
-            ChildIds: 8458170509867014624
-            ChildIds: 10602838408649846575
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 12870739310647191157
-            Name: "Rope Beam"
-            Transform {
-              Location {
-                Z: -7.31534863
-              }
-              Rotation {
-                Yaw: 89.9999542
-              }
-              Scale {
-                X: 1.03208923
-                Y: 1.03208923
-                Z: 1.03208923
-              }
-            }
-            ParentId: 5014328569379089931
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 4.36769915
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7364460640411375594
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 2482135563588849166
-            Name: "Rope Beam"
-            Transform {
-              Location {
-                Z: 10.6827145
-              }
-              Rotation {
-                Yaw: 89.9999542
-              }
-              Scale {
-                X: 1.03208911
-                Y: 1.03208911
-                Z: 1.03208911
-              }
-            }
-            ParentId: 5014328569379089931
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 4.36769915
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7364460640411375594
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 7030573913101508861
-            Name: "Sphere"
-            Transform {
-              Location {
-                Y: -32.9839249
-              }
-              Rotation {
-                Pitch: -44.5351563
-                Yaw: -3.05175781e-05
-                Roll: 3.67557295e-05
-              }
-              Scale {
-                X: 0.6163553
-                Y: 0.502013624
-                Z: 0.233985871
-              }
-            }
-            ParentId: 5014328569379089931
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 14.0484686
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.952991605
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 13106069239793415514
-            Name: "Sphere"
-            Transform {
-              Location {
-                Y: -32.9839249
-              }
-              Rotation {
-                Pitch: -43.1928711
-                Yaw: -177.561447
-                Roll: 159.227219
-              }
-              Scale {
-                X: 0.716920257
-                Y: 0.502006233
-                Z: 0.233996719
-              }
-            }
-            ParentId: 5014328569379089931
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 14.0484686
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.952991605
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 8458170509867014624
-            Name: "Rope Hanging"
-            Transform {
-              Location {
-                X: 0.61355865
-                Y: -48.4834862
-                Z: -7.98964548
-              }
-              Rotation {
-                Pitch: -49.198761
-                Yaw: -50.2008972
-                Roll: 179.884674
-              }
-              Scale {
-                X: 1.87496161
-                Y: 1.87496161
-                Z: 1.87496161
-              }
-            }
-            ParentId: 5014328569379089931
-            ChildIds: 18166924090130598325
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 18166924090130598325
-            Name: "Ring - Quarter"
-            Transform {
-              Location {
-                X: 5.13703918
-                Y: -44.7223282
-                Z: 0.487283498
-              }
-              Rotation {
-                Pitch: 0.000642037718
-                Yaw: 100.198875
-                Roll: 0.000418045733
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 8458170509867014624
-            ChildIds: 5557256830498765183
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 17.22118
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7511473365680159662
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5557256830498765183
-            Name: "End of Rope"
-            Transform {
-              Location {
-                X: -3.77061749
-                Y: -44.7984505
-                Z: 0.244406238
-              }
-              Rotation {
-                Pitch: -46.1278381
-                Yaw: -84.8497314
-                Roll: -95.2980957
-              }
-              Scale {
-                X: 0.116391383
-                Y: 0.116391383
-                Z: 0.116391383
-              }
-            }
-            ParentId: 18166924090130598325
-            ChildIds: 14624108783697290561
-            ChildIds: 5737427749620139312
-            ChildIds: 3759662117919486587
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 14624108783697290561
-            Name: "Sphere"
-            Transform {
-              Location {
-                X: 0.00212608231
-                Y: -0.000177688082
-                Z: -2.83509707
-              }
-              Rotation {
-                Pitch: -0.000427246094
-                Yaw: 93.3217316
-                Roll: -0.000152587891
-              }
-              Scale {
-                X: 1.01843894
-                Y: 1.01843894
-                Z: 0.956760466
-              }
-            }
-            ParentId: 5557256830498765183
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 3.00440884
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5737427749620139312
-            Name: "Horn"
-            Transform {
-              Location {
-                Z: 8.58203125
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.986250758
-                Y: 0.986250758
-                Z: 0.986250758
-              }
-            }
-            ParentId: 5557256830498765183
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 1.4
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 289956829384114960
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 3759662117919486587
-            Name: "Cylinder - Rounded"
-            Transform {
-              Location {
-                X: 3.08842826
-                Y: -2.6065104
-                Z: -41.7085152
-              }
-              Rotation {
-                Pitch: -3.82147217
-                Yaw: 93.4387817
-                Roll: -175.999924
-              }
-              Scale {
-                X: 0.91481334
-                Y: 0.914801538
-                Z: 0.341985583
-              }
-            }
-            ParentId: 5557256830498765183
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 643713811288060970
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 2
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13828127444655325311
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 10602838408649846575
-            Name: "Rope Hanging"
-            Transform {
-              Location {
-                X: -9.90753078
-                Y: -48.3764229
-                Z: -11.0636148
-              }
-              Rotation {
-                Pitch: -43.8501587
-                Yaw: -127.819244
-                Roll: 173.504562
-              }
-              Scale {
-                X: 1.87494433
-                Y: 1.87494433
-                Z: 1.87494433
-              }
-            }
-            ParentId: 5014328569379089931
-            ChildIds: 4171974754346272646
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 4171974754346272646
-            Name: "Ring - Quarter"
-            Transform {
-              Location {
-                X: 1.11063027
-                Y: 42.9790764
-                Z: 9.1097393
-              }
-              Rotation {
-                Pitch: -9.55212116
-                Yaw: -95.455864
-                Roll: -174.70929
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 10602838408649846575
-            ChildIds: 7841589918046226929
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 17.22118
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7511473365680159662
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 7841589918046226929
-            Name: "End of Rope"
-            Transform {
-              Location {
-                X: -2.95949984
-                Y: -45.5875626
-                Z: 0.244429424
-              }
-              Rotation {
-                Pitch: -43.1372681
-                Yaw: 94.6238632
-                Roll: 86.9625
-              }
-              Scale {
-                X: 0.116391383
-                Y: 0.116391383
-                Z: 0.116391383
-              }
-            }
-            ParentId: 4171974754346272646
-            ChildIds: 11818696979870035880
-            ChildIds: 17988331952223300210
-            ChildIds: 18220122291376365075
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 11818696979870035880
-            Name: "Sphere"
-            Transform {
-              Location {
-                X: 0.00212608231
-                Y: -0.000177688082
-                Z: -2.83509707
-              }
-              Rotation {
-                Pitch: -0.000427246094
-                Yaw: 93.3217316
-                Roll: -0.000152587891
-              }
-              Scale {
-                X: 1.01843894
-                Y: 1.01843894
-                Z: 0.956760466
-              }
-            }
-            ParentId: 7841589918046226929
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 3.00440884
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 17988331952223300210
-            Name: "Horn"
-            Transform {
-              Location {
-                Z: 8.58203125
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.986250758
-                Y: 0.986250758
-                Z: 0.986250758
-              }
-            }
-            ParentId: 7841589918046226929
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 1.4
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 289956829384114960
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 18220122291376365075
-            Name: "Cylinder - Rounded"
-            Transform {
-              Location {
-                X: 2.85794258
-                Y: -2.41274095
-                Z: -38.6203346
-              }
-              Rotation {
-                Pitch: -3.82147217
-                Yaw: 93.4388123
-                Roll: -175.999924
-              }
-              Scale {
-                X: 0.91481334
-                Y: 0.914801538
-                Z: 0.341985583
-              }
-            }
-            ParentId: 7841589918046226929
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 643713811288060970
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 2
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13828127444655325311
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5275093175448099346
-            Name: "Sphere"
-            Transform {
-              Location {
-                Z: 35.0316086
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.999999881
-                Y: 0.999999881
-                Z: 0.632985771
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 0.152663499
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5581127631803066353
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 49.9553871
-              }
-              Rotation {
-                Yaw: 120.41172
-              }
-              Scale {
-                X: 0.876078725
-                Y: 0.876078725
-                Z: 0.646200836
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 1726946609777346870
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 2467607070464848952
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-                Yaw: -61.7213974
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 14491843285731747378
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-                Yaw: 57.2607117
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 5180587088587352046
-            Name: "Cone - Hollow"
-            Transform {
-              Location {
-                Z: 125.757301
-              }
-              Rotation {
-                Yaw: -6.83019698e-06
-                Roll: -179.912949
-              }
-              Scale {
-                X: 0.70625037
-                Y: 0.706253231
-                Z: 0.430166
-              }
-            }
-            ParentId: 16805038460146840280
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13877434218455327304
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 13877434218455327304
-      Name: "Cone - Hollow"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cone-hollow_001"
-      }
-    }
-    Assets {
-      Id: 585112705082600373
-      Name: "Cone - Truncated Narrow"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cone_truncated_002"
-      }
-    }
-    Assets {
-      Id: 13996105137076862878
-      Name: "Custom Carpet 02_2"
-      PlatformAssetType: 13
-      CustomMaterialAsset {
-        BaseMaterialId: 15682903248876058593
-        ParameterOverrides {
-          Overrides {
-            Name: "color"
-            Color {
-              R: 0.278894335
-              G: 0.064803265
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "color_accent"
-            Color {
-              R: 0.278894335
-              G: 0.064803265
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "color_secondary"
-            Color {
-              R: 0.278894335
-              G: 0.064803265
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "fresnel_color"
-            Color {
-              R: 0.278894335
-              G: 0.064803265
-              A: 1
-            }
-          }
-        }
-      }
-    }
-    Assets {
-      Id: 15682903248876058593
-      Name: "Carpet 02"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_carpet_002_uv"
-      }
-    }
-    Assets {
-      Id: 643713811288060970
-      Name: "Plastic Shiny"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "plastic_shiny_001"
-      }
-    }
-    Assets {
-      Id: 13828127444655325311
-      Name: "Cylinder - Rounded"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cylinder_rounded_002"
-      }
-    }
-    Assets {
-      Id: 289956829384114960
-      Name: "Horn"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_horn_001"
-      }
-    }
-    Assets {
-      Id: 7511473365680159662
-      Name: "Ring - Quarter"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_quarter_torus_002"
-      }
-    }
-    Assets {
-      Id: 15076015910339775634
-      Name: "Rope"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_rope_001"
-      }
-    }
-    Assets {
-      Id: 7364460640411375594
-      Name: "Ring - Thick"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_torus_005"
-      }
-    }
-    Assets {
-      Id: 12667524768957844711
-      Name: "Manticore Logo"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_logo_manticore_01"
-      }
-    }
-    Assets {
-      Id: 9150680640603290075
-      Name: "Loot Bag 5"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 419777977596350189
-          Objects {
-            Id: 419777977596350189
-            Name: "Loot Bag 5"
-            Transform {
-              Scale {
-                X: 0.99999994
-                Y: 0.99999994
-                Z: 0.99999994
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 14210764623626310408
-            ChildIds: 5397262704155259510
-            ChildIds: 14382925636785548216
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:ResourceName"
-                String: "Coins"
-              }
-              Overrides {
-                Name: "cs:ResourceMin"
-                Int: 5
-              }
-              Overrides {
-                Name: "cs:ResourceMax"
-                Int: 5
-              }
-              Overrides {
-                Name: "cs:Trigger"
-                ObjectReference {
-                  SubObjectId: 5397262704155259510
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLoot"
-                AssetReference {
-                  Id: 13053008494495394347
-                }
-              }
-              Overrides {
-                Name: "cs:AbilityPickupLootHigh"
-                AssetReference {
-                  Id: 12343836295963297871
-                }
-              }
-              Overrides {
-                Name: "cs:DestroyDelay"
-                Float: 0.2
-              }
-              Overrides {
-                Name: "cs:PickupFX"
-                AssetReference {
-                  Id: 5816033782698853515
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 14210764623626310408
-            Name: "LootPickup"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-                Yaw: 1.02452832e-05
-              }
-              Scale {
-                X: 1.00000012
-                Y: 1.00000012
-                Z: 1.00000012
-              }
-            }
-            ParentId: 419777977596350189
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 4646432397669595989
-              }
-            }
-          }
-          Objects {
-            Id: 5397262704155259510
-            Name: "Trigger"
-            Transform {
-              Location {
-                Z: 28.5500526
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.582240462
-                Y: 0.582240462
-                Z: 0.582240462
-              }
-            }
-            ParentId: 419777977596350189
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Trigger {
-              Interactable: true
-              InteractionLabel: "Get Loot Bag"
-              TeamSettings {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              TriggerShape_v2 {
-                Value: "mc:etriggershape:sphere"
-              }
-            }
-          }
-          Objects {
-            Id: 14382925636785548216
-            Name: "ClientContext"
-            Transform {
-              Location {
-              }
-              Rotation {
-                Yaw: 90.8424
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 419777977596350189
-            ChildIds: 6556124019700541970
-            ChildIds: 9962592653912831336
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 6556124019700541970
-            Name: "PickupBobRotateClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 2.39806485
-                Y: 2.39806485
-                Z: 2.39806485
-              }
-            }
-            ParentId: 14382925636785548216
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Target"
-                ObjectReference {
-                  SubObjectId: 9962592653912831336
-                }
-              }
-              Overrides {
-                Name: "cs:RotationSpeed"
-                Float: 0
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 5631192551256795714
-              }
-            }
-          }
-          Objects {
-            Id: 9962592653912831336
-            Name: "AnimationRoot"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.389245361
-                Y: 0.389245361
-                Z: 0.389245361
-              }
-            }
-            ParentId: 14382925636785548216
-            ChildIds: 925571488236501906
-            ChildIds: 15836581975501381171
-            ChildIds: 3002167623471514226
-            ChildIds: 10393677131346206180
-            ChildIds: 11195010155753868206
-            ChildIds: 14011053830191137704
-            ChildIds: 2069222498426768254
-            ChildIds: 11666313932214334928
-            ChildIds: 4703451765142517639
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 925571488236501906
-            Name: "Point Light"
-            Transform {
-              Location {
-                X: -0.139657944
-                Y: 0.541298389
-                Z: 98.9257126
-              }
-              Rotation {
-                Yaw: 8.69685745
-              }
-              Scale {
-                X: 2.39806414
-                Y: 2.39806414
-                Z: 2.39806414
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Light {
-              Intensity: 3.99872875
-              Color {
-                R: 0.940000057
-                G: 0.63496691
-                A: 1
-              }
-              VolumetricIntensity: 5
-              TeamSettings {
-              }
-              Light {
-                Temperature: 6500
-                LocalLight {
-                  AttenuationRadius: 1000
-                  PointLight {
-                    SourceRadius: 20
-                    SoftSourceRadius: 20
-                    FallOffExponent: 8
-                    UseFallOffExponent: true
-                  }
-                }
-                MaxDrawDistance: 5000
-                MaxDistanceFadeRange: 1000
-              }
-            }
-          }
-          Objects {
-            Id: 15836581975501381171
-            Name: "Cone - Hollow"
-            Transform {
-              Location {
-                Z: 125.757294
-              }
-              Rotation {
-                Yaw: -6.83019698e-06
-                Roll: -179.912949
-              }
-              Scale {
-                X: 0.70625031
-                Y: 0.706253171
-                Z: 0.430165976
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13877434218455327304
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 3002167623471514226
-            Name: "Manticore Logo"
-            Transform {
-              Location {
-                X: -1.6603924
-                Y: -28.7400284
-                Z: 66.8811569
-              }
-              Rotation {
-                Pitch: -2.0307312
-                Yaw: 174.02002
-                Roll: 51.5842819
-              }
-              Scale {
-                X: 0.0930957869
-                Y: 0.0930957869
-                Z: 0.0930957869
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 12667524768957844711
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 10393677131346206180
-            Name: "Rope"
-            Transform {
-              Location {
-                Z: 90.8998718
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.284355223
-                Y: 0.284355223
-                Z: 0.284355223
-              }
-            }
-            ParentId: 9962592653912831336
-            ChildIds: 13018746697192755146
-            ChildIds: 15823947927668122928
-            ChildIds: 6143593107704587304
-            ChildIds: 1153091856683656921
-            ChildIds: 4319585809882453334
-            ChildIds: 6974676777560561329
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 13018746697192755146
-            Name: "Rope Beam"
-            Transform {
-              Location {
-                Z: -7.31534863
-              }
-              Rotation {
-                Yaw: 89.9999542
-              }
-              Scale {
-                X: 1.03208923
-                Y: 1.03208923
-                Z: 1.03208923
-              }
-            }
-            ParentId: 10393677131346206180
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 4.36769915
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7364460640411375594
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 15823947927668122928
-            Name: "Rope Beam"
-            Transform {
-              Location {
-                Z: 10.6827145
-              }
-              Rotation {
-                Yaw: 89.9999542
-              }
-              Scale {
-                X: 1.03208911
-                Y: 1.03208911
-                Z: 1.03208911
-              }
-            }
-            ParentId: 10393677131346206180
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 4.36769915
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7364460640411375594
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 6143593107704587304
-            Name: "Sphere"
-            Transform {
-              Location {
-                Y: -32.9839249
-              }
-              Rotation {
-                Pitch: -44.5351563
-                Yaw: -3.05175781e-05
-                Roll: 3.67557295e-05
-              }
-              Scale {
-                X: 0.6163553
-                Y: 0.502013624
-                Z: 0.233985871
-              }
-            }
-            ParentId: 10393677131346206180
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 14.0484686
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.952991605
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 1153091856683656921
-            Name: "Sphere"
-            Transform {
-              Location {
-                Y: -32.9839249
-              }
-              Rotation {
-                Pitch: -43.1928711
-                Yaw: -177.561447
-                Roll: 159.227219
-              }
-              Scale {
-                X: 0.716920257
-                Y: 0.502006233
-                Z: 0.233996719
-              }
-            }
-            ParentId: 10393677131346206180
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 14.0484686
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.952991605
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 4319585809882453334
-            Name: "Rope Hanging"
-            Transform {
-              Location {
-                X: 0.61355865
-                Y: -48.4834862
-                Z: -7.98964548
-              }
-              Rotation {
-                Pitch: -49.198761
-                Yaw: -50.2008972
-                Roll: 179.884674
-              }
-              Scale {
-                X: 1.87496161
-                Y: 1.87496161
-                Z: 1.87496161
-              }
-            }
-            ParentId: 10393677131346206180
-            ChildIds: 8977612768242027257
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 8977612768242027257
-            Name: "Ring - Quarter"
-            Transform {
-              Location {
-                X: 5.13703918
-                Y: -44.7223282
-                Z: 0.487283498
-              }
-              Rotation {
-                Pitch: 0.000642037718
-                Yaw: 100.198875
-                Roll: 0.000418045733
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4319585809882453334
-            ChildIds: 11870002548417729624
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 17.22118
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7511473365680159662
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 11870002548417729624
-            Name: "End of Rope"
-            Transform {
-              Location {
-                X: -3.77061749
-                Y: -44.7984505
-                Z: 0.244406238
-              }
-              Rotation {
-                Pitch: -46.1278381
-                Yaw: -84.8497314
-                Roll: -95.2980957
-              }
-              Scale {
-                X: 0.116391383
-                Y: 0.116391383
-                Z: 0.116391383
-              }
-            }
-            ParentId: 8977612768242027257
-            ChildIds: 18339364751025464526
-            ChildIds: 8788020937273404913
-            ChildIds: 9887665817657720679
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 18339364751025464526
-            Name: "Sphere"
-            Transform {
-              Location {
-                X: 0.00212608231
-                Y: -0.000177688082
-                Z: -2.83509707
-              }
-              Rotation {
-                Pitch: -0.000427246094
-                Yaw: 93.3217316
-                Roll: -0.000152587891
-              }
-              Scale {
-                X: 1.01843894
-                Y: 1.01843894
-                Z: 0.956760466
-              }
-            }
-            ParentId: 11870002548417729624
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 3.00440884
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 8788020937273404913
-            Name: "Horn"
-            Transform {
-              Location {
-                Z: 8.58203125
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.986250758
-                Y: 0.986250758
-                Z: 0.986250758
-              }
-            }
-            ParentId: 11870002548417729624
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 1.4
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 289956829384114960
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 9887665817657720679
-            Name: "Cylinder - Rounded"
-            Transform {
-              Location {
-                X: 3.08842826
-                Y: -2.6065104
-                Z: -41.7085152
-              }
-              Rotation {
-                Pitch: -3.82147217
-                Yaw: 93.4387817
-                Roll: -175.999924
-              }
-              Scale {
-                X: 0.91481334
-                Y: 0.914801538
-                Z: 0.341985583
-              }
-            }
-            ParentId: 11870002548417729624
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 643713811288060970
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 2
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13828127444655325311
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 6974676777560561329
-            Name: "Rope Hanging"
-            Transform {
-              Location {
-                X: -9.90753078
-                Y: -48.3764229
-                Z: -11.0636148
-              }
-              Rotation {
-                Pitch: -43.8501587
-                Yaw: -127.819244
-                Roll: 173.504562
-              }
-              Scale {
-                X: 1.87494433
-                Y: 1.87494433
-                Z: 1.87494433
-              }
-            }
-            ParentId: 10393677131346206180
-            ChildIds: 5562364169775775006
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 5562364169775775006
-            Name: "Ring - Quarter"
-            Transform {
-              Location {
-                X: 1.11063027
-                Y: 42.9790764
-                Z: 9.1097393
-              }
-              Rotation {
-                Pitch: -9.55212116
-                Yaw: -95.455864
-                Roll: -174.70929
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 6974676777560561329
-            ChildIds: 4043117053934879958
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 17.22118
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 5.06681442
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 7511473365680159662
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 4043117053934879958
-            Name: "End of Rope"
-            Transform {
-              Location {
-                X: -2.95949984
-                Y: -45.5875626
-                Z: 0.244429424
-              }
-              Rotation {
-                Pitch: -43.1372681
-                Yaw: 94.6238632
-                Roll: 86.9625
-              }
-              Scale {
-                X: 0.116391383
-                Y: 0.116391383
-                Z: 0.116391383
-              }
-            }
-            ParentId: 5562364169775775006
-            ChildIds: 16075264709006768999
-            ChildIds: 15656772842054725628
-            ChildIds: 8598763607449445486
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 16075264709006768999
-            Name: "Sphere"
-            Transform {
-              Location {
-                X: 0.00212608231
-                Y: -0.000177688082
-                Z: -2.83509707
-              }
-              Rotation {
-                Pitch: -0.000427246094
-                Yaw: 93.3217316
-                Roll: -0.000152587891
-              }
-              Scale {
-                X: 1.01843894
-                Y: 1.01843894
-                Z: 0.956760466
-              }
-            }
-            ParentId: 4043117053934879958
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 3.00440884
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 15656772842054725628
-            Name: "Horn"
-            Transform {
-              Location {
-                Z: 8.58203125
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.986250758
-                Y: 0.986250758
-                Z: 0.986250758
-              }
-            }
-            ParentId: 4043117053934879958
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 15076015910339775634
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 3
-                  G: 2.28345013
-                  B: 0.470999837
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 1.4
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 289956829384114960
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 8598763607449445486
-            Name: "Cylinder - Rounded"
-            Transform {
-              Location {
-                X: 2.85794258
-                Y: -2.41274095
-                Z: -38.6203346
-              }
-              Rotation {
-                Pitch: -3.82147217
-                Yaw: 93.4388123
-                Roll: -175.999924
-              }
-              Scale {
-                X: 0.91481334
-                Y: 0.914801538
-                Z: 0.341985583
-              }
-            }
-            ParentId: 4043117053934879958
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 643713811288060970
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 2
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 13828127444655325311
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 11195010155753868206
-            Name: "Sphere"
-            Transform {
-              Location {
-                Z: 35.0316124
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.99999994
-                Y: 0.99999994
-                Z: 0.632985711
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:utile"
-                Float: 0.152663499
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:vtile"
-                Float: 0.125
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 1413196292823476264
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 14011053830191137704
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 49.9553871
-              }
-              Rotation {
-                Yaw: 120.41172
-              }
-              Scale {
-                X: 0.876078665
-                Y: 0.876078665
-                Z: 0.646200776
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 2069222498426768254
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 11666313932214334928
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-                Yaw: -61.7213974
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 4703451765142517639
-            Name: "Cone - Truncated Narrow"
-            Transform {
-              Location {
-                Z: 43.9303856
-              }
-              Rotation {
-                Yaw: 57.2607117
-              }
-              Scale {
-                X: 0.382453054
-                Y: 0.950029075
-                Z: 0.950029075
-              }
-            }
-            ParentId: 9962592653912831336
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 13996105137076862878
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 0.122000009
-                  G: 0.0815654397
-                  B: 0.0409012772
-                  A: 1
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: true
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 585112705082600373
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 4887434281890312066
-      Name: "Manticoin Pickup"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 9644925496196329064
-          Objects {
-            Id: 9644925496196329064
-            Name: "Manticoin Pickup"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 11610759354044121049
-            ChildIds: 16481633948971128628
-            ChildIds: 7291182907319953576
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:HealthChange"
-                Float: 0
-              }
-              Overrides {
-                Name: "cs:Resource"
-                String: "Coins"
-              }
-              Overrides {
-                Name: "cs:ResourceChange"
-                Int: 1
-              }
-              Overrides {
-                Name: "cs:MaxResource"
-                Int: 0
-              }
-              Overrides {
-                Name: "cs:PickupEffects"
-                AssetReference {
-                  Id: 5816033782698853515
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 11610759354044121049
-            Name: "ResourcePickupServer"
-            Transform {
-              Location {
-                Z: 50
-              }
-              Rotation {
-                Yaw: -1.02452796e-05
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 9644925496196329064
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:ComponentRoot"
-                ObjectReference {
-                  SubObjectId: 9644925496196329064
-                }
-              }
-              Overrides {
-                Name: "cs:Trigger"
-                ObjectReference {
-                  SubObjectId: 16481633948971128628
-                }
-              }
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 8031104017213994216
-              }
-            }
-          }
-          Objects {
-            Id: 16481633948971128628
-            Name: "Trigger"
-            Transform {
-              Location {
-                Z: 75
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.5
-                Y: 0.5
-                Z: 0.5
-              }
-            }
-            ParentId: 9644925496196329064
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Trigger {
-              TeamSettings {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              TriggerShape_v2 {
-                Value: "mc:etriggershape:box"
-              }
-            }
-          }
-          Objects {
-            Id: 7291182907319953576
-            Name: "ClientContext"
-            Transform {
-              Location {
-                Z: 50
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 9644925496196329064
-            ChildIds: 10674365522626696987
-            ChildIds: 7074510080183283599
-            UnregisteredParameters {
-            }
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 10674365522626696987
-            Name: "PickupBobRotateClient"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 7291182907319953576
-            UnregisteredParameters {
-              Overrides {
-                Name: "cs:Target"
-                ObjectReference {
-                  SubObjectId: 7074510080183283599
-                }
-              }
-              Overrides {
-                Name: "cs:BobAmplitude"
-                Float: 15
-              }
-              Overrides {
-                Name: "cs:BobFrequency"
-                Float: 2
-              }
-              Overrides {
-                Name: "cs:RotationSpeed"
-                Float: 100
-              }
-              Overrides {
-                Name: "cs:SpawnImpulse"
-                Float: 1000
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 5631192551256795714
-              }
-            }
-          }
-          Objects {
-            Id: 7074510080183283599
-            Name: "Art"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 0.672396362
-                Y: 0.672396362
-                Z: 0.672396362
-              }
-            }
-            ParentId: 7291182907319953576
-            ChildIds: 13692877750890395898
-            ChildIds: 4533975622460581058
-            ChildIds: 443168202698931189
-            ChildIds: 4579396877148861918
-            ChildIds: 10719889289256861908
-            UnregisteredParameters {
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Folder {
-              IsGroup: true
-            }
-          }
-          Objects {
-            Id: 13692877750890395898
-            Name: "Point Light"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 7074510080183283599
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Light {
-              Intensity: 1.5
-              Color {
-                R: 1
-                G: 0.83609277
-                B: 0.00999999
-                A: 1
-              }
-              VolumetricIntensity: 5
-              TeamSettings {
-              }
-              Light {
-                Temperature: 6500
-                LocalLight {
-                  AttenuationRadius: 1000
-                  PointLight {
-                    SourceRadius: 20
-                    SoftSourceRadius: 20
-                    FallOffExponent: 8
-                    UseFallOffExponent: true
-                  }
-                }
-                MaxDrawDistance: 5000
-                MaxDistanceFadeRange: 1000
-              }
-            }
-          }
-          Objects {
-            Id: 4533975622460581058
-            Name: "Cylinder - Polished"
-            Transform {
-              Location {
-                X: 0.903503418
-              }
-              Rotation {
-                Pitch: 90
-                Yaw: -46.6861343
-                Roll: -46.6861267
-              }
-              Scale {
-                X: 0.628582716
-                Y: 0.628582716
-                Z: 0.0487109534
-              }
-            }
-            ParentId: 7074510080183283599
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 4289160600405295316
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 1
-                  G: 0.632533371
-                  B: 0.15199995
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 8803369277840038394
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 443168202698931189
-            Name: "Ring"
-            Transform {
-              Location {
-                X: 0.903503418
-              }
-              Rotation {
-                Pitch: 90
-                Yaw: -19.4712181
-                Roll: -19.4712219
-              }
-              Scale {
-                X: 0.705966771
-                Y: 0.70596683
-                Z: 0.639775634
-              }
-            }
-            ParentId: 7074510080183283599
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 4289160600405295316
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 1
-                  G: 0.632533371
-                  B: 0.15199995
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 2433235999455009803
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 4579396877148861918
-            Name: "Logo"
-            Transform {
-              Location {
-                X: -1.80706787
-              }
-              Rotation {
-                Yaw: 89.9998169
-                Roll: 89.9998779
-              }
-              Scale {
-                X: 0.244653046
-                Y: 0.244653046
-                Z: 0.244653046
-              }
-            }
-            ParentId: 7074510080183283599
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 4289160600405295316
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 1
-                  G: 0.8229
-                  B: 0.493999958
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 12667524768957844711
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-          Objects {
-            Id: 10719889289256861908
-            Name: "Logo"
-            Transform {
-              Location {
-                X: 3.32022095
-              }
-              Rotation {
-                Pitch: 6.83018879e-06
-                Yaw: -90
-                Roll: 89.9996643
-              }
-              Scale {
-                X: 0.244653046
-                Y: 0.244653046
-                Z: 0.244653046
-              }
-            }
-            ParentId: 7074510080183283599
-            UnregisteredParameters {
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:id"
-                AssetReference {
-                  Id: 4289160600405295316
-                }
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:smart"
-                Bool: false
-              }
-              Overrides {
-                Name: "ma:Shared_BaseMaterial:color"
-                Color {
-                  R: 1
-                  G: 0.8229
-                  B: 0.493999958
-                  A: 1
-                }
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CoreMesh {
-              MeshAsset {
-                Id: 12667524768957844711
-              }
-              Teams {
-                IsTeamCollisionEnabled: true
-                IsEnemyCollisionEnabled: true
-              }
-              EnableCameraCollision: true
-              StaticMesh {
-                Physics {
-                }
-              }
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 2433235999455009803
-      Name: "Ring"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_torus_004"
-      }
-    }
-    Assets {
-      Id: 4289160600405295316
-      Name: "Metal Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_metal_basic_001"
-      }
-    }
-    Assets {
-      Id: 8803369277840038394
-      Name: "Cylinder - Polished"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cylinder_hq_test_001"
-      }
-    }
-    Assets {
-      Id: 8031104017213994216
-      Name: "ResourcePickupServer"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: " --[[\r\nCopyright 2019 Manticore Games, Inc. \r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated\r\ndocumentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the\r\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit\r\npersons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the\r\nSoftware.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE\r\nWARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\r\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\r\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\r\n--]]\r\n\r\n-- Internal custom properties\r\nlocal COMPONENT_ROOT = script:GetCustomProperty(\"ComponentRoot\"):WaitForObject()\r\nlocal TRIGGER = script:GetCustomProperty(\"Trigger\"):WaitForObject()\r\n\r\n-- User exposed properties\r\nlocal HEALTH_CHANGE = COMPONENT_ROOT:GetCustomProperty(\"HealthChange\")\r\nlocal RESOURCE = COMPONENT_ROOT:GetCustomProperty(\"Resource\")\r\nlocal RESOURCE_CHANGE = COMPONENT_ROOT:GetCustomProperty(\"ResourceChange\")\r\nlocal MAX_RESOURCE = COMPONENT_ROOT:GetCustomProperty(\"MaxResource\")\r\nlocal PICKUP_EFFECTS = COMPONENT_ROOT:GetCustomProperty(\"PickupEffects\")\r\n\r\n-- Check user properties\r\nif TRIGGER.isInteractable then\r\n\twarn(\"Trigger cannot be interactable\")\r\n    TRIGGER.isInteractable = false\r\nend\r\n\r\nif MAX_RESOURCE < 0 then\r\n\twarn(\"MaxResource cannot be negative\")\r\n    MAX_RESOURCE = 0\r\nend\r\n\r\n-- nil OnBeginOverlap(Trigger, CoreObject)\r\n-- Change the player\'s resources, broadcast an event, and self-destruct\r\nfunction OnBeginOverlap(trigger, other)\r\n\tif other:IsA(\"Player\") then\r\n\t\tlocal applied = false\r\n\r\n\t\tif HEALTH_CHANGE ~= 0.0 then\r\n\t\t\tif (other.hitPoints < other.maxHitPoints and HEALTH_CHANGE > 0.0) or HEALTH_CHANGE < 0.0 then\r\n\t\t\t\tapplied = true\r\n\t\t\tend\r\n\r\n\t\t\tother:ApplyDamage(Damage.New(-HEALTH_CHANGE))\r\n\t\tend\r\n\t\t\r\n\t\tif RESOURCE ~= \"\" then\r\n\t\t\tlocal currentResource = other:GetResource(RESOURCE)\r\n\t\t\tlocal newResource = currentResource + RESOURCE_CHANGE\r\n\r\n\t\t\tif MAX_RESOURCE > 0 then\r\n\t\t\t\tnewResource = CoreMath.Clamp(newResource, 0, MAX_RESOURCE)\r\n\t\t\telse\r\n\t\t\t\tnewResource = math.max(0, newResource)\r\n\t\t\tend\r\n\r\n\t\t\tif newResource ~= currentResource then\r\n\t\t\t\tapplied = true\r\n\t\t\t\tother:SetResource(RESOURCE, newResource)\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\tif applied then\r\n\t\t\tif PICKUP_EFFECTS then\r\n\t\t\t\t-- This is about to be destroyed, but we want the effects to persist, so they can\'t be parented\r\n\t\t\t\tlocal args = {position = COMPONENT_ROOT:GetWorldPosition(), rotation = COMPONENT_ROOT:GetWorldRotation()}\r\n\t\t\t\tWorld.SpawnAsset(PICKUP_EFFECTS, args)\r\n\t\t\tend\r\n\r\n\t\t\tEvents.Broadcast(\"ResourcePickedUp\", player, COMPONENT_ROOT)\r\n\r\n\t\t\tCOMPONENT_ROOT:Destroy()\r\n\t\tend\r\n\tend\r\nend\r\n\r\n-- Initialize\r\nTRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)\r\n\r\nfor _, player in pairs(Game.GetPlayers()) do\r\n\tif TRIGGER:IsOverlapping(player) then\r\n\t\tOnBeginOverlap(TRIGGER, player)\r\n\tend\r\nend\r\n"
-      }
-    }
-    Assets {
-      Id: 12664807901734619296
-      Name: "LootDropDataEntry"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "\r\nfunction GetId()\r\n\treturn script:GetCustomProperty(\"LootId\")\r\nend\r\n\r\n\r\nfunction GetIncidence()\r\n\treturn script:GetCustomProperty(\"Incidence\")\r\nend\r\n\r\n\r\nfunction GetTemplate()\r\n\treturn script:GetCustomProperty(\"Template\")\r\nend"
-        CustomParameters {
-          Overrides {
-            Name: "cs:LootId"
-            String: "Common"
-          }
-          Overrides {
-            Name: "cs:Incidence"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:Template"
+            Name: "cs:ProjectileBody"
             AssetReference {
             }
           }
+          Overrides {
+            Name: "cs:MuzzleFlash"
+            AssetReference {
+            }
+          }
+          Overrides {
+            Name: "cs:ImpactSurface"
+            AssetReference {
+            }
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter"
+            AssetReference {
+            }
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan"
+            Float: 5
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed"
+            Float: 4000
+          }
+          Overrides {
+            Name: "cs:ProjectileGravity"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:ProjectileHoming"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:HomingDrag"
+            Float: 7
+          }
+          Overrides {
+            Name: "cs:HomingAcceleration"
+            Float: 15000
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:DestructibleManager:tooltip"
+            String: "The Destructible Manager is a required script that provides interaction between NPCs and weapons."
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:ProjectileBody:tooltip"
+            String: "Visual template used for the body of the projectile that is shot when this NPC attacks. The projectile is spawned with rotation and direction matching those of the NPCAttackServer script object, which is why the orientation of this script within the template hierarchy is important."
+          }
+          Overrides {
+            Name: "cs:MuzzleFlash:tooltip"
+            String: "Visual effect to spawn at the \"weapon muzzle\", this can also be a sword swipe effect or sometimes just a sound. It is positioned and rotated to where the NPCAttackServer is located, which is why the orientation of this script within the template hierarchy is important."
+          }
+          Overrides {
+            Name: "cs:ImpactSurface:tooltip"
+            String: "Visual effect to spawn at the point of impact of the projectile, in case a non-character object is impacted (e.g. a wall)."
+          }
+          Overrides {
+            Name: "cs:ImpactCharacter:tooltip"
+            String: "Visual effect to spawn at the point of impact of the projectile, in case a Player or NPC is impacted."
+          }
+          Overrides {
+            Name: "cs:ProjectileLifeSpan:tooltip"
+            String: "How many seconds the projectile will fly in the air and be destroyed in case it does not impact anything."
+          }
+          Overrides {
+            Name: "cs:ProjectileSpeed:tooltip"
+            String: "The initial speed of the projectile, in centimeters per second."
+          }
+          Overrides {
+            Name: "cs:ProjectileGravity:tooltip"
+            String: "The scale of gravity to be used for the projectile. A value of 1 represents Earth gravity. Can be greater than 1. If zero it goes in a straight line (assuming \'homing\' is disabled). If negative the projectile will move upwards over time."
+          }
+          Overrides {
+            Name: "cs:ProjectileHoming:tooltip"
+            String: "The homing property causes the projectile to accelerate towards its target. HomingDrag and HomingAcceleration are important companion properties for homing to work correctly, otherwise the projectile might orbit around the target."
+          }
+          Overrides {
+            Name: "cs:HomingDrag:tooltip"
+            String: "\"Air drag\" to be used in case homing is enabled."
+          }
+          Overrides {
+            Name: "cs:HomingAcceleration:tooltip"
+            String: "Acceleration towards the target, to be used in case homing is enabled."
+          }
         }
-      }
-    }
-    Assets {
-      Id: 1863355464056663245
-      Name: "LootDropDataManager"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "\r\nlocal allDataScripts = script:FindDescendantsByType(\"Script\")\r\n\r\nlocal dropTables = {}\r\nlocal totalIncidences = {}\r\n\r\nTask.Wait()\r\n\r\nfor _,entry in ipairs(allDataScripts) do\r\n\tlocal lootId = entry.context.GetId()\r\n\tlocal incidence = entry.context.GetIncidence()\r\n\t\r\n\tif not dropTables[lootId] then\r\n\t\tdropTables[lootId] = {}\r\n\t\ttotalIncidences[lootId] = 0\r\n\tend\r\n\t\r\n\ttable.insert(dropTables[lootId], entry)\r\n\ttotalIncidences[lootId] = totalIncidences[lootId] + incidence\r\nend\r\n\r\n\r\nfunction GetLootTemplate(lootId)\r\n\tif dropTables[lootId] == nil then\r\n\t\terror(\"Unknown loot ID: \" .. lootId)\r\n\t\treturn\r\n\tend\r\n\t\r\n\tlocal drops = dropTables[lootId]\r\n\tlocal rng = math.random(totalIncidences[lootId])\r\n\t\r\n\tfor _,entry in ipairs(drops) do\r\n\t\tlocal incidence = entry.context.GetIncidence()\r\n\t\tif rng <= incidence then\r\n\t\t\treturn entry.context.GetTemplate()\r\n\t\tend\r\n\t\trng = rng - incidence\r\n\tend\r\n\terror(\"Incidence miscalculation for loot ID:\" .. lootId)\r\n\treturn nil\r\nend\r\n\r\n\r\n\r\n"
       }
     }
     Assets {
@@ -13234,7 +7776,94 @@ Assets {
       Name: "DestructibleManager"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nDestructibleManager\r\nby: standardcombo, Chris C.\r\nv0.7.1\r\n(work in progress)\r\n\r\n--]]\r\n\r\nlocal objectList = {}\r\nlocal IDs = {}\r\n\r\nlocal lastId = 0\r\n\r\n\r\nfunction GetObjects()\r\n\treturn objectList\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\tlocal theScript = objectList[obj]\r\n\tIDs[theScript] = nil\r\n\tobjectList[obj] = nil\r\nend\r\n\r\nfunction RegisterDestructibleObject(theScript)\r\n\tlocal obj = theScript:FindTemplateRoot()\r\n\tif (obj == nil) then\r\n\t\tPrintError(\"DestructibleObjectServer must be part of a template.  \"..theScript.name..\" is not a template.\")\r\n\r\n\telseif (objectList[obj] == nil) then\r\n\t\tobj.destroyEvent:Connect(OnDestroyed)\r\n\t\tobjectList[obj] = theScript\r\n\t\tlocal id = GetIdFor(theScript)\r\n\t\treturn id\r\n\telse\r\n\t\tPrintError(\"Multiple DestructibleObject scripts under the same object.  Don\'t do that.\")\r\n\tend\r\n\treturn -1\r\nend\r\n\r\nfunction GetRegisteredObject(object)\r\n\tlocal table = nil\r\n\tlocal obj = object:FindTemplateRoot()\r\n\tif obj ~= nil then\r\n\t\treturn objectList[obj], obj\r\n\tend\r\n\treturn nil, nil\r\nend\r\n\r\nfunction GetIdFor(theScript)\r\n\tlocal id = IDs[theScript]\r\n\tif id then\r\n\t\treturn id\r\n\tend\r\n\tlastId = lastId + 1\r\n\tid = lastId\r\n\r\n\tIDs[theScript] = id\r\n\treturn id\r\nend\r\n\r\nfunction DamageObject(object, dmg, source, position, rotation)\r\n\t--print(\"DamageObject() object = \" .. tostring(object))\r\n\r\n\tif object ~= nil and object:IsA(\"CoreObject\") then\r\n\t\tlocal theScript, obj = GetRegisteredObject(object)\r\n\t\tif theScript ~= nil and GetObjectTeam(object) ~= GetObjectTeam(source) then\r\n\t\t\ttheScript.context.ApplyDamage(dmg, source, position, rotation)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction GetObjectTeam(object)\r\n\tif object.team ~= nil then\r\n\t\treturn object.team\r\n\tend\r\n\tlocal templateRoot = object:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\nfunction PrintError(err)\r\n\tprint(\"ERROR: \"..err)\r\n\tUI.PrintToScreen(\"ERROR: \"..err)\r\nend\r\n\r\nfunction PrintWarning(err)\r\n\tprint(\"WARNING: \"..err)\r\n\tUI.PrintToScreen(\"WARNING: \"..err)\r\nend\r\n\r\nreturn {\r\n\tRegister = RegisterDestructibleObject,\r\n\tGetRegistered = GetRegisteredObject,\r\n\tPrintError = PrintError,\r\n\tDamageObject = DamageObject,\r\n\tGetObjects = GetObjects,\r\n}"
+        Text: "--[[\r\n\tDestructible Manager\r\n\tby: standardcombo, Chris C.\r\n\tv0.8.0\r\n\t\r\n\tApplies damage to non-player objects.\r\n--]]\r\n\r\n-- Registers itself into the global table\r\nlocal API = {}\r\n_G[\"standardcombo.NPCKit.DestructibleManager\"] = API\r\n\r\n\r\nlocal objectList = {}\r\nlocal IDs = {}\r\n\r\nlocal lastId = 0\r\n\r\n\r\nfunction API.GetObjects()\r\n\treturn objectList\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\tlocal theScript = objectList[obj]\r\n\tIDs[theScript] = nil\r\n\tobjectList[obj] = nil\r\nend\r\n\r\nfunction API.Register(theScript)\r\n\tlocal obj = theScript:FindTemplateRoot()\r\n\tif (obj == nil) then\r\n\t\terror(\"DestructibleObjectServer must be part of a template.  \"..theScript.name..\" is not a template. Maybe it\'s been deinstanced?\")\r\n\r\n\telseif (objectList[obj] == nil) then\r\n\t\tobj.destroyEvent:Connect(OnDestroyed)\r\n\t\tobjectList[obj] = theScript\r\n\t\tlocal id = GetIdFor(theScript)\r\n\t\treturn id\r\n\telse\r\n\t\terror(\"Multiple DestructibleObject scripts under the same object.  Don\'t do that.\")\r\n\tend\r\n\treturn -1\r\nend\r\n\r\nfunction API.GetRegisteredObject(object)\r\n\tlocal table = nil\r\n\tlocal obj = object:FindTemplateRoot()\r\n\tif obj ~= nil then\r\n\t\treturn objectList[obj], obj\r\n\tend\r\n\treturn nil, nil\r\nend\r\n\r\nfunction GetIdFor(theScript)\r\n\tlocal id = IDs[theScript]\r\n\tif id then\r\n\t\treturn id\r\n\tend\r\n\tlastId = lastId + 1\r\n\tid = lastId\r\n\r\n\tIDs[theScript] = id\r\n\treturn id\r\nend\r\n\r\nfunction API.DamageObject(object, dmg, source, position, rotation)\r\n\t--print(\"DamageObject() object = \" .. tostring(object))\r\n\r\n\tif object ~= nil and object:IsA(\"CoreObject\") then\r\n\t\tlocal theScript, obj = API.GetRegisteredObject(object)\r\n\t\tif theScript ~= nil then --and GetObjectTeam(object) ~= GetObjectTeam(source) then\r\n\t\t\ttheScript.context.ApplyDamage(dmg, source, position, rotation)\r\n\t\tend\r\n\tend\r\nend\r\n\r\n"
+      }
+    }
+    Assets {
+      Id: 14162240362023469980
+      Name: "ModuleManager"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tModule Manager\r\n\tv1.0.3\r\n\tby: standardcombo\r\n\t\r\n\tPromotes de-coupling of systems by providing a thin access to\r\n\tnamespaces that can be registered in the global table.\r\n\t\r\n\tFor instance, the Loot Drop Factory registers itself into the\r\n\tglobal table at _G.standardcombo.NPCKit.LOOT_DROP_FACTORY.\r\n\tInstead of using `require()` or searching the hierarchy to\r\n\tfind the Loot Drop Factory, use the Module Manager to get it.\r\n\t\r\n\tUsage example:\r\n\t\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nfunction LOOT_DROP_FACTORY() return MODULE.Get(\"standardcombo.NPCKit.LootDropFactory\") end\r\n\t\r\n--]]\r\n\r\nlocal API = {}\r\n\r\nlocal modules = {}\r\n\r\n\r\nfunction API.Get_Optional(self, path)\r\n\treturn Get_Internal(self, path, true)\r\nend\r\n\r\nfunction API.Get(self, path, isOptionalModule)\r\n\treturn Get_Internal(self, path, isOptionalModule)\r\nend\r\n\r\nfunction Get_Internal(self, path, isOptionalModule)\r\n\tif self ~= API then\r\n\t\tpath = self\r\n\tend\r\n\t\r\n\tif path == nil then\r\n\t\terror(\"Expected module path, received \'nil\' instead.\", 3)\r\n\t\treturn\r\n\tend\r\n\t\r\n\tif modules[path] then\r\n\t\treturn modules[path]\r\n\tend\r\n\t\r\n\tif _G[path] then\r\n\t\tmodules[path] = _G[path]\r\n\t\treturn modules[path]\r\n\tend\r\n\t\r\n\tlocal namespaces = {CoreString.Split(path, \".\")}\r\n\t\r\n\tlocal theModuleTable = _G\r\n\tfor i,value in ipairs(namespaces) do\r\n\t\tif not theModuleTable[value] then\r\n\t\t\tif (not isOptionalModule) then\r\n\t\t\t\terror(\"Missing module \'\" .. path ..\r\n\t\t\t\t\"\'. Check spelling or import it from Community Content.\", 3)\r\n\t\t\tend\r\n\t\t\treturn nil\r\n\t\tend\r\n\t\ttheModuleTable = theModuleTable[value]\r\n\tend\r\n\tmodules[path] = theModuleTable\r\n\treturn modules[path]\r\nend\r\n\r\nreturn API\r\n\r\n"
+      }
+    }
+    Assets {
+      Id: 877607263390645540
+      Name: "NPCAIServer"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tNPCAI - Server\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tLogical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.\r\n\t\r\n\tWill walk over terrain and any objects to get to its objective. To mark objects as not walkable,\r\n\tadd to each one a custom property called \"Walkable\" of type boolean and set to false.\r\n--]]\r\n\r\n-- Component dependencies\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nrequire ( script:GetCustomProperty(\"NPCManager\") )\r\nfunction NPC_MANAGER() return MODULE.Get(\"standardcombo.NPCKit.NPCManager\") end\r\nfunction NAV_MESH() return _G.NavMesh end\r\n\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal ROTATION_ROOT = script:GetCustomProperty(\"RotationRoot\"):WaitForObject()\r\nlocal COLLIDER = script:GetCustomProperty(\"Collider\"):WaitForObject()\r\nlocal TRIGGER = script:GetCustomProperty(\"Trigger\"):GetObject()\r\nlocal ATTACK_COMPONENT = script:GetCustomProperty(\"AttackComponent\"):WaitForObject()\r\n\r\nlocal MOVE_SPEED = ROOT:GetCustomProperty(\"MoveSpeed\") or 400\r\nlocal TURN_SPEED = ROOT:GetCustomProperty(\"TurnSpeed\") or 2\r\nlocal LOGICAL_PERIOD = ROOT:GetCustomProperty(\"LogicalPeriod\") or 0.5\r\nlocal RETURN_TO_SPAWN = ROOT:GetCustomProperty(\"ReturnToSpawn\")\r\nlocal VISION_HALF_ANGLE = ROOT:GetCustomProperty(\"VisionHalfAngle\") or 0\r\nlocal VISION_RADIUS = ROOT:GetCustomProperty(\"VisionRadius\") or 2500\r\nlocal HEARING_RADIUS = ROOT:GetCustomProperty(\"HearingRadius\") or 1000\r\nlocal SEARCH_BONUS_VISION = ROOT:GetCustomProperty(\"SearchBonusVision\") or 5000\r\nlocal SEARCH_DURATION = ROOT:GetCustomProperty(\"SearchDuration\") or 6\r\nlocal POSSIBILITY_RADIUS = ROOT:GetCustomProperty(\"PossibilityRadius\") or 600\r\nlocal CHASE_RADIUS = ROOT:GetCustomProperty(\"ChaseRadius\") or 3500\r\nlocal ATTACK_RANGE = ROOT:GetCustomProperty(\"AttackRange\") or 1500\r\nlocal ATTACK_CAST_TIME = ROOT:GetCustomProperty(\"AttackCast\") or 0.5\r\nlocal ATTACK_RECOVERY_TIME = ROOT:GetCustomProperty(\"AttackRecovery\") or 1.5\r\nlocal ATTACK_COOLDOWN = ROOT:GetCustomProperty(\"AttackCooldown\") or 0\r\nlocal OBJECTIVE_THRESHOLD_DISTANCE_SQUARED = 900\r\n\r\nMAX_HEALTH = ROOT:GetCustomProperty(\"CurrentHealth\")\r\n\r\nlocal PATHING_STEP = MOVE_SPEED * LOGICAL_PERIOD + 10\r\nlocal PATHING_STEP_SQUARED = PATHING_STEP * PATHING_STEP\r\n\r\nlocal RAY_DISTANCE_FROM_GROUND = COLLIDER:GetPosition().z + 400\r\nlocal RAY_DISTANCE_DOWN_VECTOR = Vector3.New(0, 0, -900)\r\n\r\nlocal VISION_RADIUS_SQUARED = VISION_RADIUS * VISION_RADIUS\r\nlocal HEARING_RADIUS_SQUARED = HEARING_RADIUS * HEARING_RADIUS\r\nlocal SEARCH_RADIUS_SQUARED = (VISION_RADIUS + SEARCH_BONUS_VISION) * (VISION_RADIUS + SEARCH_BONUS_VISION)\r\nlocal CHASE_RADIUS_SQUARED = CHASE_RADIUS * CHASE_RADIUS\r\nlocal ATTACK_RANGE_SQUARED = ATTACK_RANGE * ATTACK_RANGE\r\n\r\nlocal SPAWN_POSITION = ROOT:GetWorldPosition()\r\n\r\nlocal DEAD_1_DURATION = 4\r\nlocal DEAD_2_DURATION = 6\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nlocal currentState = STATE_SLEEPING\r\nlocal stateTime = 0\r\n\r\nlocal logicStepDelay = 0\r\nlocal target = nil\r\nlocal moveObjective = nil\r\nlocal nextMoveObjective = nil\r\nlocal stepDestination = SPAWN_POSITION\r\nlocal navMeshPath = nil\r\nlocal searchStartPosition = nil\r\nlocal searchEndPosition = nil\r\nlocal searchTimeElapsed = -1\r\nlocal searchPrecision = 1\r\nlocal attackCooldown = 0\r\n\r\nlocal temporaryVisionAngle = nil\r\nlocal temporaryVisionRadius = nil\r\nlocal temporaryHearingRadius = nil\r\n\t\r\n\r\nfunction SetState(newState)\r\n\t--print(\"NewState = \" .. newState)\r\n\r\n\tif (newState == STATE_SLEEPING) then\r\n\t\tROTATION_ROOT:StopRotate()\r\n\t\t\r\n\telseif (newState == STATE_ENGAGING) then\r\n\t\t--print(\"target = \" .. tostring(target) .. \", moveSpeed = \" .. tostring(MOVE_SPEED) .. \", attackRange = \" .. ATTACK_RANGE)\r\n\r\n\t\tif (not IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED)) then\r\n\t\t\tlocal targetPosition = target:GetWorldPosition()\r\n\t\t\tStepTowards(targetPosition)\r\n\t\tend\r\n\r\n\t\tROTATION_ROOT:LookAtContinuous(target, true, TURN_SPEED)\r\n\r\n\telseif (newState == STATE_PATROLLING) then\r\n\t\tlocal targetPosition = moveObjective\r\n\t\tStepTowards(targetPosition)\r\n\r\n\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\tlocal direction = targetPosition - pos\r\n\t\tif navMeshPath and stepDestination then\r\n\t\t\tdirection = stepDestination - pos\r\n\t\tend\r\n\t\tlocal r = Rotation.New(direction, Vector3.UP)\r\n\t\tROTATION_ROOT:RotateTo(r, GetRotateToTurnSpeed(), false)\r\n\r\n\telseif (newState == STATE_LOOKING_AROUND) then\r\n\t\t--\r\n\t\t\r\n\telseif (newState == STATE_DEAD_1) then\r\n\t\tROOT:StopMove()\r\n\t\tROTATION_ROOT:StopRotate()\r\n\t\tSetCollision(false)\r\n\r\n\telseif (newState == STATE_DEAD_2) then\r\n\t\tROOT:MoveTo(ROOT:GetWorldPosition() + Vector3.New(0, 0, -500), DEAD_2_DURATION)\r\n\r\n\telseif (newState == STATE_DISABLED) then\r\n\t\tROOT:Destroy()\r\n\tend\r\n\r\n\tcurrentState = newState\r\n\tstateTime = 0\r\n\t\r\n\tif Object.IsValid(ROOT) then\r\n\t\tROOT:SetNetworkedCustomProperty(\"CurrentState\", newState)\r\n\tend\r\nend\r\n\r\n\r\nfunction Tick(deltaTime)\r\n\tstateTime = stateTime + deltaTime\r\n\tlogicStepDelay = logicStepDelay - deltaTime\r\n\tattackCooldown = attackCooldown - deltaTime\r\n\t\r\n\tif (searchTimeElapsed >= 0) then\r\n\t\tsearchTimeElapsed = searchTimeElapsed + deltaTime\r\n\tend\r\n\t\r\n\tif (currentState == STATE_ATTACK_CAST or currentState == STATE_ATTACK_RECOVERY) and\r\n\t\tnot IsObjectAlive(target) then\r\n\t\ttarget = nil\r\n\t\tEngageNearest()\r\n\t\tif (not target) then\r\n\t\t\tResumePatrol()\r\n\t\tend\r\n\t\t\r\n\telseif currentState == STATE_ATTACK_CAST and stateTime >= ATTACK_CAST_TIME then\r\n\t\tExecuteAttack()\r\n\t\tattackCooldown = ATTACK_COOLDOWN\r\n\t\tSetState(STATE_ATTACK_RECOVERY)\r\n\t\r\n\telseif currentState == STATE_ATTACK_RECOVERY and stateTime >= ATTACK_RECOVERY_TIME then\r\n\t\tSetState(STATE_ENGAGING)\r\n\tend\r\n\t\r\n\tif currentState == STATE_ENGAGING then\r\n\t\tif (not IsObjectAlive(target)) then\r\n\t\t\ttarget = nil\r\n\t\t\t\r\n\t\telseif IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED) then\r\n\t\t\tif attackCooldown <= 0 then\r\n\t\t\t\tSetState(STATE_ATTACK_CAST)\r\n\t\t\tend\r\n\t\telse\r\n\t\t\tUpdateMovement(deltaTime)\r\n\t\tend\r\n\t\t\r\n\telseif currentState == STATE_PATROLLING then\r\n\t\tUpdateMovement(deltaTime)\r\n\r\n\telseif (currentState == STATE_DEAD_1 and stateTime >= DEAD_1_DURATION) then\r\n\t\tSetState(STATE_DEAD_2)\r\n\r\n\telseif (currentState == STATE_DEAD_2 and stateTime >= DEAD_2_DURATION) then\r\n\t\tSetState(STATE_DISABLED)\r\n\tend\r\n\r\n\tif logicStepDelay <= 0 then\r\n\t\tlogicStepDelay = LOGICAL_PERIOD\r\n\r\n\t\tif currentState == STATE_SLEEPING then\r\n\t\t\tEngageNearest()\r\n\r\n\t\telseif currentState == STATE_ENGAGING then\r\n\t\t\tlocal chaseRadiusSquared = CHASE_RADIUS_SQUARED\r\n\t\t\tif (searchTimeElapsed >= 0 and searchTimeElapsed < SEARCH_DURATION * 4) then\r\n\t\t\t\tchaseRadiusSquared = SEARCH_RADIUS_SQUARED\r\n\t\t\telse\r\n\t\t\t\tsearchTimeElapsed = -1\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\t--print(\"chaseRadiusSquared = \" .. chaseRadiusSquared .. \", searchTimeElapsed = \" .. searchTimeElapsed)\r\n\t\t\t\r\n\t\t\tif IsWithinRangeSquared(target, chaseRadiusSquared) then\r\n\t\t\t\tSetState(STATE_ENGAGING)\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\t--print(\"ResumePatrol 1\")\r\n\t\t\t\t\tResumePatrol()\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t\r\n\t\telseif currentState == STATE_PATROLLING then\r\n\t\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\t\tlocal delta = pos - moveObjective\r\n\t\t\tdelta.z = 0\r\n\t\t\tif (delta.sizeSquared < OBJECTIVE_THRESHOLD_DISTANCE_SQUARED) then\r\n\t\t\t\t--print(\"OBJECTIVE REACHED\")\r\n\t\t\t\tif nextMoveObjective then\r\n\t\t\t\t\tmoveObjective = nextMoveObjective\r\n\t\t\t\t\tnextMoveObjective = nil\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\t\t\r\n\t\t\t\telseif RETURN_TO_SPAWN and moveObjective ~= SPAWN_POSITION then\r\n\t\t\t\t\tmoveObjective = SPAWN_POSITION\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\telse\r\n\t\t\t\t\tSetState(STATE_SLEEPING)\r\n\t\t\t\tend\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\tSetState(STATE_PATROLLING)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t\r\n\t\telseif currentState == STATE_LOOKING_AROUND then\r\n\t\t\tif (searchTimeElapsed >= SEARCH_DURATION) then\r\n\t\t\t\t--print(\"ResumePatrol 2\")\r\n\t\t\t\tResumePatrol()\r\n\t\t\telse\r\n\t\t\t\tEngageNearest()\r\n\t\t\t\tif (not target) then\r\n\t\t\t\t\tDoLookAround()\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tUpdateTemporaryProperties(deltaTime)\r\nend\r\n\r\nfunction ResumePatrol()\r\n\t--print(\"ResumePatrol\")\r\n\r\n\ttarget = nil\r\n\t\r\n\tif moveObjective then\r\n\t\tSetState(STATE_PATROLLING)\r\n\t\t\r\n\telseif RETURN_TO_SPAWN then\r\n\t\tSetObjective(SPAWN_POSITION)\r\n\t\t\r\n\telse\r\n\t\tSetState(STATE_SLEEPING)\r\n\tend\r\nend\r\n\r\n\r\nfunction SetObjective(pos)\r\n\t--print(\"SetObjective = \" .. tostring(pos))\r\n\tif (currentState == STATE_PATROLLING) then\r\n\t\tnextMoveObjective = pos\r\n\t\t\r\n\telseif (not target) then\r\n\t\tmoveObjective = pos\r\n\t\tSetState(STATE_PATROLLING)\r\n\tend\r\nend\r\n\r\n\r\nfunction ExecuteAttack()\r\n\tif ATTACK_COMPONENT then\r\n\t\tATTACK_COMPONENT.context.Attack(target)\r\n\tend\r\nend\r\n\r\n\r\nfunction StepTowards(targetPosition)\r\n\tlocal pos = ROOT:GetWorldPosition()\r\n\t\r\n\tif NAV_MESH() then\r\n\t\tnavMeshPath = NAV_MESH():FindPath(pos, targetPosition)\r\n\t\tif navMeshPath and #navMeshPath > 1 then\r\n\t\t\ttable.remove(navMeshPath, 1)\r\n\t\t\tstepDestination = navMeshPath[1]\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\t-- No NavMesh available, fallback\r\n\t\r\n\t-- Calculate step destination\r\n\tlocal direction = targetPosition - pos\r\n\r\n\tif (direction.sizeSquared > PATHING_STEP_SQUARED) then\r\n\t\tdirection = direction:GetNormalized() * PATHING_STEP\r\n\tend\r\n\r\n\tlocal rayStart = pos + direction\r\n\trayStart.z = rayStart.z + RAY_DISTANCE_FROM_GROUND\r\n\r\n\t--print(\"pos = \" .. tostring(pos) .. \", targetPosition = \" .. tostring(targetPosition) .. \", rayStart = \" .. tostring(rayStart))\r\n\r\n\tlocal hitResult = nil\r\n\trepeat\r\n\t\tlocal rayEnd = rayStart + RAY_DISTANCE_DOWN_VECTOR\r\n\t\thitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})\r\n\t\t\r\n\t\tlocal isWalkable\r\n\t\tif hitResult then\r\n\t\t\tisWalkable = IsObjectWalkable(hitResult.other)\r\n\t\r\n\t\t\tif (not isWalkable) then\r\n\t\t\t\trayStart = hitResult:GetImpactPosition() + Vector3.New(0,0,-0.5)\r\n\t\t\tend\r\n\t\tend\r\n\tuntil hitResult == nil or hitResult.other == nil or isWalkable\r\n\r\n\tif hitResult then\r\n\t\t--print(\"HitResult.other = \" .. tostring(hitResult.other))\r\n\r\n\t\tlocal groundPos = hitResult:GetImpactPosition()\r\n\t\tstepDestination = groundPos\r\n\telse\r\n\t\tstepDestination = targetPosition\r\n\tend\r\nend\r\n\r\n\r\nlocal overlappingObjects = {}\r\n\r\nfunction UpdateMovement(deltaTime)\r\n\tlocal pos = ROOT:GetWorldPosition()\r\n\t\r\n\t-- Test overlap against other objects and adjust\r\n\tif TRIGGER then\r\n\t\tlocal overlaps = overlappingObjects\r\n\t\tfor i,other in ipairs(overlaps) do\r\n\t\t\tlocal triggerPos = TRIGGER:GetWorldPosition()\r\n\t\t\tlocal otherPos = other:GetWorldPosition()\r\n\t\t\tlocal v = triggerPos - otherPos\r\n\t\t\tv.z = 0\r\n\t\t\tlocal distance = v.size\r\n\t\t\tlocal radii = 50 * (other:GetWorldScale().y + TRIGGER:GetWorldScale().y)\r\n\t\t\tlocal removeAmount = radii - distance\r\n\t\t\tif (removeAmount > 0) then\r\n\t\t\t\tv = v / distance * removeAmount * 0.5\r\n\t\t\t\tpos = pos + v\r\n\t\t\t\tROOT:SetWorldPosition(pos)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Move forward\r\n\tif navMeshPath then\r\n\t\tlocal moveAmount = MOVE_SPEED * deltaTime\r\n\t\twhile moveAmount > 0 do\r\n\t\t\tstepDestination = navMeshPath[1]\r\n\t\t\tlocal moveV = stepDestination - pos\r\n\t\t\tlocal distance = moveV.size\r\n\t\t\t\r\n\t\t\tif (distance <= moveAmount) then\r\n\t\t\t\tpos = stepDestination\r\n\r\n\t\t\t\ttable.remove(navMeshPath, 1)\r\n\t\t\t\tif #navMeshPath > 0 then\r\n\t\t\t\t\tmoveAmount = moveAmount - distance\r\n\t\t\t\telse\r\n\t\t\t\t\tnavMeshPath = nil\r\n\t\t\t\t\tmoveAmount = 0\r\n\t\t\t\tend\r\n\t\t\telse\r\n\t\t\t\tpos = pos + moveV / distance * moveAmount\r\n\t\t\t\tmoveAmount = 0\r\n\t\t\tend\r\n\t\tend\r\n\telse\r\n\t\tlocal moveV = stepDestination - pos\r\n\t\tlocal distance = moveV.size\r\n\t\tlocal moveAmount = MOVE_SPEED * deltaTime\r\n\t\t\r\n\t\tif (distance <= moveAmount) then\r\n\t\t\tpos = stepDestination\r\n\t\telse\r\n\t\t\tpos = pos + moveV / distance * moveAmount\r\n\t\tend\r\n\tend\r\n\tROOT:SetWorldPosition(pos)\r\nend\r\n\r\n\r\nfunction EngageNearest()\r\n\ttarget = nil\r\n\t\r\n\tlocal enemy = FindNearestEnemy()\r\n\tif enemy then\r\n\t\ttarget = enemy\r\n\r\n\t\tSetState(STATE_ENGAGING)\r\n\tend\r\nend\r\n\r\nfunction FindNearestEnemy()\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal forwardVector = ROTATION_ROOT:GetWorldRotation() * Vector3.FORWARD\r\n\tlocal myTeam = GetTeam()\r\n\t\r\n\tlocal nearestEnemy = nil\r\n\tlocal nearestDistSquared = 9999999999\r\n\t\r\n\t-- Players\r\n\tfor _,enemy in ipairs(Game.GetPlayers()) do\r\n\t\tif (enemy.team ~= myTeam and not enemy.isDead) then\r\n\t\t\tlocal canSee,distSquared = CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\t\t\tif canSee then\r\n\t\t\t\tnearestDistSquared = distSquared\r\n\t\t\t\tnearestEnemy = enemy\r\n\t\t\t\t--print(\"Distance to enemy = \" .. tostring(math.sqrt(nearestDistSquared)))\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Other NPCs\r\n\tlocal enemyNPCs = NPC_MANAGER().GetEnemies(myTeam)\r\n\tfor _,enemy in ipairs(enemyNPCs) do\r\n\t\tif enemy.context.IsAlive() then\r\n\t\t\tlocal canSee,distSquared = CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\t\t\tif canSee then\r\n\t\t\t\tnearestDistSquared = distSquared\r\n\t\t\t\tnearestEnemy = enemy\r\n\t\t\t\t--print(\"Distance to enemy = \" .. tostring(math.sqrt(nearestDistSquared)))\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\treturn nearestEnemy\r\nend\r\n\r\nfunction CanHear(noisePos)\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal delta = noisePos - myPos\r\n\tlocal distSquared = delta.sizeSquared\r\n\tif (distSquared < GetHearingRadiusSquared()) then\r\n\t\treturn true\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction CanSeeEnemy(enemy, myPos, forwardVector, nearestDistSquared)\r\n\tlocal enemyPos = enemy:GetWorldPosition()\r\n\tlocal delta = enemyPos - myPos\r\n\tlocal distSquared = delta.sizeSquared\r\n\t\r\n\tif (distSquared > nearestDistSquared) then\r\n\t\treturn false, distSquared\r\n\tend\r\n\t\r\n\tlocal canSeeFromDistance = (distSquared <= GetVisionRadiusSquared())\r\n\t\t\r\n\t-- Is searching\r\n\tif (not canSeeFromDistance and\r\n\t\tcurrentState == STATE_LOOKING_AROUND and\r\n\t\tdistSquared < SEARCH_RADIUS_SQUARED and\r\n\t\tSEARCH_RADIUS_SQUARED > GetVisionRadiusSquared()) then\r\n\t\t\r\n\t\tlocal p = (distSquared - GetVisionRadiusSquared()) / (SEARCH_RADIUS_SQUARED - GetVisionRadiusSquared())\r\n\t\tp = CoreMath.Lerp(0.5 / searchPrecision, 1, p)\r\n\t\tlocal rng = math.random()\r\n\t\tif (rng >= p) then\r\n\t\t\tcanSeeFromDistance = true\r\n\t\tend\r\n\t\t--print(\"rng = \" .. rng .. \", p = \" .. p)\r\n\tend\r\n\t\r\n\t-- Angle vision in front\r\n\tif (canSeeFromDistance and\r\n\t\tGetVisionHalfAngle() > 0 and GetVisionHalfAngle() < 360) then\r\n\r\n\t\tlocal distance = math.sqrt(distSquared)\r\n\t\tlocal directionToEnemy = delta / distance\r\n\t\tlocal angle = Angle(directionToEnemy, forwardVector)\r\n\t\tif (angle > GetVisionHalfAngle()) then\r\n\t\t\tcanSeeFromDistance = false\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Test if there is something obstructing the view. If searching for the enemy ignore this constraint\r\n\tlocal ENEMY_RADIUS = 150 -- TODO\r\n\tif (canSeeFromDistance and \r\n\t\t(currentState ~= STATE_LOOKING_AROUND or (searchEndPosition - enemyPos).size > 400) and\r\n\t\tdistSquared > ENEMY_RADIUS * ENEMY_RADIUS) then\r\n\t\t\r\n\t\tlocal rayStart = script:GetWorldPosition()\r\n\t\tlocal rayEnd = enemyPos - delta:GetNormalized() * ENEMY_RADIUS\r\n\t\tlocal myTeam = GetTeam()\r\n\t\t\t\t\r\n\t\tlocal hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true, ignoreTeams = myTeam})\r\n\t\tif hitResult then\r\n\t\t\tcanSeeFromDistance = false\r\n\t\t\t\r\n\t\t\t--CoreDebug.DrawLine(rayStart, rayEnd, {duration = 1, color = Color.RED})\r\n\t\telse\r\n\t\t\t--CoreDebug.DrawLine(rayStart, rayEnd, {duration = 1, color = Color.WHITE})\r\n\t\tend\r\n\tend\r\n\t\r\n\t--print(\"dist = \" .. tostring(math.sqrt(distSquared)) .. \", \" .. tostring(distSquared) .. \", \" .. tostring(GetVisionRadiusSquared()))\r\n\treturn canSeeFromDistance, distSquared\r\nend\r\n\r\nfunction Angle(normV1, normV2)\r\n\tlocal value = normV1 .. normV2\r\n\tvalue = CoreMath.Clamp(value, -1, 1)\r\n\treturn math.acos(value) * 57.29578\r\nend\r\n\r\n\r\nfunction IsWithinRangeSquared(enemy, rangeSquared)\r\n\tif Object.IsValid(enemy) then\r\n\t\tlocal pos = ROOT:GetWorldPosition()\r\n\t\tlocal enemyPos = enemy:GetWorldPosition()\r\n\t\tlocal delta = pos - enemyPos\r\n\t\treturn (delta.sizeSquared < rangeSquared)\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction GetVisionHalfAngle()\r\n\tif temporaryVisionAngle ~= nil then\r\n\t\treturn temporaryVisionAngle.value\r\n\tend\r\n\treturn VISION_HALF_ANGLE\r\nend\r\n\r\nfunction GetVisionRadiusSquared()\r\n\tif temporaryVisionRadius ~= nil then\r\n\t\treturn temporaryVisionRadius.value\r\n\tend\r\n\treturn VISION_RADIUS_SQUARED\r\nend\r\n\r\nfunction GetHearingRadiusSquared()\r\n\tif temporaryHearingRadius ~= nil then\r\n\t\treturn temporaryHearingRadius.value\r\n\tend\r\n\treturn HEARING_RADIUS_SQUARED\r\nend\r\n\r\nfunction SetTemporaryVisionHalfAngle(angle, duration)\r\n\ttemporaryVisionAngle = {value = angle, timeRemaining = duration}\r\nend\r\n\r\nfunction SetTemporaryVisionRadius(radius, duration)\r\n\ttemporaryVisionRadius = {value = radius, timeRemaining = duration}\r\nend\r\n\r\nfunction SetTemporaryHearingRadius(radius, duration)\r\n\ttemporaryHearingRadius = {value = radius, timeRemaining = duration}\r\nend\r\n\r\nfunction UpdateTemporaryProperties(deltaTime)\r\n\ttemporaryVisionAngle = UpdateTemporary(temporaryVisionAngle, deltaTime)\r\n\ttemporaryVisionRadius = UpdateTemporary(temporaryVisionRadius, deltaTime)\r\n\ttemporaryHearingRadius = UpdateTemporary(temporaryHearingRadius, deltaTime)\r\nend\r\n\r\nfunction UpdateTemporary(property, deltaTime)\r\n\tif property ~= nil then\r\n\t\tproperty.timeRemaining = property.timeRemaining - deltaTime\r\n\t\tif property.timeRemaining <= 0 then\r\n\t\t\treturn nil\r\n\t\tend\r\n\tend\r\n\treturn property\r\nend\r\n\r\nfunction SetCollision(enabled)\r\n\tif enabled then\r\n\t\tCOLLIDER.collision = Collision.INHERIT\r\n\telse\r\n\t\tCOLLIDER.collision = Collision.FORCE_OFF\r\n\tend\r\nend\r\n\r\nfunction IsObjectAlive(obj)\r\n\tif Object.IsValid(obj) then\r\n\t\tif obj:IsA(\"Player\") then\r\n\t\t\treturn (not obj.isDead)\r\n\t\tend\r\n\t\t\r\n\t\tif obj.context and obj.context.IsAlive then\r\n\t\t\treturn obj.context.IsAlive()\r\n\t\tend\r\n\tend\r\n\treturn false\r\nend\r\n\r\nfunction IsAlive()\r\n\treturn currentState < STATE_DEAD_1\r\nend\r\n\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\tif (currentState == STATE_SLEEPING or currentState == STATE_PATROLLING or currentState == STATE_LOOKING_AROUND) then\r\n\t\tif Object.IsValid(sourceObject) and GetObjectTeam(sourceObject) ~= GetTeam() and \r\n\t\t\tIsObjectAlive(sourceObject) and CanHear(impactPosition) then\r\n\t\t\tSearch(impactPosition, sourceObject:GetWorldPosition())\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction Search(fromPos, toPos)\r\n\t--print(\"Search\")\r\n\tsearchStartPosition = fromPos\r\n\tsearchEndPosition = toPos\r\n\tsearchTimeElapsed = 0\r\n\t\r\n\tif (currentState == STATE_LOOKING_AROUND) then\r\n\t\tsearchPrecision = searchPrecision * 2\r\n\telse\r\n\t\tsearchPrecision = 1\r\n\tend\r\n\t\r\n\tDoLookAround()\r\n\tSetState(STATE_LOOKING_AROUND)\r\nend\r\n\r\nfunction DoLookAround()\r\n\tlocal t = 1\r\n\tif (SEARCH_DURATION > 0) then\r\n\t\tt = searchTimeElapsed / SEARCH_DURATION\r\n\tend\r\n\tlocal searchPos = Vector3.Lerp(searchStartPosition, searchEndPosition, t)\r\n\tlocal area = math.ceil(POSSIBILITY_RADIUS / searchPrecision)\r\n\tsearchPos.x = searchPos.x + math.random(-area, area)\r\n\tsearchPos.y = searchPos.y + math.random(-area, area)\r\n\t\r\n\tlocal myPos = ROOT:GetWorldPosition()\r\n\tlocal forward = searchPos - myPos\r\n\tlocal rot = Rotation.New(forward, Vector3.UP)\r\n\t\r\n\tROTATION_ROOT:RotateTo(rot, GetRotateToTurnSpeed(), false)\r\nend\r\n\r\nfunction GetRotateToTurnSpeed()\r\n\tlocal turnTime = 0.25\r\n\tif (turnTime > 0) then\r\n\t\tturnTime = 1 / TURN_SPEED\r\n\tend\r\n\treturn turnTime\r\nend\r\n\r\n\r\nfunction IsObjectWalkable(object)\r\n\tif object == nil then return false end\r\n\t\r\n\tlocal isWalkable, hasProperty = object:GetCustomProperty(\"Walkable\")\r\n\tif (hasProperty and not isWalkable) then\r\n\t\treturn false\r\n\tend\r\n\treturn true\r\nend\r\n\r\n\r\nfunction OnObjectDestroyed(id)\r\n\tif IsAlive() then\r\n\t\tlocal myId = ROOT:GetCustomProperty(\"ObjectId\")\r\n\t\tif (myId == id) then\r\n\t\t\tSetState(STATE_DEAD_1)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\nlocal destroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\nfunction Cleanup()\r\n\t--print(\"Cleanup()\")\r\n\tif damagedListener then\r\n\t\tdamagedListener:Disconnect()\r\n\t\tdamagedListener = nil\r\n\tend\r\n\tif destroyedListener then\r\n\t\tdestroyedListener:Disconnect()\r\n\t\tdestroyedListener = nil\r\n\tend\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\t--print(\"OnDestroyed()\")\r\n\tCleanup()\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\n\r\nfunction OnBeginOverlap(whichTrigger, other)\r\n\tif other == COLLIDER then return end\r\n\tif other:IsA(\"StaticMesh\") then\r\n\t\tif not IsObjectWalkable(other) then\r\n\t\t\ttable.insert(overlappingObjects, other)\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction OnEndOverlap(whichTrigger, other)\r\n\tfor i,obj in ipairs(overlappingObjects) do\r\n\t\tif other == obj then\r\n\t\t\ttable.remove(overlappingObjects, i)\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\nend\r\n\r\nif TRIGGER then\r\n\tTRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)\r\n\tTRIGGER.endOverlapEvent:Connect(OnEndOverlap)\r\nend\r\n\r\n\r\nfunction GetTeam()\r\n\treturn ROOT:GetCustomProperty(\"Team\")\r\nend\r\n\r\nfunction GetObjectTeam(object)\r\n\tif object.team ~= nil then\r\n\t\treturn object.team\r\n\tend\r\n\tlocal templateRoot = object:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\tend\r\n\treturn nil\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\tif (propertyName == \"Team\") then\r\n\t\tHandleTeamChanged()\r\n\tend\r\nend\r\n\r\nfunction HandleTeamChanged()\r\n\tCOLLIDER.team = GetTeam()\r\nend\r\nHandleTeamChanged()\r\n\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nNPC_MANAGER().Register(script)\r\nNPC_MANAGER().RegisterCollider(script, COLLIDER)\r\n\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:ModuleManager"
+            AssetReference {
+              Id: 14162240362023469980
+            }
+          }
+          Overrides {
+            Name: "cs:NPCManager"
+            AssetReference {
+              Id: 4760095941513075407
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:RotationRoot"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Collider"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Trigger"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:AttackComponent"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:NPCManager:tooltip"
+            String: "Reference to the NPC Manager allows the NPC to register itself into the system."
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:RotationRoot:tooltip"
+            String: "Group to rotate towards the target enemy or movement direction. Often this is the same as the template root, but not necessarily (e.g. A tower is stationary, but an internal part may be the rotation root)"
+          }
+          Overrides {
+            Name: "cs:Collider:tooltip"
+            String: "Reference to the NPC\'s collider static mesh. This is the object that will be impacted by enemy weapons. It\'s usually invisible, with collision enabled."
+          }
+          Overrides {
+            Name: "cs:Trigger:tooltip"
+            String: "Reference to the NPC\'s avoidance trigger. This trigger detects other objects and helps keep the NPC from walking through other NPCs, giving them some basic flock behavior."
+          }
+          Overrides {
+            Name: "cs:AttackComponent:tooltip"
+            String: "Reference to the NPC\'s attack script. The separation between the NPCAI and NPCAttack scripts allows for a greater variety of NPC\'s with different types of attack."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 4760095941513075407
+      Name: "NPCManager"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tNPC Manager\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tProvides bookkeeping on all NPCs contained in a game.\r\n--]]\r\n\r\n-- Registers itself into the global table\r\nlocal API = {}\r\n_G[\"standardcombo.NPCKit.NPCManager\"] = API\r\n\r\n\r\nlocal allNPCs = {}\r\nlocal npcColliders = {}\r\n\r\n\r\nfunction API.Register(npc)\r\n\tif (not allNPCs[npc]) then\r\n\t\tallNPCs[npc] = true\r\n\t\t\r\n\t\tnpc.destroyEvent:Connect(OnDestroyed)\r\n\tend\r\nend\r\n\r\n\r\nfunction API.RegisterCollider(npc, collider)\r\n\tnpcColliders[collider] = npc\r\nend\r\n\r\n\r\nfunction API.FindScriptForCollider(collider)\r\n\treturn npcColliders[collider]\r\nend\r\n\r\n\r\nfunction API.GetEnemies(team)\r\n\tlocal enemies = {}\r\n\tfor npc,_ in pairs(allNPCs) do\r\n\t\tlocal npcTeam = npc.context.GetTeam()\r\n\t\tif (npcTeam ~= team) then\r\n\t\t\ttable.insert(enemies, npc)\r\n\t\tend\r\n\tend\r\n\treturn enemies\r\nend\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\t-- Clear collider references\r\n\tfor collider,npc in pairs(npcColliders) do\r\n\t\tif npc == obj then\r\n\t\t\tnpcColliders[collider] = nil\r\n\t\tend\r\n\tend\r\n\t-- Clear NPC reference\r\n\tif allNPCs[obj] then\r\n\t\tallNPCs[obj] = nil\r\n\tend\r\nend\r\n\r\n\r\n"
       }
     }
     Assets {
@@ -13285,12 +7914,6 @@ Assets {
               Overrides {
                 Name: "cs:CurrentHealth"
                 Float: 100
-              }
-              Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
               }
               Overrides {
                 Name: "cs:MoveSpeed"
@@ -13357,12 +7980,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootDropFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "Coins"
               }
@@ -13385,6 +8002,94 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -13445,12 +8150,6 @@ Assets {
                   SubObjectId: 16879630115437202842
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -13491,30 +8190,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 5
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -13551,10 +8232,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -17937,6 +12614,15 @@ Assets {
       }
     }
     Assets {
+      Id: 12095835209017042614
+      Name: "Cube"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_cube_002"
+      }
+    }
+    Assets {
       Id: 11817260361041629086
       Name: "Text 01: X"
       PlatformAssetType: 1
@@ -18071,137 +12757,85 @@ Assets {
       }
     }
     Assets {
-      Id: 14594444593454931774
-      Name: "MinionImpactFX"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 11030123202232162817
-          Objects {
-            Id: 11030123202232162817
-            Name: "ClientContext"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            ChildIds: 6712450895790081351
-            ChildIds: 2965360691056808830
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            NetworkContext {
-            }
-          }
-          Objects {
-            Id: 6712450895790081351
-            Name: "Gibs Explosion VFX"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 11030123202232162817
-            UnregisteredParameters {
-              Overrides {
-                Name: "bp:Enable Blobs"
-                Bool: false
-              }
-            }
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Blueprint {
-              BlueprintAsset {
-                Id: 3137516374477183732
-              }
-              TeamSettings {
-              }
-              Vfx {
-                AutoPlay: true
-              }
-            }
-          }
-          Objects {
-            Id: 2965360691056808830
-            Name: "Impact Player Body Hit 01 SFX"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 11030123202232162817
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            AudioInstance {
-              AudioAsset {
-                Id: 7248737145792905845
-              }
-              AutoPlay: true
-              Volume: 2.0570507
-              Falloff: 3600
-              Radius: 412.298889
-              EnableOcclusion: true
-              IsSpatializationEnabled: true
-              IsAttenuationEnabled: true
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-    }
-    Assets {
-      Id: 7248737145792905845
-      Name: "Impact Player Body Hit 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_impact_player_bodyhit_01_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 3137516374477183732
-      Name: "Gibs Explosion VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_bloody_explosion"
-      }
-    }
-    Assets {
       Id: 16526478722992756359
       Name: "NPCAIClient"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCAI - Client\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nThe client counterpart for NPCAIServer. Controls the visuals of the NPC based on\r\nchanges to its networked properties.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal GEO_ROOT = script:GetCustomProperty(\"GeoRoot\"):WaitForObject()\r\n\r\nlocal MOVE_SPEED = ROOT:GetCustomProperty(\"MoveSpeed\")\r\nlocal TURN_SPEED = ROOT:GetCustomProperty(\"TurnSpeed\")\r\n\r\nlocal SLEEPING_ART = script:GetCustomProperty(\"Sleeping\"):WaitForObject()\r\nlocal ENGAGING_ART = script:GetCustomProperty(\"Engaging\"):WaitForObject()\r\nlocal ATTACKING_ART = script:GetCustomProperty(\"Attacking\"):WaitForObject()\r\nlocal PATROLLING_ART = script:GetCustomProperty(\"Patrolling\"):WaitForObject()\r\nlocal DEAD_ART = script:GetCustomProperty(\"Dead\"):WaitForObject()\r\nlocal FORWARD_NODE = script:GetCustomProperty(\"ForwardNode\"):WaitForObject()\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nlocal lastPosition = ROOT:GetWorldPosition()\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\nfunction GetHealth()\r\n\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\nend\r\n\r\nlocal lastHealth = GetHealth()\r\n\r\n\r\nfunction UpdateArt(state)\r\n\tSLEEPING_ART.visibility = Visibility.FORCE_OFF\r\n\tENGAGING_ART.visibility = Visibility.FORCE_OFF\r\n\tATTACKING_ART.visibility = Visibility.FORCE_OFF\r\n\tPATROLLING_ART.visibility = Visibility.FORCE_OFF\r\n\tDEAD_ART.visibility = Visibility.FORCE_OFF\r\n\t\r\n\tif (state == STATE_SLEEPING) then\r\n\t\tSLEEPING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_ENGAGING) then\r\n\t\tENGAGING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_ATTACK_CAST or state == STATE_ATTACK_RECOVERY) then\r\n\t\tATTACKING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_PATROLLING or state == STATE_LOOKING_AROUND) then\r\n\t\tPATROLLING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telse\r\n\t\tDEAD_ART.visibility = Visibility.INHERIT\r\n\tend\r\nend\r\nUpdateArt(GetCurrentState())\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\t\t\r\n\telseif (propertyName == \"CurrentHealth\") then\r\n\t\tlocal health = GetHealth()\r\n\t\t--\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\tGEO_ROOT:StopMove()\r\n\tGEO_ROOT:StopRotate()\r\n\tGEO_ROOT:Destroy()\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\nGEO_ROOT.parent = nil\r\nGEO_ROOT:Follow(script, MOVE_SPEED)\r\nGEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)\r\n\r\n"
+        Text: "--[[\r\n\tNPCAI - Client\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tThe client counterpart for NPCAIServer. Controls the visuals of the NPC based on\r\n\tchanges to its networked properties.\r\n--]]\r\n\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal GEO_ROOT = script:GetCustomProperty(\"GeoRoot\"):WaitForObject()\r\n\r\nlocal MOVE_SPEED = ROOT:GetCustomProperty(\"MoveSpeed\")\r\nlocal TURN_SPEED = ROOT:GetCustomProperty(\"TurnSpeed\")\r\n\r\nlocal SLEEPING_ART = script:GetCustomProperty(\"Sleeping\"):WaitForObject()\r\nlocal ENGAGING_ART = script:GetCustomProperty(\"Engaging\"):WaitForObject()\r\nlocal ATTACKING_ART = script:GetCustomProperty(\"Attacking\"):WaitForObject()\r\nlocal PATROLLING_ART = script:GetCustomProperty(\"Patrolling\"):WaitForObject()\r\nlocal DEAD_ART = script:GetCustomProperty(\"Dead\"):WaitForObject()\r\nlocal FORWARD_NODE = script:GetCustomProperty(\"ForwardNode\"):WaitForObject()\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nlocal lastPosition = ROOT:GetWorldPosition()\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\nfunction GetHealth()\r\n\treturn ROOT:GetCustomProperty(\"CurrentHealth\")\r\nend\r\n\r\nlocal lastHealth = GetHealth()\r\n\r\n\r\nfunction UpdateArt(state)\r\n\tSLEEPING_ART.visibility = Visibility.FORCE_OFF\r\n\tENGAGING_ART.visibility = Visibility.FORCE_OFF\r\n\tATTACKING_ART.visibility = Visibility.FORCE_OFF\r\n\tPATROLLING_ART.visibility = Visibility.FORCE_OFF\r\n\tDEAD_ART.visibility = Visibility.FORCE_OFF\r\n\t\r\n\tif (state == STATE_SLEEPING) then\r\n\t\tSLEEPING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_ENGAGING) then\r\n\t\tENGAGING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_ATTACK_CAST or state == STATE_ATTACK_RECOVERY) then\r\n\t\tATTACKING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telseif (state == STATE_PATROLLING or state == STATE_LOOKING_AROUND) then\r\n\t\tPATROLLING_ART.visibility = Visibility.INHERIT\r\n\t\t\r\n\telse\r\n\t\tDEAD_ART.visibility = Visibility.INHERIT\r\n\tend\r\nend\r\nUpdateArt(GetCurrentState())\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\t\t\r\n\telseif (propertyName == \"CurrentHealth\") then\r\n\t\tlocal health = GetHealth()\r\n\t\t--\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\tGEO_ROOT:StopMove()\r\n\tGEO_ROOT:StopRotate()\r\n\tGEO_ROOT:Destroy()\r\nend\r\nROOT.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\nGEO_ROOT.parent = nil\r\nGEO_ROOT:Follow(script, MOVE_SPEED)\r\nGEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:ForwardNode"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:GeoRoot"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Sleeping"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Engaging"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Attacking"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Patrolling"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Dead"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:ForwardNode:tooltip"
+            String: "A Core Object in the client context that indicates the forward/face of the NPC."
+          }
+          Overrides {
+            Name: "cs:GeoRoot:tooltip"
+            String: "The group under which is all the artwork for the NPC. At runtime it becomes detached from the whole template to avoid the network jitter and produce smooth movement of the NPC\'s visual parts."
+          }
+          Overrides {
+            Name: "cs:Sleeping:tooltip"
+            String: "Group to keep visibile while the NPC is sleeping."
+          }
+          Overrides {
+            Name: "cs:Engaging:tooltip"
+            String: "Group to keep visibile while the NPC is moving towards and engaging an enemy."
+          }
+          Overrides {
+            Name: "cs:Attacking:tooltip"
+            String: "Group to keep visibile while the NPC is executing an attack."
+          }
+          Overrides {
+            Name: "cs:Patrolling:tooltip"
+            String: "Group to keep visibile while the NPC is patrolling between waypoints."
+          }
+          Overrides {
+            Name: "cs:Dead:tooltip"
+            String: "Group to keep visibile while the NPC is dying."
+          }
+        }
       }
     }
     Assets {
@@ -18567,12 +13201,6 @@ Assets {
                 Float: 100
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 400
               }
@@ -18637,12 +13265,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootDropFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "Coins"
               }
@@ -18665,6 +13287,94 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -18725,12 +13435,6 @@ Assets {
                   SubObjectId: 16188384304550516637
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -18771,30 +13475,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 5
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -18831,10 +13517,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -23410,7 +18092,25 @@ Assets {
       Name: "NPCCampBehavior_PeriodicSpawn"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCCampBehavior - Periodic Spawn\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n--]]\r\n\r\nlocal INITIAL_DELAY = script:GetCustomProperty(\"InitialDelay\") or 1\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 7\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal firstTime = true\r\n\r\n\r\nfunction Tick()\r\n\r\n\tif firstTime then\r\n\t\tfirstTime = false\r\n\t\tTask.Wait(INITIAL_DELAY)\r\n\telse\r\n\t\tTask.Wait(RESPAWN_COOLDOWN)\r\n\tend\r\n\t\r\n\tCAMP_SPAWNER.context.Spawn()\r\nend"
+        Text: "--[[\r\n\tNPCCampBehavior - Periodic Spawn\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n--]]\r\n\r\nlocal INITIAL_DELAY = script:GetCustomProperty(\"InitialDelay\") or 1\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 7\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal firstTime = true\r\n\r\n\r\nfunction Tick()\r\n\r\n\tif firstTime then\r\n\t\tfirstTime = false\r\n\t\tTask.Wait(INITIAL_DELAY)\r\n\telse\r\n\t\tTask.Wait(RESPAWN_COOLDOWN)\r\n\tend\r\n\t\r\n\tCAMP_SPAWNER.context.Spawn()\r\nend"
+        CustomParameters {
+          Overrides {
+            Name: "cs:InitialDelay"
+            Float: 3
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown"
+            Float: 15
+          }
+          Overrides {
+            Name: "cs:InitialDelay:tooltip"
+            String: "The initial delay before the camp spawns the first NPCs."
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown:tooltip"
+            String: "The period, in seconds, between spawns. Will keep spawning regardless of what happens to the NPCs."
+          }
+        }
       }
     }
     Assets {
@@ -23418,7 +18118,43 @@ Assets {
       Name: "NPCSpawner"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCSpawner\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nSpawns and despawns NPCs. Relies on a separate behavior script to tell it when to spawn and despawn.\r\n--]]\r\n\r\nlocal TEAM = script:GetCustomProperty(\"Team\")\r\nlocal IS_TEMPLATE_RANDOM = script:GetCustomProperty(\"TemplateChoiceRandom\")\r\n-- TODO : Spawn VFX\r\n-- TODO : De-spawn VFX\r\n\r\nlocal spawnPoints = {}\r\nlocal customPropertyCountPerObject = {}\r\nlocal indexPerPoint = {}\r\nminions = {}\r\nminionCount = 0\r\n\r\nlocal destroyedListener = nil\r\n\r\n\r\nfunction Cleanup()\r\n\tspawnPoints = nil\r\n\tcustomPropertyCountPerObject = nil\r\n\tindexPerPoint = nil\r\n\tminions = nil\r\n\tminionCount = 0\r\n\t\r\n\tif destroyedListener then\r\n\t\tdestroyedListener:Disconnect()\r\n\t\tdestroyedListener = nil\r\n\tend\r\nend\r\n\r\nfunction Spawn()\r\n\tif spawnPoints == nil then return end\r\n\t\r\n\tfor _,point in ipairs(spawnPoints) do\r\n\t\r\n\t\tlocal minionTemplate = GetTemplate(point)\r\n\t\t\r\n\t\tif minionTemplate then\r\n\t\t\tlocal pos = point:GetWorldPosition()\r\n\t\t\tlocal rot = point:GetWorldRotation()\r\n\t\t\t\r\n\t\t\tlocal newMinion = World.SpawnAsset(minionTemplate, {position = pos, rotation = rot})\r\n\t\t\tnewMinion:SetNetworkedCustomProperty(\"Team\", TEAM)\r\n\t\t\t\r\n\t\t\tTask.Wait(0.2)\r\n\t\t\tlocal minionId = newMinion:GetCustomProperty(\"ObjectId\")\r\n\r\n\t\t\tminions[minionId] = newMinion\r\n\t\t\tminionCount = minionCount + 1\r\n\t\tend\r\n\tend\r\n\t--[[\r\n\tprint(\"minionCount = \" .. minionCount)\r\n\tlocal count = 0\r\n\tfor k,v in pairs(minions) do\r\n\t\tcount = count + 1\r\n\tend\r\n\tprint(\"    recount = \" .. count)\r\n\t--]]\r\nend\r\n\r\nfunction Despawn()\r\n\t--print(\"Despawn()\")\r\n\t\r\n\tif minions == nil then return end\r\n\t\r\n\tfor _,m in pairs(minions) do\r\n\t\tif Object.IsValid(m) then\r\n\t\t\t--print(\"Despawning minion \" .. tostring(m))\r\n\t\t\tm:Destroy()\r\n\t\tend\r\n\tend\r\n\tminions = {}\r\n\tminionCount = 0\r\nend\r\n\r\nfunction GetTemplate(spawnPoint)\r\n\tif IS_TEMPLATE_RANDOM then\r\n\t\tlocal key,value = GetRandomCustomProperty(spawnPoint)\r\n\t\treturn value\r\n\telse\r\n\t\tlocal index = indexPerPoint[spawnPoint]\r\n\t\t\r\n\t\tif index then\r\n\t\t\tindex = index + 1\r\n\t\t\tif index > GetCustomPropertyCount(spawnPoint) then\r\n\t\t\t\tindex = 1\r\n\t\t\tend\r\n\t\telse\r\n\t\t\tindex = 1\r\n\t\tend\r\n\t\t\r\n\t\tindexPerPoint[spawnPoint] = index\r\n\t\t\r\n\t\tlocal key, value = GetCustomPropertyAtIndex(spawnPoint, index)\r\n\t\treturn value\r\n\tend\r\nend\r\n\r\n\r\nfunction OnObjectDestroyed(id)\r\n\tif minions and minions[id] then\r\n\t\tminions[id] = nil\r\n\t\tminionCount = minionCount - 1\r\n\tend\r\nend\r\ndestroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\n\r\nfunction GetRandomCustomProperty(obj)\r\n\tlocal propertyCount = GetCustomPropertyCount(obj)\r\n\t\r\n\tif (propertyCount > 0) then\r\n\t\tlocal selectedIndex = math.random(1, propertyCount)\r\n\t\t\r\n\t\treturn GetCustomPropertyAtIndex(obj, selectedIndex)\r\n\tend\r\n\treturn nil,nil\r\nend\r\n\r\nfunction GetCustomPropertyAtIndex(obj, index)\r\n\tlocal allProperties = obj:GetCustomProperties()\r\n\tlocal i = 0\r\n\tfor key,value in pairs(allProperties) do\r\n\t\ti = i + 1\r\n\t\tif index == i then\r\n\t\t\treturn key,value\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction GetCustomPropertyCount(obj)\t\r\n\tlocal count = customPropertyCountPerObject[obj]\r\n\t\r\n\tif (not count) then\r\n\t\tcount = 0\r\n\t\tlocal allProperties = obj:GetCustomProperties()\r\n\t\tfor _,_ in pairs(allProperties) do\r\n\t\t\tcount = count + 1\r\n\t\tend\r\n\t\tcustomPropertyCountPerObject[obj] = count\r\n\tend\r\n\treturn count\r\nend\r\n\r\n\r\nfunction FindSpawnPoints()\r\n\tlocal spawnPointsGroup = script.parent:FindChildByName(\"SpawnPoints\")\r\n\r\n\tif spawnPointsGroup then\r\n\t\tspawnPoints = spawnPointsGroup:GetChildren()\r\n\telse\r\n\t\tprint(\"WARNING: \" .. script.name .. \" did not find a SpawnPoints folder/group.\")\r\n\tend\r\nend\r\n\r\nFindSpawnPoints()\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\t--print(\"OnDestroyed()\")\r\n\tCleanup()\r\nend\r\nscript.destroyEvent:Connect(OnDestroyed)\r\n\r\n"
+        Text: "--[[\r\n\tNPCSpawner\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tSpawns and despawns NPCs. Relies on a separate behavior script to tell it when to\r\n\tspawn and despawn.\r\n--]]\r\n\r\nlocal TEAM = script:GetCustomProperty(\"Team\")\r\nlocal IS_TEMPLATE_RANDOM = script:GetCustomProperty(\"TemplateChoiceRandom\")\r\nlocal SPAWN_VFX = script:GetCustomProperty(\"SpawnVFX\")\r\nlocal DESPAWN_VFX = script:GetCustomProperty(\"DespawnVFX\")\r\n\r\nlocal spawnPoints = {}\r\nlocal customPropertyCountPerObject = {}\r\nlocal indexPerPoint = {}\r\nminions = {}\r\nminionCount = 0\r\n\r\nlocal destroyedListener = nil\r\n\r\n\r\nfunction Cleanup()\r\n\tspawnPoints = nil\r\n\tcustomPropertyCountPerObject = nil\r\n\tindexPerPoint = nil\r\n\tminions = nil\r\n\tminionCount = 0\r\n\t\r\n\tif destroyedListener then\r\n\t\tdestroyedListener:Disconnect()\r\n\t\tdestroyedListener = nil\r\n\tend\r\nend\r\n\r\nfunction Spawn()\r\n\tif spawnPoints == nil then return end\r\n\t\r\n\tfor _,point in ipairs(spawnPoints) do\r\n\t\r\n\t\tlocal minionTemplate = GetTemplate(point)\r\n\t\t\r\n\t\tif minionTemplate then\r\n\t\t\tlocal pos = point:GetWorldPosition()\r\n\t\t\tlocal rot = point:GetWorldRotation()\r\n\t\t\t\r\n\t\t\tlocal newMinion = World.SpawnAsset(minionTemplate, {position = pos, rotation = rot})\r\n\t\t\tnewMinion:SetNetworkedCustomProperty(\"Team\", TEAM)\r\n\t\t\t\r\n\t\t\tif SPAWN_VFX then\r\n\t\t\t\tSpawnVisualEffect(SPAWN_VFX, pos, rot)\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tTask.Wait(0.2)\r\n\t\t\tlocal minionId = newMinion:GetCustomProperty(\"ObjectId\")\r\n\r\n\t\t\tminions[minionId] = newMinion\r\n\t\t\tminionCount = minionCount + 1\r\n\t\tend\r\n\tend\r\n\t--[[\r\n\tprint(\"minionCount = \" .. minionCount)\r\n\tlocal count = 0\r\n\tfor k,v in pairs(minions) do\r\n\t\tcount = count + 1\r\n\tend\r\n\tprint(\"    recount = \" .. count)\r\n\t--]]\r\nend\r\n\r\nfunction Despawn()\r\n\t--print(\"Despawn()\")\r\n\t\r\n\tif minions == nil then return end\r\n\t\r\n\tfor _,m in pairs(minions) do\r\n\t\tif Object.IsValid(m) then\r\n\t\t\t--print(\"Despawning minion \" .. tostring(m))\r\n\t\t\t\r\n\t\t\tif DESPAWN_VFX then\r\n\t\t\t\tlocal pos = m:GetWorldPosition()\r\n\t\t\t\tlocal rot = m:GetWorldRotation()\r\n\t\t\t\tSpawnVisualEffect(DESPAWN_VFX, pos, rot)\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tm:Destroy()\r\n\t\tend\r\n\tend\r\n\tminions = {}\r\n\tminionCount = 0\r\nend\r\n\r\nfunction GetTemplate(spawnPoint)\r\n\tif IS_TEMPLATE_RANDOM then\r\n\t\tlocal key,value = GetRandomCustomProperty(spawnPoint)\r\n\t\treturn value\r\n\telse\r\n\t\tlocal index = indexPerPoint[spawnPoint]\r\n\t\t\r\n\t\tif index then\r\n\t\t\tindex = index + 1\r\n\t\t\tif index > GetCustomPropertyCount(spawnPoint) then\r\n\t\t\t\tindex = 1\r\n\t\t\tend\r\n\t\telse\r\n\t\t\tindex = 1\r\n\t\tend\r\n\t\t\r\n\t\tindexPerPoint[spawnPoint] = index\r\n\t\t\r\n\t\tlocal key, value = GetCustomPropertyAtIndex(spawnPoint, index)\r\n\t\treturn value\r\n\tend\r\nend\r\n\r\n\r\nfunction OnObjectDestroyed(id)\r\n\tif minions and minions[id] then\r\n\t\tminions[id] = nil\r\n\t\tminionCount = minionCount - 1\r\n\tend\r\nend\r\ndestroyedListener = Events.Connect(\"ObjectDestroyed\", OnObjectDestroyed)\r\n\r\n\r\nfunction GetRandomCustomProperty(obj)\r\n\tlocal propertyCount = GetCustomPropertyCount(obj)\r\n\t\r\n\tif (propertyCount > 0) then\r\n\t\tlocal selectedIndex = math.random(1, propertyCount)\r\n\t\t\r\n\t\treturn GetCustomPropertyAtIndex(obj, selectedIndex)\r\n\tend\r\n\treturn nil,nil\r\nend\r\n\r\nfunction GetCustomPropertyAtIndex(obj, index)\r\n\tlocal allProperties = obj:GetCustomProperties()\r\n\tlocal i = 0\r\n\tfor key,value in pairs(allProperties) do\r\n\t\ti = i + 1\r\n\t\tif index == i then\r\n\t\t\treturn key,value\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction GetCustomPropertyCount(obj)\t\r\n\tlocal count = customPropertyCountPerObject[obj]\r\n\t\r\n\tif (not count) then\r\n\t\tcount = 0\r\n\t\tlocal allProperties = obj:GetCustomProperties()\r\n\t\tfor _,_ in pairs(allProperties) do\r\n\t\t\tcount = count + 1\r\n\t\tend\r\n\t\tcustomPropertyCountPerObject[obj] = count\r\n\tend\r\n\treturn count\r\nend\r\n\r\n\r\nfunction SpawnVisualEffect(template, pos, rot)\r\n\tlocal spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})\r\n\tif spawnedVfx and spawnedVfx.lifeSpan <= 0 then\r\n\t\tspawnedVfx.lifeSpan = 1.5\r\n\tend\r\nend\r\n\r\n\r\nfunction FindSpawnPoints()\r\n\tlocal spawnPointsGroup = script.parent:FindChildByName(\"SpawnPoints\")\r\n\r\n\tif spawnPointsGroup then\r\n\t\tspawnPoints = spawnPointsGroup:GetChildren()\r\n\telse\r\n\t\tprint(\"WARNING: \" .. script.name .. \" did not find a SpawnPoints folder/group.\")\r\n\tend\r\nend\r\n\r\nFindSpawnPoints()\r\n\r\n\r\nfunction OnDestroyed(obj)\r\n\t--print(\"OnDestroyed()\")\r\n\tCleanup()\r\nend\r\nscript.destroyEvent:Connect(OnDestroyed)\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:Team"
+            Int: 4
+          }
+          Overrides {
+            Name: "cs:TemplateChoiceRandom"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:SpawnVFX"
+            AssetReference {
+            }
+          }
+          Overrides {
+            Name: "cs:DespawnVFX"
+            AssetReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Team:tooltip"
+            String: "The team of the NPCs when they spawn."
+          }
+          Overrides {
+            Name: "cs:TemplateChoiceRandom:tooltip"
+            String: "NPC Spawn Points can have multiple templates as custom properties. When spawning, one of those is selected. If set to true then the choice is random. If false then the choices will be sequential and deterministic."
+          }
+          Overrides {
+            Name: "cs:SpawnVFX:tooltip"
+            String: "A visual effect created at the moment each NPC spawns."
+          }
+          Overrides {
+            Name: "cs:DespawnVFX:tooltip"
+            String: "A visual effect created when each NPC is de-spawned."
+          }
+        }
       }
     }
     Assets {
@@ -23426,12 +18162,12 @@ Assets {
       Name: "NPC_KIT_README"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\n\tNPC AI Kit\r\n\tv0.7.1\r\n\tby: standardcombo\r\n\t\r\n\tThis package is work in progress.\r\n\t\r\n\tTo get started, look at the dependencies and add to the hierarchy one of the templates:\r\n\t- Waypoint Example\r\n\t- Ambush Camp Example\r\n\t- MOBA Example\r\n\t\r\n\tThe package also comes with a Static Player Equipment that grants players \"Destructible Rifle\".\r\n\tThis is needed to fight against the NPCs. The Destructible Rifle template has a script called\r\n\tDestructableWeaponServer that is what makes it deal damage to NPCs. Add that script to any Core\r\n\tweapon to make it compatible with the NPC system.\r\n\t\r\n\tFor melee combat against NPCs, download \"The Carlos Blade\" from Community Content a starting\r\n\tpoint.\r\n\t\r\n\tEach NPC example has a set of Spawn Points and a combination of spawn scripts that determine\r\n\twhen/how the NPCs spawn. Each minion Spawn Point has a list of possible NPCs it can spawn, added\r\n\tto it as custom properties. To change which NPCs spawn, configure the spawn points. You can add\r\n\tor remove spawn points to increase/decrease the amount of NPCs spawned at each camp.\r\n\t\r\n\tYou \'can\' add NPCs directly into the hierarchy and they will work, but won\'t respawn if killed.\r\n\tThat\'s what the camps and spawn points are for.\r\n\t\r\n\tSee comments in each of the spawn scripts for details about their specific spawn behaviors.\r\n\t\r\n\tNPCs have a Team property that is copied from the NPCSpawner object in their camp. If their team\r\n\tis the same as a player, they will treat that player as an ally. If they are a different team\r\n\tthey will be treated as enemies. NPCs that are on different teams will attack each other.\r\n\t\r\n\tSee comments in the different NPC AI scripts for more details about their behaviors.\r\n\t\r\n\tYou can create and customize your own NPCs by modifying one of the existing ones. Create a new\r\n\ttemplate from your new NPC, then add the template to the spawn point as a custom property.\r\n\t\r\n\tKnown issues:\r\n\t- AI doesn\'t work indoors. Best for outdoors / terrain.\r\n\t- Consumes a large amount of the networking budget.\r\n\t\r\n--]]"
+        Text: "--[[\r\n\tNPC AI Kit\r\n\tv0.8.0\r\n\tby: standardcombo\r\n\t\r\n\tThis package is work in progress.\r\n\t\r\n\t\r\n\tSetup\r\n\t=====\r\n\t\r\n\t1. To get started, look at the dependencies and add one of these templates to the hierarchy:\r\n\t- Waypoint Example\r\n\t- Ambush Camp Example\r\n\t- MOBA Example\r\n\t\r\n\t2. Then, add to the hierarchy a copy of:\r\n\t- Combat Dependencies\r\n\t\r\n\t3. NPCs can drop loot when they die. To enable this:\r\n\t  a) Go to Community Content and import \"Loot Drop Factory\".\r\n\t  b) Add a copy of the Loot Drop Factory template to the hierarchy.\r\n\t  \r\n\t4. NPCs can navigate indoor environments with a Navigational Mesh.\r\n\t  a) Go to Community Content and import [COMING SOON].\r\n\t  b) Follow instructions in the NavMesh component to set it up for your game.\r\n\t  c) NPCs will automatically check for the existence of a NavMesh and use it if available.\r\n\t\r\n\t\r\n\tKnown Issues in This Version\r\n\t============================\r\n\t\r\n\t- Consumes a large amount of the networking budget.\r\n\t- Ranged NPCs may try to attack through walls and don\'t adapt to obstacles when targeting.\r\n\t\t\r\n\t\r\n\tCombat\r\n\t======\r\n\t\r\n\tThe package also comes with a Static Player Equipment that grants players \"Destructible Rifle\".\r\n\tThis is needed to fight against the NPCs. The Destructible Rifle template has a script called\r\n\tDestructableWeaponServer that is what makes it deal damage to NPCs. Add that script to any Core\r\n\tweapon to make it compatible with the NPC Kit.\r\n\t\r\n\tFor melee combat against NPCs, download \"The Carlos Blade\" from Community Content as a starting\r\n\tpoint. The Carlos Blade comes with a script called MeleeAbilityServer that is what makes it\r\n\tdeal damage to the NPCs. Add this script to other melee weapons to make them compatible with\r\n\tthe NPC Kit.\r\n\t\t\r\n\t\r\n\tNPC Camps & Spawn Points\r\n\t========================\r\n\t\r\n\tEach NPC example has a set of Spawn Points and a combination of spawn scripts that determine\r\n\twhen/how the NPCs spawn. Each minion Spawn Point has a list of possible NPCs it can spawn, added\r\n\tto it as custom properties. To change which NPCs spawn, configure the spawn points. You can add\r\n\tor remove spawn points to increase/decrease the amount of NPCs spawned at each camp.\r\n\t\r\n\tYou \'can\' add NPCs directly into the hierarchy and they will work, but won\'t respawn if killed.\r\n\tThat\'s what the camps and spawn points are for.\r\n\t\r\n\tSee comments in each of the spawn scripts for details about their specific spawn behaviors.\r\n\t\r\n\t\r\n\tCreating Your Own NPCs\r\n\t======================\r\n\t\r\n\t1. Select an existing NPC as a starting point. Add it to the hierarchy.\r\n\t2. Right-click and create a new template. Give it a unique name.\r\n\t3. Customize it visually. See the RPG Skeletons for examples of this.\r\n\t4. Customize the Collider. Change the Collider\'s Visibility to see it in\r\n\t   relationship to the rest of the NPC.\r\n\t5. Customize its properties, such as movement speed, damage and health.\r\n\t6. Right-click the NPC in the hierarchy and \"Update Template From This\".\r\n\t\r\n\t\r\n\tAdding NPCs to a Game\r\n\t=====================\r\n\t\r\n\t1. You can position your NPCs directly in the game to test their behaviors.\r\n\t   However, they won\'t respawn if killed.\r\n\t2. Add a spawn camp, such as the Ambush Camp Example.\r\n\t3. Right-click the camp and \"Deinstance\" it.\r\n\t4. Select one of the camp\'s spawn points where your NPC should appear.\r\n\t5. From Project Content, drag your NPC template onto the Properties view\r\n\t   to add it as a custom property on the spawn point.\r\n\t6. Delete your NPC templates from the hierarchy. They should be spawned with\r\n\t   Camps and Spawn Points instead of being directly placed.\r\n\t\r\n\t\r\n\tTeams\r\n\t=====\r\n\t\r\n\tNPCs have a Team property that is copied from the NPCSpawner object in their camp. If their team\r\n\tis the same as a player, they will treat that player as an ally. If they are a different team\r\n\tthey will be treated as enemies. NPCs that are on different teams will attack each other.\r\n\t\r\n\t\r\n\tMore Comments\r\n\t=============\r\n\t\r\n\tSee comments in the different NPC AI scripts for more details about their behaviors.\r\n\t\t\t\r\n--]]\r\n\r\n\r\n"
       }
     }
     Assets {
       Id: 5833215658979884152
-      Name: "Proximity Camp Example"
+      Name: "Ambush Camp Example"
       PlatformAssetType: 5
       TemplateAsset {
         ObjectBlock {
@@ -23447,9 +18183,10 @@ Assets {
               }
             }
             ParentId: 4781671109827199097
+            ChildIds: 15047831320703083673
+            ChildIds: 5176158731508273486
             ChildIds: 16939412754036815913
             ChildIds: 6217085562031804214
-            ChildIds: 5176158731508273486
             Collidable_v2 {
               Value: "mc:ecollisionsetting:inheritfromparent"
             }
@@ -23458,6 +18195,60 @@ Assets {
             }
             Folder {
               IsGroup: true
+            }
+          }
+          Objects {
+            Id: 15047831320703083673
+            Name: "AmbushExample_README"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 11087910991482916188
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 190293469863767745
+              }
+            }
+          }
+          Objects {
+            Id: 5176158731508273486
+            Name: "NPC_KIT_README"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 11087910991482916188
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 1814231993403313901
+              }
             }
           }
           Objects {
@@ -24050,33 +18841,6 @@ Assets {
               }
             }
           }
-          Objects {
-            Id: 5176158731508273486
-            Name: "NPC_KIT_README"
-            Transform {
-              Location {
-              }
-              Rotation {
-              }
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 11087910991482916188
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            Script {
-              ScriptAsset {
-                Id: 1814231993403313901
-              }
-            }
-          }
         }
         PrimaryAssetId {
           AssetType: "None"
@@ -24144,12 +18908,6 @@ Assets {
                 Float: 600
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 550
               }
@@ -24214,12 +18972,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -24246,6 +18998,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -24306,12 +19150,6 @@ Assets {
                   SubObjectId: 16188384304550516637
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -24355,30 +19193,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 25
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -24419,10 +19239,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -24965,7 +19781,7 @@ Assets {
       Name: "AnimControllerDragon"
       PlatformAssetType: 3
       TextAsset {
-        Text: "local MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal DISTANCE_FROM_GROUND = script:GetCustomProperty(\"DistanceFromGround\")\r\nlocal WALKING_SPEED = 15\r\nlocal RUNNING_SPEED = 300\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nfunction ResetDistanceFromGround()\r\n\tMESH:SetPosition(Vector3.New(0, 0, DISTANCE_FROM_GROUND))\r\nend\r\nResetDistanceFromGround()\r\n\r\nfunction PlayAttack()\r\n\tMESH:PlayAnimation(\"unarmed_claw\")\r\n\tResetDistanceFromGround()\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tMESH.playbackRateMultiplier = 1.5\r\n\tTask.Wait(0.5)\r\n\tMESH:MoveTo(Vector3.New(0, 0, MESH:GetWorldScale().z * 40), 0.4, true)\r\n\tTask.Wait(0.2)\r\n\tMESH:MoveTo(Vector3.New(0, 0, MESH:GetWorldScale().z * 40), 0.1, true)\r\n\tMESH:PlayAnimation(\"unarmed_death_impact\")\r\n\tTask.Wait(0.5)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = \"unarmed_idle_ready\"\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = \"unarmed_walk_forward\"\r\n\telse\r\n\t\tMESH.animationStance = \"unarmed_run_forward\"\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]\r\n\r\n"
+        Text: "--[[\r\n\tAnimation Controller - Dragon\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tControls the animations for an NPC based on the Dragon Animated Mesh.\r\n\tChanges in animation occur in response to movement and state machine changes.\r\n--]]\r\n\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal DISTANCE_FROM_GROUND = script:GetCustomProperty(\"DistanceFromGround\")\r\nlocal WALKING_SPEED = 15\r\nlocal RUNNING_SPEED = 300\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nfunction ResetDistanceFromGround()\r\n\tMESH:SetPosition(Vector3.New(0, 0, DISTANCE_FROM_GROUND))\r\nend\r\nResetDistanceFromGround()\r\n\r\nfunction PlayAttack()\r\n\tMESH:PlayAnimation(\"unarmed_claw\")\r\n\tResetDistanceFromGround()\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tMESH.playbackRateMultiplier = 1.5\r\n\tTask.Wait(0.5)\r\n\tMESH:MoveTo(Vector3.New(0, 0, MESH:GetWorldScale().z * 40), 0.4, true)\r\n\tTask.Wait(0.2)\r\n\tMESH:MoveTo(Vector3.New(0, 0, MESH:GetWorldScale().z * 40), 0.1, true)\r\n\tMESH:PlayAnimation(\"unarmed_death_impact\")\r\n\tTask.Wait(0.5)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = \"unarmed_idle_ready\"\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = \"unarmed_walk_forward\"\r\n\telse\r\n\t\tMESH.animationStance = \"unarmed_run_forward\"\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]\r\n\r\n"
         CustomParameters {
           Overrides {
             Name: "cs:AnimatedMesh"
@@ -24980,6 +19796,18 @@ Assets {
           Overrides {
             Name: "cs:DistanceFromGround"
             Float: 275
+          }
+          Overrides {
+            Name: "cs:AnimatedMesh:tooltip"
+            String: "Reference to the animated mesh object for this NPC."
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+          Overrides {
+            Name: "cs:DistanceFromGround:tooltip"
+            String: "Tune how far from the ground should this NPC be flying. This is a cosmetic change."
           }
         }
       }
@@ -25228,7 +20056,7 @@ Assets {
               Overrides {
                 Name: "ma:Shared_BaseMaterial:id"
                 AssetReference {
-                  Id: 15419880338893310786
+                  Id: 8255411499280225015
                 }
               }
               Overrides {
@@ -25380,8 +20208,8 @@ Assets {
       }
     }
     Assets {
-      Id: 15419880338893310786
-      Name: "Fire Magic Glow Material"
+      Id: 8255411499280225015
+      Name: "Fire Magic Glow Material 2"
       PlatformAssetType: 13
       CustomMaterialAsset {
         BaseMaterialId: 3702191406046426907
@@ -25452,12 +20280,6 @@ Assets {
                 Float: 200
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 500
               }
@@ -25522,12 +20344,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -25554,6 +20370,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -25614,12 +20522,6 @@ Assets {
                   SubObjectId: 16188384304550516637
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -25663,30 +20565,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 15
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -25727,10 +20611,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -26265,7 +21145,7 @@ Assets {
           RootId: 4158428330768656943
           Objects {
             Id: 4158428330768656943
-            Name: "DragonFireballHard"
+            Name: "DragonFireballMedium"
             Transform {
               Scale {
                 X: 1
@@ -26381,7 +21261,7 @@ Assets {
               Overrides {
                 Name: "ma:Shared_BaseMaterial:id"
                 AssetReference {
-                  Id: 15419880338893310786
+                  Id: 8255411499280225015
                 }
               }
               Overrides {
@@ -26564,12 +21444,6 @@ Assets {
                 Float: 300
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 650
               }
@@ -26634,12 +21508,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -26666,6 +21534,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -26726,12 +21686,6 @@ Assets {
                   SubObjectId: 8407864205170865650
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -26774,30 +21728,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 20
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -26838,10 +21774,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -27295,7 +22227,7 @@ Assets {
       Name: "AnimControllerRaptor"
       PlatformAssetType: 3
       TextAsset {
-        Text: "\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"unarmed_idle_ready\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"unarmed_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"unarmed_run_forward\"\r\nlocal WALKING_SPEED = 5\r\nlocal RUNNING_SPEED = 350\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nlocal attackIndex = 1\r\n\r\nfunction PlayAttack()\r\n\tif attackIndex == 1 then\r\n\t\tMESH:PlayAnimation(\"unarmed_bite\", {playbackRate = 1.5})\r\n\t\tattackIndex = 2\r\n\telse\r\n\t\tMESH:PlayAnimation(\"unarmed_claw\", {playbackRate = 1.3})\r\n\t\tattackIndex = 1\r\n\tend\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
+        Text: "--[[\r\n\tAnimation Controller - Raptor\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tControls the animations for an NPC based on the Raptor Animated Mesh.\r\n\tChanges in animation occur in response to movement and state machine changes.\r\n--]]\r\n\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"unarmed_idle_ready\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"unarmed_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"unarmed_run_forward\"\r\nlocal WALKING_SPEED = 5\r\nlocal RUNNING_SPEED = 350\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nlocal attackIndex = 1\r\n\r\nfunction PlayAttack()\r\n\tif attackIndex == 1 then\r\n\t\tMESH:PlayAnimation(\"unarmed_bite\", {playbackRate = 1.5})\r\n\t\tattackIndex = 2\r\n\telse\r\n\t\tMESH:PlayAnimation(\"unarmed_claw\", {playbackRate = 1.3})\r\n\t\tattackIndex = 1\r\n\tend\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
         CustomParameters {
           Overrides {
             Name: "cs:AnimatedMesh"
@@ -27306,6 +22238,14 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
             }
+          }
+          Overrides {
+            Name: "cs:AnimatedMesh:tooltip"
+            String: "Reference to the animated mesh object for this NPC."
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
           }
         }
       }
@@ -27386,12 +22326,6 @@ Assets {
                 Float: 100
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 400
               }
@@ -27456,12 +22390,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -27488,6 +22416,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
               }
             }
             WantsNetworking: true
@@ -27548,12 +22568,6 @@ Assets {
                   SubObjectId: 16188384304550516637
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -27597,18 +22611,6 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 5
               }
@@ -27617,15 +22619,9 @@ Assets {
                 Float: 20
               }
               Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
-              }
-              Overrides {
                 Name: "cs:ProjectileBody"
                 AssetReference {
-                  Id: 16197724571903786063
+                  Id: 2668684521464535076
                 }
               }
               Overrides {
@@ -27661,10 +22657,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -28135,23 +23127,16 @@ Assets {
       }
     }
     Assets {
-      Id: 16197724571903786063
-      Name: "FireballProjectileSmall"
+      Id: 2668684521464535076
+      Name: "DragonFireballEasy"
       PlatformAssetType: 5
       TemplateAsset {
         ObjectBlock {
           RootId: 4158428330768656943
           Objects {
             Id: 4158428330768656943
-            Name: "FireballProjectileSmall"
+            Name: "DragonFireballEasy"
             Transform {
-              Location {
-                X: -54.8428917
-                Y: -64.484108
-                Z: 395
-              }
-              Rotation {
-              }
               Scale {
                 X: 1
                 Y: 1
@@ -28266,7 +23251,7 @@ Assets {
               Overrides {
                 Name: "ma:Shared_BaseMaterial:id"
                 AssetReference {
-                  Id: 15419880338893310786
+                  Id: 8255411499280225015
                 }
               }
               Overrides {
@@ -28405,7 +23390,53 @@ Assets {
       Name: "NPCCampBehavior_PlayerProximity"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCCampBehavior - Player Proximity\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n\r\nRequires two triggers, one for the Inside of the camp and one for the Outside.\r\nNPCs spawn when a player enters the Inside trigger. When all players exit the\r\nOutside trigger a countdown begins. When the countdown ends all NPCs despawn.\r\n--]]\r\n\r\nlocal INSIDE_TRIGGER = script:GetCustomProperty(\"InsideTrigger\"):WaitForObject()\r\nlocal OUTSIDE_TRIGGER = script:GetCustomProperty(\"OutsideTrigger\"):WaitForObject()\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 15\r\nlocal DESPAWN_DELAY = script:GetCustomProperty(\"DespawnDelay\") or 4\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal playerCount = 0\r\nlocal despawnCountdown = 0\r\nlocal lastMinionCount = 0\r\nlocal respawnCooldown = 0\r\n\r\n\r\nfunction Tick(deltaTime)\t\r\n\tif (despawnCountdown > 0) then\r\n\t\tdespawnCountdown = despawnCountdown - deltaTime\r\n\t\t\r\n\t\tif (despawnCountdown <= 0) then\r\n\t\t\tCAMP_SPAWNER.context.Despawn()\r\n\t\tend\r\n\tend\r\n\t\r\n\tif (respawnCooldown > 0) then\r\n\t\trespawnCooldown = respawnCooldown - deltaTime\r\n\tend\r\n\t\r\n\tlocal minionCount = CAMP_SPAWNER.context.minionCount\r\n\tif (minionCount == 0 and lastMinionCount > 0) then\r\n\t\trespawnCooldown = RESPAWN_COOLDOWN\r\n\tend\r\n\tlastMinionCount = minionCount\r\nend\r\n\r\nfunction OnBeginOverlapInner(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\t\r\n\tif (CAMP_SPAWNER.context.minionCount == 0 and\r\n\t\trespawnCooldown <= 0) then\r\n\t\t\r\n\t\tCAMP_SPAWNER.context.Spawn()\r\n\t\t\r\n\t\t-- Aggro the minions\r\n\t\tTask.Wait()\r\n\t\tfor _,minion in pairs(CAMP_SPAWNER.context.minions) do\r\n\t\t\tlocal aiScript = minion:FindChildByName(\"NPCAIServer\")\r\n\t\t\tif aiScript then\r\n\t\t\t\taiScript.context.SetTemporaryVisionHalfAngle(360, 1)\r\n\t\t\t\taiScript.context.EngageNearest()\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction OnBeginOverlapOuter(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\r\n\tplayerCount = playerCount + 1\r\n\t\r\n\tdespawnCountdown = 0\r\nend\r\n\r\nfunction OnEndOverlapOuter(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\r\n\tplayerCount = playerCount - 1\r\n\t\r\n\tif (playerCount <= 0) then\r\n\t\tdespawnCountdown = DESPAWN_DELAY\r\n\t\t\r\n\t\t-- Send the minions home\r\n\t\tfor _,minion in pairs(CAMP_SPAWNER.context.minions) do\r\n\t\t\tlocal aiScript = minion:FindChildByName(\"NPCAIServer\")\r\n\t\t\tif aiScript then\r\n\t\t\t\taiScript.context.SetTemporaryVisionRadius(0, 3)\r\n\t\t\t\taiScript.context.SetTemporaryHearingRadius(0, 3)\r\n\t\t\t\taiScript.context.ResumePatrol()\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n\r\nINSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapInner)\r\nOUTSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapOuter)\r\nOUTSIDE_TRIGGER.endOverlapEvent:Connect(OnEndOverlapOuter)\r\n\r\n"
+        Text: "--[[\r\n\tNPCCampBehavior - Player Proximity\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n\t\r\n\tRequires two triggers, one for the Inside of the camp and one for the Outside.\r\n\tNPCs spawn when a player enters the Inside trigger. When all players exit the\r\n\tOutside trigger a countdown begins. When the countdown ends all NPCs despawn.\r\n--]]\r\n\r\nlocal INSIDE_TRIGGER = script:GetCustomProperty(\"InsideTrigger\"):WaitForObject()\r\nlocal OUTSIDE_TRIGGER = script:GetCustomProperty(\"OutsideTrigger\"):WaitForObject()\r\nlocal DESPAWN_DELAY = script:GetCustomProperty(\"DespawnDelay\") or 4\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 15\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal playerCount = 0\r\nlocal despawnCountdown = 0\r\nlocal lastMinionCount = 0\r\nlocal respawnCooldown = 0\r\n\r\n\r\nfunction Tick(deltaTime)\t\r\n\tif (despawnCountdown > 0) then\r\n\t\tdespawnCountdown = despawnCountdown - deltaTime\r\n\t\t\r\n\t\tif (despawnCountdown <= 0) then\r\n\t\t\tCAMP_SPAWNER.context.Despawn()\r\n\t\tend\r\n\tend\r\n\t\r\n\tif (respawnCooldown > 0) then\r\n\t\trespawnCooldown = respawnCooldown - deltaTime\r\n\tend\r\n\t\r\n\tlocal minionCount = CAMP_SPAWNER.context.minionCount\r\n\tif (minionCount == 0 and lastMinionCount > 0) then\r\n\t\trespawnCooldown = RESPAWN_COOLDOWN\r\n\tend\r\n\tlastMinionCount = minionCount\r\nend\r\n\r\nfunction OnBeginOverlapInner(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\t\r\n\tif (CAMP_SPAWNER.context.minionCount == 0 and\r\n\t\trespawnCooldown <= 0) then\r\n\t\t\r\n\t\tCAMP_SPAWNER.context.Spawn()\r\n\t\t\r\n\t\t-- Aggro the minions\r\n\t\tTask.Wait()\r\n\t\tfor _,minion in pairs(CAMP_SPAWNER.context.minions) do\r\n\t\t\tlocal aiScript = minion:FindChildByName(\"NPCAIServer\")\r\n\t\t\tif aiScript then\r\n\t\t\t\taiScript.context.SetTemporaryVisionHalfAngle(360, 1)\r\n\t\t\t\taiScript.context.EngageNearest()\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction OnBeginOverlapOuter(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\r\n\tplayerCount = playerCount + 1\r\n\t\r\n\tdespawnCountdown = 0\r\nend\r\n\r\nfunction OnEndOverlapOuter(theTrigger, player)\r\n\tif (not player:IsA(\"Player\")) then return end\r\n\t\r\n\tplayerCount = playerCount - 1\r\n\t\r\n\tif (playerCount <= 0) then\r\n\t\tdespawnCountdown = DESPAWN_DELAY\r\n\t\t\r\n\t\t-- Send the minions home\r\n\t\tfor _,minion in pairs(CAMP_SPAWNER.context.minions) do\r\n\t\t\tlocal aiScript = minion:FindChildByName(\"NPCAIServer\")\r\n\t\t\tif aiScript then\r\n\t\t\t\taiScript.context.SetTemporaryVisionRadius(0, 3)\r\n\t\t\t\taiScript.context.SetTemporaryHearingRadius(0, 3)\r\n\t\t\t\taiScript.context.ResumePatrol()\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n\r\nINSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapInner)\r\nOUTSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapOuter)\r\nOUTSIDE_TRIGGER.endOverlapEvent:Connect(OnEndOverlapOuter)\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:InsideTrigger"
+            ObjectReference {
+              SelfId: 16042018821665095070
+            }
+          }
+          Overrides {
+            Name: "cs:OutsideTrigger"
+            ObjectReference {
+              SelfId: 11580272344995734498
+            }
+          }
+          Overrides {
+            Name: "cs:DespawnDelay"
+            Float: 8
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown"
+            Float: 15
+          }
+          Overrides {
+            Name: "cs:InsideTrigger:tooltip"
+            String: "Reference to the small/inside trigger. When a player enters this area the camp spawns the NPCs."
+          }
+          Overrides {
+            Name: "cs:OutsideTrigger:tooltip"
+            String: "Reference to the large/outside trigger. When all players leave this area, the NPCs return to their spawn points and de-spawn, resetting the camp."
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown:tooltip"
+            String: "After all the NPCs de-spawn or are eliminated a cooldown period begins. During this period if players enter the inside camp it will not trigger a spawn."
+          }
+          Overrides {
+            Name: "cs:DespawnDelay:tooltip"
+            String: "After all players exit the outside trigger a countdown begins. When it reaches zero that\'s when the NPCs de-spawn. If players keep entering/exiting the outside trigger the delay starts over."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 190293469863767745
+      Name: "AmbushExample_README"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tAmbush Example\r\n\tv0.8.0\r\n\tby: standardcombo\r\n\t\r\n\tThis example of an enemy camp spawns three enemies when the player enters the camp.\r\n\t\r\n\tThe NPCs will chase and attack players as long as there are players within the camp.\r\n\tWhen all players exit the camp, the NPCs return to their spawn points, go to sleep\r\n\tand eventually despawn.\r\n\t\r\n\t\r\n\tCamp Behavior\r\n\t\r\n\tThe camp\'s behavior is driven by the scripts \'NPCSpawner\' and\r\n\t\'NPCCampBehavior_PlayerProximity\'. These scripts define \"When\" and \"How\" to spawn NPCs.\r\n\tEach of the scripts has custom properties that can be tuned to adjust their behavior.\r\n\t\r\n\tThe Ambush camp is characterized by two triggers, one small and one large--also called\r\n\tthe \"Inside Trigger\" and the \"Outside Trigger\". Adjusting the position, type and size\r\n\tof these two triggers is essential to correctly setting up an ambush-style camp.\r\n\t\r\n\tThe inside trigger is what detects players entering the camp and spawns the NPCs, while\r\n\tthe outside trigger\'s job is to keep track of players who are present, so that when\r\n\tthere are no more players in the camp the NPCs can be despawned.\r\n\t\r\n\t\r\n\tSpawn Points\r\n\t\r\n\tNPC camps are characterized by a number of spawn points that tell the spawner scripts\r\n\t\"What\" and \"Where\" to spawn. Each spawn point has references to the NPC templates which\r\n\tthey will spawn. These are setup as custom properties. A spawn point can have any number\r\n\tof NPC templates assigned as custom properties. No specific names need to be given to\r\n\tthose custom properties. The position and rotation of a spawn point determine the\r\n\torientation of the NPCs that spawn from it. Spawn points are usually placed touching the\r\n\tground and should be adjusted on uneven terrain.\r\n\t\r\n\tThis assemblage of parts is what allows NPC camps to come in all forms, to spawn all\r\n\tkinds of NPCs, in various compositions, and to behave in different ways as players\r\n\tapproach or leave the area.\r\n\t\r\n\t\r\n\tFor more information check the tooltips on each of the script properties.\r\n\t\r\n--]]\r\n\r\n"
       }
     }
     Assets {
@@ -28426,6 +23457,7 @@ Assets {
               }
             }
             ParentId: 4781671109827199097
+            ChildIds: 10318705552966214072
             ChildIds: 7916060936753738321
             ChildIds: 220515760384247820
             ChildIds: 7607072812707819050
@@ -28439,6 +23471,36 @@ Assets {
             }
             Folder {
               IsGroup: true
+            }
+          }
+          Objects {
+            Id: 10318705552966214072
+            Name: "WaypointExample_README"
+            Transform {
+              Location {
+                X: -20166.6738
+                Y: 8668.51855
+                Z: -1426.86597
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 12901535811932769121
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 8371139463680709117
+              }
             }
           }
           Objects {
@@ -29069,12 +24131,6 @@ Assets {
                 Float: 500
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 400
               }
@@ -29139,12 +24195,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -29171,6 +24221,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -29231,12 +24373,6 @@ Assets {
                   SubObjectId: 9927192082764146384
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -29279,30 +24415,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 20
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -29343,10 +24461,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -29744,12 +24858,8 @@ Assets {
             Name: "AnimatedMeshCostume"
             Transform {
               Location {
-                X: 2809.78711
-                Y: 178.029297
-                Z: 126.212402
               }
               Rotation {
-                Yaw: 179.999954
               }
               Scale {
                 X: 1
@@ -36616,6 +31726,15 @@ Assets {
       }
     }
     Assets {
+      Id: 585112705082600373
+      Name: "Cone - Truncated Narrow"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_cone_truncated_002"
+      }
+    }
+    Assets {
       Id: 4697170280612963749
       Name: "Ellipsoid - Truncated Hollow Wedge"
       PlatformAssetType: 1
@@ -36665,11 +31784,15 @@ Assets {
       Name: "ChanceToDestroyParent"
       PlatformAssetType: 3
       TextAsset {
-        Text: "local CHANCE = script:GetCustomProperty(\"ChanceToDestroy\")\r\n\r\nif math.random() < CHANCE then\r\n\tscript.parent:Destroy()\r\nend"
+        Text: "--[[\r\n\tChance to Destroy Parent\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tA simple script that has a chance to destroy its parent as soon as\r\n\tthe script initializes.\r\n--]]\r\n\r\nlocal CHANCE = script:GetCustomProperty(\"ChanceToDestroy\")\r\n\r\nif math.random() < CHANCE then\r\n\tscript.parent:Destroy()\r\nend"
         CustomParameters {
           Overrides {
             Name: "cs:ChanceToDestroy"
             Float: 0.65
+          }
+          Overrides {
+            Name: "cs:ChanceToDestroy:tooltip"
+            String: "The probability the parent object will be destroyed. Between 0 and 1."
           }
         }
       }
@@ -36809,7 +31932,7 @@ Assets {
       Name: "AnimatedMeshCostume"
       PlatformAssetType: 3
       TextAsset {
-        Text: "\r\nlocal MESH = script.parent:FindDescendantByType(\"AnimatedMesh\")\r\n\r\nlocal allObjects = script.parent:GetChildren()\r\n\r\nfor _,obj in ipairs(allObjects) do\r\n\tif obj:IsA(\"Folder\") then\r\n\t\tlocal socketName = obj.name\r\n\t\tlocal pos = obj:GetWorldPosition()\r\n\t\tlocal rot = obj:GetWorldRotation()\r\n\t\t\r\n\t\tMESH:AttachCoreObject(obj, socketName)\r\n\t\t\r\n\t\tobj:SetWorldPosition(pos)\r\n\t\tobj:SetWorldRotation(rot)\r\n\tend\r\nend\r\n\r\n-- TEST\r\n--MESH:PlayAnimation(\"1hand_melee_slash_right\", {shouldLoop = true})\r\n\r\n--[[\r\nTask.Wait()\r\nMESH.animationStance = \"1hand_melee_idle_ready\"\r\n\r\nwhile true do\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.55})\r\n\tTask.Wait(0.6)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.8})\r\n\tTask.Wait(1)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.55})\r\n\tTask.Wait(0.6)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.8})\r\n\tTask.Wait(1)\r\n\tMESH.animationStance = \"unarmed_dance\"\r\n\tTask.Wait(6)\r\nend\r\n--]]"
+        Text: "--[[\r\n\tAnimated Mesh Costume\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tAttaches objects to an NPC to customize its visuals.\r\n\t\r\n\tAutomatically detects the animated mesh object that should be setup as\r\n\tits sibling in the hierarchy.\r\n\t\r\n\tAutomatically detects siblings with names that match socket names on the\r\n\tanimated mesh and attaches those groups to the mesh sockets.\r\n\tE.g. A group named \"head\" will attach to the animated mesh\'s head.\r\n\t\r\n\tExpects the animated mesh to be in the \"bind\" stance as the template is\r\n\tspawned. If the animated mesh is not in the \"bind\" stance, then\r\n\tattachments will appear out of place.\r\n--]]\r\n\r\nlocal MESH = script.parent:FindDescendantByType(\"AnimatedMesh\")\r\n\r\nlocal allObjects = script.parent:GetChildren()\r\n\r\nfor _,obj in ipairs(allObjects) do\r\n\tif obj:IsA(\"Folder\") then\r\n\t\tlocal socketName = obj.name\r\n\t\tlocal pos = obj:GetWorldPosition()\r\n\t\tlocal rot = obj:GetWorldRotation()\r\n\t\t\r\n\t\tMESH:AttachCoreObject(obj, socketName)\r\n\t\t\r\n\t\tobj:SetWorldPosition(pos)\r\n\t\tobj:SetWorldRotation(rot)\r\n\tend\r\nend\r\n\r\n-- TEST\r\n--MESH:PlayAnimation(\"1hand_melee_slash_right\", {shouldLoop = true})\r\n\r\n--[[\r\nTask.Wait()\r\nMESH.animationStance = \"1hand_melee_idle_ready\"\r\n\r\nwhile true do\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.55})\r\n\tTask.Wait(0.6)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.8})\r\n\tTask.Wait(1)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.55})\r\n\tTask.Wait(0.6)\r\n\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.8})\r\n\tTask.Wait(1)\r\n\tMESH.animationStance = \"unarmed_dance\"\r\n\tTask.Wait(6)\r\nend\r\n--]]"
       }
     }
     Assets {
@@ -36817,7 +31940,7 @@ Assets {
       Name: "AnimControllerSkeletonSwordsman"
       PlatformAssetType: 3
       TextAsset {
-        Text: "\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"1hand_melee_idle_ready\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"1hand_melee_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"1hand_melee_run_forward\"\r\nlocal WALKING_SPEED = 5\r\nlocal RUNNING_SPEED = 250\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nlocal attackIndex = 1\r\n\r\nfunction PlayAttack()\r\n\tif attackIndex == 1 then\r\n\t\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.6})\r\n\t\tattackIndex = 2\r\n\telse\r\n\t\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.6})\r\n\t\tattackIndex = 1\r\n\tend\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
+        Text: "--[[\r\n\tAnimation Controller - Skeleton Swordsman\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tControls the animations for an NPC based on the Skeleton Animated Mesh.\r\n\tChanges in animation occur in response to movement and state machine changes.\r\n--]]\r\n\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"1hand_melee_idle_ready\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"1hand_melee_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"1hand_melee_run_forward\"\r\nlocal WALKING_SPEED = 5\r\nlocal RUNNING_SPEED = 250\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nlocal attackIndex = 1\r\n\r\nfunction PlayAttack()\r\n\tif attackIndex == 1 then\r\n\t\tMESH:PlayAnimation(\"1hand_melee_slash_left\", {playbackRate = 0.6})\r\n\t\tattackIndex = 2\r\n\telse\r\n\t\tMESH:PlayAnimation(\"1hand_melee_slash_right\", {playbackRate = 0.6})\r\n\t\tattackIndex = 1\r\n\tend\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
         CustomParameters {
           Overrides {
             Name: "cs:AnimatedMesh"
@@ -36828,6 +31951,14 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
             }
+          }
+          Overrides {
+            Name: "cs:AnimatedMesh:tooltip"
+            String: "Reference to the animated mesh object for this NPC."
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
           }
         }
       }
@@ -37163,12 +32294,6 @@ Assets {
                 Float: 300
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 400
               }
@@ -37233,12 +32358,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -37265,6 +32384,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -37325,12 +32536,6 @@ Assets {
                   SubObjectId: 8407864205170865650
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -37373,30 +32578,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 20
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -37437,10 +32624,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: true
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -37837,12 +33020,8 @@ Assets {
             Name: "AnimatedMeshCostume"
             Transform {
               Location {
-                X: 2809.78711
-                Y: 178.029297
-                Z: 126.212402
               }
               Rotation {
-                Yaw: 179.999954
               }
               Scale {
                 X: 1
@@ -42403,12 +37582,6 @@ Assets {
                 Float: 200
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
                 Name: "cs:MoveSpeed"
                 Float: 400
               }
@@ -42473,12 +37646,6 @@ Assets {
                 Bool: true
               }
               Overrides {
-                Name: "cs:LootFactory"
-                AssetReference {
-                  Id: 9945787143985893269
-                }
-              }
-              Overrides {
                 Name: "cs:RewardResourceType"
                 String: "XP"
               }
@@ -42505,6 +37672,98 @@ Assets {
               Overrides {
                 Name: "cs:Team:isrep"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:LootId:tooltip"
+                String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+              }
+              Overrides {
+                Name: "cs:ObjectId:tooltip"
+                String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
+              }
+              Overrides {
+                Name: "cs:Team:tooltip"
+                String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+              }
+              Overrides {
+                Name: "cs:CurrentState:tooltip"
+                String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
+              }
+              Overrides {
+                Name: "cs:CurrentHealth:tooltip"
+                String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+              }
+              Overrides {
+                Name: "cs:MoveSpeed:tooltip"
+                String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
+              }
+              Overrides {
+                Name: "cs:TurnSpeed:tooltip"
+                String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+              }
+              Overrides {
+                Name: "cs:LogicalPeriod:tooltip"
+                String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
+              }
+              Overrides {
+                Name: "cs:ReturnToSpawn:tooltip"
+                String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+              }
+              Overrides {
+                Name: "cs:VisionHalfAngle:tooltip"
+                String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
+              }
+              Overrides {
+                Name: "cs:VisionRadius:tooltip"
+                String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+              }
+              Overrides {
+                Name: "cs:HearingRadius:tooltip"
+                String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
+              }
+              Overrides {
+                Name: "cs:SearchBonusVision:tooltip"
+                String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+              }
+              Overrides {
+                Name: "cs:SearchDuration:tooltip"
+                String: "Duration, in seconds, if the search pattern."
+              }
+              Overrides {
+                Name: "cs:PossibilityRadius:tooltip"
+                String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+              }
+              Overrides {
+                Name: "cs:ChaseRadius:tooltip"
+                String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
+              }
+              Overrides {
+                Name: "cs:AttackRange:tooltip"
+                String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+              }
+              Overrides {
+                Name: "cs:AttackCast:tooltip"
+                String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
+              }
+              Overrides {
+                Name: "cs:AttackRecovery:tooltip"
+                String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+              }
+              Overrides {
+                Name: "cs:AttackCooldown:tooltip"
+                String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
+              }
+              Overrides {
+                Name: "cs:IsPushable:tooltip"
+                String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+              }
+              Overrides {
+                Name: "cs:RewardResourceType:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
+              }
+              Overrides {
+                Name: "cs:RewardResourceAmount:tooltip"
+                String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
               }
             }
             WantsNetworking: true
@@ -42565,12 +37824,6 @@ Assets {
                   SubObjectId: 8407864205170865650
                 }
               }
-              Overrides {
-                Name: "cs:NPCManager"
-                AssetReference {
-                  Id: 4760095941513075407
-                }
-              }
             }
             WantsNetworking: true
             Collidable_v2 {
@@ -42611,30 +37864,12 @@ Assets {
                 }
               }
               Overrides {
-                Name: "cs:DestructibleManager"
-                AssetReference {
-                  Id: 17999829830237049640
-                }
-              }
-              Overrides {
-                Name: "cs:BroadcastQueue"
-                AssetReference {
-                  Id: 17219088109710420602
-                }
-              }
-              Overrides {
                 Name: "cs:DamageToPlayers"
                 Int: 5
               }
               Overrides {
                 Name: "cs:DamageToNPCs"
                 Float: 20
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget"
-                AssetReference {
-                  Id: 2777724051004233514
-                }
               }
               Overrides {
                 Name: "cs:ProjectileBody"
@@ -42675,10 +37910,6 @@ Assets {
               Overrides {
                 Name: "cs:ProjectileHoming"
                 Bool: false
-              }
-              Overrides {
-                Name: "cs:PlayerHomingTarget:tooltip"
-                String: "In order to set a homing target to a specific point on a Player\'s body it\'s necessary to attach an invisible CoreObject to them, otherwise the projectile will home to their capsule center."
               }
             }
             WantsNetworking: true
@@ -43075,12 +38306,8 @@ Assets {
             Name: "AnimatedMeshCostume"
             Transform {
               Location {
-                X: 2809.78711
-                Y: 178.029297
-                Z: 126.212402
               }
               Rotation {
-                Yaw: 179.999954
               }
               Scale {
                 X: 1
@@ -44808,7 +40035,27 @@ Assets {
       Name: "AnimControllerSkeletonMarksman"
       PlatformAssetType: 3
       TextAsset {
-        Text: "\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"2hand_rifle_idle_relaxed\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"2hand_rifle_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"2hand_rifle_run_forward\"\r\nlocal WALKING_SPEED = 15\r\nlocal RUNNING_SPEED = 300\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nfunction PlayAttack()\r\n\tMESH:PlayAnimation(\"2hand_rifle_shoot\", {playbackRate = 0.6})\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
+        Text: "--[[\r\n\tAnimation Controller - Skeleton Marksman\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tControls the animations for an NPC based on the Skeleton Animated Mesh.\r\n\tChanges in animation occur in response to movement and state machine changes.\r\n--]]\r\n\r\nlocal MESH = script:GetCustomProperty(\"AnimatedMesh\"):WaitForObject()\r\nlocal ROOT = script:GetCustomProperty(\"Root\"):WaitForObject()\r\nlocal IDLE_STANCE = script:GetCustomProperty(\"IdleStance\") or \"2hand_rifle_idle_relaxed\"\r\nlocal WALK_STANCE = script:GetCustomProperty(\"WalkStance\") or \"2hand_rifle_walk_forward\"\r\nlocal RUN_STANCE = script:GetCustomProperty(\"RunStance\") or \"2hand_rifle_run_forward\"\r\nlocal WALKING_SPEED = 15\r\nlocal RUNNING_SPEED = 300\r\n\r\nlocal lastPos = script.parent:GetWorldPosition()\r\n\r\nfunction PlayAttack()\r\n\tMESH:PlayAnimation(\"2hand_rifle_shoot\", {playbackRate = 0.6})\r\n\tMESH.playbackRateMultiplier = 1\r\nend\r\n\r\nfunction PlayDeath()\r\n\tMESH:PlayAnimation(\"unarmed_death\")\r\n\tTask.Wait(1.96)\r\n\tMESH.playbackRateMultiplier = 0\r\nend\r\n\r\nfunction Tick(deltaTime)\r\n\tif deltaTime <= 0 then return end\r\n\t\r\n\tlocal pos = script.parent:GetWorldPosition()\r\n\tlocal v = pos - lastPos\r\n\tlocal speed = v.size / deltaTime\r\n\t\r\n\tlastPos = pos\r\n\t\r\n\tif speed < WALKING_SPEED then\r\n\t\tMESH.animationStance = IDLE_STANCE\r\n\t\t\r\n\telseif speed < RUNNING_SPEED then\r\n\t\tMESH.animationStance = WALK_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 2 * (speed - WALKING_SPEED) / (RUNNING_SPEED - WALKING_SPEED)\r\n\telse\r\n\t\tMESH.animationStance = RUN_STANCE\r\n\t\tMESH.animationStancePlaybackRate = 0.5 + (speed - RUNNING_SPEED) * 0.002\r\n\tend\r\nend\r\n\r\n\r\nlocal STATE_SLEEPING = 0\r\nlocal STATE_ENGAGING = 1\r\nlocal STATE_ATTACK_CAST = 2\r\nlocal STATE_ATTACK_RECOVERY = 3\r\nlocal STATE_PATROLLING = 4\r\nlocal STATE_LOOKING_AROUND = 5\r\nlocal STATE_DEAD_1 = 6\r\nlocal STATE_DEAD_2 = 7\r\nlocal STATE_DISABLED = 8\r\n\r\nfunction UpdateArt(state)\t\t\r\n\tif (state == STATE_ATTACK_CAST) then\r\n\t\tPlayAttack()\r\n\t\t\t\t\r\n\telseif (state == STATE_DEAD_1) then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\n\r\nfunction GetCurrentState()\r\n\treturn ROOT:GetCustomProperty(\"CurrentState\")\r\nend\r\n\r\n\r\nfunction OnPropertyChanged(object, propertyName)\r\n\t\r\n\tif (propertyName == \"CurrentState\") then\r\n\t\tUpdateArt(GetCurrentState())\r\n\tend\r\nend\r\nROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)\r\n\r\n--[[\r\nfunction OnBindingPressed(player, action)\r\n\tif action == \"ability_primary\" then\r\n\t\tPlayAttack()\r\n\t\t\r\n\telseif action == \"ability_secondary\" then\r\n\t\tPlayDeath()\r\n\tend\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(function(player)\r\n\tplayer.bindingPressedEvent:Connect(OnBindingPressed)\r\nend)\r\n--]]"
+        CustomParameters {
+          Overrides {
+            Name: "cs:AnimatedMesh"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:AnimatedMesh:tooltip"
+            String: "Reference to the animated mesh object for this NPC."
+          }
+          Overrides {
+            Name: "cs:Root:tooltip"
+            String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
+          }
+        }
       }
     }
     Assets {
@@ -44905,7 +40152,33 @@ Assets {
       Name: "NPCCampBehavior_AlwaysSpawn"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nNPCCampBehavior - Always Spawn\r\nby: standardcombo\r\nv0.7.1\r\n(work in progress)\r\n\r\nWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n--]]\r\n\r\nlocal INITIAL_DELAY = script:GetCustomProperty(\"InitialDelay\") or 1\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 7\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal firstTime = true\r\n\r\nfunction Tick()\r\n\tTask.Wait(1)\r\n\t\r\n\tif (CAMP_SPAWNER.context.minionCount == 0) then\r\n\t\tif firstTime then\r\n\t\t\tfirstTime = false\r\n\t\t\tTask.Wait(INITIAL_DELAY)\r\n\t\telse\r\n\t\t\tTask.Wait(RESPAWN_COOLDOWN)\r\n\t\tend\r\n\t\t\r\n\t\tCAMP_SPAWNER.context.Spawn()\r\n\tend\r\nend"
+        Text: "--[[\r\n\tNPCCampBehavior - Always Spawn\r\n\tby: standardcombo\r\n\tv0.8.0\r\n\t\r\n\tWorks in conjunction with NPCSpawner and expects it as a sibling script.\r\n\t\r\n\tTells the NPCSpawner script to spawn all the NPCs after the game begins\r\n\tand the \'InitialDelay\' has elapsed. If all the NPCs die or are destroyed,\r\n\tthen a cooldown period begins, after which the NPCs spawn again.\r\n--]]\r\n\r\nlocal INITIAL_DELAY = script:GetCustomProperty(\"InitialDelay\") or 1\r\nlocal RESPAWN_COOLDOWN = script:GetCustomProperty(\"RespawnCooldown\") or 7\r\n\r\nlocal CAMP_SPAWNER = script.parent:FindChildByName(\"NPCSpawner\")\r\n\r\nlocal firstTime = true\r\n\r\nfunction Tick()\r\n\tTask.Wait(1)\r\n\t\r\n\tif (CAMP_SPAWNER.context.minionCount == 0) then\r\n\t\tif firstTime then\r\n\t\t\tfirstTime = false\r\n\t\t\tTask.Wait(INITIAL_DELAY)\r\n\t\telse\r\n\t\t\tTask.Wait(RESPAWN_COOLDOWN)\r\n\t\tend\r\n\t\t\r\n\t\tCAMP_SPAWNER.context.Spawn()\r\n\tend\r\nend"
+        CustomParameters {
+          Overrides {
+            Name: "cs:InitialDelay"
+            Float: 1
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown"
+            Float: 7
+          }
+          Overrides {
+            Name: "cs:InitialDelay:tooltip"
+            String: "The initial delay before the camp spawns the first NPCs."
+          }
+          Overrides {
+            Name: "cs:RespawnCooldown:tooltip"
+            String: "After all NPCs are eliminated from the camp a cooldown period begins, after which all the NPCs spawn again."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 8371139463680709117
+      Name: "WaypointExample_README"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tWaypoint Example\r\n\tv0.8.0\r\n\tby: standardcombo\r\n\t\r\n\tThis example of an enemy camp combines a few components to create an encounter where a\r\n\tsquad of skeletons patrol an area.\r\n\t\r\n\t\r\n\tCamps\r\n\t\r\n\tThe first group of components is the \'Minion Camp\', responsible for spawning and\r\n\trespawning the skeletons. The camp is driven by the scripts \'NPCSpawner\' and\r\n\t\'NPCCampBehavior_AlwaysSpawn\'. These scripts define \"When\" and \"How\" to spawn NPCs.\r\n\tEach of the scripts has custom properties that can be tuned to adjust their behavior.\r\n\t\r\n\tNPC camps are characterized by a number of spawn points that tell the spawner scripts\r\n\t\"What\" and \"Where\" to spawn. Each spawn point has references to the NPC templates which\r\n\tthey will spawn. These are setup as custom properties. A spawn point can have any number\r\n\tof NPC templates assigned as custom properties. No specific names need to be given to\r\n\tthe custom properties on spawn points. The position and rotation of a spawn point\r\n\tdetermine the orientation of the NPCs that spawn from it. Spawn points are usually\r\n\tplaced touching the ground and should be adjusted on uneven terrain.\r\n\t\r\n\tThis assemblage of parts is what allows NPC camps to come in all forms, to spawn all\r\n\tkinds of NPCs, in various compositions, and to behave in different ways as players\r\n\tapproach or leave the area.\r\n\t\r\n\t\r\n\tWaypoints\r\n\t\r\n\tThe patrolling behavior of the NPCs is determined by the design of the waypoint objects.\r\n\tThis example comes with three waypoints: \"main\", \"A\" and \"B\".\r\n\t\r\n\tEach waypoint has an area defined by its child trigger. Each waypoint also has\r\n\treferences to other waypoints, forming a network. When an NPC enters a waypoint\'s area,\r\n\tit looks at the list of other waypoints that have been assigned as custom properties\r\n\tand selects one of them at random. The NPC is directed to go to the chosen waypoint and\r\n\tthe cycle continues until the NPC exits the patrolling state--for example if they are\r\n\tengaged in combat.\r\n\t\r\n\tIn this example, the waypoint \"main\" has two destinations: \"A\" & \"B\". Meanwhile, both\r\n\tpoints \"A\" and \"B\" have only one destination, back to \"main\".\r\n\t\r\n\tIf a waypoint only has one destination assigned to it then that is always chosen as\r\n\tthe next patrol destination. If a waypoint has no destination waypoints assigned to it\r\n\tthen it behaves as an end point. NPCs that reach a waypoint with no destinations are\r\n\tput to \"sleep\".\r\n\t\r\n\t\r\n\tFor more information check the tooltips on each of the script properties.\r\n\t\r\n--]]\r\n\r\n"
       }
     }
     Assets {
@@ -44925,7 +40198,7 @@ Assets {
                 Z: 1
               }
             }
-            ParentId: 12384732404067500785
+            ParentId: 4781671109827199097
             ChildIds: 17230748584674696639
             UnregisteredParameters {
               Overrides {
@@ -44941,6 +40214,12 @@ Assets {
               Overrides {
                 Name: "cs:ReplaceOnEachRespawn"
                 Bool: true
+              }
+              Overrides {
+                Name: "cs:CombatDependencies"
+                AssetReference {
+                  Id: 2087257134469971969
+                }
               }
               Overrides {
                 Name: "cs:EquipmentTemplate:tooltip"
@@ -45014,6 +40293,301 @@ Assets {
       PlatformAssetType: 3
       TextAsset {
         Text: "--[[\r\nCopyright 2019 Manticore Games, Inc. \r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated\r\ndocumentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the\r\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit\r\npersons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the\r\nSoftware.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE\r\nWARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\r\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\r\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\r\n--]]\r\n\r\n--[[\r\nGives a specific equipment to every player on spawn, and handles destroying them when unneeded. Also optionally\r\nreplaces each equipment on respawn to reset the state.\r\n--]]\r\n\r\n-- Internal custom properties\r\nlocal COMPONENT_ROOT = script:GetCustomProperty(\"ComponentRoot\"):WaitForObject()\r\n\r\n-- User exposed properties\r\nlocal EQUIPMENT_TEMPLATE = COMPONENT_ROOT:GetCustomProperty(\"EquipmentTemplate\")\r\nlocal TEAM = COMPONENT_ROOT:GetCustomProperty(\"Team\")\r\nlocal REPLACE_ON_EACH_RESPAWN = COMPONENT_ROOT:GetCustomProperty(\"ReplaceOnEachRespawn\")\r\n\r\n-- Check user properties\r\nif not EQUIPMENT_TEMPLATE then\r\n\terror(\"StaticPlayerEquipment needs an equipment template to function\")\r\nend\r\n\r\nif TEAM < 0 or TEAM > 4 then\r\n    warn(\"Team must be a valid team number (1-4) or 0\")\r\n    TEAM = 0\r\nend\r\n-- Variables\r\nlocal playerTeams = {}\t\t\t-- We use this to detect team changes\r\nlocal equipment = {}\r\n\r\n-- bool AppliesToPlayersTeam(Player)\r\n-- Returns whether this player should get equipment given the team setting\r\nfunction AppliesToPlayersTeam(player)\r\n\tif TEAM == 0 then\r\n\t\treturn true\r\n\tend\r\n\r\n\treturn TEAM == player.team\r\nend\r\n\r\n-- nil GivePlayerEquipment(Player)\r\n-- Gives the referenced equipment to the player\r\nfunction GivePlayerEquipment(player)\r\n\tequipment[player] = World.SpawnAsset(EQUIPMENT_TEMPLATE)\r\n\tassert(equipment[player]:IsA(\"Equipment\"))\r\n\tequipment[player]:Equip(player)\r\nend\r\n\r\n-- nil RemovePlayerEquipment(Player)\r\n-- Removes the referenced requipment if that player has it\r\nfunction RemovePlayerEquipment(player)\r\n\tif equipment[player] and equipment[player]:IsValid() then\r\n\t\tequipment[player]:Unequip()\r\n\r\n\t\t-- Have to check IsValid() again, because unequip may have destroyed this equipment\r\n\t\tif equipment[player]:IsValid() then\r\n\t\t\tequipment[player]:Destroy()\r\n\t\tend\r\n\r\n\t\tequipment[player] = nil\r\n\tend\r\nend\r\n\r\n-- nil OnPlayerRespawned(Player)\r\n-- Replace the equipment if ReplaceOnEachRespawn\r\nfunction OnPlayerRespawned(player)\r\n\tRemovePlayerEquipment(player)\r\n\r\n\tif AppliesToPlayersTeam(player) then\r\n\t\tGivePlayerEquipment(player)\r\n\tend\r\nend\r\n\r\n-- nil OnPlayerJoined(Player)\r\n-- Gives original equipment\r\nfunction OnPlayerJoined(player)\r\n\tif TEAM ~= 0 then\r\n\t\tplayerTeams[player] = player.team\r\n\tend\r\n\r\n\tif REPLACE_ON_EACH_RESPAWN then\r\n\t\tplayer.respawnedEvent:Connect(OnPlayerRespawned)\r\n\tend\r\n\r\n\tif AppliesToPlayersTeam(player) then\r\n\t\tGivePlayerEquipment(player)\r\n\tend\r\nend\r\n\r\n-- nil OnPlayerLeft(Player)\r\n-- Removes equipment\r\nfunction OnPlayerLeft(player)\r\n\tRemovePlayerEquipment(player)\r\nend\r\n\r\n-- nil OnPlayerTeamChanged(Player)\r\n-- Handles reassinging equipment if the player changes teams\r\nfunction OnPlayerTeamChanged(player)\r\n\tRemovePlayerEquipment(player)\r\n\r\n\tif AppliesToPlayersTeam(player) then\r\n\t\tGivePlayerEquipment(player)\r\n\tend\r\nend\r\n\r\n-- nil Tick(float)\r\n-- Handles players changing teams\r\nfunction Tick(deltaTime)\r\n\tif TEAM ~= 0 then\r\n\t\tfor _, player in pairs(Game.GetPlayers()) do\r\n\t\t\tlocal team = player.team\r\n\r\n\t\t\tif team ~= playerTeams[player] then\r\n\t\t\t\tOnPlayerTeamChanged(player)\r\n\r\n\t\t\t\tplayerTeams[player] = team\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n\r\n-- Initialize\r\nGame.playerJoinedEvent:Connect(OnPlayerJoined)\r\nGame.playerLeftEvent:Connect(OnPlayerLeft)\r\n"
+      }
+    }
+    Assets {
+      Id: 2087257134469971969
+      Name: "Combat Dependencies"
+      PlatformAssetType: 5
+      TemplateAsset {
+        ObjectBlock {
+          RootId: 8014650375856875642
+          Objects {
+            Id: 8014650375856875642
+            Name: "Combat Dependencies"
+            Transform {
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 4781671109827199097
+            ChildIds: 1397477394437994750
+            ChildIds: 4513339989685681768
+            ChildIds: 15693643951607791127
+            ChildIds: 3305255709801741084
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Folder {
+              IsGroup: true
+            }
+          }
+          Objects {
+            Id: 1397477394437994750
+            Name: "CombatDependencies_README"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 8014650375856875642
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 9443065654053683749
+              }
+            }
+          }
+          Objects {
+            Id: 4513339989685681768
+            Name: "CombatWrapAPI"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 8014650375856875642
+            UnregisteredParameters {
+            }
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 280759072463152142
+              }
+            }
+          }
+          Objects {
+            Id: 15693643951607791127
+            Name: "PlayerHomingTargets"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 8014650375856875642
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 5161837154855123765
+              }
+            }
+          }
+          Objects {
+            Id: 3305255709801741084
+            Name: "CrossContextCaller"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 8014650375856875642
+            UnregisteredParameters {
+            }
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 16566652747231675155
+              }
+            }
+          }
+        }
+        PrimaryAssetId {
+          AssetType: "None"
+          AssetId: "None"
+        }
+      }
+      DirectlyPublished: true
+    }
+    Assets {
+      Id: 16566652747231675155
+      Name: "CrossContextCaller"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tCross-Context Function Caller\r\n\tv1.1\r\n\tby: standardcombo\r\n\t\r\n\tThis util provides a pathway through which scripts can have functions be called in an\r\n\tadjacent networking context.\r\n\t\r\n\tFor example, a script in a Server context cannot do certain operations that require a\r\n\tNetworked or default context. The Cross-Context script is placed in the Networked\r\n\tcontext and the Server script passes to it a function through Call(). When this\r\n\tCross-Context script goes into its own context it will then invoke the server function.\r\n--]]\r\n\r\n-- Registers itself into the global table\r\nlocal API = {}\r\n_G[\"standardcombo.Utils.CrossContextCaller\"] = API\r\n\r\n\r\nlocal functionsToRun = {}\r\n\r\n\r\nfunction API.Call(F)\r\n\ttable.insert(functionsToRun, F)\r\nend\r\n\r\nfunction Tick()\r\n\twhile functionsToRun[1] do\r\n\t\tfunctionsToRun[1]()\r\n\t\ttable.remove(functionsToRun, 1)\r\n\tend\r\nend"
+      }
+    }
+    Assets {
+      Id: 5161837154855123765
+      Name: "PlayerHomingTargets"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tPlayer Homing Targets\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tSpawns an invisible targeting object for each Player and attaches it to their neck position.\r\n\tThese objects can be used for targeting homing shots that will result in successful hits,\r\n\tregardless of the Player\'s animation or mount.\r\n--]]\r\n\r\n-- Registers itself into the global table\r\nlocal API = {}\r\n_G[\"standardcombo.Combat.PlayerHomingTargets\"] = API\r\n\r\n\r\nlocal TARGET_TEMPLATE = script:GetCustomProperty(\"PlayerHomingTarget\")\r\n\r\n\r\nlocal targetingObjects = {}\r\n\r\n\r\nfunction API.GetTargetForPlayer(player)\r\n\tif targetingObjects[player] then\r\n\t\treturn targetingObjects[player]\r\n\tend\r\n\treturn player\r\nend\r\n\r\n\r\nfunction OnPlayerJoined(player)\r\n\tlocal obj = World.SpawnAsset(TARGET_TEMPLATE)\r\n\tobj:AttachToPlayer(player, \"upper_spine\")\r\n\ttargetingObjects[player] = obj\r\nend\r\n\r\nGame.playerJoinedEvent:Connect(OnPlayerJoined)\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:PlayerHomingTarget"
+            AssetReference {
+              Id: 2777724051004233514
+            }
+          }
+          Overrides {
+            Name: "cs:PlayerHomingTarget:tooltip"
+            String: "The invisible object to be attached to players for purposes of targeting homing shots."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 2777724051004233514
+      Name: "PlayerHomingTargetObject"
+      PlatformAssetType: 5
+      TemplateAsset {
+        ObjectBlock {
+          RootId: 13791220973918033144
+          Objects {
+            Id: 13791220973918033144
+            Name: "PlayerHomingTargetObject"
+            Transform {
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 4781671109827199097
+            WantsNetworking: true
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:forceoff"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:forceoff"
+            }
+            CoreMesh {
+              MeshAsset {
+                Id: 12095835209017042614
+              }
+              Teams {
+                IsTeamCollisionEnabled: true
+                IsEnemyCollisionEnabled: true
+              }
+              EnableCameraCollision: true
+              StaticMesh {
+                Physics {
+                }
+              }
+            }
+          }
+        }
+        PrimaryAssetId {
+          AssetType: "None"
+          AssetId: "None"
+        }
+      }
+    }
+    Assets {
+      Id: 280759072463152142
+      Name: "CombatWrapAPI"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tCombat Wrap API\r\n\tv0.8.0\r\n\tby: standardcombo\r\n\t\r\n\tIdentifies the type of object and wraps it with a common interface for combat-related functions.\r\n\t\r\n\tInterface:\r\n\t- GetName()\r\n\t- GetTeam()\r\n\t- GetHitPoints()\r\n\t- GetMaxHitPoints()\r\n\t- ApplyDamage()\r\n\t- IsDead()\r\n--]]\r\n\r\n\r\n-- Registers itself into the global table\r\nlocal API = {}\r\n_G[\"standardcombo.Combat.Wrap\"] = API\r\n\r\n-- Module dependencies\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nfunction CROSS_CONTEXT_CALLER() return MODULE.Get(\"standardcombo.Utils.CrossContextCaller\") end\r\n\r\n\r\n-- The different entity wrappers\r\nlocal PLAYER_WRAPPER = require( script:GetCustomProperty(\"CombatWrapPlayer\") )\r\nlocal NPC_WRAPPER = require( script:GetCustomProperty(\"CombatWrapNPC\") )\r\n\r\n\r\n-- GetName()\r\nfunction API.GetName(object)\r\n\treturn GetWrapperFor(object).GetName(object)\r\nend\r\n\r\n-- GetTeam()\r\nfunction API.GetTeam(object)\r\n\treturn GetWrapperFor(object).GetTeam(object)\r\nend\r\n\r\n-- TODO\r\n-- GetHitPoints()\r\n-- GetMaxHitPoints()\r\n\r\n-- ApplyDamage()\r\nfunction API.ApplyDamage(object, dmg, source, pos, rot)\r\n\tCROSS_CONTEXT_CALLER().Call(function()\r\n\t\tGetWrapperFor(object).ApplyDamage(object, dmg, source, pos, rot)\r\n\tend)\r\nend\r\n\r\n-- IsDead()\r\nfunction API.IsDead(object)\r\n\treturn GetWrapperFor(object).IsDead(object)\r\nend\r\n\r\n\r\nfunction GetWrapperFor(object)\r\n\tif object:IsA(\"Player\") then\r\n\t\treturn PLAYER_WRAPPER\r\n\tend\r\n\treturn NPC_WRAPPER\r\nend\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:ModuleManager"
+            AssetReference {
+              Id: 14162240362023469980
+            }
+          }
+          Overrides {
+            Name: "cs:CombatWrapPlayer"
+            AssetReference {
+              Id: 2410645964140835056
+            }
+          }
+          Overrides {
+            Name: "cs:CombatWrapNPC"
+            AssetReference {
+              Id: 10863343261688813450
+            }
+          }
+          Overrides {
+            Name: "cs:CombatWrapPlayer:tooltip"
+            String: "A wrapper for combat-related functions and properties on Players. The wrappers provide common interface between different entity types."
+          }
+          Overrides {
+            Name: "cs:CombatWrapNPC:tooltip"
+            String: "A wrapper for combat-related functions and properties on NPCs. The wrappers provide common interface between different entity types."
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 10863343261688813450
+      Name: "CombatWrapNPC"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tCombat Wrap - NPC\r\n\tv0.8.2\r\n\tby: standardcombo\r\n\t\r\n\tRegisters itself into the global table.\r\n\tProvides an interface of combat functions that operate on a non-Player object.\r\n\t\r\n\tInterface:\r\n\t- GetName()\r\n\t- GetTeam()\r\n\t- GetHitPoints()\r\n\t- GetMaxHitPoints()\r\n\t- ApplyDamage()\r\n\t- IsDead()\r\n--]]\r\n\r\n-- Component dependencies\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nfunction DESTRUCTIBLE_MANAGER() return MODULE.Get_Optional(\"standardcombo.NPCKit.DestructibleManager\") end\r\nfunction NPC_MANAGER() return MODULE.Get_Optional(\"standardcombo.NPCKit.NPCManager\") end\r\n\r\n\r\nlocal wrapper = {}\r\n\r\n\r\n-- GetName()\r\nfunction wrapper.GetName(npc)\r\n\tlocal templateRoot = npc:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\tlocal displayName = templateRoot:GetCustomProperty(\"DisplayName\")\r\n\t\tif displayName then\r\n\t\t\treturn displayName\r\n\t\tend\r\n\t\treturn templateRoot.name\r\n\tend\r\n\treturn npc.name\r\nend\r\n\r\n\r\n-- GetTeam()\r\nfunction wrapper.GetTeam(npc)\r\n\tif npc.team ~= nil then\r\n\t\treturn npc.team\r\n\tend\r\n\tif npc.FindTemplateRoot ~= nil then\r\n\t\tlocal templateRoot = npc:FindTemplateRoot()\r\n\t\tif templateRoot then\r\n\t\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\t\tend\r\n\tend\r\n\treturn nil\r\nend\r\n\r\n\r\n-- TODO:\r\n-- GetHitPoints()\r\n-- GetMaxHitPoints()\r\n\r\n\r\n-- ApplyDamage()\r\nfunction wrapper.ApplyDamage(npc, dmg, source, pos, rot)\r\n\tif not DESTRUCTIBLE_MANAGER() then return end\r\n\t\r\n\tlocal hitResult = dmg:GetHitResult()\r\n\tif hitResult and not pos then\r\n\t\tpos = hitResult:GetImpactPosition()\r\n\tend\r\n\tif hitResult and not rot then\r\n\t\trot = hitResult:GetTransform():GetRotation()\r\n\tend\r\n\tDESTRUCTIBLE_MANAGER().DamageObject(npc, dmg, source, pos, rot)\r\nend\r\n\r\n\r\n-- IsDead()\r\nfunction wrapper.IsDead(obj)\r\n\t\r\n\tif obj.context and obj.context.IsAlive then\r\n\t\treturn (not obj.context.IsAlive())\r\n\tend\r\n\t\r\n\tlocal npcScript = nil\r\n\t\r\n\tif NPC_MANAGER() then\r\n\t\tnpcScript = NPC_MANAGER().FindScriptForCollider(obj)\r\n\tend\r\n\t\r\n\tif not npcScript then return false end\r\n\t\r\n\tif npcScript.context and npcScript.context.IsAlive then\r\n\t\treturn (not npcScript.context.IsAlive())\r\n\tend\r\n\treturn false\r\nend\r\n\r\n\r\nreturn wrapper\r\n\r\n"
+        CustomParameters {
+          Overrides {
+            Name: "cs:ModuleManager"
+            AssetReference {
+              Id: 14162240362023469980
+            }
+          }
+        }
+      }
+    }
+    Assets {
+      Id: 2410645964140835056
+      Name: "CombatWrapPlayer"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tCombat Wrap - Player\r\n\tv0.8.0\r\n\tby: standardcombo\r\n\t\r\n\tProvides an interface of combat functions that operate on a Player object.\r\n\t\r\n\tInterface:\r\n\t- GetName()\r\n\t- GetTeam()\r\n\t- GetHitPoints()\r\n\t- GetMaxHitPoints()\r\n\t- ApplyDamage()\r\n\t- IsDead()\r\n--]]\r\n\r\nlocal wrapper = {}\r\n\r\n\t\r\n-- GetName()\r\nfunction wrapper.GetName(player)\r\n\treturn player.name\r\nend\r\n\r\n-- GetTeam()\r\nfunction wrapper.GetTeam(player)\r\n\treturn player.team\r\nend\r\n\r\n-- GetHitPoints()\r\nfunction wrapper.GetHitPoints(player)\r\n\treturn player.hitPoints\r\nend\r\n\r\n-- GetMaxHitPoints()\r\nfunction wrapper.GetMaxHitPoints(player)\r\n\treturn player.maxHitPoints\r\nend\r\n\r\n-- ApplyDamage()\r\nfunction wrapper.ApplyDamage(player, dmg)\r\n\tplayer:ApplyDamage(dmg)\r\nend\r\n\r\n--IsDead\r\nfunction wrapper.IsDead(player)\r\n\treturn player.isDead\r\nend\r\n\r\nreturn wrapper"
+      }
+    }
+    Assets {
+      Id: 9443065654053683749
+      Name: "CombatDependencies_README"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tCombat Dependencies - Template\r\n\tv1.0\r\n\tby: standardcombo\r\n\t\r\n\tAdd a copy of the Combat Dependencies template to the hierarchy.\r\n--]]"
       }
     }
     Assets {
@@ -46227,7 +41801,7 @@ Assets {
       Name: "DestructrableWeaponClient"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nDestructibleWeapon - Client\r\nby: standardcombo, Chris C.\r\nv0.7.1\r\n(work in progress)\r\n\r\n--]]\r\n\r\nlocal weapon = script:FindAncestorByType(\"Equipment\")\r\n\r\nfunction OnShowDamageFeedback(amount, position)\r\n\tlocal viewPos = Game.GetLocalPlayer():GetViewWorldPosition()\r\n\tlocal distance = (viewPos - position).sizeSquared\r\n\tlocal isBig = (distance < 1000000) -- 10 meters squared\r\n\t\r\n\tUI.ShowFlyUpText(tostring(amount), position, {color = Color.RED, isBig = isBig})\r\nend\r\n\r\nEvents.Connect(\"ShowDamageFeedback\", OnShowDamageFeedback)"
+        Text: "--[[\r\n\tDestructibleWeapon - Client\r\n\tby: standardcombo, Chris C.\r\n\tv0.8.0\r\n\t\r\n\tPlace this script in a Weapon\'s client-context to show damage feedback\r\n\twhen using the Destructible Weapon system.\r\n--]]\r\n\r\nlocal weapon = script:FindAncestorByType(\"Equipment\")\r\n\r\nfunction OnShowDamageFeedback(amount, position)\r\n\tlocal viewPos = Game.GetLocalPlayer():GetViewWorldPosition()\r\n\tlocal distance = (viewPos - position).sizeSquared\r\n\tlocal isBig = (distance < 1000000) -- 10 meters squared\r\n\t\r\n\tUI.ShowFlyUpText(tostring(amount), position, {color = Color.RED, isBig = isBig})\r\nend\r\n\r\nEvents.Connect(\"ShowDamageFeedback\", OnShowDamageFeedback)\r\n\r\n"
       }
     }
     Assets {
@@ -46235,75 +41809,23 @@ Assets {
       Name: "DestructibleWeaponServer"
       PlatformAssetType: 3
       TextAsset {
-        Text: "--[[\r\nDestructibleWeapon - Server\r\nby: standardcombo, Chris C.\r\nv0.7.1\r\n(work in progress)\r\n\r\n--]]\r\n\r\nlocal WEAPON = script.parent\r\n\r\nlocal COMBAT = require( script:GetCustomProperty(\"CombatWrapAPI\") )\r\n\r\nlocal DAMAGE_TO_PLAYERS = script:GetCustomProperty(\"DamageToPlayers\")\r\nlocal DAMAGE_TO_OBJECTS = script:GetCustomProperty(\"DamageToObjects\")\r\n\r\n\r\nfunction OnTargetImpact(theWeapon, impactData)\r\n\tlocal amount = DAMAGE_TO_OBJECTS\r\n\tif impactData.targetObject:IsA(\"Player\") then\r\n\t\tamount = DAMAGE_TO_PLAYERS\r\n\tend\r\n\t\r\n\tlocal dmg = Damage.New(amount)\r\n\tdmg:SetHitResult(impactData:GetHitResult())\r\n\tdmg.reason = DamageReason.COMBAT\r\n\tdmg.sourcePlayer = theWeapon.owner\r\n\tdmg.sourceAbility = theWeapon:GetAbilities()[1]\r\n\t\r\n\tCOMBAT.ApplyDamage(impactData.targetObject, dmg, dmg.sourcePlayer)\r\nend\r\n\r\nWEAPON.targetImpactedEvent:Connect(OnTargetImpact)\r\n\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\tif sourceObject == WEAPON.owner then\r\n\t\tBroadcastDamageFeedback(dmgAmount, impactPosition)\r\n\tend\r\nend\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\n\r\n\r\nfunction BroadcastDamageFeedback(amount, position)\r\n\tlocal player = WEAPON.owner\r\n\tif Object.IsValid(player) then\r\n\t\tEvents.BroadcastToPlayer(player, \"ShowDamageFeedback\", amount, position)\r\n\tend\r\nend\r\n\r\nfunction Cleanup()\r\n\tif damagedListener then\r\n\t\tdamagedListener:Disconnect()\r\n\t\tdamagedListener = nil\r\n\tend\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\tCleanup()\r\nend\r\n\r\nWEAPON.destroyEvent:Connect(OnDestroyed)\r\n\r\n\r\n\r\n\r\n"
+        Text: "--[[\r\n\tDestructible Weapon - Server\r\n\tby: standardcombo, Chris C.\r\n\tv0.8.0\r\n\t\r\n\tPlace this script in Weapons to make them interactable with both\r\n\tPlayers and NPCs.\r\n\t\r\n\tExpects the \"Combat Wrap API\" to be added to the hierarchy.\r\n\t\r\n--]]\r\n\r\n-- Component dependencies\r\nlocal MODULE = require( script:GetCustomProperty(\"ModuleManager\") )\r\nfunction COMBAT() return MODULE.Get(\"standardcombo.Combat.Wrap\") end\r\n\r\n\r\nlocal WEAPON = script.parent\r\n\r\nlocal DAMAGE_TO_PLAYERS = script:GetCustomProperty(\"DamageToPlayers\")\r\nlocal DAMAGE_TO_OBJECTS = script:GetCustomProperty(\"DamageToObjects\")\r\n\r\n\r\nfunction OnTargetImpact(theWeapon, impactData)\r\n\tlocal amount = DAMAGE_TO_OBJECTS\r\n\tif impactData.targetObject:IsA(\"Player\") then\r\n\t\tamount = DAMAGE_TO_PLAYERS\r\n\tend\r\n\t\r\n\tlocal dmg = Damage.New(amount)\r\n\tdmg:SetHitResult(impactData:GetHitResult())\r\n\tdmg.reason = DamageReason.COMBAT\r\n\tdmg.sourcePlayer = theWeapon.owner\r\n\tdmg.sourceAbility = theWeapon:GetAbilities()[1]\r\n\t\r\n\tCOMBAT().ApplyDamage(impactData.targetObject, dmg, dmg.sourcePlayer)\r\nend\r\n\r\nWEAPON.targetImpactedEvent:Connect(OnTargetImpact)\r\n\r\n\r\nfunction OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)\r\n\tif sourceObject == WEAPON.owner then\r\n\t\tBroadcastDamageFeedback(dmgAmount, impactPosition)\r\n\tend\r\nend\r\nlocal damagedListener = Events.Connect(\"ObjectDamaged\", OnObjectDamaged)\r\n\r\n\r\nfunction BroadcastDamageFeedback(amount, position)\r\n\tlocal player = WEAPON.owner\r\n\tif Object.IsValid(player) then\r\n\t\tEvents.BroadcastToPlayer(player, \"ShowDamageFeedback\", amount, position)\r\n\tend\r\nend\r\n\r\nfunction Cleanup()\r\n\tif damagedListener then\r\n\t\tdamagedListener:Disconnect()\r\n\t\tdamagedListener = nil\r\n\tend\r\nend\r\n\r\nfunction OnDestroyed(obj)\r\n\tCleanup()\r\nend\r\n\r\nWEAPON.destroyEvent:Connect(OnDestroyed)\r\n\r\n"
         CustomParameters {
           Overrides {
-            Name: "cs:CombatWrapAPI"
+            Name: "cs:ModuleManager"
             AssetReference {
-              Id: 280759072463152142
+              Id: 14162240362023469980
             }
           }
           Overrides {
             Name: "cs:DamageToPlayers"
-            Int: 0
+            Int: 1
           }
           Overrides {
             Name: "cs:DamageToObjects"
-            Int: 0
+            Int: 1
           }
         }
-      }
-    }
-    Assets {
-      Id: 280759072463152142
-      Name: "CombatWrapAPI"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nCombat Wrap API\r\nv0.7.1\r\nby: standardcombo\r\n\r\nIdentifies the type of object and wraps it with a common interface for combat-related functions.\r\n\r\nInterface:\r\n- GetName()\r\n- GetTeam()\r\n- GetHitPoints()\r\n- GetMaxHitPoints()\r\n- ApplyDamage()\r\n- IsDead()\r\n\r\n--]]\r\n\r\nlocal PLAYER_WRAPPER = require( script:GetCustomProperty(\"CombatWrapPlayer\") )\r\nlocal NPC_WRAPPER = require( script:GetCustomProperty(\"CombatWrapNPC\") )\r\n\r\nlocal API = {}\r\n\r\n-- GetName()\r\nfunction API.GetName(object)\r\n\treturn GetWrapperFor(object).GetName(object)\r\nend\r\n\r\n-- GetTeam()\r\nfunction API.GetTeam(object)\r\n\treturn GetWrapperFor(object).GetTeam(object)\r\nend\r\n\r\n-- TODO\r\n-- GetHitPoints()\r\n-- GetMaxHitPoints()\r\n\r\n-- ApplyDamage()\r\nfunction API.ApplyDamage(object, dmg, source, pos, rot)\r\n\tGetWrapperFor(object).ApplyDamage(object, dmg, source, pos, rot)\r\nend\r\n\r\n-- IsDead()\r\nfunction API.IsDead(object)\r\n\treturn GetWrapperFor(object).IsDead(object)\r\nend\r\n\r\n\r\nfunction GetWrapperFor(object)\r\n\tif object:IsA(\"Player\") then\r\n\t\treturn PLAYER_WRAPPER\r\n\tend\r\n\treturn NPC_WRAPPER\r\nend\r\n\r\nreturn API"
-        CustomParameters {
-          Overrides {
-            Name: "cs:CombatWrapPlayer"
-            AssetReference {
-              Id: 2410645964140835056
-            }
-          }
-          Overrides {
-            Name: "cs:CombatWrapNPC"
-            AssetReference {
-              Id: 10863343261688813450
-            }
-          }
-        }
-      }
-    }
-    Assets {
-      Id: 10863343261688813450
-      Name: "CombatWrapNPC"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nCombat Wrap - NPC\r\nv0.7.1\r\nby: standardcombo\r\n\r\nProvides an interface of combat functions that operate on a non-Player object.\r\n\r\nInterface:\r\n- GetName()\r\n- GetTeam()\r\n- GetHitPoints()\r\n- GetMaxHitPoints()\r\n- ApplyDamage()\r\n- IsDead()\r\n\r\n--]]\r\n\r\nlocal DESTRUCTIBLE_MANAGER = require( script:GetCustomProperty(\"DestructibleManager\") )\r\nlocal NPC_MANAGER = require( script:GetCustomProperty(\"NPCManager\") )\r\n\r\nlocal wrapper = {}\r\n\r\n\r\n-- GetName()\r\nfunction wrapper.GetName(npc)\r\n\tlocal templateRoot = npc:FindTemplateRoot()\r\n\tif templateRoot then\r\n\t\tlocal displayName = templateRoot:GetCustomProperty(\"DisplayName\")\r\n\t\tif displayName then\r\n\t\t\treturn displayName\r\n\t\tend\r\n\t\treturn templateRoot.name\r\n\tend\r\n\treturn npc.name\r\nend\r\n\r\n\r\n-- GetTeam()\r\nfunction wrapper.GetTeam(npc)\r\n\tif npc.team ~= nil then\r\n\t\treturn npc.team\r\n\tend\r\n\tif npc.FindTemplateRoot ~= nil then\r\n\t\tlocal templateRoot = npc:FindTemplateRoot()\r\n\t\tif templateRoot then\r\n\t\t\treturn templateRoot:GetCustomProperty(\"Team\")\r\n\t\tend\r\n\tend\r\n\treturn nil\r\nend\r\n\r\n\r\n-- TODO:\r\n-- GetHitPoints()\r\n-- GetMaxHitPoints()\r\n\r\n\r\n-- ApplyDamage()\r\nfunction wrapper.ApplyDamage(npc, dmg, source, pos, rot)\r\n\tlocal hitResult = dmg:GetHitResult()\r\n\tif hitResult and not pos then\r\n\t\tpos = hitResult:GetImpactPosition()\r\n\tend\r\n\tif hitResult and not rot then\r\n\t\trot = hitResult:GetTransform():GetRotation()\r\n\tend\r\n\tDESTRUCTIBLE_MANAGER.DamageObject(npc, dmg, source, pos, rot)\r\nend\r\n\r\n\r\n-- IsDead()\r\nfunction wrapper.IsDead(obj)\r\n\t\r\n\tif obj.context and obj.context.IsAlive then\r\n\t\treturn (not obj.context.IsAlive())\r\n\tend\r\n\t\r\n\tlocal npcScript = NPC_MANAGER.FindScriptForCollider(obj)\r\n\tif not npcScript then return false end\r\n\t\r\n\tif npcScript.context and npcScript.context.IsAlive then\r\n\t\treturn (not npcScript.context.IsAlive())\r\n\tend\r\n\treturn false\r\nend\r\n\r\n\r\nreturn wrapper\r\n\r\n"
-        CustomParameters {
-          Overrides {
-            Name: "cs:DestructibleManager"
-            AssetReference {
-              Id: 17999829830237049640
-            }
-          }
-          Overrides {
-            Name: "cs:NPCManager"
-            AssetReference {
-              Id: 4760095941513075407
-            }
-          }
-        }
-      }
-    }
-    Assets {
-      Id: 2410645964140835056
-      Name: "CombatWrapPlayer"
-      PlatformAssetType: 3
-      TextAsset {
-        Text: "--[[\r\nCombat Wrap - Player\r\nv0.7.1\r\nby: standardcombo\r\n\r\nProvides an interface of combat functions that operate on a Player object.\r\n\r\nInterface:\r\n- GetName()\r\n- GetTeam()\r\n- GetHitPoints()\r\n- GetMaxHitPoints()\r\n- ApplyDamage()\r\n- IsDead()\r\n\r\n--]]\r\n\r\nlocal wrapper = {}\r\n\r\n\t\r\n-- GetName()\r\nfunction wrapper.GetName(player)\r\n\treturn player.name\r\nend\r\n\r\n-- GetTeam()\r\nfunction wrapper.GetTeam(player)\r\n\treturn player.team\r\nend\r\n\r\n-- GetHitPoints()\r\nfunction wrapper.GetHitPoints(player)\r\n\treturn player.hitPoints\r\nend\r\n\r\n-- GetMaxHitPoints()\r\nfunction wrapper.GetMaxHitPoints(player)\r\n\treturn player.maxHitPoints\r\nend\r\n\r\n-- ApplyDamage()\r\nfunction wrapper.ApplyDamage(player, dmg)\r\n\tplayer:ApplyDamage(dmg)\r\nend\r\n\r\n--IsDead\r\nfunction wrapper.IsDead(player)\r\n\treturn player.isDead\r\nend\r\n\r\nreturn wrapper"
       }
     }
     Assets {
@@ -47046,7 +42568,7 @@ Assets {
     Id: "76cd4c04a78642cdb73e7cf624e7bffe"
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
-    Description: "Kit for adding NPCs and a solution for NPC+Player combat.\r\nContains:\r\n- 9 enemy designs, melee and ranged\r\n- Example Rifle that damages both NPCs and Players\r\n- Components for assembling a variety of NPC encounter types\r\n- Waypoint system for patrols and paths\r\n- Ambush-style spawn camp example\r\n- MOBA example\r\n\r\nKnown issues:\r\n- AI doesn\'t work indoors. Best for outdoors / terrain.\r\n- Consumes a large amount of the networking budget.\r\n\r\nv0.7.0\r\n- Added support for melee combat against NPCs."
+    Description: "Kit for adding NPCs and a solution for NPC+Player combat.\r\nContains:\r\n- 9 enemy designs, melee and ranged\r\n- Example Rifle that damages both NPCs and Players\r\n- Components for assembling a variety of NPC encounter types\r\n- Waypoint system for patrols and paths\r\n- Ambush-style spawn camp example\r\n- MOBA example\r\n\r\nKnown issues:\r\n- Consumes a large amount of the networking budget.\r\n- Ranged NPCs might get stuck shoot at a wall if the target is on the other side, without adapting their targeting.\r\n\r\nv0.8.0\r\n- Full documentation of components and tooltips for all custom properties.\r\n- Large re-architecture, decoupling the NPC Kit from other systems (e.g. Loot Drop Factory).\r\n- Support for NavMesh. Does NOT come with a built-in NavMesh module.\r\n- NPCs can no longer see enemies through walls or obstacles.\r\n\r\nv0.7.1\r\n- Added support for melee combat against NPCs."
   }
   SerializationVersion: 61
 }

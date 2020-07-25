@@ -1,5 +1,5 @@
-Id: 13039838708654056087
-Name: "APIObjectIcon"
+Id: 16774899120426163303
+Name: "PlayerHealthRegenServer"
 PlatformAssetType: 3
 TextAsset {
 }

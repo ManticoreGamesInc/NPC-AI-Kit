@@ -334,7 +334,7 @@ Assets {
           Overrides {
             Name: "cs:ProjectileBody"
             AssetReference {
-              Id: 16197724571903786063
+              Id: 2668684521464535076
             }
           }
           Overrides {

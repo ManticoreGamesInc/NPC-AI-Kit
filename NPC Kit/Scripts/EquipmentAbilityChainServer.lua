@@ -1,7 +1,7 @@
 --[[
-	Simple Ability Chain - Server
-	v1.1
-	by: standardcombo
+	Equipment Ability Chain - Server
+	v1.2
+	by: standardcombo, blackedheart
 	
 	Automatically gathers all abilities under an equipment and cycles through them as they are used.
 	Primary use case is for melee weapons with a sequence of abilities.
@@ -26,11 +26,15 @@ function OnAbilityRecovery(ability)
 	end
 end
 
-for _,child in pairs(EQUIPMENT:FindDescendantsByType("Ability")) do
-	table.insert(abilities, child)
-
-	child.isEnabled = (#abilities == 1)
-
-	child.recoveryEvent:Connect(OnAbilityRecovery)
+-- Process all abilities on this equipment and figure out which ones to add in the chain
+for _,ability in pairs(EQUIPMENT:FindDescendantsByType("Ability")) do
+	local propValue,propExists = ability:GetCustomProperty("IsAbilityChain")
+	-- Automatically assumes an ability is part of the chain if it doesn't
+	-- have the property "IsAbilityChain"
+	if not propExists or propValue == true then
+		table.insert(abilities, ability)
+		ability.isEnabled = (#abilities == 1)
+		ability.recoveryEvent:Connect(OnAbilityRecovery)
+	end
 end
 

@@ -100,7 +100,7 @@ Assets {
       }
       Objects {
         Id: 16153191253904756321
-        Name: "DestructableWeaponServer"
+        Name: "DestructibleWeaponServer"
         Transform {
           Location {
           }
@@ -582,7 +582,7 @@ Assets {
           Overrides {
             Name: "cs:SecondaryEquipment"
             AssetReference {
-              Id: 13938583530368586422
+              Id: 1350685061412585858
             }
           }
           Overrides {

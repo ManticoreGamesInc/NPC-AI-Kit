@@ -103,11 +103,9 @@ Assets {
       }
       Objects {
         Id: 9498351349790225662
-        Name: "DestructableWeaponServer"
+        Name: "DestructibleWeaponServer"
         Transform {
           Location {
-            X: -359.726563
-            Y: -436.611328
           }
           Rotation {
           }

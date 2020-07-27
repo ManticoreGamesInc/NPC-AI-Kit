@@ -1,6 +1,6 @@
 Assets {
   Id: 5356144855059165820
-  Name: "Arrow"
+  Name: "Minion Arrow Projectile"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

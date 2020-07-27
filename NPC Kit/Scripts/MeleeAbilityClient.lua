@@ -78,7 +78,7 @@ local spawnOffsetRot = SWIPE_ROTATION
 local posIncrement = 10
 local rotIncrement = 1
 
-local CALIBRATE_POSITION_MODIFIER_KEY = "ability_extra_14"
+local CALIBRATE_POSITION_MODIFIER_KEY = "ability_extra_14" -- LAlt
 local positionModifierKeyPressed = false
 
 local lastDebugStart
@@ -157,21 +157,21 @@ function OnCalibrationBindingPressed(player, action)
 	end
 	
 	-- Change positional adjustment amount
-	if action == "ability_extra_46" then
+	if action == "ability_extra_46" then -- Up Arrow
 		posIncrement = posIncrement * 2
 		print("Adjust position by = " .. posIncrement)
 	end
-	if action == "ability_extra_47" then 
+	if action == "ability_extra_47" then -- Down Arrow
 		posIncrement = posIncrement / 2 
 		print("Adjust position by = " .. posIncrement)
 	end
 	
 	-- Change rotational adjustment amount
-	if action == "ability_extra_49" then
+	if action == "ability_extra_49" then -- Right Arrow
 		rotIncrement = rotIncrement * 2
 		print("Adjust rotation by = " .. rotIncrement)
 	end
-	if action == "ability_extra_48" then 
+	if action == "ability_extra_48" then -- Left Arrow
 		rotIncrement = rotIncrement / 2 
 		print("Adjust rotation by = " .. rotIncrement)
 	end

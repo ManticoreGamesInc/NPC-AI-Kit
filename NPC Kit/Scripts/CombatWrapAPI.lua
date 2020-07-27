@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap API
-	v0.8.0
+	v0.9.0
 	by: standardcombo
 	
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
@@ -12,6 +12,8 @@
 	- GetMaxHitPoints()
 	- ApplyDamage()
 	- IsDead()
+	- AddImpulse()
+	- FindInSphere()
 --]]
 
 
@@ -53,6 +55,23 @@ end
 -- IsDead()
 function API.IsDead(object)
 	return GetWrapperFor(object).IsDead(object)
+end
+
+-- AddImpulse()
+function API.AddImpulse(object, direction)
+	GetWrapperFor(object).AddImpulse(object, direction)
+end
+
+-- FindInSphere()
+function API.FindInSphere(position, radius, parameters)
+	local players = PLAYER_WRAPPER.FindInSphere(position, radius, parameters)
+	local NPCs = NPC_WRAPPER.FindInSphere(position, radius, parameters)
+	
+	local enemies = players
+	for _,npc in ipairs(NPCs) do
+		table.insert(enemies, npc)
+	end
+	return enemies
 end
 
 

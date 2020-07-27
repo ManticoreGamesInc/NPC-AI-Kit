@@ -13,6 +13,8 @@
 	- GetMaxHitPoints()
 	- ApplyDamage()
 	- IsDead()
+	- AddImpulse()
+	- FindInSphere()
 --]]
 
 -- Component dependencies
@@ -73,6 +75,12 @@ function wrapper.ApplyDamage(npc, dmg, source, pos, rot)
 end
 
 
+-- AddImpulse()
+function wrapper.AddImpulse(npc, direction)
+	-- TODO
+end
+
+
 -- IsDead()
 function wrapper.IsDead(obj)
 	
@@ -94,6 +102,10 @@ function wrapper.IsDead(obj)
 	return false
 end
 
+-- FindInSphere()
+function wrapper.FindInSphere(position, radius, parameters)
+	return NPC_MANAGER().FindInSphere(position, radius, parameters)
+end
 
 return wrapper
 

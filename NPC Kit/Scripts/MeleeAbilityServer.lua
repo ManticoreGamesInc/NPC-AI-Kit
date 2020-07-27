@@ -43,6 +43,7 @@ function Tick(deltaTime)
 end
 
 function MeleeAttack(other)
+	if not Object.IsValid(ABILITY) then return end
 	if other == ABILITY.owner then return end
 	
 	if COMBAT().IsDead(other) then return end

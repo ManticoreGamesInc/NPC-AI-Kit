@@ -1,6 +1,6 @@
 Assets {
   Id: 18002760385304387352
-  Name: "DragonFireballHard"
+  Name: "Dragon Fireball Hard"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {

@@ -1,7 +1,7 @@
 --[[
 	Animation Controller - Dragon
-	v1.0
-	by: standardcombo
+	v1.1
+	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Dragon Animated Mesh.
 	Changes in animation occur in response to movement and state machine changes.
@@ -24,6 +24,10 @@ function PlayAttack()
 	MESH:PlayAnimation("unarmed_claw")
 	ResetDistanceFromGround()
 	MESH.playbackRateMultiplier = 1
+end
+
+function PlayDamaged()
+	MESH:PlayAnimation("unarmed_react_damage")
 end
 
 function PlayDeath()
@@ -90,6 +94,31 @@ function OnPropertyChanged(object, propertyName)
 	end
 end
 ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+
+
+function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
+	local state = GetCurrentState()
+	if state == STATE_ATTACK_CAST then return end
+	if state >= STATE_DEAD_1 then return end
+	
+	-- Ignore other NPCs, make sure this event is about this NPC
+	local myId = ROOT:GetCustomProperty("ObjectId")
+	if id == myId then
+		PlayDamaged()
+	end
+end
+
+local damagedListener = Events.Connect("ObjectDamaged", OnObjectDamaged)
+
+function OnDestroyed(obj)
+	if damagedListener then
+		damagedListener:Disconnect()
+		damagedListener = nil
+	end
+end
+
+ROOT.destroyEvent:Connect(OnDestroyed)
+
 
 --[[
 function OnBindingPressed(player, action)

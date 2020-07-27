@@ -12,6 +12,8 @@
 	- GetMaxHitPoints()
 	- ApplyDamage()
 	- IsDead()
+	- AddImpulse()
+	- FindInSphere()
 --]]
 
 local wrapper = {}
@@ -42,9 +44,19 @@ function wrapper.ApplyDamage(player, dmg)
 	player:ApplyDamage(dmg)
 end
 
+-- AddImpulse()
+function wrapper.AddImpulse(player, direction)
+	player:AddImpulse(direction)
+end
+
 --IsDead
 function wrapper.IsDead(player)
 	return player.isDead
+end
+
+-- FindInSphere()
+function wrapper.FindInSphere(position, radius, parameters)
+	return Game.FindPlayersInSphere(position, radius, parameters)
 end
 
 return wrapper

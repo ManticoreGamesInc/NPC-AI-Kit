@@ -25,6 +25,10 @@ Assets {
         ChildIds: 14276023058359206615
         UnregisteredParameters {
           Overrides {
+            Name: "cs:EquipmentStance"
+            String: "2hand_sword_stance"
+          }
+          Overrides {
             Name: "cs:EquipmentIcon"
             AssetReference {
               Id: 15201232689808388272
@@ -69,7 +73,7 @@ Assets {
           }
         }
         ParentId: 16143353165946967542
-        ChildIds: 2187522356665643348
+        ChildIds: 5294261831703517261
         ChildIds: 8934273844121586087
         ChildIds: 1729995524466427672
         ChildIds: 17892780826470391368
@@ -86,10 +90,13 @@ Assets {
         }
       }
       Objects {
-        Id: 2187522356665643348
-        Name: "EquipmentAnimationStance"
+        Id: 5294261831703517261
+        Name: "EquipmentStanceServer"
         Transform {
           Location {
+            X: -21205.8418
+            Y: 15631.2627
+            Z: -2663.97021
           }
           Rotation {
           }
@@ -100,12 +107,6 @@ Assets {
           }
         }
         ParentId: 16721486069382151257
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:AnimationStance"
-            String: "2hand_sword_stance"
-          }
-        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -114,13 +115,13 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 3514254482698153611
+            Id: 1427829216143793458
           }
         }
       }
       Objects {
         Id: 8934273844121586087
-        Name: "SimpleAbilityChainServer"
+        Name: "EquipmentAbilityChainServer"
         Transform {
           Location {
           }
@@ -188,10 +189,6 @@ Assets {
             Name: "cs:VerticalImpulse"
             Float: 0
           }
-          Overrides {
-            Name: "cs:DamageToObjects"
-            Int: 10
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -246,10 +243,6 @@ Assets {
             Name: "cs:VerticalImpulse"
             Float: 0
           }
-          Overrides {
-            Name: "cs:DamageToObjects"
-            Int: 10
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -303,10 +296,6 @@ Assets {
           Overrides {
             Name: "cs:VerticalImpulse"
             Float: 20000
-          }
-          Overrides {
-            Name: "cs:DamageToObjects"
-            Int: 10
           }
         }
         Collidable_v2 {
@@ -629,17 +618,11 @@ Assets {
       }
       Objects {
         Id: 16824890889132612466
-        Name: "DestructrableWeaponClient"
+        Name: "DestructibleWeaponClient"
         Transform {
           Location {
-            X: -36744.0938
-            Y: -3813.49023
-            Z: -13682.0156
           }
           Rotation {
-            Pitch: 14.2927504
-            Yaw: 97.7076721
-            Roll: 13.0109282
           }
           Scale {
             X: 1
@@ -667,7 +650,6 @@ Assets {
           Location {
           }
           Rotation {
-            Yaw: -7.44400692
           }
           Scale {
             X: 1
@@ -734,9 +716,6 @@ Assets {
           Location {
           }
           Rotation {
-            Pitch: 90
-            Yaw: 116.565025
-            Roll: 26.5649261
           }
           Scale {
             X: 1
@@ -800,9 +779,6 @@ Assets {
           Location {
           }
           Rotation {
-            Pitch: 90
-            Yaw: 116.565025
-            Roll: 26.5649261
           }
           Scale {
             X: 1
@@ -863,9 +839,6 @@ Assets {
           Location {
           }
           Rotation {
-            Pitch: 90
-            Yaw: 116.565025
-            Roll: 26.5649261
           }
           Scale {
             X: 1

@@ -35,7 +35,7 @@ Objects {
   ChildIds: 14632867372866985088
   ChildIds: 13387123951467110445
   ChildIds: 10680401402857083785
-  ChildIds: 974237103558482793
+  ChildIds: 9722422597406582523
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -48,8 +48,8 @@ Objects {
   }
 }
 Objects {
-  Id: 974237103558482793
-  Name: "Fire Staff Secondary Weapon"
+  Id: 9722422597406582523
+  Name: "Leaping Staff Secondary Weapon"
   Transform {
     Scale {
       X: 1
@@ -59,18 +59,34 @@ Objects {
   }
   ParentId: 4781671109827199097
   WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13285317196782325249
+      key: 17271017275096045713
       value {
         Overrides {
           Name: "Name"
-          String: "Fire Staff Secondary Weapon"
+          String: "Leaping Staff Secondary Weapon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
     TemplateAsset {
-      Id: 13938583530368586422
+      Id: 1350685061412585858
     }
   }
 }

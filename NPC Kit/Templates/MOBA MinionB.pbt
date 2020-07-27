@@ -725,40 +725,6 @@ Assets {
         ChildIds: 16181938623344365483
         ChildIds: 2376164737637892905
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:ObjectId"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:CurrentState"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:MaxHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:CurrentHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:DestructibleManager"
-            AssetReference {
-              Id: 4303945844536739124
-            }
-          }
-          Overrides {
-            Name: "cs:CurrentState:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:CurrentHealth:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:ObjectId:isrep"
-            Bool: true
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1311,40 +1277,6 @@ Assets {
         ChildIds: 7168461025371486649
         ChildIds: 4233865984179518818
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:ObjectId"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:CurrentState"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:MaxHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:CurrentHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:DestructibleManager"
-            AssetReference {
-              Id: 4303945844536739124
-            }
-          }
-          Overrides {
-            Name: "cs:CurrentState:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:CurrentHealth:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:ObjectId:isrep"
-            Bool: true
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4225,40 +4157,6 @@ Assets {
         ChildIds: 6208495115997381487
         ChildIds: 5561902673116600553
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:ObjectId"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:CurrentState"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:MaxHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:CurrentHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:DestructibleManager"
-            AssetReference {
-              Id: 4303945844536739124
-            }
-          }
-          Overrides {
-            Name: "cs:CurrentState:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:CurrentHealth:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:ObjectId:isrep"
-            Bool: true
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

@@ -144,21 +144,31 @@ function ApplyDamage(dmg, source, position, rotation)
 		local prevHealth = GetHealth()
 		local newHealth = prevHealth - amount
 		SetHealth(newHealth)
-
-		local impactPosition
-		local impactRotation = Rotation.New()
-		local hitResult = dmg:GetHitResult()
-		if hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then
-			impactPosition = hitResult:GetImpactPosition()
-			impactRotation = hitResult:GetTransform():GetRotation()
 		
-		elseif position and rotation then
+		local hitResult = dmg:GetHitResult()
+		
+		-- Determine best value for impact position
+		local impactPosition
+		
+		if not position and hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then
+			impactPosition = hitResult:GetImpactPosition()
+		
+		elseif position then
 			impactPosition = position
-			impactRotation = rotation
 		else
 			impactPosition = script:GetWorldPosition()
 		end
+
+		-- Determine best value for impact rotation
+		local impactRotation = Rotation.New()
+		if hitResult then
+			impactRotation = hitResult:GetTransform():GetRotation()
 		
+		elseif rotation then
+			impactRotation = rotation
+		end
+		
+		-- Source position
 		local sourcePosition = nil
 		if Object.IsValid(source) then
 			sourcePosition = source:GetWorldPosition()

@@ -46,6 +46,21 @@ function API.GetEnemies(team)
 end
 
 
+function API.FindInSphere(position, radius, parameters)
+	local result = {}
+	local radiusSquared = radius*radius
+	
+	for npc,_ in pairs(allNPCs) do
+		local npcPos = npc:GetWorldPosition()
+		local distanceSquared = (position - npcPos).sizeSquared
+		if distanceSquared <= radiusSquared then
+			table.insert(result, npc)
+		end
+	end
+	return result
+end
+
+
 function OnDestroyed(obj)
 	-- Clear collider references
 	for collider,npc in pairs(npcColliders) do

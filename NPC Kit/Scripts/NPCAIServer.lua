@@ -296,7 +296,7 @@ function StepTowards(targetPosition)
 	local pos = ROOT:GetWorldPosition()
 	
 	if NAV_MESH() then
-		navMeshPath = NAV_MESH():FindPath(pos, targetPosition)
+		navMeshPath = NAV_MESH().FindPath(pos, targetPosition)
 		if navMeshPath and #navMeshPath > 1 then
 			table.remove(navMeshPath, 1)
 			stepDestination = navMeshPath[1]

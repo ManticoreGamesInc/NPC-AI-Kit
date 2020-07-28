@@ -1,3 +1,10 @@
+--[[
+	Leap Ability
+	v1.0
+	by: standardcombo
+	
+	Gives the player a vertical impulse when the ability executes.
+--]]
 
 local ABILITY = script.parent
 local LEAP_AMOUNT = script:GetCustomProperty("LeapAmount")

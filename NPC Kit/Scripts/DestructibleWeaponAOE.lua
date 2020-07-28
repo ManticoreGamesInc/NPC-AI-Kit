@@ -3,7 +3,7 @@
 	v1.0
 	by: standardcombo
 	
-	
+	Deals damage in an area, to Players and NPCs.
 --]]
 
 -- Component dependencies
@@ -37,31 +37,29 @@ local function OnTargetImpact(theWeapon, impactData)
 
     for _, enemy in pairs(enemies) do
 
-        if  enemy ~= impactData.weaponOwner then
-			local enemyPos = enemy:GetWorldPosition()
-			
-            -- Create a direction at which the player is pushed away from the blast
-            local displacement = enemyPos - center
-            COMBAT().AddImpulse(enemy, displacement:GetNormalized() * BLAST_KNOCKBACK_SPEED)
+		local enemyPos = enemy:GetWorldPosition()
+		
+        -- Create a direction at which the character is pushed away from the blast
+        local displacement = enemyPos - center
+        COMBAT().AddImpulse(enemy, displacement:GetNormalized() * BLAST_KNOCKBACK_SPEED)
 
-            -- The farther the player from the blast the less damage that player takes
-            local minDamage = BLAST_DAMAGE_RANGE.x
-            local maxDamage = BLAST_DAMAGE_RANGE.y
-            displacement.z = 0
-            local t = displacement.size / BLAST_RADIUS
-            local damageAmount = CoreMath.Lerp(maxDamage, minDamage, t)
-            damageAmount = CoreMath.Round(damageAmount)
-			
-			-- Create damage object
-			local dmg = Damage.New(damageAmount)
-			dmg:SetHitResult(hitResult)
-			dmg.reason = DamageReason.COMBAT
-			dmg.sourcePlayer = impactData.weaponOwner
-			dmg.sourceAbility = ATTACK_ABILITY
+        -- The farther the character is from the blast the less damage that character takes
+        local minDamage = BLAST_DAMAGE_RANGE.x
+        local maxDamage = BLAST_DAMAGE_RANGE.y
+        displacement.z = 0
+        local t = displacement.size / BLAST_RADIUS
+        local damageAmount = CoreMath.Lerp(maxDamage, minDamage, t)
+        damageAmount = CoreMath.Round(damageAmount)
+		
+		-- Create damage object
+		local dmg = Damage.New(damageAmount)
+		dmg:SetHitResult(hitResult)
+		dmg.reason = DamageReason.COMBAT
+		dmg.sourcePlayer = impactData.weaponOwner
+		dmg.sourceAbility = ATTACK_ABILITY
 
-            -- Apply damage to enemy
-            COMBAT().ApplyDamage(enemy, dmg, dmg.sourcePlayer, enemyPos)
-        end
+        -- Apply damage to enemy
+        COMBAT().ApplyDamage(enemy, dmg, dmg.sourcePlayer, enemyPos)
     end
 end
 

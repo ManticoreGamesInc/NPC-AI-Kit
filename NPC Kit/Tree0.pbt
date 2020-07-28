@@ -33,8 +33,8 @@ Objects {
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
   ChildIds: 14632867372866985088
-  ChildIds: 13387123951467110445
   ChildIds: 10680401402857083785
+  ChildIds: 13387123951467110445
   ChildIds: 9722422597406582523
   UnregisteredParameters {
   }
@@ -91,49 +91,6 @@ Objects {
   }
 }
 Objects {
-  Id: 10680401402857083785
-  Name: "Destructible Rifle"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16957855638915228446
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Destructible Rifle"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 2837579121194794601
-    }
-  }
-}
-Objects {
   Id: 13387123951467110445
   Name: "Leaping Staff - Common"
   Transform {
@@ -173,6 +130,49 @@ Objects {
     }
     TemplateAsset {
       Id: 4779393545089479649
+    }
+  }
+}
+Objects {
+  Id: 10680401402857083785
+  Name: "Destructible Rifle"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16957855638915228446
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Destructible Rifle"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2837579121194794601
     }
   }
 }

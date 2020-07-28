@@ -151,9 +151,9 @@ Assets {
         }
         ParentId: 9901109355884061414
         ChildIds: 8083221244245278106
+        ChildIds: 10041811267246491814
         ChildIds: 12427843347249369536
         ChildIds: 1397141085902036051
-        ChildIds: 10041811267246491814
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -241,6 +241,46 @@ Assets {
           CanBePrevented: true
           KeyBinding_v2 {
             Value: "mc:egameaction:primaryaction"
+          }
+        }
+      }
+      Objects {
+        Id: 10041811267246491814
+        Name: "FireBlastAbility"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7648488592650820705
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SecondaryEquipment"
+            AssetReference {
+              Id: 1350685061412585858
+            }
+          }
+          Overrides {
+            Name: "cs:Socket"
+            String: "right_prop"
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11728428692852934887
           }
         }
       }
@@ -334,7 +374,7 @@ Assets {
           Overrides {
             Name: "cs:AOEAsset"
             AssetReference {
-              Id: 2212314412534687967
+              Id: 16737318897597383360
             }
           }
           Overrides {
@@ -458,46 +498,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 14424777330967029426
-          }
-        }
-      }
-      Objects {
-        Id: 10041811267246491814
-        Name: "FireBlastAbility"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7648488592650820705
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:SecondaryEquipment"
-            AssetReference {
-              Id: 1350685061412585858
-            }
-          }
-          Overrides {
-            Name: "cs:Socket"
-            String: "right_prop"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11728428692852934887
           }
         }
       }

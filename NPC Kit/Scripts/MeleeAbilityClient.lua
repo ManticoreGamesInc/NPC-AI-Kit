@@ -4,6 +4,74 @@
 	by: standardcombo
 	
 	Handles spawning of VFX for a melee ability.
+	
+	Calibration
+	===========
+	The VFX that appear when the weapon attacks can be adjusted so their
+	position and rotation better correlate with the player animations.
+	
+	The idea behind calibration is to play in preview (non-networked)
+	and execute the attack. This generates a 3D	widget that is the shape
+	of the attack. The VFX is then adjusted to match the 3D widget.
+	Finally, the VFX's position and rotation values are copied back to
+	the weapon template.
+	
+	Check the tooltips on each of the 'MeleeAbilityClient' script
+	properties for more information about them.
+	
+	Setup
+	1. Place the weapon to be calibrated into the hierarchy.
+	2. Locate the 'MeleeAbilityClient' script that corresponds to the
+	   attack VFX being calibrated.
+	3. With the script selected, enable its 'CalibrateSwipe' property.
+	4. Play preview mode. Run up to the weapon and pick it up to equip it.
+	5. Execute an attack to draw the 3D widget. If the weapon has several
+	   attacks in a chain, keep attacking until the widget appears.
+	   If the attack has root motion prefer to do this on a flat surface.
+	6. The 3D widget is a sequence of segments representing each animation
+	   frame where the weapon was during the ability's "Execute" phase.
+	   The first segment is green, the last segment is red and the magenta
+	   segment represents the mid-point.
+	7. Open the Event Log window in order to see the calibration data.
+	
+	Calibration
+	1. Press "M" to replay the VFX as much as needed. You should see the
+	   VFX on top of the attack widget.
+	2. The keys UHJK are analogous to WASD controls in the sense of which
+	   axis they operate on, with "U" and J" controlling the X-axis and
+	   "H" and "K" controlling the Y-axis. The "I" and "Y" keys control
+	   the Z-axis in similar fashion to how the "E" and "Q" keys control
+	   the editor camera.
+	3. By default, the YUIHJK keys control rotation on the VFX. In order
+	   to affect position, hold the Left-Alt modifier key.
+	4. When you press one of the YUIHJK keys, they modify the VFX's
+	   rotation or position and print the new values to the Event Log.
+	5. The amount that is changed per key press can be adjusted with the
+	   arrow keys, where arrow Up/Down adjusts position amount and 
+	   Left/Right adjusts rotation amount.
+	6. Move the camera with the regular game controls to look at the VFX
+	   and widget from different angles. Press "M" to replay.
+	7. The VFX will never align perfectly with the attack widget. Your
+	   goal is to reach an average position and rotation that feels good
+	   when playing.
+	   
+	Finalizing
+	1. The final position and rotation values should be at the bottom of
+	   the Event Log window. To re-print the values press "M".
+	2. Stop the preview.
+	3. In the hierarchy, select the correct 'MeleeAbilityClient' script.
+	4. In the Properties view, change the 'SwipePosition' and
+	   'SwipeRotation' properties to match what's in the Event Log.
+	5. Disable 'CalibrateSwipe' and play with the weapon to make sure the
+	   VFX feels right.
+	6. Repeat calibration as needed. The VFX's position and rotation will
+	   begin from the values set in the properties, so you can continously
+	   improve them.
+	7. The 'SwipeDelay' property is often zero, but can also be used to
+	   fine-tune the VFX in relationship to the player animation.
+	8. Right-click the weapon and "Update Template From This" to make the
+	   changes final.
+	9. Delete the weapon from the hierarchy when you are done.
 --]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")

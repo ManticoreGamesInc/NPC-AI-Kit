@@ -1,6 +1,6 @@
 --[[
 	Ambush Example
-	v0.8.0
+	v0.9.0
 	by: standardcombo
 	
 	This example of an enemy camp spawns three enemies when the player enters the camp.
@@ -8,6 +8,8 @@
 	The NPCs will chase and attack players as long as there are players within the camp.
 	When all players exit the camp, the NPCs return to their spawn points, go to sleep
 	and eventually despawn.
+	
+	See the NPC_KIT_README file for general info about the NPC Kit.
 	
 	
 	Camp Behavior

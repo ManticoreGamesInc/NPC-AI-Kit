@@ -1,7 +1,7 @@
 --[[
 	DestructibleWeapon - Client
 	by: standardcombo, Chris C.
-	v0.8.0
+	v0.9.0
 	
 	Place this script in a Weapon's client-context to show damage feedback
 	when using the Destructible Weapon system.

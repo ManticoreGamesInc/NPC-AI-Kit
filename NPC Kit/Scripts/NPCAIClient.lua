@@ -1,7 +1,7 @@
 --[[
 	NPCAI - Client
 	by: standardcombo
-	v0.8.0
+	v0.9.0
 	
 	The client counterpart for NPCAIServer. Controls the visuals of the NPC based on
 	changes to its networked properties.

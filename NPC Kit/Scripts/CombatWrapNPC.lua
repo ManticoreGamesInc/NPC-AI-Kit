@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.8.2
+	v0.9.0
 	by: standardcombo
 	
 	Registers itself into the global table.

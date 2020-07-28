@@ -1,7 +1,7 @@
 --[[
 	Destructible Weapon - Server
 	by: standardcombo, Chris C.
-	v0.8.0
+	v0.9.0
 	
 	Place this script in Weapons to make them interactable with both
 	Players and NPCs.

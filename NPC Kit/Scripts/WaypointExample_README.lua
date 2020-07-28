@@ -1,10 +1,12 @@
 --[[
 	Waypoint Example
-	v0.8.0
+	v0.9.0
 	by: standardcombo
 	
 	This example of an enemy camp combines a few components to create an encounter where a
 	squad of skeletons patrol an area.
+	
+	See the NPC_KIT_README file for general info about the NPC Kit.
 	
 	
 	Camps

@@ -14,6 +14,8 @@ local INSIDE_TRIGGER = script:GetCustomProperty("InsideTrigger"):WaitForObject()
 local OUTSIDE_TRIGGER = script:GetCustomProperty("OutsideTrigger"):WaitForObject()
 local DESPAWN_DELAY = script:GetCustomProperty("DespawnDelay") or 4
 local RESPAWN_COOLDOWN = script:GetCustomProperty("RespawnCooldown") or 15
+local RESET_ON_ROUND_START = script:GetCustomProperty("ResetOnRoundStart")
+local RESET_ON_ROUND_END = script:GetCustomProperty("ResetOnRoundEnd")
 
 local CAMP_SPAWNER = script.parent:FindChildByName("NPCSpawner")
 
@@ -22,6 +24,14 @@ local despawnCountdown = 0
 local lastMinionCount = 0
 local respawnCooldown = 0
 
+
+function Reset()
+	CAMP_SPAWNER.context.Despawn()
+	
+	despawnCountdown = 0
+	lastMinionCount = 0
+	respawnCooldown = 0
+end
 
 function Tick(deltaTime)	
 	if (despawnCountdown > 0) then
@@ -94,4 +104,13 @@ end
 INSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapInner)
 OUTSIDE_TRIGGER.beginOverlapEvent:Connect(OnBeginOverlapOuter)
 OUTSIDE_TRIGGER.endOverlapEvent:Connect(OnEndOverlapOuter)
+
+
+if RESET_ON_ROUND_START then
+	Game.roundStartEvent:Connect(Reset)
+end
+
+if RESET_ON_ROUND_END then
+	Game.roundEndEvent:Connect(Reset)
+end
 

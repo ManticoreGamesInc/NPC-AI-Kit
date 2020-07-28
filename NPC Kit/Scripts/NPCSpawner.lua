@@ -18,6 +18,8 @@ local indexPerPoint = {}
 minions = {}
 minionCount = 0
 
+local isSpawning = false
+
 local destroyedListener = nil
 
 
@@ -37,6 +39,8 @@ end
 function Spawn()
 	if spawnPoints == nil then return end
 	
+	isSpawning = true
+	
 	for _,point in ipairs(spawnPoints) do
 	
 		local minionTemplate = GetTemplate(point)
@@ -53,12 +57,24 @@ function Spawn()
 			end
 			
 			Task.Wait(0.2)
+			-- Allows the Spaw() to be interrupted by a call to Despawn()
+			if not isSpawning then
+				if Object.IsValid(newMinion) then
+					newMinion:Destroy()
+				end
+				
+				return
+			end
+			
 			local minionId = newMinion:GetCustomProperty("ObjectId")
 
 			minions[minionId] = newMinion
 			minionCount = minionCount + 1
 		end
 	end
+	
+	isSpawning = false
+	
 	--[[
 	print("minionCount = " .. minionCount)
 	local count = 0
@@ -73,6 +89,8 @@ function Despawn()
 	--print("Despawn()")
 	
 	if minions == nil then return end
+	
+	isSpawning = false
 	
 	for _,m in pairs(minions) do
 		if Object.IsValid(m) then

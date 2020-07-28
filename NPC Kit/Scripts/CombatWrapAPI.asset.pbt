@@ -22,6 +22,12 @@ TextAsset {
       }
     }
     Overrides {
+      Name: "cs:LuaEvents"
+      AssetReference {
+        Id: 7658709741271226659
+      }
+    }
+    Overrides {
       Name: "cs:CombatWrapPlayer:tooltip"
       String: "A wrapper for combat-related functions and properties on Players. The wrappers provide common interface between different entity types."
     }

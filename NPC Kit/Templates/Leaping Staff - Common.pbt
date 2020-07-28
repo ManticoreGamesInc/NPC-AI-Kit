@@ -17,7 +17,6 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 16153191253904756321
-        ChildIds: 2042029524765643301
         ChildIds: 7648488592650820705
         ChildIds: 14546425128558904636
         ChildIds: 9238699678144792207
@@ -133,107 +132,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 11462786613475885873
-          }
-        }
-      }
-      Objects {
-        Id: 2042029524765643301
-        Name: "EquipmentPlayerPropertiesServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9901109355884061414
-        ChildIds: 17877267056903523869
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:API_EffectSystem"
-            AssetReference {
-              Id: 7538967294435110204
-            }
-          }
-          Overrides {
-            Name: "cs:AnimationStance"
-            String: "1hand_melee_stance"
-          }
-          Overrides {
-            Name: "cs:MaxHealth"
-            Int: 280
-          }
-          Overrides {
-            Name: "cs:WalkSpeed"
-            Float: 640
-          }
-          Overrides {
-            Name: "cs:JumpVelocity"
-            Float: 900
-          }
-          Overrides {
-            Name: "cs:JumpCount"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:RegenSpeed"
-            Float: 0.01
-          }
-          Overrides {
-            Name: "cs:CriticalHitChance"
-            Float: 0.02
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9558643244446541395
-          }
-        }
-      }
-      Objects {
-        Id: 17877267056903523869
-        Name: "PlayerHealthRegenServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 2042029524765643301
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Equipment"
-            ObjectReference {
-              SubObjectId: 9901109355884061414
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16774899120426163303
           }
         }
       }

@@ -6,7 +6,7 @@
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
 	
 	Interface:
-	- goingToTakeDamageEvent
+	- GoingToTakeDamage Event
 	- GetName()
 	- GetTeam()
 	- GetHitPoints()
@@ -32,11 +32,6 @@ local PLAYER_WRAPPER = require( script:GetCustomProperty("CombatWrapPlayer") )
 local NPC_WRAPPER = require( script:GetCustomProperty("CombatWrapNPC") )
 
 
--- Events
-local LuaEvent = require(script:GetCustomProperty("LuaEvents"))
-API.goingToTakeDamageEvent = LuaEvent.New()
-
-
 -- GetName()
 function API.GetName(object)
 	return GetWrapperFor(object).GetName(object)
@@ -53,7 +48,7 @@ end
 
 -- ApplyDamage()
 function API.ApplyDamage(object, dmg, source, pos, rot)
-	API.goingToTakeDamageEvent:Trigger({object, dmg, source})
+	Events.Broadcast("GoingToTakeDamage", object, dmg, source)
 	
 	CROSS_CONTEXT_CALLER().Call(function()
 		GetWrapperFor(object).ApplyDamage(object, dmg, source, pos, rot)

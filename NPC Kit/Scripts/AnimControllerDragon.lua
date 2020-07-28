@@ -14,6 +14,7 @@ local WALKING_SPEED = 15
 local RUNNING_SPEED = 300
 
 local lastPos = script.parent:GetWorldPosition()
+local speed = 0
 
 function ResetDistanceFromGround()
 	MESH:SetPosition(Vector3.New(0, 0, DISTANCE_FROM_GROUND))
@@ -47,7 +48,7 @@ function Tick(deltaTime)
 	
 	local pos = script.parent:GetWorldPosition()
 	local v = pos - lastPos
-	local speed = v.size / deltaTime
+	speed = v.size / deltaTime
 	
 	lastPos = pos
 	

@@ -44,7 +44,7 @@ Assets {
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
     Version: "1.1.0"
-    Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air."
+    Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air.\r\n\r\nv2.0\r\n- Fully compatible with NPC Kit, including AOE spell damage.\r\n- Reduced amount of networked objects."
   }
   SerializationVersion: 61
 }

@@ -41,6 +41,8 @@ local LOOT_ID = ROOT:GetCustomProperty("LootId")
 local attackCooldown = 2
 local cooldownRemaining = 0
 
+local projectileImpactListener = nil
+
 
 function GetTeam()
 	return ROOT:GetCustomProperty("Team")
@@ -84,7 +86,7 @@ function Attack(target)
 		
 		projectile.piercesRemaining = 999
 		
-		projectile.impactEvent:Connect(OnProjectileImpact)
+		projectileImpactListener = projectile.impactEvent:Connect(OnProjectileImpact)
 	end)
 	
 	SpawnAsset(MUZZLE_FLASH_VFX, startPos, rotation)
@@ -92,6 +94,8 @@ end
 
 
 function OnProjectileImpact(projectile, other, hitResult)
+	CleanupProjectileListener()
+	
 	local myTeam = GetTeam()
 	local impactTeam = GetObjectTeam(other)
 	if (impactTeam ~= 0 and myTeam == impactTeam) then return end
@@ -119,6 +123,14 @@ function OnProjectileImpact(projectile, other, hitResult)
 end
 
 
+function CleanupProjectileListener()
+	if projectileImpactListener then
+		projectileImpactListener:Disconnect()
+		projectileImpactListener = nil
+	end
+end
+
+
 function SpawnAsset(template, pos, rot)
 	if not template then return end
 	
@@ -129,6 +141,13 @@ function SpawnAsset(template, pos, rot)
 		end
 	end)
 end
+
+
+function OnDestroyed(obj)
+	--print("OnDestroyed()")
+	CleanupProjectileListener()
+end
+ROOT.destroyEvent:Connect(OnDestroyed)
 
 
 -- Damage / destructible

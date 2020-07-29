@@ -1,7 +1,7 @@
 --[[
 	NPCAttack - Server
 	by: standardcombo
-	v0.9.0
+	v0.9.1
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
 	easier to design diverse kinds of enemies.
@@ -94,11 +94,12 @@ end
 
 
 function OnProjectileImpact(projectile, other, hitResult)
-	CleanupProjectileListener()
 	
 	local myTeam = GetTeam()
 	local impactTeam = GetObjectTeam(other)
 	if (impactTeam ~= 0 and myTeam == impactTeam) then return end
+	
+	CleanupProjectileListener()
 	
 	local pos = hitResult:GetImpactPosition()
 	local rot = projectile:GetWorldTransform():GetRotation()

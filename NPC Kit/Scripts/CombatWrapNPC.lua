@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.9.0
+	v0.9.1
 	by: standardcombo
 	
 	Registers itself into the global table.
@@ -104,7 +104,10 @@ end
 
 -- FindInSphere()
 function wrapper.FindInSphere(position, radius, parameters)
-	return NPC_MANAGER().FindInSphere(position, radius, parameters)
+	if NPC_MANAGER() then
+		return NPC_MANAGER().FindInSphere(position, radius, parameters)
+	end
+	return {}
 end
 
 return wrapper

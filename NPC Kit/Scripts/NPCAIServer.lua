@@ -1,7 +1,7 @@
 --[[
 	NPCAI - Server
 	by: standardcombo
-	v0.9.0
+	v0.9.1
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	
@@ -101,8 +101,15 @@ function SetState(newState)
 			local targetPosition = target:GetWorldPosition()
 			StepTowards(targetPosition)
 		end
-
-		ROTATION_ROOT:LookAtContinuous(target, true, TURN_SPEED)
+		
+		if navMeshPath and #navMeshPath > 1 then
+			local pos = ROOT:GetWorldPosition()
+			local direction = navMeshPath[2] - pos
+			local r = Rotation.New(direction, Vector3.UP)
+			ROTATION_ROOT:RotateTo(r, GetRotateToTurnSpeed(), false)
+		else
+			ROTATION_ROOT:LookAtContinuous(target, true, TURN_SPEED)
+		end
 
 	elseif (newState == STATE_PATROLLING) then
 		local targetPosition = moveObjective
@@ -303,6 +310,7 @@ function StepTowards(targetPosition)
 			return
 		end
 	end
+	navMeshPath = nil
 	-- No NavMesh available, fallback
 	
 	-- Calculate step destination
@@ -659,7 +667,7 @@ end
 
 function GetRotateToTurnSpeed()
 	local turnTime = 0.25
-	if (turnTime > 0) then
+	if TURN_SPEED > 0 then
 		turnTime = 1 / TURN_SPEED
 	end
 	return turnTime

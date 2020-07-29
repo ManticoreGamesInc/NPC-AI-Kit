@@ -1,6 +1,6 @@
 --[[
 	Loot Pickup
-	v1.1
+	v1.2.1
 	by: standardcombo
 	
 	This is a full-featured, but simple pickup object that grants a resource to the player who collects it.
@@ -105,7 +105,9 @@ function OnInteracted(trigger, player)
 end
 
 function OnBeginOverlap(trigger, player)
-	OnInteracted(trigger, player)
+	if player:IsA("Player") then
+		OnInteracted(trigger, player)
+	end
 end
 
 TRIGGER.interactedEvent:Connect(OnInteracted)

@@ -552,6 +552,7 @@ Assets {
           }
         }
         ParentId: 9901109355884061414
+        ChildIds: 7640586767722779591
         ChildIds: 14073724712230366154
         ChildIds: 11457112152022062268
         ChildIds: 11734528818702066662
@@ -566,6 +567,33 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         NetworkContext {
+        }
+      }
+      Objects {
+        Id: 7640586767722779591
+        Name: "DestructibleWeaponClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9238699678144792207
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1745020032661794594
+          }
         }
       }
       Objects {

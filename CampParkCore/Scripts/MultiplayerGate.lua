@@ -9,6 +9,8 @@ local propDoorOpenSound = propRoot:GetCustomProperty("DoorOpenSound"):WaitForObj
 local propDoorCloseSound = propRoot:GetCustomProperty("DoorCloseSound"):WaitForObject()
 local propEndZone = propRoot:GetCustomProperty("EndZone"):WaitForObject()
 local propWinnerText = propRoot:GetCustomProperty("WinnerText"):WaitForObject()
+local propVictoryCelebration = propRoot:GetCustomProperty("VictoryCelebration"):WaitForObject()
+
 local playerCount = 0
 
 local doorOpenZ = propOuterGate:GetWorldPosition().z
@@ -16,7 +18,7 @@ local doorClosedZ = propInnerGate:GetWorldPosition().z
 
 
 -- Debug stuff:
-local DEBUG_CODE = false
+local DEBUG_CODE = true
 if DEBUG_CODE then
 	propRequiredPlayers = 1
 	Game.playerJoinedEvent:Connect(function(player) player.maxJumpCount = 99 end)
@@ -91,8 +93,6 @@ function OnCompletedCourse(trigger, other)
 	if other:IsA("player") then
 		if winningPlayer == nil and respawnListeners[other.id] ~= nil then
 			winningPlayer = other
-			propWinnerText.text = winningPlayer.name
-
 			for k,v in pairs(Game.GetPlayers()) do
 				if respawnListeners[v.id] ~= nil then
 					Events.BroadcastToPlayer(v, "PlayerVictory", other.name)
@@ -104,6 +104,9 @@ function OnCompletedCourse(trigger, other)
 			end
 			respawnListeners = {}
 			--ResetGate()
+			StartVictory(winningPlayer)
+			Task.Wait(5)
+			StopVictory()
 		end
 	end
 end
@@ -139,10 +142,35 @@ function OnPlayerLeft(player)
 end
 
 
+function StartVictory(player)
+	for k,v in pairs(propVictoryCelebration:FindDescendantsByType("VFX")) do
+		v.isEnabled = true
+		v:SetSmartProperty("density", 10)
+	end
+	
+	for k,v in pairs(propVictoryCelebration:FindDescendantsByType("Audio")) do
+		v:Play()
+	end
+	propWinnerText.text = player.name
+	
+end
+
+function StopVictory()
+	for k,v in pairs(propVictoryCelebration:FindDescendantsByType("VFX")) do
+		v.isEnabled = true
+		v:SetSmartProperty("density", 0)
+	end
+	
+	for k,v in pairs(propVictoryCelebration:FindDescendantsByType("Audio")) do
+		v:Stop()
+	end
+end
+
+
 propEndZone.beginOverlapEvent:Connect(OnCompletedCourse)
 trigger.beginOverlapEvent:Connect(OnBeginOverlap)
 trigger.endOverlapEvent:Connect(OnEndOverlap)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 
 Events.Connect("PlayerExitedCourse", OnPlayerLeft)
-
+StopVictory()

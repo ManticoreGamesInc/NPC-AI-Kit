@@ -420,7 +420,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RotationMultiplier"
-      Float: 10
+      Float: 6
     }
     Overrides {
       Name: "cs:LocalSpace"

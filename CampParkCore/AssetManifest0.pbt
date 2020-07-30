@@ -44,6 +44,33 @@ Assets {
   }
 }
 Assets {
+  Id: 17113926210780697204
+  Name: "Text 02: A"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_000"
+  }
+}
+Assets {
+  Id: 16994225242397074846
+  Name: "Text 02: U"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_020"
+  }
+}
+Assets {
+  Id: 16985477324693461331
+  Name: "Text 02: G"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_006"
+  }
+}
+Assets {
   Id: 16951090304424331879
   Name: "Underwater Post Process"
   PlatformAssetType: 6
@@ -59,6 +86,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_SunLight"
+  }
+}
+Assets {
+  Id: 16452848192960647167
+  Name: "Text 02: L"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_011"
   }
 }
 Assets {
@@ -95,6 +131,15 @@ Assets {
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_ambience_city_birds_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 15434344669739491482
+  Name: "Text 02: R"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_017"
   }
 }
 Assets {
@@ -140,6 +185,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_002_sm_rock_generic_002_LOD0"
+  }
+}
+Assets {
+  Id: 14710393086173829808
+  Name: "Text 02: T"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_019"
   }
 }
 Assets {
@@ -323,6 +377,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10843269427561007606
+  Name: "Text 02: E"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_004"
+  }
+}
+Assets {
   Id: 10696111198434119780
   Name: "Large Round Wood Beam 8m"
   PlatformAssetType: 1
@@ -341,12 +404,30 @@ Assets {
   }
 }
 Assets {
+  Id: 10481331822544121914
+  Name: "Confetti Volume VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_confetti_volume"
+  }
+}
+Assets {
   Id: 10339181659089027766
   Name: "Grass Basic"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_grass_001_uv"
+  }
+}
+Assets {
+  Id: 10179692498894066875
+  Name: "Text 02: W"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_022"
   }
 }
 Assets {
@@ -368,12 +449,30 @@ Assets {
   }
 }
 Assets {
+  Id: 9118461899062875365
+  Name: "Wedge"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wedge_001"
+  }
+}
+Assets {
   Id: 8754342040068672467
   Name: "Decal Road Sign Symbols"
   PlatformAssetType: 14
   PrimaryAsset {
     AssetType: "DecalBlueprintAssetRef"
     AssetId: "bp_decal_roadsigns_001"
+  }
+}
+Assets {
+  Id: 8615211047434202145
+  Name: "Text 02: H"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_007"
   }
 }
 Assets {
@@ -386,21 +485,21 @@ Assets {
   }
 }
 Assets {
-  Id: 8061343393824723634
-  Name: "Terrain - Grass Cliffs"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_terrain_cliff-grass-001_wa"
-  }
-}
-Assets {
   Id: 8045386100142957156
   Name: "Rock 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_001"
+  }
+}
+Assets {
+  Id: 7994722535970036032
+  Name: "Text 02: K"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_010"
   }
 }
 Assets {
@@ -419,6 +518,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_grass_generic_001"
+  }
+}
+Assets {
+  Id: 7755328628268746204
+  Name: "Text 02: S"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_018"
   }
 }
 Assets {
@@ -485,6 +593,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6045161237143896280
+  Name: "Text 02: B"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_001"
+  }
+}
+Assets {
   Id: 5926067525900523697
   Name: "Whitebox Stairs 01 Straight"
   PlatformAssetType: 1
@@ -500,6 +617,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_tree_oak_stump_001"
+  }
+}
+Assets {
+  Id: 5351428073291024820
+  Name: "Opaque Emissive"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_opaque_emissive"
   }
 }
 Assets {
@@ -527,6 +653,15 @@ Assets {
   PrimaryAsset {
     AssetType: "AudioBlueprintAssetRef"
     AssetId: "sfxabp_windytrees_ref"
+  }
+}
+Assets {
+  Id: 4370859313554402017
+  Name: "Text 02: O"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_014"
   }
 }
 Assets {
@@ -584,12 +719,48 @@ Assets {
   }
 }
 Assets {
+  Id: 3412181495290428260
+  Name: "Text 02: M"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_012"
+  }
+}
+Assets {
+  Id: 3200542170674782609
+  Name: "Sports Crowd Intense Cheer Yeah 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_sports_crowd_cheer_intense_yeah_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 3142635180006452452
+  Name: "Pipe - Quarter Thick"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter-pipe_003"
+  }
+}
+Assets {
   Id: 2983827655603536159
   Name: "Generic Water"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "fxma_parameter_driven_water_manual"
+  }
+}
+Assets {
+  Id: 2953114227006796085
+  Name: "Text 02: Y"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "Text_024"
   }
 }
 Assets {
@@ -671,5 +842,14 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_metal_iron_001"
+  }
+}
+Assets {
+  Id: 198353679974341757
+  Name: "Cube - Bottom-Aligned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_001"
   }
 }

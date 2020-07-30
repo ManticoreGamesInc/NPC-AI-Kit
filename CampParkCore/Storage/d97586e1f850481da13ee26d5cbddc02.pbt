@@ -6,18 +6,18 @@ Entries {
     Table {
       Entries {
         Key {
-          StringVar: "Deaths"
+          StringVar: "Kills"
         }
         SimpleValue {
-          IntVar: 68
+          IntVar: 11
         }
       }
       Entries {
         Key {
-          StringVar: "Kills"
+          StringVar: "Deaths"
         }
         SimpleValue {
-          IntVar: 37
+          IntVar: 16
         }
       }
     }

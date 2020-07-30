@@ -19,6 +19,7 @@ Objects {
   ParentId: 16386287787529009098
   ChildIds: 6252080470353986404
   ChildIds: 742397538903673462
+  ChildIds: 4158265529338441456
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -36,6 +37,47 @@ Objects {
     InstanceId: 3739705956445831626
     TemplateId: 15889254729575639905
     WasRoot: true
+  }
+}
+Objects {
+  Id: 4158265529338441456
+  Name: "PlayerSplashScript"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6284667449797515182
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:PlayerSplash"
+      AssetReference {
+        Id: 8941327603133410962
+      }
+    }
+    Overrides {
+      Name: "cs:Trigger"
+      ObjectReference {
+        SelfId: 6252080470353986404
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9610485204435449673
+    }
   }
 }
 Objects {

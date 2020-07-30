@@ -165,7 +165,7 @@ Objects {
     Overrides {
       Name: "cs:RotateVelocity"
       Rotator {
-        Yaw: -10
+        Yaw: -8
       }
     }
     Overrides {

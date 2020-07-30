@@ -194,6 +194,600 @@ Objects {
   }
 }
 Objects {
+  Id: 17452270306361729710
+  Name: "Victory Celebration"
+  Transform {
+    Location {
+      X: 355
+      Y: -60
+      Z: 550
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18307266353461743198
+  ChildIds: 16899431345390412111
+  ChildIds: 7354576980504296526
+  ChildIds: 14126358706593216441
+  ChildIds: 17971519422505301673
+  ChildIds: 17503908774468917032
+  ChildIds: 7644776256229163275
+  ChildIds: 12003771909260820104
+  ChildIds: 1429644141852361568
+  ChildIds: 6180094604241811524
+  ChildIds: 7397326800062777251
+  ChildIds: 10802535873443167821
+  ChildIds: 15279256210993524043
+  ChildIds: 4962601414987779439
+  UnregisteredParameters {
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 4962601414987779439
+  Name: "Sports Crowd Intense Cheer Yeah 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17452270306361729710
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 3200542170674782609
+    }
+    Volume: 2
+    Falloff: -1
+    Radius: 1500
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
+  Id: 15279256210993524043
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 10802535873443167821
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 7397326800062777251
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 6180094604241811524
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 1429644141852361568
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 12003771909260820104
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 7644776256229163275
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 17503908774468917032
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 17971519422505301673
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 14126358706593216441
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 7354576980504296526
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
+  Id: 16899431345390412111
+  Name: "Confetti Volume VFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 39.3750153
+      Y: 11.25
+      Z: 4.68750095
+    }
+  }
+  ParentId: 17452270306361729710
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Density"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:density"
+      Float: 10
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 10481331822544121914
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+}
+Objects {
   Id: 7940655552345594887
   Name: "Multiplayer Entrance Gate"
   Transform {
@@ -256,6 +850,12 @@ Objects {
         SelfId: 389742074361227699
       }
     }
+    Overrides {
+      Name: "cs:VictoryCelebration"
+      ObjectReference {
+        SelfId: 17452270306361729710
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -265,7 +865,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Multiplayer Entrance Gate_5"
+    FilePartitionName: "Multiplayer Entrance Gate_6"
   }
   InstanceHistory {
     SelfId: 7940655552345594887

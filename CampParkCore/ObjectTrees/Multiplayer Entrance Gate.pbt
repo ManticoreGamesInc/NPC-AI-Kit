@@ -3209,12 +3209,12 @@ Objects {
   Name: "WinnerDisplay"
   Transform {
     Location {
-      X: -299.999756
-      Y: -189.999664
-      Z: 66.4043
+      X: -274.999878
+      Y: -10.0001926
+      Z: 196.404663
     }
     Rotation {
-      Yaw: 84.9996948
+      Yaw: 90
     }
     Scale {
       X: 1

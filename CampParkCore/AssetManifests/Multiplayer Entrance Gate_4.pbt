@@ -8,21 +8,21 @@ Assets {
   }
 }
 Assets {
+  Id: 17210729523850098563
+  Name: "Pipe - 4-Sided Thin"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_pipe_4_sided_thin_001"
+  }
+}
+Assets {
   Id: 15553121958877687640
   Name: "Cube - Bottom-Aligned"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_001"
-  }
-}
-Assets {
-  Id: 14970033110334617476
-  Name: "Pipe - Thin"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pipe_003"
   }
 }
 Assets {

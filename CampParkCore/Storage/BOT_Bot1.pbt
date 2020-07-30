@@ -1,17 +1,17 @@
 Entries {
   Key {
+    StringVar: "version"
+  }
+  SimpleValue {
+    StringVar: "v0.1"
+  }
+}
+Entries {
+  Key {
     StringVar: "integerValues"
   }
   SimpleValue {
     Table {
-      Entries {
-        Key {
-          StringVar: "Deaths"
-        }
-        SimpleValue {
-          IntVar: 1
-        }
-      }
       Entries {
         Key {
           StringVar: "Kills"
@@ -20,14 +20,14 @@ Entries {
           IntVar: 0
         }
       }
+      Entries {
+        Key {
+          StringVar: "Deaths"
+        }
+        SimpleValue {
+          IntVar: 0
+        }
+      }
     }
-  }
-}
-Entries {
-  Key {
-    StringVar: "version"
-  }
-  SimpleValue {
-    StringVar: "v0.1"
   }
 }

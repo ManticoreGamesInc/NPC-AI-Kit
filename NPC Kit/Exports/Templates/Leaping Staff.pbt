@@ -588,6 +588,7 @@ Assets {
               }
             }
             ParentId: 9901109355884061414
+            ChildIds: 7640586767722779591
             ChildIds: 14073724712230366154
             ChildIds: 11457112152022062268
             ChildIds: 11734528818702066662
@@ -602,6 +603,33 @@ Assets {
               Value: "mc:evisibilitysetting:inheritfromparent"
             }
             NetworkContext {
+            }
+          }
+          Objects {
+            Id: 7640586767722779591
+            Name: "DestructibleWeaponClient"
+            Transform {
+              Location {
+              }
+              Rotation {
+              }
+              Scale {
+                X: 1
+                Y: 1
+                Z: 1
+              }
+            }
+            ParentId: 9238699678144792207
+            Collidable_v2 {
+              Value: "mc:ecollisionsetting:inheritfromparent"
+            }
+            Visible_v2 {
+              Value: "mc:evisibilitysetting:inheritfromparent"
+            }
+            Script {
+              ScriptAsset {
+                Id: 1745020032661794594
+              }
             }
           }
           Objects {
@@ -2170,6 +2198,14 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_WeaponSword"
+      }
+    }
+    Assets {
+      Id: 1745020032661794594
+      Name: "DestructibleWeaponClient"
+      PlatformAssetType: 3
+      TextAsset {
+        Text: "--[[\r\n\tDestructibleWeapon - Client\r\n\tby: standardcombo, Chris C.\r\n\tv0.9.0\r\n\t\r\n\tPlace this script in a Weapon\'s client-context to show damage feedback\r\n\twhen using the Destructible Weapon system.\r\n--]]\r\n\r\nlocal weapon = script:FindAncestorByType(\"Equipment\")\r\n\r\nfunction OnShowDamageFeedback(amount, position)\r\n\tlocal viewPos = Game.GetLocalPlayer():GetViewWorldPosition()\r\n\tlocal distance = (viewPos - position).sizeSquared\r\n\tlocal isBig = (distance < 1000000) -- 10 meters squared\r\n\t\r\n\tUI.ShowFlyUpText(tostring(amount), position, {color = Color.RED, isBig = isBig})\r\nend\r\n\r\nEvents.Connect(\"ShowDamageFeedback\", OnShowDamageFeedback)\r\n\r\n"
       }
     }
     Assets {
@@ -6747,7 +6783,7 @@ Assets {
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
     Version: "1.1.0"
-    Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air."
+    Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air.\r\n\r\nv2.0\r\n- Fully compatible with NPC Kit, including AOE spell damage.\r\n- Reduced amount of networked objects."
   }
   SerializationVersion: 61
 }

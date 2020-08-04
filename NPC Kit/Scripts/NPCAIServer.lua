@@ -1,7 +1,7 @@
 --[[
 	NPCAI - Server
 	by: standardcombo
-	v0.9.1
+	v0.9.2
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	
@@ -187,7 +187,11 @@ function Tick(deltaTime)
 		
 	elseif currentState == STATE_PATROLLING then
 		UpdateMovement(deltaTime)
-
+		
+		if ROOT:GetWorldPosition() == stepDestination then
+			logicStepDelay = 0
+		end
+		
 	elseif (currentState == STATE_DEAD_1 and stateTime >= DEAD_1_DURATION) then
 		SetState(STATE_DEAD_2)
 

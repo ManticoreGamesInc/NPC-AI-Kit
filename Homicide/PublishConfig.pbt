@@ -1,7 +1,7 @@
 GameId: "b02e19f2939542249eedbeb394211c4c"
 ClientVersion: "1.0.142-prod-s"
 Name: "Murder - Cleaned Up"
-Description: "Putting the \"DUR\" in \"Murder\"."
+Description: "Open for Editing.\r\nModders needed!"
 MaxPlayers: 16
 IsOpenForEdit: true
 Tags: "Horror"

@@ -1,6 +1,6 @@
 --[[
 	NPC AI Kit
-	v0.9.1
+	v0.9.2
 	by: standardcombo
 	
 	This package is work in progress.
@@ -22,9 +22,11 @@
 	  b) Add a copy of the Loot Drop Factory template to the hierarchy.
 	  
 	4. NPCs can navigate indoor environments with a Navigational Mesh.
-	  a) Go to Community Content and import NavMesh (by Waffle).
-	  b) Follow instructions in the NavMesh component to set it up for your game.
+	  a) Go to Community Content and import NavMesh (by Waffle) or DDPathfinder (by truedarkdev).
+	  b) Follow instructions in the imported component to set it up for your game.
 	  c) NPCs will automatically check for the existence of a NavMesh and use it if available.
+	     NOTE: Both components solve the same problem, but are implemented differently. Test to
+	     see which is best for your game.
 	
 	
 	Known Issues in This Version

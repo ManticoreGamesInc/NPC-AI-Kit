@@ -2,7 +2,7 @@ Assets {
   Id: 8059745471922214547
   Name: "Tower - Tech 01"
   PlatformAssetType: 13
-  SerializationVersion: 61
+  SerializationVersion: 62
   CustomMaterialAsset {
     BaseMaterialId: 1467411009553006726
     ParameterOverrides {

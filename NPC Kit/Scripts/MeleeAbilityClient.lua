@@ -1,6 +1,6 @@
 --[[
 	Melee Ability - Client
-	v1.2
+	v1.2.1
 	by: standardcombo
 	
 	Handles spawning of VFX for a melee ability.
@@ -123,7 +123,16 @@ function OnMeleeImpact(abilityId, pos, rot)
     end
 end
 
-Events.Connect("MeleeImpact", OnMeleeImpact)
+local impactEventListener = Events.Connect("MeleeImpact", OnMeleeImpact)
+
+function OnDestroy(obj)
+	if impactEventListener then
+		impactEventListener:Disconnect()
+		impactEventListener = nil
+	end
+end
+
+script.destroyEvent:Connect(OnDestroy)
 
 
 -- Swipe Calibration:

@@ -37,7 +37,7 @@ Assets {
     Id: "baeb9b62335b4d268847a4b2d81fe26c"
     OwnerAccountId: "b4c6e32137e54571814b5e8f27aa2fcd"
     OwnerName: "standardcombo"
-    Description: "Spawns random loot drops from a customizable data set.\r\n\r\nComes with 5 different loot drops split into Common, Uncommon and Rare groups.\r\n\r\nSee comments for more information on usage."
+    Description: "Spawns random loot drops from a customizable data set.\r\n\r\nComes with 5 different loot drops split into Common, Uncommon and Rare groups.\r\n\r\nSee comments for more information on usage.\r\n\r\nv1.1\r\n- Fixed loot pickups in case their trigger is set to not be interactable."
   }
-  SerializationVersion: 61
+  SerializationVersion: 62
 }

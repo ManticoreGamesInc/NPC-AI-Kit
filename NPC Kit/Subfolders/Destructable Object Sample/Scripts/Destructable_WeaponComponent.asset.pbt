@@ -3,4 +3,4 @@ Name: "Destructable_WeaponComponent"
 PlatformAssetType: 3
 TextAsset {
 }
-SerializationVersion: 61
+SerializationVersion: 62

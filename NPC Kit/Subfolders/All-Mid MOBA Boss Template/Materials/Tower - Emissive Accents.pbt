@@ -2,7 +2,7 @@ Assets {
   Id: 1129547814275678647
   Name: "Tower - Emissive Accents"
   PlatformAssetType: 13
-  SerializationVersion: 61
+  SerializationVersion: 62
   CustomMaterialAsset {
     BaseMaterialId: 11710349489431771943
     ParameterOverrides {

@@ -39,6 +39,6 @@ Assets {
     OwnerName: "standardcombo"
     Description: "Common dependencies for Player and NPC combat, extracted into a separate template to reduce depencency and asset duplication across community content pieces."
   }
-  SerializationVersion: 61
+  SerializationVersion: 62
   DirectlyPublished: true
 }

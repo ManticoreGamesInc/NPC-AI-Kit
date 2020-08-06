@@ -46,5 +46,5 @@ Assets {
     Version: "1.0.0"
     Description: "Core All-Mid MOBABoss Template - Use this content to create  your own big bad. See the README_BOSS.lua for how to use. Hit @Buckmonster up in Discord with any questons. "
   }
-  SerializationVersion: 61
+  SerializationVersion: 62
 }

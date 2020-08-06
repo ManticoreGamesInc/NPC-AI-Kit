@@ -2,7 +2,7 @@ Assets {
   Id: 16458803091682482632
   Name: "Orc FireBall"
   PlatformAssetType: 13
-  SerializationVersion: 61
+  SerializationVersion: 62
   CustomMaterialAsset {
     BaseMaterialId: 5639941382620150291
     ParameterOverrides {

@@ -1,6 +1,6 @@
 --[[
 	NPC AI Kit
-	v0.9.2
+	v0.9.3
 	by: standardcombo
 	
 	This package is work in progress.

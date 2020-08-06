@@ -1,7 +1,7 @@
 --[[
 	NPCAI - Server
-	by: standardcombo
-	v0.9.2
+	by: standardcombo, DarkDev
+	v0.9.3
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	
@@ -82,11 +82,12 @@ local searchEndPosition = nil
 local searchTimeElapsed = -1
 local searchPrecision = 1
 local attackCooldown = 0
+local waitingForPath = false
 
 local temporaryVisionAngle = nil
 local temporaryVisionRadius = nil
 local temporaryHearingRadius = nil
-	
+
 
 function SetState(newState)
 	--print("NewState = " .. newState)
@@ -102,9 +103,9 @@ function SetState(newState)
 			StepTowards(targetPosition)
 		end
 		
-		if navMeshPath and #navMeshPath > 1 then
+		if navMeshPath and #navMeshPath > 0 then
 			local pos = ROOT:GetWorldPosition()
-			local direction = navMeshPath[2] - pos
+			local direction = navMeshPath[1] - pos
 			local r = Rotation.New(direction, Vector3.UP)
 			ROTATION_ROOT:RotateTo(r, GetRotateToTurnSpeed(), false)
 		else
@@ -303,17 +304,25 @@ function ExecuteAttack()
 end
 
 
-function StepTowards(targetPosition)
-	local pos = ROOT:GetWorldPosition()
-	
-	if NAV_MESH() then
-		navMeshPath = NAV_MESH().FindPath(pos, targetPosition)
-		if navMeshPath and #navMeshPath > 1 then
-			table.remove(navMeshPath, 1)
-			stepDestination = navMeshPath[1]
-			return
-		end
+local function GetClosestPointOnLineSegment(linePosA, linePosB, worldPos)
+	local posToLineA = worldPos - linePosA
+	local line = linePosB - linePosA
+	local lineNormalized = line:GetNormalized()
+
+	local t = lineNormalized .. posToLineA
+
+	if t < 0 then
+		return linePosA
+	elseif t > line.size then
+		return linePosB
+	else
+		return linePosA + lineNormalized * t
 	end
+end
+
+
+local function StepTowardsFallback(targetPosition)
+	local pos = ROOT:GetWorldPosition()
 	navMeshPath = nil
 	-- No NavMesh available, fallback
 	
@@ -354,6 +363,66 @@ function StepTowards(targetPosition)
 	end
 end
 
+local function FindPathOnNavMesh(targetPosition)
+	local pos = ROOT:GetWorldPosition()
+	waitingForPath = true
+	navMeshPath = NAV_MESH().FindPath(pos, targetPosition)
+	waitingForPath = false
+
+	if navMeshPath then
+		if #navMeshPath > 1 then
+			-- Find the closest point on the current path
+			local closestDist = 999999999.0
+			local closestPoint = Vector3.ZERO
+			local quickBreak = false
+			local removePathIndex = 0
+			for i = 1, #navMeshPath - 1 do
+				local pointOnLine = GetClosestPointOnLineSegment(navMeshPath[i], navMeshPath[i+1], ROOT:GetWorldPosition())
+				local checkDist = (pointOnLine - ROOT:GetWorldPosition()).size
+				if checkDist < closestDist then
+					quickBreak = true
+					closestDist = checkDist
+					closestPoint = pointOnLine
+					removePathIndex = i
+				else
+					if quickBreak then
+						break
+					end
+				end
+			end
+
+			if removePathIndex > 0 then
+				for _ = 1, removePathIndex - 1 do
+					table.remove(navMeshPath, 1)
+				end
+				navMeshPath[1] = closestPoint
+			end
+
+			stepDestination = navMeshPath[1]
+		end
+	else
+		-- The navmesh failed to find a path, use our fallback
+		StepTowardsFallback(targetPosition)
+	end
+end
+
+function StepTowards(targetPosition)
+	if NAV_MESH() then
+		if waitingForPath then
+			return
+		end
+
+		if navMeshPath == nil or #navMeshPath == 0 then
+			FindPathOnNavMesh(targetPosition)
+		else
+			Task.Spawn(function()
+				FindPathOnNavMesh(targetPosition)
+			end)
+		end
+	else
+		StepTowardsFallback(targetPosition)
+	end
+end
 
 local overlappingObjects = {}
 

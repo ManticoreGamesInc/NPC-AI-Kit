@@ -1,11 +1,13 @@
 --[[
 	Animation Controller - Raptor
-	v1.1
+	v1.1.1
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Raptor Animated Mesh.
 	Changes in animation occur in response to movement and state machine changes.
 --]]
+
+Task.Wait()
 
 local MESH = script:GetCustomProperty("AnimatedMesh"):WaitForObject()
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()

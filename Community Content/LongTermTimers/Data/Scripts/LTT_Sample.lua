@@ -4,8 +4,7 @@
   by Chris
 ]]
 
-local prop_LongTermTimerManager = script:GetCustomProperty("_LongTermTimerManager")
-local LTT = require(prop_LongTermTimerManager)
+local LTT = require(script:GetCustomProperty("_LongTermTimerManager"))
 
 function OnPlayerJoined(player)
 	LTT.LoadFromPlayerData(player)
@@ -16,7 +15,6 @@ function OnPlayerLeft(player)
 end
 
 function OnRequestTimer(player, timerId)
-	print("---", player.id, "is nil?")
 	local timerDetails = LTT.GetTimerDetails(player, timerId)
 	if timerDetails ~= nil then
 		Events.BroadcastToPlayer(player, "TimerStarted", timerId, timerDetails.start + timerDetails.duration)

@@ -19,8 +19,8 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 10005074784157121906
   ChildIds: 14982843161775482339
-  ChildIds: 9877590187017784504
   ChildIds: 16430286832375622699
+  ChildIds: 6236565556905094668
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -30,6 +30,45 @@ Objects {
     Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 6236565556905094668
+  Name: "Miner Timer Sample"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3354135352753759116
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Miner Timer Sample"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -171.027374
+            Y: -540.597229
+            Z: -104.999969
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7272225331690163745
+    }
   }
 }
 Objects {
@@ -67,50 +106,6 @@ Objects {
     }
     TemplateAsset {
       Id: 4777242328096081175
-    }
-  }
-}
-Objects {
-  Id: 9877590187017784504
-  Name: "Long Term Timer Sample"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8178891374457068553
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Long Term Timer Sample"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 480
-            Y: 570
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 3583237942089108318
     }
   }
 }
@@ -669,9 +664,12 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
+      X: -230.990967
+      Y: 252.339828
       Z: 115
     }
     Rotation {
+      Yaw: -86.0922241
     }
     Scale {
       X: 1

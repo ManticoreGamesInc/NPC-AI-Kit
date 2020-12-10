@@ -1,3 +1,20 @@
+﻿Entries {
+  Key {
+    StringVar: "rsc"
+  }
+  SimpleValue {
+    Table {
+      Entries {
+        Key {
+          StringVar: "Gold"
+        }
+        SimpleValue {
+          IntVar: 3070
+        }
+      }
+    }
+  }
+}
 Entries {
   Key {
     StringVar: "lte_LTTimerTable"
@@ -6,24 +23,24 @@ Entries {
     Table {
       Entries {
         Key {
-          StringVar: "2hour"
+          StringVar: "49DD1AA7A3CA81D8"
         }
         SimpleValue {
           Table {
             Entries {
               Key {
-                StringVar: "duration"
+                StringVar: "start"
               }
               SimpleValue {
-                IntVar: 7200
+                IntVar: 1607626285
               }
             }
             Entries {
               Key {
-                StringVar: "start"
+                StringVar: "duration"
               }
               SimpleValue {
-                IntVar: 1595387942
+                IntVar: 60
               }
             }
           }
@@ -31,24 +48,24 @@ Entries {
       }
       Entries {
         Key {
-          StringVar: "5min"
+          StringVar: "C58AA434B98496D1"
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                StringVar: "start"
+              }
+              SimpleValue {
+                IntVar: 1607626293
+              }
+            }
             Entries {
               Key {
                 StringVar: "duration"
               }
               SimpleValue {
                 IntVar: 300
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "start"
-              }
-              SimpleValue {
-                IntVar: 1595387941
               }
             }
           }

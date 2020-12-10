@@ -80,6 +80,8 @@ function DetailsTimeRemaining(self)
 	return (self.duration + self.start) - os.time()
 end
 
+-- Returns a list of ALL the details for timers associated with a player,
+-- as a table, keyed by the timer ID.
 function GetAllTimerDetails(player)
 	if not WaitForDataToLoad(player) then return nil end
 	local results = {}
@@ -89,6 +91,8 @@ function GetAllTimerDetails(player)
 	return results
 end
 
+
+-- Internal utility function, for getting the player object from the player ID.
 function GetPlayerFromPid(pid)
 	for _, player in ipairs(Game.GetPlayers()) do
 		if player.id == pid then return player end

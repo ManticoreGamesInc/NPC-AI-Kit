@@ -111,6 +111,15 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 5348607134525478293
+      value {
+        Overrides {
+          Name: "cs:CalibrateSwipe"
+          Bool: false
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 16143353165946967542
       value {
         Overrides {
@@ -789,6 +798,9 @@ Objects {
       AppearanceChannelingTime: 2
       MountChannelingTime: 2
       FlipOnMultiJump: true
+      CanMoveUp: true
+      CanMoveDown: true
+      IsMountEnabled: true
     }
   }
 }
@@ -821,6 +833,7 @@ Objects {
   }
   PlayerSpawnPoint {
     TeamInt: 3
+    PlayerScaleMultiplier: 1
   }
 }
 Objects {
@@ -852,6 +865,7 @@ Objects {
   }
   PlayerSpawnPoint {
     TeamInt: 3
+    PlayerScaleMultiplier: 1
   }
 }
 Objects {

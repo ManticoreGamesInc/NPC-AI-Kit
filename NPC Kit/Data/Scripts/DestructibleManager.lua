@@ -1,7 +1,7 @@
 ﻿--[[
 	Destructible Manager
 	by: standardcombo, Chris C.
-	v0.9.0
+	v0.11.0
 	
 	Applies damage to non-player objects.
 --]]
@@ -64,13 +64,13 @@ function GetIdFor(theScript)
 	return id
 end
 
-function API.DamageObject(object, dmg, source, position, rotation)
+function API.DamageObject(attackData)
 	--print("DamageObject() object = " .. tostring(object))
-
+	local object = attackData.object
 	if object ~= nil and object:IsA("CoreObject") then
 		local theScript, obj = API.GetRegisteredObject(object)
 		if theScript ~= nil then --and GetObjectTeam(object) ~= GetObjectTeam(source) then
-			theScript.context.ApplyDamage(dmg, source, position, rotation)
+			theScript.context.ApplyDamage(attackData)
 		end
 	end
 end

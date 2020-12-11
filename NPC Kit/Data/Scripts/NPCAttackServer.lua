@@ -1,7 +1,7 @@
 ﻿--[[
 	NPCAttack - Server
 	by: standardcombo
-	v0.9.1
+	v0.11.1
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
 	easier to design diverse kinds of enemies.
@@ -9,7 +9,7 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-require ( script:GetCustomProperty("DestructibleManager") )
+require( script:GetCustomProperty("DestructibleManager") )
 function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
 function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
@@ -43,8 +43,13 @@ local cooldownRemaining = 0
 
 local projectileImpactListener = nil
 
+local tagData = {}
+
 
 function GetTeam()
+	if not Object.IsValid(ROOT) then
+		return 0
+	end
 	return ROOT:GetCustomProperty("Team")
 end
 
@@ -59,11 +64,12 @@ function GetObjectTeam(object)
 	return nil
 end
 
-function Attack(target)	
+
+function Attack(target)
 	if target:IsA("Player") and PLAYER_HOMING_TARGETS() then
 		target = PLAYER_HOMING_TARGETS().GetTargetForPlayer(target)
 	end
-	
+
 	local startPos = script:GetWorldPosition()
 	local rotation = script:GetWorldRotation()
 	local direction = rotation * Vector3.FORWARD
@@ -71,41 +77,40 @@ function Attack(target)
 		local v = target:GetWorldPosition() - startPos
 		direction = v:GetNormalized() + 200 * Vector3.UP * v.size * PROJECTILE_GRAVITY / PROJECTILE_SPEED / PROJECTILE_SPEED
 	end
-	
+
 	CROSS_CONTEXT_CALLER().Call(function()
 		local projectile = Projectile.Spawn(PROJECTILE_BODY, startPos, direction)
 		projectile.lifeSpan = PROJECTILE_LIFESPAN
 		projectile.speed = PROJECTILE_SPEED
 		projectile.gravityScale = PROJECTILE_GRAVITY
-		
+
 		if IS_PROJECTILE_HOMING then
 			projectile.homingTarget = target
 			projectile.drag = HOMING_DRAG
 			projectile.homingAcceleration = HOMING_ACCELERATION
 		end
-		
+
 		projectile.piercesRemaining = 999
-		
+
 		projectileImpactListener = projectile.impactEvent:Connect(OnProjectileImpact)
 	end)
-	
+
 	SpawnAsset(MUZZLE_FLASH_VFX, startPos, rotation)
 end
 
 
 function OnProjectileImpact(projectile, other, hitResult)
-	
 	local myTeam = GetTeam()
 	local impactTeam = GetObjectTeam(other)
 	if (impactTeam ~= 0 and myTeam == impactTeam) then return end
-	
+
 	CleanupProjectileListener()
-	
+
 	local pos = hitResult:GetImpactPosition()
 	local rot = projectile:GetWorldTransform():GetRotation()
-	
+
 	local damageAmount = 0
-	
+
 	if other:IsA("Player") then
 		damageAmount = DAMAGE_TO_PLAYERS
 		SpawnAsset(IMPACT_CHARACTER_VFX, pos, rot)
@@ -113,13 +118,28 @@ function OnProjectileImpact(projectile, other, hitResult)
 		damageAmount = DAMAGE_TO_NPCS
 		SpawnAsset(IMPACT_SURFACE_VFX, pos, hitResult:GetTransform():GetRotation())
 	end
-	
+
+	if damageAmount == 0 then
+		return
+	end
+
 	local dmg = Damage.New(damageAmount)
 	dmg:SetHitResult(hitResult)
 	dmg.reason = DamageReason.COMBAT
-		
-	COMBAT().ApplyDamage(other, dmg, script, pos, rot)
-		
+
+	local attackData = {
+		object = other,
+		damage = dmg,
+		source = script.parent:FindChildByName("NPCAIServer"),
+		position = pos,
+		rotation = rot,
+		tags = tagData
+		}
+
+	-- Apply the damage
+	COMBAT().ApplyDamage(attackData)
+
+	-- Cleanup
 	projectile:Destroy()
 end
 
@@ -133,14 +153,18 @@ end
 
 
 function SpawnAsset(template, pos, rot)
-	if not template then return end
-	
-	CROSS_CONTEXT_CALLER().Call(function()
-		local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
-		if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
-			spawnedVfx.lifeSpan = 1.5
+	if not template then
+		return
+	end
+
+	CROSS_CONTEXT_CALLER().Call(
+		function()
+			local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
+			if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
+				spawnedVfx.lifeSpan = 1.5
+			end
 		end
-	end)
+	)
 end
 
 
@@ -150,29 +174,30 @@ function OnDestroyed(obj)
 end
 ROOT.destroyEvent:Connect(OnDestroyed)
 
-
 -- Damage / destructible
-
 
 local id = DESTRUCTIBLE_MANAGER().Register(script)
 ROOT:SetNetworkedCustomProperty("ObjectId", id)
 
-
-function ApplyDamage(dmg, source, position, rotation)
+function ApplyDamage(attackData)
+	local dmg = attackData.damage
 	local amount = dmg.amount
+	local position = attackData.position
+	local rotation = attackData.rotation
+	local source = attackData.source
+
 	if (amount ~= 0) then
 		local prevHealth = GetHealth()
 		local newHealth = prevHealth - amount
 		SetHealth(newHealth)
-		
+
 		local hitResult = dmg:GetHitResult()
-		
+
 		-- Determine best value for impact position
 		local impactPosition
-		
+
 		if not position and hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then
 			impactPosition = hitResult:GetImpactPosition()
-		
 		elseif position then
 			impactPosition = position
 		else
@@ -183,40 +208,38 @@ function ApplyDamage(dmg, source, position, rotation)
 		local impactRotation = Rotation.New()
 		if hitResult then
 			impactRotation = hitResult:GetTransform():GetRotation()
-		
 		elseif rotation then
 			impactRotation = rotation
 		end
-		
+
 		-- Source position
 		local sourcePosition = nil
 		if Object.IsValid(source) then
 			sourcePosition = source:GetWorldPosition()
 		end
-		
+
 		-- Effects
 		local spawnedVfx = nil
-		
+
 		if (newHealth <= 0 and DESTROY_FX) then
 			SpawnAsset(DESTROY_FX, impactPosition, impactRotation)
-			
 		elseif DAMAGE_FX then
 			SpawnAsset(DAMAGE_FX, impactPosition, impactRotation)
 		end
-		
+
 		-- Events
-		
+
 		Events.Broadcast("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation, source)
 		Events.BroadcastToAllPlayers("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation)
 
 		if (newHealth <= 0) then
 			Events.Broadcast("ObjectDestroyed", id)
 			Events.BroadcastToAllPlayers("ObjectDestroyed", id)
-			
+
 			DropRewards(source)
 		end
 
-		--print(ROOT.name .. " Health = " .. newHealth)
+	--print(ROOT.name .. " Health = " .. newHealth)
 	end
 end
 
@@ -231,17 +254,13 @@ end
 
 function DropRewards(killer)
 	-- Give resources
-	if REWARD_RESOURCE_TYPE 
-	and Object.IsValid(killer) 
-	and killer:IsA("Player") then
+	if REWARD_RESOURCE_TYPE and Object.IsValid(killer) and killer:IsA("Player") then
 		killer:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)
 	end
-	
+
 	-- Drop loot
 	if LOOT_DROP_FACTORY() then
 		local pos = script:GetWorldPosition()
 		LOOT_DROP_FACTORY().Drop(LOOT_ID, pos)
 	end
 end
-
-

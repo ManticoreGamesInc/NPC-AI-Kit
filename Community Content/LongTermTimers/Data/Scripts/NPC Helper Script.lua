@@ -3,6 +3,8 @@ local propAnimatedMesh = script:GetCustomProperty("AnimatedMesh"):WaitForObject(
 local propWalkPath = script:GetCustomProperty("WalkPath"):WaitForObject()
 local propReadyIndicator = script:GetCustomProperty("ReadyIndicator"):WaitForObject()
 local propDoneIndicator = script:GetCustomProperty("DoneIndicator"):WaitForObject()
+local propSign = script:GetCustomProperty("Sign"):WaitForObject()
+local propSignText = script:GetCustomProperty("SignText"):WaitForObject()
 
 local player = Game.GetLocalPlayer()
 
@@ -16,7 +18,7 @@ local STATE_READY = 0
 local STATE_IN_MINE = 1
 local STATE_HAS_MONEY = 2
 
-
+local completion = -1
 local npcState = STATE_READY
 
 local isTimerRunning = false
@@ -24,11 +26,17 @@ local completion = -1
 local localPlayer = Game.GetLocalPlayer()
 local myId = script:GetReference().id
 
+local updateSignTask = nil
 
 function UpdateIndicator()
 	propReadyIndicator.isEnabled = npcState == STATE_READY
 	propDoneIndicator.isEnabled = npcState == STATE_HAS_MONEY
-
+	propSign.isEnabled = npcState == STATE_IN_MINE
+	if propSign.isEnabled then
+		StartUpdatingSign()
+	else
+		StopUpdatingSign()
+	end
 end
 
 
@@ -40,6 +48,42 @@ function OnInteracted()
 		npcState = STATE_READY
 		UpdateIndicator()
 		Events.BroadcastToServer("ApplyReward", script.parent:GetCustomProperty("DigReward"))
+	end
+end
+
+
+function StartUpdatingSign()
+	StopUpdatingSign()
+	updateSignTask = Task.Spawn(UpdateSign)
+end
+
+
+function StopUpdatingSign()
+	if updateSignTask then updateSignTask:Cancel() end
+	updateSignTask = nil
+end
+
+
+function UpdateSign()
+	while true do
+		local rawSec = CoreMath.Clamp(completion - os.time(), 0, 2^52)
+
+		local sec = rawSec % 60
+		local min = math.floor(rawSec/60) % 60
+		local hours = math.floor(rawSec/(60 * 60))
+
+		if hours > 0 then
+			timetext = "Back in\n" .. hours .. " hours."
+		elseif min > 0 then
+			timetext = "Back in\n" .. min .. " min."
+		elseif sec > 0 then
+			timetext = "Back in\n" .. sec .. " sec."
+		else
+			timetext = "Back\nsoon!"
+		end
+		
+		propSignText.text = timetext
+		Task.Wait()
 	end
 end
 
@@ -115,7 +159,6 @@ end
 
 function OnTimerStarted(timerId, completionTimestamp)
 	if timerId == myId then
-		print("Timer started!")
 		completion = completionTimestamp
 		isTimerRunning = true
 		WalkIntoMine()
@@ -141,13 +184,19 @@ end
 
 
 function OnTimerCompleted(timerId)
-	print("Timer done!", timerId, myId)
 	if timerId == myId then
 		isTimerRunning = false
 		WalkOutOfMine()
 	end
 end
 
+
+function OnReceiveNPCState(timerId, newState)
+	if timerId == myId then
+		npcState = newState
+		UpdateIndicator()
+	end
+end
 
 UpdateIndicator()
 
@@ -157,4 +206,7 @@ Events.Connect("TimerStarted", OnTimerStarted)
 Events.Connect("TimerActive", OnTimerActive)
 Events.Connect("TimerCanceled", OnTimerCanceled)
 Events.Connect("TimerCompleted", OnTimerCompleted)
+Events.Connect("NPCState", OnReceiveNPCState)
 Events.BroadcastToServer("RequestTimerInfo", myId)
+
+

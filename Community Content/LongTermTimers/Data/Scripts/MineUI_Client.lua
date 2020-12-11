@@ -28,6 +28,7 @@ function ShowReadyUI(minerScript)
 	player.lookSensitivity = 0
 	propUI_Root.isEnabled = true
 	playerPos = player:GetWorldPosition()
+	print(propDialogText, currentMinerScript, currentMinerScript.parent)
 	propDialogText.text = currentMinerScript.parent:GetCustomProperty("Dialog")
 end
 
@@ -75,8 +76,10 @@ function OnYesPressed()
 		local duration = currentMinerScript.parent:GetCustomProperty("DigTime")
 		local reward = currentMinerScript.parent:GetCustomProperty("DigReward")
 		Events.BroadcastToServer("StartTimer", currentMinerScript:GetReference().id, duration, reward)
+		HideUI(false)
+	else
+		HideUI(true)
 	end
-	HideUI(false)
 end
 
 

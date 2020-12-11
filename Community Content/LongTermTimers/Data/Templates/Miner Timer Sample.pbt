@@ -1774,7 +1774,7 @@
             }
           }
           Text {
-            Label: "Do it!"
+            Label: "Okay!"
             Color {
               R: 1
               G: 1
@@ -2218,6 +2218,18 @@
             Name: "cs:DialogText"
             ObjectReference {
               SubObjectId: 2222189759307311341
+            }
+          }
+          Overrides {
+            Name: "cs:Button_Yes_Root"
+            ObjectReference {
+              SubObjectId: 12389528801537742109
+            }
+          }
+          Overrides {
+            Name: "cs:Button_No_Root"
+            ObjectReference {
+              SubObjectId: 510064172298994922
             }
           }
         }
@@ -2692,10 +2704,16 @@
         ChildIds: 245367531961597493
         ChildIds: 9876315519507868319
         ChildIds: 1524535674150486322
+        ChildIds: 11664665889824438993
+        ChildIds: 10983077358550307201
         UnregisteredParameters {
           Overrides {
             Name: "cs:Dialog"
             String: "I\'m a fast digger!  Send me into the mines, and I\'ll be back in 10 seconds, with 10 gold!"
+          }
+          Overrides {
+            Name: "cs:ReturnDialog"
+            String: "Here it is, 10 gold, just like I promised!"
           }
           Overrides {
             Name: "cs:DigTime"
@@ -2825,8 +2843,28 @@
             }
           }
           Overrides {
-            Name: "cs:TimerName"
-            String: "FastGuy"
+            Name: "cs:ReadyIndicator"
+            ObjectReference {
+              SubObjectId: 6202221333854297413
+            }
+          }
+          Overrides {
+            Name: "cs:DoneIndicator"
+            ObjectReference {
+              SubObjectId: 16633191225176381177
+            }
+          }
+          Overrides {
+            Name: "cs:Sign"
+            ObjectReference {
+              SubObjectId: 10983077358550307201
+            }
+          }
+          Overrides {
+            Name: "cs:SignText"
+            ObjectReference {
+              SubObjectId: 7423647504560408423
+            }
           }
         }
         Collidable_v2 {
@@ -2838,6 +2876,447 @@
         Script {
           ScriptAsset {
             Id: 3398147908272414182
+          }
+        }
+      }
+      Objects {
+        Id: 11664665889824438993
+        Name: "Indicators"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15305007788546469386
+        ChildIds: 6202221333854297413
+        ChildIds: 16633191225176381177
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 6202221333854297413
+        Name: "Text 04: ?"
+        Transform {
+          Location {
+            X: -16.5498047
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 11664665889824438993
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0304635223
+              G: 0.919999957
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.167019755
+              G: 0.97
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0123177255
+              G: 0.929999948
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18184182102239984913
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 16633191225176381177
+        Name: "Text 04: !"
+        Transform {
+          Location {
+            X: -5.37658691
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 11664665889824438993
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4641527879142247449
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10983077358550307201
+        Name: "Sign"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15305007788546469386
+        ChildIds: 443191052885967783
+        ChildIds: 10600949987655777812
+        ChildIds: 15274013344062437220
+        ChildIds: 5356238493895731053
+        ChildIds: 12538256380990537191
+        ChildIds: 7423647504560408423
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 443191052885967783
+        Name: "Grass Tall"
+        Transform {
+          Location {
+            X: 16.5821533
+            Y: 17.3927
+            Z: -106.228973
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.201806843
+            Y: 0.201806843
+            Z: 0.201806843
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7357442311375972468
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10600949987655777812
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 49.7473145
+            Y: 30.6226807
+            Z: -46.8980713
+          }
+          Rotation {
+            Pitch: -0.66595459
+            Yaw: 179.871
+            Roll: 95.1082
+          }
+          Scale {
+            X: 0.105713233
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 15274013344062437220
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 30.1282959
+            Z: -47.0692749
+          }
+          Rotation {
+            Roll: -95.6358337
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 5356238493895731053
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 1.71899414
+            Y: 28.8043213
+            Z: -112.974503
+          }
+          Rotation {
+            Pitch: 84.8927689
+            Yaw: -89.9996338
+            Roll: -179.999756
+          }
+          Scale {
+            X: 0.13276346
+            Y: 0.300108582
+            Z: 0.259327322
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12538256380990537191
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 20.2873535
+            Z: -27.767746
+          }
+          Rotation {
+            Roll: 84.892952
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7423647504560408423
+        Name: "World Text"
+        Transform {
+          Location {
+            X: 6.45141602
+            Y: 31.1416016
+            Z: -38.0370789
+          }
+          Rotation {
+            Yaw: 90
+          }
+          Scale {
+            X: 0.797433615
+            Y: 0.797433615
+            Z: 0.797433615
+          }
+        }
+        ParentId: 10983077358550307201
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Text {
+          Text: "Back Soon!"
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:center"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
           }
         }
       }
@@ -2862,10 +3341,16 @@
         ChildIds: 6126051910114512544
         ChildIds: 13879793594982428045
         ChildIds: 12058604617914810614
+        ChildIds: 6731789275125859717
+        ChildIds: 17160398361054410983
         UnregisteredParameters {
           Overrides {
             Name: "cs:Dialog"
             String: "I\'m really thorough!  Let me go looking for gold, and I\'ll be back in 20 seconds, with 30 gold!"
+          }
+          Overrides {
+            Name: "cs:ReturnDialog"
+            String: "I counted twice and this is exactly 30 gold."
           }
           Overrides {
             Name: "cs:DigTime"
@@ -2995,8 +3480,28 @@
             }
           }
           Overrides {
-            Name: "cs:TimerName"
-            String: "FastGuy"
+            Name: "cs:ReadyIndicator"
+            ObjectReference {
+              SubObjectId: 12551384313028497864
+            }
+          }
+          Overrides {
+            Name: "cs:DoneIndicator"
+            ObjectReference {
+              SubObjectId: 16985656100099878694
+            }
+          }
+          Overrides {
+            Name: "cs:Sign"
+            ObjectReference {
+              SubObjectId: 17160398361054410983
+            }
+          }
+          Overrides {
+            Name: "cs:SignText"
+            ObjectReference {
+              SubObjectId: 4722542390260632399
+            }
           }
         }
         Collidable_v2 {
@@ -3008,6 +3513,447 @@
         Script {
           ScriptAsset {
             Id: 3398147908272414182
+          }
+        }
+      }
+      Objects {
+        Id: 6731789275125859717
+        Name: "Indicators"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17101915981961723828
+        ChildIds: 12551384313028497864
+        ChildIds: 16985656100099878694
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 12551384313028497864
+        Name: "Text 04: ?"
+        Transform {
+          Location {
+            X: -16.5498047
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 6731789275125859717
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0304635223
+              G: 0.919999957
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.167019755
+              G: 0.97
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0123177255
+              G: 0.929999948
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18184182102239984913
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 16985656100099878694
+        Name: "Text 04: !"
+        Transform {
+          Location {
+            X: -5.37658691
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 6731789275125859717
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4641527879142247449
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17160398361054410983
+        Name: "Sign"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17101915981961723828
+        ChildIds: 5167941293335924792
+        ChildIds: 11991434230490743786
+        ChildIds: 17887888422115392907
+        ChildIds: 17117706104865764291
+        ChildIds: 2762938099956113746
+        ChildIds: 4722542390260632399
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 5167941293335924792
+        Name: "Grass Tall"
+        Transform {
+          Location {
+            X: 16.5821533
+            Y: 17.3927
+            Z: -106.228973
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.201806843
+            Y: 0.201806843
+            Z: 0.201806843
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7357442311375972468
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11991434230490743786
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 49.7473145
+            Y: 30.6226807
+            Z: -46.8980713
+          }
+          Rotation {
+            Pitch: -0.66595459
+            Yaw: 179.871
+            Roll: 95.1082
+          }
+          Scale {
+            X: 0.105713233
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17887888422115392907
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 30.1282959
+            Z: -47.0692749
+          }
+          Rotation {
+            Roll: -95.6358337
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17117706104865764291
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 1.71899414
+            Y: 28.8043213
+            Z: -112.974503
+          }
+          Rotation {
+            Pitch: 84.8927689
+            Yaw: -89.9996338
+            Roll: -179.999756
+          }
+          Scale {
+            X: 0.13276346
+            Y: 0.300108582
+            Z: 0.259327322
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2762938099956113746
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 20.2873535
+            Z: -27.767746
+          }
+          Rotation {
+            Roll: 84.892952
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 4722542390260632399
+        Name: "World Text"
+        Transform {
+          Location {
+            X: 6.45141602
+            Y: 31.1416016
+            Z: -38.0370789
+          }
+          Rotation {
+            Yaw: 90
+          }
+          Scale {
+            X: 0.797433615
+            Y: 0.797433615
+            Z: 0.797433615
+          }
+        }
+        ParentId: 17160398361054410983
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Text {
+          Text: "Back Soon!"
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:center"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
           }
         }
       }
@@ -3032,10 +3978,16 @@
         ChildIds: 1733925234697067283
         ChildIds: 14047429157758737610
         ChildIds: 9520245312955234956
+        ChildIds: 10537758444036554022
+        ChildIds: 8188347967834902943
         UnregisteredParameters {
           Overrides {
             Name: "cs:Dialog"
             String: "Did you know I have 206 bones?  Also, I can mine 300 gold in one minute!"
+          }
+          Overrides {
+            Name: "cs:ReturnDialog"
+            String: "Did you know, more than half my bones are hand and foot bones?  Also, here\'s 300 gold."
           }
           Overrides {
             Name: "cs:DigTime"
@@ -3165,8 +4117,28 @@
             }
           }
           Overrides {
-            Name: "cs:TimerName"
-            String: "FastGuy"
+            Name: "cs:ReadyIndicator"
+            ObjectReference {
+              SubObjectId: 16794157496720752623
+            }
+          }
+          Overrides {
+            Name: "cs:DoneIndicator"
+            ObjectReference {
+              SubObjectId: 110100668052029336
+            }
+          }
+          Overrides {
+            Name: "cs:Sign"
+            ObjectReference {
+              SubObjectId: 8188347967834902943
+            }
+          }
+          Overrides {
+            Name: "cs:SignText"
+            ObjectReference {
+              SubObjectId: 10888003523031627776
+            }
           }
         }
         Collidable_v2 {
@@ -3178,6 +4150,448 @@
         Script {
           ScriptAsset {
             Id: 3398147908272414182
+          }
+        }
+      }
+      Objects {
+        Id: 10537758444036554022
+        Name: "Indicators"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7376295250978335362
+        ChildIds: 16794157496720752623
+        ChildIds: 110100668052029336
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 16794157496720752623
+        Name: "Text 04: ?"
+        Transform {
+          Location {
+            X: -16.5498047
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10537758444036554022
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0304635223
+              G: 0.919999957
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.167019755
+              G: 0.97
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0123177255
+              G: 0.929999948
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18184182102239984913
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 110100668052029336
+        Name: "Text 04: !"
+        Transform {
+          Location {
+            X: -5.37658691
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10537758444036554022
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4641527879142247449
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8188347967834902943
+        Name: "Sign"
+        Transform {
+          Location {
+            Z: -3.05175781e-05
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7376295250978335362
+        ChildIds: 5932486560772948010
+        ChildIds: 6526383050943723271
+        ChildIds: 1471471374403275326
+        ChildIds: 7242503559012585122
+        ChildIds: 10908441815112597859
+        ChildIds: 10888003523031627776
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 5932486560772948010
+        Name: "Grass Tall"
+        Transform {
+          Location {
+            X: 16.5821533
+            Y: 17.3927
+            Z: -106.228973
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.201806843
+            Y: 0.201806843
+            Z: 0.201806843
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7357442311375972468
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6526383050943723271
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 49.7473145
+            Y: 30.6226807
+            Z: -46.8980713
+          }
+          Rotation {
+            Pitch: -0.66595459
+            Yaw: 179.871
+            Roll: 95.1082
+          }
+          Scale {
+            X: 0.105713233
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 1471471374403275326
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 30.1282959
+            Z: -47.0692749
+          }
+          Rotation {
+            Roll: -95.6358337
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7242503559012585122
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 1.71899414
+            Y: 28.8043213
+            Z: -112.974503
+          }
+          Rotation {
+            Pitch: 84.8927689
+            Yaw: -89.9996338
+            Roll: -179.999756
+          }
+          Scale {
+            X: 0.13276346
+            Y: 0.300108582
+            Z: 0.259327322
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10908441815112597859
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 20.2873535
+            Z: -27.767746
+          }
+          Rotation {
+            Roll: 84.892952
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10888003523031627776
+        Name: "World Text"
+        Transform {
+          Location {
+            X: 6.45141602
+            Y: 31.1416016
+            Z: -38.0370789
+          }
+          Rotation {
+            Yaw: 90
+          }
+          Scale {
+            X: 0.797433615
+            Y: 0.797433615
+            Z: 0.797433615
+          }
+        }
+        ParentId: 8188347967834902943
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Text {
+          Text: "Back Soon!"
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:center"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
           }
         }
       }
@@ -3202,10 +4616,16 @@
         ChildIds: 8349831518587123085
         ChildIds: 10577572376986241538
         ChildIds: 597019665248038277
+        ChildIds: 165603016068954847
+        ChildIds: 14157409202381990040
         UnregisteredParameters {
           Overrides {
             Name: "cs:Dialog"
             String: "Rawr rawr rawr.  Rawr rawr rawr rawr rawr.  (5 minutes.  2000 gold.  Take it or leave it.)"
+          }
+          Overrides {
+            Name: "cs:ReturnDialog"
+            String: "Rawr rawr rawr rawr rawr.  (Here is your 2000 gold.)"
           }
           Overrides {
             Name: "cs:DigTime"
@@ -3335,8 +4755,28 @@
             }
           }
           Overrides {
-            Name: "cs:TimerName"
-            String: "FastGuy"
+            Name: "cs:ReadyIndicator"
+            ObjectReference {
+              SubObjectId: 5704903906579694496
+            }
+          }
+          Overrides {
+            Name: "cs:DoneIndicator"
+            ObjectReference {
+              SubObjectId: 17663823333150530384
+            }
+          }
+          Overrides {
+            Name: "cs:Sign"
+            ObjectReference {
+              SubObjectId: 14157409202381990040
+            }
+          }
+          Overrides {
+            Name: "cs:SignText"
+            ObjectReference {
+              SubObjectId: 4283055642063206710
+            }
           }
         }
         Collidable_v2 {
@@ -3348,6 +4788,449 @@
         Script {
           ScriptAsset {
             Id: 3398147908272414182
+          }
+        }
+      }
+      Objects {
+        Id: 165603016068954847
+        Name: "Indicators"
+        Transform {
+          Location {
+            Z: -3.05175781e-05
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13397914146758509642
+        ChildIds: 5704903906579694496
+        ChildIds: 17663823333150530384
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 5704903906579694496
+        Name: "Text 04: ?"
+        Transform {
+          Location {
+            X: -16.5498047
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 165603016068954847
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0304635223
+              G: 0.919999957
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.167019755
+              G: 0.97
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0123177255
+              G: 0.929999948
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18184182102239984913
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17663823333150530384
+        Name: "Text 04: !"
+        Transform {
+          Location {
+            X: -5.37658691
+            Z: 113.217957
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 165603016068954847
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font.Sides:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:id"
+            AssetReference {
+              Id: 18011562639684277779
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4641527879142247449
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 14157409202381990040
+        Name: "Sign"
+        Transform {
+          Location {
+            Z: -3.05175781e-05
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13397914146758509642
+        ChildIds: 1837377569866419337
+        ChildIds: 17267791052393474697
+        ChildIds: 15689099699679726856
+        ChildIds: 12290843866540711411
+        ChildIds: 15708882350837356077
+        ChildIds: 4283055642063206710
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 1837377569866419337
+        Name: "Grass Tall"
+        Transform {
+          Location {
+            X: 16.5821533
+            Y: 17.3927
+            Z: -106.228973
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.201806843
+            Y: 0.201806843
+            Z: 0.201806843
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7357442311375972468
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17267791052393474697
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 49.7473145
+            Y: 30.6226807
+            Z: -46.8980713
+          }
+          Rotation {
+            Pitch: -0.66595459
+            Yaw: 179.871
+            Roll: 95.1082
+          }
+          Scale {
+            X: 0.105713233
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 15689099699679726856
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 30.1282959
+            Z: -47.0692749
+          }
+          Rotation {
+            Roll: -95.6358337
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12290843866540711411
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: 1.71899414
+            Y: 28.8043213
+            Z: -112.974503
+          }
+          Rotation {
+            Pitch: 84.8927689
+            Yaw: -89.9996338
+            Roll: -179.999756
+          }
+          Scale {
+            X: 0.13276346
+            Y: 0.300108582
+            Z: 0.259327322
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 15708882350837356077
+        Name: "Large Wood Board 8m"
+        Transform {
+          Location {
+            X: -34.024292
+            Y: 20.2873535
+            Z: -27.767746
+          }
+          Rotation {
+            Roll: 84.892952
+          }
+          Scale {
+            X: 0.101950444
+            Y: 0.42525655
+            Z: 0.42525655
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 10522023545474788767
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          EnableCameraCollision: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 4283055642063206710
+        Name: "World Text"
+        Transform {
+          Location {
+            X: 6.45141602
+            Y: 31.1416016
+            Z: -38.0370789
+          }
+          Rotation {
+            Yaw: 90
+          }
+          Scale {
+            X: 0.797433615
+            Y: 0.797433615
+            Z: 0.797433615
+          }
+        }
+        ParentId: 14157409202381990040
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Text {
+          Text: "Back Soon!"
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:center"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
           }
         }
       }
@@ -3485,6 +5368,42 @@
       PrimaryAsset {
         AssetType: "AnimatedMeshAssetRef"
         AssetId: "npc_human_guy_fantasy_001_ref"
+      }
+    }
+    Assets {
+      Id: 18184182102239984913
+      Name: "Text 04: ?"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "F7_Text_065"
+      }
+    }
+    Assets {
+      Id: 18011562639684277779
+      Name: "Additive Soft Edge"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "fxma_additive_edgefade"
+      }
+    }
+    Assets {
+      Id: 4641527879142247449
+      Name: "Text 04: !"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "F7_Text_037"
+      }
+    }
+    Assets {
+      Id: 7357442311375972468
+      Name: "Grass Tall"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_grass_generic_001"
       }
     }
     Assets {

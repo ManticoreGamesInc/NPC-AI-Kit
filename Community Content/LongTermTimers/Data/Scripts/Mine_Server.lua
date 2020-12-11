@@ -54,8 +54,14 @@ function OnStartTimer(player, timerId, duration)
 	npcStates[player.id][timerId] = STATE_IN_MINE
 end
 
-function OnApplyReward(player, amount)
-	player:AddResource("Gold", amount)
+function OnApplyReward(player, amount, npcId)
+	if npcStates[player.id][npcId] ~= STATE_HAS_MONEY then
+		warn("Somehow we requested a reward from an NPC who wasn't done?")
+		print(npcId, npcStates[player.id][npcId])
+	else
+		player:AddResource("Gold", amount)
+		npcStates[player.id][npcId] = STATE_READY
+	end
 end
 
 Events.ConnectForPlayer("RequestTimerInfo", OnRequestTimerInfo)

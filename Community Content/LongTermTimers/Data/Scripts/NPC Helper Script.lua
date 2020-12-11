@@ -47,7 +47,9 @@ function OnInteracted()
 		Events.Broadcast("ShowMoneyDialog", script)
 		npcState = STATE_READY
 		UpdateIndicator()
-		Events.BroadcastToServer("ApplyReward", script.parent:GetCustomProperty("DigReward"))
+		Events.BroadcastToServer("ApplyReward",
+			script.parent:GetCustomProperty("DigReward"),
+			myId)
 	end
 end
 

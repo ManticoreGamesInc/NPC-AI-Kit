@@ -28,7 +28,6 @@ function ShowReadyUI(minerScript)
 	player.lookSensitivity = 0
 	propUI_Root.isEnabled = true
 	playerPos = player:GetWorldPosition()
-	print(propDialogText, currentMinerScript, currentMinerScript.parent)
 	propDialogText.text = currentMinerScript.parent:GetCustomProperty("Dialog")
 end
 

@@ -10,6 +10,20 @@
 	Networked or default context. The Cross-Context script is placed in the Networked
 	context and the Server script passes to it a function through Call(). When this
 	Cross-Context script goes into its own context it will then invoke the server function.
+	
+	Usage
+	=====
+	Place in the top of the script:
+	```
+	function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
+	```
+	
+	Call:
+	```
+	CROSS_CONTEXT_CALLER().Call(function()
+		GetWrapperFor(object).ApplyDamage(object, dmg, source, pos, rot)
+	end)
+	```
 --]]
 
 -- Registers itself into the global table

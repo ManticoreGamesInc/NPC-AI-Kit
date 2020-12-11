@@ -1,14 +1,5 @@
 ﻿Entries {
   Key {
-    StringVar: "lte_LTTimerTable"
-  }
-  SimpleValue {
-    Table {
-    }
-  }
-}
-Entries {
-  Key {
     StringVar: "rsc"
   }
   SimpleValue {
@@ -18,9 +9,18 @@ Entries {
           StringVar: "Gold"
         }
         SimpleValue {
-          IntVar: 3310
+          IntVar: 3320
         }
       }
+    }
+  }
+}
+Entries {
+  Key {
+    StringVar: "lte_LTTimerTable"
+  }
+  SimpleValue {
+    Table {
     }
   }
 }
@@ -36,14 +36,6 @@ Entries {
         }
         SimpleValue {
           IntVar: 0
-        }
-      }
-      Entries {
-        Key {
-          StringVar: "49DD1AA7A3CA81D8"
-        }
-        SimpleValue {
-          IntVar: 2
         }
       }
       Entries {
@@ -68,6 +60,14 @@ Entries {
         }
         SimpleValue {
           IntVar: 0
+        }
+      }
+      Entries {
+        Key {
+          StringVar: "49DD1AA7A3CA81D8"
+        }
+        SimpleValue {
+          IntVar: 2
         }
       }
     }

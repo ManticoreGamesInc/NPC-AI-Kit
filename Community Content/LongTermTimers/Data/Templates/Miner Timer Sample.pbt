@@ -2561,7 +2561,7 @@
           Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         Folder {
           IsGroup: true
@@ -2845,13 +2845,13 @@
           Overrides {
             Name: "cs:ReadyIndicator"
             ObjectReference {
-              SubObjectId: 6202221333854297413
+              SubObjectId: 16633191225176381177
             }
           }
           Overrides {
             Name: "cs:DoneIndicator"
             ObjectReference {
-              SubObjectId: 16633191225176381177
+              SubObjectId: 6202221333854297413
             }
           }
           Overrides {
@@ -2942,30 +2942,6 @@
               Id: 18011562639684277779
             }
           }
-          Overrides {
-            Name: "ma:Font.Bevel:color"
-            Color {
-              R: 0.0304635223
-              G: 0.919999957
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Faces:color"
-            Color {
-              R: 0.167019755
-              G: 0.97
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Sides:color"
-            Color {
-              R: 0.0123177255
-              G: 0.929999948
-              A: 1
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3022,6 +2998,30 @@
             Name: "ma:Font.Bevel:id"
             AssetReference {
               Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
             }
           }
         }
@@ -3482,13 +3482,13 @@
           Overrides {
             Name: "cs:ReadyIndicator"
             ObjectReference {
-              SubObjectId: 12551384313028497864
+              SubObjectId: 16985656100099878694
             }
           }
           Overrides {
             Name: "cs:DoneIndicator"
             ObjectReference {
-              SubObjectId: 16985656100099878694
+              SubObjectId: 12551384313028497864
             }
           }
           Overrides {
@@ -3579,30 +3579,6 @@
               Id: 18011562639684277779
             }
           }
-          Overrides {
-            Name: "ma:Font.Bevel:color"
-            Color {
-              R: 0.0304635223
-              G: 0.919999957
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Faces:color"
-            Color {
-              R: 0.167019755
-              G: 0.97
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Sides:color"
-            Color {
-              R: 0.0123177255
-              G: 0.929999948
-              A: 1
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3659,6 +3635,30 @@
             Name: "ma:Font.Bevel:id"
             AssetReference {
               Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
             }
           }
         }
@@ -4119,13 +4119,13 @@
           Overrides {
             Name: "cs:ReadyIndicator"
             ObjectReference {
-              SubObjectId: 16794157496720752623
+              SubObjectId: 110100668052029336
             }
           }
           Overrides {
             Name: "cs:DoneIndicator"
             ObjectReference {
-              SubObjectId: 110100668052029336
+              SubObjectId: 16794157496720752623
             }
           }
           Overrides {
@@ -4216,30 +4216,6 @@
               Id: 18011562639684277779
             }
           }
-          Overrides {
-            Name: "ma:Font.Bevel:color"
-            Color {
-              R: 0.0304635223
-              G: 0.919999957
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Faces:color"
-            Color {
-              R: 0.167019755
-              G: 0.97
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Sides:color"
-            Color {
-              R: 0.0123177255
-              G: 0.929999948
-              A: 1
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4296,6 +4272,30 @@
             Name: "ma:Font.Bevel:id"
             AssetReference {
               Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
             }
           }
         }
@@ -4757,13 +4757,13 @@
           Overrides {
             Name: "cs:ReadyIndicator"
             ObjectReference {
-              SubObjectId: 5704903906579694496
+              SubObjectId: 17663823333150530384
             }
           }
           Overrides {
             Name: "cs:DoneIndicator"
             ObjectReference {
-              SubObjectId: 17663823333150530384
+              SubObjectId: 5704903906579694496
             }
           }
           Overrides {
@@ -4855,30 +4855,6 @@
               Id: 18011562639684277779
             }
           }
-          Overrides {
-            Name: "ma:Font.Bevel:color"
-            Color {
-              R: 0.0304635223
-              G: 0.919999957
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Faces:color"
-            Color {
-              R: 0.167019755
-              G: 0.97
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Font.Sides:color"
-            Color {
-              R: 0.0123177255
-              G: 0.929999948
-              A: 1
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4935,6 +4911,30 @@
             Name: "ma:Font.Bevel:id"
             AssetReference {
               Id: 18011562639684277779
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Bevel:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Faces:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Font.Sides:color"
+            Color {
+              R: 0.0274509825
+              G: 0.921568692
+              A: 1
             }
           }
         }

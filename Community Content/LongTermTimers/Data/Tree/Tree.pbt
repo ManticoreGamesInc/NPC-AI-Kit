@@ -51,17 +51,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 734195067098007266
-      value {
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 3354135352753759116
       value {
         Overrides {

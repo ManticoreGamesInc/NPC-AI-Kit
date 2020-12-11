@@ -2,7 +2,7 @@
   Id: 8553422110203881234
   Name: "Tower - Shaman Brown"
   PlatformAssetType: 13
-  SerializationVersion: 62
+  SerializationVersion: 68
   CustomMaterialAsset {
     BaseMaterialId: 10947420106784256873
     ParameterOverrides {

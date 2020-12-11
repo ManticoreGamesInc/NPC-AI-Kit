@@ -2,7 +2,7 @@
   Id: 1191558362824357590
   Name: "Orc Gold Glow"
   PlatformAssetType: 13
-  SerializationVersion: 62
+  SerializationVersion: 68
   CustomMaterialAsset {
     BaseMaterialId: 11710349489431771943
     ParameterOverrides {

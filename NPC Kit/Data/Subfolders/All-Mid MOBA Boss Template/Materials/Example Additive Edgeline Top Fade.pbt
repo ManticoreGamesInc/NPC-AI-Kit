@@ -2,7 +2,7 @@
   Id: 9451616903307656173
   Name: "Example Additive Edgeline Top Fade"
   PlatformAssetType: 13
-  SerializationVersion: 62
+  SerializationVersion: 68
   CustomMaterialAsset {
     BaseMaterialId: 10641727446676952229
     ParameterOverrides {

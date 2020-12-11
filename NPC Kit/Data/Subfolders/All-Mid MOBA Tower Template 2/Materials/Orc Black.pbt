@@ -2,7 +2,7 @@
   Id: 17140917848774638005
   Name: "Orc Black"
   PlatformAssetType: 13
-  SerializationVersion: 62
+  SerializationVersion: 68
   CustomMaterialAsset {
     BaseMaterialId: 5729277429703771548
     ParameterOverrides {

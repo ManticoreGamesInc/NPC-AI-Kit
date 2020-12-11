@@ -434,5 +434,5 @@
       AssetId: "Sky_Early_Morning_01"
     }
   }
-  SerializationVersion: 62
+  SerializationVersion: 68
 }

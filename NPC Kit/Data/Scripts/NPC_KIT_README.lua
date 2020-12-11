@@ -45,7 +45,8 @@
 	This is needed to fight against the NPCs. The Destructible Rifle template has a script called
 	DestructableWeaponServer that is what makes it deal damage to NPCs. Add that script to any Core
 	weapon to make it compatible with the NPC Kit.
-	NPCs. For more info on adapting weapons to this system, see the following tutorial:
+	
+	For more info on adapting weapons to this system, see the following tutorial:
 	https://youtu.be/Dc9C13w1Lz8
 	
 	For melee combat against NPCs, download "The Carlos Blade" from Community Content as a starting
@@ -66,6 +67,7 @@
 	That's what the camps and spawn points are for.
 	
 	See comments in each of the spawn scripts for details about their specific spawn behaviors.
+	
 	
 	Teams & Factions
 	================
@@ -91,8 +93,6 @@
 	
 	Adding NPCs to a Game
 	=====================
-	Navigational Meshes
-	===================
 	
 	1. You can position your NPCs directly in the game to test their behaviors.
 	   However, they won't respawn if killed.
@@ -103,18 +103,21 @@
 	   to add it as a custom property on the spawn point.
 	6. Delete your NPC templates from the hierarchy. They should be spawned with
 	   Camps and Spawn Points instead of being directly placed.
-	NPCs can use navigational meshes (NavMesh). Survival Framework uses a NavMesh solution from
-	Waffle. In Community Content you can find implementations from Waffle or DarkDev. NavMesh
-	implementations register themselves into the global table _G.NavMesh, from where the NPCs
-	can find them.
+	
+	
+	Navigational Meshes
+	===================
+	
+	NPCs can use navigational meshes (NavMesh). In Community Content you can find implementations
+	from Waffle or DarkDev. NavMesh	implementations register themselves into the global table
+	_G.NavMesh, from where the NPCs	can find them.
 	
 	If a NavMesh is not provided the AI falls back to dynamic pathing, which works great for open
 	games on terrain. The default pathing does not work indoors. For indoor games use a NavMesh.
 	
-	NavMesh data can be found in the hierarchy under:
-	Level Design > NavMesh > NAVMESH_FOLDER
+	(based on work with the NavMesh by Waffle:)
 	
-	The NavMesh is broken into separate "islands", disconnected from each other. To form a
+	The NavMesh can be broken into separate "islands", disconnected from each other. To form a
 	NavMesh island all planes should be in the same group/folder.
 	
 	Edit the NavMesh by duplicating the planes, scaling and positioning them. Planes must touch
@@ -136,16 +139,13 @@
 	=============
 	
 	For games that have both indoor and outdoor sections, either define a NavMesh for the entire
-	game or use NavMesh Zones to specify the areas where NavMesh should be used. Without them, NPCs
-	have no way to understand the difference between gameplay areas--where to use NavMesh pathing
-	and where to use dynamic pathing. When using NavMesh Zones NPCs understand that if they are
-	not in a Zone then it's dynamic pathing.
+	game (easier with the component by DarkDev) or use NavMesh Zones to specify the areas where
+	NavMesh should be used. Without them, NPCs have no way to understand the difference between
+	gameplay areas--where to use NavMesh pathing and where to use dynamic pathing. When using
+	NavMesh Zones NPCs understand that if they are not in a Zone then it's dynamic pathing.
 	
 	If a NavMesh Zone is placed, but there is no NavMesh inside, then it behaves as a barrier--NPCs
 	are not able to enter.
-	
-	NavMesh Zones can be found in the hierarchy under:
-	Level Design > NavMesh Zones > ServerContext
 	
 	To create new NavMesh zones simply add triggers to any sub-folder under the ServerContext.
 	Triggers can be Box, Sphere or Capsule types, however Boxes work better in complex situations.

@@ -1,6 +1,6 @@
 ﻿--[[
 	Melee Ability - Client
-	v1.2.1
+	v1.3.0
 	by: standardcombo
 	
 	Handles spawning of VFX for a melee ability.
@@ -211,7 +211,7 @@ end
 
 function DrawDebugRotation(pos, rot, color, connectToPrevious)
 	local debugStart = pos
-	local debugDirection = rot * Vector3.FORWARD
+	local debugDirection = rot * Rotation.New(0,90,0) * Vector3.FORWARD
 	local debugEnd = debugStart + debugDirection * DEBUG_WEAPON_LENGTH
 	CoreDebug.DrawLine(debugStart, debugEnd, {duration = 99999, color = color, thickness = 2})
 	CoreDebug.DrawSphere(debugEnd, 5, {duration = 99999, color = color})

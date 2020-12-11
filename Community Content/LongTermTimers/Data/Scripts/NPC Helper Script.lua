@@ -1,31 +1,57 @@
 ﻿local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
 local propAnimatedMesh = script:GetCustomProperty("AnimatedMesh"):WaitForObject()
 local propWalkPath = script:GetCustomProperty("WalkPath"):WaitForObject()
---local propTimerName = script:GetCustomProperty("TimerName")
+local propReadyIndicator = script:GetCustomProperty("ReadyIndicator"):WaitForObject()
+local propDoneIndicator = script:GetCustomProperty("DoneIndicator"):WaitForObject()
 
 local player = Game.GetLocalPlayer()
 
 local startPos = propAnimatedMesh:GetWorldPosition()
 local startRot = propAnimatedMesh:GetWorldRotation()
 
-function OnInteracted()
-	Events.Broadcast("ShowMineDialog", script)
-end
-
-local isNPCInMine = false
 local animTask = nil
+
+
+local STATE_READY = 0
+local STATE_IN_MINE = 1
+local STATE_HAS_MONEY = 2
+
+
+local npcState = STATE_READY
 
 local isTimerRunning = false
 local completion = -1
 local localPlayer = Game.GetLocalPlayer()
 local myId = script:GetReference().id
 
+
+function UpdateIndicator()
+	propReadyIndicator.isEnabled = npcState == STATE_READY
+	propDoneIndicator.isEnabled = npcState == STATE_HAS_MONEY
+
+end
+
+
+function OnInteracted()
+	if npcState == STATE_READY then
+		Events.Broadcast("ShowMineDialog", script)
+	elseif npcState == STATE_HAS_MONEY then
+		Events.Broadcast("ShowMoneyDialog", script)
+		npcState = STATE_READY
+		UpdateIndicator()
+		Events.BroadcastToServer("ApplyReward", script.parent:GetCustomProperty("DigReward"))
+	end
+end
+
+
+
 function WalkIntoMine()
 	--print("entering mine!", npcScript)
 	-- Make sure they're talking about us.
 	--if npcScript ~= script then return end
-	if isNPCInMine then return end
-	isNPCInMine = true
+	if npcState ~= STATE_READY then return end
+	npcState = STATE_IN_MINE
+	UpdateIndicator()
 	if animTask ~= nil then animTask:Cancel() end
 	animTask = Task.Spawn(function()
 		propAnimatedMesh:SetWorldPosition(startPos)
@@ -43,11 +69,11 @@ function WalkIntoMine()
 	end)
 end
 
+
 function WalkOutOfMine()
-	if not isNPCInMine then return end
-	isNPCInMine = false
+	if npcState ~= STATE_IN_MINE then return end
+	npcState = STATE_HAS_MONEY
 	if animTask ~= nil then animTask:Cancel() end
-	Events.BroadcastToServer("ApplyReward", script.parent:GetCustomProperty("DigReward"))
 	animTask = Task.Spawn(function()
 		local reversedPath = {}
 		for k,v in pairs(propWalkPath:GetChildren()) do
@@ -72,19 +98,19 @@ function WalkOutOfMine()
 		propAnimatedMesh:RotateTo(startRot, 0.5)
 		animTask = nil
 		propTrigger.isEnabled = true
+		UpdateIndicator()
 	end)
 end
 
+
 function WarpIntoMine(npcScript)
 	if animTask ~= nil then animTask:Cancel() end
-	isNPCInMine = true
+	npcState = STATE_IN_MINE
+	UpdateIndicator()
 	local waypoints = propWalkPath:GetChildren()
 	propAnimatedMesh:SetWorldPosition(waypoints[#waypoints]:GetWorldPosition())
 	propTrigger.isEnabled = false
 end
-
-
-
 
 
 function OnTimerStarted(timerId, completionTimestamp)
@@ -96,6 +122,7 @@ function OnTimerStarted(timerId, completionTimestamp)
 	end
 end
 
+
 function OnTimerActive(timerId, completionTimestamp)
 	if timerId == myId then
 		completion = completionTimestamp
@@ -104,12 +131,14 @@ function OnTimerActive(timerId, completionTimestamp)
 	end
 end
 
+
 function OnTimerCanceled(timerId)
 	if timerId == myId then
 		isTimerRunning = false
 		WalkOutOfMine()
 	end
 end
+
 
 function OnTimerCompleted(timerId)
 	print("Timer done!", timerId, myId)
@@ -120,12 +149,9 @@ function OnTimerCompleted(timerId)
 end
 
 
+UpdateIndicator()
 
 propTrigger.interactedEvent:Connect(OnInteracted)
-
-
---Events.Connect("EnterMine", WalkIntoMine)
-
 
 Events.Connect("TimerStarted", OnTimerStarted)
 Events.Connect("TimerActive", OnTimerActive)

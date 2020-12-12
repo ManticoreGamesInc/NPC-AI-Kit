@@ -92,7 +92,6 @@
               SubObjectId: 8083221244245278106
             }
             ReloadAbility {
-              SelfId: 11176456046756650757
             }
           }
         }

@@ -1,6 +1,6 @@
 ﻿--[[
 	Destructible Weapon AOE
-	v1.0
+	v1.1
 	by: standardcombo
 	
 	Deals damage in an area, to Players and NPCs.
@@ -20,6 +20,8 @@ local BLAST_RADIUS = script:GetCustomProperty("BlastRadius")
 local BLAST_KNOCKBACK_SPEED = script:GetCustomProperty("BlastKnockbackSpeed")
 
 local casterTeam = 0
+
+local tagData = {type = "AOE"}
 
 
 local function OnTargetImpact(theWeapon, impactData)
@@ -59,7 +61,14 @@ local function OnTargetImpact(theWeapon, impactData)
 		dmg.sourceAbility = ATTACK_ABILITY
 
         -- Apply damage to enemy
-        COMBAT().ApplyDamage(enemy, dmg, dmg.sourcePlayer, enemyPos)
+		local attackData = {
+			object = enemy,
+			damage = dmg,
+			source = dmg.sourcePlayer,
+			position = enemyPos,
+			tags = tagData
+		}
+        COMBAT().ApplyDamage(attackData)
     end
 end
 

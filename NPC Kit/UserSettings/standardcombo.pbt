@@ -1,4 +1,4 @@
-DebuggerSettings {
+﻿DebuggerSettings {
 }
 ObjectSettings {
   ObjectStates {

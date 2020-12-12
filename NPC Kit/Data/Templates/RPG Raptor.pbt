@@ -16,10 +16,8 @@
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 7483351866561982690
-        ChildIds: 8407864205170865650
+        ChildIds: 1945086061314203357
         ChildIds: 7963678825654784679
-        ChildIds: 7089654655840687501
         ChildIds: 14001881140192835445
         UnregisteredParameters {
           Overrides {
@@ -235,8 +233,8 @@
         }
       }
       Objects {
-        Id: 7483351866561982690
-        Name: "NPCAIServer"
+        Id: 1945086061314203357
+        Name: "ServerContext"
         Transform {
           Location {
             Z: 100
@@ -250,6 +248,35 @@
           }
         }
         ParentId: 16661545407737424176
+        ChildIds: 7483351866561982690
+        ChildIds: 8407864205170865650
+        ChildIds: 7089654655840687501
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        NetworkContext {
+          Type: Server
+        }
+      }
+      Objects {
+        Id: 7483351866561982690
+        Name: "NPCAIServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1945086061314203357
         UnregisteredParameters {
           Overrides {
             Name: "cs:Root"
@@ -282,7 +309,6 @@
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -301,12 +327,12 @@
         Transform {
           Location {
             X: 142.599609
-            Z: 161.968018
+            Z: 61.9680176
           }
           Rotation {
             Pitch: 6.10298538
             Yaw: 7.6284e-14
-            Roll: 1.43097784e-12
+            Roll: 1.43097795e-12
           }
           Scale {
             X: 1
@@ -314,7 +340,7 @@
             Z: 1
           }
         }
-        ParentId: 16661545407737424176
+        ParentId: 1945086061314203357
         UnregisteredParameters {
           Overrides {
             Name: "cs:Root"
@@ -371,7 +397,6 @@
             Bool: true
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -381,6 +406,38 @@
         Script {
           ScriptAsset {
             Id: 13670653971905386821
+          }
+        }
+      }
+      Objects {
+        Id: 7089654655840687501
+        Name: "Trigger"
+        Transform {
+          Location {
+            Z: -25
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.99963439
+            Y: 1.99963439
+            Z: 1.99963439
+          }
+        }
+        ParentId: 1945086061314203357
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -439,39 +496,6 @@
         }
       }
       Objects {
-        Id: 7089654655840687501
-        Name: "Trigger"
-        Transform {
-          Location {
-            Z: 75
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.99963439
-            Y: 1.99963439
-            Z: 1.99963439
-          }
-        }
-        ParentId: 16661545407737424176
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
-          }
-        }
-      }
-      Objects {
         Id: 14001881140192835445
         Name: "ClientContext"
         Transform {
@@ -526,36 +550,6 @@
             Name: "cs:GeoRoot"
             ObjectReference {
               SubObjectId: 7145993005084827370
-            }
-          }
-          Overrides {
-            Name: "cs:Sleeping"
-            ObjectReference {
-              SubObjectId: 3384808585879706475
-            }
-          }
-          Overrides {
-            Name: "cs:Engaging"
-            ObjectReference {
-              SubObjectId: 3384808585879706475
-            }
-          }
-          Overrides {
-            Name: "cs:Attacking"
-            ObjectReference {
-              SubObjectId: 3384808585879706475
-            }
-          }
-          Overrides {
-            Name: "cs:Patrolling"
-            ObjectReference {
-              SubObjectId: 3384808585879706475
-            }
-          }
-          Overrides {
-            Name: "cs:Dead"
-            ObjectReference {
-              SubObjectId: 3384808585879706475
             }
           }
           Overrides {

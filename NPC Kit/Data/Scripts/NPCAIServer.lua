@@ -1,7 +1,7 @@
 ﻿--[[
 	NPCAI - Server
 	by: standardcombo, DarkDev
-	v0.11.0
+	v0.11.1
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	
@@ -791,8 +791,9 @@ function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotati
 		end
 		
 	elseif currentState == STATE_ENGAGING and
-	target ~= nil and
 	target ~= sourceObject and
+	Object.IsValid(target) and
+	Object.IsValid(sourceObject) and
 	dmgAmount > 0 then
 		-- Behavior where NPC changes target if being attacked by another target that's closer
 		local myId = ROOT:GetCustomProperty("ObjectId")

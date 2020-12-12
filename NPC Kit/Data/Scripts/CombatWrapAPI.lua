@@ -1,6 +1,6 @@
 ﻿--[[
 	Combat Wrap API
-	v0.11.0
+	v0.11.1
 	by: standardcombo
 	
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
@@ -53,6 +53,11 @@ end
 
 -- ApplyDamage()
 function API.ApplyDamage(attackData)
+	if type(attackData) ~= "table" then
+		error("ApplyDamage() expected table with attackData, but received " .. tostring(attackData) .. " instead. \n" .. CoreDebug.GetStackTrace())
+		return
+	end
+
 	local object = attackData.object
 	if not API.IsValidObject(object) then
 		return

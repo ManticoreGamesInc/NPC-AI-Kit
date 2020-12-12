@@ -1,6 +1,6 @@
 ﻿--[[
 	Combat Wrap - NPC
-	v0.11.0
+	v0.11.1
 	by: standardcombo
 	
 	Registers itself into the global table.
@@ -143,7 +143,11 @@ end
 -- IsValidObject()
 function wrapper.IsValidObject(obj)
 	if not Object.IsValid(obj) then return false end
-	return NPC_MANAGER() and NPC_MANAGER().FindScriptForCollider(obj) ~= nil
+	if NPC_MANAGER() then
+		if NPC_MANAGER().IsRegistered(obj) then return true end
+		return NPC_MANAGER().FindScriptForCollider(obj) ~= nil
+	end
+	return false
 end
 
 -- FindInSphere()

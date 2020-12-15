@@ -145,6 +145,14 @@ function StartPlayerTimer(player, timerId, duration)
 	return GetTimerDetails(player, timerId)
 end
 
+
+function ModifyTimerDuration(player, timerId, newDuration)
+	if LTTimerTable[player.id] and LTTimerTable[player.id][timerId] then
+		LTTimerTable[player.id][timerId].duration = newDuration
+		ResetLTTimerTask()
+	end
+end
+
 -- Internal utility function for verifying the elements of
 -- a player timer data table.  Returns either the table
 -- unchanged, or nil.  (If the table was invalid)
@@ -229,7 +237,6 @@ function WaitForDataToLoad(player)
 	local startTime = time()
 	while LTTimerTable[player.id] == nil do
 		if startTime + 5 < time() then
-			print("feh")
 			return false
 		end
 		Task.Wait()
@@ -250,6 +257,8 @@ return {
 	StartPlayerTimer = StartPlayerTimer,
 	GetTimerDetails = GetTimerDetails,
 	GetAllTimerDetails = GetAllTimerDetails,
+
+	ModifyTimerDuration = ModifyTimerDuration,
 
 	CancelPlayerTimer = CancelPlayerTimer,
 	CancelAllPlayerTimers = CancelAllPlayerTimers,

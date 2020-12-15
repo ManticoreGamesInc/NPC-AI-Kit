@@ -1,6 +1,6 @@
 ﻿Assets {
-  Id: 3398147908272414182
-  Name: "NPC Helper Script"
+  Id: 547275554183800700
+  Name: "PerkReference"
   PlatformAssetType: 3
   TextAsset {
   }

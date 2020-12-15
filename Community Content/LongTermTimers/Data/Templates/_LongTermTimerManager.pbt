@@ -34,6 +34,6 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 71
   DirectlyPublished: true
 }

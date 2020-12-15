@@ -6,6 +6,27 @@ local STATE_READY = 0
 local STATE_IN_MINE = 1
 local STATE_HAS_MONEY = 2
 
+local propPerkReference = script:GetCustomProperty("PerkReference"):WaitForObject()
+local propPerkRef = propPerkReference:GetCustomProperty("PerkRef")
+
+
+function OnPerkChanged(player, perkRef)
+	if perkRef == propPerkRef then
+		ApplySpeedupPerk(player)
+	else
+		print(perkRef, propPerkRef)
+	end
+end
+
+
+function ApplySpeedupPerk(player)
+	for timerId, timerData in pairs(LTT.GetAllTimerDetails(player)) do
+		local newDuration = timerData.duration / 2
+		LTT.ModifyTimerDuration(player, timerId, newDuration)
+		Events.BroadcastToPlayer(player, "TimerModified", timerId, timerData.start + newDuration)
+	end
+end
+
 
 function OnPlayerJoined(player)
 	local playerData = Storage.GetPlayerData(player)
@@ -18,6 +39,7 @@ function OnPlayerJoined(player)
 	if npcStates[player.id] == nil then npcStates[player.id] = {} end
 	LTT.LoadFromPlayerData(player)
 
+	player.perkChangedEvent:Connect(OnPerkChanged)
 end
 
 function OnPlayerLeft(player)

@@ -168,14 +168,13 @@ function OnTimerStarted(timerId, completionTimestamp)
 end
 
 
-function OnTimerActive(timerId, completionTimestamp)
+function OnTimerUpdate(timerId, completionTimestamp)
 	if timerId == myId then
 		completion = completionTimestamp
 		isTimerRunning = true
 		WarpIntoMine()
 	end
 end
-
 
 function OnTimerCanceled(timerId)
 	if timerId == myId then
@@ -205,7 +204,8 @@ UpdateIndicator()
 propTrigger.interactedEvent:Connect(OnInteracted)
 
 Events.Connect("TimerStarted", OnTimerStarted)
-Events.Connect("TimerActive", OnTimerActive)
+Events.Connect("TimerActive", OnTimerUpdate)
+Events.Connect("TimerModified", OnTimerUpdate)
 Events.Connect("TimerCanceled", OnTimerCanceled)
 Events.Connect("TimerCompleted", OnTimerCompleted)
 Events.Connect("NPCState", OnReceiveNPCState)

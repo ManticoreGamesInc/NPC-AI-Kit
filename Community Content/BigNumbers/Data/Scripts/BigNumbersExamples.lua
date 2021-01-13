@@ -3,9 +3,10 @@ bn = require(prop_BigNumbers)
 
 --print(bn.New(55) + bn.New(27))
 --print(bn.New(55) + bn.New(-27))
-print(bn.New(-65) + bn.New(127))
+--print(bn.New(-65) + bn.New(127))
 --print(bn.New(-55) + bn.New(-27))
-print(bn.New(65) + bn.New(-127))
+--print(bn.New(65) + bn.New(-127))
+print(bn.New(65) - bn.New(65))
 
 --[[
 print(bn.New(55) < bn.New(27)) -- false

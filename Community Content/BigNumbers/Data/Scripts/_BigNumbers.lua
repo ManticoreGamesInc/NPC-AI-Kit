@@ -38,6 +38,7 @@ function BigNumber.New(n, sign)
 		sign = sign or 1
 		n = "0"
 	end
+	if n == "0" then sign = 1 end
 	newBigNumber = {
 		raw = raw,
 		sign = sign,
@@ -47,7 +48,7 @@ function BigNumber.New(n, sign)
 				__index = BigNumber,
 				__add = BigNumber.Add,
 				__sub = BigNumber.Subtract,
-				__mul = BigNumber.ToDo,
+				__mul = BigNumber.Multiply,
 				__div = BigNumber.ToDo,
 				__unm = BigNumber.Invert,
 				__eq = BigNumber.IsEqual,
@@ -125,9 +126,9 @@ function BigNumber.Add(_a, _b)
 	local result = ""
 	local carry = 0
 	if a.sign < 0 and b.sign > 0 then
-		return BigNumber.SubtractHelper(b, -a)
+		return SubtractHelper(b, -a)
 	elseif b.sign < 0 and a.sign > 0 then
-		return BigNumber.SubtractHelper(a, -b)
+		return SubtractHelper(a, -b)
 	end
 
 	for i = 1, math.max(a.raw:len(), b.raw:len()) do
@@ -159,7 +160,7 @@ function BigNumber.Subtract(a, b)
 end
 
 
-function BigNumber.SubtractHelper(_a, _b)
+function SubtractHelper(_a, _b)
 	local a = BigNumber.New(_a)
 	local b = BigNumber.New(_b)
 	if a.sign ~= b.sign then
@@ -198,6 +199,44 @@ function BigNumber.SubtractHelper(_a, _b)
 	end
 	return BigNumber.New(TrimZeros(result), a.sign * finalSignFlip)
 end
+
+
+function BigNumber.Multiply(_a, _b)
+	local a = BigNumber.New(_a)
+	local b = BigNumber.New(_b)
+	print("mult:", a,b)
+
+	preCarryResults = {}
+	for i_a = 1, a.raw:len() do
+		digit_a = GetDigit(a.raw, a.raw:len() + 1 - i_a)
+		for i_b = 1, b.raw:len() do
+			digit_b = GetDigit(b.raw, b.raw:len() + 1 - i_b)
+			local index = i_b + i_a - 1
+			if preCarryResults[index] == nil then preCarryResults[index] = 0 end
+			preCarryResults[index] = preCarryResults[index] + digit_a * digit_b
+		end
+	end
+
+	local newRaw = ""
+	for k,v in ipairs(preCarryResults) do
+		newRaw = tostring(v % 10) .. newRaw
+
+		local carry = math.floor(v/10)
+		if carry > 0 then
+			if preCarryResults[k + 1] == nil then
+				preCarryResults[k + 1] = carry
+			else
+				preCarryResults[k + 1] = preCarryResults[k + 1] + carry
+			end
+			
+		end
+		--print(k, ":", v)
+	end
+
+	return BigNumber.New(TrimZeros(newRaw), a.sign * b.sign)
+
+end
+
 
 
 

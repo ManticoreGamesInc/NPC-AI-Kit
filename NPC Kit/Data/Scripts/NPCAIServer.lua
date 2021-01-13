@@ -144,6 +144,7 @@ function SetState(newState)
 		if navMeshPath and stepDestination then
 			direction = stepDestination - pos
 		end
+		direction.z = 0 -- Lock pitch
 		local r = Rotation.New(direction, Vector3.UP)
 		RootRotateTo(r, GetRotateToTurnSpeed(), false)
 
@@ -836,6 +837,7 @@ function DoLookAround()
 	
 	local myPos = ROOT:GetWorldPosition()
 	local forward = searchPos - myPos
+	forward.z = 0 -- Lock pitch
 	local rot = Rotation.New(forward, Vector3.UP)
 	
 	RootRotateTo(rot, GetRotateToTurnSpeed(), false)

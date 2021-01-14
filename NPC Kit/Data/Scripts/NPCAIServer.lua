@@ -518,8 +518,11 @@ function UpdateMovement(deltaTime)
 	if TRIGGER then
 		local overlaps = overlappingObjects
 		for i,other in ipairs(overlaps) do
+			if not Object.IsValid(other) then goto continue end
+			
 			local triggerPos = TRIGGER:GetWorldPosition()
 			local otherPos = other:GetWorldPosition()
+			
 			local v = triggerPos - otherPos
 			v.z = 0
 			local distance = v.size
@@ -529,6 +532,8 @@ function UpdateMovement(deltaTime)
 				v = v / distance * removeAmount * 0.5
 				pos = pos + v
 			end
+			
+			::continue::
 		end
 	end
 	

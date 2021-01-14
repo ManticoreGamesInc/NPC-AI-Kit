@@ -690,7 +690,7 @@
         }
         ParentId: 12970774780897749132
         ChildIds: 9572418420372198535
-        ChildIds: 13015041359179121874
+        ChildIds: 2976731438194019218
         ChildIds: 12616445025325068107
         ChildIds: 13003436357290180867
         ChildIds: 16583123117904591890
@@ -744,8 +744,8 @@
         }
       }
       Objects {
-        Id: 13015041359179121874
-        Name: "AnimControllerSkeletonSwordsman"
+        Id: 2976731438194019218
+        Name: "AnimControllerZombie"
         Transform {
           Location {
           }
@@ -771,6 +771,26 @@
               SubObjectId: 9913815135764235794
             }
           }
+          Overrides {
+            Name: "cs:AttackAnim"
+            String: "1hand_melee_slash_left"
+          }
+          Overrides {
+            Name: "cs:IdleStance"
+            String: "1hand_melee_idle_relaxed"
+          }
+          Overrides {
+            Name: "cs:ReadyStance"
+            String: "1hand_melee_idle_ready"
+          }
+          Overrides {
+            Name: "cs:WalkStance"
+            String: "1hand_melee_walk_forward"
+          }
+          Overrides {
+            Name: "cs:RunStance"
+            String: "1hand_melee_run_forward"
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -780,7 +800,7 @@
         }
         Script {
           ScriptAsset {
-            Id: 851551845723440468
+            Id: 427248120346786709
           }
         }
       }

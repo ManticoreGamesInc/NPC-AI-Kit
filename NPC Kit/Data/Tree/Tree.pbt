@@ -33,7 +33,6 @@ Objects {
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
   ChildIds: 14632867372866985088
-  ChildIds: 15306731821904883197
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -43,49 +42,6 @@ Objects {
     Value: "mc:evisibilitysetting:forceon"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 15306731821904883197
-  Name: "RPG Skeleton - Unarmed"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16661545407737424176
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RPG Skeleton - Unarmed"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8009193024378365869
-    }
   }
 }
 Objects {

@@ -18,6 +18,14 @@
         Name: "cs:DamageToObjects"
         Int: 1
       }
+      Overrides {
+        Name: "cs:HeadshotNPCs"
+        Int: 2
+      }
+      Overrides {
+        Name: "cs:HeadshotPlayers"
+        Int: 2
+      }
     }
   }
   SerializationVersion: 72

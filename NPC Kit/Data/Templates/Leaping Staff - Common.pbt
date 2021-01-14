@@ -120,6 +120,14 @@
             Name: "cs:DamageToPlayers"
             Int: 35
           }
+          Overrides {
+            Name: "cs:HeadshotNPCs"
+            Int: 50
+          }
+          Overrides {
+            Name: "cs:HeadshotPlayers"
+            Int: 50
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

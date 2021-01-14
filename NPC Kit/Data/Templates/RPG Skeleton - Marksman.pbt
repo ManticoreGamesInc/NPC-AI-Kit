@@ -690,6 +690,7 @@
         ChildIds: 15723636327053316230
         ChildIds: 8836582838928030547
         ChildIds: 17113873121481887918
+        ChildIds: 16844161198568677528
         ChildIds: 3384808585879706475
         ChildIds: 7047102102491409701
         ChildIds: 9655984082787811693
@@ -805,6 +806,47 @@
         Script {
           ScriptAsset {
             Id: 14067946233456911438
+          }
+        }
+      }
+      Objects {
+        Id: 16844161198568677528
+        Name: "AnimControllerHideAttackProp"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7145993005084827370
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 16661545407737424176
+            }
+          }
+          Overrides {
+            Name: "cs:AttackProp"
+            ObjectReference {
+              SubObjectId: 2528170336675951647
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2099941017973188377
           }
         }
       }

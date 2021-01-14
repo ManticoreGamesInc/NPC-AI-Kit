@@ -995,11 +995,3 @@ ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
 NPC_MANAGER().Register(script)
 NPC_MANAGER().RegisterCollider(script, COLLIDER)
 
--- Copy the display name from custom property to root
-local displayName = ROOT:GetCustomProperty("DisplayName")
-if displayName and type(displayName) == "string" then
-	CROSS_CONTEXT_CALLER().Call(function()
-		ROOT.name = displayName
-	end)
-end
-

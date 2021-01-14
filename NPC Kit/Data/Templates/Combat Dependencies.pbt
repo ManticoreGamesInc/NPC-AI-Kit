@@ -20,6 +20,7 @@
         ChildIds: 4513339989685681768
         ChildIds: 15693643951607791127
         ChildIds: 3305255709801741084
+        ChildIds: 9409702795888361092
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -139,6 +140,33 @@
         Script {
           ScriptAsset {
             Id: 16566652747231675155
+          }
+        }
+      }
+      Objects {
+        Id: 9409702795888361092
+        Name: "NPCKitKillFeedAdapter"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8014650375856875642
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7894967294216857993
           }
         }
       }

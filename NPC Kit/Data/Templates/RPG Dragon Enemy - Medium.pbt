@@ -251,6 +251,8 @@
         ChildIds: 6887995465546052660
         ChildIds: 16188384304550516637
         ChildIds: 15709418385312303354
+        ChildIds: 4949700889393968557
+        ChildIds: 14730925334667649012
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -439,6 +441,75 @@
           }
           TriggerShape_v2 {
             Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 4949700889393968557
+        Name: "NPCHeadshot"
+        Transform {
+          Location {
+            X: 85
+            Z: 140
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6156893236702943838
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
+          }
+        }
+      }
+      Objects {
+        Id: 14730925334667649012
+        Name: "SetObjectName"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: -3.41509485e-06
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6156893236702943838
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:TargetObject"
+            ObjectReference {
+              SubObjectId: 13420344242969750217
+            }
+          }
+          Overrides {
+            Name: "cs:NameToSet"
+            String: "Green Dragon"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 17167419477667720430
           }
         }
       }
@@ -652,6 +723,7 @@
         Name: "GeoRoot"
         Transform {
           Location {
+            Z: 100
           }
           Rotation {
           }
@@ -788,9 +860,7 @@
         Name: "Dragon Mob"
         Transform {
           Location {
-            X: -0.000171661377
-            Y: 0.000119527183
-            Z: 300
+            Z: 275
           }
           Rotation {
             Yaw: 8.19622437e-05
@@ -869,5 +939,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

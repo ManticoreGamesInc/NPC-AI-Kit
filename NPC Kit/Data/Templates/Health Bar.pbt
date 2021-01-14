@@ -351,5 +351,5 @@
       AssetId: "Health_Bar"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

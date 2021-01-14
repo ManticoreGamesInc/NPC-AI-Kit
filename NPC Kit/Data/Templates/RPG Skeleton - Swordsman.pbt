@@ -251,6 +251,7 @@
         ChildIds: 7483351866561982690
         ChildIds: 8407864205170865650
         ChildIds: 7089654655840687501
+        ChildIds: 1518875809838200661
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -438,6 +439,34 @@
           }
           TriggerShape_v2 {
             Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 1518875809838200661
+        Name: "NPCHeadshot"
+        Transform {
+          Location {
+            Z: 90
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13483159941755981556
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
           }
         }
       }
@@ -5450,5 +5479,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

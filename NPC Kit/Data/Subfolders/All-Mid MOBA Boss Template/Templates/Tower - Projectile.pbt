@@ -337,7 +337,7 @@
     }
     Assets {
       Id: 4795265936695807844
-      Name: "Object SciFi Humming 01 SFX"
+      Name: "Sci-fi Object Humming 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
@@ -367,5 +367,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

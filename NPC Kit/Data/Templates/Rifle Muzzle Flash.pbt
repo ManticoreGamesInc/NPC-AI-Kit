@@ -113,7 +113,7 @@
     }
     Assets {
       Id: 6491078578190431103
-      Name: "Gunshot Assualt Rifle AK Set 01 SFX"
+      Name: "Gunshot Assault Rifle AK Set 01 SFX"
       PlatformAssetType: 10
       PrimaryAsset {
         AssetType: "AudioBlueprintAssetRef"
@@ -134,5 +134,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

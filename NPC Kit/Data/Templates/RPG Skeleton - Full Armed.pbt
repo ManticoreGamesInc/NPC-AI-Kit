@@ -251,6 +251,7 @@
         ChildIds: 12639199116676428464
         ChildIds: 9927192082764146384
         ChildIds: 13372382273466098450
+        ChildIds: 17882611998801706391
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -438,6 +439,34 @@
           }
           TriggerShape_v2 {
             Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 17882611998801706391
+        Name: "NPCHeadshot"
+        Transform {
+          Location {
+            Z: 90
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14869856828657627160
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
           }
         }
       }
@@ -7663,7 +7692,7 @@
     }
     Assets {
       Id: 4768974327810390069
-      Name: "Lense - Half"
+      Name: "Lens - Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -7690,7 +7719,7 @@
     }
     Assets {
       Id: 5489775416547967874
-      Name: "Hemisphere"
+      Name: "Sphere - Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -7708,7 +7737,7 @@
     }
     Assets {
       Id: 10420083731386464032
-      Name: "Curved Wedge - Concave"
+      Name: "Wedge - Concave"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -7771,7 +7800,7 @@
     }
     Assets {
       Id: 5836430349218932838
-      Name: "Pipe (thin)"
+      Name: "Pipe - Thin"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -7855,5 +7884,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

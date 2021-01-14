@@ -314,5 +314,5 @@
       AssetId: "Nameplates"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

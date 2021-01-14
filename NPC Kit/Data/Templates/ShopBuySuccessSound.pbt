@@ -139,7 +139,7 @@
     }
     Assets {
       Id: 634914283087619312
-      Name: "Meta SciFi Money Pickup 02 SFX"
+      Name: "Sci-fi Meta Money Pickup 02 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
@@ -160,5 +160,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

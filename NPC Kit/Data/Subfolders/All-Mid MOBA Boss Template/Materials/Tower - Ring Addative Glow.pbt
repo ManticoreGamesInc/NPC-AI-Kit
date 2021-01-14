@@ -2,7 +2,7 @@
   Id: 161420556705051978
   Name: "Tower - Ring Addative Glow"
   PlatformAssetType: 13
-  SerializationVersion: 68
+  SerializationVersion: 72
   CustomMaterialAsset {
     BaseMaterialId: 10641727446676952229
     ParameterOverrides {

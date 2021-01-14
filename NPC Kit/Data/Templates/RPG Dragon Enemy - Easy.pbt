@@ -251,6 +251,8 @@
         ChildIds: 6887995465546052660
         ChildIds: 16188384304550516637
         ChildIds: 15709418385312303354
+        ChildIds: 12577161451319856535
+        ChildIds: 398113490489324447
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -443,18 +445,86 @@
         }
       }
       Objects {
-        Id: 16499610448605528061
-        Name: "Collider"
+        Id: 12577161451319856535
+        Name: "NPCHeadshot"
         Transform {
           Location {
-            Z: 205.686249
+            X: 60
+            Z: 135
           }
           Rotation {
           }
           Scale {
-            X: 1.3499999
-            Y: 1.35
-            Z: 1.3499999
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7920423778791768093
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
+          }
+        }
+      }
+      Objects {
+        Id: 398113490489324447
+        Name: "SetObjectName"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7920423778791768093
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:TargetObject"
+            ObjectReference {
+              SubObjectId: 13420344242969750217
+            }
+          }
+          Overrides {
+            Name: "cs:NameToSet"
+            String: "Red Dragon"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5407573852348177454
+          }
+        }
+      }
+      Objects {
+        Id: 16499610448605528061
+        Name: "Collider"
+        Transform {
+          Location {
+            Z: 205
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.2
+            Y: 1.2
+            Z: 1.2
           }
         }
         ParentId: 13420344242969750217
@@ -652,6 +722,7 @@
         Name: "GeoRoot"
         Transform {
           Location {
+            Z: 100
           }
           Rotation {
           }
@@ -788,7 +859,7 @@
         Name: "Dragon Mob"
         Transform {
           Location {
-            Z: 200
+            Z: 275
           }
           Rotation {
             Yaw: 8.19621855e-05
@@ -859,5 +930,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

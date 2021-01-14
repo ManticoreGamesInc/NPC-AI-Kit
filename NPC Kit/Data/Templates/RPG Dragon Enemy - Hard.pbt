@@ -251,6 +251,8 @@
         ChildIds: 6887995465546052660
         ChildIds: 16188384304550516637
         ChildIds: 15709418385312303354
+        ChildIds: 14340312545869057885
+        ChildIds: 2281400216727151585
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -439,6 +441,75 @@
           }
           TriggerShape_v2 {
             Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 14340312545869057885
+        Name: "NPCHeadshot"
+        Transform {
+          Location {
+            X: 115
+            Z: 190
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1632783549942484165
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
+          }
+        }
+      }
+      Objects {
+        Id: 2281400216727151585
+        Name: "SetObjectName"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Yaw: 3.41509485e-06
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1632783549942484165
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:TargetObject"
+            ObjectReference {
+              SubObjectId: 13420344242969750217
+            }
+          }
+          Overrides {
+            Name: "cs:NameToSet"
+            String: "Black Dragon"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 5407573852348177454
           }
         }
       }
@@ -652,6 +723,7 @@
         Name: "GeoRoot"
         Transform {
           Location {
+            Z: 100
           }
           Rotation {
           }
@@ -794,7 +866,7 @@
           Location {
             X: -0.000171661377
             Y: 0.000119527183
-            Z: 300
+            Z: 325
           }
           Rotation {
             Yaw: 8.19622364e-05
@@ -888,5 +960,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

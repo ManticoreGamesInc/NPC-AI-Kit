@@ -54,5 +54,5 @@
     Version: "1.1.0"
     Description: "Some scripts to allow for easy creation of objects that can be destroyed by weapon fire.  The key script files here are:\r\n\r\nDestructable_Manager - overall manager and logic.  Scripts that want to interact with destructable objects should require this script, and call its functions.\r\n\r\nDestructable_ObjectComponent - place this on object that you want to be able to destroy, and populate the required custom properties.  (Detailed in comments at the head of the file.)"
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

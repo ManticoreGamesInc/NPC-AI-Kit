@@ -55839,7 +55839,7 @@
     }
     Assets {
       Id: 13453109523166193907
-      Name: "Object SciFi Mech Growl 02 SFX"
+      Name: "Sci-fi Object Mech Growl 02 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
@@ -55848,7 +55848,7 @@
     }
     Assets {
       Id: 13743048061212997035
-      Name: "Object SciFi Servo Movement Loop 01 SFX"
+      Name: "Sci-fi Object Servo Movement Loop 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
@@ -56112,6 +56112,6 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
   DirectlyPublished: true
 }

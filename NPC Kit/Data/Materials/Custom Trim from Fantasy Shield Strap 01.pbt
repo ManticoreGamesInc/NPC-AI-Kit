@@ -2,7 +2,7 @@
   Id: 6056487772254087279
   Name: "Custom Trim from Fantasy Shield Strap 01"
   PlatformAssetType: 13
-  SerializationVersion: 68
+  SerializationVersion: 72
   CustomMaterialAsset {
     BaseMaterialId: 12089462357739950747
     ParameterOverrides {

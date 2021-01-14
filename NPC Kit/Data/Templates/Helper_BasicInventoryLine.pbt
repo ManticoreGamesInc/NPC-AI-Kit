@@ -512,7 +512,7 @@
     }
     Assets {
       Id: 17586365689296088662
-      Name: "Background Flat 020"
+      Name: "BG Gradient 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
@@ -533,5 +533,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

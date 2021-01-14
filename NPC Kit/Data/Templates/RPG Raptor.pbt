@@ -251,6 +251,7 @@
         ChildIds: 7483351866561982690
         ChildIds: 8407864205170865650
         ChildIds: 7089654655840687501
+        ChildIds: 3395683878725818421
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -442,18 +443,48 @@
         }
       }
       Objects {
-        Id: 7963678825654784679
-        Name: "Collider"
+        Id: 3395683878725818421
+        Name: "NPCHeadshot"
         Transform {
           Location {
-            Z: 110
+            X: 105
+            Z: 40
           }
           Rotation {
           }
           Scale {
-            X: 0.9
-            Y: 0.9
-            Z: 1.1
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1945086061314203357
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8341736443469670175
+          }
+        }
+      }
+      Objects {
+        Id: 7963678825654784679
+        Name: "Collider"
+        Transform {
+          Location {
+            X: 20
+            Z: 95
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.7
+            Y: 1.4
+            Z: 1.5
           }
         }
         ParentId: 16661545407737424176
@@ -484,7 +515,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 916665379155427451
+            Id: 1413196292823476264
           }
           Teams {
             IsEnemyCollisionEnabled: true
@@ -797,12 +828,12 @@
       }
     }
     Assets {
-      Id: 916665379155427451
-      Name: "Capsule"
+      Id: 1413196292823476264
+      Name: "Sphere"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_capsule_001"
+        AssetId: "sm_sphere_002"
       }
     }
     Assets {
@@ -828,5 +859,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

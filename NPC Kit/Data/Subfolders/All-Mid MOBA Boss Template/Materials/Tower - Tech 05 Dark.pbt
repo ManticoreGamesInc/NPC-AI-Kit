@@ -2,7 +2,7 @@
   Id: 6010188419931860159
   Name: "Tower - Tech 05 Dark"
   PlatformAssetType: 13
-  SerializationVersion: 68
+  SerializationVersion: 72
   CustomMaterialAsset {
     BaseMaterialId: 14155156246144086778
     ParameterOverrides {

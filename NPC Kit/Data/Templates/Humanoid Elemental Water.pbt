@@ -195,7 +195,7 @@
     }
     Assets {
       Id: 9411089557330327222
-      Name: "Human Gal"
+      Name: "Human Gal 1"
       PlatformAssetType: 17
       PrimaryAsset {
         AssetType: "AnimatedMeshAssetRef"
@@ -216,5 +216,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

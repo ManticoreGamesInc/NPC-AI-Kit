@@ -147,7 +147,7 @@
     }
     Assets {
       Id: 344408319171628796
-      Name: "Human Guy"
+      Name: "Human Guy 1"
       PlatformAssetType: 17
       PrimaryAsset {
         AssetType: "AnimatedMeshAssetRef"
@@ -168,5 +168,5 @@
       AssetId: "None"
     }
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
 }

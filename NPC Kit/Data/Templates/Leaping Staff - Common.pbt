@@ -1899,7 +1899,7 @@
     }
     Assets {
       Id: 3255814708276840062
-      Name: "Truncated Cone"
+      Name: "Cone - Truncated"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1935,7 +1935,7 @@
     }
     Assets {
       Id: 13515470150110763774
-      Name: "Donut 02"
+      Name: "Ring - Extra Thick"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1944,7 +1944,7 @@
     }
     Assets {
       Id: 11758131120494169132
-      Name: "Hemisphere-wedge"
+      Name: "Sphere - Half Slice"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1953,7 +1953,7 @@
     }
     Assets {
       Id: 11803454095962429961
-      Name: "Pipe-spiral"
+      Name: "Pipe - Spiral"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1962,7 +1962,7 @@
     }
     Assets {
       Id: 1588037931977530754
-      Name: "Manticore Gold"
+      Name: "Manticore Logo"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1980,7 +1980,7 @@
     }
     Assets {
       Id: 16372496464315477095
-      Name: "Ring Beveled (thick)"
+      Name: "Ring - Beveled Thick"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
@@ -1995,6 +1995,6 @@
   Marketplace {
     Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air."
   }
-  SerializationVersion: 68
+  SerializationVersion: 72
   DirectlyPublished: true
 }

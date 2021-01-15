@@ -502,6 +502,7 @@
         ParentId: 13420344242969750217
         ChildIds: 11187837617532864305
         ChildIds: 15315419852726087623
+        ChildIds: 1354158118407778324
         ChildIds: 13528077646999008078
         ChildIds: 13655684992340290336
         WantsNetworking: true
@@ -606,6 +607,71 @@
         Script {
           ScriptAsset {
             Id: 9324991830768780045
+          }
+        }
+      }
+      Objects {
+        Id: 1354158118407778324
+        Name: "StateBasedAnimController"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7549486370523105032
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Dead"
+            ObjectReference {
+              SubObjectId: 2488558249184648702
+            }
+          }
+          Overrides {
+            Name: "cs:Attacking"
+            ObjectReference {
+              SubObjectId: 14687859017017945348
+            }
+          }
+          Overrides {
+            Name: "cs:Engaging"
+            ObjectReference {
+              SubObjectId: 211131947792773443
+            }
+          }
+          Overrides {
+            Name: "cs:Patrolling"
+            ObjectReference {
+              SubObjectId: 211131947792773443
+            }
+          }
+          Overrides {
+            Name: "cs:Sleeping"
+            ObjectReference {
+              SubObjectId: 13286988412169048475
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 13420344242969750217
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13774761121187526995
           }
         }
       }

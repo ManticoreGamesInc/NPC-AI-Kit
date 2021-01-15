@@ -1,7 +1,7 @@
 ﻿--[[
 	NPCAI - Server
 	by: standardcombo, DarkDev
-	v0.11.1
+	v0.11.2
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	
@@ -42,6 +42,7 @@ local POSSIBILITY_RADIUS = ROOT:GetCustomProperty("PossibilityRadius") or 600
 local CHASE_RADIUS = ROOT:GetCustomProperty("ChaseRadius") or 3500
 local MAX_CHASE_DISTANCE = ROOT:GetCustomProperty("MaxChaseDistance") or 25000
 local ATTACK_RANGE = ROOT:GetCustomProperty("AttackRange") or 1500
+local ATTACK_MIN_ANGLE = ROOT:GetCustomProperty("AttackMinAngle") or 180
 local ATTACK_CAST_TIME = ROOT:GetCustomProperty("AttackCast") or 0.5
 local ATTACK_RECOVERY_TIME = ROOT:GetCustomProperty("AttackRecovery") or 1.5
 local ATTACK_COOLDOWN = ROOT:GetCustomProperty("AttackCooldown") or 0
@@ -203,7 +204,7 @@ function Tick(deltaTime)
 		if COMBAT().IsDead(target) then
 			SetTarget(nil)
 			
-		elseif IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED) then
+		elseif IsWithinRangeSquared(target, ATTACK_RANGE_SQUARED, ATTACK_MIN_ANGLE) then
 			if attackCooldown <= 0 then
 				SetState(STATE_ATTACK_CAST)
 			end
@@ -712,12 +713,20 @@ function Angle(normV1, normV2)
 end
 
 
-function IsWithinRangeSquared(enemy, rangeSquared)
+function IsWithinRangeSquared(enemy, rangeSquared, minAngle)
 	if Object.IsValid(enemy) then
-		local pos = ROOT:GetWorldPosition()
+		local myPos = ROOT:GetWorldPosition()
 		local enemyPos = enemy:GetWorldPosition()
-		local delta = pos - enemyPos
-		return (delta.sizeSquared < rangeSquared)
+		local delta = enemyPos - myPos
+		if delta.sizeSquared < rangeSquared then
+			if minAngle then
+				local forwardVector = ROTATION_ROOT:GetWorldRotation() * Vector3.FORWARD
+				delta.z = 0
+				local angleBetweenForward = Angle(forwardVector, delta:GetNormalized())
+				return angleBetweenForward <= minAngle
+			end
+			return true
+		end
 	end
 	return false
 end

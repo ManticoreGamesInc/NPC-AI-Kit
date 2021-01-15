@@ -85,6 +85,10 @@
             Float: 1500
           }
           Overrides {
+            Name: "cs:AttackMinAngle"
+            Float: 70
+          }
+          Overrides {
             Name: "cs:AttackCast"
             Float: 0.5
           }
@@ -219,6 +223,10 @@
           Overrides {
             Name: "cs:LootId:tooltip"
             String: "The ID of the group of loot from the Loot Factory. E.g. \"Common\" will drop a common loot when the NPC is killed. To drop nothing remove this property."
+          }
+          Overrides {
+            Name: "cs:AttackMinAngle:tooltip"
+            String: "The NPC rotates towards the target to attack it. If an AttackMinAngle is defined, then the NPC will only initiate the attack if the target is within that angle in front them them. The value represents half of the area, in other words, a value of 180 allows the NPC to attack from any angle."
           }
         }
         WantsNetworking: true

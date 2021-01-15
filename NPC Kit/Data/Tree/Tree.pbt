@@ -32,8 +32,9 @@ Objects {
   ChildIds: 8960121642570163487
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
-  ChildIds: 14632867372866985088
   ChildIds: 9389851728142449426
+  ChildIds: 14632867372866985088
+  ChildIds: 12368109956576323793
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -46,13 +47,9 @@ Objects {
   }
 }
 Objects {
-  Id: 9389851728142449426
-  Name: "Nav Mesh Examples"
+  Id: 12368109956576323793
+  Name: "RPG Raptor"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -60,15 +57,28 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Nav Mesh Examples"
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16661545407737424176
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Raptor"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 24035
+            Y: -10610
+            Z: 2135
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16856907705825859721
+    }
   }
 }
 Objects {
@@ -116,6 +126,32 @@ Objects {
     TemplateAsset {
       Id: 13871905926012633814
     }
+  }
+}
+Objects {
+  Id: 9389851728142449426
+  Name: "Nav Mesh Examples"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Nav Mesh Examples"
   }
 }
 Objects {

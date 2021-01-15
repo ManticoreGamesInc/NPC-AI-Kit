@@ -1,6 +1,6 @@
 ﻿--[[
 	Combat Wrap API
-	v0.11.1
+	v0.11.2
 	by: standardcombo
 	
 	Identifies the type of object and wraps it with a common interface for combat-related functions.

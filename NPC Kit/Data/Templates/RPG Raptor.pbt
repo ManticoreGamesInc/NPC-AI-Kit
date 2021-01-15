@@ -85,6 +85,10 @@
             Float: 250
           }
           Overrides {
+            Name: "cs:AttackMinAngle"
+            Float: 25
+          }
+          Overrides {
             Name: "cs:AttackCast"
             Float: 0.2
           }
@@ -219,6 +223,10 @@
           Overrides {
             Name: "cs:RewardResourceAmount:tooltip"
             String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
+          }
+          Overrides {
+            Name: "cs:AttackMinAngle:tooltip"
+            String: "The NPC rotates towards the target to attack it. If an AttackMinAngle is defined, then the NPC will only initiate the attack if the target is within that angle in front them them. The value represents half of the area, in other words, a value of 180 allows the NPC to attack from any angle."
           }
         }
         WantsNetworking: true

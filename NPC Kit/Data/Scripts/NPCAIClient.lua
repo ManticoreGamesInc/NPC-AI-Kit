@@ -1,7 +1,7 @@
 ﻿--[[
 	NPCAI - Client
 	by: standardcombo
-	v0.11.0
+	v0.11.2
 	
 	The client counterpart for NPCAIServer. Detaches and smooths the
 	visual parts of the NPC from the logical ones.

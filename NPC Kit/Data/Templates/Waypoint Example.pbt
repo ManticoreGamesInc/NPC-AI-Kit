@@ -299,6 +299,12 @@
               Id: 8009193024378365869
             }
           }
+          Overrides {
+            Name: "cs:RPGSkeletonUnarmed_1"
+            AssetReference {
+              Id: 8009193024378365869
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

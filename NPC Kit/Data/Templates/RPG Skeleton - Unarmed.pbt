@@ -459,7 +459,7 @@
         Name: "NPCHeadshot"
         Transform {
           Location {
-            Z: 80
+            Z: 85
           }
           Rotation {
           }
@@ -487,14 +487,14 @@
         Name: "Collider"
         Transform {
           Location {
-            Z: 90
+            Z: 105
           }
           Rotation {
           }
           Scale {
             X: 0.9
             Y: 0.9
-            Z: 0.95
+            Z: 1
           }
         }
         ParentId: 16661545407737424176

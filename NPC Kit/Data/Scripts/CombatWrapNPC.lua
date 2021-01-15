@@ -3,7 +3,6 @@
 	v0.11.2
 	by: standardcombo
 	
-	Registers itself into the global table.
 	Provides an interface of combat functions that operate on a non-Player object.
 	
 	Interface:
@@ -11,6 +10,7 @@
 	- GetTeam()
 	- GetHitPoints()
 	- GetMaxHitPoints()
+	- GetVelocity()
 	- ApplyDamage()
 	- IsDead()
 	- IsHeadshot()
@@ -71,6 +71,32 @@ end
 
 -- ##TODO:
 -- GetMaxHitPoints()
+
+
+-- GetVelocity()
+function wrapper.GetVelocity(obj)
+
+	if not Object.IsValid(obj) then 
+		return Vector3.ZERO
+	end
+	
+	if obj.context and obj.context.GetVelocity then
+		return obj.context.GetVelocity()
+	end
+	
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+	end
+	
+	if not npcScript then return Vector3.ZERO end
+	
+	if npcScript.context and npcScript.context.GetVelocity then
+		return npcScript.context.GetVelocity()
+	end
+	return Vector3.ZERO
+end
 
 
 -- ApplyDamage()

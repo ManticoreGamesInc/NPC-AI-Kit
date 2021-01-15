@@ -10,6 +10,7 @@
 	- GetTeam()
 	- GetHitPoints()
 	- GetMaxHitPoints()
+	- GetVelocity()
 	- ApplyDamage()
 	- IsDead()
 	- IsHeadshot()
@@ -39,6 +40,11 @@ end
 -- GetMaxHitPoints()
 function wrapper.GetMaxHitPoints(player)
 	return player.maxHitPoints
+end
+
+-- GetVelocity()
+function wrapper.GetVelocity(player)
+	return player:GetVelocity()
 end
 
 -- ApplyDamage()

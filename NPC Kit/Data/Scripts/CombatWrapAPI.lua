@@ -13,6 +13,7 @@
 	- GetTeam()
 	- GetHitPoints()
 	- GetMaxHitPoints()
+	- GetVelocity()
 	- ApplyDamage()
 	- IsDead()
 	- IsHeadshot()
@@ -51,9 +52,13 @@ end
 -- TODO
 -- GetMaxHitPoints()
 
---Tabl example = {other, dmg, ABILITY.owner, pos, rot , tagData}
+-- GetVelocity()
+function API.GetVelocity(object)
+	return GetWrapperFor(object).GetVelocity(object)
+end
 
 -- ApplyDamage()
+-- Attack Data table keys = {object, damage, source, position, rotation, tags}
 function API.ApplyDamage(attackData)
 	if type(attackData) ~= "table" then
 		error("ApplyDamage() expected table with attackData, but received " .. tostring(attackData) .. " instead. \n" .. CoreDebug.GetStackTrace())

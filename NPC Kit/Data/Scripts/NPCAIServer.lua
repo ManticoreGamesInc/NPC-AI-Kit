@@ -509,6 +509,12 @@ function GetMoveSpeed()
 	return MOVE_SPEED
 end
 
+
+function GetVelocity()
+	return velocity
+end
+
+
 function UpdateMovement(deltaTime)
 	local pos = ROOT:GetWorldPosition()
 	

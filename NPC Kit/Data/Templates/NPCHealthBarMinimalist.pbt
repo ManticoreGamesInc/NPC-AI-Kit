@@ -1,13 +1,13 @@
 ﻿Assets {
-  Id: 13832749868459767936
-  Name: "NPCHealthBar"
+  Id: 4315867458127260351
+  Name: "NPCHealthBarMinimalist"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 14705474953321211921
       Objects {
         Id: 14705474953321211921
-        Name: "NPCHealthBar"
+        Name: "NPCHealthBarMinimalist"
         Transform {
           Scale {
             X: 1
@@ -76,15 +76,15 @@
         Name: "Group"
         Transform {
           Location {
-            Y: 75
+            Y: 35
           }
           Rotation {
             Roll: -90
           }
           Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
+            X: 0.7
+            Y: 0.7
+            Z: 0.7
           }
         }
         ParentId: 14705474953321211921
@@ -113,7 +113,7 @@
           }
           Scale {
             X: 0.01
-            Y: 0.13
+            Y: 0.05
             Z: 1.03
           }
         }
@@ -122,18 +122,18 @@
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 5351428073291024820
+              Id: 4914654279456870721
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              A: 1
+              A: 0.718000054
             }
           }
         }
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -143,10 +143,10 @@
             Id: 198353679974341757
           }
           Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
           }
-          EnableCameraCollision: true
+          DisableDistanceFieldLighting: true
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
             }
@@ -163,8 +163,8 @@
           }
           Scale {
             X: 0.01
-            Y: 0.11
-            Z: 1
+            Y: 0.05
+            Z: 0.5
           }
         }
         ParentId: 5777712033558582302
@@ -172,19 +172,12 @@
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 5351428073291024820
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              A: 1
+              Id: 10880001044757736023
             }
           }
         }
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -194,11 +187,10 @@
             Id: 198353679974341757
           }
           Teams {
-            UseTeamColor: true
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
           }
-          EnableCameraCollision: true
+          DisableDistanceFieldLighting: true
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
             }
@@ -227,7 +219,7 @@
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         Text {
           Text: "100 / 100"
@@ -255,15 +247,6 @@
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cube_001"
-      }
-    }
-    Assets {
-      Id: 5351428073291024820
-      Name: "Emissive Glow Opaque"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "fxma_opaque_emissive"
       }
     }
     PrimaryAssetId {

@@ -722,7 +722,7 @@
         Name: "NPCHealthBarDataProviderClient"
         Transform {
           Location {
-            Z: 313.559082
+            Z: 260
           }
           Rotation {
           }
@@ -738,6 +738,12 @@
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 16661545407737424176
+            }
+          }
+          Overrides {
+            Name: "cs:HealthBarTemplate"
+            AssetReference {
+              Id: 4315867458127260351
             }
           }
         }

@@ -33,7 +33,6 @@ Objects {
   ChildIds: 1344975834569243168
   ChildIds: 13673858399950370704
   ChildIds: 14632867372866985088
-  ChildIds: 14572494416829958250
   ChildIds: 9389851728142449426
   UnregisteredParameters {
   }
@@ -70,32 +69,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Nav Mesh Examples"
-  }
-}
-Objects {
-  Id: 14572494416829958250
-  Name: "NavMesh Zones"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "NavMesh Zones"
   }
 }
 Objects {

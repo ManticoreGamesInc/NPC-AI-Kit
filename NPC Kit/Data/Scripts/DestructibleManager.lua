@@ -1,7 +1,7 @@
 ﻿--[[
 	Destructible Manager
-	by: standardcombo, Chris C.
 	v0.11.0
+	by: standardcombo, Chris C.
 	
 	Applies damage to non-player objects.
 --]]

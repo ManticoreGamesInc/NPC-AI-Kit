@@ -1,7 +1,8 @@
 ﻿--[[
 	NPCAI - Server
-	by: standardcombo, DarkDev
 	v0.11.2
+	by: standardcombo
+	contributions: DarkDev
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	

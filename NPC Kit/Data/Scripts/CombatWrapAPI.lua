@@ -6,7 +6,9 @@
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
 	
 	Interface:
-	- GoingToTakeDamage Event
+	- CombatWrapAPI.GoingToTakeDamage (Event)
+	- CombatWrapAPI.OnDamageTaken (Event)
+	- CombatWrapAPI.ObjectHasDied (Event)
 	- GetName()
 	- GetTeam()
 	- GetHitPoints()

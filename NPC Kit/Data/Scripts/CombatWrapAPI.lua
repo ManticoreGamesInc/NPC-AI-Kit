@@ -45,12 +45,15 @@ function API.GetTeam(object)
 	return GetWrapperFor(object).GetTeam(object)
 end
 
+-- GetHitPoints()
 function API.GetHitPoints(object)
 	return GetWrapperFor(object).GetHitPoints(object)
 end
 
--- TODO
 -- GetMaxHitPoints()
+function API.GetMaxHitPoints(object)
+	return GetWrapperFor(object).GetMaxHitPoints(object)
+end
 
 -- GetVelocity()
 function API.GetVelocity(object)

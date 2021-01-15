@@ -69,8 +69,30 @@ function wrapper.GetHitPoints(npc)
 end
 
 
--- ##TODO:
 -- GetMaxHitPoints()
+function wrapper.GetMaxHitPoints(obj)
+
+	if not Object.IsValid(obj) then
+		return 0
+	end
+	
+	if obj.context and obj.context.MAX_HEALTH then
+		return obj.context.MAX_HEALTH
+	end
+	
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+	end
+	
+	if not npcScript then return false end
+	
+	if npcScript.context and npcScript.context.MAX_HEALTH then
+		return npcScript.context.MAX_HEALTH
+	end
+	return 0
+end
 
 
 -- GetVelocity()

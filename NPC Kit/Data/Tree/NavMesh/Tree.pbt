@@ -52,7 +52,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Area 1_1"
+    FilePartitionName: "Area 1"
   }
 }
 Objects {

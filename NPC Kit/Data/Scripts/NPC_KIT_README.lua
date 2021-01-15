@@ -112,7 +112,7 @@
 	from Waffle or DarkDev. NavMesh	implementations register themselves into the global table
 	_G.NavMesh, from where the NPCs	can find them.
 	
-	If a NavMesh is not provided the AI falls back to dynamic pathing, which works great for open
+	If a NavMesh is not provided the AI falls back to default pathing, which works great for open
 	games on terrain. The default pathing does not work indoors. For indoor games use a NavMesh.
 	
 	(based on work with the NavMesh by Waffle:)
@@ -141,8 +141,9 @@
 	For games that have both indoor and outdoor sections, either define a NavMesh for the entire
 	game (easier with the component by DarkDev) or use NavMesh Zones to specify the areas where
 	NavMesh should be used. Without them, NPCs have no way to understand the difference between
-	gameplay areas--where to use NavMesh pathing and where to use dynamic pathing. When using
-	NavMesh Zones NPCs understand that if they are not in a Zone then it's dynamic pathing.
+	the two types of gameplay areas--where to use NavMesh pathing and where to use default pathing.
+	When using	NavMesh Zones NPCs understand that if they are not in a Zone then it's default
+	pathing.
 	
 	If a NavMesh Zone is placed, but there is no NavMesh inside, then it behaves as a barrier--NPCs
 	are not able to enter.
@@ -154,6 +155,7 @@
 	cases where NPCs float off the ground or get stuck.
 	
 	Multiple overlapping Zones for a single NavMesh is supported, but untested at this time.
+	Only the NavMesh solution from Waffle has been tested in conjunction with Zones at this time.
 	
 	
 	More Comments

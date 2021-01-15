@@ -499,13 +499,9 @@ Objects {
   }
 }
 Objects {
-  Id: 14572494416829958250
-  Name: "NavMesh Zones"
+  Id: 5410922436478204310
+  Name: "NavMesh Zones Example"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -513,15 +509,27 @@ Objects {
     }
   }
   ParentId: 9389851728142449426
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "NavMesh Zones"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 92516503368747201
+      value {
+        Overrides {
+          Name: "Name"
+          String: "NavMesh Zones Example"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 24205.8984
+            Y: -10802.7383
+            Z: 2120.3396
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 10904812111796500892
+    }
   }
 }
 Objects {

@@ -24,9 +24,10 @@ function NAV_MESH_ZONES() return MODULE.Get_Optional("standardcombo.NPCKit.NavMe
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local ROTATION_ROOT = script:GetCustomProperty("RotationRoot"):WaitForObject()
-COLLIDER = script:GetCustomProperty("Collider"):WaitForObject()
+local COLLIDER = script:GetCustomProperty("Collider"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):GetObject()
 local ATTACK_COMPONENT = script:GetCustomProperty("AttackComponent"):WaitForObject()
+HOMING_TARGET = script:GetCustomProperty("HomingTarget"):GetObject()
 local ENGAGE_EFFECT = script:GetCustomProperty("EngageEffect")
 
 local MOVE_SPEED = ROOT:GetCustomProperty("MoveSpeed") or 400

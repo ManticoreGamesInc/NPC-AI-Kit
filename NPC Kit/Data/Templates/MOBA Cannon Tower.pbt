@@ -263,13 +263,18 @@
           Overrides {
             Name: "cs:Trigger"
             ObjectReference {
-              SelfId: 3261457129032291346
             }
           }
           Overrides {
             Name: "cs:AttackComponent"
             ObjectReference {
               SubObjectId: 6372385349460357292
+            }
+          }
+          Overrides {
+            Name: "cs:HomingTarget"
+            ObjectReference {
+              SubObjectId: 9984750171870508985
             }
           }
         }

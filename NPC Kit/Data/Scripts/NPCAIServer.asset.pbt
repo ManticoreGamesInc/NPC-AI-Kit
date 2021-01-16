@@ -42,6 +42,11 @@
         }
       }
       Overrides {
+        Name: "cs:HomingTarget"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:EngageEffect"
         AssetReference {
           Id: 841534158063459245

@@ -304,6 +304,12 @@
               SubObjectId: 16879630115437202842
             }
           }
+          Overrides {
+            Name: "cs:HomingTarget"
+            ObjectReference {
+              SubObjectId: 6109572805851529769
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

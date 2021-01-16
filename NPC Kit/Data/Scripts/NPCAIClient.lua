@@ -23,7 +23,6 @@ end
 ROOT.destroyEvent:Connect(OnDestroyed)
 
 GEO_ROOT.parent = nil
-GEO_ROOT:Follow(script, MOVE_SPEED)
 GEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)
 
 
@@ -42,8 +41,15 @@ function GetCurrentState()
 	return ROOT:GetCustomProperty("CurrentState")
 end
 
-
 local currentState = GetCurrentState()
+
+
+if currentState == STATE_PATROLLING then
+	GEO_ROOT:Follow(script, PATROL_SPEED)
+else
+	GEO_ROOT:Follow(script, MOVE_SPEED)
+end
+
 
 function OnPropertyChanged(object, propertyName)
 	

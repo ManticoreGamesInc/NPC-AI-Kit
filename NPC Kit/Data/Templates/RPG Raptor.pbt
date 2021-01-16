@@ -423,14 +423,16 @@
         Name: "Trigger"
         Transform {
           Location {
-            Z: -25
+            X: 36.2851563
+            Z: -2.08959961
           }
           Rotation {
+            Pitch: -57.730957
           }
           Scale {
-            X: 1.99963439
-            Y: 1.99963439
-            Z: 1.99963439
+            X: 1.28801727
+            Y: 1.28800821
+            Z: 2.02742314
           }
         }
         ParentId: 1945086061314203357
@@ -446,7 +448,7 @@
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:capsule"
           }
         }
       }
@@ -484,15 +486,16 @@
         Name: "Collider"
         Transform {
           Location {
-            X: 20
-            Z: 95
+            X: -41.3066406
+            Z: 72.4538574
           }
           Rotation {
+            Pitch: -65.27005
           }
           Scale {
-            X: 1.7
-            Y: 1.4
-            Z: 1.5
+            X: 1.04660988
+            Y: 1.07596874
+            Z: 1.11260498
           }
         }
         ParentId: 16661545407737424176
@@ -523,7 +526,7 @@
         }
         CoreMesh {
           MeshAsset {
-            Id: 1413196292823476264
+            Id: 8895124128900966070
           }
           Teams {
             IsEnemyCollisionEnabled: true
@@ -836,12 +839,12 @@
       }
     }
     Assets {
-      Id: 1413196292823476264
-      Name: "Sphere"
+      Id: 8895124128900966070
+      Name: "Teardrop - Truncated"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
+        AssetId: "sm_truncated_teardrop_001"
       }
     }
     Assets {

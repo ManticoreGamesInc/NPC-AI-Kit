@@ -38,8 +38,7 @@ Objects {
   Name: "Plane"
   Transform {
     Location {
-      X: 1.52587891e-05
-      Y: 629.325
+      Y: 657.609375
       Z: 0.100097656
     }
     Rotation {
@@ -94,8 +93,8 @@ Objects {
   Name: "Plane"
   Transform {
     Location {
-      X: -3.05175781e-05
-      Y: -615.182861
+      X: -4.57763672e-05
+      Y: -643.467102
       Z: 0.100097656
     }
     Rotation {
@@ -150,8 +149,8 @@ Objects {
   Name: "Plane"
   Transform {
     Location {
-      X: 615.182861
-      Y: -3.05175781e-05
+      X: 643.467102
+      Y: -4.57763672e-05
       Z: 0.100097656
     }
     Rotation {
@@ -206,8 +205,8 @@ Objects {
   Name: "Plane"
   Transform {
     Location {
-      X: -622.253906
-      Y: 3.05175781e-05
+      X: -643.467102
+      Y: 4.57763672e-05
       Z: 0.100097656
     }
     Rotation {

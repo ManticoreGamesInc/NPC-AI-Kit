@@ -167,6 +167,7 @@ function wrapper.IsDead(obj)
 	return false
 end
 
+
 -- IsHeadshot()
 function wrapper.IsHeadshot(obj, dmg, position)
 
@@ -188,6 +189,7 @@ function wrapper.IsHeadshot(obj, dmg, position)
 	return false
 end
 
+
 -- IsValidObject()
 function wrapper.IsValidObject(obj)
 	if not Object.IsValid(obj) then return false end
@@ -197,6 +199,7 @@ function wrapper.IsValidObject(obj)
 	end
 	return false
 end
+
 
 -- FindInSphere()
 function wrapper.FindInSphere(position, radius, parameters)

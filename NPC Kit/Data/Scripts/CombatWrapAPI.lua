@@ -69,9 +69,9 @@ function API.ApplyDamage(attackData)
 	end
 
 	local object = attackData.object
-	if not API.IsValidObject(object) then
-		return
-	end
+	
+	if not API.IsValidObject(object) then return end
+	if API.IsDead(object) then return end
 
 	Events.Broadcast("CombatWrapAPI.GoingToTakeDamage", attackData)
 

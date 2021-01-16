@@ -68,6 +68,9 @@ end
 function Attack(target)
 	if target:IsA("Player") and PLAYER_HOMING_TARGETS() then
 		target = PLAYER_HOMING_TARGETS().GetTargetForPlayer(target)
+		
+	elseif target.context and target.context.COLLIDER then
+		target = target.context.COLLIDER
 	end
 
 	local startPos = script:GetWorldPosition()

@@ -696,7 +696,7 @@
         }
         ParentId: 14001881140192835445
         ChildIds: 15723636327053316230
-        ChildIds: 8836582838928030547
+        ChildIds: 18298766963528642205
         ChildIds: 17113873121481887918
         ChildIds: 16844161198568677528
         ChildIds: 3384808585879706475
@@ -756,8 +756,8 @@
         }
       }
       Objects {
-        Id: 8836582838928030547
-        Name: "AnimControllerSkeletonMarksman"
+        Id: 18298766963528642205
+        Name: "AnimControllerZombie"
         Transform {
           Location {
           }
@@ -783,6 +783,34 @@
               SubObjectId: 16661545407737424176
             }
           }
+          Overrides {
+            Name: "cs:AttackAnim"
+            String: "2hand_rifle_shoot"
+          }
+          Overrides {
+            Name: "cs:AttackPlayback"
+            Float: 1.4
+          }
+          Overrides {
+            Name: "cs:PlayAttackOnRecovery"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:IdleStance"
+            String: "2hand_rifle_idle_relaxed"
+          }
+          Overrides {
+            Name: "cs:ReadyStance"
+            String: "2hand_rifle_aim_shoulder"
+          }
+          Overrides {
+            Name: "cs:WalkStance"
+            String: "2hand_rifle_walk_forward"
+          }
+          Overrides {
+            Name: "cs:RunStance"
+            String: "2hand_rifle_run_forward"
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -792,7 +820,7 @@
         }
         Script {
           ScriptAsset {
-            Id: 15199361190923542400
+            Id: 427248120346786709
           }
         }
       }

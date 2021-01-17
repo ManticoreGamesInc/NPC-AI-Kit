@@ -185,15 +185,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 5348607134525478293
-      value {
-        Overrides {
-          Name: "cs:CalibrateSwipe"
-          Bool: false
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 16143353165946967542
       value {
         Overrides {

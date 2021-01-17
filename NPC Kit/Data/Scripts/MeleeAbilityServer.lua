@@ -1,6 +1,6 @@
 ﻿--[[
 	Melee Ability - Server
-	v1.4.1
+	v1.4.2
 	by: standardcombo
 	
 	Handles melee combat interaction of attack abilities on weapons such as swords.

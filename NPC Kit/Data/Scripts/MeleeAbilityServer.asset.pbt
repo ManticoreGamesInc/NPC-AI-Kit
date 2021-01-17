@@ -30,6 +30,27 @@
         }
       }
       Overrides {
+        Name: "cs:DamageRangePlayers"
+        Vector2 {
+          X: 49
+          Y: 51
+        }
+      }
+      Overrides {
+        Name: "cs:HeadshotNPCs"
+        Vector2 {
+          X: 49
+          Y: 51
+        }
+      }
+      Overrides {
+        Name: "cs:HeadshotPlayers"
+        Vector2 {
+          X: 49
+          Y: 51
+        }
+      }
+      Overrides {
         Name: "cs:AttackImpulse"
         Float: 0
       }

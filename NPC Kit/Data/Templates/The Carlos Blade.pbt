@@ -732,10 +732,6 @@
             }
           }
           Overrides {
-            Name: "cs:CalibrateSwipeRotation"
-            Bool: true
-          }
-          Overrides {
             Name: "cs:CalibrateSwipe"
             Bool: false
           }

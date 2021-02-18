@@ -867,7 +867,8 @@ ignore = {
     "43.", -- Shadowing an upvalue, an upvalue argument, an upvalue loop variable.
     "542", -- An empty if branch
     "6." , -- Whitespace
-    "131/.*Tick" -- Allow unused `Tick`
+    "131/.*Tick", -- Allow unused `Tick`
+	"131" -- Unused implicitly defined global variable. Luacheck does not understand how our require works.
 }
 
 globals = {

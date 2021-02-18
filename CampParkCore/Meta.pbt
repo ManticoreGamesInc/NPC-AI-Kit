@@ -1,3 +1,0 @@
-GameId: "30A0B6E54A522487202198A7DB58F0AB"
-DisplayName: "CAMP SMOSH PARKCORE"
-GameSerializationVersion: 61

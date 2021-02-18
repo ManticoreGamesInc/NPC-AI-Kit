@@ -1,5 +1,35 @@
+# Temporary files used when publishing & to store some preview data like persistent storage
+# No need to synchronize
+Temp/
 
-Homicide/Storage/BOT_Bot1.pbt
-Homicide/Storage/BOT_Bot2.pbt
-Homicide/Storage/BOT_Bot3.pbt
-Homicide/Storage/BOT_Bot4.pbt
+# Local user settings used to store script breakpoints & hierarchy state (locked/hidden objects)
+# No need to synchronize
+UserSettings/
+
+# Screenshots used when publishing & for project thumbnails in the Create tab
+# Comment out if you want to synchronize screenshots
+# Screenshots/
+
+# Directory created when migrating from an old storage format
+# No need to synchronize
+.core_backup/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/

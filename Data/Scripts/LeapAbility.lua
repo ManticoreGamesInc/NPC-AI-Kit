@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Leap Ability
 	v1.0
 	by: standardcombo

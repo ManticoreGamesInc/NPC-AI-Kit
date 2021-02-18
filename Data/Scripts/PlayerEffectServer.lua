@@ -1,4 +1,4 @@
-﻿local ROOT = script:GetCustomProperty("Root"):WaitForObject()
+local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 
 local DAMAGE_MIN = script:GetCustomProperty("DamageMin")

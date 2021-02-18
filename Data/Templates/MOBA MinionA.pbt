@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11039306819631688635
   Name: "MOBA MinionA"
   PlatformAssetType: 5

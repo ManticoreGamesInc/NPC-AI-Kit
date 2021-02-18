@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Pickup Bob & Rotate - Client
 	v1.0
 	by: standardcombo

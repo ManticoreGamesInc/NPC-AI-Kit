@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12507543481433676300
   Name: "Ice Half Circle Swipe Effect"
   PlatformAssetType: 5

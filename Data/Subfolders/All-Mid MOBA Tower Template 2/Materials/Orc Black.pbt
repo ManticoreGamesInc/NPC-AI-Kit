@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17140917848774638005
   Name: "Orc Black"
   PlatformAssetType: 13

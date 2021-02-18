@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8612536666013216739
   Name: "Faces for Enemy AI States"
   PlatformAssetType: 5

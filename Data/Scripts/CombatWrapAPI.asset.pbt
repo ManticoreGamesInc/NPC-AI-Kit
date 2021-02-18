@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 280759072463152142
   Name: "CombatWrapAPI"
   PlatformAssetType: 3

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11118187448301686207
   Name: "SpawnProjectilesAOE"
   PlatformAssetType: 3

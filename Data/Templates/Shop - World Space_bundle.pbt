@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17874992908424943612
   Name: "Shop - World Space"
   PlatformAssetType: 5

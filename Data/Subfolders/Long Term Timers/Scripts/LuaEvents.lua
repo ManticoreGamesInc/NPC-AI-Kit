@@ -1,4 +1,4 @@
-﻿--[[
+--[[
   Lua Event Library
   V1.0 - 7/15/2020
   by Chris

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16643551027742041978
   Name: "DamageFX"
   PlatformAssetType: 5

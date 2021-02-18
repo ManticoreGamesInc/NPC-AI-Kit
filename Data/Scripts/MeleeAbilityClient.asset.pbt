@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5623274323220197328
   Name: "MeleeAbilityClient"
   PlatformAssetType: 3

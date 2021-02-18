@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3390539672368807297
   Name: "Tower - Projectile Fireball"
   PlatformAssetType: 5

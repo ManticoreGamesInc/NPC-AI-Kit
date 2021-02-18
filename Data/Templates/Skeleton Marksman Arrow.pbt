@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4591186836374158816
   Name: "Skeleton Marksman Arrow"
   PlatformAssetType: 5

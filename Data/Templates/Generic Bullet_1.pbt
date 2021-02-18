@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2757168468151882699
   Name: "Generic Bullet"
   PlatformAssetType: 5

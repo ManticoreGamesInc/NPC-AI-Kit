@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 
 Core All-Mid MOBA Tower Template - Use this template to create your own towers
 

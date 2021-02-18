@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16186397819989293827
   Name: "Custom Base Material from Dragon Mob"
   PlatformAssetType: 13

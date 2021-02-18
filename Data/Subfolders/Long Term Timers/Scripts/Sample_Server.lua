@@ -1,4 +1,4 @@
-﻿--[[
+--[[
   Long Term Timer Manager Sample - Client Code
   V1.0 - 7/15/2020
   by Chris

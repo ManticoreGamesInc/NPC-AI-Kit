@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15419880338893310786
   Name: "Fire Magic Glow Material"
   PlatformAssetType: 13

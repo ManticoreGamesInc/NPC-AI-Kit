@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2099941017973188377
   Name: "AnimControllerHideAttackProp"
   PlatformAssetType: 3

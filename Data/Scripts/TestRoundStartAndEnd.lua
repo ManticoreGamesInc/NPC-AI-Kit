@@ -1,4 +1,4 @@
-﻿
+
 function OnBindingPressed(player, action)
 	if action == "ability_extra_9" then
 		print("Testing round start event.")

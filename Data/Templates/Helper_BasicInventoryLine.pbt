@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6780116108034801676
   Name: "Helper_BasicInventoryLine"
   PlatformAssetType: 5

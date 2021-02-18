@@ -1,4 +1,4 @@
-﻿
+
 local propDestructableManagerScript = script:GetCustomProperty("DestructableManagerScript")
 
 destructableMgr = require(propDestructableManagerScript)

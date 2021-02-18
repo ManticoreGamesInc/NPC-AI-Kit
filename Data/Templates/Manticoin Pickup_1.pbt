@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4887434281890312066
   Name: "Manticoin Pickup"
   PlatformAssetType: 5

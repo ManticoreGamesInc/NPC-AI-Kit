@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2148343383959186776
   Name: "Loot Bag 50"
   PlatformAssetType: 5

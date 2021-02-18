@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6056487772254087279
   Name: "Custom Trim from Fantasy Shield Strap 01"
   PlatformAssetType: 13

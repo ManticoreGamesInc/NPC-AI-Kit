@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16677536242870944527
   Name: "Zombie Engage SFX"
   PlatformAssetType: 5

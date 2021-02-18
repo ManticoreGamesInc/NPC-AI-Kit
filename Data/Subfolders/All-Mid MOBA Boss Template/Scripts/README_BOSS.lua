@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 
 Core All-Mid MOBA Boss Template - Use this template to create your own Boss
 

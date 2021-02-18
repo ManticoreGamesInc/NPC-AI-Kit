@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Animation Controller - Skeleton Marksman
 	v1.1.1
 	by: standardcombo, blackdheart

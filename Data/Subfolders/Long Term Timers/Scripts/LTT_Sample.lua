@@ -1,4 +1,4 @@
-﻿--[[
+--[[
   Long Term Timer Sample
   V1.0 - 7/15/2020
   by Chris

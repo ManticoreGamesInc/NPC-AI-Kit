@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3514254482698153611
   Name: "EquipmentAnimationStance"
   PlatformAssetType: 3

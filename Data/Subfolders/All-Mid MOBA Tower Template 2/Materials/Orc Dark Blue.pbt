@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6508774653814637060
   Name: "Orc Dark Blue"
   PlatformAssetType: 13

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2465731894869212209
   Name: "Pillar"
   PlatformAssetType: 5

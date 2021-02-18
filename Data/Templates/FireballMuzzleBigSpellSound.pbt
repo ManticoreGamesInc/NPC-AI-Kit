@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12383091981098943689
   Name: "FireballMuzzleBigSpellSound"
   PlatformAssetType: 5

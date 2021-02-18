@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4106460350409455967
   Name: "Crate"
   PlatformAssetType: 5

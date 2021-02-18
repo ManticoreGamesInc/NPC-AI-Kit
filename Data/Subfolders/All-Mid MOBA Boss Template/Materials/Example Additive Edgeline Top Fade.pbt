@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9451616903307656173
   Name: "Example Additive Edgeline Top Fade"
   PlatformAssetType: 13

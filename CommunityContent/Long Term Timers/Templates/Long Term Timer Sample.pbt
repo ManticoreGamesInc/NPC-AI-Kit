@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 10599643151857570809
   Name: "Long Term Timer Sample"
   PlatformAssetType: 5

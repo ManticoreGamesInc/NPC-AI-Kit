@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2104808718169117426
   Name: "TowerDamageFX"
   PlatformAssetType: 5

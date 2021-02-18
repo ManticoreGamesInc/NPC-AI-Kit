@@ -1,4 +1,4 @@
-﻿
+
 local SFX = script:GetCustomProperty("SoundEffect"):WaitForObject()
 
 Task.Wait(script:GetCustomProperty("Delay"))

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9773100927657609330
   Name: "ShopWorldSpaceServer"
   PlatformAssetType: 3

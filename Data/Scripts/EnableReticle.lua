@@ -1,1 +1,1 @@
-﻿UI.SetReticleVisible(true)
+UI.SetReticleVisible(true)

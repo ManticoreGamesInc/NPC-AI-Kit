@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17621382159338273004
   Name: "Dragon Muzzle Flash"
   PlatformAssetType: 5

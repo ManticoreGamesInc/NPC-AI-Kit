@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2837579121194794601
   Name: "Destructible Rifle"
   PlatformAssetType: 5

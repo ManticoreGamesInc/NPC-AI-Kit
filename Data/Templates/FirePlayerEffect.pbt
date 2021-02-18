@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14975567287265941604
   Name: "FirePlayerEffect"
   PlatformAssetType: 5

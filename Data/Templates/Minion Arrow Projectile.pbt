@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5356144855059165820
   Name: "Minion Arrow Projectile"
   PlatformAssetType: 5

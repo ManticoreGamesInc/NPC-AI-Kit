@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12343836295963297871
   Name: "AbilityPickupLootHigh"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 383268476844167694
   Name: "NPC Waypoint"
   PlatformAssetType: 5

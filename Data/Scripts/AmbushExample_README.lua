@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Ambush Example
 	v0.9.0
 	by: standardcombo

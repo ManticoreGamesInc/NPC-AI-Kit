@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4383090138439791634
   Name: "Humanoid Elemental Water"
   PlatformAssetType: 5

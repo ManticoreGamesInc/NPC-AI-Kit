@@ -1,4 +1,4 @@
-﻿GameId: "bce549479dec489890d8256dfa35be55"
+GameId: "bce549479dec489890d8256dfa35be55"
 ClientVersion: "1.0.121-prod-s"
 Name: "NPC AI Kit"
 Description: "This is the map I use for development of the NPC Kit."

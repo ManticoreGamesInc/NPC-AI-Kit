@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8238802937670550134
   Name: "Example_Equipment_Tophat"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Name: "NavMesh"
+Name: "NavMesh"
 RootId: 8368020417586415756
 Objects {
   Id: 11388859968894868881

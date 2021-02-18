@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Ability Pickup Loot - Client
 	v1.0
 	by: standardcombo

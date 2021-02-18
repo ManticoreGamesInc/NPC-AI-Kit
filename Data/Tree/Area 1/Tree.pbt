@@ -1,4 +1,4 @@
-﻿Name: "Area 1"
+Name: "Area 1"
 RootId: 6442213384464986786
 Objects {
   Id: 7845787259070380678

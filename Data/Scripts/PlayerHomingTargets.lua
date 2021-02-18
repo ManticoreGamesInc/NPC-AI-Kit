@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Player Homing Targets
 	v1.0
 	by: standardcombo

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Animation Controller - Hide Attack Prop
 	v1.0
 	by: standardcombo

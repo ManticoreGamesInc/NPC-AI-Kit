@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11326223381266348732
   Name: "Long Term Timers"
   PlatformAssetType: 5

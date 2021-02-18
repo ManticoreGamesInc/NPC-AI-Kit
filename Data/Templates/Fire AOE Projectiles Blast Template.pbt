@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2212314412534687967
   Name: "Fire AOE Projectiles Blast Template"
   PlatformAssetType: 5

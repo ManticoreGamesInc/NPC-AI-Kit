@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2248821962227196857
   Name: "Advanced 2-Handed Sword"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Shop - World Space
 	v0.2
 	

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13774761121187526995
   Name: "StateBasedAnimController"
   PlatformAssetType: 3

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8009193024378365869
   Name: "RPG Skeleton - Unarmed"
   PlatformAssetType: 5

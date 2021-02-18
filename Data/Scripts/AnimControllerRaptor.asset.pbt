@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9537848603078707653
   Name: "AnimControllerRaptor"
   PlatformAssetType: 3

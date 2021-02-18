@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Module Manager
 	v1.0.3
 	by: standardcombo

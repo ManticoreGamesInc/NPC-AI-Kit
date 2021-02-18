@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1059603625980519112
   Name: "FireballSurfaceImpact"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	DestructibleWeapon - Client
 	v0.11.0
 	by: standardcombo, Chris C.

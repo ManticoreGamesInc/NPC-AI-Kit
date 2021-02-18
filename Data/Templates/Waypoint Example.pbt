@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8021293717559119783
   Name: "Waypoint Example"
   PlatformAssetType: 5

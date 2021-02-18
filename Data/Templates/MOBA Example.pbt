@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6315282414521107012
   Name: "MOBA Example"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 10636878588761885582
   Name: "BarkBone"
   PlatformAssetType: 13

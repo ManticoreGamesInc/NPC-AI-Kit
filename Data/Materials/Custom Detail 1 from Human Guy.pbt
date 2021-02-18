@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14407724145096984465
   Name: "Custom Detail 1 from Human Guy"
   PlatformAssetType: 13

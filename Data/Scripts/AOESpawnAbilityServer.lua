@@ -1,4 +1,4 @@
-﻿local ABILITY = script:FindAncestorByType("Ability")
+local ABILITY = script:FindAncestorByType("Ability")
 local AOE_ASSET = script:GetCustomProperty("AOEAsset")
 local OFFSET = script:GetCustomProperty("ForwardSpawnOffset")
 

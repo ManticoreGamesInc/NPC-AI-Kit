@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14424777330967029426
   Name: "LeapAbility"
   PlatformAssetType: 3

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Navmesh Generator
 	v1.0.4
 	by: Waffle, standardcombo

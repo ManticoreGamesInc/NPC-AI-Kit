@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 427248120346786709
   Name: "AnimControllerZombie"
   PlatformAssetType: 3

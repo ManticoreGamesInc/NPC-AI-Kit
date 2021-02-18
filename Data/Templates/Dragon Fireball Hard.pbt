@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18002760385304387352
   Name: "Dragon Fireball Hard"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 552039639119291604
   Name: "Custom Base Material from Human Gal"
   PlatformAssetType: 13

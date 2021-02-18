@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13382197304404547312
   Name: "Iron Blight Fortress"
   PlatformAssetType: 13

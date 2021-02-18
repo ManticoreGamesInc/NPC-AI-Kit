@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4220361944144020390
   Name: "RepairFX"
   PlatformAssetType: 5

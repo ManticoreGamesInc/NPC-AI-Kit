@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3389353986870321142
   Name: "Floor"
   PlatformAssetType: 5

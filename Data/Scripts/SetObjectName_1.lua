@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Set Object Name
 	v1.0
 	by: standardcombo

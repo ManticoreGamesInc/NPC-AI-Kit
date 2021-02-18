@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1810435731655915650
   Name: "Cannon Ball"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPC AI Kit
 	v0.11.2 - 2021/01/15
 	by: standardcombo

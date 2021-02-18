@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7700194700585069212
   Name: "DestroyFX"
   PlatformAssetType: 5

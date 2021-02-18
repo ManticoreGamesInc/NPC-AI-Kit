@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13741093975664138259
   Name: "MoveHighlight"
   PlatformAssetType: 5

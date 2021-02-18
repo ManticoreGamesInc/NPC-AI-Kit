@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13514268339176066665
   Name: "TowerDestroyFX"
   PlatformAssetType: 5

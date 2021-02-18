@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15629769307117550406
   Name: "NavMeshGenerator"
   PlatformAssetType: 3

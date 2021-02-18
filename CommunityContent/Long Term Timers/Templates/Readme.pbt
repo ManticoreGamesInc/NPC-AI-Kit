@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14603683427944523261
   Name: "Readme"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿local API = {}
+local API = {}
 
 function API.RegisterEffectsManagerServer(effectFunctions)
     if _G.APIBasicEffectSystem and _G.APIBasicEffectSystem.registeredOnServer then

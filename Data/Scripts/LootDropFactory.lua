@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Loot Drop Factory
 	v2.0
 	by: standardcombo

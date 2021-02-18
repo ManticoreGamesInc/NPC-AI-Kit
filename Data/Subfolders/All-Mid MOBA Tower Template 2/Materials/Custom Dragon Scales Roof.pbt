@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3501867776571134698
   Name: "Custom Dragon Scales Roof"
   PlatformAssetType: 13

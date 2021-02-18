@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16856907705825859721
   Name: "RPG Raptor"
   PlatformAssetType: 5

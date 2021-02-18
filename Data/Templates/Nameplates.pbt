@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 11605537577419815467
   Name: "Nameplates"
   PlatformAssetType: 5

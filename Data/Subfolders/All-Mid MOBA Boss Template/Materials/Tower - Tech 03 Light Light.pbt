@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9821564360585793926
   Name: "Tower - Tech 03 Light Light"
   PlatformAssetType: 13

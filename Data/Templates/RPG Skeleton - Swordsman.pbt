@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9727190433052104706
   Name: "RPG Skeleton - Swordsman"
   PlatformAssetType: 5

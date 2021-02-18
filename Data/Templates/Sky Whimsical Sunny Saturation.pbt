@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18142229377255761157
   Name: "Sky Whimsical Sunny Saturation"
   PlatformAssetType: 5

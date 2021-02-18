@@ -1,4 +1,4 @@
-﻿local ABES = require(script:GetCustomProperty("API_EffectSystem"))
+local ABES = require(script:GetCustomProperty("API_EffectSystem"))
 local EQUIPMENT = script:FindAncestorByType("Equipment")
 
 local ANIMATION_STANCE = script:GetCustomProperty("AnimationStance")

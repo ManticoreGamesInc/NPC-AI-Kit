@@ -1,4 +1,4 @@
-﻿-- Example Tutorial UI
+-- Example Tutorial UI
 
 -- INSTRUCTIONS
 -- Place this UI in a Client Context. 

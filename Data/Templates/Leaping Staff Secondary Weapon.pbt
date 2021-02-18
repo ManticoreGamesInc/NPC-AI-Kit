@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1350685061412585858
   Name: "Leaping Staff Secondary Weapon"
   PlatformAssetType: 5

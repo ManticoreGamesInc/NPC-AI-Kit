@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	State-Based Animation Controller
 	v0.11.2
 	by: standardcombo

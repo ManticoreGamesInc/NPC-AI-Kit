@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5161837154855123765
   Name: "PlayerHomingTargets"
   PlatformAssetType: 3

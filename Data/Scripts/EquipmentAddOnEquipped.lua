@@ -1,4 +1,4 @@
-﻿local equipment = script:FindAncestorByType("Equipment")
+local equipment = script:FindAncestorByType("Equipment")
 local propSocket = script:GetCustomProperty("Socket") or "right_prop"
 local propSecondaryEquipment = script:GetCustomProperty("SecondaryEquipment")
 

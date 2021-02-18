@@ -1,4 +1,4 @@
-﻿Name: "NavMesh Zones Example"
+Name: "NavMesh Zones Example"
 RootId: 11831473899083709832
 Objects {
   Id: 9499015904101185233

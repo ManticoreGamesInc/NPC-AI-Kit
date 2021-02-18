@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 276274853970815746
   Name: "Static Player Equipment - Destructible Rifle"
   PlatformAssetType: 5

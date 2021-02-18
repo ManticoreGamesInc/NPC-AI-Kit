@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Cross-Context Function Caller
 	v1.1
 	by: standardcombo

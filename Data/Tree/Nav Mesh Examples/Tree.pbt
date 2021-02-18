@@ -1,4 +1,4 @@
-﻿Name: "Nav Mesh Examples"
+Name: "Nav Mesh Examples"
 RootId: 9389851728142449426
 Objects {
   Id: 11583660245094498540

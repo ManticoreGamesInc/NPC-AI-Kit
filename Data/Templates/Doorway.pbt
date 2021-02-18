@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15099247615058819045
   Name: "Doorway"
   PlatformAssetType: 5

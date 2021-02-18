@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4053734446749480031
   Name: "Destructable Object Sample"
   PlatformAssetType: 5

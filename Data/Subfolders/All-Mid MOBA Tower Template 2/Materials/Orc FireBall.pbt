@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16458803091682482632
   Name: "Orc FireBall"
   PlatformAssetType: 13

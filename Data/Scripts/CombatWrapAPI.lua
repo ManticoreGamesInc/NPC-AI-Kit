@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Combat Wrap API
 	v0.11.2
 	by: standardcombo

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1401124806849575098
   Name: "NPCHealthBarDataProviderClient"
   PlatformAssetType: 3

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14623989144497404790
   Name: "FireballImpactSmall"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿
+
 local destructibleManager = script:GetCustomProperty("DestructibleManager")
 
 local MANAGER = require(destructibleManager)

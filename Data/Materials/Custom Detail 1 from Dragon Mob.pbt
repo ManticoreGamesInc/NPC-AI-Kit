@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2454107446693510392
   Name: "Custom Detail 1 from Dragon Mob"
   PlatformAssetType: 13

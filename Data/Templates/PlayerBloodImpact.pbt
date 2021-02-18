@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 17611980116047838985
   Name: "PlayerBloodImpact"
   PlatformAssetType: 5

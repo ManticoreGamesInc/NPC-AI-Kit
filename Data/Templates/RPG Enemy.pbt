@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 995900137041739798
   Name: "RPG Enemy"
   PlatformAssetType: 5

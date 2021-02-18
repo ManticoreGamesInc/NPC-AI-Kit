@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Equipment Animation Stance
 	v1.0
 	by: standardcombo

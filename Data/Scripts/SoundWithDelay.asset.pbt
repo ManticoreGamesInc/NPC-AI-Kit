@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16203984334503821813
   Name: "SoundWithDelay"
   PlatformAssetType: 3

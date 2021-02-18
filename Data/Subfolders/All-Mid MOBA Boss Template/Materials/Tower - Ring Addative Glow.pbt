@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 161420556705051978
   Name: "Tower - Ring Addative Glow"
   PlatformAssetType: 13

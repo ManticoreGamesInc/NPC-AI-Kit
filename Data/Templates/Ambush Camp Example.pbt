@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5833215658979884152
   Name: "Ambush Camp Example"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4315867458127260351
   Name: "NPCHealthBarMinimalist"
   PlatformAssetType: 5

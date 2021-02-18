@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8943910556254534449
   Name: "RPG Dragon Enemy - Easy"
   PlatformAssetType: 5

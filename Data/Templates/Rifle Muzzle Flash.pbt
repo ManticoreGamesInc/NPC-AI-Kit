@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6723838021017792559
   Name: "Rifle Muzzle Flash"
   PlatformAssetType: 5

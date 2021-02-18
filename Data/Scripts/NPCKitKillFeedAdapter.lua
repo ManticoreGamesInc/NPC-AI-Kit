@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPC Kit - Kill Feed Adapter
 	v1.0
 	by: standardcombo

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Equipment Ability Chain - Server
 	v1.2
 	by: standardcombo, blackedheart

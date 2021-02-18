@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4812371249315312696
   Name: "MOBA Cannon Tower"
   PlatformAssetType: 5

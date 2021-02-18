@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7194780003691091213
   Name: "RPG Skeleton - Full Armed"
   PlatformAssetType: 5

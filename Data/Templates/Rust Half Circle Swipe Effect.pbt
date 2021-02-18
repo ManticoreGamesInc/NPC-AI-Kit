@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 12879874920460698507
   Name: "Rust Half Circle Swipe Effect"
   PlatformAssetType: 5

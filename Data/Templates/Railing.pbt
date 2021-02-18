@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13818410948112340064
   Name: "Railing"
   PlatformAssetType: 5

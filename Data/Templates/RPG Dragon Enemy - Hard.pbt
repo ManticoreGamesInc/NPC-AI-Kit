@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16596380378274474908
   Name: "RPG Dragon Enemy - Hard"
   PlatformAssetType: 5

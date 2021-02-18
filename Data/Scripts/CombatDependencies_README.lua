@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Combat Dependencies - Template
 	v1.1.1
 	by: standardcombo

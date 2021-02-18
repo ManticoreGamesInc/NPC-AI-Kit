@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16737318897597383360
   Name: "Fire Rain AOE"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 246191913785566097
   Name: "Wood Trim and Bone"
   PlatformAssetType: 13

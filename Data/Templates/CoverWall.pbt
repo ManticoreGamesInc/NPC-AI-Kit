@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18360291909935724082
   Name: "CoverWall"
   PlatformAssetType: 5

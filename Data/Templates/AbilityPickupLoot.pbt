@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13053008494495394347
   Name: "AbilityPickupLoot"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPCSpawner
 	by: standardcombo
 	v0.9.0

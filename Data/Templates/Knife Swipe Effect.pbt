@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15475734614977761637
   Name: "Knife Swipe Effect"
   PlatformAssetType: 5

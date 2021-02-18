@@ -1,4 +1,4 @@
-﻿local parent = script.parent
+local parent = script.parent
 assert(Object.IsValid(parent), script.name .. ' should have a parent.')
 
 local equipment = script:FindAncestorByType("Equipment")

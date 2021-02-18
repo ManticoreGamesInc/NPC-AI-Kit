@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15847424116303390532
   Name: "NPC AI Kit"
   PlatformAssetType: 5

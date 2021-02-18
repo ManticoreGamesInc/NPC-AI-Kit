@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPCCampBehavior - Player Proximity
 	by: standardcombo
 	v0.9.0

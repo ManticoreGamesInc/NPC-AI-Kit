@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2589681635301858190
   Name: "DestructibleWeaponAOE"
   PlatformAssetType: 3

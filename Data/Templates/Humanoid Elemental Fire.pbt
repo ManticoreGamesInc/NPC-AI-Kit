@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5470538135877688117
   Name: "Humanoid Elemental Fire"
   PlatformAssetType: 5

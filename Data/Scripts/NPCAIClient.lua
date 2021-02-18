@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPCAI - Client
 	v0.11.2
 	by: standardcombo

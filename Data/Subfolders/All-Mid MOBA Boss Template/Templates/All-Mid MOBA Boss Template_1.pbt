@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6352732046492784756
   Name: "All-Mid MOBA Boss Template"
   PlatformAssetType: 5

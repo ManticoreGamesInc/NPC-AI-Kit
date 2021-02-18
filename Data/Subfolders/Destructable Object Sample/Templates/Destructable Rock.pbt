@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3173362537087864138
   Name: "Destructable Rock"
   PlatformAssetType: 5

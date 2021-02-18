@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 115918144953304861
   Name: "NavMeshZones"
   PlatformAssetType: 3

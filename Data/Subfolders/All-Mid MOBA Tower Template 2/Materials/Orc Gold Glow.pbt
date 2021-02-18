@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1191558362824357590
   Name: "Orc Gold Glow"
   PlatformAssetType: 13

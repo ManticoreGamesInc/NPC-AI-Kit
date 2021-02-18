@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 16479506016862580189
   Name: "SetAbilityIconClientOptimized"
   PlatformAssetType: 3

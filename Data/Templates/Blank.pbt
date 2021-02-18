@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3318114153542726786
   Name: "Blank"
   PlatformAssetType: 5

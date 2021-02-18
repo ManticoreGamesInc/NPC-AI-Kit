@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2059119958766888270
   Name: "MeleeAbilityServer"
   PlatformAssetType: 3

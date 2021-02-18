@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2087257134469971969
   Name: "Combat Dependencies"
   PlatformAssetType: 5

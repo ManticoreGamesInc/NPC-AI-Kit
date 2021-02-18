@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Loot Pickup
 	v1.2.1
 	by: standardcombo

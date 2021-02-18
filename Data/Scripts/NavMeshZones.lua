@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NavMesh Zones
 	v0.11.0
 	by: standardcombo

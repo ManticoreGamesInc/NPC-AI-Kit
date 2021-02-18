@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3523637398150678013
   Name: "The Carlos Blade"
   PlatformAssetType: 5

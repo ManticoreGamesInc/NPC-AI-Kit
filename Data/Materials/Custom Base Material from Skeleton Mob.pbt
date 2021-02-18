@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1331214420149010292
   Name: "Custom Base Material from Skeleton Mob"
   PlatformAssetType: 13

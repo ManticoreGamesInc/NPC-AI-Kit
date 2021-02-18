@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4695401389564693808
   Name: "Cannon Muzzle Flash"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 18176330156260336344
   Name: "RPG Skeleton - Marksman"
   PlatformAssetType: 5

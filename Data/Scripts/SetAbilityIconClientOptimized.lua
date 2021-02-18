@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Set Ability Icon - Client
 	v1.1
 	by: standardcombo, blackdheart

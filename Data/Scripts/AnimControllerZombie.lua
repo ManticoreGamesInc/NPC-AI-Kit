@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Animation Controller - Zombie
 	v1.1.1
 	by: standardcombo

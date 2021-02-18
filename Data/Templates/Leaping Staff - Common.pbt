@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 4779393545089479649
   Name: "Leaping Staff - Common"
   PlatformAssetType: 5

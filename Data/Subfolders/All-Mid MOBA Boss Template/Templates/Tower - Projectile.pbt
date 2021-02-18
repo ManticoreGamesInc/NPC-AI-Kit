@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9206973941730152227
   Name: "Tower - Projectile"
   PlatformAssetType: 5

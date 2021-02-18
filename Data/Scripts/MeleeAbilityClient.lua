@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Melee Ability - Client
 	v1.3.0
 	by: standardcombo

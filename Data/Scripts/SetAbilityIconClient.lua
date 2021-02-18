@@ -1,4 +1,4 @@
-﻿local API = require(script:GetCustomProperty("API"))
+local API = require(script:GetCustomProperty("API"))
 local ABILITY = script:FindAncestorByType("Ability")
 local ICON = script:GetCustomProperty("Icon")
 

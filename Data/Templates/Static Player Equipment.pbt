@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8037622605617392837
   Name: "Static Player Equipment"
   PlatformAssetType: 5

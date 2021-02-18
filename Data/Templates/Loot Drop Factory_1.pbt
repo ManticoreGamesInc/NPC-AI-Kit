@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 6998126034934061058
   Name: "Loot Drop Factory"
   PlatformAssetType: 5

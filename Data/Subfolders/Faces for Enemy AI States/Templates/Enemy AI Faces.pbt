@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5564182457221009075
   Name: "Enemy AI Faces"
   PlatformAssetType: 5

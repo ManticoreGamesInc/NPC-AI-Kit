@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15836769211708900352
   Name: "LeapEffects"
   PlatformAssetType: 5

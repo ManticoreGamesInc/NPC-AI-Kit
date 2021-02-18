@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1006161770300109815
   Name: "Sky Early Morning 01"
   PlatformAssetType: 5

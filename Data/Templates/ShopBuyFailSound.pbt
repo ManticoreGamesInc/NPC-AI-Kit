@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 10783162070580075658
   Name: "ShopBuyFailSound"
   PlatformAssetType: 5

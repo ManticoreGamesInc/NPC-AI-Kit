@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 15011219379918960360
   Name: "Fire Magic Edge Outlineas"
   PlatformAssetType: 13

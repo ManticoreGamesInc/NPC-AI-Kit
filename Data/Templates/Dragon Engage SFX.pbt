@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 7507469334442477538
   Name: "Dragon Engage SFX"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Destructible Weapon AOE
 	v1.1
 	by: standardcombo

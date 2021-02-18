@@ -1,4 +1,4 @@
-﻿ORC_ROTATOR = script.parent
+ORC_ROTATOR = script.parent
 
 
 function OnTowerTargetLock(target)

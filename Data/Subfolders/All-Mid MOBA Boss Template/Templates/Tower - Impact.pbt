@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1193401736828932683
   Name: "Tower - Impact"
   PlatformAssetType: 5

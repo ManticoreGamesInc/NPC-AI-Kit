@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8117726032046558367
   Name: "Wall"
   PlatformAssetType: 5

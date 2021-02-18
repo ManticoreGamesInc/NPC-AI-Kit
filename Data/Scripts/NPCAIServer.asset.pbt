@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 877607263390645540
   Name: "NPCAIServer"
   PlatformAssetType: 3

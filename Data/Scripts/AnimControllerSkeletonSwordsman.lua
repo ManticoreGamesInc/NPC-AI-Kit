@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Animation Controller - Skeleton Swordsman
 	v1.1.1
 	by: standardcombo, blackdheart

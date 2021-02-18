@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13938583530368586422
   Name: "Fire Staff Secondary Weapon"
   PlatformAssetType: 5

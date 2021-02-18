@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5539674529169695596
   Name: "NavMesh Helper Grid Material"
   PlatformAssetType: 13

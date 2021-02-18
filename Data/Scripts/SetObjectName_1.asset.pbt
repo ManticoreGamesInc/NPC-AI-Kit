@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5407573852348177454
   Name: "SetObjectName"
   PlatformAssetType: 3

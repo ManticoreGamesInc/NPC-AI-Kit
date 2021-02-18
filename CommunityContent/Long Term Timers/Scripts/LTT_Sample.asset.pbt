@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 14719803245576806942
   Name: "LTT_Sample"
   PlatformAssetType: 3

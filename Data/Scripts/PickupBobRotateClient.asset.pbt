@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 5631192551256795714
   Name: "PickupBobRotateClient"
   PlatformAssetType: 3

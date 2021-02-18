@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Melee Ability - Server
 	v1.4.2
 	by: standardcombo

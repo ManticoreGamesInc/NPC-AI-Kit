@@ -1,4 +1,4 @@
-﻿local TOWER = script.parent
+local TOWER = script.parent
 local PROJECTILE = script:GetCustomProperty("TowerProjectile")
 local IMPACT = script:GetCustomProperty("TowerImpact")
 

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Loot Drop - Data Entry
 	v2.0
 	by: standardcombo

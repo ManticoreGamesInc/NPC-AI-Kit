@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NavMesh
 	v1.0.1
 	by: Waffle

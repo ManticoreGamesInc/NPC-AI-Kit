@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 NPC Waypoint
 by: standardcombo
 v1.0.0

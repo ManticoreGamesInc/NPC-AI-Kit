@@ -1,4 +1,4 @@
-﻿local WEAPON = script:GetCustomProperty("Weapon"):WaitForObject()
+local WEAPON = script:GetCustomProperty("Weapon"):WaitForObject()
 local DAMAGE_API = require(script:GetCustomProperty("DamageAPI"))
 local ATTACK_ABILITY = script:GetCustomProperty("AttackAbility"):WaitForObject()
 

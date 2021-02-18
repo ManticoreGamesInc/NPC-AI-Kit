@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 9037282866162025272
   Name: "Advanced Crossbow"
   PlatformAssetType: 5

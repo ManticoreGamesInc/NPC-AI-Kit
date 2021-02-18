@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8059745471922214547
   Name: "Tower - Tech 01"
   PlatformAssetType: 13

@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13757683359232640806
   Name: "ChanceToDestroyParent"
   PlatformAssetType: 3

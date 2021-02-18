@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 8511523814806414915
   Name: "AnimControllerDragon"
   PlatformAssetType: 3

@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	Spawn Projectiles AOE
 	v1.2
 	by: standardcombo

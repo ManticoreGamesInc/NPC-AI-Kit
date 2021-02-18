@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 2455765397259659527
   Name: "Generic Sound Reload"
   PlatformAssetType: 5

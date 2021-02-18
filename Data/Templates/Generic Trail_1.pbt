@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 13666289425475229238
   Name: "Generic Trail"
   PlatformAssetType: 5

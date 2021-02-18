@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 1824716159909423219
   Name: "ResetButton"
   PlatformAssetType: 5

@@ -1,4 +1,4 @@
-﻿
+
 local CONTROLLER = require( script:GetCustomProperty("ShopController") )
 local ITEM_MODEL = require( script:GetCustomProperty("ShopItemModel") )
 

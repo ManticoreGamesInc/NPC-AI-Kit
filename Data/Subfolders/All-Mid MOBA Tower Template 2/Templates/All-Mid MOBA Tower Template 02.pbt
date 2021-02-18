@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 949144977319813125
   Name: "All-Mid MOBA Tower Template 02"
   PlatformAssetType: 5

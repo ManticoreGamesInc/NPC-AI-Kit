@@ -1,4 +1,4 @@
-﻿Assets {
+Assets {
   Id: 3464774521778511199
   Name: "Basic Rifle"
   PlatformAssetType: 5

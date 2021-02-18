@@ -1,4 +1,4 @@
-﻿local EQUIPMENT = script:GetCustomProperty("Equipment"):WaitForObject()
+local EQUIPMENT = script:GetCustomProperty("Equipment"):WaitForObject()
 
 local DELAY_REGEN_TIME = 1
 

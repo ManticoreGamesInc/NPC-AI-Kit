@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 	NPC Manager
 	v0.11.2
 	by: standardcombo

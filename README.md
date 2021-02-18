@@ -1,8 +1,10 @@
 <div align="center">
 
-# NPC AI Kit
+# Core NPC AI Kit
 
 [![Build Status](https://github.com/ManticoreGamesInc/NPC-AI-Kit/workflows/CI/badge.svg)](https://github.com/ManticoreGamesInc/NPC-AI-Kit/actions?query=workflow%3A%22Build+%26+Deploy+%28Development%29%22)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ManticoreGamesInc/NPC-AI-Kit?style=plastic)
+
 ![Screenshot](Screenshots/Screenshot0003.png)
 </div>
 

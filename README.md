@@ -1,4 +1,10 @@
+<div align="center">
+
 # NPC AI Kit
+
+[![Build Status](https://github.com/ManticoreGamesInc/NPC-AI-Kit/workflows/CI/badge.svg)](https://github.com/ManticoreGamesInc/NPC-AI-Kit/actions?query=workflow%3A%22Build+%26+Deploy+%28Development%29%22)
+![Screenshot](Screenshots/Screenshot0003.png)
+</div>
 
 Kit for adding NPCs and a solution for NPC+Player combat.
 
@@ -11,22 +17,19 @@ Contains:
 - Ambush-style spawn camp example
 - MOBA example
 
-Known issues:
+## Known issues
 
 - Consumes a large amount of the networking budget.
 - Ranged NPCs might get stuck shooting at a wall if the target is on the other side, without adapting their targeting.
 - Allied NPCs can get stuck on each other if running exactly in opposite directions.
 
+## Tutorials
+
+Check out our [YouTube playlist](https://www.youtube.com/watch?v=fz5y8MRXM7w&list=PLypj8hyU_Lh4ijMGMUQH_AUwKMvHhIoFq) to learn how to use the NPC AI Kit.
+
 ## Feedback & Support
 
-Please use GitHub issues or my [thread on the Core Forums](https://forums.coregames.com) for feedback and support.
-
-## More
-
-You can find more of me and what I do on my socials:
-
-- [YouTube](https://youtube.com)
-- ...
+Please use GitHub issues or my [thread on the Core Forums](https://forums.coregames.com/t/video-enemy-npcs-ai/392) for feedback and support.
 
 ## Contributing
 

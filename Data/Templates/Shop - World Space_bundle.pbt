@@ -25,6 +25,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:forceon"
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -46,5 +49,5 @@ Assets {
     Version: "1.2.0"
     Description: "(Work in progress)\r\n\r\nA world-space, customizable shop that trades resources for equipment. Currently it works in conjunction with the Basic Inventory system and includes a copy of that, plus a spawner and resource pickups for everything to be functional. See the README for more info."
   }
-  SerializationVersion: 72
+  SerializationVersion: 100
 }

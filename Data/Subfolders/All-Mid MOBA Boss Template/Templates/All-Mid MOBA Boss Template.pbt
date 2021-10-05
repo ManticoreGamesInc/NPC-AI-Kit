@@ -25,6 +25,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:forceon"
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -46,5 +49,5 @@ Assets {
     Version: "1.0.0"
     Description: "Core All-Mid MOBABoss Template - Use this content to create  your own big bad. See the README_BOSS.lua for how to use. Hit @Buckmonster up in Discord with any questons. "
   }
-  SerializationVersion: 72
+  SerializationVersion: 100
 }

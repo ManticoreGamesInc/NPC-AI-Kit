@@ -25,6 +25,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:forceon"
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -46,5 +49,5 @@ Assets {
     Version: "1.0.0"
     Description: "For @standardcombo (Gabe)\'s enemy AI series.  \r\n\r\n- Retreat\r\n- Sleep\r\n- Dead\r\n- Engage\r\n- Attack"
   }
-  SerializationVersion: 72
+  SerializationVersion: 100
 }

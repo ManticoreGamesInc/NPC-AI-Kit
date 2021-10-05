@@ -2,7 +2,7 @@ Assets {
   Id: 246191913785566097
   Name: "Wood Trim and Bone"
   PlatformAssetType: 13
-  SerializationVersion: 72
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 10126682176968287873
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 16186397819989293827
   Name: "Custom Base Material from Dragon Mob"
   PlatformAssetType: 13
-  SerializationVersion: 72
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 8082551051744776500
     ParameterOverrides {
@@ -36,7 +36,7 @@ Assets {
     }
     Assets {
       Id: 8082551051744776500
-      Name: "Dragon Body Material"
+      Name: "Whelp Body Material"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"

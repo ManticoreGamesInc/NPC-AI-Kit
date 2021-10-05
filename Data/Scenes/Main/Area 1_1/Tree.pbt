@@ -29,6 +29,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
   Folder {
     IsGroup: true
   }
@@ -74,6 +77,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -82,9 +88,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -130,6 +138,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -138,9 +149,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -186,6 +199,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -194,9 +210,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -241,6 +259,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -249,9 +270,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -282,6 +305,9 @@ Objects {
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
     IsGroup: true
@@ -327,6 +353,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -335,9 +364,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -381,6 +412,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -389,9 +423,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -435,6 +471,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -443,9 +482,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }
@@ -489,6 +530,9 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
   CoreMesh {
     MeshAsset {
       Id: 6284939371362434604
@@ -497,9 +541,11 @@ Objects {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
     }
+    InteractWithTriggers: true
     StaticMesh {
       Physics {
       }
+      BoundsScale: 1
     }
   }
 }

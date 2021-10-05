@@ -25,6 +25,9 @@ Assets {
         Visible_v2 {
           Value: "mc:evisibilitysetting:forceon"
         }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
         Folder {
           BundleDummy {
             ReferencedAssets {
@@ -46,5 +49,5 @@ Assets {
     Version: "1.0.0"
     Description: "Core All-Mid MOBA Tower Template #2 - Use this template to create your own towers. See the README_TOWER.lua for how to use. Hit @Buckmonster up in Discord with any questons\r\n\r\nBuilt from Spell Shock tower.  "
   }
-  SerializationVersion: 72
+  SerializationVersion: 100
 }

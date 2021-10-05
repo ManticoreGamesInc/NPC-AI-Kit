@@ -10,6 +10,12 @@ Assets {
           Id: 10904812111796500892
         }
       }
+      Overrides {
+        Name: "cs:LeashZone"
+        AssetReference {
+          Id: 9347120956085322557
+        }
+      }
     }
   }
   SerializationVersion: 72

@@ -13,12 +13,13 @@ _G["standardcombo.NPCKit.NPCManager"] = API
 
 local allNPCs = {}
 local npcColliders = {}
-
+local npcDamagables = {}
 
 function API.Register(npc)
 	if (not allNPCs[npc]) then
 		allNPCs[npc] = true
 		
+
 		npc.destroyEvent:Connect(OnDestroyed)
 	end
 end
@@ -28,6 +29,9 @@ function API.RegisterCollider(npc, collider)
 	npcColliders[collider] = npc
 end
 
+function API.RegisterDamagable(npc, damagable)
+	npcDamagables[damagable] = npc
+end
 
 function API.IsRegistered(npc)
 	return allNPCs[npc] ~= nil
@@ -36,6 +40,10 @@ end
 
 function API.FindScriptForCollider(collider)
 	return npcColliders[collider]
+end
+
+function API.FindScriptForDamagable(damagable)
+	return npcDamagables[damagable]
 end
 
 
@@ -64,7 +72,6 @@ function API.FindInSphere(position, radius, parameters)
 	end
 	return result
 end
-
 
 function OnDestroyed(obj)
 	-- Clear collider references

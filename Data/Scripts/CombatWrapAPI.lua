@@ -81,8 +81,8 @@ function API.ApplyDamage(attackData)
 
 			Events.Broadcast("CombatWrapAPI.OnDamageTaken", attackData)
 
-			local currentHealth = API.GetHitPoints(object)
-			if currentHealth and currentHealth <= 0 then
+			if (API.IsDead(object)) then
+				print("Broadcasting death.")
 				Events.Broadcast("CombatWrapAPI.ObjectHasDied", attackData)
 			end
 		end

@@ -35,6 +35,9 @@ Assets {
             }
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -44,10 +47,10 @@ Assets {
   }
   Marketplace {
     Id: "f8b5693b939f48d997966711e7a40e5f"
-    OwnerAccountId: "901b7628983c4c8db4282f24afeda57a"
-    OwnerName: "Buckmonster"
+    OwnerAccountId: "deaddeadcafecafedeaddeadcafecafe"
+    OwnerName: "_UnknownCreator"
     Version: "1.0.0"
     Description: "For @standardcombo (Gabe)\'s enemy AI series.  \r\n\r\n- Retreat\r\n- Sleep\r\n- Dead\r\n- Engage\r\n- Attack"
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

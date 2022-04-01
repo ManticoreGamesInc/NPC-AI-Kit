@@ -3,6 +3,8 @@ Assets {
   Name: "tutorial_fade"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

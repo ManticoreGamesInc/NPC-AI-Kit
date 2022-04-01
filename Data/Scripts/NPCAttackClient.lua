@@ -33,7 +33,7 @@ function OnPropertyChanged(object, propertyName)
 		end
 	end
 end
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 
 
 function GetID()

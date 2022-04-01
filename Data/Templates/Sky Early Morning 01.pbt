@@ -34,6 +34,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 1775836137332118625
@@ -203,6 +206,9 @@ Assets {
             Id: 7887238662729938253
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 8660353362686771309
@@ -294,6 +300,9 @@ Assets {
             Id: 16910278292812118833
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 8406579028204651720
@@ -361,6 +370,9 @@ Assets {
             Id: 11515840070784317904
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 1986900548023926106
@@ -406,6 +418,9 @@ Assets {
             Id: 2224571462023946700
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -449,5 +464,5 @@ Assets {
       AssetId: "Sky_Early_Morning_01"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

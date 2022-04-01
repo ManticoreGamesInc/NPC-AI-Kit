@@ -36,7 +36,8 @@ Objects {
   ChildIds: 14632867372866985088
   ChildIds: 12368109956576323793
   ChildIds: 2619800446382357304
-  ChildIds: 4409323285129654815
+  ChildIds: 12259239172876134516
+  ChildIds: 4017645822016985933
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -50,10 +51,13 @@ Objects {
   }
   Folder {
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
-  Id: 4409323285129654815
-  Name: "Leaping Staff - Common"
+  Id: 4017645822016985933
+  Name: "Basic Shotgun"
   Transform {
     Scale {
       X: 1
@@ -63,24 +67,141 @@ Objects {
   }
   ParentId: 4781671109827199097
   WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 9901109355884061414
+      key: 3547920819172201709
       value {
         Overrides {
           Name: "Name"
-          String: "Leaping Staff - Common"
+          String: "Basic Shotgun"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 20484.4805
+            Y: -16821.0137
+            Z: 2659.94043
+          }
         }
       }
     }
     TemplateAsset {
-      Id: 4779393545089479649
+      Id: 15487376583485875014
+    }
+  }
+}
+Objects {
+  Id: 12259239172876134516
+  Name: "RPG Dragon Enemy - Easy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 398113490489324447
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 5407573852348177454
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 6887995465546052660
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 877607263390645540
+          }
+        }
+        Overrides {
+          Name: "cs:EngageEffect"
+          AssetReference {
+            Id: 7507469334442477538
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12577161451319856535
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 8341736443469670175
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Dragon Enemy - Easy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21102.2812
+            Y: -14962.4844
+            Z: 2659.94043
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -90
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16188384304550516637
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 13670653971905386821
+          }
+        }
+        Overrides {
+          Name: "cs:ProjectileBody"
+          AssetReference {
+            Id: 16197724571903786063
+          }
+        }
+        Overrides {
+          Name: "cs:MuzzleFlash"
+          AssetReference {
+            Id: 17621382159338273004
+          }
+        }
+        Overrides {
+          Name: "cs:ImpactSurface"
+          AssetReference {
+            Id: 1059603625980519112
+          }
+        }
+        Overrides {
+          Name: "cs:ImpactCharacter"
+          AssetReference {
+            Id: 8637728897842857331
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17050735024831803416
     }
   }
 }
@@ -118,6 +239,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -183,6 +307,12 @@ Objects {
       BoundsScale: 1
     }
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12141335602153125974
@@ -224,6 +354,9 @@ Objects {
       Value: "mc:etriggershape:sphere"
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3390603111803253005
@@ -256,6 +389,9 @@ Objects {
     ScriptAsset {
       Id: 9347120956085322557
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -306,6 +442,9 @@ Objects {
       Id: 16856907705825859721
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 14632867372866985088
@@ -330,7 +469,7 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13420344242969750217
+      key: 6915295634471237557
       value {
         Overrides {
           Name: "Name"
@@ -347,7 +486,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 3.41509485e-06
+            Yaw: -90
           }
         }
       }
@@ -355,6 +494,9 @@ Objects {
     TemplateAsset {
       Id: 13871905926012633814
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -384,6 +526,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Nav Mesh Examples"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -434,6 +579,9 @@ Objects {
       Id: 10865712227348858218
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1344975834569243168
@@ -479,6 +627,9 @@ Objects {
       Id: 16066761088996544839
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8960121642570163487
@@ -496,9 +647,6 @@ Objects {
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -568,6 +716,12 @@ Objects {
       BoundsScale: 1
     }
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10814856016544842835
@@ -612,6 +766,12 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -664,6 +824,9 @@ Objects {
       Id: 6315282414521107012
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12609626201918956826
@@ -687,6 +850,23 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 10712048401921490027
+      value {
+        Overrides {
+          Name: "cs:dragon"
+          AssetReference {
+            Id: 17050735024831803416
+          }
+        }
+        Overrides {
+          Name: "cs:dragon2"
+          AssetReference {
+            Id: 12289948636585524752
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11087910991482916188
       value {
         Overrides {
@@ -708,9 +888,40 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 13694070051491507156
+      value {
+        Overrides {
+          Name: "cs:dragon"
+          AssetReference {
+            Id: 17050735024831803416
+          }
+        }
+        Overrides {
+          Name: "cs:dragon2"
+          AssetReference {
+            Id: 12289948636585524752
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17273675542722940683
+      value {
+        Overrides {
+          Name: "cs:boss"
+          AssetReference {
+            Id: 4387376087455589076
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 5833215658979884152
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -760,6 +971,9 @@ Objects {
       Id: 8021293717559119783
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13597343280155166883
@@ -806,6 +1020,12 @@ Objects {
       BoundsScale: 1
     }
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10042660642575499168
@@ -846,6 +1066,9 @@ Objects {
     TemplateAsset {
       Id: 4756578052963464500
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -894,6 +1117,9 @@ Objects {
     TemplateAsset {
       Id: 11605537577419815467
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -945,6 +1171,9 @@ Objects {
     TemplateAsset {
       Id: 276274853970815746
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1003,6 +1232,9 @@ Objects {
       Id: 18142229377255761157
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3538431840451759927
@@ -1036,6 +1268,9 @@ Objects {
     OctreeDepth: 5
     GeneratorID: "DEPRECATED:{\"ver\":2,\"gen\":\"heightmap_rocky_mountains_003\",\"save\":\"terrain_03.vox\",\"params\":{\"HeightOffset\":\"0.0\",\"HeightScale\":\"1.3\"}}"
     MaxLOD: 32
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1071,6 +1306,9 @@ Objects {
       }
       StartSpawned: true
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1153,6 +1391,9 @@ Objects {
       PlayerMasterVolumeMultiplier: 1
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17291645154688535786
@@ -1187,6 +1428,11 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 3
     PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1222,6 +1468,11 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 3
     PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1252,6 +1503,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1301,5 +1555,8 @@ Objects {
     MinPitch: -89
     MaxPitch: 89
     UseAsAudioListener: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

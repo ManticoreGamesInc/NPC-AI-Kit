@@ -2,7 +2,7 @@ Assets {
   Id: 16163906830799498936
   Name: "Tower - Shaman Green"
   PlatformAssetType: 13
-  SerializationVersion: 100
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 10947420106784256873
     ParameterOverrides {

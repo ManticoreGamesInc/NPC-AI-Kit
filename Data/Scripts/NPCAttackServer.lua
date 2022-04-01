@@ -16,7 +16,7 @@ function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerH
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
 function LOOT_DROP_FACTORY() return MODULE.Get_Optional("standardcombo.NPCKit.LootDropFactory") end
 
-
+---@type DamageableObject
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
 local DAMAGE_TO_PLAYERS = script:GetCustomProperty("DamageToPlayers") or 1
@@ -37,9 +37,6 @@ local REWARD_RESOURCE_TYPE = ROOT:GetCustomProperty("RewardResourceType")
 local REWARD_RESOURCE_AMOUNT = ROOT:GetCustomProperty("RewardResourceAmount")
 
 local LOOT_ID = ROOT:GetCustomProperty("LootId")
-
-local attackCooldown = 2
-local cooldownRemaining = 0
 
 local projectileImpactListener = nil
 
@@ -68,7 +65,6 @@ end
 function Attack(target)
 	if target:IsA("Player") and PLAYER_HOMING_TARGETS() then
 		target = PLAYER_HOMING_TARGETS().GetTargetForPlayer(target)
-		
 	elseif target.context and target.context.HOMING_TARGET then
 		target = target.context.HOMING_TARGET
 	end
@@ -137,7 +133,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 		position = pos,
 		rotation = rot,
 		tags = tagData
-		}
+	}
 
 	-- Apply the damage
 	COMBAT().ApplyDamage(attackData)
@@ -171,8 +167,7 @@ function SpawnAsset(template, pos, rot)
 end
 
 
-function OnDestroyed(obj)
-	--print("OnDestroyed()")
+function OnDestroyed(r)
 	CleanupProjectileListener()
 end
 ROOT.destroyEvent:Connect(OnDestroyed)
@@ -180,7 +175,7 @@ ROOT.destroyEvent:Connect(OnDestroyed)
 -- Damage / destructible
 
 local id = DESTRUCTIBLE_MANAGER().Register(script)
-ROOT:SetNetworkedCustomProperty("ObjectId", id)
+ROOT:SetCustomProperty("ObjectId", id)
 
 function ApplyDamage(attackData)
 	local dmg = attackData.damage
@@ -231,7 +226,6 @@ function ApplyDamage(attackData)
 		end
 
 		-- Events
-
 		Events.Broadcast("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation, source)
 		Events.BroadcastToAllPlayers("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation)
 
@@ -241,19 +235,16 @@ function ApplyDamage(attackData)
 
 			DropRewards(source)
 		end
-
-	--print(ROOT.name .. " Health = " .. newHealth)
 	end
 end
 
 function GetHealth()
-	return ROOT:GetCustomProperty("CurrentHealth")
+	return ROOT.hitPoints
 end
 
 function SetHealth(value)
-	ROOT:SetNetworkedCustomProperty("CurrentHealth", value)
+	ROOT.hitPoints = value
 end
-
 
 function DropRewards(killer)
 	-- Give resources

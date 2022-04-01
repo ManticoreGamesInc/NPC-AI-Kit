@@ -44,10 +44,10 @@ Assets {
   }
   Marketplace {
     Id: "913d4f30e0254eb6990ea60f984aad8a"
-    OwnerAccountId: "901b7628983c4c8db4282f24afeda57a"
-    OwnerName: "Buckmonster"
+    OwnerAccountId: "deaddeadcafecafedeaddeadcafecafe"
+    OwnerName: "_UnknownCreator"
     Version: "1.0.0"
     Description: "Core All-Mid MOBABoss Template - Use this content to create  your own big bad. See the README_BOSS.lua for how to use. Hit @Buckmonster up in Discord with any questons. "
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

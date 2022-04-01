@@ -3,6 +3,8 @@ Assets {
   Name: "CombatWrapPlayer"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

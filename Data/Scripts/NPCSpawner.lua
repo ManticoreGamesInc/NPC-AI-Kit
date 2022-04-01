@@ -50,7 +50,7 @@ function Spawn()
 			local rot = point:GetWorldRotation()
 			
 			local newMinion = World.SpawnAsset(minionTemplate, {position = pos, rotation = rot})
-			newMinion:SetNetworkedCustomProperty("Team", TEAM)
+			newMinion:SetCustomProperty("Team", TEAM)
 			
 			if SPAWN_VFX then
 				SpawnVisualEffect(SPAWN_VFX, pos, rot)

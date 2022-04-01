@@ -50,7 +50,7 @@ local ATTACK_RECOVERY_TIME = ROOT:GetCustomProperty("AttackRecovery") or 1.5
 local ATTACK_COOLDOWN = ROOT:GetCustomProperty("AttackCooldown") or 0
 local OBJECTIVE_THRESHOLD_DISTANCE_SQUARED = 900
 
-MAX_HEALTH = ROOT:GetCustomProperty("CurrentHealth")
+MAX_HEALTH = ROOT.maxHitPoints
 
 local PATHING_STEP = MOVE_SPEED * LOGICAL_PERIOD + 10
 local PATHING_STEP_SQUARED = PATHING_STEP * PATHING_STEP
@@ -170,7 +170,7 @@ function SetState(newState)
 	stateTime = 0
 	
 	if Object.IsValid(ROOT) then
-		ROOT:SetNetworkedCustomProperty("CurrentState", newState)
+		ROOT:SetCustomProperty("CurrentState", newState)
 	end
 end
 
@@ -1011,9 +1011,56 @@ function HandleTeamChanged()
 end
 HandleTeamChanged()
 
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 
 
 NPC_MANAGER().Register(script)
 NPC_MANAGER().RegisterCollider(script, COLLIDER)
 
+local damageable = ROOT
+if (not damageable:IsA("DamageableObject")) then
+	damageable = ROOT:FindDescendantByName("DamageableObject")
+end
+
+if (damageable) then
+	NPC_MANAGER().RegisterDamagable(script, damageable)
+end
+
+function NPCDamageHook(obj, damage)
+	-- Intercept damage done to the NPC, pass it through to the combat wrapper which will properly process and then apply the damage.
+	-- Using special damage reason 99 to mean "we've received this damage and piped it through"
+	if (damage.reason ~= 99) then
+		-- we got this damage externally - duplicate the damage object and pipe it through the combat wrapper
+		local newDamage = Damage.New(damage.amount)
+		newDamage.reason = 99
+		newDamage.sourceAbility = damage.sourceAbility
+		newDamage.sourcePlayer = damage.sourcePlayer
+		newDamage:SetHitResult(damage:GetHitResult())
+		damage.amount = 0
+		local abilityTags = {}
+		if (newDamage.sourceAbility and newDamage.sourceAbility.serverUserData.combatTags) then
+			abilityTags = newDamage.sourceAbility.serverUserData.combatTags
+		end
+
+		local attackData = {
+			object = obj,
+			damage = newDamage,
+			source = newDamage.sourcePlayer,
+			position = damage:GetHitResult():GetImpactPosition(),
+			rotation = damage:GetHitResult():GetTransform():GetRotation(),
+			tags = abilityTags -- if the damage came in so directly like this, forward along any combatTags from the ability
+		}
+		-- now, send this to the combat wrapper
+		COMBAT().ApplyDamage(attackData)
+	else
+		-- Otherwise, this is actual damage that we just let pass through
+		-- If this damage kills us, set our state to DEAD_1
+		if (obj.hitPoints - damage.amount <= 0) then
+			SetState(STATE_DEAD_1)
+		end
+	end
+end
+
+if (damageable) then
+	damageable.damageHook:Connect(NPCDamageHook)
+end

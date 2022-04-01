@@ -28,6 +28,9 @@ Objects {
   NetworkContext {
     Type: Server
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 8052030022434635943
@@ -59,6 +62,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Area 1_1"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -103,5 +109,8 @@ Objects {
     ScriptAsset {
       Id: 7143566628578328847
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

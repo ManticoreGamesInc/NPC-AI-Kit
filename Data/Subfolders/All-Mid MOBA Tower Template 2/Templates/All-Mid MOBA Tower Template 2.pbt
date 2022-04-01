@@ -44,10 +44,10 @@ Assets {
   }
   Marketplace {
     Id: "86b0cc88b70f422ebab3a9101936882c"
-    OwnerAccountId: "901b7628983c4c8db4282f24afeda57a"
-    OwnerName: "Buckmonster"
+    OwnerAccountId: "deaddeadcafecafedeaddeadcafecafe"
+    OwnerName: "_UnknownCreator"
     Version: "1.0.0"
     Description: "Core All-Mid MOBA Tower Template #2 - Use this template to create your own towers. See the README_TOWER.lua for how to use. Hit @Buckmonster up in Discord with any questons\r\n\r\nBuilt from Spell Shock tower.  "
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

@@ -819,8 +819,7 @@ function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotati
 	Object.IsValid(sourceObject) and
 	dmgAmount > 0 then
 		-- Behavior where NPC changes target if being attacked by another target that's closer
-		local myId = ROOT:GetCustomProperty("ObjectId")
-		if myId == id then
+		if ROOT.id == id then
 			local myPos = script:GetWorldPosition()
 			local distanceToCurrentTarget = (target:GetWorldPosition() - myPos).sizeSquared
 			local distanceToNewTarget = (sourceObject:GetWorldPosition() - myPos).sizeSquared
@@ -929,11 +928,8 @@ end
 
 
 function OnObjectDestroyed(id)
-	if IsAlive() then
-		local myId = ROOT:GetCustomProperty("ObjectId")
-		if myId == id then
-			SetState(STATE_DEAD_1)
-		end
+	if IsAlive() and ROOT.id == id then
+		SetState(STATE_DEAD_1)
 	end
 end
 

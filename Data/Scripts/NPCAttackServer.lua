@@ -9,8 +9,6 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-require( script:GetCustomProperty("DestructibleManager") )
-function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
 function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
@@ -174,8 +172,7 @@ ROOT.destroyEvent:Connect(OnDestroyed)
 
 -- Damage / destructible
 
-local id = DESTRUCTIBLE_MANAGER().Register(script)
-ROOT:SetCustomProperty("ObjectId", id)
+local id = ROOT.id
 
 function ApplyDamage(attackData)
 	local dmg = attackData.damage

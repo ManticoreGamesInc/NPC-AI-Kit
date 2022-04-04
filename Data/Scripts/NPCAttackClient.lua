@@ -38,7 +38,7 @@ ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 
 function GetID()
 	if Object.IsValid(ROOT) then
-		return ROOT:GetCustomProperty("ObjectId")
+		return ROOT.id
 	end
 	return nil
 end

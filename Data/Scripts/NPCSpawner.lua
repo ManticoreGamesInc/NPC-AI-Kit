@@ -36,6 +36,13 @@ function Cleanup()
 	end
 end
 
+function OnMinionDestroyed(m)
+	if minions and minions[m.id] then
+		minions[m.id] = nil
+		minionCount = minionCount - 1
+	end
+end
+
 function Spawn()
 	if spawnPoints == nil then return end
 	
@@ -66,10 +73,11 @@ function Spawn()
 				return
 			end
 			
-			local minionId = newMinion:GetCustomProperty("ObjectId")
+			local minionId = newMinion.id
 
 			minions[minionId] = newMinion
 			minionCount = minionCount + 1
+			newMinion.destroyEvent:Connect(OnMinionDestroyed)
 		end
 	end
 	

@@ -38,6 +38,7 @@ Objects {
   ChildIds: 2619800446382357304
   ChildIds: 12259239172876134516
   ChildIds: 4017645822016985933
+  ChildIds: 6867585062383553456
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -53,6 +54,52 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 6867585062383553456
+  Name: "Advanced Rocket Launcher"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5859559678705062760
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Advanced Rocket Launcher"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 20751.6953
+            Y: -16827.8633
+            Z: 2659.94043
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12990255680143252995
+    }
   }
 }
 Objects {

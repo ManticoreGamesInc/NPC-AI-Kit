@@ -20,10 +20,6 @@ Assets {
         ChildIds: 17461823946585664000
         UnregisteredParameters {
           Overrides {
-            Name: "cs:ObjectId"
-            Int: 0
-          }
-          Overrides {
             Name: "cs:Team"
             Int: 1
           }
@@ -102,18 +98,6 @@ Assets {
           Overrides {
             Name: "cs:RewardResourceAmount"
             Int: 50
-          }
-          Overrides {
-            Name: "cs:ObjectId:tooltip"
-            String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
-          }
-          Overrides {
-            Name: "cs:ObjectId:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:ObjectId:ml"
-            Bool: false
           }
           Overrides {
             Name: "cs:Team:tooltip"

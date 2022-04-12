@@ -1,6 +1,6 @@
 Assets {
   Id: 11648858493260325809
-  Name: "DamageBroadcaster"
+  Name: "DamageFeedbackServer"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

@@ -911,13 +911,13 @@ Objects {
         Overrides {
           Name: "cs:dragon"
           AssetReference {
-            Id: 17050735024831803416
+            Id: 8943910556254534449
           }
         }
         Overrides {
           Name: "cs:dragon2"
           AssetReference {
-            Id: 12289948636585524752
+            Id: 13441300675391799547
           }
         }
       }
@@ -950,13 +950,13 @@ Objects {
         Overrides {
           Name: "cs:dragon"
           AssetReference {
-            Id: 17050735024831803416
+            Id: 8943910556254534449
           }
         }
         Overrides {
           Name: "cs:dragon2"
           AssetReference {
-            Id: 12289948636585524752
+            Id: 13871905926012633814
           }
         }
       }
@@ -967,7 +967,7 @@ Objects {
         Overrides {
           Name: "cs:boss"
           AssetReference {
-            Id: 4387376087455589076
+            Id: 16596380378274474908
           }
         }
       }

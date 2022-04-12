@@ -382,7 +382,7 @@ Assets {
           Overrides {
             Name: "cs:dragon2"
             AssetReference {
-              Id: 16856907705825859721
+              Id: 13871905926012633814
             }
           }
         }
@@ -426,7 +426,7 @@ Assets {
           Overrides {
             Name: "cs:dragon"
             AssetReference {
-              Id: 16856907705825859721
+              Id: 8943910556254534449
             }
           }
           Overrides {

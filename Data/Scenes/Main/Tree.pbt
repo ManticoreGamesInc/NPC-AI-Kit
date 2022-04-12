@@ -715,6 +715,15 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 16487936699547486300
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DamageFeedbackServer"
+        }
+      }
+    }
     TemplateAsset {
       Id: 2087257134469971969
     }

@@ -165,7 +165,7 @@ function SpawnAsset(template, pos, rot)
 end
 
 
-function OnDestroyed(r)
+function OnDestroyed(obj)
 	CleanupProjectileListener()
 end
 ROOT.destroyEvent:Connect(OnDestroyed)

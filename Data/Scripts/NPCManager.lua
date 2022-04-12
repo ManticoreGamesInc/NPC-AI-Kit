@@ -19,7 +19,6 @@ function API.Register(npc)
 	if (not allNPCs[npc]) then
 		allNPCs[npc] = true
 		
-
 		npc.destroyEvent:Connect(OnDestroyed)
 	end
 end
@@ -72,6 +71,7 @@ function API.FindInSphere(position, radius, parameters)
 	end
 	return result
 end
+
 
 function OnDestroyed(obj)
 	-- Clear collider references

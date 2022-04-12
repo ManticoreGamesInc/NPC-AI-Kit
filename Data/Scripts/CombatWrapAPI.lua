@@ -81,7 +81,7 @@ function API.ApplyDamage(attackData)
 
 			Events.Broadcast("CombatWrapAPI.OnDamageTaken", attackData)
 
-			if (API.IsDead(object)) then
+			if API.IsDead(object) then
 				Events.Broadcast("CombatWrapAPI.ObjectHasDied", attackData)
 			end
 		end

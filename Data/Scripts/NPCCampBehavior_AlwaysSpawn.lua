@@ -19,6 +19,7 @@ local firstTime = true
 
 function Tick()
 	Task.Wait(1)
+	
 	if (CAMP_SPAWNER.context.minionCount == 0) then
 		if firstTime then
 			firstTime = false

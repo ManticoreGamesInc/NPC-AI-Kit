@@ -33,6 +33,9 @@ Assets {
             Id: 9945787143985893269
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 15083192012000852283
@@ -64,6 +67,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 16611125271677778775
@@ -93,6 +99,9 @@ Assets {
           ScriptAsset {
             Id: 12664807901734619296
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -136,6 +145,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 4905451867655240875
@@ -174,6 +186,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 13523941230994555401
@@ -203,6 +218,9 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -250,6 +268,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 5846544072541239492
@@ -292,6 +313,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 13595394515952630971
@@ -321,6 +345,9 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -368,6 +395,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 6784145156045657251
@@ -410,6 +440,9 @@ Assets {
             Id: 12664807901734619296
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     PrimaryAssetId {
@@ -420,6 +453,6 @@ Assets {
   Marketplace {
     Description: "Spawns random loot drops from a customizable data set.\r\n\r\nComes with 5 different loot drops split into Common, Uncommon and Rare groups.\r\n\r\nSee comments for more information on usage."
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
   DirectlyPublished: true
 }

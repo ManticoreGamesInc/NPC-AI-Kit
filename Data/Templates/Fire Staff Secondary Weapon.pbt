@@ -74,6 +74,8 @@ Assets {
             ReticleType {
               Value: "mc:ereticletype:none"
             }
+            AttackSfxAssetRef {
+            }
             MaxAmmo: -1
             AmmoType: "mana"
             MultiShot: 1
@@ -94,6 +96,9 @@ Assets {
             ReloadAbility {
             }
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -175,6 +180,9 @@ Assets {
           KeyBinding_v2 {
             Value: "mc:egameaction:secondaryaction"
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -280,6 +288,9 @@ Assets {
             Id: 14833591210904054161
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 12823801200351659207
@@ -310,6 +321,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -355,6 +369,9 @@ Assets {
             Id: 14172904023482792809
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -371,5 +388,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

@@ -33,6 +33,9 @@ Assets {
         Folder {
           IsGroup: true
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 17055249375078304889
@@ -166,6 +169,9 @@ Assets {
             Id: 7887238662729938253
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
       Objects {
         Id: 3741704899867561465
@@ -210,6 +216,9 @@ Assets {
           BlueprintAsset {
             Id: 11515840070784317904
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -284,6 +293,9 @@ Assets {
             Id: 16910278292812118833
           }
         }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -318,5 +330,5 @@ Assets {
       AssetId: "Sky_Cape_Canaveral"
     }
   }
-  SerializationVersion: 100
+  SerializationVersion: 110
 }

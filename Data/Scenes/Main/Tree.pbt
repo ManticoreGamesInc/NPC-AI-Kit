@@ -50,6 +50,9 @@ Objects {
   }
   Folder {
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4409323285129654815
@@ -82,6 +85,9 @@ Objects {
     TemplateAsset {
       Id: 4779393545089479649
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -118,6 +124,9 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -183,6 +192,12 @@ Objects {
       BoundsScale: 1
     }
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12141335602153125974
@@ -224,6 +239,9 @@ Objects {
       Value: "mc:etriggershape:sphere"
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3390603111803253005
@@ -256,6 +274,9 @@ Objects {
     ScriptAsset {
       Id: 9347120956085322557
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -305,6 +326,9 @@ Objects {
     TemplateAsset {
       Id: 16856907705825859721
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -356,6 +380,9 @@ Objects {
       Id: 13871905926012633814
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 9389851728142449426
@@ -384,6 +411,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Nav Mesh Examples"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -434,6 +464,9 @@ Objects {
       Id: 10865712227348858218
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 1344975834569243168
@@ -478,6 +511,9 @@ Objects {
     TemplateAsset {
       Id: 16066761088996544839
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -524,6 +560,9 @@ Objects {
       Id: 2087257134469971969
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 5080541240374345495
@@ -567,6 +606,12 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -612,6 +657,12 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -664,6 +715,9 @@ Objects {
       Id: 6315282414521107012
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 12609626201918956826
@@ -711,6 +765,9 @@ Objects {
     TemplateAsset {
       Id: 5833215658979884152
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -760,6 +817,9 @@ Objects {
       Id: 8021293717559119783
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 13597343280155166883
@@ -806,6 +866,12 @@ Objects {
       BoundsScale: 1
     }
   }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 10042660642575499168
@@ -846,6 +912,9 @@ Objects {
     TemplateAsset {
       Id: 4756578052963464500
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -894,6 +963,9 @@ Objects {
     TemplateAsset {
       Id: 11605537577419815467
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -945,6 +1017,9 @@ Objects {
     TemplateAsset {
       Id: 276274853970815746
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1003,6 +1078,9 @@ Objects {
       Id: 18142229377255761157
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 3538431840451759927
@@ -1036,6 +1114,9 @@ Objects {
     OctreeDepth: 5
     GeneratorID: "DEPRECATED:{\"ver\":2,\"gen\":\"heightmap_rocky_mountains_003\",\"save\":\"terrain_03.vox\",\"params\":{\"HeightOffset\":\"0.0\",\"HeightScale\":\"1.3\"}}"
     MaxLOD: 32
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1071,6 +1152,9 @@ Objects {
       }
       StartSpawned: true
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1153,6 +1237,9 @@ Objects {
       PlayerMasterVolumeMultiplier: 1
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17291645154688535786
@@ -1187,6 +1274,11 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 3
     PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1222,6 +1314,11 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 3
     PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1252,6 +1349,9 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1301,5 +1401,8 @@ Objects {
     MinPitch: -89
     MaxPitch: 89
     UseAsAudioListener: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

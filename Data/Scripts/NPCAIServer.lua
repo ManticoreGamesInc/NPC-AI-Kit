@@ -938,17 +938,12 @@ function OnObjectDied(attackData)
 end
 
 local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
-local destroyedListener = Events.Connect("CombatWrapAPI.ObjectHasDied", OnObjectDied)
 
 function Cleanup()
 	--print("Cleanup()")
 	if damagedListener then
 		damagedListener:Disconnect()
 		damagedListener = nil
-	end
-	if destroyedListener then
-		destroyedListener:Disconnect()
-		destroyedListener = nil
 	end
 end
 

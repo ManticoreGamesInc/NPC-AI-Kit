@@ -33,3 +33,6 @@ Thumbs.db
 
 # Local History for Visual Studio Code
 .history/
+
+# Visual Studio
+Data/Scripts/.vs/

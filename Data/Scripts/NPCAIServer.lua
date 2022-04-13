@@ -802,7 +802,11 @@ function IsAlive()
 end
 
 
-function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
+function OnDamageTaken(attackData)
+	local dmgAmount = attackData.damage.amount
+	local sourceObject = attackData.source
+	local impactPosition = attackData.position
+	
 	if engageCooldown > 0 then return end
 	
 	if currentState == STATE_SLEEPING or 
@@ -819,7 +823,7 @@ function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotati
 	Object.IsValid(sourceObject) and
 	dmgAmount > 0 then
 		-- Behavior where NPC changes target if being attacked by another target that's closer
-		if ROOT.id == id then
+		if attackData.object == ROOT then
 			local myPos = script:GetWorldPosition()
 			local distanceToCurrentTarget = (target:GetWorldPosition() - myPos).sizeSquared
 			local distanceToNewTarget = (sourceObject:GetWorldPosition() - myPos).sizeSquared
@@ -927,14 +931,14 @@ function PlayEngageEffect()
 end
 
 
-function OnObjectDestroyed(id)
-	if IsAlive() and ROOT.id == id then
+function OnObjectDied(attackData)
+	if attackData.object == ROOT and IsAlive() then
 		SetState(STATE_DEAD_1)
 	end
 end
 
-local damagedListener = Events.Connect("ObjectDamaged", OnObjectDamaged)
-local destroyedListener = Events.Connect("ObjectDestroyed", OnObjectDestroyed)
+local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
+local destroyedListener = Events.Connect("CombatWrapAPI.ObjectHasDied", OnObjectDied)
 
 function Cleanup()
 	--print("Cleanup()")

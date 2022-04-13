@@ -172,68 +172,13 @@ ROOT.destroyEvent:Connect(OnDestroyed)
 
 -- Damage / destructible
 
-local id = ROOT.id
-
-function ApplyDamage(attackData)
-	local dmg = attackData.damage
-	local amount = dmg.amount
-	local position = attackData.position
-	local rotation = attackData.rotation
-	local source = attackData.source
-
-	if (amount ~= 0) then
-		local prevHealth = GetHealth()
-		local newHealth = prevHealth - amount
-		SetHealth(newHealth)
-
-		local hitResult = dmg:GetHitResult()
-
-		-- Determine best value for impact position
-		local impactPosition
-
-		if not position and hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then
-			impactPosition = hitResult:GetImpactPosition()
-		elseif position then
-			impactPosition = position
-		else
-			impactPosition = script:GetWorldPosition()
-		end
-
-		-- Determine best value for impact rotation
-		local impactRotation = Rotation.New()
-		if hitResult then
-			impactRotation = hitResult:GetTransform():GetRotation()
-		elseif rotation then
-			impactRotation = rotation
-		end
-
-		-- Source position
-		local sourcePosition = nil
-		if Object.IsValid(source) then
-			sourcePosition = source:GetWorldPosition()
-		end
-
-		-- Effects
-		local spawnedVfx = nil
-
-		if (newHealth <= 0 and DESTROY_FX) then
-			SpawnAsset(DESTROY_FX, impactPosition, impactRotation)
-		elseif DAMAGE_FX then
-			SpawnAsset(DAMAGE_FX, impactPosition, impactRotation)
-		end
-
-		-- Events
-		Events.Broadcast("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation, source)
-		Events.BroadcastToAllPlayers("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation)
-
-		if (newHealth <= 0) then
-			Events.Broadcast("ObjectDestroyed", id)
-			Events.BroadcastToAllPlayers("ObjectDestroyed", id)
-
-			DropRewards(source)
-		end
+function OnObjectDied(attackData)
+	if attackData.object == ROOT then
+		local source = attackData.source
+		DropRewards(source)
 	end
 end
+Events.Connect("CombatWrapAPI.ObjectHasDied", OnObjectDied)
 
 function GetHealth()
 	return ROOT.hitPoints

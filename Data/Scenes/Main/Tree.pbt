@@ -39,6 +39,7 @@ Objects {
   ChildIds: 12259239172876134516
   ChildIds: 4017645822016985933
   ChildIds: 6867585062383553456
+  ChildIds: 258331524506487193
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -54,6 +55,41 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 258331524506487193
+  Name: "RPG Raptor"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2691092598115470187
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Raptor"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 23150
+            Y: -10550
+            Z: 2125
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13441300675391799547
+    }
   }
 }
 Objects {

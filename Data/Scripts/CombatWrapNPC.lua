@@ -134,19 +134,19 @@ function wrapper.ApplyDamage(attackData)
 	end
 
 	attackData.damage.reason = 99 -- an override that tells the system we have processed this damage
-	local DAMAGABLE_ROOT = attackData.object
+	local damageableRoot = attackData.object
 
 	-- Check the given object, its template root, and then its entire hierarchy for a Damageable
-	-- If none are damageables, then DAMAGABLE_ROOT will be nil, and no damage will go through.
-	if (not DAMAGABLE_ROOT:IsA("DamageableObject")) then
-		DAMAGABLE_ROOT = DAMAGABLE_ROOT:FindTemplateRoot()
-		if (not DAMAGABLE_ROOT:IsA("DamageableObject")) then
-			DAMAGABLE_ROOT = DAMAGABLE_ROOT:FindTemplateRoot():FindDescendantByType("DamageableObject")
+	-- If none are damageables, then damageableRoot will be nil, and no damage will go through.
+	if (not damageableRoot:IsA("DamageableObject")) then
+		damageableRoot = damageableRoot:FindTemplateRoot()
+		if (not damageableRoot:IsA("DamageableObject")) then
+			damageableRoot = damageableRoot:FindTemplateRoot():FindDescendantByType("DamageableObject")
 		end
 	end
 
-	if (DAMAGABLE_ROOT) then
-		DAMAGABLE_ROOT:ApplyDamage(attackData.damage)
+	if damageableRoot then
+		damageableRoot:ApplyDamage(attackData.damage)
 	end
 end
 

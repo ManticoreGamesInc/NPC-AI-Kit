@@ -154,14 +154,14 @@ function SpawnAsset(template, pos, rot)
 		return
 	end
 
-	CROSS_CONTEXT_CALLER().Call(
-		function()
-			local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
-			if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
-				spawnedVfx.lifeSpan = 1.5
-			end
-		end
-	)
+	local spawnedVfx = World.SpawnAsset(template, {
+		position = pos,
+		rotation = rot,
+		networkContext = NetworkContextType.NETWORKED
+	})
+	if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
+		spawnedVfx.lifeSpan = 1.5
+	end
 end
 
 

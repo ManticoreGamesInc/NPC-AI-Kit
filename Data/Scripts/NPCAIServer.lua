@@ -872,13 +872,10 @@ function DoLookAround()
 end
 
 function RootRotateTo(rotation, speed, isLocalSpace)
-	--CROSS_CONTEXT_CALLER().Call(function()
 	ROTATION_ROOT:RotateTo(rotation, speed, isLocalSpace)
-	--end)
 end
 
 function RootLookAtContinuous(targetObj, lockPitch, speed)
-	--CROSS_CONTEXT_CALLER().Call(function()
 	if targetObj.isServerOnly and targetObj.parent and 
 	not targetObj.parent.isServerOnly then
 		targetObj = targetObj.parent
@@ -895,13 +892,10 @@ function RootLookAtContinuous(targetObj, lockPitch, speed)
 		
 		ROTATION_ROOT:RotateTo(rot, GetRotateToTurnSpeed(), false)
 	end
-	--end)
 end
 
 function RootStopRotate()
-	--CROSS_CONTEXT_CALLER().Call(function()
 	ROTATION_ROOT:StopRotate()
-	--end)
 end
 
 function GetRotateToTurnSpeed()
@@ -926,10 +920,10 @@ end
 
 function PlayEngageEffect()
 	if ENGAGE_EFFECT then
-		CROSS_CONTEXT_CALLER().Call(function()
-			local pos = script:GetWorldPosition()
-			World.SpawnAsset(ENGAGE_EFFECT, {position = pos})
-		end)
+		World.SpawnAsset(ENGAGE_EFFECT, {
+			position = script:GetWorldPosition(),
+			networkContext = NetworkContextType.NETWORKED
+		})
 	end
 end
 

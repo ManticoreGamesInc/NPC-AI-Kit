@@ -47,34 +47,17 @@ function GetID()
 	return nil
 end
 
-function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
-	-- Ignore other NPCs, make sure this event is for us
-	if id == GetID() then
-		SpawnAsset(DAMAGE_FX, impactPosition, impactRotation)
-	end
-end
 
-function OnObjectDestroyed(id)
-	-- Ignore other NPCs, make sure this event is for us
-	--if id == GetID() then
-		--SpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())
-	--end
+function OnDamaged(_, _)
+	SpawnAsset(DAMAGE_FX, script:GetWorldPosition(), script:GetWorldRotation())
 end
-
-local damagedListener = Events.Connect("ObjectDamaged", OnObjectDamaged)
-local destroyedListener = Events.Connect("ObjectDestroyed", OnObjectDestroyed)
+ROOT.damagedEvent:Connect(OnDamaged)
 
 
 function OnDestroyed(obj)
-	if Object.IsValid(damagedListener) then
-		damagedListener:Disconnect()
-	end
-	
-	if Object.IsValid(destroyedListener) then
-		destroyedListener:Disconnect()
-	end
+	-- nothing at the moment
 end
-ROOT.destroyEvent:Connect(OnDestroyed)
+--ROOT.destroyEvent:Connect(OnDestroyed)
 
 
 function UpdateColliderTeam(team)

@@ -1,6 +1,6 @@
 --[[
 	NavMesh
-	v1.0.1
+	v1.0.1-b
 	by: Waffle
 	
 	This provides an interface for finding a path between two points on a navigation mesh created by NavMeshGenerator.
@@ -70,6 +70,10 @@ end}
 
 function NavMesh.FindPath(startPoint, endPoint)
 	local startNode = pointToNode(startPoint)
+	if startNode.connectedRectangles == nil
+	or #startNode.connectedRectangles == 0 then
+		return {}
+	end
 	local endNode = pointToNode(endPoint, startNode.connectedRectangles[1].parent)
 	local endRectangles = {}
 	for _, rect in pairs(endNode.connectedRectangles) do

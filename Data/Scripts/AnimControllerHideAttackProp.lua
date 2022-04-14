@@ -37,5 +37,5 @@ function OnPropertyChanged(object, propertyName)
 		UpdateArt(GetCurrentState())
 	end
 end
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 

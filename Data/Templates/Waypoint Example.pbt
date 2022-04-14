@@ -294,7 +294,7 @@ Assets {
           Overrides {
             Name: "cs:DevMinion"
             AssetReference {
-              Id: 18176330156260336344
+              Id: 8874753243177893219
             }
           }
         }
@@ -338,19 +338,19 @@ Assets {
           Overrides {
             Name: "cs:DevMinion"
             AssetReference {
-              Id: 9727190433052104706
+              Id: 12376745787390098485
             }
           }
           Overrides {
             Name: "cs:RPGSkeletonUnarmed"
             AssetReference {
-              Id: 8009193024378365869
+              Id: 18343431396922342877
             }
           }
           Overrides {
             Name: "cs:RPGSkeletonUnarmed_1"
             AssetReference {
-              Id: 8009193024378365869
+              Id: 9351087071380283443
             }
           }
         }
@@ -394,7 +394,7 @@ Assets {
           Overrides {
             Name: "cs:DevMinion"
             AssetReference {
-              Id: 7194780003691091213
+              Id: 9351087071380283443
             }
           }
         }

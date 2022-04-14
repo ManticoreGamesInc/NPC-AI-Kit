@@ -66,5 +66,5 @@ function OnPropertyChanged(object, propertyName)
 		currentState = newState
 	end
 end
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 

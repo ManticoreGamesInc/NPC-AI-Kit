@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 13420344242969750217
+      RootId: 6876382913933627607
       Objects {
-        Id: 13420344242969750217
+        Id: 6876382913933627607
         Name: "MOBA MinionA"
         Transform {
           Scale {
@@ -16,14 +16,8 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 1975421469936774928
-        ChildIds: 16499610448605528061
-        ChildIds: 7549486370523105032
+        ChildIds: 5027263794690527920
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:ObjectId"
-            Int: 0
-          }
           Overrides {
             Name: "cs:Team"
             Int: 2
@@ -31,10 +25,6 @@ Assets {
           Overrides {
             Name: "cs:CurrentState"
             Int: 0
-          }
-          Overrides {
-            Name: "cs:CurrentHealth"
-            Float: 100
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -113,108 +103,252 @@ Assets {
             Int: 1
           }
           Overrides {
-            Name: "cs:CurrentState:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:CurrentHealth:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:ObjectId:isrep"
-            Bool: true
+            Name: "cs:Team:tooltip"
+            String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
           }
           Overrides {
             Name: "cs:Team:isrep"
             Bool: true
           }
           Overrides {
-            Name: "cs:ObjectId:tooltip"
-            String: "Set at runtime. The NPC Manager dynamically assigns an ID to each NPC so they can know if a networked event pertains to them or to another NPC."
-          }
-          Overrides {
-            Name: "cs:Team:tooltip"
-            String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
+            Name: "cs:Team:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:CurrentState:tooltip"
             String: "Set dynamically at runtime. This is the internal state of the NPC, such as sleeping, engaging, attacking, etc. This networked property coordinates the server and client parts of the NPC."
           }
           Overrides {
-            Name: "cs:CurrentHealth:tooltip"
-            String: "The NPC\'s health/hitpoints. When editing it represents their max and initial health. During runtime it\'s their current health."
+            Name: "cs:CurrentState:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:CurrentState:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:MoveSpeed:tooltip"
             String: "The NPC\'s top movement speed in cm/s. Set to zero for an NPC that doesn\'t move (e.g. Tower or other building)."
           }
           Overrides {
+            Name: "cs:MoveSpeed:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:MoveSpeed:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:PatrolSpeed:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:PatrolSpeed:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:TurnSpeed:tooltip"
             String: "How quickly the NPC rotates to face their target or when searching for the origin of an attack."
+          }
+          Overrides {
+            Name: "cs:TurnSpeed:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:TurnSpeed:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:LogicalPeriod:tooltip"
             String: "To avoid overusing the server\'s CPU the NPC\'s only make decisions periodically. The LogicalPeriod is the length of that interval, in seconds."
           }
           Overrides {
+            Name: "cs:LogicalPeriod:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:LogicalPeriod:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:ReturnToSpawn:tooltip"
             String: "If true, the NPC will try to return to their spawn point after they have nothing to do."
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:VisionHalfAngle:tooltip"
             String: "This is half the vision cone\'s angle. Enemies outside the angle will not be seen. If set to 0 or greater than 360 then the NPC has full vision all around it. A value of 90 degrees would result in a half-sphere of peripheral vision. The smaller the value, the worse is the NPC\'s vision."
           }
           Overrides {
+            Name: "cs:VisionHalfAngle:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:VisionHalfAngle:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:VisionRadius:tooltip"
             String: "The max range of the vision (in centimeters). Enemies at a distance greater than this value will not be seen."
+          }
+          Overrides {
+            Name: "cs:VisionRadius:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:VisionRadius:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:HearingRadius:tooltip"
             String: "If an ally is hit by an attack, the point of impact is compared against the HearingRadius. If closer than this distance, then the NPC will begin a search to find the source of the attack."
           }
           Overrides {
+            Name: "cs:HearingRadius:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:HearingRadius:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:SearchBonusVision:tooltip"
             String: "While searching for an enemy that recently attacked, the NPC can be given a bonus vision range."
+          }
+          Overrides {
+            Name: "cs:SearchBonusVision:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:SearchBonusVision:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:SearchDuration:tooltip"
             String: "Duration, in seconds, if the search pattern."
           }
           Overrides {
+            Name: "cs:SearchDuration:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:SearchDuration:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:PossibilityRadius:tooltip"
             String: "When searching for an enemy that attacked recently, the NPC will scan an area starting at itself then moving in the direction where the attack came from. The PossibilityRadius is the search volume that moves in that direction. A larger value means the NPC has an easier time spotting enemies."
+          }
+          Overrides {
+            Name: "cs:PossibilityRadius:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:PossibilityRadius:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:ChaseRadius:tooltip"
             String: "If engaging an enemy that is outside of attack range, the NPC will give up the chase if the enemy goes further than their ChaseRadius."
           }
           Overrides {
+            Name: "cs:ChaseRadius:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:ChaseRadius:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:AttackRange:tooltip"
             String: "The NPC engages and moves towards a target until that target is within the AttackRange. That\'s when it changes to an Attack state and produces the projectile that is the combat interaction. A smaller attack range means the NPC must get closer before executing an attack."
+          }
+          Overrides {
+            Name: "cs:AttackRange:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:AttackRange:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:AttackCast:tooltip"
             String: "While executing an attack, the AttackCast is the amount of \"windup\" time, in seconds, before the projectile is produced."
           }
           Overrides {
+            Name: "cs:AttackCast:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:AttackCast:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:AttackRecovery:tooltip"
             String: "During an attack, the AttackRecovery time is an amount in seconds after the projectile is created, during which the NPC winds down their attack and essentially does nothing."
+          }
+          Overrides {
+            Name: "cs:AttackRecovery:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:AttackRecovery:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:AttackCooldown:tooltip"
             String: "The AttackCooldown is the minimum amount of time, in seconds, between NPC attacks. If the attack is on cooldown and the target continues within attack range, the NPC will essentially do nothing until the attack cooldown time completes."
           }
           Overrides {
+            Name: "cs:AttackCooldown:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:AttackCooldown:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:IsPushable:tooltip"
             String: "If true, then the NPC can be pushed aside by allied characters if they are trying to occupy the same space."
+          }
+          Overrides {
+            Name: "cs:IsPushable:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:IsPushable:ml"
+            Bool: false
           }
           Overrides {
             Name: "cs:RewardResourceType:tooltip"
             String: "Some NPCs can grant resources to players that kill them. The RewardResourceType is the Type of resource to grant to players."
           }
           Overrides {
+            Name: "cs:RewardResourceType:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:RewardResourceType:ml"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:RewardResourceAmount:tooltip"
             String: "Some NPCs can grant resources to players that kill them. The RewardResourceAmount is the Amount of the resource to grant to players"
+          }
+          Overrides {
+            Name: "cs:RewardResourceAmount:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:RewardResourceAmount:ml"
+            Bool: false
           }
         }
         WantsNetworking: true
@@ -227,11 +361,48 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Folder {
-          IsGroup: true
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        DamageableObject {
+          DamageSettings {
+            MaxHitpoints: 100
+            StartingHitpoints: 100
+            DestroyOnDeath: true
+            DestroyOnDeathDelay: 10
+            DestroyOnDeathClientTemplateId {
+              Id: 841534158063459245
+            }
+            DestroyOnDeathNetworkedTemplateId {
+              Id: 841534158063459245
+            }
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 5027263794690527920
+        Name: "LocalContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6876382913933627607
+        ChildIds: 1975421469936774928
+        ChildIds: 7549486370523105032
+        ChildIds: 16499610448605528061
+        WantsNetworking: true
+        NetworkContext {
+          Type: Local
         }
       }
       Objects {
@@ -249,11 +420,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13420344242969750217
+        ParentId: 5027263794690527920
         ChildIds: 6887995465546052660
         ChildIds: 16188384304550516637
         ChildIds: 15709418385312303354
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -265,9 +435,6 @@ Assets {
         }
         NetworkContext {
           Type: Server
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -286,18 +453,6 @@ Assets {
         }
         ParentId: 1975421469936774928
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13420344242969750217
-            }
-          }
-          Overrides {
-            Name: "cs:RotationRoot"
-            ObjectReference {
-              SubObjectId: 13420344242969750217
-            }
-          }
           Overrides {
             Name: "cs:Collider"
             ObjectReference {
@@ -322,6 +477,18 @@ Assets {
               SubObjectId: 16499610448605528061
             }
           }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6876382913933627607
+            }
+          }
+          Overrides {
+            Name: "cs:RotationRoot"
+            ObjectReference {
+              SubObjectId: 6876382913933627607
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -336,9 +503,6 @@ Assets {
           ScriptAsset {
             Id: 877607263390645540
           }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -360,12 +524,6 @@ Assets {
         }
         ParentId: 1975421469936774928
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13420344242969750217
-            }
-          }
           Overrides {
             Name: "cs:DamageToPlayers"
             Int: 5
@@ -410,6 +568,12 @@ Assets {
             Name: "cs:ProjectileHoming"
             Bool: true
           }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6876382913933627607
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -424,9 +588,6 @@ Assets {
           ScriptAsset {
             Id: 13670653971905386821
           }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -463,74 +624,6 @@ Assets {
             Value: "mc:etriggershape:sphere"
           }
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 16499610448605528061
-        Name: "Collider"
-        Transform {
-          Location {
-            Z: 75
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.3499999
-            Y: 1.35
-            Z: 1.3499999
-          }
-        }
-        ParentId: 13420344242969750217
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Walkable"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 10184847056121543272
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              A: 1
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 1413196292823476264
-          }
-          Teams {
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-            BoundsScale: 1
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7549486370523105032
@@ -546,13 +639,12 @@ Assets {
             Z: 0.75
           }
         }
-        ParentId: 13420344242969750217
+        ParentId: 5027263794690527920
         ChildIds: 11187837617532864305
         ChildIds: 15315419852726087623
         ChildIds: 1354158118407778324
         ChildIds: 13528077646999008078
         ChildIds: 13655684992340290336
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -563,9 +655,6 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -586,12 +675,6 @@ Assets {
         ParentId: 7549486370523105032
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13420344242969750217
-            }
-          }
-          Overrides {
             Name: "cs:GeoRoot"
             ObjectReference {
               SubObjectId: 13655684992340290336
@@ -601,6 +684,12 @@ Assets {
             Name: "cs:ForwardNode"
             ObjectReference {
               SubObjectId: 13528077646999008078
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6876382913933627607
             }
           }
         }
@@ -617,9 +706,6 @@ Assets {
           ScriptAsset {
             Id: 16526478722992756359
           }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -639,12 +725,6 @@ Assets {
         ParentId: 7549486370523105032
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Root"
-            ObjectReference {
-              SubObjectId: 13420344242969750217
-            }
-          }
-          Overrides {
             Name: "cs:DamageFX"
             AssetReference {
               Id: 14594444593454931774
@@ -654,6 +734,12 @@ Assets {
             Name: "cs:DestroyFX"
             AssetReference {
               Id: 14594444593454931774
+            }
+          }
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6876382913933627607
             }
           }
         }
@@ -670,9 +756,6 @@ Assets {
           ScriptAsset {
             Id: 9324991830768780045
           }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -724,7 +807,7 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 13420344242969750217
+              SubObjectId: 6876382913933627607
             }
           }
         }
@@ -742,16 +825,13 @@ Assets {
             Id: 13774761121187526995
           }
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 13528077646999008078
         Name: "ForwardNode"
         Transform {
           Location {
-            X: 100
+            X: 15
             Z: 100
           }
           Rotation {
@@ -774,9 +854,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -812,9 +889,6 @@ Assets {
         Folder {
           IsGroup: true
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 738958589784618796
@@ -836,7 +910,7 @@ Assets {
           Overrides {
             Name: "cs:Root"
             ObjectReference {
-              SubObjectId: 13420344242969750217
+              SubObjectId: 6876382913933627607
             }
           }
         }
@@ -853,9 +927,6 @@ Assets {
           ScriptAsset {
             Id: 1401124806849575098
           }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -891,9 +962,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -944,12 +1012,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 9763482084746014684
@@ -987,9 +1049,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1042,12 +1101,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 2264213651700728248
@@ -1099,12 +1152,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1162,12 +1209,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 12818229629718237543
@@ -1223,12 +1264,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 14031482566107454040
@@ -1259,9 +1294,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1319,12 +1351,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1384,12 +1410,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 16214286239170718929
@@ -1447,12 +1467,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1514,12 +1528,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 3764961223651984741
@@ -1578,12 +1586,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 211131947792773443
@@ -1618,9 +1620,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1671,12 +1670,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 67095755188257073
@@ -1712,9 +1705,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1771,12 +1761,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7542184344487385186
@@ -1832,12 +1816,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1897,12 +1875,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 5298414632095840200
@@ -1935,9 +1907,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1992,12 +1961,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 15868052332946670859
@@ -2051,12 +2014,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 8360024845451734529
@@ -2090,9 +2047,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2152,12 +2106,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 14277258040028273620
@@ -2216,12 +2164,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 13810504472415511875
@@ -2274,12 +2216,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7788710445656343839
@@ -2331,12 +2267,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2398,12 +2328,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 17587254830070131125
@@ -2462,12 +2386,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 14687859017017945348
@@ -2500,9 +2418,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2552,12 +2467,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 17369029463245585138
@@ -2595,9 +2504,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2654,12 +2560,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 613164565492847572
@@ -2715,12 +2615,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2779,12 +2673,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 14252964024713368414
@@ -2819,9 +2707,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2876,12 +2761,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 1603367395621829197
@@ -2935,12 +2814,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 18424782886762689514
@@ -2992,12 +2865,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3052,12 +2919,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 3596943688156747683
@@ -3091,9 +2952,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3153,12 +3011,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 13112501303461408768
@@ -3217,12 +3069,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 16404931025037697209
@@ -3274,12 +3120,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3333,12 +3173,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 5457948634069911201
@@ -3374,9 +3208,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3435,12 +3266,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 16826945119912593912
@@ -3498,12 +3323,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3564,12 +3383,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3649,12 +3462,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 1697365137547271256
@@ -3703,12 +3510,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3773,12 +3574,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7404662436457395750
@@ -3837,12 +3632,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -3904,12 +3693,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 10919677938090033347
@@ -3969,12 +3752,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4036,12 +3813,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 880731239605386144
@@ -4101,12 +3872,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4168,12 +3933,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 13026095417630917722
@@ -4209,9 +3968,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4270,12 +4026,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7886084495201887307
@@ -4333,12 +4083,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4399,12 +4143,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4484,12 +4222,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 11466997899551873388
@@ -4538,12 +4270,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4608,12 +4334,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 374567792978080483
@@ -4672,12 +4392,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4739,12 +4453,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 12041546530980030474
@@ -4804,12 +4512,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4871,12 +4573,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 3594317568781447664
@@ -4936,12 +4632,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5003,12 +4693,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 15086199541445563437
@@ -5066,12 +4750,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5133,12 +4811,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 2488558249184648702
@@ -5171,9 +4843,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5224,12 +4893,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 9124251674296049393
@@ -5263,9 +4926,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5362,12 +5022,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 4201523643545403803
@@ -5400,9 +5054,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5467,12 +5118,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 16354625750931736419
@@ -5533,12 +5178,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 7410264673250260729
@@ -5598,12 +5237,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -5700,11 +5333,63 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
+      }
+      Objects {
+        Id: 16499610448605528061
+        Name: "Collider"
+        Transform {
+          Location {
+            Z: 75
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.3499999
+            Y: 1.35
+            Z: 1.3499999
+          }
         }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+        ParentId: 5027263794690527920
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Walkable"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 10184847056121543272
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1413196292823476264
+          }
+          Teams {
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
         }
       }
     }
@@ -5876,4 +5561,5 @@ Assets {
     }
   }
   SerializationVersion: 110
+  VirtualFolderPath: "NPC Templates"
 }

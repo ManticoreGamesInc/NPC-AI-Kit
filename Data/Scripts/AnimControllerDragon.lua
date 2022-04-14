@@ -96,7 +96,7 @@ function OnPropertyChanged(object, propertyName)
 		UpdateArt(GetCurrentState())
 	end
 end
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 
 
 function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
@@ -105,8 +105,7 @@ function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotati
 	if state >= STATE_DEAD_1 then return end
 	
 	-- Ignore other NPCs, make sure this event is about this NPC
-	local myId = ROOT:GetCustomProperty("ObjectId")
-	if id == myId then
+	if id == ROOT.id then
 		PlayDamaged()
 	end
 end

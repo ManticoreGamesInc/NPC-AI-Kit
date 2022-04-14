@@ -19,18 +19,18 @@
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
 local HEALTH_BAR_TEMPLATE = script:GetCustomProperty("HealthBarTemplate")
-local MAX_HEALTH = ROOT:GetCustomProperty("CurrentHealth")
+local MAX_HEALTH = ROOT.maxHitPoints
 
 
 function GetHealth()
 	if Object.IsValid(ROOT) then
-		return ROOT:GetCustomProperty("CurrentHealth")
+		return ROOT.hitPoints or 0
 	end
 	return 0
 end
 
 function GetMaxHealth()
-	return MAX_HEALTH
+	return MAX_HEALTH or 0
 end
 
 function GetTeam()

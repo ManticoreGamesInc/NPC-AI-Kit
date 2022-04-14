@@ -33,12 +33,12 @@ function OnPropertyChanged(object, propertyName)
 		end
 	end
 end
-ROOT.networkedPropertyChangedEvent:Connect(OnPropertyChanged)
+ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 
 
 function GetID()
 	if Object.IsValid(ROOT) then
-		return ROOT:GetCustomProperty("ObjectId")
+		return ROOT.id
 	end
 	return nil
 end

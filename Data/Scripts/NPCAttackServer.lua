@@ -9,14 +9,12 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-require( script:GetCustomProperty("DestructibleManager") )
-function DESTRUCTIBLE_MANAGER() return MODULE.Get("standardcombo.NPCKit.DestructibleManager") end
 function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
 function LOOT_DROP_FACTORY() return MODULE.Get_Optional("standardcombo.NPCKit.LootDropFactory") end
 
-
+---@type DamageableObject
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 
 local DAMAGE_TO_PLAYERS = script:GetCustomProperty("DamageToPlayers") or 1
@@ -37,9 +35,6 @@ local REWARD_RESOURCE_TYPE = ROOT:GetCustomProperty("RewardResourceType")
 local REWARD_RESOURCE_AMOUNT = ROOT:GetCustomProperty("RewardResourceAmount")
 
 local LOOT_ID = ROOT:GetCustomProperty("LootId")
-
-local attackCooldown = 2
-local cooldownRemaining = 0
 
 local projectileImpactListener = nil
 
@@ -68,7 +63,6 @@ end
 function Attack(target)
 	if target:IsA("Player") and PLAYER_HOMING_TARGETS() then
 		target = PLAYER_HOMING_TARGETS().GetTargetForPlayer(target)
-		
 	elseif target.context and target.context.HOMING_TARGET then
 		target = target.context.HOMING_TARGET
 	end
@@ -137,7 +131,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 		position = pos,
 		rotation = rot,
 		tags = tagData
-		}
+	}
 
 	-- Apply the damage
 	COMBAT().ApplyDamage(attackData)
@@ -160,100 +154,39 @@ function SpawnAsset(template, pos, rot)
 		return
 	end
 
-	CROSS_CONTEXT_CALLER().Call(
-		function()
-			local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
-			if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
-				spawnedVfx.lifeSpan = 1.5
-			end
-		end
-	)
+	local spawnedVfx = World.SpawnAsset(template, {
+		position = pos,
+		rotation = rot,
+		networkContext = NetworkContextType.NETWORKED
+	})
+	if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
+		spawnedVfx.lifeSpan = 1.5
+	end
 end
 
 
 function OnDestroyed(obj)
-	--print("OnDestroyed()")
 	CleanupProjectileListener()
 end
 ROOT.destroyEvent:Connect(OnDestroyed)
 
 -- Damage / destructible
 
-local id = DESTRUCTIBLE_MANAGER().Register(script)
-ROOT:SetNetworkedCustomProperty("ObjectId", id)
-
-function ApplyDamage(attackData)
-	local dmg = attackData.damage
-	local amount = dmg.amount
-	local position = attackData.position
-	local rotation = attackData.rotation
-	local source = attackData.source
-
-	if (amount ~= 0) then
-		local prevHealth = GetHealth()
-		local newHealth = prevHealth - amount
-		SetHealth(newHealth)
-
-		local hitResult = dmg:GetHitResult()
-
-		-- Determine best value for impact position
-		local impactPosition
-
-		if not position and hitResult and hitResult:GetImpactPosition() ~= Vector3.ZERO then
-			impactPosition = hitResult:GetImpactPosition()
-		elseif position then
-			impactPosition = position
-		else
-			impactPosition = script:GetWorldPosition()
-		end
-
-		-- Determine best value for impact rotation
-		local impactRotation = Rotation.New()
-		if hitResult then
-			impactRotation = hitResult:GetTransform():GetRotation()
-		elseif rotation then
-			impactRotation = rotation
-		end
-
-		-- Source position
-		local sourcePosition = nil
-		if Object.IsValid(source) then
-			sourcePosition = source:GetWorldPosition()
-		end
-
-		-- Effects
-		local spawnedVfx = nil
-
-		if (newHealth <= 0 and DESTROY_FX) then
-			SpawnAsset(DESTROY_FX, impactPosition, impactRotation)
-		elseif DAMAGE_FX then
-			SpawnAsset(DAMAGE_FX, impactPosition, impactRotation)
-		end
-
-		-- Events
-
-		Events.Broadcast("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation, source)
-		Events.BroadcastToAllPlayers("ObjectDamaged", id, prevHealth, amount, impactPosition, impactRotation)
-
-		if (newHealth <= 0) then
-			Events.Broadcast("ObjectDestroyed", id)
-			Events.BroadcastToAllPlayers("ObjectDestroyed", id)
-
-			DropRewards(source)
-		end
-
-	--print(ROOT.name .. " Health = " .. newHealth)
+function OnObjectDied(attackData)
+	if attackData.object == ROOT then
+		local source = attackData.source
+		DropRewards(source)
 	end
 end
+Events.Connect("CombatWrapAPI.ObjectHasDied", OnObjectDied)
 
 function GetHealth()
-	return ROOT:GetCustomProperty("CurrentHealth")
+	return ROOT.hitPoints
 end
 
 function SetHealth(value)
-	ROOT:SetNetworkedCustomProperty("CurrentHealth", value)
+	ROOT.hitPoints = value
 end
-
 
 function DropRewards(killer)
 	-- Give resources

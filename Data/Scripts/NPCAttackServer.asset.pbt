@@ -11,12 +11,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:DestructibleManager"
-        AssetReference {
-          Id: 17999829830237049640
-        }
-      }
-      Overrides {
         Name: "cs:Root"
         ObjectReference {
         }
@@ -76,10 +70,6 @@ Assets {
       Overrides {
         Name: "cs:Root:tooltip"
         String: "A reference to the root of the template, where most of the NPC\'s custom properties are set."
-      }
-      Overrides {
-        Name: "cs:DestructibleManager:tooltip"
-        String: "The Destructible Manager is a required script that provides interaction between NPCs and weapons."
       }
       Overrides {
         Name: "cs:DamageToPlayers:tooltip"

@@ -21,7 +21,6 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function DESTRUCTIBLE_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.DestructibleManager") end
 function NPC_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.NPCManager") end
 
 
@@ -62,7 +61,7 @@ function wrapper.GetHitPoints(npc)
 	if Object.IsValid(npc) and npc.FindTemplateRoot ~= nil then
 		local templateRoot = npc:FindTemplateRoot()
 		if templateRoot then
-			return templateRoot:GetCustomProperty("CurrentHealth")
+			return templateRoot.hitPoints or 0
 		end
 	end
 	return nil
@@ -84,6 +83,9 @@ function wrapper.GetMaxHitPoints(obj)
 	
 	if NPC_MANAGER() then
 		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+		if (not npcScript) then
+			npcScript = NPC_MANAGER().FindScriptForDamagable(obj)
+		end
 	end
 	
 	if not npcScript then return false end
@@ -123,8 +125,6 @@ end
 
 -- ApplyDamage()
 function wrapper.ApplyDamage(attackData)
-	if not DESTRUCTIBLE_MANAGER() then return end
-	
 	local hitResult = attackData.damage:GetHitResult()
 	if hitResult and not attackData.position then
 		attackData.position = hitResult:GetImpactPosition()
@@ -132,7 +132,22 @@ function wrapper.ApplyDamage(attackData)
 	if hitResult and not attackData.rotation then
 		attackData.rotation = hitResult:GetTransform():GetRotation()
 	end
-	DESTRUCTIBLE_MANAGER().DamageObject(attackData)
+
+	attackData.damage.reason = 99 -- an override that tells the system we have processed this damage
+	local damageableRoot = attackData.object
+
+	-- Check the given object, its template root, and then its entire hierarchy for a Damageable
+	-- If none are damageables, then damageableRoot will be nil, and no damage will go through.
+	if (not damageableRoot:IsA("DamageableObject")) then
+		damageableRoot = damageableRoot:FindTemplateRoot()
+		if (not damageableRoot:IsA("DamageableObject")) then
+			damageableRoot = damageableRoot:FindTemplateRoot():FindDescendantByType("DamageableObject")
+		end
+	end
+
+	if damageableRoot then
+		damageableRoot:ApplyDamage(attackData.damage)
+	end
 end
 
 
@@ -157,6 +172,9 @@ function wrapper.IsDead(obj)
 	
 	if NPC_MANAGER() then
 		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+		if (not npcScript) then
+			npcScript = NPC_MANAGER().FindScriptForDamagable(obj)
+		end
 	end
 	
 	if not npcScript then return false end
@@ -195,7 +213,7 @@ function wrapper.IsValidObject(obj)
 	if not Object.IsValid(obj) then return false end
 	if NPC_MANAGER() then
 		if NPC_MANAGER().IsRegistered(obj) then return true end
-		return NPC_MANAGER().FindScriptForCollider(obj) ~= nil
+		return (NPC_MANAGER().FindScriptForCollider(obj) ~= nil or NPC_MANAGER().FindScriptForDamagable(obj) ~= nil)
 	end
 	return false
 end

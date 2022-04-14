@@ -36,7 +36,10 @@ Objects {
   ChildIds: 14632867372866985088
   ChildIds: 12368109956576323793
   ChildIds: 2619800446382357304
-  ChildIds: 4409323285129654815
+  ChildIds: 12259239172876134516
+  ChildIds: 4017645822016985933
+  ChildIds: 6867585062383553456
+  ChildIds: 258331524506487193
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -55,8 +58,43 @@ Objects {
   }
 }
 Objects {
-  Id: 4409323285129654815
-  Name: "Leaping Staff - Common"
+  Id: 258331524506487193
+  Name: "RPG Raptor"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2691092598115470187
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Raptor"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 23150
+            Y: -10550
+            Z: 2125
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13441300675391799547
+    }
+  }
+}
+Objects {
+  Id: 6867585062383553456
+  Name: "Advanced Rocket Launcher"
   Transform {
     Scale {
       X: 1
@@ -74,16 +112,179 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 9901109355884061414
+      key: 5859559678705062760
       value {
         Overrides {
           Name: "Name"
-          String: "Leaping Staff - Common"
+          String: "Advanced Rocket Launcher"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 20751.6953
+            Y: -16827.8633
+            Z: 2659.94043
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
     TemplateAsset {
-      Id: 4779393545089479649
+      Id: 12990255680143252995
+    }
+  }
+}
+Objects {
+  Id: 4017645822016985933
+  Name: "Basic Shotgun"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3547920819172201709
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Basic Shotgun"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 20484.4805
+            Y: -16821.0137
+            Z: 2659.94043
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15487376583485875014
+    }
+  }
+}
+Objects {
+  Id: 12259239172876134516
+  Name: "RPG Dragon Enemy - Easy"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 398113490489324447
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 5407573852348177454
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 6887995465546052660
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 877607263390645540
+          }
+        }
+        Overrides {
+          Name: "cs:EngageEffect"
+          AssetReference {
+            Id: 7507469334442477538
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12577161451319856535
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 8341736443469670175
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13420344242969750217
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Dragon Enemy - Easy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21102.2812
+            Y: -14962.4844
+            Z: 2659.94043
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -90
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16188384304550516637
+      value {
+        Overrides {
+          Name: "Script"
+          AssetReference {
+            Id: 13670653971905386821
+          }
+        }
+        Overrides {
+          Name: "cs:ProjectileBody"
+          AssetReference {
+            Id: 16197724571903786063
+          }
+        }
+        Overrides {
+          Name: "cs:MuzzleFlash"
+          AssetReference {
+            Id: 17621382159338273004
+          }
+        }
+        Overrides {
+          Name: "cs:ImpactSurface"
+          AssetReference {
+            Id: 1059603625980519112
+          }
+        }
+        Overrides {
+          Name: "cs:ImpactCharacter"
+          AssetReference {
+            Id: 8637728897842857331
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17050735024831803416
     }
   }
   NetworkRelevanceDistance {
@@ -354,7 +555,7 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13420344242969750217
+      key: 6915295634471237557
       value {
         Overrides {
           Name: "Name"
@@ -371,7 +572,7 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 3.41509485e-06
+            Yaw: -90
           }
         }
       }
@@ -533,9 +734,6 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 8014650375856875642
@@ -553,6 +751,15 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16487936699547486300
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DamageFeedbackServer"
         }
       }
     }
@@ -741,6 +948,23 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 10712048401921490027
+      value {
+        Overrides {
+          Name: "cs:dragon"
+          AssetReference {
+            Id: 8943910556254534449
+          }
+        }
+        Overrides {
+          Name: "cs:dragon2"
+          AssetReference {
+            Id: 13441300675391799547
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11087910991482916188
       value {
         Overrides {
@@ -758,6 +982,34 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13694070051491507156
+      value {
+        Overrides {
+          Name: "cs:dragon"
+          AssetReference {
+            Id: 8943910556254534449
+          }
+        }
+        Overrides {
+          Name: "cs:dragon2"
+          AssetReference {
+            Id: 13871905926012633814
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17273675542722940683
+      value {
+        Overrides {
+          Name: "cs:boss"
+          AssetReference {
+            Id: 16596380378274474908
           }
         }
       }

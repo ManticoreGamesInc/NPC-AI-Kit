@@ -80,4 +80,3 @@ function OnGoingToTakeDamage(attackData)
 	end
 end
 Events.Connect("CombatWrapAPI.GoingToTakeDamage", OnGoingToTakeDamage)
-

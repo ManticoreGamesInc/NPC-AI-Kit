@@ -72,6 +72,15 @@ function API.ApplyDamage(attackData)
 	
 	if not API.IsValidObject(object) then return end
 	if API.IsDead(object) then return end
+	
+	-- Prefer to apply damage to damageable objects
+	if (not object:IsA("Damageable")) then
+		local damageableObj = object:FindAncestorByType("Damageable")
+		if damageableObj then
+			object = damageableObj
+			attackData.object = damageableObj
+		end
+	end
 
 	Events.Broadcast("CombatWrapAPI.GoingToTakeDamage", attackData)
 

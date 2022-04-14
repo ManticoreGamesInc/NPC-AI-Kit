@@ -40,6 +40,7 @@ Objects {
   ChildIds: 4017645822016985933
   ChildIds: 6867585062383553456
   ChildIds: 258331524506487193
+  ChildIds: 1743478642429232355
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -55,6 +56,41 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 1743478642429232355
+  Name: "Advanced Crossbow"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14934994781472954733
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Advanced Crossbow"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 20996.0117
+            Y: -16832.5684
+            Z: 2659.94043
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17225784188351434523
+    }
   }
 }
 Objects {

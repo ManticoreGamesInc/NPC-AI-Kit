@@ -1,5 +1,5 @@
 Assets {
-  Id: 9037282866162025272
+  Id: 17225784188351434523
   Name: "Advanced Crossbow"
   PlatformAssetType: 5
   TemplateAsset {
@@ -23,134 +23,16 @@ Assets {
         ChildIds: 2128842841433334046
         UnregisteredParameters {
           Overrides {
-            Name: "cs:BaseDamage"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:HeadshotDamage"
-            Float: 150
-          }
-          Overrides {
-            Name: "cs:EnableAutoReload"
-            Bool: true
-          }
-          Overrides {
             Name: "cs:EnableAim"
             Bool: true
           }
           Overrides {
             Name: "cs:AimBinding"
-            String: "ability_secondary"
-          }
-          Overrides {
-            Name: "cs:AimActiveStance"
-            String: "2hand_rifle_aim_hip"
-          }
-          Overrides {
-            Name: "cs:AimWalkSpeedPercentage"
-            Float: 0.3
-          }
-          Overrides {
-            Name: "cs:AimZoomDistance"
-            Float: 200
-          }
-          Overrides {
-            Name: "cs:SpreadStandPrecision"
-            Float: 0.7
-          }
-          Overrides {
-            Name: "cs:SpreadWalkPrecision"
-            Float: 0.5
-          }
-          Overrides {
-            Name: "cs:SpreadJumpPrecision"
-            Float: 0.4
-          }
-          Overrides {
-            Name: "cs:SpreadCrouchPrecision"
-            Float: 0.8
-          }
-          Overrides {
-            Name: "cs:SpreadSlidingPrecision"
-            Float: 0.3
-          }
-          Overrides {
-            Name: "cs:SpreadAimModifierBonus"
-            Float: 0.3
-          }
-          Overrides {
-            Name: "cs:PickupSound"
-            AssetReference {
-              Id: 6795206535065158887
-            }
-          }
-          Overrides {
-            Name: "cs:LowAmmoSound"
-            AssetReference {
-              Id: 16064653477604779480
-            }
-          }
-          Overrides {
-            Name: "cs:ReticleTemplate"
-            AssetReference {
-              Id: 15515637826283224864
-            }
-          }
-          Overrides {
-            Name: "cs:HideReticleOnAim"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:BaseDamage:tooltip"
-            String: "Normal damage that this weapon will do to enemy players."
-          }
-          Overrides {
-            Name: "cs:HeadshotDamage:tooltip"
-            String: "Headshot damage that this weapon will do to enemy players."
+            String: "Aim"
           }
           Overrides {
             Name: "cs:AimBinding:tooltip"
             String: "Keybinding to hold and activate scope / zoom ability for the weapon. Default is \"ability_secondary\" (right mouse button)."
-          }
-          Overrides {
-            Name: "cs:AimWalkSpeedPercentage:tooltip"
-            String: "Percentage walk speed reduction when player is aiming. Must be in the range of 0 to 1."
-          }
-          Overrides {
-            Name: "cs:AimActiveStance:tooltip"
-            String: "Animation stance when aiming with this weapon. Default is 2hand_rifle_aim_shoulder."
-          }
-          Overrides {
-            Name: "cs:AimZoomDistance:tooltip"
-            String: "Camera distance when aiming."
-          }
-          Overrides {
-            Name: "cs:SpreadAimModifierBonus:tooltip"
-            String: "Amount of % added to the spread precision when the player aims. Range between 0 to 1."
-          }
-          Overrides {
-            Name: "cs:SpreadStandPrecision:tooltip"
-            String: "Precision % when the player is standing without aim. Range between 0 to 1 (from least accurate to most accurate)."
-          }
-          Overrides {
-            Name: "cs:SpreadWalkPrecision:tooltip"
-            String: "Precision % when the player is walking. Range between 0 to 1 (from least accurate to most accurate)."
-          }
-          Overrides {
-            Name: "cs:SpreadJumpPrecision:tooltip"
-            String: "Precision % when the player is jumping. Range between 0 to 1 (from least accurate to most accurate)."
-          }
-          Overrides {
-            Name: "cs:SpreadCrouchPrecision:tooltip"
-            String: "Precision % when the player is crouching. Range between 0 to 1 (from least accurate to most accurate)."
-          }
-          Overrides {
-            Name: "cs:SpreadSlidingPrecision:tooltip"
-            String: "Precision % when the player is sliding. Range between 0 to 1 (from least accurate to most accurate)."
-          }
-          Overrides {
-            Name: "cs:EnableAutoReload:tooltip"
-            String: "If true the weapon the player will auto reload the ammo without player\'s input. Only reloads if the player has the ammo resource."
           }
           Overrides {
             Name: "cs:EnableAim:tooltip"
@@ -177,7 +59,7 @@ Assets {
               Id: 16313312156352177803
             }
             MuzzleFlashAssetRef {
-              Id: 3452198850354539067
+              Id: 841534158063459245
             }
             TrailAssetRef {
               Id: 9023864673320310867
@@ -218,6 +100,7 @@ Assets {
               Value: "mc:ereticletype:none"
             }
             AttackSfxAssetRef {
+              Id: 3452198850354539067
             }
             MaxAmmo: 1
             AmmoType: "rounds"
@@ -334,6 +217,14 @@ Assets {
         }
         ParentId: 1392879424662617188
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:BaseDamage"
+            Float: 100
+          }
+          Overrides {
+            Name: "cs:HeadshotDamage"
+            Float: 150
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -369,6 +260,14 @@ Assets {
         }
         ParentId: 1392879424662617188
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:AimActiveStance"
+            String: "2hand_rifle_aim_hip"
+          }
+          Overrides {
+            Name: "cs:AimWalkSpeedPercentage"
+            Float: 0.3
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -403,7 +302,13 @@ Assets {
           }
         }
         ParentId: 14934994781472954733
-        ChildIds: 3441551497049548559
+        ChildIds: 11086986869451873129
+        ChildIds: 10335866889319699576
+        ChildIds: 14042398535783651002
+        ChildIds: 5591561960832808563
+        ChildIds: 6823173339320256256
+        ChildIds: 16375345241300134350
+        ChildIds: 12705312088216887517
         ChildIds: 10498208892569056115
         UnregisteredParameters {
         }
@@ -424,47 +329,6 @@ Assets {
         }
       }
       Objects {
-        Id: 3441551497049548559
-        Name: "Scripts"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14643327588434436475
-        ChildIds: 11086986869451873129
-        ChildIds: 10335866889319699576
-        ChildIds: 14042398535783651002
-        ChildIds: 5591561960832808563
-        ChildIds: 83994324454353111
-        ChildIds: 6823173339320256256
-        ChildIds: 16375345241300134350
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Scripts_2"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 11086986869451873129
         Name: "EquipmentPickupClient"
         Transform {
@@ -478,7 +342,15 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PickupSound"
+            AssetReference {
+              Id: 6795206535065158887
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -511,8 +383,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:AimZoomDistance"
+            Float: 200
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -546,7 +422,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -581,8 +457,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:ReticleTemplate"
+            AssetReference {
+              Id: 15515637826283224864
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -603,41 +485,6 @@ Assets {
         }
       }
       Objects {
-        Id: 83994324454353111
-        Name: "WeaponAmmoFeedbackClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.00000012
-            Y: 1.00000012
-            Z: 1
-          }
-        }
-        ParentId: 3441551497049548559
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16975801195317677333
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 6823173339320256256
         Name: "WeaponAutoReloadClient"
         Transform {
@@ -651,7 +498,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -686,7 +533,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3441551497049548559
+        ParentId: 14643327588434436475
         UnregisteredParameters {
           Overrides {
             Name: "cs:Object"
@@ -716,6 +563,235 @@ Assets {
           ScriptAsset {
             Id: 7560597166793505463
           }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 12705312088216887517
+        Name: "Effects"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14643327588434436475
+        ChildIds: 1623338273170174693
+        ChildIds: 970277388173953616
+        ChildIds: 4124551150027553807
+        ChildIds: 421642372033788896
+        ChildIds: 4550051364070672651
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 1623338273170174693
+        Name: "WeaponLowAmmoFeedbackClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 12705312088216887517
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 16975801195317677333
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 970277388173953616
+        Name: "WeaponReloadCastSoundClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 12705312088216887517
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayCount"
+            Int: 1
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7766883827523033344
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 4124551150027553807
+        Name: "WeaponAimSoundClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 12705312088216887517
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:EnableAimSound"
+            ObjectReference {
+              SubObjectId: 421642372033788896
+            }
+          }
+          Overrides {
+            Name: "cs:DisableAimSound"
+            ObjectReference {
+              SubObjectId: 4550051364070672651
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11739187330987241719
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 421642372033788896
+        Name: "Enable Aim Sound"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 12705312088216887517
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 11032692064555494742
+          }
+          Volume: 0.4
+          Falloff: -1
+          Radius: -1
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 4550051364070672651
+        Name: "Disable Aim Sound"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.00000012
+            Y: 1.00000012
+            Z: 1
+          }
+        }
+        ParentId: 12705312088216887517
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 17757915654427719657
+          }
+          Volume: 0.4
+          Falloff: -1
+          Radius: -1
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1085,6 +1161,9 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:alwaysvisible"
+        }
         Trigger {
           Interactable: true
           InteractionLabel: "Equip Advanced Crossbow"
@@ -1118,14 +1197,12 @@ Assets {
         }
         Ability {
           IsEnabled: true
-          KeyBinding: "ability_primary"
           CastPhaseSettings {
             Duration: 0.1
             CanMove: true
             CanJump: true
             CanRotate: true
             PreventOtherAbilities: true
-            IsTargetDataUpdated: true
             Facing_V2 {
               Value: "mc:eabilitysetfacing:aim"
             }
@@ -1147,7 +1224,6 @@ Assets {
             CanJump: true
             CanRotate: true
             PreventOtherAbilities: true
-            IsTargetDataUpdated: true
           }
           CooldownPhaseSettings {
             Duration: 1.5
@@ -1155,9 +1231,13 @@ Assets {
             CanJump: true
             CanRotate: true
             PreventOtherAbilities: true
-            IsTargetDataUpdated: true
           }
           Animation: "2hand_rifle_shoot"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
+          }
+          KeyBinding_v3: "Shoot"
+          Version: 3
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1181,7 +1261,6 @@ Assets {
         }
         Ability {
           IsEnabled: true
-          KeyBinding: "ability_ult"
           CastPhaseSettings {
             Duration: 1.4
             CanMove: true
@@ -1208,12 +1287,32 @@ Assets {
           }
           Animation: "2hand_rifle_reload_magazine"
           KeyBinding_v2 {
-            Value: "mc:egameaction:extraaction_33"
+            Value: "mc:egameaction:invalid"
           }
+          KeyBinding_v3: "Reload"
+          Version: 3
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
+      }
+    }
+    Assets {
+      Id: 11032692064555494742
+      Name: "Weapon Handle Grab 03 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_weapon_handle_03_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17757915654427719657
+      Name: "Gear Equipment Cloth Military Grab Movement 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_gear_equipment_cloth_military_grab_movement_02a_Cue_ref"
       }
     }
     Assets {
@@ -1271,8 +1370,8 @@ Assets {
       }
     }
     PrimaryAssetId {
-      AssetType: "TemplateAssetRef"
-      AssetId: "Advanced_Crossbow"
+      AssetType: "None"
+      AssetId: "None"
     }
   }
   SerializationVersion: 113

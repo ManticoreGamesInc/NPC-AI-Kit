@@ -37,18 +37,19 @@ end
 -- Exposed variables --
 local CAN_AIM = WEAPON:GetCustomProperty("EnableAim")
 local AIM_BINDING = WEAPON:GetCustomProperty("AimBinding")
-local ZOOM_DISTANCE = WEAPON:GetCustomProperty("AimZoomDistance")
+
+local ZOOM_DISTANCE = script:GetCustomProperty("AimZoomDistance")
 
 -- Internal handle variables --
 local pressedHandle = nil              -- Event handle when player presses the aim binding
 local releasedHandle = nil             -- Event handle when player releases the aim binding
-local playerDieHandle = nil            -- Event handle when player dies
 
 -- Internal camera variables --
 local cameraResetDistance = 0
 local cameraTargetDistance = 0
 local lerpTime = 0
 local activeCamera = nil
+local isScoping = false
 
 function Tick(deltaTime)
     if not CAN_AIM then return end
@@ -57,6 +58,11 @@ function Tick(deltaTime)
     -- We call OnEquipped function after player is fully loaded in client
     if Object.IsValid(WEAPON.owner) and not Object.IsValid(activeCamera) then
         OnEquipped(WEAPON, WEAPON.owner)
+    end
+
+    -- Reset when player dies
+    if Object.IsValid(WEAPON.owner) and WEAPON.owner.isDead and isScoping then
+        ResetScoping(WEAPON.owner)
     end
 
     -- Smoothly lerps the camera distance when player aims
@@ -86,42 +92,52 @@ function GetPlayerActiveCamera(player)
 end
 
 function EnableScoping(player)
+    if not Object.IsValid(player) then return end
     if player.isDead then return end
+
     cameraTargetDistance = ZOOM_DISTANCE
     lerpTime = 0
+    isScoping = true
+
     Events.Broadcast("WeaponAiming", player, true)
 end
 
 function ResetScoping(player)
     cameraTargetDistance = cameraResetDistance
     lerpTime = 0
+    isScoping = false
+
     Events.Broadcast("WeaponAiming", player, false)
 end
 
 function OnBindingPressed(player, actionName)
+    if not Object.IsValid(WEAPON) then return end
+    if player ~= WEAPON.owner then return end
     if actionName == AIM_BINDING then
         EnableScoping(player)
 	end
 end
 
 function OnBindingReleased(player, actionName)
+    if not Object.IsValid(WEAPON) then return end
+    if player ~= WEAPON.owner then return end
     if actionName == AIM_BINDING then
         ResetScoping(player)
 	end
 end
 
-function OnPlayerDied(player, damage)
-    ResetScoping(player)
-end
-
 function OnEquipped(weapon, player)
     if not CAN_AIM then return end
     if not Object.IsValid(player) then return end
+    if not player:IsA("Player") then return end
 
     -- Register event handles
-    pressedHandle = player.bindingPressedEvent:Connect(OnBindingPressed)
-    releasedHandle = player.bindingReleasedEvent:Connect(OnBindingReleased)
-    playerDieHandle = player.diedEvent:Connect(OnPlayerDied)
+    if not pressedHandle then
+        pressedHandle = Input.actionPressedEvent:Connect(OnBindingPressed)
+    end
+    if not releasedHandle then
+        releasedHandle = Input.actionReleasedEvent:Connect(OnBindingReleased)
+    end
 
     -- Set new active camera
     activeCamera = GetPlayerActiveCamera(player)
@@ -137,9 +153,14 @@ function OnUnequipped(weapon, player)
 
     -- Disconnects all the handle events to avoid event trigger
     -- for previous player when the weapon is used by next player
-	if pressedHandle then pressedHandle:Disconnect() end
-	if releasedHandle then releasedHandle:Disconnect() end
-    if playerDieHandle then playerDieHandle:Disconnect() end
+	if pressedHandle then
+        pressedHandle:Disconnect()
+        pressedHandle = nil
+    end
+    if releasedHandle then
+        releasedHandle:Disconnect()
+        releasedHandle = nil
+    end
 
     ResetScoping(player)
 

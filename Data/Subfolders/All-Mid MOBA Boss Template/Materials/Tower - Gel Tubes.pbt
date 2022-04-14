@@ -2,7 +2,7 @@ Assets {
   Id: 15497109834049229809
   Name: "Tower - Gel Tubes"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 113
   CustomMaterialAsset {
     BaseMaterialId: 2481146349018182889
     ParameterOverrides {

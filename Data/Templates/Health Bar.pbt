@@ -188,6 +188,7 @@ Assets {
             TwoSided: true
             TickWhenOffScreen: true
             RedrawTime: 30
+            UseSafeZoneAdjustment: true
           }
           AnchorLayout {
             SelfAnchor {
@@ -409,5 +410,5 @@ Assets {
       AssetId: "Health_Bar"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
 }

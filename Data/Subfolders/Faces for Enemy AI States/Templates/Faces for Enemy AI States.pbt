@@ -52,5 +52,5 @@ Assets {
     Version: "1.0.0"
     Description: "For @standardcombo (Gabe)\'s enemy AI series.  \r\n\r\n- Retreat\r\n- Sleep\r\n- Dead\r\n- Engage\r\n- Attack"
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
 }

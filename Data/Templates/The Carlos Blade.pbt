@@ -2284,6 +2284,6 @@ Assets {
   Marketplace {
     Description: "A functional sword designed by Carlos Barros and weaponized by standardcombo.\r\n\r\nv2.0.1\r\n- Now compatible with NPC combat.\r\n- Improved animations and swipe VFX.\r\n- Optimized number of networked objects from 16 to 9."
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
   DirectlyPublished: true
 }

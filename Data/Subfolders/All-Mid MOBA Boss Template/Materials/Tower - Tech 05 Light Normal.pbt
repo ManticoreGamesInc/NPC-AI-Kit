@@ -2,7 +2,7 @@ Assets {
   Id: 172496288375754936
   Name: "Tower - Tech 05 Light Normal"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 113
   CustomMaterialAsset {
     BaseMaterialId: 14155156246144086778
     ParameterOverrides {

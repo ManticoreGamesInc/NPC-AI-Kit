@@ -2,7 +2,7 @@ Assets {
   Id: 6508774653814637060
   Name: "Orc Dark Blue"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 113
   CustomMaterialAsset {
     BaseMaterialId: 5729277429703771548
     ParameterOverrides {

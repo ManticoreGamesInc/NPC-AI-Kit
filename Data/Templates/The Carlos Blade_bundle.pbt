@@ -54,5 +54,5 @@ Assets {
     Version: "1.7.0"
     Description: "A functional sword designed by Carlos Barros and weaponized by standardcombo.\r\n\r\n**Needs the \"Combat Dependencies\" module. Can be found in CC.\r\n\r\nv2.4.1\r\n- Fixed a memory leak where the swipe VFX would never go away.\r\n\r\nv2.4.0\r\n- Compatible with Combat Wrapper v0.11.2\r\n- Now supports different damage values for players and NPCs.\r\n- Now supports headshot damage.\r\n\r\nv2.3.0\r\n- Standardized some scripts in relationship to new melee weapons from Core Content.\r\n- Improved documentation, including how to calibrate the swipe VFX.\r\n\r\nv2.2.0\r\n- Rearchitecture of Player and NPC combat wrappers to decouple various systems.\r\n- Reduced networked objects by 1.\r\n\r\nv2.1.0\r\n- Fixed an issue where applying damage to NPCs could cause loot drops to malfunction.\r\n\r\nv2.0.1\r\n- Now compatible with NPC combat.\r\n- Improved animations and swipe VFX.\r\n- Optimized number of networked objects from 16 to 9."
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
 }

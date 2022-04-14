@@ -54,5 +54,5 @@ Assets {
     Version: "1.1.0"
     Description: "Starter template for Tutorial UI. \r\nHelp users learn how to play your game!\r\n\r\nCustom parameters for keybinding for toggle and speed. "
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
 }

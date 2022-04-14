@@ -1380,6 +1380,6 @@ Assets {
       AssetId: "Basic_Rifle"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
   DirectlyPublished: true
 }

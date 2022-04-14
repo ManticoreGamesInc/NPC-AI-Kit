@@ -2294,6 +2294,6 @@ Assets {
   Marketplace {
     Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air."
   }
-  SerializationVersion: 110
+  SerializationVersion: 113
   DirectlyPublished: true
 }

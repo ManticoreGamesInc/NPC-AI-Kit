@@ -24,13 +24,17 @@ local STATE_DISABLED = 8
 
 
 function OnPropertyChanged(object, propertyName)
-	
-	if (propertyName == "CurrentState") then
+	if propertyName == "CurrentState" then
 		local state = ROOT:GetCustomProperty("CurrentState")
 		
-		if (state == STATE_DEAD_1) then
+		if state == STATE_DEAD_1 then
 			SpawnAsset(DESTROY_FX, script:GetWorldPosition(), script:GetWorldRotation())
+
+			UpdateColliderTeam(0)
 		end
+	
+	elseif propertyName == "Team" then
+		UpdateColliderTeam()
 	end
 end
 ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
@@ -73,9 +77,21 @@ end
 ROOT.destroyEvent:Connect(OnDestroyed)
 
 
+function UpdateColliderTeam(team)
+	team = team or ROOT:GetCustomProperty("Team")
+	for _,obj in ipairs(script.parent.parent:GetChildren()) do
+		if obj:IsA("StaticMesh") then
+			obj.team = team
+		end
+	end
+end
+UpdateColliderTeam()
+
+
 function SpawnAsset(template, pos, rot)
 	local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
 	if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
 		spawnedVfx.lifeSpan = 1.5
 	end
 end
+

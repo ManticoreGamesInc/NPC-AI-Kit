@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 1075979780911459583
+      RootId: 16196546363947031314
       Objects {
-        Id: 1075979780911459583
+        Id: 16196546363947031314
         Name: "Generic Low Ammo Sound"
         Transform {
           Scale {
@@ -16,45 +16,10 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 16196546363947031314
-        UnregisteredParameters {
-        }
-        Lifespan: 2
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 16196546363947031314
-        Name: "ClientContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1075979780911459583
         ChildIds: 4574798814266286760
         UnregisteredParameters {
         }
+        Lifespan: 2
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -135,4 +100,7 @@ Assets {
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapons"
+  VirtualFolderPath: "Projectile"
+  VirtualFolderPath: "Dependecies"
 }

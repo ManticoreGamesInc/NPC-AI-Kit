@@ -4,7 +4,13 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:Trigger"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Equipment"
 }

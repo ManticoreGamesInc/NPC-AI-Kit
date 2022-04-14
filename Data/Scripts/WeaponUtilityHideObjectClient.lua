@@ -24,12 +24,25 @@ local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
 
 local HIDE_AFTER_ATTACK = script:GetCustomProperty("HideAfterAttack")
 local HIDE_ON_EMPTY_AMMO = script:GetCustomProperty("HideOnEmptyAmmo")
+local HIDE_DURING_RELOAD = script:GetCustomProperty("HideDuringReload")
 
 local ATTACK_ABILITY = WEAPON:GetAbilities()[1]
+local RELOAD_ABILITY = WEAPON:GetAbilities()[2]
+
+-- Grabs ability again from weapon in case the client hasn't loaded the object yet
+while not Object.IsValid(ATTACK_ABILITY) do
+    Task.Wait()
+    ATTACK_ABILITY = WEAPON:GetAbilities()[1]
+end
+while not Object.IsValid(RELOAD_ABILITY) do
+    Task.Wait()
+    RELOAD_ABILITY = WEAPON:GetAbilities()[2]
+end
 
 function Tick()
 	if not Object.IsValid(WEAPON) then return end
 	if not Object.IsValid(ATTACK_ABILITY) then return end
+	if not Object.IsValid(RELOAD_ABILITY) then return end
 
 	if HIDE_ON_EMPTY_AMMO then
 		if WEAPON:HasAmmo() then
@@ -40,7 +53,15 @@ function Tick()
 					OBJECT.visibility = Visibility.FORCE_OFF
 				end
 			else
-				OBJECT.visibility = Visibility.INHERIT
+				if HIDE_DURING_RELOAD then
+					if RELOAD_ABILITY:GetCurrentPhase() == AbilityPhase.READY then
+						OBJECT.visibility = Visibility.INHERIT
+					else
+						OBJECT.visibility = Visibility.FORCE_OFF
+					end
+				else
+					OBJECT.visibility = Visibility.INHERIT
+				end
 			end
 		else
 			OBJECT.visibility = Visibility.FORCE_OFF

@@ -16,7 +16,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 --]]
 
 --[[
-    This script plays audio to the weapon owner when the weapon reaches 20% amount of ammo.
+    This script plays audio to the weapon owner when the weapon reaches set percentage amount of ammo.
     The audio plays only to the weapon owner client.
 --]]
 
@@ -33,17 +33,24 @@ while not Object.IsValid(ATTACK_ABILITY) do
     ATTACK_ABILITY = WEAPON:GetAbilities()[1]
 end
 
--- Exposed variables
-local LOW_AMMO_SOUND = WEAPON:GetCustomProperty("LowAmmoSound")
-
 -- Constant variables
-local LOW_AMMO_PERCENTAGE = 0.2
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+local DEFAULT_LIFESPAN = 1
+
+-- Exposed variables
+local LOW_AMMO_SOUND = script:GetCustomProperty("LowAmmoSound")
+local LOW_AMMO_PERCENTAGE = script:GetCustomProperty("LowAmmoPercentage")
 
 function OnShoot(ability)
-    if Object.IsValid(WEAPON) and ability.owner == WEAPON.owner then
-        if WEAPON.currentAmmo / WEAPON.maxAmmo <= LOW_AMMO_PERCENTAGE then
-            if LOW_AMMO_SOUND then
-                World.SpawnAsset(LOW_AMMO_SOUND, {position = WEAPON:GetWorldPosition()})
+    if not Object.IsValid(WEAPON) then return end
+    if not Object.IsValid(ability) then return end
+    if WEAPON.owner ~= LOCAL_PLAYER then return end
+
+    if WEAPON.currentAmmo / WEAPON.maxAmmo <= LOW_AMMO_PERCENTAGE then
+        if LOW_AMMO_SOUND then
+            local instance = World.SpawnAsset(LOW_AMMO_SOUND, {position = WEAPON:GetWorldPosition()})
+            if instance.lifeSpan == 0 then
+                instance.lifeSpan = DEFAULT_LIFESPAN
             end
         end
     end

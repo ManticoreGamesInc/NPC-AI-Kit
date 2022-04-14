@@ -28,7 +28,10 @@ end
 
 -- User exposed variables
 local PLAYER_IMPACT = EQUIPMENT:GetCustomProperty("PlayerImpact")
+local OBJECT_IMPACT = EQUIPMENT:GetCustomProperty("ObjectImpact")
 local SWING_SOUND = EQUIPMENT:GetCustomProperty("SwingSound")
+local HIT_SPHERE_RADIUS = EQUIPMENT:GetCustomProperty("HitSphereRadius")
+local HIT_SPHERE_OFFSET = EQUIPMENT:GetCustomProperty("HitSphereOffset")
 
 -- Constants
 local DEFAULT_LIFE_SPAN = 2
@@ -52,46 +55,97 @@ function Tick()
         end
 
         if abilityInfo.canAttack then
-            if Object.IsValid(abilityInfo.hitBox) then
-                for _, other in ipairs(abilityInfo.hitBox:GetOverlappingObjects()) do
-                    if other:IsA("Player") then
-                        MeleeAttack(other, abilityInfo)
-                    end
-                end
+            if abilityInfo.canAttack then
+                DetectAndDamageInSphere(GetHitSpherePosition(), HIT_SPHERE_RADIUS, abilityInfo)
             end
         end
 
     end
 end
 
--- nil MeleeAttack(Player)
--- Detect players within hitbox to apply damage
-function MeleeAttack(player, abilityInfo)
+-- Vector3 GetHitSpherePosition()
+-- Returns position of the hit sphere based on equipment owner player position and offset
+function GetHitSpherePosition()
+    if not Object.IsValid(EQUIPMENT) then return Vector3.ZERO end
+    if not Object.IsValid(EQUIPMENT.owner) then return EQUIPMENT:GetWorldPosition() end
+
+    local ownerTransform = EQUIPMENT.owner:GetWorldTransform()
+
+    return EQUIPMENT.owner:GetWorldPosition() + 
+            ownerTransform:GetForwardVector() * HIT_SPHERE_OFFSET.x + 
+            ownerTransform:GetRightVector() * HIT_SPHERE_OFFSET.y + 
+            ownerTransform:GetUpVector() * HIT_SPHERE_OFFSET.z
+end
+
+-- GetValidTarget(Object)
+-- Returns the valid Player or Damageable object
+function GetValidTarget(target)
+    if not Object.IsValid(target) then return nil end
+
+    if target:IsA("Player") or target:IsA("Damageable") then
+        return target
+    else
+        return target:FindAncestorByType("Damageable")
+    end
+end
+
+-- nil DetectAndDamageInSphere(Vector3, float, table)
+-- Creates sphere cast to detect valid object to apply damage on
+function DetectAndDamageInSphere(center, radius, abilityInfo)
+    local hitResults = World.SpherecastAll(center, center + Vector3.FORWARD, radius)
+
+    for index, hitResult in ipairs(hitResults) do
+        local validTarget = GetValidTarget(hitResult.other)
+        if validTarget then
+            MeleeAttack(validTarget, hitResult:GetImpactPosition(), abilityInfo)
+        end
+    end
+end
+
+-- nil MeleeAttack(Player or Damageable Object, Vector3)
+-- Detect players or damagable objects within hitbox to apply damage
+function MeleeAttack(target, impactPosition, abilityInfo)
+    if not Object.IsValid(target) then return end
 
     local ability = abilityInfo.ability
+    if not Object.IsValid(ability) then return end
+    if not Object.IsValid(ability.owner) then return end
 
     -- Ignore if the hitbox is overlapping with the owner
-    if player == ability.owner then return end
+    if target == ability.owner then return end
+ 
     -- Ignore friendly attack
-    if Teams.AreTeamsFriendly(player.team, ability.owner.team) then return end
+    if target:IsA("Player") then
+        if Teams.AreTeamsFriendly(target.team, ability.owner.team) then return end
+    end
 
     -- Avoid hitting the same player multiple times in a single swing
-    if (abilityInfo.ignoreList[player] ~= 1) then
+    if (abilityInfo.ignoreList[target] ~= 1) then
 
-        -- Spawn player impact vfx template
-        if (PLAYER_IMPACT) then
-            local impactInstance = World.SpawnAsset(PLAYER_IMPACT, {position = player:GetWorldPosition()})
-            if impactInstance.lifeSpan == 0 then
-                impactInstance.lifeSpan = DEFAULT_LIFE_SPAN
-            end
+        -- Spawn player or object impact vfx template
+        if target:IsA("Player") then
+            SpawnImpactEffect(PLAYER_IMPACT, impactPosition)
+        elseif target:IsA("Damageable") then
+            SpawnImpactEffect(OBJECT_IMPACT, impactPosition)
         end
 
-        abilityInfo.ignoreList[player] = 1
+        abilityInfo.ignoreList[target] = 1
+    end
+end
+
+-- nil SpawnImpactEffect(string, Vector3)
+-- Spawns impact effect based on given position
+function SpawnImpactEffect(effect, impactPosition)
+    if not effect then return end
+
+    local impactInstance = World.SpawnAsset(effect, {position = impactPosition})
+    if impactInstance.lifeSpan == 0 then
+        impactInstance.lifeSpan = DEFAULT_LIFE_SPAN
     end
 end
 
 -- nil SpawnSwingEffect(table)
--- Spawns swing effecr based settings on the ability
+-- Spawns swing effect based settings on the ability
 function SpawnSwingEffect(abilityInfo)
     Task.Wait(abilityInfo.swingSpawnDelay)
 
@@ -114,18 +168,6 @@ function SpawnSwingEffect(abilityInfo)
             -- Apply default life span if the swing sound template doesn't have a lifespan
             if swingSoundInstance.lifeSpan == 0 then
                 swingSoundInstance.lifeSpan = DEFAULT_LIFE_SPAN
-            end
-        end
-    end
-end
-
--- nil OnBeginOverlap(Trigger, Object)
--- Event when the hitbox hits a player
-function OnBeginOverlap(trigger, other)
-    if other:IsA("Player") then
-        for _, abilityInfo in ipairs(abilityList) do
-            if abilityInfo.canAttack then
-                MeleeAttack(other, abilityInfo)
             end
         end
     end
@@ -164,23 +206,18 @@ function ResetMelee(ability)
 end
 
 -- Initialize
-
 -- Find all abilities with melee related custom properties
 local abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
 for _, ability in ipairs(abilityDescendants) do
-    local hitBox = ability:GetCustomProperty("Hitbox")
+    local useHitSphere = ability:GetCustomProperty("UseHitSphere")
 
-    if hitBox then
-        hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
-        hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
-
+    if useHitSphere then
         ability.executeEvent:Connect(OnExecute)
         ability.cooldownEvent:Connect(ResetMelee)
 
         -- Gather custom properties on ability
         table.insert(abilityList, {
             ability = ability,
-            hitBox = hitBox,
             canAttack = false,
             ignoreList = {},
             swingEffect = ability:GetCustomProperty("SwingEffect"),

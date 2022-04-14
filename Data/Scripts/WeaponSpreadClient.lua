@@ -1,5 +1,5 @@
 --[[
-Copyright 2019 Manticore Games, Inc.
+Copyright 2020 Manticore Games, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
@@ -29,12 +29,14 @@ if not WEAPON:IsA('Weapon') then
 end
 
 -- Exposed variables --
-local STAND_PRECISION = WEAPON:GetCustomProperty("SpreadStandPrecision")
-local WALK_PRECISION = WEAPON:GetCustomProperty("SpreadWalkPrecision")
-local JUMP_PRECISION = WEAPON:GetCustomProperty("SpreadJumpPrecision")
-local CROUCH_PRECISION = WEAPON:GetCustomProperty("SpreadCrouchPrecision")
-local SLIDING_PRECISION = WEAPON:GetCustomProperty("SpreadSlidingPrecision")
-local AIM_PRECISION_BONUS = WEAPON:GetCustomProperty("SpreadAimModifierBonus")
+local STAND_PRECISION = script:GetCustomProperty("SpreadStandPrecision")
+local WALK_PRECISION = script:GetCustomProperty("SpreadWalkPrecision")
+local JUMP_PRECISION = script:GetCustomProperty("SpreadJumpPrecision")
+local CROUCH_PRECISION = script:GetCustomProperty("SpreadCrouchPrecision")
+local AIM_PRECISION_BONUS = script:GetCustomProperty("SpreadAimModifierBonus")
+
+-- Constatnt variables
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 -- Internal variables --
 local player = nil
@@ -49,11 +51,11 @@ function Tick()
     if spreadDelta == nil and Object.IsValid(WEAPON.owner) then
         spreadDelta = WEAPON.spreadMax - WEAPON.spreadMin
     end
-
     -- Sets up weapon owner
     player = WEAPON.owner
+
     if not Object.IsValid(player) then return end
-	if player ~= Game.GetLocalPlayer() then return end  --only run script for the local player
+	if player ~= LOCAL_PLAYER then return end  --only run script for the local player
 
     -- Note: Below we check for player movement actions and
     --       calculate the total spreadModify percentage.
@@ -74,9 +76,6 @@ function Tick()
         else
             newSpreadModifyValue = CROUCH_PRECISION
         end
-    -- Spread when player is jumping
-    elseif (player.isSliding) then
-        newSpreadModifyValue = SLIDING_PRECISION
     -- Spread when player is moving
     elseif (player.isAccelerating) then
         newSpreadModifyValue = WALK_PRECISION
@@ -88,7 +87,6 @@ function Tick()
     if isAiming then
         newSpreadModifyValue = newSpreadModifyValue + AIM_PRECISION_BONUS
     end
-
     -- Adjust the player spread modify gradually over time
     newSpreadModifyValue = spreadDelta * (1 - newSpreadModifyValue)
     player.spreadModifier = GetSmoothValue(player.spreadModifier, newSpreadModifyValue)
@@ -98,7 +96,7 @@ function GetSmoothValue(from, number)
     return CoreMath.Lerp(from, number, WEAPON.spreadDecreaseSpeed/100)
 end
 
-function OnWeaponAimChanged(player, aimingStatus)
+function OnWeaponAimChanged(_, aimingStatus)
     if not Object.IsValid(WEAPON) then return end
 
     -- Caches the local player aiming status
@@ -107,5 +105,11 @@ function OnWeaponAimChanged(player, aimingStatus)
     end
 end
 
+function OnUnequip(_, weaponOwner)
+    if weaponOwner ~= LOCAL_PLAYER then return end
+    weaponOwner.spreadModifier = 0
+end
+
 -- Initialize
+WEAPON.unequippedEvent:Connect(OnUnequip)
 Events.Connect("WeaponAiming", OnWeaponAimChanged)

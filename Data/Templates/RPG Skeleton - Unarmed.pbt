@@ -589,7 +589,7 @@ Assets {
           Overrides {
             Name: "cs:ImpactCharacter"
             AssetReference {
-              Id: 1153191601152119550
+              Id: 307406115803496087
             }
           }
           Overrides {

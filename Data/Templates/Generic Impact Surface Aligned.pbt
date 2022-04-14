@@ -7,7 +7,7 @@ Assets {
       RootId: 6246242700242467092
       Objects {
         Id: 6246242700242467092
-        Name: "Client Context"
+        Name: "Generic Impact Surface Aligned"
         Transform {
           Scale {
             X: 1
@@ -16,12 +16,10 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 3337482753359517784
-        ChildIds: 11244076573502085025
-        ChildIds: 6983234237468868165
-        ChildIds: 8007739458989036561
+        ChildIds: 15676067918659116593
         UnregisteredParameters {
         }
+        Lifespan: 6
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -39,59 +37,8 @@ Assets {
         }
       }
       Objects {
-        Id: 3337482753359517784
-        Name: "Decal Bullet Damage Stone"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: -90
-            Yaw: -25.2393742
-            Roll: 25.239336
-          }
-          Scale {
-            X: 0.1
-            Y: 0.1
-            Z: 0.1
-          }
-        }
-        ParentId: 6246242700242467092
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Fade Delay"
-            Float: 4
-          }
-          Overrides {
-            Name: "bp:Fade Time"
-            Float: 2
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 11302073280474298634
-          }
-          DecalBP {
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 11244076573502085025
-        Name: "Impact Ground Dirt 01 SFX"
+        Id: 15676067918659116593
+        Name: "Impact Geo"
         Transform {
           Location {
           }
@@ -105,6 +52,41 @@ Assets {
           }
         }
         ParentId: 6246242700242467092
+        ChildIds: 11244076573502085025
+        ChildIds: 6983234237468868165
+        ChildIds: 8007739458989036561
+        ChildIds: 9519357983113725241
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 11244076573502085025
+        Name: "Impact Ground Dirt 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15676067918659116593
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -139,7 +121,6 @@ Assets {
           Location {
           }
           Rotation {
-            Pitch: -90
           }
           Scale {
             X: 1
@@ -147,7 +128,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6246242700242467092
+        ParentId: 15676067918659116593
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -181,7 +162,6 @@ Assets {
           Location {
           }
           Rotation {
-            Pitch: -90
           }
           Scale {
             X: 0.4
@@ -189,7 +169,7 @@ Assets {
             Z: 0.4
           }
         }
-        ParentId: 6246242700242467092
+        ParentId: 15676067918659116593
         UnregisteredParameters {
           Overrides {
             Name: "bp:Density"
@@ -246,14 +226,59 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
       }
-    }
-    Assets {
-      Id: 11302073280474298634
-      Name: "Decal Bullet Damage Stone"
-      PlatformAssetType: 14
-      PrimaryAsset {
-        AssetType: "DecalBlueprintAssetRef"
-        AssetId: "bp_decal_bullet_stone_001"
+      Objects {
+        Id: 9519357983113725241
+        Name: "Decal Bullet Damage Metal"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.1
+            Y: 0.1
+            Z: 0.1
+          }
+        }
+        ParentId: 15676067918659116593
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 0
+          }
+          Overrides {
+            Name: "bp:Fade Delay"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Fade Time"
+            Float: 2
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 16471063547951275134
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
       }
     }
     Assets {
@@ -283,10 +308,22 @@ Assets {
         AssetId: "fxbp_impact_sparks"
       }
     }
+    Assets {
+      Id: 16471063547951275134
+      Name: "Decal Bullet Damage Metal"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_bullet_metal_001"
+      }
+    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapons"
+  VirtualFolderPath: "Projectile"
+  VirtualFolderPath: "Dependecies"
 }

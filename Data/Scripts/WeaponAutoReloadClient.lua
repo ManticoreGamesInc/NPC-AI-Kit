@@ -36,19 +36,11 @@ while not Object.IsValid(RELOAD_ABILITY) do
 end
 
 -- Exposed properties
-local AUTO_RELOAD = WEAPON:GetCustomProperty("EnableAutoReload")
+local AUTO_RELOAD = script:GetCustomProperty("EnableAutoReload")
 
 -- Internal variables --
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local autoReloaded = false
-
-
--- Manually spawn the reloading audio
-function SpawnReloadingAudio()
-    if WEAPON.reloadSoundId ~= nil then
-        World.SpawnAsset(WEAPON.reloadSoundId, {position = WEAPON:GetWorldPosition()})
-    end
-end
 
 function Tick(deltaTime)
 
@@ -57,13 +49,13 @@ function Tick(deltaTime)
 
     -- Makes sure that the weapon owner is the local player
     if not Object.IsValid(WEAPON) then return end
-    if not WEAPON.owner == LOCAL_PLAYER then return end
+    if not Object.IsValid(RELOAD_ABILITY) then return end
+    if WEAPON.owner ~= LOCAL_PLAYER then return end
 
     if not WEAPON.isAmmoFinite then
         -- Checks when the weapon has empty ammo to reload
         if WEAPON.currentAmmo == 0
         and not autoReloaded then
-            SpawnReloadingAudio()
             RELOAD_ABILITY:Activate()
             autoReloaded = true
             Task.Wait(RELOAD_ABILITY.castPhaseSettings.duration)
@@ -72,14 +64,14 @@ function Tick(deltaTime)
         -- Interrupts the reloading animation,
         -- If the weapon is in different state and the ammo is not empty
         if WEAPON.currentAmmo > 0
-        and RELOAD_ABILITY ~= AbilityPhase.READY
+        and RELOAD_ABILITY:GetCurrentPhase() ~= AbilityPhase.READY
         and autoReloaded then
             RELOAD_ABILITY:Interrupt()
             autoReloaded = false
         end
 
         -- Reset autoReloaded bool on ready phase
-        if RELOAD_ABILITY == AbilityPhase.READY
+        if RELOAD_ABILITY:GetCurrentPhase() == AbilityPhase.READY
         and autoReloaded then
             autoReloaded = false
         end

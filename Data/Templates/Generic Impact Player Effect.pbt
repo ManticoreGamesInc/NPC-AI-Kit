@@ -7,7 +7,7 @@ Assets {
       RootId: 11352976760511440785
       Objects {
         Id: 11352976760511440785
-        Name: "Client Context"
+        Name: "Generic Impact Player Effect"
         Transform {
           Scale {
             X: 1
@@ -150,4 +150,5 @@ Assets {
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapons"
 }

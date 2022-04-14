@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 15094832644881972041
+      RootId: 13644638768556943119
       Objects {
-        Id: 15094832644881972041
+        Id: 13644638768556943119
         Name: "Generic Sound Pickup"
         Transform {
           Scale {
@@ -16,41 +16,6 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 13644638768556943119
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 13644638768556943119
-        Name: "Client Context"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15094832644881972041
         ChildIds: 14161033992207230210
         UnregisteredParameters {
         }
@@ -127,4 +92,7 @@ Assets {
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapons"
+  VirtualFolderPath: "Projectile"
+  VirtualFolderPath: "Dependecies"
 }

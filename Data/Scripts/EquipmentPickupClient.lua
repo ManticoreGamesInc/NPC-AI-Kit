@@ -27,13 +27,13 @@ if not EQUIPMENT:IsA('Equipment') then
 end
 
 -- Exposed variables --
-local PICKUP_SOUND = EQUIPMENT:GetCustomProperty("PickupSound")
+local PICKUP_SOUND = script:GetCustomProperty("PickupSound")
 
 -- Internal variables --
 local DEFAULT_LIFESPAN = 1
 
 -- nil OnEquipped(Equipment)
-function OnEquipped(equipment, player)
+function OnEquipped(equipment)
 
     -- Spawn a pickup sound when a player picks up the weapon
     if PICKUP_SOUND then

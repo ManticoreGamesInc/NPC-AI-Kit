@@ -22,8 +22,8 @@ if not WEAPON:IsA('Weapon') then
 end
 
 -- Exposed variables
-local HIDE_ON_AIM = WEAPON:GetCustomProperty("HideReticleOnAim")
-local RETICLE_TEMPLATE = WEAPON:GetCustomProperty("ReticleTemplate")
+local HIDE_ON_AIM = script:GetCustomProperty("HideReticleOnAim")
+local RETICLE_TEMPLATE = script:GetCustomProperty("ReticleTemplate")
 
 -- Constant variables
 local LOCAL_PLAYER = Game.GetLocalPlayer()

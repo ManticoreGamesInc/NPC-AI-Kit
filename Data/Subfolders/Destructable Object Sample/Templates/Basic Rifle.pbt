@@ -78,7 +78,7 @@ Assets {
             AttackCooldown: 0.25
             Range: 10000
             ImpactPlayerAssetRef {
-              Id: 1153191601152119550
+              Id: 307406115803496087
             }
             ReticleType {
               Value: "mc:ereticletype:crosshair"

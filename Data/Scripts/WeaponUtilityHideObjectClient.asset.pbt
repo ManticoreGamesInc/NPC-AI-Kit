@@ -17,7 +17,12 @@ Assets {
         Name: "cs:HideOnEmptyAmmo"
         Bool: false
       }
+      Overrides {
+        Name: "cs:HideDuringReload"
+        Bool: false
+      }
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapon"
 }

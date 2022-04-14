@@ -32,9 +32,10 @@ end
 
 -- Exposed variables --
 local CAN_AIM = WEAPON:GetCustomProperty("EnableAim")
-local AIM_BINDING = WEAPON:GetCustomProperty("AimBinding")
-local AIM_WALK_SPEED_PERCENTAGE = WEAPON:GetCustomProperty("AimWalkSpeedPercentage")
-local AIM_ACTIVE_STANCE = WEAPON:GetCustomProperty("AimActiveStance")
+local AIM_BINDING = WEAPON:GetCustomProperty("AimBinding") or "ability_secondary"
+
+local AIM_WALK_SPEED_PERCENTAGE = script:GetCustomProperty("AimWalkSpeedPercentage")
+local AIM_ACTIVE_STANCE = script:GetCustomProperty("AimActiveStance")
 
 -- Internal variables --
 local speedReduced = 0                      -- Cache the amount of speed reduced from the player walk speed
@@ -86,6 +87,8 @@ function ResetPlayerSpeed(player)
 end
 
 function OnBindingPressed(player, actionName)
+    if not Object.IsValid(WEAPON) then return end
+    if player ~= WEAPON.owner then return end
     if actionName == AIM_BINDING then
         SetAimingSpeed(player)
         isAiming = true
@@ -93,6 +96,8 @@ function OnBindingPressed(player, actionName)
 end
 
 function OnBindingReleased(player, actionName)
+    if not Object.IsValid(WEAPON) then return end
+    if player ~= WEAPON.owner then return end
     if actionName == AIM_BINDING then
         ResetPlayerSpeed(player)
         isAiming = false
@@ -107,8 +112,12 @@ function OnEquipped(weapon, player)
     if not CAN_AIM then return end
 
     -- Connects the handle events
-    pressedHandle = player.bindingPressedEvent:Connect(OnBindingPressed)
-    releasedHandle = player.bindingReleasedEvent:Connect(OnBindingReleased)
+    if not pressedHandle then
+        pressedHandle = Input.actionPressedEvent:Connect(OnBindingPressed)
+    end
+    if not releasedHandle then
+        releasedHandle = Input.actionReleasedEvent:Connect(OnBindingReleased)
+    end
     playerDieHandle = player.diedEvent:Connect(OnPlayerDied)
 end
 
@@ -117,8 +126,14 @@ function OnUnequipped(weapon, player)
 
     -- Disconnects all the handle events to avoid event trigger
     -- for previous player when the weapon is used by next player
-    if (pressedHandle) then pressedHandle:Disconnect() end
-    if (releasedHandle) then releasedHandle:Disconnect() end
+	if pressedHandle then
+        pressedHandle:Disconnect()
+        pressedHandle = nil
+    end
+    if releasedHandle then
+        releasedHandle:Disconnect()
+        releasedHandle = nil
+    end
     if (playerDieHandle) then playerDieHandle:Disconnect() end
 
     -- Reset player speed and animation stance on unequip

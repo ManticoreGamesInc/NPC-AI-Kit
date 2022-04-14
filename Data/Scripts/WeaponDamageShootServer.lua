@@ -26,33 +26,52 @@ if not WEAPON:IsA('Weapon') then
 end
 
 -- Exposed variables --
-local DAMAGE_AMOUNT = WEAPON:GetCustomProperty("BaseDamage")
-local DAMAGE_HEADSHOT = WEAPON:GetCustomProperty("HeadshotDamage")
+local DAMAGE_AMOUNT = script:GetCustomProperty("BaseDamage")
+local DAMAGE_HEADSHOT = script:GetCustomProperty("HeadshotDamage")
+
+function GetValidTarget(target)
+    if not Object.IsValid(target) then return nil end
+
+    if target:IsA("Player") or target:IsA("Damageable") then
+        return target
+    else
+        return target:FindAncestorByType("Damageable")
+    end
+end
 
 function OnWeaponInteracted(weapon, impactData)
-    local target = impactData.targetObject
-
+    local target = GetValidTarget(impactData.targetObject)
+    
     -- Apply damage to target if it's a player
-    if Object.IsValid(target) and target:IsA("Player") then
-
-        local weaponOwner = impactData.weaponOwner
-        local numberOfHits = #impactData:GetHitResults()
+    if Object.IsValid(target) then
 
         -- Assign a headshot damage if projectile hit enemy's head
         local damage = DAMAGE_AMOUNT
-        if impactData.isHeadshot then
+        if _G["standardcombo.Combat.Wrap"] then
+			local hitResult = impactData:GetHitResult()
+			local pos = hitResult:GetImpactPosition()
+        	if _G["standardcombo.Combat.Wrap"].IsHeadshot(target, hitResult, pos) then
+        		damage = DAMAGE_HEADSHOT
+        	end
+        elseif impactData.isHeadshot and target:IsA("Player") then
             damage = DAMAGE_HEADSHOT
         end
 
         -- Creating damage information
         -- Note: number of hits sums up the damage number for multi-shot weapons (e.g. shotgun)
-        local newDamageInfo = Damage.New(damage * numberOfHits)
-        newDamageInfo.reason = DamageReason.COMBAT
-        newDamageInfo.sourceAbility = impactData.sourceAbility
-        newDamageInfo.sourcePlayer = weaponOwner
+        local newDamage = Damage.New(damage * #impactData:GetHitResults())
+        newDamage.reason = DamageReason.COMBAT
+        newDamage.sourceAbility = impactData.sourceAbility
+        newDamage.sourcePlayer = impactData.weaponOwner
+
+        -- Registering hit result on damage
+        local hitResult = impactData:GetHitResult()
+        if hitResult.other then
+            newDamage:SetHitResult(hitResult)
+        end
 
         -- Apply damage to the enemy player
-        target:ApplyDamage(newDamageInfo)
+        target:ApplyDamage(newDamage)
     end
 end
 

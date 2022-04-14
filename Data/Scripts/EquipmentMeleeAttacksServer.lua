@@ -16,8 +16,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 --]]
 
 --[[
-This script uses the specified hitbox trigger on ability to damage enemy players on ability execute phase.
-Each ability can have its own trigger (e.g. small attacks - front trigger, big attacks - wider trigger).
+This script uses the specified hit sphere on ability to damage enemy players or damageable objects on ability execute phase.
 ]]
 
 -- Internal custom properties
@@ -26,11 +25,17 @@ if not EQUIPMENT:IsA('Equipment') then
     error(script.name .. " should be part of Equipment object hierarchy.")
 end
 
+-- User exposed properties
+local HIT_SPHERE_RADIUS = EQUIPMENT:GetCustomProperty("HitSphereRadius")
+local HIT_SPHERE_OFFSET = EQUIPMENT:GetCustomProperty("HitSphereOffset")
+local SHOW_HIT_SPHERE = EQUIPMENT:GetCustomProperty("ShowHitSphere")
+
 -- Internal variables
 local abilityList = {}
 
 -- nil Tick()
--- Checks the players within hitbox, and makes sure swipe effects stay at the player's location
+-- Checks the players or damageable objects within hitbox, 
+-- and makes sure swipe effects stay at the player's location
 function Tick()
     -- Check for the existence of the equipment or owner before running Tick
     if not Object.IsValid(EQUIPMENT) then return end
@@ -39,50 +44,82 @@ function Tick()
 
     for _, abilityInfo in ipairs(abilityList) do
         if abilityInfo.canAttack then
-            if Object.IsValid(abilityInfo.hitBox) then
-                for _, other in ipairs(abilityInfo.hitBox:GetOverlappingObjects()) do
-                    if other:IsA("Player") then
-                        MeleeAttack(other, abilityInfo)
-                    end
-                end
-            end
+            DetectAndDamageInSphere(GetHitSpherePosition(), HIT_SPHERE_RADIUS, abilityInfo)
         end
     end
 end
 
--- nil MeleeAttack(Player)
--- Detect players within hitbox to apply damage
-function MeleeAttack(player, abilityInfo)
+-- Vector3 GetHitSpherePosition()
+-- Returns position of the hit sphere based on equipment owner player position and offset
+function GetHitSpherePosition()
+    if not Object.IsValid(EQUIPMENT) then return Vector3.ZERO end
+    if not Object.IsValid(EQUIPMENT.owner) then return EQUIPMENT:GetWorldPosition() end
+
+    local ownerTransform = EQUIPMENT.owner:GetWorldTransform()
+
+    return EQUIPMENT.owner:GetWorldPosition() + 
+            ownerTransform:GetForwardVector() * HIT_SPHERE_OFFSET.x + 
+            ownerTransform:GetRightVector() * HIT_SPHERE_OFFSET.y + 
+            ownerTransform:GetUpVector() * HIT_SPHERE_OFFSET.z
+end
+
+-- GetValidTarget(Object)
+-- Returns the valid Player or Damageable object
+function GetValidTarget(target)
+    if not Object.IsValid(target) then return nil end
+
+    if target:IsA("Player") or target:IsA("Damageable") then
+        return target
+    else
+        return target:FindAncestorByType("Damageable")
+    end
+end
+
+-- nil DetectAndDamageInSphere(Vector3, float, table)
+-- Creates sphere cast to detect valid object to apply damage on
+function DetectAndDamageInSphere(center, radius, abilityInfo)
+    local hitResults = World.SpherecastAll(center, center + Vector3.FORWARD, radius)
+
+    if SHOW_HIT_SPHERE then
+        CoreDebug.DrawSphere(center, radius)
+    end
+
+    for index, hitResult in ipairs(hitResults) do
+        local validTarget = GetValidTarget(hitResult.other)
+        if validTarget then
+            MeleeAttack(validTarget, abilityInfo, hitResult)
+        end
+    end
+end
+
+-- nil MeleeAttack(Player or Damageable Object)
+-- Detect players or damagable objects within hitbox to apply damage
+function MeleeAttack(target, abilityInfo, hitResult)
+    if not Object.IsValid(target) then return end
 
     local ability = abilityInfo.ability
+    if not Object.IsValid(ability) then return end
+    if not Object.IsValid(ability.owner) then return end
 
     -- Ignore if the hitbox is overlapping with the owner
-    if player == ability.owner then return end
-    -- Ignore friendly attack
-    if Teams.AreTeamsFriendly(player.team, ability.owner.team) then return end
+    if target == ability.owner then return end
 
-    -- Avoid hitting the same player multiple times in a single swing
-    if (abilityInfo.ignoreList[player] ~= 1) then
+    -- Ignore friendly attack
+    if target:IsA("Player") then
+        if Teams.AreTeamsFriendly(target.team, ability.owner.team) then return end
+    end
+
+    -- Avoid hitting the same player or damageable object multiple times in a single swing
+    if (abilityInfo.ignoreList[target] ~= 1) then
 
         -- Creates new damage info at apply it to the enemy
         local damage = Damage.New(abilityInfo.damage)
         damage.sourcePlayer = ability.owner
         damage.sourceAbility = ability
-        player:ApplyDamage(damage)
+        damage:SetHitResult(hitResult)
+        target:ApplyDamage(damage)
 
-        abilityInfo.ignoreList[player] = 1
-    end
-end
-
--- nil OnBeginOverlap(Trigger, Object)
--- Event when the hitbox hits a player
-function OnBeginOverlap(trigger, other)
-    if other:IsA("Player") then
-        for _, abilityInfo in ipairs(abilityList) do
-            if abilityInfo.canAttack then
-                MeleeAttack(other, abilityInfo)
-            end
-        end
+        abilityInfo.ignoreList[target] = 1
     end
 end
 
@@ -107,7 +144,6 @@ end
 -- nil ResetMelee(Ability)
 -- Resets this scripts internal variables
 function ResetMelee(ability)
-
     -- Forget anything we hit this swing
     if ability then
         for _, abilityInfo in ipairs(abilityList) do
@@ -127,19 +163,16 @@ end
 -- Initialize
 local abilityDescendants = EQUIPMENT:FindDescendantsByType("Ability")
 for _, ability in ipairs(abilityDescendants) do
-    local hitBox = ability:GetCustomProperty("Hitbox")
+    local useHitSphere = ability:GetCustomProperty("UseHitSphere")
 
-    if hitBox then
-        hitBox = ability:GetCustomProperty("Hitbox"):WaitForObject()
-        hitBox.beginOverlapEvent:Connect(OnBeginOverlap)
-
+    if useHitSphere then
         ability.executeEvent:Connect(OnExecute)
         ability.cooldownEvent:Connect(ResetMelee)
 
         table.insert(abilityList, {
             ability = ability,
             damage = ability:GetCustomProperty("Damage"),
-            hitBox = hitBox,
+            useHitSphere = useHitSphere,
             canAttack = false,
             ignoreList = {}
         })

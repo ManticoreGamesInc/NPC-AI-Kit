@@ -66,11 +66,37 @@ Assets {
           }
           Overrides {
             Name: "bp:Life"
-            Float: 0.2
+            Float: 0.22
           }
           Overrides {
             Name: "bp:Emissive Boost"
-            Float: 0.5
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.97
+              G: 0.366159
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:ColorB"
+            Color {
+              R: 1
+              G: 0.73827821
+              B: 0.24000001
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:ColorC"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -113,4 +139,7 @@ Assets {
     }
   }
   SerializationVersion: 113
+  VirtualFolderPath: "Weapons"
+  VirtualFolderPath: "Projectile"
+  VirtualFolderPath: "Dependecies"
 }

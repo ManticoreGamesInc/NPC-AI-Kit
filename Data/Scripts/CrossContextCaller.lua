@@ -1,6 +1,6 @@
 --[[
 	Cross-Context Function Caller
-	v1.1
+	v1.1.1
 	by: standardcombo
 	
 	This util provides a pathway through which scripts can have functions be called in an
@@ -11,6 +11,9 @@
 	context and the Server script passes to it a function through Call(). When this
 	Cross-Context script goes into its own context it will then invoke the server function.
 	
+	When spawning assets this is usually not needed, as you can use Core's natural
+	World.SpawnAsset() with additional parameters specifying the context.
+	  
 	Usage
 	=====
 	Place in the top of the script:
@@ -44,3 +47,4 @@ function Tick()
 		table.remove(functionsToRun, 1)
 	end
 end
+

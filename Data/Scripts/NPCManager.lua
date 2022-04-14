@@ -1,6 +1,6 @@
 --[[
 	NPC Manager
-	v0.11.2
+	v0.12.0
 	by: standardcombo
 	
 	Provides bookkeeping on all NPCs contained in a game.

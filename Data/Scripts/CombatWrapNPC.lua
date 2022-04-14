@@ -1,7 +1,7 @@
 --[[
 	Combat Wrap - NPC
-	v0.11.2
-	by: standardcombo
+	v0.12.0
+	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
 	

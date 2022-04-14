@@ -1,7 +1,7 @@
 --[[
 	NPCHealthBar
 	by: standardcombo
-	v0.9.0
+	v0.12.0
 	
 	Works in conjunction with a data provider that is passed into SetDataProvider().
 	

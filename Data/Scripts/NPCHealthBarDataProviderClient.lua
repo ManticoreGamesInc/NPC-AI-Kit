@@ -1,7 +1,7 @@
 --[[
 	NPCHealthBarDataProvider - Client
 	by: standardcombo
-	v0.9.0
+	v0.12.0
 	
 	Works in conjunction with NPCHealthBar. Sets itself as the data provider for the UI.
 	Other objects could use the same health bar UI by implementing their own data

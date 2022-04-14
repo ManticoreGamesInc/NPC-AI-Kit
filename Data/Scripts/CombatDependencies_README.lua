@@ -1,7 +1,7 @@
 --[[
 	Combat Dependencies - Template
-	v1.1.1
-	by: standardcombo
+	v1.2.0
+	by: standardcombo, WaveParadigm
 	
 	Add a copy of the Combat Dependencies template to the hierarchy.
 	
@@ -15,7 +15,10 @@
 	  
 	- Cross Context Caller
 	  Allows Static/Server contexts to execute code onto the default network context.
-	  
+	  	  
 	- NPC Kit Kill Feed Adapter
 	  Allows a game with kill feed to show the name of the NPC that killed a player.
+	  
+	- Damage Feedback server/client
+	  Detects when players deal damage and shows the damage flyup numbers.
 --]]

@@ -1,7 +1,7 @@
 --[[
 	Combat Wrap API
-	v0.11.2
-	by: standardcombo
+	v0.12.0
+	by: standardcombo, WaveParadigm
 	
 	Identifies the type of object and wraps it with a common interface for combat-related functions.
 	

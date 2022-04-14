@@ -1,8 +1,8 @@
 --[[
 	NPCAI - Server
-	v0.11.2
+	v0.12.0
 	by: standardcombo
-	contributions: DarkDev
+	contributions: DarkDev, WaveParadigm
 	
 	Logical state machine for an enemy NPC. Works in conjunction with NPCAttackServer.
 	

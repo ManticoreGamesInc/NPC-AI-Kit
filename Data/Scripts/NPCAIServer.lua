@@ -834,6 +834,9 @@ function OnDamageTaken(attackData)
 	end
 end
 
+local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
+
+
 function Search(fromPos, toPos)
 	--print("Search")
 	searchStartPosition = fromPos
@@ -937,7 +940,6 @@ function OnObjectDied(attackData)
 	end
 end
 
-local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
 
 function Cleanup()
 	--print("Cleanup()")

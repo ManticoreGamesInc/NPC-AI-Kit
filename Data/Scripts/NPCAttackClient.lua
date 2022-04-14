@@ -72,6 +72,8 @@ UpdateColliderTeam()
 
 
 function SpawnAsset(template, pos, rot)
+	if not template then return end
+	
 	local spawnedVfx = World.SpawnAsset(template, {position = pos, rotation = rot})
 	if spawnedVfx and spawnedVfx.lifeSpan <= 0 then
 		spawnedVfx.lifeSpan = 1.5

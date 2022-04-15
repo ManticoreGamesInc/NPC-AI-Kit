@@ -6,7 +6,7 @@
 	Gives the player a vertical impulse when the ability executes.
 --]]
 
-local ABILITY = script.parent
+local ABILITY = script:GetCustomProperty("Ability"):WaitForObject() or script.parent
 local LEAP_AMOUNT = script:GetCustomProperty("LeapAmount")
 local LEAP_EFFECTS = script:GetCustomProperty("LeapEffects")
 

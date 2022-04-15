@@ -1,6 +1,6 @@
 Assets {
-  Id: 11728428692852934887
-  Name: "EquipmentAddOnEquipped"
+  Id: 12714974056108892741
+  Name: "AdditionalEquipmentOnEquip"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

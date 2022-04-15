@@ -1,6 +1,6 @@
 --[[
 	Destructible Weapon AOE
-	v1.1
+	v1.2
 	by: standardcombo
 	
 	Deals damage in an area, to Players and NPCs.
@@ -8,10 +8,10 @@
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
+function COMBAT() return MODULE.Get_Optional("standardcombo.Combat.Wrap") end
 
 
-local WEAPON = script.parent
+local WEAPON = script:FindAncestorByType("Weapon")
 local ATTACK_ABILITY = script:GetCustomProperty("AttackAbility"):WaitForObject()
 
 local BLAST_IMPACT_TEMPLATE = script:GetCustomProperty("BlastImpactTemplate")
@@ -30,7 +30,12 @@ local function OnTargetImpact(theWeapon, impactData)
     -- Create the position of the blast and find players within radius
     local hitResult = impactData:GetHitResult()
     local center = hitResult:GetImpactPosition()
-    local enemies = COMBAT().FindInSphere(center, BLAST_RADIUS, {ignoreTeams = casterTeam})
+    local enemies
+    if COMBAT() then
+    	enemies = COMBAT().FindInSphere(center, BLAST_RADIUS, {ignoreTeams = casterTeam})
+    else
+    	enemies = Game.FindPlayersInSphere(center, BLAST_RADIUS, {ignoreTeams = casterTeam})
+    end
 
     if BLAST_IMPACT_TEMPLATE then
         local blastTemplate = World.SpawnAsset(BLAST_IMPACT_TEMPLATE, {position = center})
@@ -43,7 +48,13 @@ local function OnTargetImpact(theWeapon, impactData)
 		
         -- Create a direction at which the character is pushed away from the blast
         local displacement = enemyPos - center
-        COMBAT().AddImpulse(enemy, displacement:GetNormalized() * BLAST_KNOCKBACK_SPEED)
+        if BLAST_KNOCKBACK_SPEED > 0 then
+	        if COMBAT() then
+	        	COMBAT().AddImpulse(enemy, displacement:GetNormalized() * BLAST_KNOCKBACK_SPEED)
+	        else
+        		enemy:AddImpulse(displacement:GetNormalized() * BLAST_KNOCKBACK_SPEED)
+        	end
+        end
 
         -- The farther the character is from the blast the less damage that character takes
         local minDamage = BLAST_DAMAGE_RANGE.x
@@ -61,14 +72,18 @@ local function OnTargetImpact(theWeapon, impactData)
 		dmg.sourceAbility = ATTACK_ABILITY
 
         -- Apply damage to enemy
-		local attackData = {
-			object = enemy,
-			damage = dmg,
-			source = dmg.sourcePlayer,
-			position = enemyPos,
-			tags = tagData
-		}
-        COMBAT().ApplyDamage(attackData)
+        if COMBAT() then
+			local attackData = {
+				object = enemy,
+				damage = dmg,
+				source = dmg.sourcePlayer,
+				position = enemyPos,
+				tags = tagData
+			}
+	        COMBAT().ApplyDamage(attackData)
+		else
+			enemy:ApplyDamage(dmg)
+		end
     end
 end
 

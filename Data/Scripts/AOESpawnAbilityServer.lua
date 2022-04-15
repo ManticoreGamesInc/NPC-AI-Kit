@@ -1,4 +1,12 @@
-local ABILITY = script:FindAncestorByType("Ability")
+--[[
+	AOE Spawn Ability Server
+	v1.0
+	by: standardcombo
+	
+	Spawns an Area-of-Effect object at targeted location.
+--]]
+
+local ABILITY = script:GetCustomProperty("Ability"):WaitForObject() or script.parent
 local AOE_ASSET = script:GetCustomProperty("AOEAsset")
 local OFFSET = script:GetCustomProperty("ForwardSpawnOffset")
 
@@ -15,9 +23,15 @@ function OnExecute(ability)
                 spawnPos = targetData:GetHitPosition()
             end
         end
-        local instance = World.SpawnAsset(AOE_ASSET, {position = spawnPos})
+        
+        local instance = World.SpawnAsset(AOE_ASSET, {
+        	position = spawnPos,
+        	networkContext = NetworkContextType.NETWORKED
+        })
+        
         instance.serverUserData.sourceAbility = ability
     end
 end
 
 ABILITY.executeEvent:Connect(OnExecute)
+

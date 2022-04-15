@@ -1,21 +1,17 @@
 --[[
 	Destructible Weapon - Server
-	v0.11.0
+	v0.12.0
 	by: standardcombo, Chris C.
 	
-	Place this script in Weapons to make them interactable with both
-	Players and NPCs.
-	
-	Expects the "Combat Wrap API" to be added to the hierarchy.
-	
+	Script that specializes a weapon's basic attack to work with the NPC AI Kit.
 --]]
 
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
+function COMBAT() return MODULE.Get_Optional("standardcombo.Combat.Wrap") end
 
 
-local WEAPON = script.parent
+local WEAPON = script:FindAncestorByType("Weapon")
 
 local DAMAGE_TO_PLAYERS = script:GetCustomProperty("DamageToPlayers")
 local DAMAGE_TO_OBJECTS = script:GetCustomProperty("DamageToObjects")
@@ -28,15 +24,29 @@ local tagData = {}
 tagData.type = "Ranged"
 
 function OnTargetImpact(theWeapon, impactData)
+	local target = impactData.targetObject
+	if not Object.IsValid(target) then return end
+	
+	if not target:IsA("Damageable") then
+		target = target:FindAncestorByType("Damageable")
+	end
+	if not target then
+		return -- The hit object cannot be damaged
+	end
+	
 	local hitResult = impactData:GetHitResult()
 	local pos = hitResult:GetImpactPosition()
 	local rot = hitResult:GetTransform():GetRotation()
 	
-	local isHeadshot = COMBAT().IsHeadshot(impactData.targetObject, hitResult, pos)
+	-- Evaluate headshot
+	local isHeadshot = hitResult.isHeadshot
+	if not isHeadshot and COMBAT() then
+		isHeadshot = COMBAT().IsHeadshot(target, hitResult, pos)
+	end
 	--if isHeadshot then print("HEADSHOT!") end
 	
 	local amount = DAMAGE_TO_OBJECTS
-	if impactData.targetObject and impactData.targetObject:IsA("Player") then
+	if target:IsA("Player") then
 		if isHeadshot then
 			amount = HEADSHOT_PLAYERS
 		else
@@ -50,7 +60,7 @@ function OnTargetImpact(theWeapon, impactData)
 	if #impactData:GetHitResults() > 1 then
 		local numberOfHits = 0
 		for _,hit in ipairs(impactData:GetHitResults()) do
-			if hit.other == impactData.targetObject then
+			if hit.other == target then
 				numberOfHits = numberOfHits + 1
 			end
 		end
@@ -64,46 +74,33 @@ function OnTargetImpact(theWeapon, impactData)
 	dmg.sourcePlayer = theWeapon.owner
 	dmg.sourceAbility = theWeapon:GetAbilities()[1]
 
-	local attackData = {
-		object = impactData.targetObject,
-		damage = dmg,
-		source = dmg.sourcePlayer,
-		position = pos,
-		rotation = rot,
-		tags = tagData
+	if COMBAT() then
+		local attackData = {
+			object = target,
+			damage = dmg,
+			source = dmg.sourcePlayer,
+			position = pos,
+			rotation = rot,
+			tags = tagData
 		}
-	
-	COMBAT().ApplyDamage(attackData)
+		COMBAT().ApplyDamage(attackData)
+	else
+		target:ApplyDamage(dmg)
+	end
 end
 
 WEAPON.targetImpactedEvent:Connect(OnTargetImpact)
 
 
-function OnDamageTaken(attackData)
-	if attackData.source == WEAPON.owner then
-		BroadcastDamageFeedback(attackData.damage.amount, attackData.position)
-	end
-end
-local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
-
-
-function BroadcastDamageFeedback(amount, position)
-	local player = WEAPON.owner
-	if Object.IsValid(player) then
-		Events.BroadcastToPlayer(player, "ShowDamageFeedback", amount, position)
-	end
-end
-
 function Cleanup()
-	if damagedListener then
-		damagedListener:Disconnect()
-		damagedListener = nil
-	end
+	-- nothing at the moment
 end
 
+--[[
 function OnDestroyed(obj)
 	Cleanup()
 end
 
 WEAPON.destroyEvent:Connect(OnDestroyed)
+--]]
 

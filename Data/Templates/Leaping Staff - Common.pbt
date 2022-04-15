@@ -16,10 +16,11 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 16153191253904756321
-        ChildIds: 7648488592650820705
+        ChildIds: 8083221244245278106
+        ChildIds: 12427843347249369536
+        ChildIds: 1397141085902036051
         ChildIds: 14546425128558904636
-        ChildIds: 9238699678144792207
+        ChildIds: 8554591793317646606
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -105,99 +106,8 @@ Assets {
         }
       }
       Objects {
-        Id: 16153191253904756321
-        Name: "DestructibleWeaponServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9901109355884061414
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToObjects"
-            Int: 35
-          }
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 35
-          }
-          Overrides {
-            Name: "cs:HeadshotNPCs"
-            Int: 50
-          }
-          Overrides {
-            Name: "cs:HeadshotPlayers"
-            Int: 50
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11462786613475885873
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 7648488592650820705
-        Name: "Abilities"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9901109355884061414
-        ChildIds: 8083221244245278106
-        ChildIds: 10041811267246491814
-        ChildIds: 12427843347249369536
-        ChildIds: 1397141085902036051
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Abilities_3"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 8083221244245278106
-        Name: "Fireball"
+        Name: "Basic Attack - Fireball"
         Transform {
           Location {
           }
@@ -209,7 +119,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7648488592650820705
+        ParentId: 9901109355884061414
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -278,52 +188,6 @@ Assets {
         }
       }
       Objects {
-        Id: 10041811267246491814
-        Name: "FireBlastAbility"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7648488592650820705
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:SecondaryEquipment"
-            AssetReference {
-              Id: 1350685061412585858
-            }
-          }
-          Overrides {
-            Name: "cs:Socket"
-            String: "right_prop"
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 11728428692852934887
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 12427843347249369536
         Name: "Fire Rain"
         Transform {
@@ -338,8 +202,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7648488592650820705
-        ChildIds: 17729666980509672036
+        ParentId: 9901109355884061414
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -400,53 +263,6 @@ Assets {
         }
       }
       Objects {
-        Id: 17729666980509672036
-        Name: "AOESpawnAbilityServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Yaw: -2.04905591e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12427843347249369536
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:AOEAsset"
-            AssetReference {
-              Id: 16737318897597383360
-            }
-          }
-          Overrides {
-            Name: "cs:ForwardSpawnOffset"
-            Float: 3500
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9967702307892939268
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 1397141085902036051
         Name: "Leap"
         Transform {
@@ -460,8 +276,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7648488592650820705
-        ChildIds: 5874508258067952453
+        ParentId: 9901109355884061414
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -525,46 +340,6 @@ Assets {
         }
       }
       Objects {
-        Id: 5874508258067952453
-        Name: "LeapAbility"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1397141085902036051
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:LeapAmount"
-            Float: 500000
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 14424777330967029426
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 14546425128558904636
         Name: "Pickup Trigger"
         Transform {
@@ -607,6 +382,258 @@ Assets {
         }
       }
       Objects {
+        Id: 8554591793317646606
+        Name: "LocalContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9901109355884061414
+        ChildIds: 9492934274016128143
+        ChildIds: 9238699678144792207
+        WantsNetworking: true
+        NetworkContext {
+          Type: Local
+        }
+      }
+      Objects {
+        Id: 9492934274016128143
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8554591793317646606
+        ChildIds: 16153191253904756321
+        ChildIds: 10041811267246491814
+        ChildIds: 17729666980509672036
+        ChildIds: 5874508258067952453
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 16153191253904756321
+        Name: "DestructibleWeaponServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9492934274016128143
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageToObjects"
+            Int: 35
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 35
+          }
+          Overrides {
+            Name: "cs:HeadshotNPCs"
+            Int: 50
+          }
+          Overrides {
+            Name: "cs:HeadshotPlayers"
+            Int: 50
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 11462786613475885873
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 10041811267246491814
+        Name: "FireBlastAbility"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9492934274016128143
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SecondaryEquipment"
+            AssetReference {
+              Id: 1350685061412585858
+            }
+          }
+          Overrides {
+            Name: "cs:Socket"
+            String: "right_prop"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12714974056108892741
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 17729666980509672036
+        Name: "AOESpawnAbilityServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9492934274016128143
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:AOEAsset"
+            AssetReference {
+              Id: 16737318897597383360
+            }
+          }
+          Overrides {
+            Name: "cs:ForwardSpawnOffset"
+            Float: 3500
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 12427843347249369536
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 9967702307892939268
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 5874508258067952453
+        Name: "LeapAbility"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9492934274016128143
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:LeapAmount"
+            Float: 500000
+          }
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 1397141085902036051
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14424777330967029426
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
         Id: 9238699678144792207
         Name: "Client Context"
         Transform {
@@ -620,15 +647,13 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9901109355884061414
-        ChildIds: 7640586767722779591
+        ParentId: 8554591793317646606
         ChildIds: 14073724712230366154
         ChildIds: 11457112152022062268
         ChildIds: 11734528818702066662
         ChildIds: 5308797044881769317
         UnregisteredParameters {
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -639,39 +664,6 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 7640586767722779591
-        Name: "DestructibleWeaponClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9238699678144792207
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1745020032661794594
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -966,7 +958,6 @@ Assets {
           }
         }
         ParentId: 5308797044881769317
-        ChildIds: 10369286123638886944
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -1003,41 +994,6 @@ Assets {
         }
         Relevance {
           Value: "mc:eproxyrelevance:critical"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 10369286123638886944
-        Name: "EquipmentTeamColor"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 6.27000666
-            Y: 6.27000666
-            Z: 6.27000666
-          }
-        }
-        ParentId: 2607022002622142058
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15401835518001702557
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

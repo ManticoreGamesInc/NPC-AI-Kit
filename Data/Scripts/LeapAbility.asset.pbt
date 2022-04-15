@@ -5,6 +5,11 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:Ability"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:LeapAmount"
         Float: 400000
       }

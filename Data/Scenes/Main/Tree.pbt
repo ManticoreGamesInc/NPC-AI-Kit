@@ -1566,7 +1566,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   PlayerSpawnPoint {
-    TeamInt: 3
+    TeamInt: 4
     PlayerScaleMultiplier: 1
     SpawnEffectsTemplate {
     }

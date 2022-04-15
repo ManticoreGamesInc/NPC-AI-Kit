@@ -59,6 +59,12 @@ Assets {
         Float: 0
       }
       Overrides {
+        Name: "cs:TagGetter"
+        AssetReference {
+          Id: 13496047636004778757
+        }
+      }
+      Overrides {
         Name: "cs:Ability:tooltip"
         String: "Reference to the Ability tracked by this script. The Ability is what detects player input and drives the player avatar\'s animation."
       }

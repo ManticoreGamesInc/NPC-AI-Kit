@@ -1,15 +1,16 @@
 --[[
 	Melee Ability - Server
-	v1.4.2
+	v1.5.0
 	by: standardcombo
 	
 	Handles melee combat interaction of attack abilities on weapons such as swords.
+	Supports the NPC Kit.
 --]]
 
 
 -- Module dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function COMBAT() return MODULE:Get("standardcombo.Combat.Wrap") end
+function COMBAT() return MODULE:Get_Optional("standardcombo.Combat.Wrap") end
 
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
@@ -28,9 +29,9 @@ local ignoreList = {}
 local currentSwipe = nil
 local canAttack = false
 
--- Used to pass various data about the weapon
-local tagData = {}
-tagData.type = "Melee"
+-- Tags can represent various types or attributes of the equipment
+local tagData = require(script:GetCustomProperty("TagGetter")).GetTags(EQUIPMENT)
+table.insert(tagData, "Melee")
 
 function Tick(deltaTime)
 	if Object.IsValid(ABILITY) and Object.IsValid(ABILITY.owner)
@@ -53,9 +54,21 @@ function MeleeAttack(other)
 	if not Object.IsValid(ABILITY) then return end
 	if not Object.IsValid(ABILITY.owner) then return end
 	if other == ABILITY.owner then return end
-	if COMBAT().IsDead(other) then return end
+	
+	if not other:IsA("Damageable") 
+	and other.FindAncestorByType then -- E.g. Projectiles don't have this function
+		other = other:FindAncestorByType("Damageable")
+	end
+	if not other then
+		return -- The hit object cannot be damaged
+	end
+	
+	if other.isDead then return end
 
-	local otherTeam = COMBAT().GetTeam(other)
+	local otherTeam = other.team
+	if COMBAT() then
+		otherTeam = COMBAT().GetTeam(other)
+	end
 	if otherTeam and Teams.AreTeamsFriendly(otherTeam, ABILITY.owner.team) then return end
 
 	if ignoreList[other] ~= 1 then
@@ -66,8 +79,11 @@ function MeleeAttack(other)
 		local pos = (otherPos + meleePos) / 2
 		local rot = Rotation.New(otherPos - meleePos, Vector3.UP)
 
-		local isHeadshot = COMBAT().IsHeadshot(other, nil, pos)
-		--if isHeadshot then print("HEADSHOT!") end
+		local isHeadshot = false
+		if COMBAT() then
+			isHeadshot = COMBAT().IsHeadshot(other, nil, pos)
+			--if isHeadshot then print("HEADSHOT!") end
+		end
 
 		local damageRange = DAMAGE_RANGE_NPCS
 		if other:IsA("Player") then
@@ -89,16 +105,19 @@ function MeleeAttack(other)
 		dmg.sourcePlayer = ABILITY.owner
 		dmg.sourceAbility = ABILITY
 
-		local attackData = {
-			object = other,
-			damage = dmg,
-			source = ABILITY.owner,
-			position = pos,
-			rotation = rot,
-			tags = tagData
+		if COMBAT() then
+			local attackData = {
+				object = other,
+				damage = dmg,
+				source = ABILITY.owner,
+				position = pos,
+				rotation = rot,
+				tags = tagData
 			}
-
-		COMBAT().ApplyDamage(attackData)
+			COMBAT().ApplyDamage(attackData)
+		else
+			other:ApplyDamage(dmg)
+		end
 	end
 end
 
@@ -149,7 +168,7 @@ function OnEquipped(equipment, player)
 	EQUIPMENT.collision = Collision.INHERIT
 
 	local pickupTrigger = EQUIPMENT:FindChildByName("Pickup Trigger")
-	if (pickupTrigger) then
+	if pickupTrigger then
 		pickupTrigger.collision = Collision.FORCE_OFF
 	end
 end

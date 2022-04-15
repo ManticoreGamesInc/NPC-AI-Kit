@@ -695,7 +695,6 @@ Assets {
           }
         }
         ParentId: 14148377863257174790
-        ChildIds: 16824890889132612466
         ChildIds: 5009604582334839978
         ChildIds: 15685728308145164224
         ChildIds: 3977863847117621372
@@ -711,39 +710,6 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 16824890889132612466
-        Name: "DestructibleWeaponClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14276023058359206615
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1745020032661794594
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

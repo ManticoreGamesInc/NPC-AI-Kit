@@ -128,18 +128,10 @@ function OnDamageTaken(attackData)
 		if attackData.object:IsA("Player") then
 			Events.BroadcastToAllPlayers("MeleeImpact", ABILITY.id, attackData.position, attackData.rotation)
 		end
-
-		BroadcastDamageFeedback(attackData.damage.amount, attackData.position)
 	end
 end
 local damagedListener = Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
 
-function BroadcastDamageFeedback(amount, position)
-	local player = EQUIPMENT.owner
-	if Object.IsValid(player) then
-		Events.BroadcastToPlayer(player, "ShowDamageFeedback", amount, position)
-	end
-end
 
 function Cleanup()
 	if damagedListener then

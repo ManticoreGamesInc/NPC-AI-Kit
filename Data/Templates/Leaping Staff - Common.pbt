@@ -22,6 +22,10 @@ Assets {
         ChildIds: 14546425128558904636
         ChildIds: 8554591793317646606
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:Tag1"
+            String: "Light"
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

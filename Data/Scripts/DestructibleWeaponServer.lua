@@ -18,10 +18,9 @@ local DAMAGE_TO_OBJECTS = script:GetCustomProperty("DamageToObjects")
 local HEADSHOT_NPCS = script:GetCustomProperty("HeadshotNPCs")
 local HEADSHOT_PLAYERS = script:GetCustomProperty("HeadshotPlayers")
 
---##TODO Make custom property which builds the tag table
--- Used to pass various data about the weapon
-local tagData = {}
-tagData.type = "Ranged"
+-- Tags can represent various types or attributes of the equipment
+local tagData = require(script:GetCustomProperty("TagGetter")).GetTags(WEAPON)
+table.insert(tagData, "Ranged")
 
 function OnTargetImpact(theWeapon, impactData)
 	local target = impactData.targetObject

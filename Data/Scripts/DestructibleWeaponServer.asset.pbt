@@ -26,6 +26,12 @@ Assets {
         Name: "cs:HeadshotPlayers"
         Int: 2
       }
+      Overrides {
+        Name: "cs:TagGetter"
+        AssetReference {
+          Id: 13496047636004778757
+        }
+      }
     }
   }
   SerializationVersion: 113

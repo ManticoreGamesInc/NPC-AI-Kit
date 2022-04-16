@@ -9,6 +9,7 @@
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
 function COMBAT() return MODULE.Get_Optional("standardcombo.Combat.Wrap") end
+function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 
 local WEAPON = script:FindAncestorByType("Weapon")
@@ -21,7 +22,9 @@ local BLAST_KNOCKBACK_SPEED = script:GetCustomProperty("BlastKnockbackSpeed")
 
 local casterTeam = 0
 
-local tagData = {type = "AOE"}
+-- Tags can represent various types or attributes of the equipment
+local tagData = TAGS().GetTags(WEAPON)
+table.insert(tagData, "AOE")
 
 
 local function OnTargetImpact(theWeapon, impactData)

@@ -19,6 +19,14 @@ Assets {
         ChildIds: 6458050471659269473
         ChildIds: 1848043214244971700
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:Tag_1"
+            String: "Magic"
+          }
+          Overrides {
+            Name: "cs:Tag_2"
+            String: "Fire"
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

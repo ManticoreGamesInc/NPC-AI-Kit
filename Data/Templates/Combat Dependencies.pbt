@@ -20,6 +20,7 @@ Assets {
         ChildIds: 4513339989685681768
         ChildIds: 15693643951607791127
         ChildIds: 3305255709801741084
+        ChildIds: 11148091295288318264
         ChildIds: 9409702795888361092
         ChildIds: 16487936699547486300
         ChildIds: 2656278244493461100
@@ -176,6 +177,42 @@ Assets {
         }
       }
       Objects {
+        Id: 11148091295288318264
+        Name: "NPCKitTagGetter"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8014650375856875642
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 13496047636004778757
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
         Id: 9409702795888361092
         Name: "NPCKitKillFeedAdapter"
         Transform {
@@ -210,7 +247,7 @@ Assets {
       }
       Objects {
         Id: 16487936699547486300
-        Name: "DamageBroadcaster"
+        Name: "DamageFeedbackServer"
         Transform {
           Location {
           }

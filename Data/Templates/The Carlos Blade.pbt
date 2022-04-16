@@ -42,8 +42,8 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:Tag1"
-            String: "Quicksilver"
+            Name: "cs:Tag_1"
+            String: "Physical"
           }
         }
         WantsNetworking: true

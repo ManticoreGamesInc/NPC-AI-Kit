@@ -17,6 +17,7 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 10318705552966214072
+        ChildIds: 6689285461502830736
         ChildIds: 7916060936753738321
         ChildIds: 220515760384247820
         ChildIds: 7607072812707819050
@@ -68,6 +69,45 @@ Assets {
         Script {
           ScriptAsset {
             Id: 8371139463680709117
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 6689285461502830736
+        Name: "ExampleUndeadVulnerable"
+        Transform {
+          Location {
+            X: -20166.6738
+            Y: 8668.51855
+            Z: -1426.86597
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12901535811932769121
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 3366301058727231218
           }
         }
         NetworkRelevanceDistance {

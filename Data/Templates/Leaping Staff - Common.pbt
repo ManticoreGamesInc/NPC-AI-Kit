@@ -23,7 +23,11 @@ Assets {
         ChildIds: 8554591793317646606
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Tag1"
+            Name: "cs:Tag_1"
+            String: "Magic"
+          }
+          Overrides {
+            Name: "cs:Tag_2"
             String: "Light"
           }
         }

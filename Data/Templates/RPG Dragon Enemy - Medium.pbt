@@ -107,6 +107,18 @@ Assets {
             String: "Uncommon"
           }
           Overrides {
+            Name: "cs:Tag_1"
+            String: "Beast"
+          }
+          Overrides {
+            Name: "cs:Tag_2"
+            String: "Ranged"
+          }
+          Overrides {
+            Name: "cs:Tag_3"
+            String: "Poison"
+          }
+          Overrides {
             Name: "cs:Team:tooltip"
             String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
           }

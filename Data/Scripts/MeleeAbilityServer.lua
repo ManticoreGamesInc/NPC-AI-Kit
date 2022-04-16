@@ -11,6 +11,7 @@
 -- Module dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
 function COMBAT() return MODULE:Get_Optional("standardcombo.Combat.Wrap") end
+function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
@@ -30,8 +31,9 @@ local currentSwipe = nil
 local canAttack = false
 
 -- Tags can represent various types or attributes of the equipment
-local tagData = require(script:GetCustomProperty("TagGetter")).GetTags(EQUIPMENT)
+local tagData = TAGS().GetTags(EQUIPMENT)
 table.insert(tagData, "Melee")
+
 
 function Tick(deltaTime)
 	if Object.IsValid(ABILITY) and Object.IsValid(ABILITY.owner)

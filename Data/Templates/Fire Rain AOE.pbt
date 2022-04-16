@@ -116,6 +116,14 @@ Assets {
             Name: "cs:PlayerEffectSocket"
             String: "pelvis"
           }
+          Overrides {
+            Name: "cs:Tag_1"
+            String: "Magic"
+          }
+          Overrides {
+            Name: "cs:Tag_2"
+            String: "Fire"
+          }
         }
         Lifespan: 5
         WantsNetworking: true

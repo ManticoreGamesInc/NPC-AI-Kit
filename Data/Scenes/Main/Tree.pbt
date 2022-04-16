@@ -789,21 +789,9 @@ Objects {
         }
       }
     }
-    ParameterOverrideMap {
-      key: 16487936699547486300
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DamageFeedbackServer"
-        }
-      }
-    }
     TemplateAsset {
       Id: 2087257134469971969
     }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -1074,9 +1062,6 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 12901535811932769121
@@ -1103,9 +1088,6 @@ Objects {
     TemplateAsset {
       Id: 8021293717559119783
     }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {

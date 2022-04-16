@@ -10,6 +10,7 @@
 -- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
 function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
+function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 
 local COMPONENT_ROOT = script:GetCustomProperty("ComponentRoot"):WaitForObject()
@@ -56,7 +57,9 @@ local effectTable = {
 local sourceAbility = nil
 local sourceOwner = nil
 
-local tagData = {type = "AOE"}
+-- Tags can represent various types or attributes of the effect
+local tagData = TAGS().GetTags(script:FindTemplateRoot())
+table.insert(tagData, "AOE")
 
 
 function Blast(projectile, other, hitResult)

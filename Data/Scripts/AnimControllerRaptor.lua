@@ -1,10 +1,13 @@
 --[[
 	Animation Controller - Raptor
-	v1.1.1
+	v1.2.0
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Raptor Animated Mesh.
 	Changes in animation occur in response to movement and state machine changes.
+	
+	Can also be used for other animated meshes and customized by specifying
+	the optional custom properties below.
 --]]
 
 Task.Wait()
@@ -14,8 +17,10 @@ local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local IDLE_STANCE = script:GetCustomProperty("IdleStance") or "unarmed_idle_ready"
 local WALK_STANCE = script:GetCustomProperty("WalkStance") or "unarmed_walk_forward"
 local RUN_STANCE = script:GetCustomProperty("RunStance") or "unarmed_run_forward"
-local WALKING_SPEED = 5
-local RUNNING_SPEED = 350
+local ATTACK_ANIM_1 = script:GetCustomProperty("AttackAnim_1") or "unarmed_bite"
+local ATTACK_ANIM_2 = script:GetCustomProperty("AttackAnim_2") or "unarmed_claw"
+local WALKING_SPEED = script:GetCustomProperty("WalkSpeed") or 5
+local RUNNING_SPEED = script:GetCustomProperty("RunSpeed") or 350
 
 local lastPos = script.parent:GetWorldPosition()
 local speed = 0
@@ -24,10 +29,10 @@ local attackIndex = 1
 
 function PlayAttack()
 	if attackIndex == 1 then
-		MESH:PlayAnimation("unarmed_bite", {playbackRate = 1.5})
+		MESH:PlayAnimation(ATTACK_ANIM_1, {playbackRate = 1.5})
 		attackIndex = 2
 	else
-		MESH:PlayAnimation("unarmed_claw", {playbackRate = 1.3})
+		MESH:PlayAnimation(ATTACK_ANIM_2, {playbackRate = 1.3})
 		attackIndex = 1
 	end
 	MESH.playbackRateMultiplier = 1

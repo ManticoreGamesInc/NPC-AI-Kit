@@ -15,6 +15,34 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:IdleStance"
+        String: "unarmed_idle_ready"
+      }
+      Overrides {
+        Name: "cs:WalkStance"
+        String: "unarmed_walk_forward"
+      }
+      Overrides {
+        Name: "cs:RunStance"
+        String: "unarmed_run_forward"
+      }
+      Overrides {
+        Name: "cs:AttackAnim_1"
+        String: "unarmed_bite"
+      }
+      Overrides {
+        Name: "cs:AttackAnim_2"
+        String: "unarmed_claw"
+      }
+      Overrides {
+        Name: "cs:WalkSpeed"
+        Int: 5
+      }
+      Overrides {
+        Name: "cs:RunSpeed"
+        Int: 350
+      }
+      Overrides {
         Name: "cs:AnimatedMesh:tooltip"
         String: "Reference to the animated mesh object for this NPC."
       }

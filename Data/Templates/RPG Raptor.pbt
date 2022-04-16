@@ -19,56 +19,16 @@ Assets {
         ChildIds: 9709652266009644461
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Team"
-            Int: 2
+            Name: "cs:RewardResourceType"
+            String: "XP"
           }
           Overrides {
-            Name: "cs:CurrentState"
-            Int: 0
+            Name: "cs:RewardResourceAmount"
+            Int: 1
           }
           Overrides {
-            Name: "cs:MoveSpeed"
-            Float: 650
-          }
-          Overrides {
-            Name: "cs:TurnSpeed"
-            Float: 2
-          }
-          Overrides {
-            Name: "cs:LogicalPeriod"
-            Float: 0.35
-          }
-          Overrides {
-            Name: "cs:ReturnToSpawn"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:VisionHalfAngle"
-            Float: 85
-          }
-          Overrides {
-            Name: "cs:VisionRadius"
-            Float: 2500
-          }
-          Overrides {
-            Name: "cs:HearingRadius"
-            Float: 1000
-          }
-          Overrides {
-            Name: "cs:SearchBonusVision"
-            Float: 5000
-          }
-          Overrides {
-            Name: "cs:SearchDuration"
-            Float: 6
-          }
-          Overrides {
-            Name: "cs:PossibilityRadius"
-            Float: 800
-          }
-          Overrides {
-            Name: "cs:ChaseRadius"
-            Float: 4000
+            Name: "cs:LootId"
+            String: "Uncommon"
           }
           Overrides {
             Name: "cs:AttackRange"
@@ -91,20 +51,52 @@ Assets {
             Float: 1.5
           }
           Overrides {
-            Name: "cs:IsPushable"
+            Name: "cs:VisionHalfAngle"
+            Float: 85
+          }
+          Overrides {
+            Name: "cs:VisionRadius"
+            Float: 2500
+          }
+          Overrides {
+            Name: "cs:HearingRadius"
+            Float: 1000
+          }
+          Overrides {
+            Name: "cs:SearchDuration"
+            Float: 6
+          }
+          Overrides {
+            Name: "cs:PossibilityRadius"
+            Float: 800
+          }
+          Overrides {
+            Name: "cs:ChaseRadius"
+            Float: 4000
+          }
+          Overrides {
+            Name: "cs:SearchBonusVision"
+            Float: 5000
+          }
+          Overrides {
+            Name: "cs:MoveSpeed"
+            Float: 650
+          }
+          Overrides {
+            Name: "cs:TurnSpeed"
+            Float: 2
+          }
+          Overrides {
+            Name: "cs:LogicalPeriod"
+            Float: 0.35
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn"
             Bool: true
           }
           Overrides {
-            Name: "cs:RewardResourceType"
-            String: "XP"
-          }
-          Overrides {
-            Name: "cs:RewardResourceAmount"
-            Int: 1
-          }
-          Overrides {
-            Name: "cs:LootId"
-            String: "Uncommon"
+            Name: "cs:IsPushable"
+            Bool: true
           }
           Overrides {
             Name: "cs:Tag_1"
@@ -113,6 +105,14 @@ Assets {
           Overrides {
             Name: "cs:Tag_2"
             String: "Melee"
+          }
+          Overrides {
+            Name: "cs:Team"
+            Int: 2
+          }
+          Overrides {
+            Name: "cs:CurrentState"
+            Int: 0
           }
           Overrides {
             Name: "cs:Team:tooltip"
@@ -378,6 +378,94 @@ Assets {
             Name: "cs:LootId:ml"
             Bool: false
           }
+          Overrides {
+            Name: "cs:Tag_1:category"
+            String: "Tags"
+          }
+          Overrides {
+            Name: "cs:Tag_2:category"
+            String: "Tags"
+          }
+          Overrides {
+            Name: "cs:MoveSpeed:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:LogicalPeriod:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:TurnSpeed:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:VisionHalfAngle:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:VisionRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:HearingRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:SearchBonusVision:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:SearchDuration:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:PossibilityRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:ChaseRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:AttackRange:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackMinAngle:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackCast:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackRecovery:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackCooldown:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:IsPushable:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:RewardResourceType:category"
+            String: "Drops"
+          }
+          Overrides {
+            Name: "cs:RewardResourceAmount:category"
+            String: "Drops"
+          }
+          Overrides {
+            Name: "cs:LootId:category"
+            String: "Drops"
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -407,7 +495,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {

@@ -20,12 +20,32 @@ Assets {
         ChildIds: 17461823946585664000
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Team"
-            Int: 1
+            Name: "cs:Tag_1"
+            String: "Building"
           }
           Overrides {
-            Name: "cs:CurrentState"
-            Int: 0
+            Name: "cs:RewardResourceType"
+            String: "Coins"
+          }
+          Overrides {
+            Name: "cs:RewardResourceAmount"
+            Int: 50
+          }
+          Overrides {
+            Name: "cs:AttackRange"
+            Float: 2500
+          }
+          Overrides {
+            Name: "cs:AttackCast"
+            Float: 0.5
+          }
+          Overrides {
+            Name: "cs:AttackRecovery"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:AttackCooldown"
+            Float: 2
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -42,6 +62,10 @@ Assets {
           Overrides {
             Name: "cs:ReturnToSpawn"
             Bool: false
+          }
+          Overrides {
+            Name: "cs:IsPushable"
+            Bool: true
           }
           Overrides {
             Name: "cs:VisionHalfAngle"
@@ -72,32 +96,12 @@ Assets {
             Float: 2500
           }
           Overrides {
-            Name: "cs:AttackRange"
-            Float: 2500
+            Name: "cs:Team"
+            Int: 1
           }
           Overrides {
-            Name: "cs:AttackCast"
-            Float: 0.5
-          }
-          Overrides {
-            Name: "cs:AttackRecovery"
-            Float: 0
-          }
-          Overrides {
-            Name: "cs:AttackCooldown"
-            Float: 2
-          }
-          Overrides {
-            Name: "cs:IsPushable"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:RewardResourceType"
-            String: "Coins"
-          }
-          Overrides {
-            Name: "cs:RewardResourceAmount"
-            Int: 50
+            Name: "cs:CurrentState"
+            Int: 0
           }
           Overrides {
             Name: "cs:Team:tooltip"
@@ -338,6 +342,94 @@ Assets {
           Overrides {
             Name: "cs:RewardResourceAmount:ml"
             Bool: false
+          }
+          Overrides {
+            Name: "cs:Tag_1:category"
+            String: "Tags"
+          }
+          Overrides {
+            Name: "cs:Tag_2:category"
+            String: "Tags"
+          }
+          Overrides {
+            Name: "cs:MoveSpeed:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:LogicalPeriod:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:TurnSpeed:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:VisionHalfAngle:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:VisionRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:HearingRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:SearchBonusVision:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:SearchDuration:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:PossibilityRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:ChaseRadius:category"
+            String: "Detection"
+          }
+          Overrides {
+            Name: "cs:AttackRange:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackMinAngle:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackCast:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackRecovery:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:AttackCooldown:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:IsPushable:category"
+            String: "Movement"
+          }
+          Overrides {
+            Name: "cs:RewardResourceType:category"
+            String: "Drops"
+          }
+          Overrides {
+            Name: "cs:RewardResourceAmount:category"
+            String: "Drops"
+          }
+          Overrides {
+            Name: "cs:LootId:category"
+            String: "Drops"
           }
         }
         WantsNetworking: true

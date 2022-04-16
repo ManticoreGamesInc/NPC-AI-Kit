@@ -19,6 +19,14 @@ Assets {
         ChildIds: 9709652266009644461
         UnregisteredParameters {
           Overrides {
+            Name: "cs:Tag_1"
+            String: "Beast"
+          }
+          Overrides {
+            Name: "cs:Tag_2"
+            String: "Melee"
+          }
+          Overrides {
             Name: "cs:RewardResourceType"
             String: "XP"
           }
@@ -51,6 +59,26 @@ Assets {
             Float: 1.5
           }
           Overrides {
+            Name: "cs:MoveSpeed"
+            Float: 650
+          }
+          Overrides {
+            Name: "cs:TurnSpeed"
+            Float: 2
+          }
+          Overrides {
+            Name: "cs:LogicalPeriod"
+            Float: 0.35
+          }
+          Overrides {
+            Name: "cs:ReturnToSpawn"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:IsPushable"
+            Bool: true
+          }
+          Overrides {
             Name: "cs:VisionHalfAngle"
             Float: 85
           }
@@ -77,34 +105,6 @@ Assets {
           Overrides {
             Name: "cs:SearchBonusVision"
             Float: 5000
-          }
-          Overrides {
-            Name: "cs:MoveSpeed"
-            Float: 650
-          }
-          Overrides {
-            Name: "cs:TurnSpeed"
-            Float: 2
-          }
-          Overrides {
-            Name: "cs:LogicalPeriod"
-            Float: 0.35
-          }
-          Overrides {
-            Name: "cs:ReturnToSpawn"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:IsPushable"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Tag_1"
-            String: "Beast"
-          }
-          Overrides {
-            Name: "cs:Tag_2"
-            String: "Melee"
           }
           Overrides {
             Name: "cs:Team"

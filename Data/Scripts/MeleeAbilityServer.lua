@@ -59,10 +59,10 @@ function MeleeAttack(other)
 	
 	if not other:IsA("Damageable") 
 	and other.FindAncestorByType then -- E.g. Projectiles don't have this function
-		other = other:FindAncestorByType("Damageable")
-	end
-	if not other then
-		return -- The hit object cannot be damaged
+		local damageable = other:FindAncestorByType("Damageable")
+		if damageable then
+			other = damageable
+		end
 	end
 	
 	if other.isDead then return end
@@ -117,7 +117,8 @@ function MeleeAttack(other)
 				tags = tagData
 			}
 			COMBAT().ApplyDamage(attackData)
-		else
+			
+		elseif other.ApplyDamage then
 			other:ApplyDamage(dmg)
 		end
 	end

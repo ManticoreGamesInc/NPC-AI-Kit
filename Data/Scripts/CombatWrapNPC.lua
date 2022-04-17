@@ -147,6 +147,12 @@ function wrapper.ApplyDamage(attackData)
 
 	if damageableRoot then
 		damageableRoot:ApplyDamage(attackData.damage)
+		
+	else -- v0.11 compatibility
+		local destructibleManager = _G["standardcombo.NPCKit.DestructibleManager"]
+		if destructibleManager then
+			destructibleManager.DamageObject(attackData)
+		end
 	end
 end
 

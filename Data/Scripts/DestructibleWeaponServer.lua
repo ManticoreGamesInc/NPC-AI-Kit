@@ -29,10 +29,10 @@ function OnTargetImpact(theWeapon, impactData)
 	if not Object.IsValid(target) then return end
 	
 	if not target:IsA("Damageable") then
-		target = target:FindAncestorByType("Damageable")
-	end
-	if not target then
-		return -- The hit object cannot be damaged
+		local damageable = target:FindAncestorByType("Damageable")
+		if damageable then
+			target = damageable
+		end
 	end
 	
 	local hitResult = impactData:GetHitResult()
@@ -85,7 +85,8 @@ function OnTargetImpact(theWeapon, impactData)
 			tags = tagData
 		}
 		COMBAT().ApplyDamage(attackData)
-	else
+		
+	elseif target.ApplyDamage then
 		target:ApplyDamage(dmg)
 	end
 end

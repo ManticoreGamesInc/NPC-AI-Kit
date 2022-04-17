@@ -133,6 +133,14 @@ Assets {
             Name: "cs:DamageToPlayers"
             Int: 5
           }
+          Overrides {
+            Name: "cs:HeadshotNPCs"
+            Int: 20
+          }
+          Overrides {
+            Name: "cs:HeadshotPlayers"
+            Int: 20
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -368,7 +376,6 @@ Assets {
           }
         }
         ParentId: 16957855638915228446
-        ChildIds: 6904009799629376103
         ChildIds: 4897779747320900659
         UnregisteredParameters {
         }
@@ -383,45 +390,6 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 6904009799629376103
-        Name: "DestructrableWeaponClient"
-        Transform {
-          Location {
-            X: -15304.0957
-            Y: -19673.4902
-            Z: -11012.0156
-          }
-          Rotation {
-            Pitch: 14.2927504
-            Yaw: 97.7076645
-            Roll: 13.0108719
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4938660147026745261
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1745020032661794594
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

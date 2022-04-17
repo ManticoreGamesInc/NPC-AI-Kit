@@ -1,6 +1,59 @@
 Name: "Test Weapons"
 RootId: 8468199640711674757
 Objects {
+  Id: 1674988976845071950
+  Name: "Destructible Rifle"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8468199640711674757
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16957855638915228446
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Destructible Rifle"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 2.31481576
+            Y: -44.6759415
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.0462963134
+            Y: 0.0462963134
+            Z: 0.0462963134
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2837579121194794601
+    }
+  }
+}
+Objects {
   Id: 13673858399950370704
   Name: "The Carlos Blade"
   Transform {

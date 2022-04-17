@@ -7,7 +7,7 @@ Assets {
       RootId: 583067391045593071
       Objects {
         Id: 583067391045593071
-        Name: "ClientContext"
+        Name: "LeapEffects"
         Transform {
           Scale {
             X: 1
@@ -20,6 +20,7 @@ Assets {
         ChildIds: 17420392180101494455
         UnregisteredParameters {
         }
+        Lifespan: 1
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

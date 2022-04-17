@@ -1,5 +1,5 @@
 --[[
-	Leap Ability - Server
+	Leap Ability - Client
 	v1.1
 	by: standardcombo
 	
@@ -7,15 +7,12 @@
 --]]
 
 local ABILITY = script:GetCustomProperty("Ability"):WaitForObject()
-local LEAP_AMOUNT = script:GetCustomProperty("LeapAmount")
 local LEAP_EFFECTS = script:GetCustomProperty("LeapEffects")
 
 
 function OnExecute(ability)
-	local player = ability.owner
-	if Object.IsValid(player) then
-		player:AddImpulse(Vector3.UP * LEAP_AMOUNT)
-	end
+	local pos = ability.owner:GetWorldPosition()
+	World.SpawnAsset(LEAP_EFFECTS, {position = pos})
 end
 
 

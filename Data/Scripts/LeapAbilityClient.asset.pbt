@@ -1,6 +1,6 @@
 Assets {
-  Id: 14424777330967029426
-  Name: "LeapAbility"
+  Id: 2807173632335544331
+  Name: "LeapAbilityClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
@@ -10,8 +10,10 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:LeapAmount"
-        Float: 400000
+        Name: "cs:LeapEffects"
+        AssetReference {
+          Id: 15836769211708900352
+        }
       }
     }
   }

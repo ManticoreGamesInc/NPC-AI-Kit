@@ -656,6 +656,7 @@ Assets {
           }
         }
         ParentId: 8554591793317646606
+        ChildIds: 2279485334892755452
         ChildIds: 14073724712230366154
         ChildIds: 11457112152022062268
         ChildIds: 11734528818702066662
@@ -672,6 +673,50 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 2279485334892755452
+        Name: "LeapAbilityClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9238699678144792207
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Ability"
+            ObjectReference {
+              SubObjectId: 1397141085902036051
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2807173632335544331
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

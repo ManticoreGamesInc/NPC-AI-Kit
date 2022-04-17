@@ -15,6 +15,7 @@ Objects {
     }
   }
   ParentId: 8368020417586415756
+  ChildIds: 8060024371794426316
   ChildIds: 8052030022434635943
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -81,7 +82,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8368020417586415756
+  ParentId: 11388859968894868881
   UnregisteredParameters {
     Overrides {
       Name: "cs:NavMeshGenerator"

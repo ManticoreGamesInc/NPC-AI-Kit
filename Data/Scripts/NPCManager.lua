@@ -80,6 +80,13 @@ function OnDestroyed(obj)
 			npcColliders[collider] = nil
 		end
 	end
+	-- Clear damageable reference
+	for damageable,npc in pairs(npcDamageables) do
+		if npc == obj then
+			npcDamageables[damageable] = nil
+			break
+		end
+	end
 	-- Clear NPC reference
 	if allNPCs[obj] then
 		allNPCs[obj] = nil

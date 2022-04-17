@@ -1,11 +1,33 @@
 --[[
 	NPC AI Kit
-	v0.12.0 - 2022/04/15
+	v0.12.0 - 2022/04/17
 	by: standardcombo
 	
-	This package is work in progress.
-	
 	NPC tutorials at: https://youtu.be/fz5y8MRXM7w
+	Note: The videos are outdated, but still give a strong idea of how everything works.
+	
+	This project is distributed in three ways:
+	1. Community Content
+	2. Full project open for edit in "Community Games"
+	3. Github: https://github.com/ManticoreGamesInc/NPC-AI-Kit.git
+	
+	Release notes and other news:
+	https://forums.coregames.com/t/video-enemy-npcs-ai/392
+	
+	
+	Index
+	- Setup
+	- Known Issues
+	- Combat
+	- NPC Camps & Spawn Points
+	- Teams & Factions
+	- Create Your Own NPCs
+	- Adding NPCs to a Game
+	- Leash Zones
+	- Tags
+	- Navigational Meshes
+	- NavMesh Zones
+	- Network Relevancy
 	
 	
 	Setup
@@ -31,28 +53,29 @@
 	     see which is best for your game.
 	
 	
-	Known Issues in This Version
-	============================
+	Known Issues
+	============
 	
-	- Consumes a large amount of the networking budget.
 	- Ranged NPCs may try to attack through walls and don't adapt to obstacles when targeting.
 		
 	
 	Combat
 	======
 	
-	The package also comes with a Static Player Equipment that grants players "Destructible Rifle".
-	This is needed to fight against the NPCs. The Destructible Rifle template has a script called
-	DestructableWeaponServer that is what makes it deal damage to NPCs. Add that script to any Core
-	weapon to make it compatible with the NPC Kit.
+	As of version 0.12, any Core weapon that works against players should also work against NPCs,
+	without the need for changes to the weapon.
 	
-	For more info on adapting weapons to this system, see the following tutorial:
-	https://youtu.be/Dc9C13w1Lz8
+	The package comes with a Static Player Equipment that grants players "Destructible Rifle".
+	This can be used to fight against NPCs. The Destructible Rifle has a script called
+	DestructableWeaponServer that is what makes it deal damage to NPCs.
 	
 	For melee combat against NPCs, download "The Carlos Blade" from Community Content as a starting
 	point. The Carlos Blade comes with a script called MeleeAbilityServer that is what makes it
-	deal damage to the NPCs. Add this script to other melee weapons to make them compatible with
-	the NPC Kit.
+	deal damage to the NPCs.
+	
+	To adapt weapons to the NPC Kit and give them access to all features (e.g. Headshots) see the
+	following tutorial. It's outdated, but gives the general idea about modifying weapons:
+	https://youtu.be/Dc9C13w1Lz8
 		
 	
 	NPC Camps & Spawn Points
@@ -68,6 +91,9 @@
 	
 	See comments in each of the spawn scripts for details about their specific spawn behaviors.
 	
+	NPCs can be spawned normally with World.SpawnAsset(), as if any other Core template. For spawn
+	behaviors that are specific to your game it may be necessary to write your own spawn script.
+	
 	
 	Teams & Factions
 	================
@@ -77,18 +103,20 @@
 	different teams will attack each other.
 	
 	
-	Creating Your Own NPCs
-	======================
+	Create Your Own NPCs
+	====================
 	
 	Video tutorial here: https://youtu.be/w_TEyDWqGy8
+	Note: As of version 0.12 the structure of NPC templates has changed significantly, to reduce
+	networking costs.
 	
 	1. Select an existing NPC as a starting point. Add it to the hierarchy.
-	2. Right-click and create a new template. Give it a unique name.
+	2. Right-click and create a "New Template From Object". Give it a unique name.
 	3. Customize it visually. See the RPG Skeletons for examples of this.
 	4. Customize the Collider. Change the Collider's Visibility to see it in
 	   relationship to the rest of the NPC.
 	5. Customize its properties, such as movement speed, damage and health.
-	6. Right-click the NPC in the hierarchy and "Update Template From This".	
+	6. Right-click the NPC in the hierarchy and "Update Template From Object".	
 	
 	
 	Adding NPCs to a Game
@@ -97,12 +125,59 @@
 	1. You can position your NPCs directly in the game to test their behaviors.
 	   However, they won't respawn if killed.
 	2. Add a spawn camp, such as the Ambush Camp Example.
-	3. Right-click the camp and "Deinstance" it.
-	4. Select one of the camp's spawn points where your NPC should appear.
-	5. From Project Content, drag your NPC template onto the Properties view
+	3. In the hierarchy, right-click the camp and "Deinstance" it.
+	4. Expand the camp's hierarchy to locate the spawn point objects.
+	5. Select one of the camp's spawn points where your NPC should appear.
+	6. From Project Content, drag your NPC template onto the Properties view
 	   to add it as a custom property on the spawn point.
-	6. Delete your NPC templates from the hierarchy. They should be spawned with
+	7. Delete your NPC templates from the hierarchy. They should be spawned with
 	   Camps and Spawn Points instead of being directly placed.
+	
+	
+	Leash Zones
+	===========
+	
+	A "leash zone" is an area from which NPCs cannot leave. If they attempt to leave, they will
+	change their behavior and return to their spawn point. While an NPC is leashed they block
+	all damage.
+	
+	Create a leash area by adding a large trigger. Then, add a copy of the "LeashZone" script
+	as a child of the trigger. That's it.
+	
+	You can add optional custom properties to the LeashZone script to fine tune the behavior:
+		"Duration" - (number) Default is 7 seconds.
+		"LeashHeals" - (bool) Default is false. If set to true, then attacking the NPC while it's
+		               leashed causes it to heal.
+	
+	Tags
+	====
+	
+	NPCs and equipment may have tags, which allow for complex combat interactions and deep
+	gameplay systems.
+	
+	Example: Double-damage from magic
+	All the skeletons have the "Undead" tag. Meanwhile, the Leaping Staff weapon from CC has the
+	"Magic" tag. Finally, inside the "Waypoints Example" there is an additional script called
+	"ExampleUndeadVulnerable" which listens for combat interactions. Before damage is applied,
+	the script checks if the target is "Undead" and if the damage type is "Magic". If both are
+	true, then the damage amount is doubled.
+	
+	To change tags on an NPC:
+	1. Add a copy of the NPC's template to the hierarchy.
+	2. Right-click and "deinstance" it.
+	3. With the NPC selected, modify the custom properties in the "Properties" view.
+	4. Tags should follow the naming pattern "Tag_something".
+	4b. Some tags will be grouped into the "Tags" category, but new ones may appear at the bottom.
+	5. Right-click the NPC in the hierarchy and "Update Template From Object".
+	
+	Tags can also be used for creating defensive abilities, such as resistance from damage of
+	a certain type. The logic would be similar to the example above, except damage amount would
+	be reduced in case the specific resistance matches the damage type.
+	
+	While equipment such as weapons from Core Content have basic interaction with NPCs, adding
+	tags to them has no effect. To fully interact with the NPC Kit, weapons must call the
+	ApplyDamage() function on the Combat Wrapper. See the Destructible Rifle, Leaping Staff or
+	Carlos Blade for examples of how weapons can use their tags when applying damage.
 	
 	
 	Navigational Meshes
@@ -142,7 +217,7 @@
 	game (easier with the component by DarkDev) or use NavMesh Zones to specify the areas where
 	NavMesh should be used. Without them, NPCs have no way to understand the difference between
 	the two types of gameplay areas--where to use NavMesh pathing and where to use default pathing.
-	When using	NavMesh Zones NPCs understand that if they are not in a Zone then it's default
+	When using NavMesh Zones, NPCs understand that if they are not in a Zone then it's default
 	pathing.
 	
 	If a NavMesh Zone is placed, but there is no NavMesh inside, then it behaves as a barrier--NPCs
@@ -156,6 +231,20 @@
 	
 	Multiple overlapping Zones for a single NavMesh is supported, but untested at this time.
 	Only the NavMesh solution from Waffle has been tested in conjunction with Zones at this time.
+	
+	
+	Network Relevancy
+	=================
+	
+	By default, NPCs have their network relevancy set to "High". This property controls the
+	fidelity of network updates to clients, depending on how far the player is from the NPCs.
+	If set to "Critical" then clients will always have the latest data, regardless of position.
+	Some games (or specific NPCs) may need to use "Critical" relevancy, while "Medium" could
+	be desired in other cases.
+	
+	This is a fairly new Core feature as of this writing. Therefore, we are uncertain of what are the
+	best default values for NPCs and their sub-components (each sub-component of the NPC can have a
+	different relevancy value).
 	
 	
 	More Comments

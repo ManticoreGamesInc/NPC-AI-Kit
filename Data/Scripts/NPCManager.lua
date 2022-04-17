@@ -13,7 +13,7 @@ _G["standardcombo.NPCKit.NPCManager"] = API
 
 local allNPCs = {}
 local npcColliders = {}
-local npcDamagables = {}
+local npcDamageables = {}
 
 function API.Register(npc)
 	if (not allNPCs[npc]) then
@@ -28,8 +28,8 @@ function API.RegisterCollider(npc, collider)
 	npcColliders[collider] = npc
 end
 
-function API.RegisterDamagable(npc, damagable)
-	npcDamagables[damagable] = npc
+function API.RegisterDamageable(npc, damageable)
+	npcDamageables[damageable] = npc
 end
 
 function API.IsRegistered(npc)
@@ -41,8 +41,8 @@ function API.FindScriptForCollider(collider)
 	return npcColliders[collider]
 end
 
-function API.FindScriptForDamagable(damagable)
-	return npcDamagables[damagable]
+function API.FindScriptForDamageable(damageable)
+	return npcDamageables[damageable]
 end
 
 

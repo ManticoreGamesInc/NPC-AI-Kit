@@ -1014,7 +1014,7 @@ if (not damageable:IsA("DamageableObject")) then
 end
 
 if (damageable) then
-	NPC_MANAGER().RegisterDamagable(script, damageable)
+	NPC_MANAGER().RegisterDamageable(script, damageable)
 end
 
 function NPCDamageHook(obj, damage)

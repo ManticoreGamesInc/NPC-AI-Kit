@@ -84,7 +84,7 @@ function wrapper.GetMaxHitPoints(obj)
 	if NPC_MANAGER() then
 		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
 		if (not npcScript) then
-			npcScript = NPC_MANAGER().FindScriptForDamagable(obj)
+			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
 		end
 	end
 	
@@ -173,7 +173,7 @@ function wrapper.IsDead(obj)
 	if NPC_MANAGER() then
 		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
 		if (not npcScript) then
-			npcScript = NPC_MANAGER().FindScriptForDamagable(obj)
+			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
 		end
 	end
 	
@@ -213,7 +213,7 @@ function wrapper.IsValidObject(obj)
 	if not Object.IsValid(obj) then return false end
 	if NPC_MANAGER() then
 		if NPC_MANAGER().IsRegistered(obj) then return true end
-		return (NPC_MANAGER().FindScriptForCollider(obj) ~= nil or NPC_MANAGER().FindScriptForDamagable(obj) ~= nil)
+		return (NPC_MANAGER().FindScriptForCollider(obj) ~= nil or NPC_MANAGER().FindScriptForDamageable(obj) ~= nil)
 	end
 	return false
 end

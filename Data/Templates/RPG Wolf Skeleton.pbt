@@ -7,7 +7,7 @@ Assets {
       RootId: 4366599358773175422
       Objects {
         Id: 4366599358773175422
-        Name: "RPG Wolf"
+        Name: "RPG Wolf Skeleton"
         Transform {
           Scale {
             X: 1
@@ -554,7 +554,7 @@ Assets {
           Type: Server
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -828,7 +828,7 @@ Assets {
         NetworkContext {
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -1152,10 +1152,10 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {

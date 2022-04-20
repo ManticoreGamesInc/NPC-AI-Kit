@@ -870,6 +870,9 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
+          DetailRelevance {
+            Value: "mc:edetaillevel:low"
+          }
         }
       }
       Objects {
@@ -1214,6 +1217,9 @@ Assets {
             SkinnedMeshes {
             }
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {

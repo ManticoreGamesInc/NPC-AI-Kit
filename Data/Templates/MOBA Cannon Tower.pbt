@@ -1052,7 +1052,7 @@ Assets {
           Type: Server
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -1322,6 +1322,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 7068506052854159819
@@ -1392,6 +1395,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -1501,6 +1507,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 1772950129614193308
@@ -1573,6 +1582,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -1647,6 +1659,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 5515301210883189479
@@ -1718,6 +1733,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -1792,6 +1810,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 7583932613093478343
@@ -1864,6 +1885,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -1947,6 +1971,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
+        }
       }
       Objects {
         Id: 15200614723433823748
@@ -1989,6 +2016,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -2034,6 +2064,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
+        }
       }
       Objects {
         Id: 8513598667104708751
@@ -2077,6 +2110,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -2125,6 +2161,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
+        }
       }
       Objects {
         Id: 14519903309555560629
@@ -2170,6 +2209,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -2225,6 +2267,9 @@ Assets {
             }
             BoundsScale: 1
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
       }
       Objects {
@@ -4086,7 +4131,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -4127,7 +4172,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
       }
       Objects {
@@ -4168,7 +4213,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
       }
       Objects {
@@ -4209,7 +4254,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -4250,7 +4295,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {
@@ -4301,7 +4346,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {

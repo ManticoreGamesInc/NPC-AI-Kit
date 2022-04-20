@@ -1233,6 +1233,9 @@ Assets {
             }
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:high"
+        }
       }
       Objects {
         Id: 16499610448605528061

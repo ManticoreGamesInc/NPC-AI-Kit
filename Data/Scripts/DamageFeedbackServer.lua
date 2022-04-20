@@ -1,6 +1,6 @@
 --[[
 	Damage Feedback - Server
-	v1.0
+	v1.0.1
 	by: Wave Paradigm, standardcombo
 	
 	By default player damaged is server-only.
@@ -17,8 +17,24 @@ function OnDamageTaken(attackData)
 	if player and player:IsA("Player") then
 		local amount = math.floor(attackData.damage.amount)
 		local pos = attackData.position
+		-- Fix the position in case it's missing
+		if not pos or pos == Vector3.ZERO then
+			if attackData.damage.sourceAbility then
+				pos = attackData.damage.sourceAbility:GetWorldPosition()
+				if attackData.object then
+					local targetPos = attackData.object:GetWorldPosition()
+					pos.x = targetPos.x
+					pos.y = targetPos.y
+				end
+			elseif attackData.object then
+				pos = attackData.object:GetWorldPosition()
+			else
+				pos = player:GetWorldPosition()
+			end
+		end
         Events.BroadcastToPlayer(player, "ShowDamageFeedback", amount, pos)
 	end
 end
 
 Events.Connect("CombatWrapAPI.OnDamageTaken", OnDamageTaken)
+

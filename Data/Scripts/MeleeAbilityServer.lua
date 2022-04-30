@@ -1,6 +1,6 @@
 --[[
 	Melee Ability - Server
-	v1.5.0
+	v1.5.1
 	by: standardcombo
 	
 	Handles melee combat interaction of attack abilities on weapons such as swords.
@@ -31,8 +31,7 @@ local currentSwipe = nil
 local canAttack = false
 
 -- Tags can represent various types or attributes of the equipment
-local tagData = TAGS().GetTags(EQUIPMENT)
-table.insert(tagData, "Melee")
+TAGS().AddUnique(EQUIPMENT, "Melee")
 
 
 function Tick(deltaTime)
@@ -84,7 +83,10 @@ function MeleeAttack(other)
 		local isHeadshot = false
 		if COMBAT() then
 			isHeadshot = COMBAT().IsHeadshot(other, nil, pos)
-			--if isHeadshot then print("HEADSHOT!") end
+		end
+		
+		if isHeadshot then
+			TAGS().AddTag(EQUIPMENT, "Headshot", true)
 		end
 
 		local damageRange = DAMAGE_RANGE_NPCS
@@ -112,9 +114,10 @@ function MeleeAttack(other)
 				object = other,
 				damage = dmg,
 				source = ABILITY.owner,
+				item = EQUIPMENT,
 				position = pos,
 				rotation = rot,
-				tags = tagData
+				tags = TAGS().GetTags(EQUIPMENT)
 			}
 			COMBAT().ApplyDamage(attackData)
 			

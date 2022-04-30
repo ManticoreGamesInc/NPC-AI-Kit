@@ -64,6 +64,12 @@ Assets {
               SubObjectId: 11664256979501536535
             }
           }
+          Overrides {
+            Name: "cs:Armor"
+            ObjectReference {
+              SubObjectId: 6191741800487521521
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -102,6 +108,7 @@ Assets {
         ParentId: 14705474953321211921
         ChildIds: 17524008484813925712
         ChildIds: 17044236184755770160
+        ChildIds: 6191741800487521521
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -168,7 +175,6 @@ Assets {
           DisableDistanceFieldLighting: true
           DisableCastShadows: true
           DisableReceiveDecals: true
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
             }
@@ -223,7 +229,72 @@ Assets {
           DisableDistanceFieldLighting: true
           DisableCastShadows: true
           DisableReceiveDecals: true
-          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 6191741800487521521
+        Name: "Armor"
+        Transform {
+          Location {
+            X: 0.100010477
+            Y: -1.49999905
+            Z: -0.01
+          }
+          Rotation {
+            Roll: 1.02452814e-05
+          }
+          Scale {
+            X: 0.0100000137
+            Y: 0.021
+            Z: 0.50000006
+          }
+        }
+        ParentId: 5777712033558582302
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 4845536303616023571
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 0.694966912
+              B: 0.99
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 198353679974341757
+          }
+          Teams {
+          }
+          DisableDistanceFieldLighting: true
+          DisableCastShadows: true
+          DisableReceiveDecals: true
           StaticMesh {
             Physics {
             }

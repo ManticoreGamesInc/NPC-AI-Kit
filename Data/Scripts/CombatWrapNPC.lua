@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.12.0
+	v0.13.0
 	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
@@ -29,7 +29,7 @@ local wrapper = {}
 
 -- GetName()
 function wrapper.GetName(npc)
-	local templateRoot = npc:FindTemplateRoot()
+	local templateRoot = FindRoot(npc)
 	if templateRoot then
 		local displayName = templateRoot:GetCustomProperty("DisplayName")
 		if displayName then
@@ -46,11 +46,9 @@ function wrapper.GetTeam(npc)
 	if npc.team ~= nil then
 		return npc.team
 	end
-	if npc.FindTemplateRoot ~= nil then
-		local templateRoot = npc:FindTemplateRoot()
-		if templateRoot then
-			return templateRoot:GetCustomProperty("Team")
-		end
+	local templateRoot = FindRoot(npc)
+	if templateRoot then
+		return templateRoot:GetCustomProperty("Team")
 	end
 	return nil
 end
@@ -58,8 +56,8 @@ end
 
 -- GetHitPoints()
 function wrapper.GetHitPoints(npc)
-	if Object.IsValid(npc) and npc.FindTemplateRoot ~= nil then
-		local templateRoot = npc:FindTemplateRoot()
+	if Object.IsValid(npc) then
+		local templateRoot = FindRoot(npc)
 		if templateRoot then
 			return templateRoot.hitPoints or 0
 		end
@@ -203,7 +201,7 @@ function wrapper.IsHeadshot(obj, dmg, position)
 		return false
 	end
 	
-	local root = obj:FindTemplateRoot()
+	local root = FindRoot(obj)
 	if root then
 		local headShotComponent = root:FindDescendantByName("NPCHeadshot")
 		if headShotComponent and headShotComponent.context then
@@ -293,6 +291,20 @@ function wrapper.FindInSphere(position, radius, parameters)
 		return npcsInArea
 	end
 	return {}
+end
+
+function FindRoot(npc)
+	local root = npc:FindTemplateRoot()
+	if not root then
+		if npc:IsA("DamageableObject") then
+			return npc
+		end
+		root = npc:FindAncestorByType("DamageableObject")
+	end
+	if root then
+		return root
+	end
+	return npc
 end
 
 return wrapper

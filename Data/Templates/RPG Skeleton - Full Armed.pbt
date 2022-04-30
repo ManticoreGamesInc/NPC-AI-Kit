@@ -115,6 +115,10 @@ Assets {
             Int: 0
           }
           Overrides {
+            Name: "cs:Armor"
+            Float: 50
+          }
+          Overrides {
             Name: "cs:Team:tooltip"
             String: "Like players, NPCs can have a team. They will fight players and NPCs from other teams and will not fight characters from the same team as them. When spawned from a spawn camp, the NPC\'s team is dynamically set to that of the camp."
           }
@@ -466,6 +470,10 @@ Assets {
             Name: "cs:LootId:category"
             String: "Drops"
           }
+          Overrides {
+            Name: "cs:Armor:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -482,7 +490,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 500
+            MaxHitpoints: 400
             StartingHitpoints: 500
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -544,6 +552,7 @@ Assets {
         ChildIds: 9927192082764146384
         ChildIds: 13372382273466098450
         ChildIds: 17882611998801706391
+        ChildIds: 7727786542137466426
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -791,6 +800,44 @@ Assets {
         Script {
           ScriptAsset {
             Id: 8341736443469670175
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+      }
+      Objects {
+        Id: 7727786542137466426
+        Name: "NPCKitArmor"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14869856828657627160
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2902220968407700742
           }
         }
         NetworkRelevanceDistance {

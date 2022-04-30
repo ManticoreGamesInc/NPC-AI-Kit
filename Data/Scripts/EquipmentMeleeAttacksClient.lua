@@ -20,11 +20,15 @@ This script handles spawning swing sound and impact effect on ability execute ph
 Each ability can have its own swing effect and swing spawn settings.
 ]]
 
+--v1.1.1
+
 -- Internal custom properties
 local EQUIPMENT = script:FindAncestorByType('Equipment')
 if not EQUIPMENT:IsA('Equipment') then
     error(script.name .. " should be part of Equipment object hierarchy.")
 end
+
+Task.Wait(1)
 
 -- User exposed variables
 local PLAYER_IMPACT = EQUIPMENT:GetCustomProperty("PlayerImpact")
@@ -47,11 +51,12 @@ function Tick()
     if not Object.IsValid(EQUIPMENT.owner) then return end
     if EQUIPMENT.owner.isDead then return end
 
-    for _, abilityInfo in ipairs(abilityList) do
+    for _, abilityInfo in pairs(abilityList) do
 
         -- Always keep the current swipe at the position of the player
         if Object.IsValid(abilityInfo.currentSwing) then
-            abilityInfo.currentSwing:SetWorldPosition(EQUIPMENT.owner:GetWorldPosition())
+        	local pos = EQUIPMENT.owner:GetWorldPosition() + abilityInfo.swingPosition
+            abilityInfo.currentSwing:SetWorldPosition(pos)
         end
 
         if abilityInfo.canAttack then
@@ -147,19 +152,23 @@ end
 -- nil SpawnSwingEffect(table)
 -- Spawns swing effect based settings on the ability
 function SpawnSwingEffect(abilityInfo)
-    Task.Wait(abilityInfo.swingSpawnDelay)
+	if abilityInfo.swingSpawnDelay > 0 then
+    	Task.Wait(abilityInfo.swingSpawnDelay)
+    end
 
     -- Spawn the ability vfx only if the equiment and owner exist after the delay
     if Object.IsValid(EQUIPMENT) and Object.IsValid(EQUIPMENT.owner) then
         -- Spawn the swing effect
-        abilityInfo.currentSwing = World.SpawnAsset(abilityInfo.swingEffect, {
-            position = EQUIPMENT.owner:GetWorldPosition(),
-            rotation = Rotation.New(abilityInfo.swingRotationX, abilityInfo.swingRotationY, EQUIPMENT.owner:GetWorldRotation().z)})
-
-        -- Apply default life span if the vfx template doesn't have a lifespan
-        if abilityInfo.currentSwing.lifeSpan == 0 then
-            abilityInfo.currentSwing.lifeSpan = DEFAULT_LIFE_SPAN
-        end
+        if abilityInfo.swingEffect then
+	        abilityInfo.currentSwing = World.SpawnAsset(abilityInfo.swingEffect, {
+	            position = EQUIPMENT.owner:GetWorldPosition() + abilityInfo.swingPosition,
+	            rotation = Rotation.New(abilityInfo.swingRotationX, abilityInfo.swingRotationY, EQUIPMENT.owner:GetWorldRotation().z)})
+	
+	        -- Apply default life span if the vfx template doesn't have a lifespan
+	        if abilityInfo.currentSwing.lifeSpan == 0 then
+	            abilityInfo.currentSwing.lifeSpan = DEFAULT_LIFE_SPAN
+	        end
+	    end
 
         -- Spawn swing sound for every ability execute
         if SWING_SOUND then
@@ -173,16 +182,22 @@ function SpawnSwingEffect(abilityInfo)
     end
 end
 
+function OnCast(ability)
+	local abilityInfo = abilityList[ability]
+	if abilityInfo.spawnEffectOnCast then
+		SpawnSwingEffect(abilityInfo)
+	end
+end
+
 -- nil OnExecute(Ability)
 -- Spawns a swing effect template on ability execute
 function OnExecute(ability)
-    for _, abilityInfo in ipairs(abilityList) do
-        if abilityInfo.ability == ability then
-            abilityInfo.canAttack = true
-            abilityInfo.ignoreList = {}
-            SpawnSwingEffect(abilityInfo)
-        end
-    end
+	local abilityInfo = abilityList[ability]
+	abilityInfo.canAttack = true
+	abilityInfo.ignoreList = {}
+	if not abilityInfo.spawnEffectOnCast then
+		SpawnSwingEffect(abilityInfo)
+	end
 end
 
 -- nil ResetMelee()
@@ -190,15 +205,12 @@ end
 function ResetMelee(ability)
 
     -- Forget anything we hit this swing
-    if ability then
-        for _, abilityInfo in ipairs(abilityList) do
-            if abilityInfo.ability == ability then
-                abilityInfo.canAttack = false
-                abilityInfo.ignoreList = {}
-            end
-        end
+    if Object.IsValid(ability) and abilityList[ability] then
+    	local abilityInfo = abilityList[ability]
+        abilityInfo.canAttack = false
+        abilityInfo.ignoreList = {}
     else
-        for _, abilityInfo in ipairs(abilityList) do
+        for _, abilityInfo in pairs(abilityList) do
             abilityInfo.canAttack = false
             abilityInfo.ignoreList = {}
         end
@@ -212,20 +224,23 @@ for _, ability in ipairs(abilityDescendants) do
     local useHitSphere = ability:GetCustomProperty("UseHitSphere")
 
     if useHitSphere then
+    	ability.castEvent:Connect(OnCast)
         ability.executeEvent:Connect(OnExecute)
         ability.cooldownEvent:Connect(ResetMelee)
 
         -- Gather custom properties on ability
-        table.insert(abilityList, {
+        abilityList[ability] = {
             ability = ability,
             canAttack = false,
             ignoreList = {},
+            spawnEffectOnCast = ability:GetCustomProperty("SpawnEffectOnCast"),
             swingEffect = ability:GetCustomProperty("SwingEffect"),
             swingSpawnDelay = ability:GetCustomProperty("SwingSpawnDelay"),
+            swingPosition = ability:GetCustomProperty("SwingPosition") or Vector3.ZERO,
             swingRotationX = ability:GetCustomProperty("SwingRotationX"),
             swingRotationY = ability:GetCustomProperty("SwingRotationY"),
             currentSwing = nil
-        })
+        }
     end
 end
 

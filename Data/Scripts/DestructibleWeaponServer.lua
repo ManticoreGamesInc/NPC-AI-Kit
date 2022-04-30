@@ -1,6 +1,6 @@
 --[[
 	Destructible Weapon - Server
-	v0.12.0
+	v0.13.0
 	by: standardcombo, Chris C.
 	
 	Script that specializes a weapon's basic attack to work with the NPC AI Kit.
@@ -20,8 +20,7 @@ local HEADSHOT_NPCS = script:GetCustomProperty("HeadshotNPCs")
 local HEADSHOT_PLAYERS = script:GetCustomProperty("HeadshotPlayers")
 
 -- Tags can represent various types or attributes of the equipment
-local tagData = TAGS().GetTags(WEAPON)
-table.insert(tagData, "Ranged")
+TAGS().AddUnique(WEAPON, "Ranged")
 
 
 function OnTargetImpact(theWeapon, impactData)
@@ -57,6 +56,10 @@ function OnTargetImpact(theWeapon, impactData)
 		amount = HEADSHOT_NPCS
 	end
 	
+	if isHeadshot then
+		TAGS().AddTag(WEAPON, "Headshot", true)
+	end
+	
 	-- Multihit (e.g. shotgun)
 	if #impactData:GetHitResults() > 1 then
 		local numberOfHits = 0
@@ -80,9 +83,10 @@ function OnTargetImpact(theWeapon, impactData)
 			object = target,
 			damage = dmg,
 			source = dmg.sourcePlayer,
+			item = WEAPON,
 			position = pos,
 			rotation = rot,
-			tags = tagData
+			tags = TAGS().GetTags(WEAPON)
 		}
 		COMBAT().ApplyDamage(attackData)
 		

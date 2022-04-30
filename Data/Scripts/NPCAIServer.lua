@@ -1,6 +1,6 @@
 --[[
 	NPCAI - Server
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	contributions: DarkDev, WaveParadigm
 	
@@ -20,6 +20,7 @@ function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
 function NAV_MESH() return _G.NavMesh end
 function NAV_MESH_ZONES() return MODULE.Get_Optional("standardcombo.NPCKit.NavMeshZones") end
+function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
@@ -1028,18 +1029,20 @@ function NPCDamageHook(obj, damage)
 		newDamage.sourcePlayer = damage.sourcePlayer
 		newDamage:SetHitResult(damage:GetHitResult())
 		damage.amount = 0
-		local abilityTags = {}
-		if (newDamage.sourceAbility and newDamage.sourceAbility.serverUserData.combatTags) then
-			abilityTags = newDamage.sourceAbility.serverUserData.combatTags
+		
+		local sourceItem = nil
+		if damage.sourceAbility then
+			sourceItem = damage.sourceAbility:FindAncestorByType("Equipment")
 		end
 
 		local attackData = {
 			object = obj,
 			damage = newDamage,
 			source = newDamage.sourcePlayer,
+			item = sourceItem,
 			position = damage:GetHitResult():GetImpactPosition(),
 			rotation = damage:GetHitResult():GetTransform():GetRotation(),
-			tags = abilityTags -- if the damage came in so directly like this, forward along any combatTags from the ability
+			tags = TAGS().GetTags(sourceItem)
 		}
 		-- now, send this to the combat wrapper
 		COMBAT().ApplyDamage(attackData)

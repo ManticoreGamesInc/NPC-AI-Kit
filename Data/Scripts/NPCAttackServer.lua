@@ -1,6 +1,6 @@
 --[[
 	NPCAttack - Server
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it
@@ -13,6 +13,7 @@ function COMBAT() return MODULE.Get("standardcombo.Combat.Wrap") end
 function PLAYER_HOMING_TARGETS() return MODULE.Get("standardcombo.Combat.PlayerHomingTargets") end
 function CROSS_CONTEXT_CALLER() return MODULE.Get("standardcombo.Utils.CrossContextCaller") end
 function LOOT_DROP_FACTORY() return MODULE.Get_Optional("standardcombo.NPCKit.LootDropFactory") end
+function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 ---@type DamageableObject
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
@@ -37,8 +38,6 @@ local REWARD_RESOURCE_AMOUNT = ROOT:GetCustomProperty("RewardResourceAmount")
 local LOOT_ID = ROOT:GetCustomProperty("LootId")
 
 local projectileImpactListener = nil
-
-local tagData = {}
 
 
 function GetTeam()
@@ -105,7 +104,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 
 	local pos = hitResult:GetImpactPosition()
 	local rot = projectile:GetWorldTransform():GetRotation()
-
+	
 	local damageAmount = 0
 
 	if other:IsA("Player") then
@@ -128,9 +127,10 @@ function OnProjectileImpact(projectile, other, hitResult)
 		object = other,
 		damage = dmg,
 		source = script.parent:FindChildByName("NPCAIServer"),
+		item = script,
 		position = pos,
 		rotation = rot,
-		tags = tagData
+		tags = TAGS().GetTags(ROOT)
 	}
 
 	-- Apply the damage
@@ -195,7 +195,7 @@ function DropRewards(killer)
 	end
 
 	-- Drop loot
-	if LOOT_DROP_FACTORY() then
+	if LOOT_ID ~= "" and LOOT_DROP_FACTORY() then
 		local pos = script:GetWorldPosition()
 		LOOT_DROP_FACTORY().Drop(LOOT_ID, pos)
 	end

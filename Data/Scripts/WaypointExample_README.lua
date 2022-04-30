@@ -1,6 +1,6 @@
 --[[
 	Waypoint Example
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	This example of an enemy camp combines a few components to create an encounter where a

@@ -1,6 +1,6 @@
 --[[
 	Ambush Example
-	v0.12.0
+	v0.13.0
 	by: standardcombo
 	
 	This example of an enemy camp spawns three enemies when the player enters the camp.

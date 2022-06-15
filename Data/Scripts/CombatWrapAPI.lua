@@ -1,140 +1,314 @@
 --[[
-	Combat Wrap API
-	v0.13.0
+	Combat Wrap - NPC
+	v0.13.1
 	by: standardcombo, WaveParadigm
 	
-	Identifies the type of object and wraps it with a common interface for combat-related functions.
+	Provides an interface of combat functions that operate on a non-Player object.
 	
 	Interface:
-	- CombatWrapAPI.GoingToTakeDamage (Event)
-	- CombatWrapAPI.OnDamageTaken (Event)
-	- CombatWrapAPI.ObjectHasDied (Event)
-	- ApplyDamage()
 	- GetName()
 	- GetTeam()
 	- GetHitPoints()
 	- GetMaxHitPoints()
 	- GetVelocity()
+	- ApplyDamage()
 	- IsDead()
 	- IsHeadshot()
 	- IsValidObject()
 	- AddImpulse()
 	- FindInSphere()
 --]]
--- Registers itself into the global table
-local API = {}
-_G["standardcombo.Combat.Wrap"] = API
 
--- Module dependencies
+-- Component dependencies
 local MODULE = require( script:GetCustomProperty("ModuleManager") )
-function CROSS_CONTEXT_CALLER()
-	return MODULE.Get("standardcombo.Utils.CrossContextCaller")
-end
-function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
+function NPC_MANAGER() return MODULE.Get_Optional("standardcombo.NPCKit.NPCManager") end
 
--- The different entity wrappers
-local PLAYER_WRAPPER = require( script:GetCustomProperty("CombatWrapPlayer") )
-local NPC_WRAPPER = require( script:GetCustomProperty("CombatWrapNPC") )
 
--- ApplyDamage()
--- Attack Data table keys = {object, damage, source, item, position, rotation, tags}
-function API.ApplyDamage(attackData)
-	if type(attackData) ~= "table" then
-		error("ApplyDamage() expected table with attackData, but received " .. tostring(attackData) .. " instead. \n" .. CoreDebug.GetStackTrace())
-		return
-	end
+local wrapper = {}
 
-	local object = attackData.object
-	
-	if not API.IsValidObject(object) then return end
-	if API.IsDead(object) then return end
-	
-	-- Prefer to apply damage to damageable objects
-	if (not object:IsA("Damageable")) then
-		local damageableObj = object:FindAncestorByType("Damageable")
-		if damageableObj then
-			object = damageableObj
-			attackData.object = damageableObj
-		end
-	end
-
-	Events.Broadcast("CombatWrapAPI.GoingToTakeDamage", attackData)
-
-	CROSS_CONTEXT_CALLER().Call(
-		function()
-			GetWrapperFor(object).ApplyDamage(attackData)
-
-			Events.Broadcast("CombatWrapAPI.OnDamageTaken", attackData)
-
-			if API.IsDead(object) then
-				Events.Broadcast("CombatWrapAPI.ObjectHasDied", attackData)
-			end
-			
-			TAGS().ClearTemporary(attackData.tags)
-		end
-	)
-end
 
 -- GetName()
-function API.GetName(object)
-	return GetWrapperFor(object).GetName(object)
+function wrapper.GetName(npc)
+	local templateRoot = FindRoot(npc)
+	if templateRoot then
+		local displayName = templateRoot:GetCustomProperty("DisplayName")
+		if displayName then
+			return displayName
+		end
+		return templateRoot.name
+	end
+	return npc.name
 end
+
 
 -- GetTeam()
-function API.GetTeam(object)
-	return GetWrapperFor(object).GetTeam(object)
+function wrapper.GetTeam(npc)
+	if npc.team ~= nil then
+		return npc.team
+	end
+	local templateRoot = FindRoot(npc)
+	if templateRoot then
+		return templateRoot:GetCustomProperty("Team")
+	end
+	return nil
 end
+
 
 -- GetHitPoints()
-function API.GetHitPoints(object)
-	return GetWrapperFor(object).GetHitPoints(object)
+function wrapper.GetHitPoints(npc)
+	if Object.IsValid(npc) then
+		local templateRoot = FindRoot(npc)
+		if templateRoot then
+			return templateRoot.hitPoints or 0
+		end
+	end
+	return nil
 end
+
 
 -- GetMaxHitPoints()
-function API.GetMaxHitPoints(object)
-	return GetWrapperFor(object).GetMaxHitPoints(object)
+function wrapper.GetMaxHitPoints(obj)
+
+	if not Object.IsValid(obj) then
+		return 0
+	end
+	
+	if obj.context and obj.context.MAX_HEALTH then
+		return obj.context.MAX_HEALTH
+	end
+	
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+		if (not npcScript) then
+			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
+		end
+	end
+	
+	if not npcScript then return false end
+	
+	if npcScript.context and npcScript.context.MAX_HEALTH then
+		return npcScript.context.MAX_HEALTH
+	end
+	return 0
 end
+
 
 -- GetVelocity()
-function API.GetVelocity(object)
-	return GetWrapperFor(object).GetVelocity(object)
+function wrapper.GetVelocity(obj)
+
+	if not Object.IsValid(obj) then 
+		return Vector3.ZERO
+	end
+	
+	if obj.context and obj.context.GetVelocity then
+		return obj.context.GetVelocity()
+	end
+	
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+	end
+	
+	if not npcScript then return Vector3.ZERO end
+	
+	if npcScript.context and npcScript.context.GetVelocity then
+		return npcScript.context.GetVelocity()
+	end
+	return Vector3.ZERO
 end
 
--- IsDead()
-function API.IsDead(object)
-	return GetWrapperFor(object).IsDead(object)
+
+-- ApplyDamage()
+function wrapper.ApplyDamage(attackData)
+	local hitResult = attackData.damage:GetHitResult()
+	if hitResult and not attackData.position then
+		attackData.position = hitResult:GetImpactPosition()
+	end
+	if hitResult and not attackData.rotation then
+		attackData.rotation = hitResult:GetTransform():GetRotation()
+	end
+
+	attackData.damage.reason = 99 -- an override that tells the system we have processed this damage
+	local damageableRoot = attackData.object
+
+	-- Check the given object, its template root, and then its entire hierarchy for a Damageable
+	-- If none are damageables, then damageableRoot will be nil, and no damage will go through.
+	if (not damageableRoot:IsA("DamageableObject")) then
+		damageableRoot = damageableRoot:FindTemplateRoot()
+		if (not damageableRoot:IsA("DamageableObject")) then
+			damageableRoot = damageableRoot:FindTemplateRoot():FindDescendantByType("DamageableObject")
+		end
+	end
+
+	if damageableRoot then
+		damageableRoot:ApplyDamage(attackData.damage)
+		
+	else -- v0.11 compatibility
+		local destructibleManager = _G["standardcombo.NPCKit.DestructibleManager"]
+		if destructibleManager then
+			destructibleManager.DamageObject(attackData)
+		end
+	end
 end
 
--- IsHeadshot()
-function API.IsHeadshot(object, hitResult, position)
-	return GetWrapperFor(object).IsHeadshot(object, hitResult, position)
-end
-
--- IsValidObject()
-function API.IsValidObject(object)
-	return GetWrapperFor(object).IsValidObject(object)
-end
 
 -- AddImpulse()
-function API.AddImpulse(object, direction)
-	GetWrapperFor(object).AddImpulse(object, direction)
+function wrapper.AddImpulse(npc, direction)
+	-- TODO
 end
+
+
+-- IsDead()
+function wrapper.IsDead(obj)
+
+	if not Object.IsValid(obj) then
+		return true
+	end
+	
+	if obj.context and obj.context.IsAlive then
+		return (not obj.context.IsAlive())
+	end
+	
+	local npcScript = nil
+	
+	if NPC_MANAGER() then
+		npcScript = NPC_MANAGER().FindScriptForCollider(obj)
+		if (not npcScript) then
+			npcScript = NPC_MANAGER().FindScriptForDamageable(obj)
+		end
+	end
+	
+	if not npcScript then return false end
+	
+	if npcScript.context and npcScript.context.IsAlive then
+		return (not npcScript.context.IsAlive())
+	end
+	return false
+end
+
+
+-- IsHeadshot()
+function wrapper.IsHeadshot(obj, dmg, position)
+
+	if not Object.IsValid(obj) then
+		return false
+	end
+	
+	if not obj:IsA("CoreObject") then
+		return false
+	end
+	
+	local root = FindRoot(obj)
+	if root then
+		local headShotComponent = root:FindDescendantByName("NPCHeadshot")
+		if headShotComponent and headShotComponent.context then
+			return headShotComponent.context.IsHeadshot(position)
+		end
+	end
+	return false
+end
+
+
+-- IsValidObject()
+function wrapper.IsValidObject(obj)
+	if not Object.IsValid(obj) then return false end
+	if NPC_MANAGER() then
+		if NPC_MANAGER().IsRegistered(obj) then return true end
+		return (NPC_MANAGER().FindScriptForCollider(obj) ~= nil or NPC_MANAGER().FindScriptForDamageable(obj) ~= nil)
+	end
+	return false
+end
+
 
 -- FindInSphere()
-function API.FindInSphere(position, radius, parameters)
-	local players = PLAYER_WRAPPER.FindInSphere(position, radius, parameters)
-	local NPCs = NPC_WRAPPER.FindInSphere(position, radius, parameters)
-
-	local enemies = players
-	for _, npc in ipairs(NPCs) do
-		table.insert(enemies, npc)
+function wrapper.FindInSphere(position, radius, parameters)
+	if NPC_MANAGER() then
+		local npcsInArea = NPC_MANAGER().FindInSphere(position, radius, parameters)
+		
+		if #npcsInArea > 0 and parameters then
+			local ignoreDead = parameters.ignoreDead
+			local ignoreLiving = parameters.ignoreLiving
+			local ignoreTeams = parameters.ignoreTeams
+			local includeTeams = parameters.includeTeams
+			
+			for i = #npcsInArea, 1, -1 do
+				local npc = npcsInArea[i]
+				
+				if ignoreDead or ignoreLiving then
+					local isDead = wrapper.IsDead(npc)
+					if (isDead and ignoreDead) or (not isDead and ignoreLiving) then
+						table.remove(npcsInArea, i)
+						goto continue
+					end
+				end
+				
+				if ignoreTeams then
+					local team = wrapper.GetTeam(npc)
+					
+					if type(ignoreTeams) == "number" then
+						if team == ignoreTeams then
+							table.remove(npcsInArea, i)
+							goto continue
+						end
+					elseif type(ignoreTeams) == "table" then
+						for _,subTeam in pairs(ignoreTeams) do
+							if subTeam == team then
+								table.remove(npcsInArea, i)
+								goto continue
+							end
+						end
+					end
+				end
+				
+				if includeTeams then
+					local team = wrapper.GetTeam(npc)
+					
+					if type(includeTeams) == "number" then
+						if team ~= includeTeams then
+							table.remove(npcsInArea, i)
+							goto continue
+						end
+					elseif type(includeTeams) == "table" then
+						local teamFound = false
+						for _,subTeam in pairs(includeTeams) do
+							if subTeam == team then
+								teamFound = true
+							end
+						end
+						if not teamFound then
+							table.remove(npcsInArea, i)
+							goto continue
+						end
+					end
+				end
+				::continue::
+			end
+		end
+		
+		return npcsInArea
 	end
-	return enemies
+	return {}
 end
 
-function GetWrapperFor(object)
-	if object and object:IsA("Player") then
-		return PLAYER_WRAPPER
+function FindRoot(npc)
+	if not npc:IsA("CoreObject") then
+		return nil
 	end
-	return NPC_WRAPPER
+	local root = npc:FindTemplateRoot()
+	if not root then
+		if npc:IsA("DamageableObject") then
+			return npc
+		end
+		root = npc:FindAncestorByType("DamageableObject")
+	end
+	if root then
+		return root
+	end
+	return npc
 end
+
+return wrapper
+

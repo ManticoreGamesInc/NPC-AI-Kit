@@ -32,6 +32,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 115
+  SerializationVersion: 113
   VirtualFolderPath: "NPC Kit"
 }

@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.13.0
+	v0.13.1
 	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
@@ -294,6 +294,9 @@ function wrapper.FindInSphere(position, radius, parameters)
 end
 
 function FindRoot(npc)
+	if not npc:IsA("CoreObject") then
+		return nil
+	end
 	local root = npc:FindTemplateRoot()
 	if not root then
 		if npc:IsA("DamageableObject") then

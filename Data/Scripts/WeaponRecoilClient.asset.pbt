@@ -98,6 +98,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 113
+  SerializationVersion: 118
   VirtualFolderPath: "Weapon"
 }

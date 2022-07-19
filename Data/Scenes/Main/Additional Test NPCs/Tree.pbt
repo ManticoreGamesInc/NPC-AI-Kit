@@ -53,6 +53,7 @@ Objects {
       Id: 13441300675391799547
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 14632867372866985088
@@ -99,6 +100,11 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 7847453801116374751
+      value {
+      }
+    }
     TemplateAsset {
       Id: 13871905926012633814
     }
@@ -106,4 +112,5 @@ Objects {
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
+  IsReplicationEnabledByDefault: true
 }

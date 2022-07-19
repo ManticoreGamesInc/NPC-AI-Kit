@@ -2,7 +2,7 @@ Assets {
   Id: 14584912322010717358
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 113
+  SerializationVersion: 118
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "NPC Templates"

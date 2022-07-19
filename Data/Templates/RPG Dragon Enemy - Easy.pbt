@@ -505,6 +505,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3246491521122849135
@@ -562,6 +563,7 @@ Assets {
         NetworkContext {
           Type: Server
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6887995465546052660
@@ -636,6 +638,7 @@ Assets {
             Id: 877607263390645540
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16188384304550516637
@@ -728,6 +731,7 @@ Assets {
             Id: 13670653971905386821
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15709418385312303354
@@ -763,6 +767,7 @@ Assets {
             Value: "mc:etriggershape:sphere"
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12577161451319856535
@@ -795,6 +800,7 @@ Assets {
             Id: 8341736443469670175
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 398113490489324447
@@ -837,6 +843,7 @@ Assets {
             Id: 5407573852348177454
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7549486370523105032
@@ -867,7 +874,14 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
+          MinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11187837617532864305
@@ -919,6 +933,7 @@ Assets {
             Id: 16526478722992756359
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15315419852726087623
@@ -969,6 +984,7 @@ Assets {
             Id: 9324991830768780045
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13528077646999008078
@@ -999,6 +1015,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13655684992340290336
@@ -1031,6 +1048,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 738958589784618796
@@ -1070,6 +1088,7 @@ Assets {
             Id: 1401124806849575098
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6121090085530308094
@@ -1118,6 +1137,7 @@ Assets {
             Id: 8511523814806414915
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14452134182954134781
@@ -1148,6 +1168,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7847453801116374751
@@ -1206,6 +1227,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16499610448605528061
@@ -1264,6 +1286,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -1298,6 +1321,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 113
+  SerializationVersion: 118
   VirtualFolderPath: "NPC Templates"
 }

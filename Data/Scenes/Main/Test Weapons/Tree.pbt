@@ -38,20 +38,13 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.0462963134
-            Y: 0.0462963134
-            Z: 0.0462963134
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 2837579121194794601
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 13673858399950370704
@@ -92,20 +85,13 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.0462963134
-            Y: 0.0462963134
-            Z: 0.0462963134
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 10865712227348858218
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 1743478642429232355
@@ -139,20 +125,13 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.0462963097
-            Y: 0.0462963097
-            Z: 0.0462963134
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 17225784188351434523
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 6867585062383553456
@@ -192,20 +171,13 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.0462963097
-            Y: 0.0462963097
-            Z: 0.0462963134
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 12990255680143252995
     }
   }
+  IsReplicationEnabledByDefault: true
 }
 Objects {
   Id: 4017645822016985933
@@ -239,18 +211,11 @@ Objects {
           Rotator {
           }
         }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 0.0462963134
-            Y: 0.0462963134
-            Z: 0.0462963134
-          }
-        }
       }
     }
     TemplateAsset {
       Id: 15487376583485875014
     }
   }
+  IsReplicationEnabledByDefault: true
 }

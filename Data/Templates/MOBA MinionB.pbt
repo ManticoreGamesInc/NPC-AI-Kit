@@ -477,6 +477,7 @@ Assets {
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18122239089625055508
@@ -532,6 +533,7 @@ Assets {
         NetworkContext {
           Type: Server
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16933196275013647235
@@ -600,6 +602,7 @@ Assets {
             Id: 877607263390645540
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16879630115437202842
@@ -685,6 +688,7 @@ Assets {
             Id: 13670653971905386821
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16426830857521601710
@@ -720,6 +724,7 @@ Assets {
             Value: "mc:etriggershape:sphere"
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7436977061991459555
@@ -751,7 +756,14 @@ Assets {
           Value: "mc:ecollisionsetting:forceoff"
         }
         NetworkContext {
+          MinDetailLevel {
+            Value: "mc:edetaillevel:low"
+          }
+          MaxDetailLevel {
+            Value: "mc:edetaillevel:ultra"
+          }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3073827023431755235
@@ -803,6 +815,7 @@ Assets {
             Id: 16526478722992756359
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4296866791803642567
@@ -853,6 +866,7 @@ Assets {
             Id: 9324991830768780045
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1002313519058465199
@@ -921,6 +935,7 @@ Assets {
             Id: 13774761121187526995
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6503567212139131919
@@ -951,6 +966,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9253220844595929359
@@ -985,6 +1001,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2078354734705710151
@@ -1024,6 +1041,7 @@ Assets {
             Id: 1401124806849575098
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16783018995991628606
@@ -1058,6 +1076,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14553952187265908624
@@ -1110,6 +1129,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16181938623344365483
@@ -1148,6 +1168,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16640840535041053950
@@ -1202,6 +1223,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13068222787263654105
@@ -1257,6 +1279,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3295966029235254373
@@ -1313,6 +1336,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17180069496906980173
@@ -1368,6 +1392,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14902802513009944507
@@ -1399,6 +1424,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9116536110758639334
@@ -1459,6 +1485,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 11836658915540385222
@@ -1517,6 +1544,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17065074839613134099
@@ -1575,6 +1603,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2376164737637892905
@@ -1636,6 +1665,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1808420325362926985
@@ -1670,6 +1700,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16388591426263179176
@@ -1722,6 +1753,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7168461025371486649
@@ -1758,6 +1790,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15900846779705528225
@@ -1813,6 +1846,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12477661040702686584
@@ -1869,6 +1903,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10001927885769011992
@@ -1930,6 +1965,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9802697452277240459
@@ -1963,6 +1999,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12283794780210866412
@@ -2016,6 +2053,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5908771988519083816
@@ -2069,6 +2107,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4082961759525582382
@@ -2103,6 +2142,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14292440287837760501
@@ -2164,6 +2204,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16154804996964402461
@@ -2225,6 +2266,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1976510017153241447
@@ -2280,6 +2322,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18444154400575160295
@@ -2335,6 +2378,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4233865984179518818
@@ -2396,6 +2440,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17465210408781147764
@@ -2428,6 +2473,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2485537567544271052
@@ -2479,6 +2525,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1137657101286218924
@@ -2517,6 +2564,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9234527993384769640
@@ -2572,6 +2620,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16164101641654376312
@@ -2628,6 +2677,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 235008408293713931
@@ -2688,6 +2738,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17981603926797877775
@@ -2723,6 +2774,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2077533898500781050
@@ -2776,6 +2828,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 18207541500091842774
@@ -2829,6 +2882,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14865639632895202885
@@ -2881,6 +2935,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6531515059501224562
@@ -2934,6 +2989,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6585901046865636090
@@ -2968,6 +3024,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1198399904691090455
@@ -3029,6 +3086,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13211126199862095676
@@ -3090,6 +3148,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8099684825778486913
@@ -3145,6 +3204,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2379579218771201139
@@ -3200,6 +3260,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8331750603434336301
@@ -3236,6 +3297,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9589647693492104352
@@ -3296,6 +3358,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 12401247354191460248
@@ -3357,6 +3420,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1749057937818575851
@@ -3420,6 +3484,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15505848072645828302
@@ -3501,6 +3566,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 852405447415565397
@@ -3553,6 +3619,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 1584293479853616134
@@ -3619,6 +3686,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3755839406074657646
@@ -3681,6 +3749,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16585485664470440384
@@ -3744,6 +3813,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9411107686960511742
@@ -3807,6 +3877,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5860101401348793078
@@ -3870,6 +3941,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15535947799508006418
@@ -3933,6 +4005,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 17186547698368276010
@@ -3996,6 +4069,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13252648087917220772
@@ -4032,6 +4106,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 10530136517687562001
@@ -4092,6 +4167,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15524416082423014439
@@ -4153,6 +4229,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 353012574401670190
@@ -4216,6 +4293,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 712425437538673206
@@ -4297,6 +4375,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4949508769433840999
@@ -4349,6 +4428,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3145502605109991914
@@ -4415,6 +4495,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 4158695484992881967
@@ -4477,6 +4558,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14082983738392066347
@@ -4540,6 +4622,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 14441219789294702589
@@ -4603,6 +4686,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 7097078826205886776
@@ -4666,6 +4750,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8514024545333658373
@@ -4729,6 +4814,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3650300831133318981
@@ -4792,6 +4878,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16934585646461337811
@@ -4853,6 +4940,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 3376886061775490385
@@ -4886,6 +4974,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6208495115997381487
@@ -4938,6 +5027,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:critical"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 5561902673116600553
@@ -4972,6 +5062,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 16557286392093083768
@@ -5070,6 +5161,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 2811019374389401812
@@ -5103,6 +5195,7 @@ Assets {
         Folder {
           IsGroup: true
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6871319470616631190
@@ -5169,6 +5262,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 8218994162366152406
@@ -5232,6 +5326,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 13425215296111732561
@@ -5292,6 +5387,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 9663672101531436347
@@ -5390,6 +5486,7 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:high"
         }
+        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 6109572805851529769
@@ -5448,6 +5545,7 @@ Assets {
             BoundsScale: 1
           }
         }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
@@ -5626,6 +5724,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 113
+  SerializationVersion: 118
   VirtualFolderPath: "NPC Templates"
 }

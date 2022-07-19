@@ -2,7 +2,7 @@ Assets {
   Id: 5539674529169695596
   Name: "NavMesh Helper Grid Material"
   PlatformAssetType: 13
-  SerializationVersion: 113
+  SerializationVersion: 118
   CustomMaterialAsset {
     BaseMaterialId: 1125009572173803088
     ParameterOverrides {

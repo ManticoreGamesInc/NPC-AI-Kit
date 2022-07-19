@@ -10,9 +10,9 @@ Assets {
         Name: "The Carlos Blade"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.0462963134
+            Y: 0.0462963134
+            Z: 0.0462963134
           }
         }
         ParentId: 4781671109827199097
@@ -140,7 +140,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -214,7 +214,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -285,7 +285,7 @@ Assets {
           CanBePrevented: true
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }

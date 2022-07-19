@@ -45,7 +45,7 @@ Assets {
           Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
       }
     }

@@ -10,9 +10,9 @@ Assets {
         Name: "Basic Shotgun"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.0462963134
+            Y: 0.0462963134
+            Z: 0.0462963134
           }
         }
         ParentId: 4781671109827199097
@@ -192,7 +192,7 @@ Assets {
           Version: 3
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -269,7 +269,7 @@ Assets {
           Version: 3
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -316,7 +316,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -357,7 +357,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
       }
       Objects {

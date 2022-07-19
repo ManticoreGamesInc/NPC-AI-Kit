@@ -10,9 +10,9 @@ Assets {
         Name: "Advanced Crossbow"
         Transform {
           Scale {
-            X: 0.99999994
-            Y: 0.99999994
-            Z: 1
+            X: 0.0462963097
+            Y: 0.0462963097
+            Z: 0.0462963134
           }
         }
         ParentId: 14351769760478014791
@@ -1205,7 +1205,7 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:low"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1270,7 +1270,7 @@ Assets {
           Version: 3
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1324,7 +1324,7 @@ Assets {
           Version: 3
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }

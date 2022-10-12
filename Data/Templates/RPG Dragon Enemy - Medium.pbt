@@ -767,6 +767,10 @@ Assets {
           TriggerShape_v2 {
             Value: "mc:etriggershape:sphere"
           }
+          InteractionTemplate {
+          }
+          BreadcrumbTemplate {
+          }
         }
         IsReplicationEnabledByDefault: true
       }

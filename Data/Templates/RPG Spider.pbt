@@ -761,6 +761,10 @@ Assets {
           TriggerShape_v2 {
             Value: "mc:etriggershape:capsule"
           }
+          InteractionTemplate {
+          }
+          BreadcrumbTemplate {
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

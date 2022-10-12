@@ -36,6 +36,10 @@ Objects {
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
     }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
   }
   InstanceHistory {
     SelfId: 7845787259070380678
@@ -82,6 +86,10 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
+    }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
     }
   }
   InstanceHistory {

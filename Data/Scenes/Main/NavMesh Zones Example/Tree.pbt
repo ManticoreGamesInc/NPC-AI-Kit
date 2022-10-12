@@ -115,6 +115,10 @@ Objects {
     TriggerShape_v2 {
       Value: "mc:etriggershape:sphere"
     }
+    InteractionTemplate {
+    }
+    BreadcrumbTemplate {
+    }
   }
   InstanceHistory {
     SelfId: 9149339739975954482

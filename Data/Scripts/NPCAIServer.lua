@@ -1029,13 +1029,27 @@ end
 function OnPropertyChanged(object, propertyName)
 	if propertyName == "Team" then
 		HandleTeamChanged()
+
+	elseif propertyName == "Level" then
+		HandleLevelChanged()
 	end
 end
 
 function HandleTeamChanged()
 	COLLIDER.team = GetTeam()
 end
+
 HandleTeamChanged()
+
+function HandleLevelChanged()
+	if ROOT.hitPoints == ROOT.maxHitPoints then
+		local level = ROOT:GetCustomProperty("Level")
+		if level and level > 0 then
+			ROOT.maxHitPoints = MAX_HEALTH * level
+			ROOT.hitPoints = ROOT.maxHitPoints
+		end
+	end
+end
 
 ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 

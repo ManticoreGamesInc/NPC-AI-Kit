@@ -118,6 +118,11 @@ function OnProjectileImpact(projectile, other, hitResult)
 	if damageAmount == 0 then
 		return
 	end
+	
+	local level = ROOT:GetCustomProperty("Level")
+	if level and level > 0 then
+		damageAmount = damageAmount + CoreMath.Round(damageAmount * level / 3)
+	end
 
 	local dmg = Damage.New(damageAmount)
 	dmg:SetHitResult(hitResult)

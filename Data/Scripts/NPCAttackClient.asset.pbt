@@ -18,7 +18,7 @@ Assets {
       Overrides {
         Name: "cs:DestroyFX"
         AssetReference {
-          Id: 14594444593454931774
+          Id: 841534158063459245
         }
       }
       Overrides {

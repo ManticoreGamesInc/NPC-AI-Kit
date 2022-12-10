@@ -1,6 +1,6 @@
 --[[
 	NPCAI - Server
-	v0.13.0
+	v0.14.1
 	by: standardcombo
 	contributions: DarkDev, WaveParadigm
 	
@@ -80,6 +80,7 @@ local STATE_LOOKING_AROUND = 5
 local STATE_DEAD_1 = 6
 local STATE_DEAD_2 = 7
 local STATE_DISABLED = 8
+local STATE_STUNNED = 9
 
 local currentState = STATE_SLEEPING
 local stateTime = 0
@@ -106,6 +107,7 @@ local waitingForPath = false
 local temporaryVisionAngle = nil
 local temporaryVisionRadius = nil
 local temporaryHearingRadius = nil
+local customMaxMoveSpeed = MOVE_SPEED
 
 
 function SetState(newState)
@@ -165,6 +167,9 @@ function SetState(newState)
 
 	elseif (newState == STATE_DISABLED) then
 		ROOT:Destroy()
+	elseif (newState == STATE_STUNNED) then
+		ROOT:StopMove()
+		RootStopRotate()
 	end
 
 	currentState = newState
@@ -175,6 +180,17 @@ function SetState(newState)
 	end
 end
 
+function GoToStunState()
+	SetState(STATE_STUNNED)
+end
+
+function GoToSleepState()
+	SetState(STATE_SLEEPING)
+end
+
+function GoToDeadState()
+	SetState(STATE_DEAD_1)
+end
 
 function Tick(deltaTime)
 	stateTime = stateTime + deltaTime
@@ -508,9 +524,16 @@ function GetMoveSpeed()
 	if currentState == STATE_PATROLLING then
 		return PATROL_SPEED
 	end
-	return MOVE_SPEED
+	return customMaxMoveSpeed
 end
 
+function GetMaxMoveSpeed()
+	return customMaxMoveSpeed
+end
+
+function SetMaxMoveSpeed(value)
+	customMaxMoveSpeed = value
+end
 
 function GetVelocity()
 	return velocity

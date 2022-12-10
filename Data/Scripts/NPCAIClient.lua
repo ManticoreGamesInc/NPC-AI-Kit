@@ -1,7 +1,8 @@
 --[[
 	NPCAI - Client
-	v0.13.0
+	v0.14.1
 	by: standardcombo
+	Modified by: Luapi
 	
 	The client counterpart for NPCAIServer. Detaches and smooths the
 	visual parts of the NPC from the logical ones.
@@ -20,8 +21,9 @@ function OnDestroyed(obj)
 	GEO_ROOT:StopRotate()
 	GEO_ROOT:Destroy()
 end
-ROOT.destroyEvent:Connect(OnDestroyed)
 
+ROOT.destroyEvent:Connect(OnDestroyed)
+ROOT.clientUserData.GEO_ROOT = GEO_ROOT
 GEO_ROOT.parent = nil
 GEO_ROOT:LookAtContinuous(FORWARD_NODE, true, TURN_SPEED)
 
@@ -35,7 +37,7 @@ local STATE_LOOKING_AROUND = 5
 local STATE_DEAD_1 = 6
 local STATE_DEAD_2 = 7
 local STATE_DISABLED = 8
-
+local STATE_STUNNED = 9
 
 function GetCurrentState()
 	return ROOT:GetCustomProperty("CurrentState")
@@ -55,7 +57,8 @@ function OnPropertyChanged(object, propertyName)
 	
 	if (propertyName == "CurrentState") then
 		local newState = GetCurrentState()
-		
+
+		if not script then return end
 		if newState == STATE_PATROLLING and currentState ~= STATE_PATROLLING then
 			GEO_ROOT:Follow(script, PATROL_SPEED)
 			

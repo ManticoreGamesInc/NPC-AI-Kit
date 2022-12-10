@@ -833,7 +833,7 @@ end
 
 
 function IsAlive()
-	return currentState < STATE_DEAD_1
+	return currentState < STATE_DEAD_1 or currentState > STATE_DISABLED
 end
 
 

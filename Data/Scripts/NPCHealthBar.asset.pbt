@@ -5,6 +5,18 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:HideWhenFull"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:HideWhenEmpty"
+        Bool: true
+      }
+      Overrides {
+        Name: "cs:TickWait"
+        Float: 0.1
+      }
+      Overrides {
         Name: "cs:Fill"
         ObjectReference {
         }
@@ -20,6 +32,16 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:Name"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:Level"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:Fill:tooltip"
         String: "Reference to the UI Image that represents the filled bar. The script will scale the bar to show percentage of health."
       }
@@ -30,5 +52,4 @@ Assets {
     }
   }
   SerializationVersion: 121
-  VirtualFolderPath: "NPC Kit"
 }

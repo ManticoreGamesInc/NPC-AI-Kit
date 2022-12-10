@@ -1,6 +1,6 @@
 --[[
 	Combat Wrap - NPC
-	v0.14.0
+	v0.15.0
 	by: standardcombo, WaveParadigm
 	
 	Provides an interface of combat functions that operate on a non-Player object.
@@ -93,7 +93,7 @@ end
 -- GetVelocity()
 function wrapper.GetVelocity(obj)
 
-	if not Object.IsValid(obj) then 
+	if not Object.IsValid(obj) then
 		return Vector3.ZERO
 	end
 	
@@ -280,12 +280,12 @@ end
 
 -- GetMaxWalkSpeed()
 function wrapper.GetMaxWalkSpeed(npc)
-	if obj.context and obj.context.GetMaxWalkSpeed then
-		return obj.context.GetMaxWalkSpeed()
+	if npc.context and npc.context.GetMaxMoveSpeed then
+		return npc.context.GetMaxMoveSpeed()
 	end
 	local npcScript = FindNPCScript(npc)
 	if npcScript then
-		return npcScript.context.GetMaxWalkSpeed()
+		return npcScript.context.GetMaxMoveSpeed()
 	end
 	return 0
 end
@@ -294,11 +294,11 @@ end
 -- SetMaxWalkSpeed()
 function wrapper.SetMaxWalkSpeed(npc, value)
 	local npcScript = npc
-	if not npcScript.context or not npcScript.context.SetMaxWalkSpeed then
+	if not npcScript.context or not npcScript.context.SetMaxMoveSpeed then
 		npcScript = FindNPCScript(npc)
 	end
-	if npcScript.context and npcScript.context.SetMaxWalkSpeed then
-		npcScript.context.SetMaxWalkSpeed(value)
+	if npcScript.context and npcScript.context.SetMaxMoveSpeed then
+		npcScript.context.SetMaxMoveSpeed(value)
 	end
 end
 

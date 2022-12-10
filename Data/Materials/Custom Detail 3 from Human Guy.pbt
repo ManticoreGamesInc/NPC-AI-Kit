@@ -2,7 +2,7 @@ Assets {
   Id: 13944012770315238892
   Name: "Custom Detail 3 from Human Guy"
   PlatformAssetType: 13
-  SerializationVersion: 118
+  SerializationVersion: 119
   CustomMaterialAsset {
     BaseMaterialId: 10563528208297598856
     ParameterOverrides {

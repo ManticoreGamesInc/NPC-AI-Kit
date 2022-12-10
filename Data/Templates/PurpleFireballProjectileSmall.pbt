@@ -1,13 +1,13 @@
 Assets {
-  Id: 15728676179772725900
-  Name: "Generic Impact Surface Aligned"
+  Id: 3607790562801961248
+  Name: "PurpleFireballProjectileSmall"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6246242700242467092
+      RootId: 16316256613863683424
       Objects {
-        Id: 6246242700242467092
-        Name: "Generic Impact Surface Aligned"
+        Id: 16316256613863683424
+        Name: "PurpleFireballProjectileSmall"
         Transform {
           Scale {
             X: 1
@@ -16,10 +16,13 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 15676067918659116593
+        ChildIds: 5543664476789432740
+        ChildIds: 2194449405296804175
+        ChildIds: 10681555797624662938
+        ChildIds: 1972879049163831141
+        ChildIds: 16017104486636181346
         UnregisteredParameters {
         }
-        Lifespan: 6
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -43,13 +46,13 @@ Assets {
         }
       }
       Objects {
-        Id: 15676067918659116593
-        Name: "Impact Geo"
+        Id: 5543664476789432740
+        Name: "SpawnOnDestroy"
         Transform {
           Location {
           }
           Rotation {
-            Pitch: -90
+            Yaw: -3.41509417e-06
           }
           Scale {
             X: 1
@@ -57,11 +60,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6246242700242467092
-        ChildIds: 11244076573502085025
-        ChildIds: 6983234237468868165
-        ChildIds: 8007739458989036561
-        ChildIds: 9519357983113725241
+        ParentId: 16316256613863683424
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -71,8 +70,13 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Folder {
-          IsGroup: true
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12116595540199498749
+          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -80,207 +84,59 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11244076573502085025
-        Name: "Impact Ground Dirt 01 SFX"
+        Id: 2194449405296804175
+        Name: "Ball"
         Transform {
           Location {
           }
           Rotation {
+            Yaw: -2.03555488e-13
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.3
+            Y: 0.3
+            Z: 0.3
           }
         }
-        ParentId: 15676067918659116593
+        ParentId: 16316256613863683424
         UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 15419880338893310786
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.45
+              B: 1.8
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
-        AudioInstance {
-          AudioAsset {
-            Id: 3307794794401153799
+        CoreMesh {
+          MeshAsset {
+            Id: 9426188198345824359
           }
-          AutoPlay: true
-          Volume: 1
-          Falloff: 3600
-          Radius: 400
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6983234237468868165
-        Name: "Gun Impact Small VFX"
-        Transform {
-          Location {
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
           }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15676067918659116593
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 17144409617272687275
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:medium"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8007739458989036561
-        Name: "Impact Sparks VFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
-          }
-        }
-        ParentId: 15676067918659116593
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Density"
-            Float: 0.3
-          }
-          Overrides {
-            Name: "bp:Particle Scale Multiplier"
-            Float: 2
-          }
-          Overrides {
-            Name: "bp:Spark Line Scale Multiplier"
-            Float: 1
-          }
-          Overrides {
-            Name: "bp:Enable Hotspot"
-            Bool: true
-          }
-          Overrides {
-            Name: "bp:Enable Flash"
-            Bool: true
-          }
-          Overrides {
-            Name: "bp:Enable Spark Lines"
-            Bool: true
-          }
-          Overrides {
-            Name: "bp:Enable Sparks"
-            Bool: true
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 11887549032181544333
-          }
-          TeamSettings {
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:medium"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9519357983113725241
-        Name: "Decal Bullet Damage Metal"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.1
-            Y: 0.1
-            Z: 0.1
-          }
-        }
-        ParentId: 15676067918659116593
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Shape Index"
-            Int: 0
-          }
-          Overrides {
-            Name: "bp:Fade Delay"
-            Float: 4
-          }
-          Overrides {
-            Name: "bp:Fade Time"
-            Float: 2
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 16471063547951275134
-          }
-          TeamSettings {
-          }
-          DecalBP {
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+            BoundsScale: 1
           }
         }
         Relevance {
@@ -291,41 +147,214 @@ Assets {
         }
         IsReplicationEnabledByDefault: true
       }
-    }
-    Assets {
-      Id: 3307794794401153799
-      Name: "Impact Ground Dirt 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_bullet_impact_ground_dirt_01_Cue_ref"
+      Objects {
+        Id: 10681555797624662938
+        Name: "Fire and Flame Burning Loop Set 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16316256613863683424
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Type"
+            Enum {
+              Value: "mc:esfx_fireloops_01:13"
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 10118144510199222253
+          }
+          AudioBP {
+            AutoPlay: true
+            Volume: 0.5
+            Falloff: 1800
+            EnableOcclusion: true
+            IsSpatializationEnabled: true
+            IsAttenuationEnabled: true
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 1972879049163831141
+        Name: "Point Light"
+        Transform {
+          Location {
+            X: -0.157108307
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16316256613863683424
+        UnregisteredParameters {
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 10
+          Color {
+            R: 0.500001907
+            B: 5
+            A: 1
+          }
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 1000
+              PointLight {
+                SourceRadius: 20
+                SoftSourceRadius: 20
+                FallOffExponent: 8
+                UseFallOffExponent: true
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
+          ShadowBias: 0.4
+          ShadowSlopeBias: 0.6
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 16017104486636181346
+        Name: "Magic Projectile VFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16316256613863683424
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:ColorB"
+            Color {
+              R: 15
+              G: 8.77964783
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 0.3
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.625004768
+              B: 15
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.750000477
+              B: 5
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9919395327939304349
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:edistancerelevance:medium"
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
       }
     }
     Assets {
-      Id: 17144409617272687275
-      Name: "Gun Impact Small VFX"
+      Id: 9426188198345824359
+      Name: "Ball"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_sphere_001"
+      }
+    }
+    Assets {
+      Id: 10118144510199222253
+      Name: "Fire and Flame Burning Loop Set 01 SFX"
+      PlatformAssetType: 10
+      PrimaryAsset {
+        AssetType: "AudioBlueprintAssetRef"
+        AssetId: "sfxabp_nature_fireloops_ref"
+      }
+    }
+    Assets {
+      Id: 9919395327939304349
+      Name: "Magic Projectile VFX"
       PlatformAssetType: 8
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_gun_impact_dirt_sm"
-      }
-    }
-    Assets {
-      Id: 11887549032181544333
-      Name: "Impact Sparks VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_impact_sparks"
-      }
-    }
-    Assets {
-      Id: 16471063547951275134
-      Name: "Decal Bullet Damage Metal"
-      PlatformAssetType: 14
-      PrimaryAsset {
-        AssetType: "DecalBlueprintAssetRef"
-        AssetId: "bp_decal_bullet_metal_001"
+        AssetId: "fxbp_magic_projectile"
       }
     }
     PrimaryAssetId {
@@ -334,7 +363,4 @@ Assets {
     }
   }
   SerializationVersion: 121
-  VirtualFolderPath: "Weapons"
-  VirtualFolderPath: "Projectile"
-  VirtualFolderPath: "Dependecies"
 }

@@ -1,13 +1,13 @@
 Assets {
-  Id: 15728676179772725900
-  Name: "Generic Impact Surface Aligned"
+  Id: 1653371173634367754
+  Name: "Green Magic Surface Impact"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6246242700242467092
+      RootId: 4527804611603962291
       Objects {
-        Id: 6246242700242467092
-        Name: "Generic Impact Surface Aligned"
+        Id: 4527804611603962291
+        Name: "Green Magic Surface Impact"
         Transform {
           Scale {
             X: 1
@@ -16,7 +16,7 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 15676067918659116593
+        ChildIds: 12823567131480260246
         UnregisteredParameters {
         }
         Lifespan: 6
@@ -43,7 +43,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15676067918659116593
+        Id: 12823567131480260246
         Name: "Impact Geo"
         Transform {
           Location {
@@ -57,11 +57,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6246242700242467092
-        ChildIds: 11244076573502085025
-        ChildIds: 6983234237468868165
-        ChildIds: 8007739458989036561
-        ChildIds: 9519357983113725241
+        ParentId: 4527804611603962291
+        ChildIds: 17613612209138677510
+        ChildIds: 617991918168497890
+        ChildIds: 530253184199308470
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -80,7 +79,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 11244076573502085025
+        Id: 17613612209138677510
         Name: "Impact Ground Dirt 01 SFX"
         Transform {
           Location {
@@ -93,7 +92,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15676067918659116593
+        ParentId: 12823567131480260246
         UnregisteredParameters {
         }
         Collidable_v2 {
@@ -123,7 +122,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6983234237468868165
+        Id: 617991918168497890
         Name: "Gun Impact Small VFX"
         Transform {
           Location {
@@ -136,8 +135,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15676067918659116593
+        ParentId: 12823567131480260246
         UnregisteredParameters {
+          Overrides {
+            Name: "bp:Enable Dust"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Enable Rocks"
+            Bool: true
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -165,7 +172,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 8007739458989036561
+        Id: 530253184199308470
         Name: "Impact Sparks VFX"
         Transform {
           Location {
@@ -173,12 +180,12 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 0.4
-            Y: 0.4
-            Z: 0.4
+            X: 0.6
+            Y: 0.6
+            Z: 0.6
           }
         }
-        ParentId: 15676067918659116593
+        ParentId: 12823567131480260246
         UnregisteredParameters {
           Overrides {
             Name: "bp:Density"
@@ -208,6 +215,15 @@ Assets {
             Name: "bp:Enable Sparks"
             Bool: true
           }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.0199999809
+              G: 1
+              B: 0.0264900923
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -230,61 +246,6 @@ Assets {
         }
         Relevance {
           Value: "mc:edistancerelevance:medium"
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 9519357983113725241
-        Name: "Decal Bullet Damage Metal"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.1
-            Y: 0.1
-            Z: 0.1
-          }
-        }
-        ParentId: 15676067918659116593
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Shape Index"
-            Int: 0
-          }
-          Overrides {
-            Name: "bp:Fade Delay"
-            Float: 4
-          }
-          Overrides {
-            Name: "bp:Fade Time"
-            Float: 2
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 16471063547951275134
-          }
-          TeamSettings {
-          }
-          DecalBP {
-          }
-        }
-        Relevance {
-          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -319,22 +280,10 @@ Assets {
         AssetId: "fxbp_impact_sparks"
       }
     }
-    Assets {
-      Id: 16471063547951275134
-      Name: "Decal Bullet Damage Metal"
-      PlatformAssetType: 14
-      PrimaryAsset {
-        AssetType: "DecalBlueprintAssetRef"
-        AssetId: "bp_decal_bullet_metal_001"
-      }
-    }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
   SerializationVersion: 121
-  VirtualFolderPath: "Weapons"
-  VirtualFolderPath: "Projectile"
-  VirtualFolderPath: "Dependecies"
 }

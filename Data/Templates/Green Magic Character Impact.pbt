@@ -1,13 +1,13 @@
 Assets {
-  Id: 14594444593454931774
-  Name: "Minion Impact Effect"
+  Id: 16594282996812392491
+  Name: "Green Magic Character Impact"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 11030123202232162817
+      RootId: 217469769189920054
       Objects {
-        Id: 11030123202232162817
-        Name: "Minion Impact Effect"
+        Id: 217469769189920054
+        Name: "Green Magic Character Impact"
         Transform {
           Scale {
             X: 1
@@ -16,8 +16,12 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 6712450895790081351
-        ChildIds: 2965360691056808830
+        ChildIds: 4218381511361830963
+        ChildIds: 15119089873885304405
+        UnregisteredParameters {
+        }
+        Lifespan: 6
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -36,29 +40,62 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:medium"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6712450895790081351
-        Name: "Gibs Explosion VFX"
+        Id: 4218381511361830963
+        Name: "Impact Sparks VFX"
         Transform {
           Location {
           }
           Rotation {
+            Pitch: -90
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.6
+            Y: 0.6
+            Z: 0.6
           }
         }
-        ParentId: 11030123202232162817
+        ParentId: 217469769189920054
         UnregisteredParameters {
           Overrides {
-            Name: "bp:Enable Blobs"
-            Bool: false
+            Name: "bp:Density"
+            Float: 0.3
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 2
+          }
+          Overrides {
+            Name: "bp:Spark Line Scale Multiplier"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Enable Hotspot"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Enable Flash"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Enable Spark Lines"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Enable Sparks"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.0199999809
+              G: 1
+              B: 0.0264900923
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -72,7 +109,7 @@ Assets {
         }
         Blueprint {
           BlueprintAsset {
-            Id: 3137516374477183732
+            Id: 11887549032181544333
           }
           TeamSettings {
           }
@@ -81,7 +118,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:high"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -89,8 +126,8 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2965360691056808830
-        Name: "Impact Player Body Hit 01 SFX"
+        Id: 15119089873885304405
+        Name: "Bullet Body Impact SFX"
         Transform {
           Location {
           }
@@ -102,7 +139,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11030123202232162817
+        ParentId: 217469769189920054
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -114,13 +153,12 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 7248737145792905845
+            Id: 7866413056776856701
           }
           AutoPlay: true
-          Volume: 2.0570507
+          Volume: 1
           Falloff: 3600
-          Radius: 412.298889
-          EnableOcclusion: true
+          Radius: 400
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
         }
@@ -131,21 +169,21 @@ Assets {
       }
     }
     Assets {
-      Id: 3137516374477183732
-      Name: "Gibs Explosion VFX"
+      Id: 11887549032181544333
+      Name: "Impact Sparks VFX"
       PlatformAssetType: 8
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_bloody_explosion"
+        AssetId: "fxbp_impact_sparks"
       }
     }
     Assets {
-      Id: 7248737145792905845
-      Name: "Impact Player Body Hit 01 SFX"
+      Id: 7866413056776856701
+      Name: "Bullet Body Impact SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_impact_player_bodyhit_01_Cue_ref"
+        AssetId: "sfx_bullet_impact_body"
       }
     }
     PrimaryAssetId {

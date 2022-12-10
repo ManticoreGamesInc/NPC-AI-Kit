@@ -77,14 +77,14 @@ Assets {
         }
         Blueprint {
           BlueprintAsset {
-            Id: 7628097165165581423
+            Id: 16039011261841658489
           }
           Vfx {
             AutoPlay: true
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:high"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -135,7 +135,7 @@ Assets {
       }
     }
     Assets {
-      Id: 7628097165165581423
+      Id: 16039011261841658489
       Name: "Generic Player Impact VFX"
       PlatformAssetType: 8
       PrimaryAsset {

@@ -140,7 +140,7 @@ function OnProjectileImpact(projectile, other, hitResult)
 		source = script.parent:FindChildByName("NPCAIServer"),
 		item = script,
 		position = pos,
-		rotation = rot,
+		--rotation = rot, --Without this parameter treasures will point at the local player
 		tags = TAGS().GetTags(ROOT)
 	}
 
@@ -200,14 +200,31 @@ function SetHealth(value)
 end
 
 function DropRewards(killer)
+	local lootDropFactory = LOOT_DROP_FACTORY()
+	
+	if lootDropFactory and lootDropFactory.VERSION and lootDropFactory.VERSION >= 3.0 then
+		local params = {
+			object = ROOT,
+			killer = killer,
+			lootId = LOOT_ID,
+			position = ROOT:GetWorldPosition(),
+			rotation = ROOT:GetWorldRotation(),
+			resourceType = REWARD_RESOURCE_TYPE,
+			resourceAmount = REWARD_RESOURCE_AMOUNT,
+		}
+		lootDropFactory.Drop(params)
+		
+		return
+	end
+	
 	-- Give resources
 	if REWARD_RESOURCE_TYPE and Object.IsValid(killer) and killer:IsA("Player") then
 		killer:AddResource(REWARD_RESOURCE_TYPE, REWARD_RESOURCE_AMOUNT)
 	end
 
 	-- Drop loot
-	if LOOT_ID ~= "" and LOOT_DROP_FACTORY() then
+	if LOOT_ID ~= "" and lootDropFactory then
 		local pos = script:GetWorldPosition()
-		LOOT_DROP_FACTORY().Drop(LOOT_ID, pos)
+		lootDropFactory.Drop(LOOT_ID, pos)
 	end
 end

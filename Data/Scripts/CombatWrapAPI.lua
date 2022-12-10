@@ -32,6 +32,7 @@ local MODULE = require( script:GetCustomProperty("ModuleManager") )
 function CROSS_CONTEXT_CALLER()
 	return MODULE.Get("standardcombo.Utils.CrossContextCaller")
 end
+
 function TAGS() return MODULE.Get("standardcombo.Combat.Tags") end
 
 -- The different entity wrappers
@@ -42,7 +43,8 @@ local NPC_WRAPPER = require( script:GetCustomProperty("CombatWrapNPC") )
 -- Attack Data table keys = {object, damage, source, item, position, rotation, tags}
 function API.ApplyDamage(attackData)
 	if type(attackData) ~= "table" then
-		error("ApplyDamage() expected table with attackData, but received " .. tostring(attackData) .. " instead. \n" .. CoreDebug.GetStackTrace())
+		error("ApplyDamage() expected table with attackData, but received " ..
+			tostring(attackData) .. " instead. \n" .. CoreDebug.GetStackTrace())
 		return
 	end
 
@@ -132,6 +134,18 @@ function API.FindInSphere(position, radius, parameters)
 		table.insert(enemies, npc)
 	end
 	return enemies
+end
+
+-- GetAll()
+function API.GetAll()
+	local players = PLAYER_WRAPPER.GetAll()
+	local npcs = NPC_WRAPPER.GetAll()
+
+	local allObjects = players
+	for _, npc in ipairs(npcs) do
+		table.insert(allObjects, npc)
+	end
+	return allObjects
 end
 
 -- GetMaxWalkSpeed()

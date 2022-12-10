@@ -1,7 +1,7 @@
 --[[
 NPC Waypoint
 by: standardcombo
-v1.0.0
+v1.1.0
 
 The waypoint detects NPCs entering its trigger and directs them to move to the next objective.
 Can be used for patrolling behaviors, random folks in town, traffic lanes, etc.
@@ -30,7 +30,10 @@ To setup a network of waypoints:
 --]]
 
 local ROOT = script.parent
-local TRIGGER = ROOT:FindChildByType("Trigger")
+local TRIGGER = ROOT
+if not TRIGGER:IsA("Trigger") then
+	TRIGGER = ROOT:FindDescendantByType("Trigger")
+end
 local TRIGGER_SCALE = TRIGGER:GetWorldScale()
 destinationRadius = math.min(TRIGGER_SCALE.x, TRIGGER_SCALE.y) * 50
 

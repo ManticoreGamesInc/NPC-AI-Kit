@@ -15,14 +15,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 3597304494953298613
         ChildIds: 10318705552966214072
         ChildIds: 6689285461502830736
         ChildIds: 7916060936753738321
         ChildIds: 220515760384247820
-        ChildIds: 7607072812707819050
-        ChildIds: 6458989816986758554
-        ChildIds: 2023295613113663412
+        ChildIds: 5301930907642284503
+        ChildIds: 15832999798851338616
+        ChildIds: 16454573656402718750
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -468,7 +468,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 7607072812707819050
+        Id: 5301930907642284503
         Name: "NPC Waypoint - main"
         Transform {
           Location {
@@ -479,94 +479,43 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12901535811932769121
-        ChildIds: 15677511566924825520
-        ChildIds: 5301930907642284503
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:NPCWaypoint"
-            ObjectReference {
-              SubObjectId: 6458989816986758554
-            }
-          }
-          Overrides {
-            Name: "cs:NPCWaypoint_0"
-            ObjectReference {
-              SubObjectId: 2023295613113663412
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 15677511566924825520
-        Name: "NPCWaypoint"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7607072812707819050
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 12402776060914387729
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 5301930907642284503
-        Name: "Trigger"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
             X: 9.13409805
             Y: 11.2010756
             Z: 4.65565157
           }
         }
-        ParentId: 7607072812707819050
+        ParentId: 12901535811932769121
+        ChildIds: 15677511566924825520
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:NPCWaypoint"
+            ObjectReference {
+              SubObjectId: 15832999798851338616
+            }
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint_0"
+            ObjectReference {
+              SubObjectId: 16454573656402718750
+            }
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:ml"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint_0:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint_0:ml"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -595,53 +544,7 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 6458989816986758554
-        Name: "NPC Waypoint - A"
-        Transform {
-          Location {
-            X: 571.931641
-            Y: -1785.52051
-            Z: -10.4996338
-          }
-          Rotation {
-            Yaw: 74.5772552
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12901535811932769121
-        ChildIds: 6789416674766655733
-        ChildIds: 15832999798851338616
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:NPCWaypoint"
-            ObjectReference {
-              SubObjectId: 7607072812707819050
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 6789416674766655733
+        Id: 15677511566924825520
         Name: "NPCWaypoint"
         Transform {
           Location {
@@ -649,12 +552,12 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.109479882
+            Y: 0.0892771408
+            Z: 0.214792699
           }
         }
-        ParentId: 6458989816986758554
+        ParentId: 5301930907642284503
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -676,12 +579,15 @@ Assets {
       }
       Objects {
         Id: 15832999798851338616
-        Name: "Trigger"
+        Name: "NPC Waypoint - A"
         Transform {
           Location {
+            X: 571.931641
+            Y: -1785.52051
+            Z: -10.4996338
           }
           Rotation {
-            Yaw: -3.05175781e-05
+            Yaw: 74.5772
           }
           Scale {
             X: 4.92342138
@@ -689,7 +595,24 @@ Assets {
             Z: 4.65565157
           }
         }
-        ParentId: 6458989816986758554
+        ParentId: 12901535811932769121
+        ChildIds: 6789416674766655733
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:NPCWaypoint"
+            ObjectReference {
+              SubObjectId: 5301930907642284503
+            }
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:ml"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -718,66 +641,21 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
-        Id: 2023295613113663412
-        Name: "NPC Waypoint - B"
-        Transform {
-          Location {
-            X: 1247.78711
-            Y: 1465.25684
-            Z: 1.40380859
-          }
-          Rotation {
-            Yaw: -59.5058212
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12901535811932769121
-        ChildIds: 8039306271398661446
-        ChildIds: 16454573656402718750
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:NPCWaypoint"
-            ObjectReference {
-              SubObjectId: 7607072812707819050
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-        IsReplicationEnabledByDefault: true
-      }
-      Objects {
-        Id: 8039306271398661446
+        Id: 6789416674766655733
         Name: "NPCWaypoint"
         Transform {
           Location {
           }
           Rotation {
+            Yaw: 3.4150944e-05
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.203110784
+            Y: 0.213012353
+            Z: 0.214792699
           }
         }
-        ParentId: 2023295613113663412
+        ParentId: 15832999798851338616
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -799,11 +677,15 @@ Assets {
       }
       Objects {
         Id: 16454573656402718750
-        Name: "Trigger"
+        Name: "NPC Waypoint - B"
         Transform {
           Location {
+            X: 1247.78711
+            Y: 1465.25684
+            Z: 1.40380859
           }
           Rotation {
+            Yaw: -59.505806
           }
           Scale {
             X: 4.58899355
@@ -811,7 +693,24 @@ Assets {
             Z: 4.65565157
           }
         }
-        ParentId: 2023295613113663412
+        ParentId: 12901535811932769121
+        ChildIds: 8039306271398661446
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:NPCWaypoint"
+            ObjectReference {
+              SubObjectId: 5301930907642284503
+            }
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:isrep"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:NPCWaypoint:ml"
+            Bool: false
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -832,6 +731,40 @@ Assets {
           InteractionTemplate {
           }
           BreadcrumbTemplate {
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 8039306271398661446
+        Name: "NPCWaypoint"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.217912704
+            Y: 0.231539518
+            Z: 0.214792699
+          }
+        }
+        ParentId: 16454573656402718750
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12402776060914387729
           }
         }
         NetworkRelevanceDistance {
@@ -854,6 +787,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 118
+  SerializationVersion: 119
   DirectlyPublished: true
 }

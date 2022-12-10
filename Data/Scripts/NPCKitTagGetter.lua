@@ -1,5 +1,6 @@
 --[[
 	Tag Getter
+	v1.2
 	by: standardcombo
 	
 	Utility functions for operating on combat tags, such as retrieving tags

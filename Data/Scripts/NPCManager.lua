@@ -1,6 +1,6 @@
 --[[
 	NPC Manager
-	v0.13.0
+	v0.14.0
 	by: standardcombo
 	
 	Provides bookkeeping on all NPCs contained in a game.
@@ -36,6 +36,13 @@ function API.IsRegistered(npc)
 	return allNPCs[npc] ~= nil
 end
 
+function API.GetNpcs()
+	local npcs = {}
+	for key, value in pairs(allNPCs) do
+		table.insert(npcs, key)
+	end
+	return npcs
+end
 
 function API.FindScriptForCollider(collider)
 	return npcColliders[collider]
@@ -45,6 +52,13 @@ function API.FindScriptForDamageable(damageable)
 	return npcDamageables[damageable]
 end
 
+function API.GetDamageables()
+	local damageables = {}
+	for key, value in pairs(npcDamageables) do
+		table.insert(damageables, key)
+	end
+	return damageables
+end
 
 function API.GetEnemies(team)
 	local enemies = {}

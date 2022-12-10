@@ -4,7 +4,7 @@ Assets {
   PlatformAssetType: 13
   SerializationVersion: 121
   CustomMaterialAsset {
-    BaseMaterialId: 3702191406046426907
+    BaseMaterialId: 15761460511220986007
     ParameterOverrides {
       Overrides {
         Name: "emissive_boost"
@@ -20,7 +20,7 @@ Assets {
       }
     }
     Assets {
-      Id: 3702191406046426907
+      Id: 15761460511220986007
       Name: "Emissive Glow Transparent"
       PlatformAssetType: 2
       PrimaryAsset {

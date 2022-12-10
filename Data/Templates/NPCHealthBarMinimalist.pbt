@@ -38,9 +38,8 @@ Assets {
           }
         }
         NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:eproxyrelevance:high"
         }
-        IsReplicationEnabledByDefault: true
       }
       Objects {
         Id: 15617251036984758824
@@ -191,7 +190,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:critical"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -246,7 +245,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:critical"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -276,7 +275,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 4845536303616023571
+              Id: 10880001044757736023
             }
           }
           Overrides {
@@ -313,7 +312,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:edistancerelevance:critical"
+          Value: "mc:edistancerelevance:medium"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

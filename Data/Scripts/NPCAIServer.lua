@@ -10,6 +10,9 @@
 	add to each one a custom property called "Walkable" of type boolean and set to false.
 	
 	See the NPC Kit README for more information.
+	
+	Broadcast Event:
+		"NPC.TargetChanged", thisNpcScript, newTarget, oldTarget
 --]]
 
 -- Component dependencies
@@ -326,6 +329,14 @@ end
 
 
 function SetTarget(newTarget)
+	if newTarget ~= target then
+		local eventData = {
+			npcScript = script,
+			newTarget = newTarget,
+			oldTarget = target,
+		}
+		Events.Broadcast("NPC.TargetChanged", eventData)
+	end
 	target = newTarget
 	
 	if Object.IsValid(target) then
@@ -912,8 +923,8 @@ function RootLookAtContinuous(targetObj, lockPitch, speed)
 		local targetPos = targetObj:GetWorldPosition()
 		local myPos = ROOT:GetWorldPosition()
 		local forward = targetPos - myPos
-		local rot = Rotation.New(forward, Vector3. UP)
-		
+		local rot = Rotation.New(forward, Vector3.UP)
+
 		ROTATION_ROOT:RotateTo(rot, GetRotateToTurnSpeed(), false)
 	end
 end

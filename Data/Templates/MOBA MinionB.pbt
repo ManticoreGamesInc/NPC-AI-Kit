@@ -1131,7 +1131,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1225,7 +1225,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1281,7 +1281,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1487,7 +1487,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1667,7 +1667,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1755,7 +1755,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -1967,7 +1967,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2206,7 +2206,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2268,7 +2268,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2324,7 +2324,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2380,7 +2380,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2442,7 +2442,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2527,7 +2527,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -2740,7 +2740,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3088,7 +3088,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3150,7 +3150,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3206,7 +3206,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3262,7 +3262,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3360,7 +3360,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3422,7 +3422,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3486,7 +3486,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3568,7 +3568,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3621,7 +3621,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3688,7 +3688,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3751,7 +3751,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3815,7 +3815,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3879,7 +3879,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -3943,7 +3943,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4007,7 +4007,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4071,7 +4071,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4169,7 +4169,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4231,7 +4231,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4295,7 +4295,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4377,7 +4377,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4430,7 +4430,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4497,7 +4497,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4560,7 +4560,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4624,7 +4624,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4688,7 +4688,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4752,7 +4752,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4816,7 +4816,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4880,7 +4880,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -4942,7 +4942,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5029,7 +5029,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:critical"
+          Value: "mc:edistancerelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5163,7 +5163,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5264,7 +5264,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:edistancerelevance:medium"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5328,7 +5328,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5488,7 +5488,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         IsReplicationEnabledByDefault: true
       }
@@ -5728,6 +5728,6 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
   VirtualFolderPath: "NPC Templates"
 }

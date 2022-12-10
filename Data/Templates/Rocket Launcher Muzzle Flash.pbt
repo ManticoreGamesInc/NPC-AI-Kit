@@ -119,7 +119,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -171,7 +171,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:high"
+          Value: "mc:edistancerelevance:high"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -202,7 +202,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
   VirtualFolderPath: "Weapons"
   VirtualFolderPath: "Projectile"
   VirtualFolderPath: "Dependecies"

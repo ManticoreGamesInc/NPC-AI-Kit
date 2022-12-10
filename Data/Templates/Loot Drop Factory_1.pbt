@@ -46,5 +46,5 @@ Assets {
     OwnerName: "standardcombo"
     Description: "Spawns random loot drops from a customizable data set.\r\n\r\nComes with 5 different loot drops split into Common, Uncommon and Rare groups.\r\n\r\nSee comments for more information on usage.\r\n\r\nv1.1\r\n- Fixed loot pickups in case their trigger is set to not be interactable."
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
 }

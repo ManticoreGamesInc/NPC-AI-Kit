@@ -53,5 +53,5 @@ Assets {
     Version: "1.1.0"
     Description: "Based on the Fire Staff from Spellshock. This weapon adds a Leap ability that propels you through the air.\r\n\r\nv2.2\r\n- Compatible with Combat Wrapper v0.11.2\r\n- Now deals 50 headshot damage.\r\n- Replaced a deprecated call to .isVisible with .visibility\r\n\r\nv2.1\r\n- Now shows damage flyup numbers with the AOE effects.\r\n\r\nv2.0\r\n- Fully compatible with NPC Kit, including AOE spell damage.\r\n- Reduced amount of networked objects."
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
 }

@@ -464,6 +464,6 @@ Assets {
   Marketplace {
     Description: "Spawns random loot drops from a customizable data set.\r\n\r\nComes with 5 different loot drops split into Common, Uncommon and Rare groups.\r\n\r\nSee comments for more information on usage."
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
   DirectlyPublished: true
 }

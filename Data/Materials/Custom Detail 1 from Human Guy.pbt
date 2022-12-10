@@ -2,7 +2,7 @@ Assets {
   Id: 14407724145096984465
   Name: "Custom Detail 1 from Human Guy"
   PlatformAssetType: 13
-  SerializationVersion: 119
+  SerializationVersion: 121
   CustomMaterialAsset {
     BaseMaterialId: 6891194889714342197
     ParameterOverrides {
@@ -85,7 +85,7 @@ Assets {
     }
     Assets {
       Id: 6891194889714342197
-      Name: "Bark Redwood 01"
+      Name: "Bark Redwood Advanced 01"
       PlatformAssetType: 2
       PrimaryAsset {
         AssetType: "MaterialAssetRef"

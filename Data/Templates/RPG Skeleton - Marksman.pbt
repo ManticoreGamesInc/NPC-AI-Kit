@@ -32,11 +32,17 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceAmount"
-            Int: 1
+            Int: 50
           }
           Overrides {
             Name: "cs:LootId"
-            String: "Common"
+            String: "SkeletonCommon"
+          }
+          Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 841534158063459245
+            }
           }
           Overrides {
             Name: "cs:AttackRange"
@@ -59,8 +65,16 @@ Assets {
             Float: 1.5
           }
           Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 5
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs"
+            Int: 5
+          }
+          Overrides {
             Name: "cs:MoveSpeed"
-            Float: 400
+            Float: 450
           }
           Overrides {
             Name: "cs:TurnSpeed"
@@ -112,6 +126,10 @@ Assets {
           }
           Overrides {
             Name: "cs:CurrentState"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:Level"
             Int: 0
           }
           Overrides {
@@ -466,6 +484,34 @@ Assets {
             Name: "cs:LootId:category"
             String: "Drops"
           }
+          Overrides {
+            Name: "cs:EngageEffect:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:EngageEffect:tooltip"
+            String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
+          Overrides {
+            Name: "cs:Level:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -482,7 +528,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 200
+            MaxHitpoints: 100
             StartingHitpoints: 200
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -653,14 +699,6 @@ Assets {
         }
         ParentId: 4605403733082337837
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 5
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 20
-          }
           Overrides {
             Name: "cs:ProjectileBody"
             AssetReference {
@@ -917,18 +955,6 @@ Assets {
         ParentId: 14001881140192835445
         UnregisteredParameters {
           Overrides {
-            Name: "cs:DamageFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
-          Overrides {
-            Name: "cs:DestroyFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
-          Overrides {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 1997282349948663995
@@ -1007,6 +1033,7 @@ Assets {
         ChildIds: 18298766963528642205
         ChildIds: 17113873121481887918
         ChildIds: 16844161198568677528
+        ChildIds: 13636924890980084915
         ChildIds: 3384808585879706475
         ChildIds: 7047102102491409701
         ChildIds: 9655984082787811693
@@ -1236,6 +1263,52 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 13636924890980084915
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 155
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7145993005084827370
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageableObject"
+            ObjectReference {
+              SubObjectId: 1997282349948663995
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 3384808585879706475
         Name: "Skeleton Mob"
         Transform {
@@ -1256,16 +1329,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1331214420149010292
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.583333
-              G: 0.406894237
-              B: 0.176166564
-              A: 1
+              Id: 14698875350380456389
             }
           }
         }
@@ -1857,7 +1921,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -1996,7 +2060,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -2247,7 +2311,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 3593597783924766211
+            Id: 2264041107168619230
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2335,7 +2399,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -2611,7 +2675,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -2749,7 +2813,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -2920,7 +2984,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13757683359232640806
+            Id: 14194144483212673639
           }
         }
         NetworkRelevanceDistance {
@@ -3330,7 +3394,7 @@ Assets {
       }
     }
     Assets {
-      Id: 3593597783924766211
+      Id: 2264041107168619230
       Name: "Cone - Bullet"
       PlatformAssetType: 1
       PrimaryAsset {

@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Zombie
-	v1.1.1
+	v1.2.0
 	by: standardcombo
 	
 	Controls the animations for a humanoid NPC with Animated Mesh.
@@ -38,7 +38,8 @@ local STATE_PATROLLING = 4
 local STATE_LOOKING_AROUND = 5
 local STATE_DEAD_1 = 6
 local STATE_DEAD_2 = 7
-local STATE_DISABLED = 8
+local STATE_DISABLED = 8 
+local STATE_STUNNED = 9
 
 
 function PlayAttack()
@@ -133,7 +134,7 @@ ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
 	local state = GetCurrentState()
 	if state == STATE_ATTACK_CAST then return end
-	if state >= STATE_DEAD_1 then return end
+	if state >= STATE_DEAD_1 and state <= STATE_DISABLED then return end
 	if speed > 40 then return end
 	
 	-- Ignore other NPCs, make sure this event is about this NPC

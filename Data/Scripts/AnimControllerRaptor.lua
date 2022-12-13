@@ -1,6 +1,6 @@
 --[[
 	Animation Controller - Raptor
-	v1.2.0
+	v1.3.0
 	by: standardcombo, blackdheart
 	
 	Controls the animations for an NPC based on the Raptor Animated Mesh.
@@ -79,6 +79,8 @@ local STATE_LOOKING_AROUND = 5
 local STATE_DEAD_1 = 6
 local STATE_DEAD_2 = 7
 local STATE_DISABLED = 8
+local STATE_STUNNED = 9
+
 
 function UpdateArt(state)		
 	if (state == STATE_ATTACK_CAST) then
@@ -107,7 +109,7 @@ ROOT.customPropertyChangedEvent:Connect(OnPropertyChanged)
 function OnObjectDamaged(id, prevHealth, dmgAmount, impactPosition, impactRotation, sourceObject)
 	local state = GetCurrentState()
 	if state == STATE_ATTACK_CAST then return end
-	if state >= STATE_DEAD_1 then return end
+	if state >= STATE_DEAD_1 and state <= STATE_DISABLED then return end
 	if speed > 40 then return end
 	
 	-- Ignore other NPCs, make sure this event is about this NPC

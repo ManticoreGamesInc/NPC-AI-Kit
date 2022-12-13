@@ -20,7 +20,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Tag_1"
-            String: "Beast"
+            String: "Poison"
           }
           Overrides {
             Name: "cs:Tag_2"
@@ -32,11 +32,17 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceAmount"
-            Int: 1
+            Int: 50
           }
           Overrides {
             Name: "cs:LootId"
             String: "Common"
+          }
+          Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 8627326594445640802
+            }
           }
           Overrides {
             Name: "cs:AttackRange"
@@ -57,6 +63,14 @@ Assets {
           Overrides {
             Name: "cs:AttackCooldown"
             Float: 1.5
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 5
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs"
+            Int: 5
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -112,6 +126,10 @@ Assets {
           }
           Overrides {
             Name: "cs:CurrentState"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:Level"
             Int: 0
           }
           Overrides {
@@ -466,6 +484,34 @@ Assets {
             Name: "cs:LootId:category"
             String: "Drops"
           }
+          Overrides {
+            Name: "cs:EngageEffect:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:EngageEffect:tooltip"
+            String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
+          Overrides {
+            Name: "cs:Level:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -482,7 +528,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 120
+            MaxHitpoints: 40
             StartingHitpoints: 120
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -508,9 +554,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.8
+            Y: 0.8
+            Z: 0.8
           }
         }
         ParentId: 2942477774013888814
@@ -636,8 +682,8 @@ Assets {
         Name: "NPCAttackServer"
         Transform {
           Location {
-            X: 142.599609
-            Z: 61.9680176
+            X: 110
+            Z: -18.999939
           }
           Rotation {
             Pitch: 6.10298538
@@ -657,14 +703,6 @@ Assets {
             ObjectReference {
               SubObjectId: 2942477774013888814
             }
-          }
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 20
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 20
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -924,18 +962,6 @@ Assets {
               SubObjectId: 2942477774013888814
             }
           }
-          Overrides {
-            Name: "cs:DamageFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
-          Overrides {
-            Name: "cs:DestroyFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1007,6 +1033,7 @@ Assets {
         ParentId: 14978344754035557680
         ChildIds: 15544449444169622211
         ChildIds: 5797353628081911207
+        ChildIds: 15580345780560316688
         ChildIds: 11456907142275360696
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1046,6 +1073,12 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 2942477774013888814
+            }
+          }
+          Overrides {
+            Name: "cs:HealthBarTemplate"
+            AssetReference {
+              Id: 4315867458127260351
             }
           }
         }
@@ -1121,6 +1154,52 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 15580345780560316688
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 89.8144531
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.99999952
+            Y: 1.99999952
+            Z: 1.99999952
+          }
+        }
+        ParentId: 7973274874855468207
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageableObject"
+            ObjectReference {
+              SubObjectId: 2942477774013888814
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 11456907142275360696
         Name: "Spider Rig"
         Transform {
@@ -1136,6 +1215,32 @@ Assets {
           }
         }
         ParentId: 7973274874855468207
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:0:Shared_Detail1:color"
+            Color {
+              R: 0.217
+              G: 0.217
+              B: 0.217
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:0:Shared_Detail3:color"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:0:Shared_Detail4:color"
+            Color {
+              R: 3
+              G: 3
+              B: 3
+              A: 1
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1296,4 +1401,5 @@ Assets {
     }
   }
   SerializationVersion: 121
+  VirtualFolderPath: "NPC Templates"
 }

@@ -1062,6 +1062,7 @@ Assets {
         ParentId: 7549486370523105032
         ChildIds: 738958589784618796
         ChildIds: 6121090085530308094
+        ChildIds: 11936782557519860222
         ChildIds: 14452134182954134781
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1098,6 +1099,12 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 6915295634471237557
+            }
+          }
+          Overrides {
+            Name: "cs:HealthBarTemplate"
+            AssetReference {
+              Id: 4315867458127260351
             }
           }
         }
@@ -1163,6 +1170,53 @@ Assets {
           ScriptAsset {
             Id: 8511523814806414915
           }
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
+        Id: 11936782557519860222
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 180
+          }
+          Rotation {
+            Yaw: 3.05175763e-05
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 13655684992340290336
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageableObject"
+            ObjectReference {
+              SubObjectId: 6915295634471237557
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
         }
         IsReplicationEnabledByDefault: true
       }

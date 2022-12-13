@@ -32,11 +32,17 @@ Assets {
           }
           Overrides {
             Name: "cs:RewardResourceAmount"
-            Int: 1
+            Int: 50
           }
           Overrides {
             Name: "cs:LootId"
-            String: "Uncommon"
+            String: "Common"
+          }
+          Overrides {
+            Name: "cs:EngageEffect"
+            AssetReference {
+              Id: 4122074694147868642
+            }
           }
           Overrides {
             Name: "cs:AttackRange"
@@ -57,6 +63,14 @@ Assets {
           Overrides {
             Name: "cs:AttackCooldown"
             Float: 1.5
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers"
+            Int: 5
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs"
+            Int: 5
           }
           Overrides {
             Name: "cs:MoveSpeed"
@@ -112,6 +126,10 @@ Assets {
           }
           Overrides {
             Name: "cs:CurrentState"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:Level"
             Int: 0
           }
           Overrides {
@@ -466,6 +484,34 @@ Assets {
             Name: "cs:LootId:category"
             String: "Drops"
           }
+          Overrides {
+            Name: "cs:Level:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:EngageEffect:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:category"
+            String: "Combat"
+          }
+          Overrides {
+            Name: "cs:DamageToPlayers:tooltip"
+            String: "How much damage this NPC deals to players."
+          }
+          Overrides {
+            Name: "cs:DamageToNPCs:tooltip"
+            String: "How much damage this NPC deals to other NPCs."
+          }
+          Overrides {
+            Name: "cs:EngageEffect:tooltip"
+            String: "A template to spawn when the NPC engages an enemy for the first time."
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -482,7 +528,7 @@ Assets {
         }
         DamageableObject {
           DamageSettings {
-            MaxHitpoints: 300
+            MaxHitpoints: 60
             StartingHitpoints: 300
             DestroyOnDeath: true
             DestroyOnDeathDelay: 10
@@ -657,14 +703,6 @@ Assets {
             ObjectReference {
               SubObjectId: 2691092598115470187
             }
-          }
-          Overrides {
-            Name: "cs:DamageToPlayers"
-            Int: 20
-          }
-          Overrides {
-            Name: "cs:DamageToNPCs"
-            Float: 20
           }
           Overrides {
             Name: "cs:ProjectileBody"
@@ -924,18 +962,6 @@ Assets {
               SubObjectId: 2691092598115470187
             }
           }
-          Overrides {
-            Name: "cs:DamageFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
-          Overrides {
-            Name: "cs:DestroyFX"
-            AssetReference {
-              Id: 14594444593454931774
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1007,6 +1033,7 @@ Assets {
         ParentId: 14001881140192835445
         ChildIds: 15723636327053316230
         ChildIds: 6771513812486686690
+        ChildIds: 10106272941420179386
         ChildIds: 3384808585879706475
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1046,6 +1073,12 @@ Assets {
             Name: "cs:Root"
             ObjectReference {
               SubObjectId: 2691092598115470187
+            }
+          }
+          Overrides {
+            Name: "cs:HealthBarTemplate"
+            AssetReference {
+              Id: 4315867458127260351
             }
           }
         }
@@ -1117,6 +1150,52 @@ Assets {
         IsReplicationEnabledByDefault: true
       }
       Objects {
+        Id: 10106272941420179386
+        Name: "TargetRegister"
+        Transform {
+          Location {
+            Z: 114.464844
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7145993005084827370
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageableObject"
+            ObjectReference {
+              SubObjectId: 2691092598115470187
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1011375461586851027
+          }
+        }
+        NetworkRelevanceDistance {
+          Value: "mc:eproxyrelevance:critical"
+        }
+        IsReplicationEnabledByDefault: true
+      }
+      Objects {
         Id: 3384808585879706475
         Name: "Skeleton Mob"
         Transform {
@@ -1135,6 +1214,15 @@ Assets {
         }
         ParentId: 7145993005084827370
         UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"

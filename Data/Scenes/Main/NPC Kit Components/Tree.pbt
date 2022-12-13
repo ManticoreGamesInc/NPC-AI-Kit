@@ -214,6 +214,16 @@ Objects {
     }
   }
   ParentId: 12141335602153125974
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Duration"
+      Int: 7
+    }
+    Overrides {
+      Name: "cs:LeashHeals"
+      Bool: true
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

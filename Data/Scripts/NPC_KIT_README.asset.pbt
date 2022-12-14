@@ -34,6 +34,12 @@ Assets {
           Id: 10841921309902450659
         }
       }
+      Overrides {
+        Name: "cs:NPCKitEnemyHealthBarTop"
+        AssetReference {
+          Id: 6510175741766471704
+        }
+      }
     }
   }
   SerializationVersion: 121

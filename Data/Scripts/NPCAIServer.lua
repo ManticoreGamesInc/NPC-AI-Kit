@@ -1,6 +1,6 @@
 --[[
 	NPCAI - Server
-	v0.14.1
+	v1.0.0
 	by: standardcombo
 	contributions: DarkDev, WaveParadigm
 	

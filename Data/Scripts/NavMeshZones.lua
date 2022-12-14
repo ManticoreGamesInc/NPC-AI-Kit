@@ -1,6 +1,6 @@
 --[[
 	NavMesh Zones
-	v0.12.0
+	v1.0
 	by: standardcombo
 	
 	Defines trigger regions where NPCs look for navigational mesh paths.

@@ -2,11 +2,55 @@
 NPC AI Kit
 Release Notes
 
-v0.14.??? - 2022/12/13
-Version 0.14 was developed in conjunction with the Loot MMO framework.
+
+v1.0.0 - 2022/12/13
+This version 1.0 is inteded to be forwards-compatible. It also is mostly compatible with v0.11 and later.
+
+Additions
+- Added the release notes file you are reading now.
+- New Bandit NPC with four rarity levels.
+- EnemyHealthBarTopUI: Shows the current enemy you are fighting in the top HUD.
+- Enemy data table: Provides additional metadata about NPCs, such as display name.
+- Targeting system: Press Tab (or PageUp) to focus on a nearby enemy.
+- Added the optional TargetRegister script to NPC templates.
+- NPCs can now be stunned by calling NPCAIServer::GoToStunState(). Call GoToSleepState() to un-stun them. Note: Kit does not include any ability or item that applies stuns.
+- Added support for Loot Drop Factory 3.0.
+- The NPCManager has two new functions: GetNpcs() and GetDamageables().
+- Added support for an optional "Level" property on NPCs, with rudimentary hitpoint and damage scaling.
+- NPCs now broadcast a server event "NPC.TargetChanged" when they acquire a target.
+- Health bars now support additional properties: Name, Rarity and Level.
+- Added a healing color to the feedback fly-up numbers.
+
+Changes
+- In NPC templates, the engage SFX and damage properties have moved from scripts to the template root.
+- Health bars changed to the minimalist version for the dragons, raptor and spider.
+- Changed dragon attacks to not be homing projectiles.
+- Improved the VFX on dragon attacks.
+- The Leash script is now configured to heal by default.
+- Waypoints are now much easier to edit due to a new hierarchy structure.
+- Optimized rendering and networking across all objects.
+
+Bugs
+- Fixed an error in CombatWrapNPC when melee weapons hit NPC projectiles.
+- Fixed a bug where some of the animation controllers would replay the death animation in case a disabled NPC kept taking damage.
+- Fixed deprecation warnings.
+
+Combat Dependencies v1.3
+- New: Combat Events script. Builds upon the events from CombatWrapAPI, with the addition of priority order for listeners.
+- New: Combat Accountant. Keeps track of who damaged what, for rewards and assists.
+
+CombatWrapAPI v1.0
+- Added GetAll()
+- Added GetMaxWalkSpeed() and SetMaxWalkSpeed()
+
+Tags v1.2
+- Now more flexible. Tags can be added to a variety of object types.
+
+Known issue: While this version is compatible with Loot Drop Factory 2.0, expect non-critical errors due to new LootID on some NPCs. Those can be fixed by either A) Change the LootID on NPCs, B) Add the required IDs to the Factory, or C) Use Loot Drop Factory 3.0.
 
 
 
+v0.14 was developed in conjunction with the Loot MMO framework, circa 2022/10/20.
 
 
 

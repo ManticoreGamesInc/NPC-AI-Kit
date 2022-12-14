@@ -1,6 +1,6 @@
 --[[
 	NPC AI Kit
-	v0.13.0 - 2022/04/17
+	v1.0.0 - 2022/12/13
 	by: standardcombo
 	
 	NPC tutorials at: https://youtu.be/fz5y8MRXM7w

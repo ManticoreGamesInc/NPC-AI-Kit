@@ -1,7 +1,7 @@
 --[[
 	NPCSpawner
+	v1.0
 	by: standardcombo
-	v0.13.0
 	
 	Spawns and despawns NPCs. Relies on a separate behavior script to tell it when to
 	spawn and despawn.

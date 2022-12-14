@@ -1,6 +1,6 @@
 --[[
 	NPCAttack - Server
-	v0.14.0 - 2022/10/20
+	v1.0.0
 	by: standardcombo
 	
 	Works in conjunction with NPCAIServer. The separation of the two scripts makes it

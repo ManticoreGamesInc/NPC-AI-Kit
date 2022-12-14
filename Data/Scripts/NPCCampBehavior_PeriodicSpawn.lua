@@ -1,7 +1,7 @@
 --[[
 	NPCCampBehavior - Periodic Spawn
+	v1.0
 	by: standardcombo
-	v0.13.0
 	
 	Works in conjunction with NPCSpawner and expects it as a sibling script.
 --]]

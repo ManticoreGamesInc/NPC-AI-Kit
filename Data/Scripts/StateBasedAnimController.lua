@@ -1,6 +1,6 @@
 --[[
 	State-Based Animation Controller
-	v0.13.0
+	v1.0
 	by: standardcombo
 	
 	Instead of playing animations and stances on an animated mesh, this controller

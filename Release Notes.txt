@@ -4,7 +4,7 @@ Release Notes
 
 
 v1.0.0 - 2022/12/13
-This version 1.0 is inteded to be forwards-compatible. It also is mostly compatible with v0.11 and later.
+This version 1.0 is intended to be forwards-compatible. It also is mostly compatible with v0.11 and later.
 
 Additions
 - Added the release notes file you are reading now.

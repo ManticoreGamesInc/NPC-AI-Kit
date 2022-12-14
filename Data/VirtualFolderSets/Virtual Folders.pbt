@@ -46,5 +46,9 @@ Assets {
       VirtualFolderPath: "NPC Kit"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Hierarchy"
+      PlatformAssetType: 5
+    }
   }
 }

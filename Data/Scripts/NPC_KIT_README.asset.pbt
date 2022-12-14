@@ -40,6 +40,12 @@ Assets {
           Id: 6510175741766471704
         }
       }
+      Overrides {
+        Name: "cs:NPCKitEnemyData"
+        AssetReference {
+          Id: 15497829800306335635
+        }
+      }
     }
   }
   SerializationVersion: 121

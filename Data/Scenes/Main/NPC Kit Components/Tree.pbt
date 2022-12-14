@@ -1,60 +1,6 @@
 Name: "NPC Kit Components"
 RootId: 3597304494953298613
 Objects {
-  Id: 742686496913432651
-  Name: "EnemyHealthBarTopUI"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3597304494953298613
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 7836656182518814459
-      value {
-        Overrides {
-          Name: "Name"
-          String: "EnemyHealthBarTopUI"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 6510175741766471704
-    }
-  }
-}
-Objects {
   Id: 16910975126302293828
   Name: "NPCKitRespawnDamageablesInPlace"
   Transform {
@@ -391,6 +337,60 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 742686496913432651
+  Name: "EnemyHealthBarTopUI"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3597304494953298613
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7836656182518814459
+      value {
+        Overrides {
+          Name: "Name"
+          String: "EnemyHealthBarTopUI"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6510175741766471704
+    }
+  }
+}
+Objects {
   Id: 8960121642570163487
   Name: "Combat Dependencies"
   Transform {
@@ -643,6 +643,54 @@ Objects {
     }
     TemplateAsset {
       Id: 8021293717559119783
+    }
+  }
+}
+Objects {
+  Id: 15685739112351950407
+  Name: "Enemy Data Definitions"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3597304494953298613
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8160191893586755846
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Enemy Data Definitions"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15497829800306335635
     }
   }
 }

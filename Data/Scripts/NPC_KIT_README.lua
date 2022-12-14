@@ -23,6 +23,7 @@
 	- Teams & Factions
 	- Create Your Own NPCs
 	- Adding NPCs to a Game
+	- Additional Metadata
 	- Leash Zones
 	- Tags
 	- Navigational Meshes
@@ -62,8 +63,8 @@
 	Combat
 	======
 	
-	As of version 0.12, any Core weapon that works against players should also work against NPCs,
-	without the need for changes to the weapon.
+	Starting in version 0.12, any Core weapon that works against players should also work against
+	NPCs, without the need for changes to the weapon.
 	
 	The package comes with a Static Player Equipment that grants players "Destructible Rifle".
 	This can be used to fight against NPCs. The Destructible Rifle has a script called
@@ -122,16 +123,33 @@
 	Adding NPCs to a Game
 	=====================
 	
-	1. You can position your NPCs directly in the game to test their behaviors.
-	   However, they won't respawn if killed.
-	2. Add a spawn camp, such as the Ambush Camp Example.
-	3. In the hierarchy, right-click the camp and "Deinstance" it.
-	4. Expand the camp's hierarchy to locate the spawn point objects.
-	5. Select one of the camp's spawn points where your NPC should appear.
-	6. From Project Content, drag your NPC template onto the Properties view
+	1. You can position NPCs directly in the game. However, they won't respawn if killed.
+	2. Fix this by adding a copy of the script NPCKitRespawnDamageablesInPlace to the hierarchy.
+	
+	Preferred:
+	1. Add a spawn camp, such as the Ambush Camp Example.
+	2. In the hierarchy, right-click the camp and "Deinstance" it.
+	3. Expand the camp's hierarchy to locate the spawn point objects.
+	4. Select one of the camp's spawn points where your NPC should appear.
+	5. From Project Content, drag your NPC template onto the Properties view
 	   to add it as a custom property on the spawn point.
-	7. Delete your NPC templates from the hierarchy. They should be spawned with
+	6. Delete your NPC templates from the hierarchy. They should be spawned with
 	   Camps and Spawn Points instead of being directly placed.
+	
+	
+	Additional Metadata
+	===================
+	
+	For certain features, additional metadata about NPCs may be desired. For example,
+	the component `EnemyHealthBarTopUI` by default shows the name of the template, but this
+	can be overriden by using the Enemies data table.
+	
+	To use the Enemies data table, add a copy of the template `Enemy Data Definitions` to the
+	hierarchy.
+	
+	To learn how this works, find the "Enemies" data table. This table is how NPC templates
+	are associated with custom display names. Other properties such as rarity can also be
+	defined.
 	
 	
 	Leash Zones

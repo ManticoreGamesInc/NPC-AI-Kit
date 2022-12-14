@@ -1,6 +1,103 @@
 Name: "Settings"
 RootId: 12317766521201451758
 Objects {
+  Id: 10949623267991915420
+  Name: "Ability"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12317766521201451758
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17390626378360673258
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ability Bindings"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9892673916373725528
+    }
+  }
+}
+Objects {
+  Id: 1012600124706927526
+  Name: "Default Bindings"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12317766521201451758
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2307506665685072506
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Default Bindings"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 14261142793805627850
+    }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
   Id: 17263654636438168076
   Name: "Respawn Settings"
   Transform {

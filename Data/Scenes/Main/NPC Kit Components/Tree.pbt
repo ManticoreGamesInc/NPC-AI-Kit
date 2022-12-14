@@ -337,6 +337,48 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
+  Id: 11984758123688116367
+  Name: "Targeting System"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3597304494953298613
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6543542712491765073
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Targeting System"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15018293112981776438
+    }
+  }
+}
+Objects {
   Id: 742686496913432651
   Name: "EnemyHealthBarTopUI"
   Transform {

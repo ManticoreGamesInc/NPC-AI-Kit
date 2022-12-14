@@ -23,6 +23,7 @@
 	- Teams & Factions
 	- Create Your Own NPCs
 	- Adding NPCs to a Game
+	- Targeting
 	- Additional Metadata
 	- Leash Zones
 	- Tags
@@ -135,6 +136,16 @@
 	   to add it as a custom property on the spawn point.
 	6. Delete your NPC templates from the hierarchy. They should be spawned with
 	   Camps and Spawn Points instead of being directly placed.
+	
+	
+	Targeting
+	=========
+	
+	The targeting system allows players to press Tab (or PageUp) to focus on a nearby enemy.
+	
+	To use the Targeting system:
+	1. Add a copy of the template `Targeting System` to the hierarchy.
+	2. Add a copy of the template `Ability Bindings` to the hierarchy.
 	
 	
 	Additional Metadata

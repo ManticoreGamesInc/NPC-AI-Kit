@@ -3,6 +3,7 @@
 	v1.3.0 - 2022/10/25
 	by: standardcombo, WaveParadigm
 	
+	Compatible with the NPC AI Kit v1.0.
 	Add a copy of the Combat Dependencies template to the hierarchy.
 	
 	Included components:

@@ -1,6 +1,54 @@
 Name: "Additional Test NPCs"
 RootId: 3024742990404900298
 Objects {
+  Id: 9792404636721092483
+  Name: "RPG Bandit (Common)"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3024742990404900298
+  WantsNetworking: true
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17046756464842563297
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RPG Bandit (Common)"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 21900
+            Y: -16050
+            Z: 2658.70923
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16144066738784976784
+    }
+  }
+}
+Objects {
   Id: 258331524506487193
   Name: "RPG Raptor"
   Transform {

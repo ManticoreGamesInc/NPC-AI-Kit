@@ -46,6 +46,18 @@ Assets {
           Id: 15497829800306335635
         }
       }
+      Overrides {
+        Name: "cs:NPCKitAbilityBindings"
+        AssetReference {
+          Id: 9892673916373725528
+        }
+      }
+      Overrides {
+        Name: "cs:NPCKitTargetingSystem"
+        AssetReference {
+          Id: 15018293112981776438
+        }
+      }
     }
   }
   SerializationVersion: 121

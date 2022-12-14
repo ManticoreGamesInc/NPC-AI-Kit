@@ -1,0 +1,176 @@
+
+NPC AI Kit
+Release Notes
+
+v0.14.??? - 2022/12/13
+Version 0.14 was developed in conjunction with the Loot MMO framework.
+
+
+
+
+
+
+v0.13.0 - 2022/04/30
+
+This update builds on the strengths of v0.12 and moves another step towards v1.0. I've incorporated feedback from the community, added new features and fixed bugs. Thanks for everyone who tested it and reported!
+
+**NOTE: ** Before heading to CC, this update is released as early-access in "Community Projects". Clone it from there to access. Feedback welcome.
+
+Additions
+- Added armor script: NPCKitArmor.lua
+- Added crit damage script: NPCKitCriticalChance.lua
+- Added script for respawning in-place NPCs that are added manually to a game, without spawn points: NPCKitRespawnDamageablesInPlace.lua
+
+Changes
+- Scripts are now in a sub-folder "NPC Kit".
+- Default damage color changed from red to white.
+- Damage Feedback: Type of damage now represented by the color of fly-up numbers.
+- Damage Feedback: Now supports crits, headshots, blocked and armor types. Can be customized to support more types.
+- The attackData table passed to Combat Wrap accepts a new parameter "item" (optional) to indicate the source equipment or NPC attack script that created the damage and is attacking.
+- Tags: Reworked API to encapsulate the structure of the tag data table. This makes everything more scalable, with less code changes into the future.
+- Adjusted the relevance of networking and render cull for each sub-component across all NPCs.
+
+Bugs
+- Fixed a bug where damage fly-up numbers would sometimes appear at (0, 0, 0).
+
+
+
+v0.12.0 - 2022/04/17
+
+This update moves the NPC Kit closer to v1.0. It's designed for forward-compatibility, while mostly compatible with the prevalent v0.11. Featured are large improvements to network efficiency, plus a new tag system.
+
+**NOTE: ** Before releasing all components to CC (difficult to revert) I am releasing this update first in "Community Projects". Clone it from there to access it. Feedback welcome.
+
+Additions
+- New NPCs: Spider and Wolf Skeleton
+- Tag system, for advanced combat design.
+- Tags added to all NPCs.
+- Relevancy settings now reduce networking and client CPU usage.
+
+Changes
+- Networked object count per NPC reduced from 4 to 2 (half!)
+- Off-the-shelf weapons (e.g. Core Content) now work with NPCs, without changes.
+- Restructured all NPCs to use damageable objects.
+- NPC custom properties now organized by category.
+- Cleanup. Removed the Destructible Manager and the old "RPG Enemy" template.
+- Fly-up numbers moved to a component in Combat Dependencies, instead of each weapon implementing their own damage feedback.
+
+Bugs
+- Fixed bug where the NavMesh could fail to initialize correctly.
+- Fixed all script deprecation warnings.
+
+Tag System
+Easily add depth and combat complexity with tags. There were already elements of a tag system in v0.11, but it was never complete. Now, in v0.12 tags come in full effect.
+
+Add tags to NPCs and weapons as custom properties at the root of the templates. Implement your custom interactions between tags-- as an example, the Waypoints template demonstrates how to amplify magic damage against undead NPCs with an extra script.
+
+With tags you can easily:
+- Make weapons that deal bonus damage against specific NPC types.
+- Make rings that give players protection against some NPCs.
+- Make NPCs that have resistance against specific types of NPCs or weapons.
+
+Combat Dependencies v1.2
+- Added damage feedback component for global fly-up numbers.
+- Added tags utility.
+
+Destructible Rifle - v1.1
+- Set headshot damage to 20.
+- Removed inherent fly-up damage numbers.
+
+The Carlos Blade - v2.5
+- Reduced network object count from 8 to 6.
+- Now works in games without the NPC Kit.
+- Supports new tag system.
+- Tags: Physical, Melee.
+- Removed inherent fly-up damage numbers.
+
+Leaping Staff - v2.3
+- Reduced network object count from 15 to 9.
+- Now works in games without the NPC Kit.
+- Supports new tag system.
+- Tags: Magic, Light, Ranged.
+- Secondary ability tags: Magic, Fire.
+- Removed inherent fly-up damage numbers.
+- Simplified and revised all components.
+- Optimized the Leap VFX.
+
+
+
+Supplemental 2021/10/07
+- Leash Script v1 released
+
+
+
+v0.11.2 - 2021/01/16
+
+Highlights
+- Added headshots.
+- Improved animation controller.
+- Breaking changes to Combat Wrapper.
+- NavMesh Zones, a new component that allows level designs to be hybrid, with Nav Mesh in some areas and terrain in others.
+- Reduced network objects by a third.
+
+General Improvements
+- NPC templates have been restructured, reducing the amount of networked objects per NPC from 6 to 4.
+- Added support for headshot damage to dragons, skeletons and raptor.
+- The NPCAIServer script now has an optional "EngageEffect" custom property. Assign a template to be spawned when the NPC finds a target and engages it.
+- NPCs now abandon a chase after a certain distance.
+- NPCs now have an optional "PatrolSpeed" custom property, resulting in more complex behavior when they are not engaged in combat. If not defined, the default patrol speed is 1/3 the movement speed.
+- NPCs now have a SetTarget() function that can be used for a variety of custom interactions.
+- NPCs now switch target if they are damaged by an enemy that is much closer than their current target.
+- Added NavMesh Zones to help NPCs distinguish between outdoor and indoor pathing logic in games with hybrid environments.
+- NPCs can now look at and engage projectiles (used with Zombie Bait, in Survival Kit).
+- New NPCKitKillFeedAdapter and SetObjectName scripts allow NPC names to appear in the kill feed when they kill a player. To use this, add the Adapter to the hierarchy and a copy of SetObjectName to each NPC template's server context.
+- Added new enemy RPG Skeleton - Unarmed.
+- Added engage sound effect to dragons.
+- Added optional property Attack Min Angle that can be used to constrain NPCs from attacking while the target is behind them.
+- Added a new health bar with minimalistic design, as an alternate version to the larger one. Now used by the skeletons.
+- Added HomingTarget custom property so each NPC can specify where on their body homing shots will hit.
+
+Combat Wrapper
+- Breaking change: The ApplyDamage() function has been refactored. It now takes a single table parameter. This allows much more flexibility and power in implementing auxilary systems that react to combat events. E.g. damage types, defensive moves, quest progress, etc.
+- Added GetVelocity()
+- Added GetMaxHitPoints()
+- Optional parameters for FindInSphere() are now implemented to match those of Player API.
+
+Animation Controller
+- Added new animation controller AnimControllerZombie, a versatile humanoid controller.
+- The NPCAIClient script no longer has custom properties for each of the states. If your NPCs have different visual pieces that should turn on/off according to state, set those up with an additional animation controller script.
+- Skeleton Marksman arrow now hides/shows its crossbow by using the new AnimControllerHideAttackProp script.
+- Skeletons now use the AnimControllerZombie.
+- Added new animation controller StateBasedAnimController for use with NPCs that don't have an animated mesh. E.g. Minions in the MOBA example.
+
+Bugs
+- Fixed a bug where NPC colliders could pitch up or down when searching or returning to their spawn points.
+- Dragon NPCs have been adjusted so the vertical position of their animated mesh during edit mode coincides with how it will behave at runtime.
+- Decreased the size of Easy RPG Dragon's collider.
+- Changed the shape of RPG Raptor's collider.
+- Fixed an error when NPCs collide with an object that is in the process of being destroyed.
+- Health bars no longer cast shadows.
+- Fixed a bug where NPCs could be dealt damage and drop multiple loot after they were already dead, if damaged with AOE.
+- Fixed usability isses when swapping the artwork on an NPC, such as jitter from not assigning some custom properties correctly.
+
+Combat Dependencies - v1.1.1
+- Combat Wrap API - v0.11.2
+- Includes the new NPCKitKillFeedAdapter - v1.0
+
+Leaping Staff - v2.2
+- Compatible with Combat Wrapper v0.11.2.
+- Now deals 50 headshot damage.
+- Replaced a deprecated call to .isVisible with .visibility
+
+The Carlos Blade - v2.4.0
+- Compatible with Combat Wrapper v0.11.2.
+- Now supports different damage values for players and NPCs.
+- Now supports headshot damage.
+
+
+
+v0.10 was developed as part of the Survival Starter Kit, then migrated to v0.11, circa 2020/11/12.
+
+
+v0.9 was developed as part of the D&D framework that later developed into the Dungeon Crawler framework, circa 2020/08/15.
+
+
+v0.8.0 - 2020/03/13
+First public release

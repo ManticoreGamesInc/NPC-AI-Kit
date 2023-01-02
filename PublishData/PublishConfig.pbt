@@ -8,7 +8,7 @@ Tags: "Action"
 Tags: "RPG"
 Tags: "Strategy"
 Tags: "Fantasy"
-ScreenshotPaths: "D:\\CORE\\Maps\\NPC-AI-Kit\\Screenshots\\Screenshot0003.png"
+ScreenshotPaths: "D:\\CORE\\Maps\\NPC-AI-Kit\\Screenshots\\Screenshot0010.png"
 OwnerId: "b4c6e32137e54571814b5e8f27aa2fcd"
 SerializationVersion: 4
 PublishedState: Public
